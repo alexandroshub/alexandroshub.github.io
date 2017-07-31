@@ -1,7 +1,7 @@
 <!-- 
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
-Last Update: 1/8/2017
+Last Update: 30/7/2017
 -->
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,10 @@ Last Update: 1/8/2017
 <link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Aldrich Style -->
 <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
@@ -30,83 +31,75 @@ body, html {
     padding: 16px;
 }
 </style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
+<body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card-2 w3-opacity-min w3-hover-opacity-off" id="myNavbar">
-  <a href="https://a-papaspyrou.000webhostapp.com" class="w3-bar-item w3-button w3-wide">
-
-<img src="https://68.media.tumblr.com/de943f2be142cd7d6709a7bfe0f8daab/tumblr_ooie0nMKfR1si59zfo1_1280.png" style="width:30px;" class="w3-circle w3-left w3-hover-opacity"> &nbsp; <b> Papaspyrou</b> Alexandros</a>
-
-<!-- Right-sided navbar links -->
-
-<div class="w3-right w3-hide-small">
-<a href="https://robodayblog.wordpress.com/" class="w3-bar-item w3-button">
-<i class="fa fa-commenting-o"></i> Thoughts</a>
-</div>
-
-<div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/map.html" class="w3-bar-item w3-button">
-<i class="fa fa-map-o"></i> Map</a>
-</div>
-
-<div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/me.html" class="w3-bar-item w3-button">
-<i class="fa fa-user-o"></i> Me</a>
-</div>
-
-<div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/projects.html" class="w3-bar-item w3-button">
-<i class="fa fa-send-o"></i> Creations</a>
-</div>
-
-</div><!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-<i class="fa fa-bars w3-padding-right w3-padding-left"></i></a></div>
-
-<!-- Sidenav on small screens when clicking the menu icon -->
-<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close </a>
-  <a href="https://a-papaspyrou.000webhostapp.com/projects.html" onclick="w3_close()">Creations</a>
-  <a href="https://a-papaspyrou.000webhostapp.com/cv.html" onclick="w3_close()">Me</a>
-</nav>
     
+<a href="http://a-papaspyrou.tk" class="w3-bar-item w3-button w3-wide">
+<img src="https://68.media.tumblr.com/de943f2be142cd7d6709a7bfe0f8daab/tumblr_ooie0nMKfR1si59zfo1_1280.png" style="width:30px;" class="w3-circle w3-left w3-hover-opacity"> &nbsp; 
+<b> Papaspyrou</b> Alexandros</a>
+<!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+<a href="https://alexandroshub.github.io/projects.html" class="w3-bar-item w3-button"><i class="fa fa-send-o"></i> Creations</a><a href="https://alexandroshub.github.io/me.html" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Me </a> <a href="https://alexandroshub.github.io/map.html" class="w3-bar-item w3-button"><i class="fa fa-map-o"></i> Map</a><a href="https://robodayblog.wordpress.com/" class="w3-bar-item w3-button"><i class="fa fa-commenting-o"></i> Thoughts</a><a href="https://m.me/papaspyrou.alexandros"  class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i></a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large w3-hide-medium" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-<div class="w3-display-middle w3-padding-xxlarge w3-text-white"><center>
-    <br><br><img src="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" alt="Me" style="width:30%" class="w3-circle">
-    <h1 style="font-family:Aldrich; font-size:450%;">WELCOME</h1><p style="font-family:Aldrich; font-size:250%;">in my personal website</p></center>
+<div class="w3-display-middle w3-text-white" style="padding:48px">
+<div class="w3-display-middle" style="white-space:nowrap;">
+<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">WELCOME <span class="w3-hide-small w3-hide-medium">in my personal website</span> </span>
 </div>
- <div class="w3-display-bottomleft w3-padding-large w3-text-white">
-<a href=" https://twitter.com/A_Papaspyrou "><i class="fa fa-twitter" style="font-size:14px;color:white"></i></a>
-<a href=" https://gr.linkedin.com/in/alexandrospapaspyrou "> <i class="fa fa-linkedin" style="font-size:14px;color:white"></i></a>
-<a href=" https://www.reddit.com/user/alexispapy "><i class="fa fa-reddit-alien" style="font-size:14px;color:white"></i></a>
-<a href="https://www.youtube.com/channel/UCticUCJNkJpUvLq6F-1Zujw "><i class="fa fa-youtube-play" style="font-size:14px;color:white"></i></a> 
-<a href=" https://www.flickr.com/photos/alexispapy/albums"><i class="fa fa-flickr" style="font-size:14px;color:white"></i></a>
-<a href="https://www.facebook.com/papaspyrou.alexandros"><i class="fa fa-facebook" style="font-size:14px;color:white"></i></a> 
-<a href="https://www.instagram.com/alexandrospapaspyrou"><i class="fa fa-instagram" style="font-size:14px;color:white"></i></a>
-<a href=" https://plus.google.com/+AlexandrosPapaspyrou "><i class="fa fa-google-plus" style="font-size:14px;color:white"></i></a>
+</div>
+<!-- C MEDIA -->
+<div class="w3-display-bottomleft w3-text-white w3-large" style="padding:24px 48px">
+    <a href="https://www.facebook.com/papaspyrou.alexandros">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/alexandrospapaspyrou">
+    <i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href=" https://twitter.com/A_Papaspyrou ">
+    <i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
+    <i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <a href=" https://www.reddit.com/user/alexispapy">
+    <i class="fa fa-reddit-alien w3-hover-opacity"></i></a>
 <!-- CC -->
-<p style="font-family:Aldrich; font-size:100%;">
-<i style="font-size:15px" class="fa" style="font-size:14px;color:white">&#xf25e;</i> 
-Papaspyrou Alexandros 2017</p>
-</div>
-<div class="w3-display-right w3-padding-large w3-text-white"><a href="https://m.me/papaspyrou.alexandros">
-<i class="fa fa-comments-o" style="font-size:24px;"></i></a></div>
-<!-- end of photo -->
-</header>
-<!-- chat -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();</script>
+<br><h style="font-family:Aldrich; font-size:100%;">
+<i class="fa fa-creative-commons"></i>
+Papaspyrou Alexandros 2017</h>
+    
+	</div>
+  <!-- end of header -->
+</header> 
+<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() {
+    if (mySidebar.style.display === 'block') 
+    {mySidebar.style.display = 'none';} 
+    else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";}
+</script>
+<!-- chat --><script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1,s0); }) ();</script><!-- end of chat -->
 <!-- That's all folks! -->  
 </body></html>
 <!-- Contact: a-papaspyrou@outlook.com.gr  |  Mob: 00306949452023 -->
