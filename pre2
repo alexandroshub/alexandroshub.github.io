@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fullscreen Video</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+   
+   <style>
+   
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+   </style>
+   
+   </head>
+    <body>
+
+<div class="fullscreen-bg">
+<video loop muted autoplay poster="https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif" class="fullscreen-bg__video">
+<source src="https://alexispapy.tumblr.com/video_file/t:weA2VFQSF-xF8Ot0glZ8CA/163709654194/tumblr_ou1wd69PGo1si59zf/480" type="video/mp4"></video>
+    </div>
+
+    <div class="content">
+       
+    </div>
+
+    </body>
+</html>
