@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<title>TRY CoNo</title>
+<link rel="icon" href="https://docs.toradex.com/103378-iot-icon.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
+  <span class="w3-bar-item w3-left">
+  	 <i class="	fa fa-connectdevelop fa-fw"></i> 
+  CoNo</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+      <div class="w3-col s8 w3-bar">
+      <span>Welcome @ <strong>CoNo</strong></span><br>
+      <span><strong>IoT </strong>Industrial Automation</span>
+    </div>
+  </div>
+  <hr>
+  
+  <div class="w3-container">
+    <h5>Links</h5>
+  </div>
+  <div class="w3-bar-block">
+  <a href="" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> soon</a>
+</div></nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-cloud w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>52</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>No</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-skyatlas w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>99</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Quality</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-microchip w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>23</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Chips</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-database w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>50</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Data</h4>
+      </div>
+    </div>
+  </div>
+<br>
+<center>
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/118418/charts/1?bgcolor=white&color=%230066ff&dynamic=true&results=60&title=IoT_test&type=line"></iframe>
+</center>
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h2 class="w3-center">CoNo</h2>
+  <p class="w3-center w3-large">IoT Industrial Automation</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-code w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Code </p>
+      <p>Linux Python C/C++ SQL HTML/PHP </p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cogs w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Automation</p>
+      <p>soon</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-code-fork w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">IoT </p>
+      <p>soon</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-wifi w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">WiFi
+      </p>
+      <p>WiFi Module - ESP8266</p>
+    </div>
+  </div>
+</div>
+ 
+  <div class="w3-container">
+    <h5>My Measurements</h5>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+      <tr>
+        <td>CO</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <td>NO</td>
+        <td>%</td>
+      </tr>
+      <tr>
+        <td>TEMP</td>
+        <td>22 °C</td>
+      </tr>
+      <tr>
+        <td>HYDR</td>
+        <td>34%</td>
+      </tr>
+    </table><br>
+  </div>
+<br>
+  <div class="w3-container w3-dark-grey w3-padding-6">
+    <div class="w3-row">
+<div class="w3-container w3-third"><h5 class="w3-bottombar w3-border-green"><i class="fa fa-microchip fa-fw"></i> Arduino</h5>
+<p>soon.
+<br>
+<a href="https://en.wikipedia.org/wiki/Arduino" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wikipedia-w"></i>  Read More</a></p></div>
+
+<div class="w3-container w3-third"><h5 class="w3-bottombar w3-border-red"><i class="fa fa-microchip fa-fw"></i> Raspberry Pi</h5>
+<p>soon
+<br><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wikipedia-w"></i>  Read More</a></p></div>
+      
+<div class="w3-container w3-third"><h5 class="w3-bottombar w3-border-orange"><i class="fa fa-database fa-fw"></i> XAMPP</h5>
+<p>soon
+<br><a href="https://en.wikipedia.org/wiki/XAMPP" class="w3-bar-item w3-button w3-padding"><i class="fa fa-wikipedia-w"></i>  Read More</a></p></div>
+    </div>
+  </div>
+  
+<hr>
+  <div class="w3-container w3-dark-grey w3-padding-12">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-green">MQ 135</h5>
+        <p>For Air Quality
+Sensitive for Benzene, Alcohol, smoke.
+The heater uses 5V.
+<br><a href="http://www.datasheetspdf.com/datasheet/MQ-135.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> datasheet</a> 
+ <br><a href="https://www.hellasdigital.gr/electronics/sensors/gas-sensors/mq135-mq-135-air-quality-sensor-hazardous-gas-detection-module-for-arduino/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shopping-cart"></i> shop</a></p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-red">MQ 9</h5>
+        <p>Sensitive for Carbon Monoxide, flammable gasses.
+The heater uses an alternating voltage of 5V and 1.5V.
+<br><a href="http://www.datasheetspdf.com/datasheet/MQ-9.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> datasheet</a>  <br><a href="https://www.hellasdigital.gr/electronics/sensors/gas-sensors/mq9-carbon-monoxide-gas-sensor-module-for-arduino/" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shopping-cart"></i> shop</a></p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">DHT 11</h5>
+        <p>he DHT11 is a basic, ultra low-cost digital temperature and humidity sensor.
+        <br><a href="http://www.datasheetspdf.com/datasheet/DHT%2011.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> datasheet</a> 
+        <br><a href="https://grobotronics.com/dht11.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shopping-cart"></i> shop</a></p>
+     
+      </div>
+    </div>
+  </div>  
+  
+  
+  
+ <!-- Footer -->
+<footer class="w3-container w3-padding-24 w3-black "> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<i style="font-size:15px" class="fa">&#xf25e;</i> 
+<a href="https://a-papaspyrou.000webhostapp.com/">
+By: Papaspyrou Alexandros</a>
+</footer>
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body></html>
