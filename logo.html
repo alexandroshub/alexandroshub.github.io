@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Raleway text Style --><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!-- Aldrich text Style --><link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('/w3images/forestbridge.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+  
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;     left: 50%;     width: auto;
+    height: auto;     min-width: 100%;     min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);        -moz-transform: translate(-50%, -50%);    
+    -ms-transform: translate(-50%, -50%); 	    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+</style>
+<body>
+
+
+<div class="fullscreen-bg">
+<video loop muted autoplay poster="https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif" class="fullscreen-bg__video">
+<source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/947/7/179739327/586747331.mp4?token=1505211718-0xc93fed49d9180e47066b7b7c4a236393f2447785" type="video/mp4"></video>
+    </div>
+
+    <div class="content">
+        <div class="w3-display-middle">
+    
+<p><center><img src="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" alt="Me" style="width:40%" class="w3-circle"></center></p>
+</div>
+    </div>
+
+ 
+<span class="w3-hide-small">
+<div class="w3-display-bottomleft w3-text-white w3-padding-large" style="padding:24px 48px">
+	<!-- CC -->
+    <h style="font-family:Aldrich; font-size:15px;">
+    <i class="fa fa-creative-commons" style="font-size:14px;color:white"></i>
+    Papaspyrou Alexandros</h>
+</div></span>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
