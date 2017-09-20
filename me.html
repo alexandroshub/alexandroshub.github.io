@@ -1,5 +1,3 @@
-
-
 <!-- a.SocialMe
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
@@ -174,8 +172,23 @@ My Photos</button>
         <div class="w3-col m12">
           <div class="w3-card-2 w3-round w3-white">
             <div class="w3-container w3-padding">
-              <h6 class="w3-opacity">soon</h6>
-             
+      <h6 class="w3-opacity">Quote of the Day!</h6>
+      <p id="demo"></p>
+<!-- ERROR --><body onload="typeWriter()">
+<p id="demo"></p>
+<script>
+var i = 0;
+var txt = 'In Theory, Theory and Practice are the Same. But In Practice They’re Different. — A. Einstein';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
             </div>
           </div>
         </div>
