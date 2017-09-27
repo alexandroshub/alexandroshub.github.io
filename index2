@@ -1,0 +1,94 @@
+<!-- INDEX webpage
+
+░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+
+Welcome in my personal website 100% HTML Hosted by Github
+Handcrafted With ❤ By: Alexandros Papaspyrou
+Last Update: 26/9/2017  |  Pre-alpha Stage -->
+
+<!DOCTYPE html> 
+<html>
+<title>Papaspyrou Alexandros</title>
+<link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
+<meta charset="UTF-8">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Raleway text Style --><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!-- Aldrich text Style --><link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html { height: 100%;      line-height: 1.8; }
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+</style>
+<body>
+<!-- MENU -->
+<div w3-include-html="https://alexandroshub.github.io/navtopmenu.html"></div><script>w3.includeHTML();</script><!-- /MENU -->
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+	<div class="w3-display-middle w3-text-white" style="padding:48px">
+	<div class="w3-display-middle" style="white-space:nowrap;">
+	<span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">WELCOME 
+	<span class="w3-hide-small w3-hide-medium">in my personal website</span></span></div></div>
+<!-- SC MEDIA --><span class="w3-hide-small">
+<div class="w3-display-bottomleft w3-text-white w3-large" style="padding:24px 48px">
+    <a href="https://www.facebook.com/papaspyrou.a">
+    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+    <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
+    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+    <a href=" https://www.reddit.com/user/alexispapy">
+    <i class="fa fa-reddit-alien w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+	<!-- CC -->
+     | <h style="font-family:Aldrich; font-size:15px;">
+    <i class="fa fa-creative-commons" style="font-size:14px;color:white"></i>
+    Papaspyrou Alexandros<span class="w3-hide-small w3-hide-medium"> 2017</span></h>
+</div></span>
+<!-- end of header --></header>
+<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() { if (mySidebar.style.display === 'block') 
+{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";} </script>
+	<!-- EMAIL FORM https://zotabox.com/dashboard/ --><script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/7/1/7144a7b28e2afa4ba16adef6b404a508/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>
+<!-- SUB & SHARE www.addthis.com/dashboard --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e">
+</script>
+
+</body>
+</html>
+
+<!--
+
+That's all folks! 
+
+Future ideas: search engine | podcast | more arduino and raspberry projects
+
+Mail: a-papaspyrou@outlook.com.gr  
+Mob: 00306949452023
+More:  papaspyrou.alexandros@gmail.com |  papaspyrou@gmx.com
+
+Πηγές:  
+
+https://www.w3schools.com 
+https://www.udacity.com
+https://pastebin.com
+
+-->
+
+<!-- ================================================================   -->
+<!-- OLD CHAT OR EMAIL https://www.tawk.to/ > 
+<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
+< end of old chat -->
