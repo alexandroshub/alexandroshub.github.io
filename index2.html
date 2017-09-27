@@ -6,7 +6,8 @@
 
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
-Last Update: 26/9/2017  |  Pre-alpha Stage -->
+Pre-alpha Stage | Last Update: 8:16:45 μμ Τετάρτη, 27 Σεπτεμβρίου 2017
+ -->
 
 <!DOCTYPE html> 
 <html>
@@ -57,13 +58,20 @@ body, html { height: 100%;      line-height: 1.8; }
     Papaspyrou Alexandros<span class="w3-hide-small w3-hide-medium"> 2017</span></h>
 </div></span>
 <!-- end of header --></header>
-<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-function w3_open() { if (mySidebar.style.display === 'block') 
-{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
-}// Close the sidebar with the close button
-function w3_close() {mySidebar.style.display = "none";} </script>
-	<!-- EMAIL FORM https://zotabox.com/dashboard/ --><script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/7/1/7144a7b28e2afa4ba16adef6b404a508/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>
+
+<!-- footer -->
+<div w3-include-html="https://alexandroshub.github.io/footer.html"></div><script>w3.includeHTML();</script><!-- /footer -->
+	
+<script>
+// Script to open and close sidebar
+function w3_open() { document.getElementById("mySidebar").style.display = "block"; document.getElementById("myOverlay").style.display = "block";}
+function w3_close() {  document.getElementById("mySidebar").style.display = "none";  document.getElementById("myOverlay").style.display = "none"}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {var x = document.getElementById("navDemo");
+if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+</script>
+
+<!-- EMAIL FORM https://zotabox.com/dashboard/ --><script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/7/1/7144a7b28e2afa4ba16adef6b404a508/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>
 <!-- SUB & SHARE www.addthis.com/dashboard --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e">
 </script>
 
