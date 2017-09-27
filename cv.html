@@ -34,9 +34,10 @@ body, html {
 }
 </style>
 <body class="w3-light-grey">
-
+<!-- menu -->
 <div w3-include-html="https://alexandroshub.github.io/navtopmenu.html"></div> 
 <script>w3.includeHTML();</script>
+<!-- /menu -->
 
 
 <br><br><br>
@@ -62,9 +63,8 @@ body, html {
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-black"></i>Athens, GR</p>
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>alexispapy@gmail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>6949452023</p>
-           <p><i class="fa fa-cloud-download fa-fw w3-margin-right w3-large w3-text-black"></i> <a href="https://www.slideshare.net/secret/JuAoFvess7gngb" style="text-decoration:none;">Download PDF</a></p>
-        </div>
-      </div><br>
+    
+</div></div><br>
 
 <div class="w3-white w3-text-grey w3-card-4">
  <div class="w3-container">
@@ -77,6 +77,13 @@ body, html {
 
 <div class="w3-white w3-text-grey w3-card-4">
  <div class="w3-container">
+<p class="w3-large"><b><i class="fa fa-plus-circle  w3-text-black w3-margin-right" style="font-size:24px " ></i> Συμετοχές</b></p><hr>
+<b>OPENFEST2017</b> 
+     <p>στο Α.Ε.Ι Πειραιά Τ.Τ. Συμμετοχή με δυο παρουσιάσεις, η μία σχετικά με την ασφάλεια και την κρυπτογραφία και η δεύτερη σχετικά με την εισαγωγή στο Arduino με παράλληλο εργαστήριο. Υποστήριξη και στην οργάνωση της εκδήλωσης.
+</p></div></div><br>
+
+<div class="w3-white w3-text-grey w3-card-4">
+ <div class="w3-container">
 <p class="w3-large"><b><i class="fa  fa-heart fa-fw w3-margin-right w3-text-black"></i>ΕΘΕΛΟΝΤΙΣΜΟΣ</b></p>
 <p>
 <br>
@@ -86,7 +93,7 @@ body, html {
 
 <div class="w3-white w3-text-grey w3-card-4">
  <div class="w3-container">
-<p class="w3-large"><b><i class="fa fa-gear w3-text-black fa-spin" style="font-size:24px " ></i> Skills</b></p>
+<p class="w3-large"><b><i class="fa fa-gear w3-text-black fa-spin w3-margin-right" style="font-size:24px " ></i> Skills</b></p>
 <p>
 <br>
 HTML / PHP / MySQL / HAMPP
@@ -97,36 +104,31 @@ Microsoft και LibreOffice
 Με εμπειρία στις κολλήσεις και τα ηλεκτρονικά
 και πολύ καλή γνώση και χρήση Η/Υ.</p></div></div><br>
 
+<!-- socialme -->
 <div class="w3-white w3-text-grey w3-card-4">
-<div class="w3-container">
-<a class="twitter-timeline" data-width="100%" data-height="300" data-link-color="#000000" href="https://twitter.com/A_Papaspyrou">Tweets by A_Papaspyrou</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br>
-<a href=" https://twitter.com/A_Papaspyrou "><i class="fa fa-twitter" style="font-size:14px;color:black"></i></a>
-<a href=" https://gr.linkedin.com/in/alexandrospapaspyrou "> <i class="fa fa-linkedin" style="font-size:14px;color:black"></i></a>
-<a href=" http://stackoverflow.com/users/7315499/alexispapy "><i class="fa fa-stack-overflow" style="font-size:14px;color:black"></i></a>
-<a href=" https://github.com/alexandroshub "><i class="fa fa-github-alt" style="font-size:14px;color:black"></i></a>
-<a href=" https://www.reddit.com/user/alexispapy "><i class="fa fa-reddit-alien" style="font-size:14px;color:black"></i></a>
-<a href="https://www.youtube.com/channel/UCticUCJNkJpUvLq6F-1Zujw "><i class="fa fa-youtube-play" style="font-size:14px;color:black"></i></a> 
-<a href=" https://www.flickr.com/photos/alexispapy/albums"><i class="fa fa-flickr" style="font-size:14px;color:black"></i></a>
-<a href="https://www.facebook.com/papaspyrou.alexandros"><i class="fa fa-facebook" style="font-size:14px;color:black"></i></a> 
-<a href=" http://www.slideshare.net/alexandrospapaspurou "><i class="fa fa-slideshare" style="font-size:14px;color:black"></i></a>
-<a href="https://www.instagram.com/alexandrospapaspyrou"><i class="fa fa-instagram" style="font-size:14px;color:black"></i></a>
-<a href=" https://plus.google.com/+AlexandrosPapaspyrou "><i class="fa fa-google-plus" style="font-size:14px;color:black"></i></a>
-<a href=" http://www.instructables.com/member/alexispapy/"><i class="fa fa-rocket" style="font-size:14px;color:black"></i></a>
-<br>
-</div></div>
+ <div class="w3-container">
+<p class="w3-large"><b><i class="fa  fa-heart fa-fw w3-margin-right w3-text-black"></i>MENU2</b></p>
+<div w3-include-html="https://alexandroshub.github.io/socialme.html"></div> 
+<script>w3.includeHTML();</script>
+</div></div><br>
+<script> // Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else { 
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+</script>
+<!-- /socialme -->
 
+<!-- End Left Column --></div>
 
-
-
-
-
-
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
+<!-- Right Column -->
     <div class="w3-twothird">
     
       <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
@@ -214,26 +216,30 @@ Microsoft και LibreOffice
 <!-- End Grid --></div>
 <!-- End Page Container --></div>
 <br>
+
 <!-- Footer -->
 <div w3-include-html="https://alexandroshub.github.io/footer.html"></div>
-<script>w3.includeHTML();</script><!-- End footer -->
+<script>w3.includeHTML();</script>
+<!-- End footer -->
 
-<!--  
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();</script>
--->
-
+<script>// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {  document.getElementById("mySidebar").style.display = "none";  document.getElementById("myOverlay").style.display = "none"
+} // Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 </body>
 </html>
-
 <!--
 That's all folks! 
 
