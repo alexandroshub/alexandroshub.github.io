@@ -32,7 +32,7 @@ body, html {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
 	
-    <div class="w3-bar w3-black w3-card-2" id="myNavbar">
+    <div class="w3-bar" id="myNavbar">
 <a href="https://alexandroshub.github.io/index" class="w3-bar-item w3-button w3-wide">
 <img src="https://68.media.tumblr.com/de943f2be142cd7d6709a7bfe0f8daab/tumblr_ooie0nMKfR1si59zfo1_1280.png" style="width:30px;" class="w3-circle w3-left w3-hover-opacity"> &nbsp; 
 <span class="w3-animate-opacity w3-hide-small"><b>Papaspyrou</b><span class="w3-hide-small">Alexandros</span></span></a>
@@ -66,11 +66,14 @@ body, html {
     <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
 </nav>
 
-<script>// Script to open and close sidebar
+<script>
+
+// Script to open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";}
 function w3_close() {  document.getElementById("mySidebar").style.display = "none";  document.getElementById("myOverlay").style.display = "none"}
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
@@ -79,7 +82,8 @@ function toggleFunction() {
     else 
 	{ x.className = x.className.replace(" w3-show", "");  }
 }
-	// Change style of navbar on scroll
+
+// Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
