@@ -6,13 +6,14 @@
 
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
-Last Update: 21/9/2017  |  Pre-alpha Stage -->
+Last Update: 22/10/2017  |  Pre-alpha Stage -->
 
 <!DOCTYPE html> 
 <html>
 <title>Papaspyrou Alexandros | Projects</title>
 <link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
 <meta charset="UTF-8">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,6 +55,12 @@ body, html {
     min-height: 400px;
 }
 
+/* 4th image (Contact) */
+.bgimg-4 {
+    background-image: url("https://78.media.tumblr.com/3e6bda31cebf124e527e6a1393981cf4/tumblr_ox7ezttVHF1si59zfo2_1280.jpg");
+    min-height: 400px;
+}
+
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
@@ -65,49 +72,16 @@ body, html {
 }
 </style>
 <body>
-<!-- MENU -->
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-	<div class="w3-bar w3-black w3-card-2 w3-opacity-min w3-hover-opacity-off" id="myNavbar">
-<a href="http://a-papaspyrou.tk" class="w3-bar-item w3-button w3-wide">
-<img src="https://68.media.tumblr.com/de943f2be142cd7d6709a7bfe0f8daab/tumblr_ooie0nMKfR1si59zfo1_1280.png" style="width:30px;" class="w3-circle w3-left w3-hover-opacity"> &nbsp; 
-<b> Papaspyrou</b> Alexandros</a>
-
-<!-- Right-sided navbar links -->
-<div class="w3-right w3-hide-small">
-	<a href="https://alexandroshub.github.io/projects.html" class="w3-bar-item w3-button"><i class="fa fa-send-o"></i> Creations</a>
-	<a href="https://alexandroshub.github.io/me.html" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Me </a> 
-	<a href="https://alexandroshub.github.io/map.html" class="w3-bar-item w3-button"><i class="fa fa-map-o"></i> Map</a>
-	<a href="https://robodayblog.wordpress.com/" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-commenting-o"></i> Thoughts</a>
-	<a href="https://m.me/papaspyrou.alexandros"  class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i></a>
-</div>
-<!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i></a></div></div>
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large w3-hide-medium" style="display:none" id="mySidebar">
-<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red" >Close ×</a> 
-	<a href="https://alexandroshub.github.io/projects.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-send-o"></i> Creations</a>
-	<a href="https://alexandroshub.github.io/me.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Me </a> 
-	<a href="https://alexandroshub.github.io/map.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-map-o"></i> Map</a>
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-commenting-o"></i> Thoughts</a> 
-	<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<hr><!-- social left -->
-    &nbsp; <a href="https://getpocket.com/@27bdfp78TaK97g4e6dA987eA2dgaT938154I38G999WdrUw2a6c6ei72S21olQ68">
-    <i class="fa fa-get-pocket w3-hover-opacity" style="font-size:14px;color:white"></i></a> &nbsp; | 
-    	&nbsp; <a href="https://www.facebook.com/papaspyrou.a">
-    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href=" https://twitter.com/A_Papaspyrou ">
-    <i class="fa fa-twitter w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
-    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-  	&nbsp; <a href=" https://www.reddit.com/user/alexispapy">
-    <i class="fa fa-reddit-alien w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-</nav>
+<!-- MENU --><div w3-include-html="https://alexandroshub.github.io/navtopmenu.html"></div><script>w3.includeHTML();</script><!-- /MENU -->
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">My Projects</span>
+      <center>  <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">My Creations</span><br>
+
+    <a href="#make"> <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Make</button></a>
+       <a href="#code"><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Code</button></a>
+        <a href="#text"><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Text</button></a></center>
   </div>
 </div>
 
@@ -127,7 +101,7 @@ body, html {
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="make">
   <div class="w3-display-middle">
     <span class="w3-xxlarge w3-text-white w3-wide">Makes</span>
   </div>
@@ -162,7 +136,7 @@ body, html {
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
+<div class="bgimg-3 w3-display-container w3-opacity-min"id="text">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">γραπτά</span>
   </div>
@@ -192,33 +166,32 @@ body, html {
 
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-   <a href="https://drive.google.com/open?id=0B4_FfowS43ESQmVuMGN1cDR4a1k" class="w3-button w3-light-grey"><i class="fa fa-arrow-down w3-margin-right"></i>Download My Cv</a>
-<!-- SM --><div class="w3-black w3-center w3-padding-12">
-<a href=" https://twitter.com/A_Papaspyrou "><i class="fa fa-twitter" style="font-size:14px;color:white"></i></a>
-<a href=" https://gr.linkedin.com/in/alexandrospapaspyrou "> <i class="fa fa-linkedin" style="font-size:14px;color:white"></i></a>
-<a href=" http://stackoverflow.com/users/7315499/alexispapy "><i class="fa fa-stack-overflow" style="font-size:14px;color:white"></i></a>
-<a href=" https://github.com/alexandroshub "><i class="fa fa-github-alt" style="font-size:14px;color:white"></i></a>
-<a href=" https://www.reddit.com/user/alexispapy "><i class="fa fa-reddit-alien" style="font-size:14px;color:white"></i></a>
-<a href="https://www.youtube.com/channel/UCticUCJNkJpUvLq6F-1Zujw "><i class="fa fa-youtube-play" style="font-size:14px;color:white"></i></a> 
-<a href=" https://www.flickr.com/photos/alexispapy/albums"><i class="fa fa-flickr" style="font-size:14px;color:white"></i></a>
-<a href="https://www.facebook.com/papaspyrou.alexandros"><i class="fa fa-facebook" style="font-size:14px;color:white"></i></a> 
-<a href=" http://www.slideshare.net/alexandrospapaspurou "><i class="fa fa-slideshare" style="font-size:14px;color:white"></i></a>
-<a href="https://www.instagram.com/alexandrospapaspyrou"><i class="fa fa-instagram" style="font-size:14px;color:white"></i></a>
-<a href=" https://plus.google.com/+AlexandrosPapaspyrou "><i class="fa fa-google-plus" style="font-size:14px;color:white"></i></a>
-<a href=" http://www.instructables.com/member/alexispapy/"><i class="fa fa-rocket" style="font-size:14px;color:white"></i></a>
-<a href=" https://bitbucket.org/alexispapy "><i class="fa fa-bitbucket" style="font-size:14px;color:white"></i></a>
-<a href=" https://vimeo.com/alexispapy "><i class="fa fa-vimeo" style="font-size:14px;color:white"></i></a>
-<a href=" https://gr.pinterest.com/alexispapy "><i class="fa fa-pinterest-p" style="font-size:14px;color:white"></i></a>
-<a href=" https://alexispapy.tumblr.com/ "><i class="fa fa-tumblr"></i></a>
-<a href=" 6949452023 "><i class="fa fa-whatsapp"></i></a>
-<a href=" a-papaspyrou@outlook.com.gr  "><i class="fa fa-skype"></i></a>
-<br><!-- CC --><i style="font-size:15px" class="fa">&#xf25e;</i>Papaspyrou Alexandros 2017</div>
-<!-- End footer -->
-</footer>
- 
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">γραπτά</span>
+  </div>
+</div>
+
+<!-- Container (2enotita Section) -->
+<div class="w3-content w3-container w3-padding-64" id="2enotita">
+    <h4 class="w3-center">Μια εργασία για το μάθημα της Ιστορίας των Αυτομάτων & της Τεχνολογίας. </h4>
+    <h3 class="w3-center">“ Η εξέλιξη των Η/Υ ” (από τον άβακα στο Tablet)</h3>
+<p class="w3-center"><em>❝ Ας κλείσουμε με την ελπίδα πως πάντα η τεχνολογία θα υπάρχει και θα εξελίσσεται με σκοπό να διευκολύνει τον άνθρωπο και να του προσφέρει μια πιο ευχάριστη και δημιουργική ζωή. Αυτός είναι αλώστε και ο σκοπός της, και οι κοινωνίες θα πρέπει να φροντίσουν να μην υπάρξει ο κίνδυνος να αποκλίνει από αυτόν. ❞</em><br>
+<a href="https://issuu.com/a-papaspyrou/docs/computerevolution_alexandros_papasp">
+<button class="w3-button w3-padding-large w3-black" style="margin-top:64px"><i class="fa fa-book"></i></button></a>
+<a href="https://www.slideshare.net/alexandrospapaspurou/computer-evolution-48891311"><button class="w3-button w3-padding-large w3-black" style="margin-top:64px"><i class="fa fa-clone"></i></button></a>
+</p><br>
+
+ <!-- About Section -->
+
+</div>
+
+<span class="w3-hide-large">
+<!-- footer -->
+<div w3-include-html="https://alexandroshub.github.io/footer.html"></div><script>w3.includeHTML();</script><!-- /footer --></span>
+
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -234,15 +207,15 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-/*
+
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-black";
     } else {
-        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-black", "");
     }
 }
   */
@@ -256,6 +229,7 @@ function toggleFunction() {
     }
 }
 </script>
+
 </body>
 </html>
 
@@ -267,8 +241,15 @@ Future ideas: search engine | podcast | more arduino and raspberry projects
 
 Mail: a-papaspyrou@outlook.com.gr  
 Mob: 00306949452023
-Sub: papaspyrou.alexandros@gmail.com 
+More:  papaspyrou.alexandros@gmail.com |  papaspyrou@gmx.com
 
-Πηγές:  https://www.w3schools.com  |  https://www.udacity.com
+Πηγές:  
 
+https://www.w3schools.com 
+https://www.udacity.com
+https://pastebin.com
+https://hta.gr
+https://www.hubspot.com
 -->
+
+<!-- ================================================================   -->
