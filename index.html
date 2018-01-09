@@ -1,0 +1,356 @@
+<!--
+
+░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+
+Welcome in my personal website 100% HTML Hosted by Github
+Handcrafted With ❤ By: Alexandros Papaspyrou
+Last Update: 9/1/2018  |  Alpha Stage 
+-->
+
+<!DOCTYPE html>
+<html>
+<title>Papaspyrou</title>
+<link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%; color: #777; line-height: 1.8;}
+
+/* Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 { background-image: url('https://78.media.tumblr.com/30e56a4f87321de321e98556b022813f/tumblr_p0sxo3UYRB1si59zfo3_r1_1280.png');
+    min-height: 100%;}
+
+/* Second image (Portfolio) */
+.bgimg-2 { background-image: url("https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg");
+    min-height: 400px;}
+
+/* Third image (Contact) */
+.bgimg-3 { background-image: url("https://78.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");  min-height: 400px;}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+.bgimg-1, .bgimg-2, .bgimg-3 { background-attachment: scroll; } }
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+
+<a href="https://alexandroshub.github.io/index"><img src="https://78.media.tumblr.com/50f00164412539b09c771b01bff8ab9d/tumblr_p0bypelh4I1si59zfo1_250.png" style="width:150px;" align="left" ></a>&nbsp; 
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-plus-circle"></i> PLUS</a>
+    <a href="https://m.me/papaspyrou.alexandros" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-blue">
+      <i class="fa fa-comments-o"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-plus-circle"></i> PLUS</a>
+    <a href="https://m.me/papaspyrou.alexandros" class="w3-bar-item w3-button"><i class="fa fa-comments-o"></i> Messenger</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity ">
+      <span class="w3-hide-small">TECH </span>
+      <span class="w3-hide-small  w3-hide-medium"> SUPPORT & </span> 
+      <span class="w3-hide-small"> SOLUTIONS</span>
+      <span class="w3-hide-large w3-hide-medium">Automations </span>
+    </span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-32" id="about">
+
+<style> .chip img { float: center; margin: 10px; height: 110px; width: 110px; border-radius: 20%;}</style>
+
+<div class="chip"><center><img src="https://78.media.tumblr.com/2b01c844f1f4ac35041e40a919d32c70/tumblr_ox5z3w1rB21si59zfo1_500.jpg" alt="AlexandrosPapaspyrou"> </center></div>
+
+  <h3 class="w3-center">it's me</h3>
+  
+  <p class="w3-center"><em>"I'm not trying to be anyone's savior. I'm just trying to think about the future and not be sad."</em></p>
+  <p>Ριξε μια ματια στο βιογραφικο μου... </p>
+    
+<!-- gri tetragono
+
+<div class="w3-row w3-container">
+
+<div class="w3-center w3-padding-64"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">μ' άλλα λόγια</span></div>
+
+      <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">   <i class="fa fa-gears w3-margin-bottom w3-jumbo"></i>
+      <h3>Design</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p></div>
+      <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">      
+      <i class="fa fa-code w3-margin-bottom w3-jumbo w3-center"></i>
+      <h3>Branding</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p></div>
+      <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">   <i class="fa fa-paper-plane-o w3-margin-bottom w3-jumbo"></i>
+      <h3>Consultation</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p></div>
+      <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">      
+      <i class="fa fa-folder-open-o w3-margin-bottom w3-jumbo"></i>
+      <h3>Promises</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p></div>
+
+</div>
+-->
+<center><a href="https://alexandroshub.github.io/cv.html"><button class="w3-button w3-padding-large w3-light-grey" style="margin-top:32px">LOAD myCV</button></a>
+<!-- <a href="https://alexandroshub.github.io/about.html"><button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD about</button></a> -->
+</center>
+
+</div>
+<!-- gri bara
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section"><span class="w3-xlarge">
+  <i class="fa fa-code w3-margin-bottom w3-jumbo w3-center"></i>
+  <br>14+</span><br>Partners</div>
+  <div class="w3-quarter w3-section"><span class="w3-xlarge">
+  <i class="fa fa-folder-open-o w3-margin-bottom w3-jumbo"></i>
+  <br>55+</span><br>Projects Done</div>
+  <div class="w3-quarter w3-section"><span class="w3-xlarge">
+  <i class="fa fa-paper-plane-o w3-margin-bottom w3-jumbo"></i>
+  <br>89+</span><br>Happy Clients</div>
+  <div class="w3-quarter w3-section"><span class="w3-xlarge">
+  <i class="fa fa-gears w3-margin-bottom w3-jumbo"></i>
+  <br>150+</span><br>Meetings</div>
+</div>
+ -->
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-32" id="portfolio">
+  <h3 class="w3-center">MY WORK</h3>
+  <p class="w3-center"><em> "Σχεδόν ό,τι κάνεις είναι ασήμαντο, αλλά είναι σημαντικό να το κάνεις."</em></p>
+</div>
+<!-- Good offers -->
+   <br> <div class="w3-row-padding">
+<!-- CoNo IoT -->    
+<div class="w3-col l3 m6 w3-margin-bottom">
+<div class="w3-display-container">
+<div class="w3-display-topleft w3-black w3-padding">Developing & Code</div><a href="https://alexandroshub.github.io/proj_code.html">
+<img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="House" style="width:100%"></a>
+</div></div>
+<!-- IoT -->    
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/proj_elec.html">
+<div class="w3-display-topleft w3-black w3-padding">Electronics & IoT</div>
+<img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="IoT" style="width:100%"></a></div></div>
+<!-- Michatron -->    
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/proj_auto.html">
+<div class="w3-display-topleft w3-black w3-padding">Automations & Robotics</div>
+<img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Michatron" style="width:100%"></a></div></div>
+<!-- Files -->
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/proj_files.html">
+<div class="w3-display-topleft w3-black w3-padding">
+Files & Publications</div>
+<img src="https://c2.staticflickr.com/1/572/32932636012_c6413d21b5_o.png" alt="Files" style="width:100%">
+</a></div></div>
+
+
+
+<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) 
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="https://farm3.staticflickr.com/2916/14505429069_bb4a889038_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm4.staticflickr.com/3864/14688909381_494015c1ff_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm9.staticflickr.com/8634/16112868584_e4bcf2c06f_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm1.staticflickr.com/575/21108329376_565e32746e_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="https://farm1.staticflickr.com/575/21108329376_565e32746e_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm1.staticflickr.com/575/21108329376_565e32746e_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm1.staticflickr.com/575/21108329376_565e32746e_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="https://farm1.staticflickr.com/575/21108329376_565e32746e_b.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+  </div>-->
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">PLUS</span>
+  </div>
+</div>
+
+
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-8">
+  <div class="w3-section"><b>Προτάσεις</b> :: 
+  
+  <!--  
+  
+    <a href="https://www.info-mobility.gr" class="w3-button w3-light-grey">InfoMobilityWorld </a>
+  ::  
+    <a href="https://jobdays.gr/index.php?option=com_content&view=article&id=695:hmerida-stadiodromias-dhmou-khfisiasws-job-day-2017&catid=298:hmerida-stadiodromias-dhmou-khfisiasws-job-day&Itemid=1967" class="w3-button w3-light-grey">#Jobday_Κηφισιάς </a>
+   -->
+  </div>
+</div>
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-32" id="contact">
+  <h3 class="w3-center">Η δημιουργία του plus ειναι σε εξέλιξη .</h3>
+  <p class="w3-center"><em>θα ειναι διαθέσιμο μέσα στο πρώτο εξάμηνο του 2018.
+  <br> Μέχρι τότε... </em>
+  <br>
+<a href="https://robodayblog.wordpress.com"><button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD BLOG</button></a>
+<a href="https://alexandroshub.github.io/plus.html"><button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD PLUS</button></a>
+</p>
+</div>
+
+
+  
+
+<!-- SSM -->
+<style>
+.accordion {    background-color: #eee;    color: #444;  cursor: pointer;   padding: 18px;    width: 100%;   border: none;   text-align: left;    outline: none;   font-size: 15px;   transition: 0.4s; }
+.active, .accordion:hover {  background-color: #ccc;}
+.accordion:after {    content: '\002B';    color: #777;    font-weight: bold;    float: right;    margin-left: 5px;}
+.active:after {    content: "\2212";}
+.panel {    padding: 0 18px;    background-color: white;    max-height: 0;    overflow: hidden;    transition: max-height 0.2s ease-out;}
+</style>
+<button class="accordion">CONTACT form</button>
+<div class="panel">
+<p><!-- www.123formbuilder.com script begins here --><script type="text/javascript" defer src="//www.123formbuilder.com/embed/3216186.js" data-role="form" data-default-width="650px"></script><!-- www.123formbuilder.com script ends here --></p></div>
+<script>
+var acc = document.getElementsByClassName("accordion"); var i; for (i = 0; i < acc.length; i++) {acc[i].onclick = function() { this.classList.toggle("active"); var panel = this.nextElementSibling; if (panel.style.maxHeight){panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; }}}
+</script>
+<!-- SSM -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>WELL...</h3>
+      <p> <span class="w3-tag w3-black"><a href="https://alexandroshub.github.io/about">ABOUT</a></span> 
+      Λιγα λογια για τη σελίδα.</p>
+     <div class="w3-section"><a href="https://alexandroshub.github.io/soon" class="w3-button w3-black"><i class="fa fa-arrow-up w3-margin-right"></i>TECH SUPPORT & SOLUTIONS</a>
+  </div>
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16"><a href="https://robodayblog.wordpress.com/2016/02/29/βαρυτικά-κύματα/"> 
+          <img src="https://robodayblog.files.wordpress.com/2016/02/wallup-50888.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Βαρυτικά κύματα </span><br>
+          <span>Να πως ακούγονται τα βαρυτικά κύματα.</span></a>
+        </li>
+        <li class="w3-padding-16"><a href="https://robodayblog.wordpress.com/2016/02/29/βαρυτικά-κύματα/"> 
+          <img src="https://robodayblog.files.wordpress.com/2016/02/wallup-50888.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Βαρυτικά κύματα </span><br>
+          <span>Να πως ακούγονται τα βαρυτικά κύματα.</span></a>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third">
+      <h3>POPULAR TAGS</h3>
+      <p>
+      
+<span class="w3-tag w3-black w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2017/05/21/αυτοματισμός/">AUTOMATION</a></span>   
+ <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a href="https://robodayblog.wordpress.com/2016/05/22/arduino/">ARDUINO</a></span> <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/07/21/rasbery/">  RASPBERY PI</a></span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/05/30/iot-roboday/">IOT</a></span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">HACK</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">PC</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">ROBOTS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">FUTURE</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">NEWS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">PLUS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">WEB</span>
+     <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/06/24/internet-1/">INTERNET</a></span>      
+     <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/05/26/wtf-is-linux/">LINUX</a></span>
+        
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2017/08/28/what-are-you-looking-for/">LINKS</a></span>
+      </p>
+    </div>
+
+  </div>
+  </footer>
+<!-- finale -->
+<div class="w3-row w3-center w3-dark-grey w3-padding-8">
+ 
+</div>
+<!-- Footer --><footer class="w3-center w3-black w3-padding-16">
+<!-- top --> <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+<!-- cv --> <a href="https://drive.google.com/open?id=0B4_FfowS43ESQmVuMGN1cDR4a1k" class="w3-button w3-light-grey"><i class="fa fa-arrow-down w3-margin-right"></i>Download My Cv</a>
+<!-- social --><div class="w3-black w3-center w3-padding-12">
+<!-- twitter --><a href=" https://twitter.com/A_Papaspyrou "><i class="fa fa-twitter" style="font-size:15px;color:white"></i></a>
+<!-- linkedin --><a href=" https://gr.linkedin.com/in/alexandrospapaspyrou "> <i class="fa fa-linkedin" style="font-size:15px;color:white"></i></a>
+<!-- github --><a href=" https://github.com/alexandroshub "><i class="fa fa-github-alt" style="font-size:14px;color:white"></i></a> | 
+<!-- CC --><i style="font-size:15px" class="fa">&#xf25e;</i> Papaspyrou Alexandros 2018</div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:270px;" alt="Signature" align="bottom">
+<!-- <audio controls autoplay><source src="http://srv44.listentoyoutube.com/download/4paZbGljoGZpZLWr2NmXbLVhnWNmY21ulpWYtIWZ26aZoY2nv9LYrK6SzQ==/2CELLOS%20-%20Despacito.mp3" type="audio/mpeg"><p>audio element</p></audio> -->
+</footer><!-- End footer -->
+<!-- scripts --><script>
+// Modal Image Gallery
+function onClick(element) { document.getElementById("img01").src = element.src; document.getElementById("modal01").style.display = "block"; var captionText = document.getElementById("caption"); captionText.innerHTML = element.alt;}
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+</script>
+<!-- OLD CHAT OR EMAIL https://www.tawk.to/  -->
+<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
+</body>
+</html>
+
+<!-- Contact: a-papaspyrou@outlook.com.gr  |  Mob: 00306949452023  |  Sub: papaspyrou.alexandros@gmail.com -->
