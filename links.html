@@ -1,69 +1,84 @@
+<!-- 28/1/18
 
-<!-- @AboutPage
-Welcome in my personal website 100% HTML
-Handcrafted With ❤ By: Alexandros Papaspyrou [CC-BY]
-Last Update: 3/6/2017 
-Contact: alexispapy@gmail.com
+░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+
+Welcome in my personal website 100% HTML Hosted by Github
+Handcrafted With ❤ By: Alexandros Papaspyrou
 -->
-<!DOCTYPE html><html>
-
-<title>Papaspyrou Alexandros</title><link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
-
+<!DOCTYPE html>
+<html>
+<title>Papaspyrou</title>
+<link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html {
-    height: 100%;
-    line-height: 1.8;
-}
-/* Full height image header */
-.bgimg-1 {
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('https://78.media.tumblr.com/6f0c0b35f9f3da8183855ac1be8abb8f/tumblr_oz7c9bifSb1si59zfo1_1280.jpg');
+    min-height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: url("https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg");
-    min-height: 100%;
-}
-.w3-bar .w3-button {
-    padding: 16px;
 }
 </style>
-<body class="w3-black">
+<body>
 
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <p>λινκς</p>
+  </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+  <p><button onclick="document.getElementById('links').style.display='block'" class="w3-button w3-black">Links</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-large">Links are essential to freedom of expression online, and experts warn that censoring links will break the Web as we know it.</p>
+  </div>
+</div>
 
-<!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-48" id="about">
-    <h2 class="w3-text-light-grey">Links</h2>
-    <hr style="width:200px" class="w3-opacity">
-  
-  
+<div id="links" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('links').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+      <h1>Links</h1>
+    </div>
+    <div class="w3-container">
+ <!--  ================================================================  -->
+<font size=2.5><b>EVENTS</b></font><br>  
+        <a href="http://www.mec.gr/events">mec</a> | 
+        <a href="http://www.helexpo.gr">helexpo</a> |
+        <a href="https://ellak.gr/events">ellak</a> |
+        <a href="http://www.technopolis-athens.com/web/guest/home">technopolis</a> |
+        <a href="http://www.mindspace.gr/">mindspace</a>| 
+        <a href="http://www.innovathens.gr/">innovathens</a>|       	
+        <a href="https://www.hackerspace.gr">hackerspace</a> |
+        <a href="https://thecube.gr">thecube</a> |  
    
-<font color=#fffff size=2.5><b>links</b></font><br>
+ <br><font size=2.5><b>links</b></font><br>
 		<a href="https://www.raspberrypi.org/">raspberrypi</a>|
 		<a href="https://www.arduino.cc/">arduino</a>|
 		<a href="https://www.sparkfun.com/">sparkfun</a>|
 		<a href="https://www.adafruit.com/">adafruit</a>|
 
-<br><font color=#fffff size=2.5><b>IoT</b></font><br>  
-<a href="http://electronicsforu.com/">electronicsforu</a>| 
-<a href="http://electronicsofthings.com/">electronicsofthings</a>| 
-<a href="http://www.securitymanager.gr/newsite/index.php">securitymanager</a>| 
-<a href="https://www.hackster.io/">hackster</a>| 
+<br><font size=2.5><b>IoT</b></font><br>  
+        <a href="http://electronicsforu.com/">electronicsforu</a>| 
+        <a href="http://electronicsofthings.com/">electronicsofthings</a>| 
+        <a href="http://www.securitymanager.gr/newsite/index.php">securitymanager</a>| 
+        <a href="https://www.hackster.io/">hackster</a>| 
 
-
-<br><font color=#fffff size=2.5><b>apps</b></font><br>  
+<br><font size=2.5><b>apps</b></font><br>  
 		<a href="http://everycircuit.com/">everycircuit</a>| 
 
-<br><font color=#fffff size=2.5><b>Shopping</b></font><br>
+<br><font size=2.5><b>Shopping</b></font><br>
 		<a href="https://www.hellasdigital.gr/">hellasdigital</a>|
 		<a href="https://www.devobox.com/">devobox</a>|
 		<a href="https://grobotronics.com/">grobotronics</a>|
 		<a href="http://www.gearbest.com/">gearbest</a>|
   
-<br><font color=#fffff size=2.5><b>video / EDIT</b></font><br>
+<br><font size=2.5><b>video / EDIT</b></font><br>
 		<a href="https://hitfilm.com/express">hitfilm</a>|
 		<a href="http://www.video-editor-software.com/">software</a>|
 		<a href="https://www.lwks.com/">lwks</a>|
@@ -72,12 +87,12 @@ body, html {
   		<a href="https://www.shotcut.org/download/">shotcut</a>|  
   		<a href="https://www.pizap.com/">pizap</a>|  
 
-<br><font color=#fffff size=2.5><b>Wallpaper</b></font><br>
+<br><font size=2.5><b>Wallpaper</b></font><br>
 		<a href="http://wallpaperswide.com/">wallpaperswide</a>|
 		<a href="https://wallpaperscraft.com/">wallpaperscraft</a>|
 		<a href="https://pixabay.com/">pixabay</a>|
 
-<br><font color=#fffff size=2.5><b>Photos / EDIT</b></font><br>
+<br><font size=2.5><b>Photos / EDIT</b></font><br>
 		<a href="https://www.canva.com/">Canva</a>|
 		<a href="http://art.pho.to/">-art-pho.to</a>| 
 		<a href="http://pho.to/">pho.to</a>| 
@@ -86,22 +101,20 @@ body, html {
 		<a href="https://www.picmonkey.com/">picmonkey</a>| 
 		<a href="https://www.befunky.com/">befunky</a>| 
 
-<br><font color=#fffff size=2.5><b>Browser</b></font><br>  
+<br><font size=2.5><b>Browser</b></font><br>  
 		<a href="https://www.torproject.org/">TOR</a>| 
 		<a href="https://www.mozilla.org/el/firefox/new/">firefox</a>| 
 
-
-  <br><font color=#fffff size=2.5><b>design</b></font><br>
+<br><font size=2.5><b>design</b></font><br>
         <a href="https://www.tinkercad.com/">tinkercad</a>|  
   
-<br><font color=#fffff size=2.5><b>diagrams</b></font><br>
+<br><font size=2.5><b>diagrams</b></font><br>
         <a href="https://cacoo.com/lang/el/">Cacoo</a>|    
 
-
-<br><font color=#fffff size=2.5><b>blogs</b></font><br>
+<br><font size=2.5><b>blogs</b></font><br>
         <a href="http://www.insomnia.gr/">insomnia</a>| 
         
-<br><font color=#fffff size=2.5><b>BOOKS</b></font><br>
+<br><font size=2.5><b>BOOKS</b></font><br>
         <a href="https://free-ebooks.gr/">ebooks</a>| 
         <a href="http://www.openbook.gr/">openbook</a>| 
         <a href="http://ebooks.edu.gr/new/">edu</a>| 
@@ -109,10 +122,8 @@ body, html {
         <a href="https://www.marxists.org/ellinika/">marxists</a>| 
         <a href="http://www.kavafis.gr/index.asp">kavafis</a>| 
         <a href="http://www.ptable.com/?lang=el">ptable</a>| 
-
-        
  
-<br><font color=#fffff size=2.5><b>OPEN FREE PROGRAMMES</b></font><br>
+<br><font size=2.5><b>OPEN FREE PROGRAMMES</b></font><br>
         <a href="https://www.apachefriends.org/index.html">apachefriends</a>|  
         <a href="https://www.wireshark.org/">wireshark</a>|  
         <a href="https://www.blender.org/">blender</a>|  
@@ -123,15 +134,10 @@ body, html {
         <a href="https://el.libreoffice.org/">libreoffice</a>|  
         <a href="http://www.openoffice.org/el/">openoffice</a>|  
         <a href="http://www.videolan.org/vlc/">vlc</a>|  
-        
-         
-        
-        
 
 <br><font color=#fffff size=2.5><b>CODE</b></font><br>
         <a href="https://scratch.mit.edu">scratch</a>|  
         <a href="http://appinventor.mit.edu/explore/">appinventor</a>|  
-
   
 <br><font color=#fffff size=2.5><b>NEWS</b></font><br>
         <a href="http://lifehacker.com/">lifehacker</a>| 
@@ -179,9 +185,6 @@ body, html {
 		<a href="http://www.teipir.gr/index.php/el/">teipir</a>| 
 		<a href="http://auto-hsae.teipir.gr/#homepageh">hsae</a>| 
   
-<br><font color=#fffff size=2.5><b>Download</b></font><br>  
-  
-  
 <br><font color=#fffff size=2.5><b>Office</b></font><br>
 		<a href="http://www.openoffice.org/el/">openoffice</a>|
 		<a href="https://el.libreoffice.org/">libreoffice</a>|
@@ -191,19 +194,13 @@ body, html {
 <br><font color=#fffff size=2.5><b>HOW TO</b></font><br>  
     	<a href="http://www.wikihow.com/Main-Page">wikihow</a>| 
     	<a href="http://www.instructables.com/">instructables</a>|
-  
-<br><font color=#fffff size=2.5><b>SPACE</b></font><br>
-      	<a href="https://www.hackerspace.gr/">hackerspace</a>| 
-      	<a href="http://www.mindspace.gr/">mindspace</a>| 
-      	<a href="http://www.innovathens.gr/">innovathens</a>| 
-      	<a href="http://thecube.gr/">thecube</a>| 
 
 <br><font color=#fffff size=2.5><b>FilmNet</b></font><br>  
-<a href="http://greekdocumentaries2.blogspot.gr/">greekdocumentaries</a>| 
-<a href="http://www.dailymotion.com/CosmosgreekDocumentaries">CosmosgreekDocumentaries</a>| 
-<a href="http://thegeeksmedia.blogspot.gr/">thegeeksmedia</a>|
-<a href="https://oipeirates.se/">oipeirates</a>|
-<a href="http://gamatotv.me/">gamatotv</a>|
+      <a href="http://greekdocumentaries2.blogspot.gr/">greekdocumentaries</a>| 
+      <a href="http://www.dailymotion.com/CosmosgreekDocumentaries">CosmosgreekDocumentaries</a>| 
+      <a href="http://thegeeksmedia.blogspot.gr/">thegeeksmedia</a>|
+      <a href="https://oipeirates.se/">oipeirates</a>|
+      <a href="http://gamatotv.me/">gamatotv</a>|
 
 <br><font color=#fffff size=2.5><b>more</b></font><br>  
     	<a href="http://www.dwrean.net/">Dwrean</a>| 
@@ -217,9 +214,10 @@ body, html {
   <br><font color=#fffff size=2.5><b>Friends</b></font><br>  
     	<a href="http://www.ardumotive.com/">ardumotive</a>| 
     	<a href="https://www.youtube.com/channel/UCboteGFyO5fTflI00DikhmA">@ria3w</a>|
-    
+<!-- =============================================== -->   
+    </div>
+  </div>
 </div>
 
-</div>
 </body>
 </html>
