@@ -1,4 +1,4 @@
-<!-- INDEX_27apr  -->
+<!-- INDEX_18may  -->
 
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -34,15 +34,62 @@ body, html {
 }
 </style>
 <body>
+
+
+    
+
+<!--  ///////////// QR  ///////////// -->
+
+
+
+
+<style>
+#overlay {
+    position: fixed;     display: none;
+    width: 100%;     height: 100%;
+    top: 0;     left: 0;     right: 0;
+    bottom: 0;     background-color: rgba(0,0,0,0.9);
+    z-index: 2;     cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;     left: 50%;
+    font-size: 20px;     color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+</style>
+
+<body onload="on()">
+
+<div id="overlay" onclick="off()">
+  <div id="text">
+<center><h3>scan & download the app</h3><img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png"style="width:90%"><p>or click anywhere to close this window</p>
+</center></div>
+</div>
+
+<script>
+function on() {document.getElementById("overlay").style.display = "block";}
+function off() {document.getElementById("overlay").style.display = "none";}
+</script>
+
+</body>
+
+<!--  ///////////// QR  ///////////// -->
+
+
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
     <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="https://alexandroshub.github.io/cv.html" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"><i class="fa fa-file-text-o"></i>  My Cv</a></p>
-
-<span class="w3-tag w3-black w3-hide-small"><a href="https://alexandroshub.github.io/about" style="text-decoration: none">ABOUT</a></span> <!-- <span class="w3-tag w3-black w3-margin-bottom"><a href="https://alexandroshub.github.io/cv.html" style="text-decoration: none">CV</a></span> --> <span class="w3-tag w3-black w3-margin-bottom"><a href="https://alexandroshub.github.io/portfolio.html" style="text-decoration: none">PORTFOLIO</a></span>  <span class="w3-tag w3-black w3-margin-bottom"><a href="https://robodayblog.wordpress.com" style="text-decoration: none">BLOG</a></span>
+    <p>
+    <a class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"  onclick="on()">
+    <i class="fa fa-android"></i> NEW APP</a></p>
+    
+<span class="w3-tag w3-black w3-hide-small"><a href="https://alexandroshub.github.io/about" style="text-decoration: none">ABOUT</a></span>  <span class="w3-tag w3-black w3-margin-bottom"><a href="https://alexandroshub.github.io/cv.html" style="text-decoration: none">CV</a></span> <span class="w3-tag w3-black w3-margin-bottom"><a href="https://alexandroshub.github.io/portfolio.html" style="text-decoration: none">PORTFOLIO</a></span>  <span class="w3-tag w3-black w3-margin-bottom"><a href="https://robodayblog.wordpress.com" style="text-decoration: none">BLOG</a></span>
   </div> 
   <span class="w3-hide-small">
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
