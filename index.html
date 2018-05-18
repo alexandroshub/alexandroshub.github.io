@@ -1,4 +1,4 @@
-<!-- INDEX_18may  -->
+<!-- INDEX_18may.v2  -->
 
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -34,49 +34,21 @@ body, html {
 }
 </style>
 <body>
-
-
-    
-
-<!--  ///////////// QR  ///////////// -->
-
-
-
-
+<!--  ////////////////////////// QR  ////////////////////////// -->
 <style>
-#overlay {
-    position: fixed;     display: none;
-    width: 100%;     height: 100%;
-    top: 0;     left: 0;     right: 0;
-    bottom: 0;     background-color: rgba(0,0,0,0.9);
-    z-index: 2;     cursor: pointer;
-}
-
-#text{
-    position: absolute;
-    top: 50%;     left: 50%;
-    font-size: 20px;     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
+#overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;}
+#text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);}
 </style>
 
-<body onload="on()">
-
-<div id="overlay" onclick="off()">
-  <div id="text">
-<center><h3>scan & download the app</h3><img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png"style="width:90%"><p>or click anywhere to close this window</p>
-</center></div>
-</div>
+<body onload="on()"><div id="overlay" onclick="off()"><div id="text">
+<center><h3>scan & download the app</h3><img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"><p>or click anywhere to close this window</p>
+</center></div></div>
 
 <script>
 function on() {document.getElementById("overlay").style.display = "block";}
 function off() {document.getElementById("overlay").style.display = "none";}
-</script>
-
-</body>
-
-<!--  ///////////// QR  ///////////// -->
+</script></body>
+<!--  ////////////////////////// QR  ////////////////////////// -->
 
 
 <!-- Header with full-height image -->
