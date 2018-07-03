@@ -1,5 +1,5 @@
-<!-- INDEX _26Jun2018_  -->
-
+<!-- INDEX _3Jul2018_  -->
+<!-- WHAT'S NEW: mesenger chat -->
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -34,6 +34,27 @@ body, html {
 }
 </style>
 <body>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="#A9A9A9"
+  logged_in_greeting="Hi! How can i help you?"
+  logged_out_greeting="Hi! How can i help you?">
+</div>    
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+    
 <!--  ////////////////////////// QR  ////////////////////////// -->
 <style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3><img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"><p>or click anywhere to close this window</p> </center></div></div> <script>function on() {document.getElementById("overlay").style.display = "block";} function off() {document.getElementById("overlay").style.display = "none";}</script>
 <!--  ////////////////////////// QR  ////////////////////////// -->
