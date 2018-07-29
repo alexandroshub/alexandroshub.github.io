@@ -1,5 +1,5 @@
-<!-- INDEX _3Jul2018_  -->
-<!-- WHAT'S NEW: mesenger chat 2 -->
+<!-- INDEX _29Jul2018_  -->
+<!-- WHAT'S NEW: mesenger chat/ hide some icons /  fix some code-->
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -34,8 +34,7 @@ body, html {
 }
 </style>
 <body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-<!-- Load Facebook SDK for JavaScript -->
+<!--  ////////////////////////// messenger_platform  ////////////////////////// --> <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -44,7 +43,6 @@ body, html {
   js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
   attribution=setup_tool
@@ -53,12 +51,13 @@ body, html {
   logged_in_greeting="Hi! How can i help you?"
   logged_out_greeting="Hi! How can i help you?">
 </div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-    
-<!--  ////////////////////////// QR  ////////////////////////// -->
-<style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3><img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"><p>or click anywhere to close this window</p> </center></div></div> <script>function on() {document.getElementById("overlay").style.display = "block";} function off() {document.getElementById("overlay").style.display = "none";}</script>
-<!--  ////////////////////////// QR  ////////////////////////// -->
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
 
+<!--  ////////////////////////// QR  ////////////////////////// -->
+<style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3>
+<a href="https://snappy.appypie.com/index/app-download/appId/9a986a9e031f">
+<img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"></a><p>or click anywhere to close this window</p> </center></div></div> <script>function on() {document.getElementById("overlay").style.display = "block";} function off() {document.getElementById("overlay").style.display = "none";}</script>
+<!--  ////////////////////////// QR  ////////////////////////// -->
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
@@ -66,16 +65,15 @@ body, html {
     <span class="w3-jumbo w3-hide-small">Welcome</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Welcome </span><br>
    
-<span class="w3-large">Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία ,<br> όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία..</span>
-    <p>
-    <a class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"  onclick="on()">
-    <i class="fa fa-android"></i> NEW APP</a></p>
+<span class="w3-large">Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία,<br> όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία..</span>
+
+<p><a class="w3-button w3-green w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" onclick="on()"><i class="fa fa-android"></i> NEW APP</a></p>
     
 <span class="w3-tag w3-blue w3-hide-small"><a href="https://alexandroshub.github.io/about" style="text-decoration: none" title="About my Website"><i class="fa fa-info-circle"></i></a></span>  
 
-<span class="w3-tag w3-red w3-margin-bottom"><a href="https://alexandroshub.github.io/support.html" style="text-decoration: none"><i class="fa fa-support"></i></a></span>
+<!-- <span class="w3-tag w3-red w3-margin-bottom"><a href="https://alexandroshub.github.io/support.html" style="text-decoration: none"><i class="fa fa-support"></i></a></span>
 
-<span class="w3-tag w3-green w3-margin-bottom"><a style="text-decoration: none" onclick="on()"><i class="fa fa-android"></i></a></span>
+<span class="w3-tag w3-green w3-margin-bottom"><a style="text-decoration: none" onclick="on()"><i class="fa fa-android"></i></a></span> -->
 
 <span class="w3-tag w3-orange w3-margin-bottom"><a href="https://robodayblog.wordpress.com" style="text-decoration: none"title="Check out my Blog"><i class="fa fa-rss"></i></a></span> 
 
@@ -86,17 +84,21 @@ body, html {
 <span class="w3-tag w3-purple w3-margin-bottom"><a href="https://alexandroshub.github.io/links.html" style="text-decoration: none" title="Check out more Links"><i class="fa fa-external-link"></i></a></span> 
 
   </div> 
+  
   <span class="w3-hide-small">
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-<!-- twitter --><a href=" https://twitter.com/A_Papaspyrou "><i class="fa fa-twitter"></i></a>
+<!-- twitter --><a href=" https://twitter.com/A_Papaspyrou" title="twitter"><i class="fa fa-twitter"></i></a>
+<!-- facebook -->
+<a href="https://www.facebook.com/papaspyrou.a" title="facebook"><i class="fa fa-facebook-f"></i></a>
 <!-- linkedin -->
-<a href="https://gr.linkedin.com/in/alexandrospapaspyrou" title="linkedin"><i class="fa fa-linkedin"></i></a>
-<!-- github --><a href="https://github.com/alexandroshub"><i class="fa fa-github-alt" ></i></a> | 
+<a href="https://gr.linkedin.com/in/alexandrospapaspyrou" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+<!-- github --><a href="https://github.com/alexandroshub" title="github"><i class="fa fa-github-alt" ></i></a> | 
 <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:270px;" alt="Signature" align="bottom">
 </div></span>
 </header>
+<!--////////////////////////// /header ////////////////////////// -->
+<!-- ////////////////////////// Footer ////////////////////////// -->
 
-<!-- Footer -->
 <!-- 
 <style>
 .accordion {    background-color: #eee;    color: #444;  cursor: pointer;   padding: 18px;    width: 100%;   border: none;   text-align: left;    outline: none;   font-size: 15px;   transition: 0.4s; }
@@ -151,8 +153,8 @@ function onClick(element) { document.getElementById("img01").src = element.src; 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
 </script>
-<!-- OLD CHAT OR EMAIL https://www.tawk.to/  -->
-<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
+<!-- OLD CHAT OR EMAIL https://www.tawk.to/  
+<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script> 
  <script>
 // Modal Image Gallery
 function onClick(element) {
@@ -172,13 +174,14 @@ function w3_open() {
 }
 // Close the sidebar with the close button
 function w3_close() {mySidebar.style.display = "none";}
-</script>
+</script> -->
 </body>
 </html>
 <!--
 Contact: a-papaspyrou@outlook.com.gr
 Mob: 00306949452023
-Sub: papaspyrou.alexandros@gmail.com
-Support: alexispapy@gmail.com
+Mob: 00306944
+24/7 Support: alexispapy@gmail.com
 Support: alexispapy@outlook.com
+Sub: papaspyrou.alexandros@gmail.com
 -->
