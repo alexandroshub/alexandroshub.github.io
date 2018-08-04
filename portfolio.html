@@ -1,4 +1,4 @@
-<!-- Portfolio _10Jul 2018_  -->
+<!-- Portfolio _4Aug18_  -->
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -6,21 +6,27 @@
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
 -->
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <title>Papaspyrou</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html { height: 100%; line-height: 1.8; }
+.bgimg { background-position: center; background-size: cover; min-height: 75%; background-image: url("https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg"); }
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
 </style>
 <body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<body>
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -29,7 +35,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
+<!-- Your customer chat code -->
 <div class="fb-customerchat"
   attribution=setup_tool
   page_id="1610585155641169"
@@ -37,20 +43,82 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   logged_in_greeting="Hi! How can i help you?"
   logged_out_greeting="Hi! How can i help you?">
 </div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+
+<!-- ======================= -->
+<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<div class="w3-top">
+	<div class="w3-bar w3-gray w3-card-2 w3-opacity-min w3-hover-opacity-off" id="myNavbar">
+<a href="https://alexandroshub.github.io" class="w3-bar-item w3-button w3-wide">
+<img src="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
+<b> Papaspyrou</b><span class="w3-hide-small"> Alexandros</span></a>
+
+<!-- Right-sided navbar links -->
+<!-- <div class="w3-right w3-hide-small">
+	<a href="https://alexandroshub.github.io/projects.html" class="w3-bar-item w3-button"><i class="fa fa-send-o"></i> Creations</a>
+	<a href="https://alexandroshub.github.io/me.html" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Me </a> 
+	<a href="https://alexandroshub.github.io/map.html" class="w3-bar-item w3-button"><i class="fa fa-map-o"></i> Map</a>
+	<a href="https://robodayblog.wordpress.com/" target="_blank" class="w3-bar-item w3-button"><i class="fa fa-commenting-o"></i> Thoughts</a>
+	<a href="https://m.me/papaspyrou.alexandros"  class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i></a> 
+</div> -->
+<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right " onclick="w3_open()"><i class="fa fa-bars"></i></a></div></div>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left " style="display:none" id="mySidebar">
+<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red" >Close ×</a> 
+	<a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-commenting-o"></i>  &nbsp; Blog</a> 
+    	<a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-commenting-o"></i>  &nbsp; Links</a> 
+	<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+<hr>
+    &nbsp; <a href="https://getpocket.com/@27bdfp78TaK97g4e6dA987eA2dgaT938154I38G999WdrUw2a6c6ei72S21olQ68">
+    <i class="fa fa-get-pocket w3-hover-opacity" style="font-size:14px;color:white"></i></a> &nbsp; | 
+    	&nbsp; <a href="https://www.facebook.com/papaspyrou.a">
+    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+    	&nbsp; <a href=" https://twitter.com/A_Papaspyrou ">
+    <i class="fa fa-twitter w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+    	&nbsp; <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
+    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
+   <center> <img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:180px;" alt="Signature" align="bottom"></center>
+  	<!--  -->
+</nav>
+<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() { if (mySidebar.style.display === 'block') 
+{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";} </script>
+<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- ======================= -->
+
+<header class="w3-display-container w3-content w3-wide  w3-grayscale-min" style="max-width:1600px;min-width:75%" id="home">
+
+<img class="w3-image" src="https://78.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg" alt="photo" width="1600" height="800">
+
+<div class="w3-display-middle w3-center">
+<span class="w3-text-white w3-hide-small" style="font-size:130px">#Portfolio</span>
+<span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">#Portfolio</span></div>
+
+<div class="w3-display-bottomleft w3-padding-large w3-opacity">
+<span class="w3-tag">By: Papaspyrou Alexandros</span></div>
+ <div class="w3-display-bottomright w3-center w3-padding-large w3-hide-small w3-hide-medium">
+    <span class="w3-text-white">"Σχεδόν ό,τι κάνεις είναι ασήμαντο, αλλά είναι σημαντικό να το κάνεις."</span>
+  </div>
+</header>
 
 
-<!-- BAR Section //////////////////////////////////////////////////////////-->
-<div class="w3-bar w3-dark-grey  w3-large ">
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-padding-large"><i class="fa fa-home w3-margin-right"></i>Home</a>
-<a href="https://www.dropbox.com/sh/a17b3xchllgy4j9/AAA4G9X0O5gAYg0MqqYIc8qva?dl=0" class="w3-bar-item w3-button w3-padding-large w3-right"><i class="fa fa-dropbox w3-margin-right" ></i>Files</a>
-</div><!-- ////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
 
 <!-- MAIN Section //////////////////////////////////////////////////////////-->
 <div class="w3-center w3-dark-grey w3-padding-16">
-  <h1 class="w3-jumbo"><b>Portfolio</b></h1>
-  <p>"Σχεδόν ό,τι κάνεις είναι ασήμαντο, αλλά είναι σημαντικό να το κάνεις."</p>
-  <br> <div class="w3-row-padding">
+  <h1 class="w3-jumbo"><b>Menu</b></h1>  
+	<div class="w3-row-padding">
 <!-- 1 -->    
 <div class="w3-col l3 m6 w3-margin-bottom">
   <div class="w3-display-container">
@@ -103,12 +171,19 @@ Files & Publications</div>
 </b></a></span>
 </div>
 <!-- ////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////// -->
+<div class="w3-row w3-container">
 
+<div class="w3-center w3-padding-64"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Αρχείο</span></div>
+</div>
+
+
+</div><!-- ////////////////////////////////////////////////////////// -->
 <!--NUM Section ////////////////////////////////////////////////////////// -->
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section"><span class="w3-xlarge">
   <i class="fa fa-code w3-margin-bottom w3-jumbo w3-center"></i>
-  <br>14+</span><br>Projects
+  <br>Coding</span>
   <br><span class="w3-tag w3-small w3-light-gray"><a href="https://alexandroshub.github.io/cpp.html"><b>C / C++</b></a></span>
     <br><span class="w3-tag w3-small w3-light-gray"><a href="https://alexandroshub.github.io/python.html"><b>Python</b></a></span>
     <br><span class="w3-tag w3-small w3-black"><b> Παιχνίδι σε VisualBasic για PC 
@@ -122,7 +197,7 @@ Files & Publications</div>
 
   <div class="w3-quarter w3-section"><span class="w3-xlarge">
   <i class="fa fa-folder-open-o w3-margin-bottom w3-jumbo"></i>
-  <br>55+</span><br>Projects
+  <br>Files</span>
    <br><span class="w3-tag w3-small w3-black"><b> Αρχείο με τις εργασίες μου</b>
 <a href="https://www.dropbox.com/sh/y7j320ldle8678d/AABMt-dGKjWB1ty2JnuflvcUa?dl=0"><i class="fa fa-dropbox"></i></a>
 <a href="https://www.dropbox.com/sh/63m0fmvfn96rwd5/AAA3YfooM9GAUJk_eMntRQjga?dl=0"><i class="fa fa-dropbox"></i></a>
@@ -130,8 +205,7 @@ Files & Publications</div>
 
   <div class="w3-quarter w3-section"><span class="w3-xlarge">
   <i class="fa fa-paper-plane-o w3-margin-bottom w3-jumbo"></i>
-  <br>89+</span><br>Projects
-  
+  <br>Publications</span><br>  
 <span class="w3-tag w3-small w3-black"><b>“ Η εξέλιξη των Η/Υ ”</b> (από τον άβακα στο Tablet) Μια εργασία για το μάθημα της Ιστορίας των Αυτομάτων & της Τεχνολογίας.
 <a href="https://issuu.com/a-papaspyrou/docs/computerevolution_alexandros_papasp
 "><i class="fa fa-file-text-o"></i></a>
@@ -143,7 +217,7 @@ Files & Publications</div>
 </div>
   <div class="w3-quarter w3-section"><span class="w3-xlarge">
   <i class="fa fa-gears w3-margin-bottom w3-jumbo"></i>
-  <br>150+</span><br>Projects
+  <br>Projects</span>
   <br><span class="w3-tag w3-small w3-light-gray"><a href="https://alexandroshub.github.io/arduino.html"><b>ARDUINO</b></a></span>
   <br><span class="w3-tag w3-small w3-light-gray"><a href="https://alexandroshub.github.io/raspberrypi"><b>raspberrypi</b></a></span>
     <br><span class="w3-tag w3-small w3-black"><b> Το κύκλωμα του Φωτοδιακόπτη</b><a href="https://www.dropbox.com/s/o2lbp2oxh7it4cz/Kremala.BETA.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>
@@ -151,32 +225,14 @@ Files & Publications</div>
 <br><span class="w3-tag w3-small w3-black"><b> Μελέτη και Κατασκευή Μichatron</b><a href="https://issuu.com/a-papaspyrou/docs/michatron_papaspyrou_alexandros"><i class="fa fa-file-text-o"></i></a>
 <a href="https://vimeo.com/141997888"><i class="fa fa-vimeo"></i></a>
 <a href="https://codebender.cc/embed/sketch:208552#Michatron.ino"><i class="fa fa-code"></i></a></span>
-    
 </div>
-</div><!-- ////////////////////////////////////////////////////////// -->
-
-<!--ALL Section ////////////////////////////////////////////////////////// -->
-<div class="w3-row w3-container">
-
-<div class="w3-center w3-padding-64"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Αρχείο</span></div>
-
-<div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">   <i class="fa fa-gears w3-margin-bottom w3-jumbo"></i></div>
-<div class="w3-col l3 m6 w3-grey w3-container w3-padding-16"><i class="fa fa-code w3-margin-bottom w3-jumbo w3-center"></i></div>
-<div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16"><i class="fa fa-paper-plane-o w3-margin-bottom w3-jumbo"></i></div>
-      
-<div class="w3-col l3 m6 w3-black w3-container w3-padding-16"><i class="fa fa-folder-open-o w3-margin-bottom w3-jumbo"></i></div>
-
-</div><!-- ////////////////////////////////////////////////////////// -->
-
-<br><br><br>
-
+</div>
 <!--Videos Section ////////////////////////////////////////////////////////// -->
 <div class="w3-center w3-black w3-padding-16">
   <h1 class="w3-jumbo"><b>Videos</b></h1>
   <!-- Main video --><p>
 <iframe id="YourID" name="video_feature" width="75%" height="400" src="https://www.youtube.com/embed/uVIjsjr_GVE" frameborder="0"></iframe>
-<!-- Other videos -->
-<br>
+<!-- Other videos --><br>
 <span class="w3-tag w3-small w3-light-gray"><a id="video_two" href="https://www.youtube.com/embed/fkQYsenF0og" target="video_feature"><b> LDR switch
 </b></a></span>
 <span class="w3-tag w3-small w3-gray"><a id="video_two" href="https://www.youtube.com/embed/KKg15xo4_SA" target="video_feature"><b> W3 University  </b></a></span>
@@ -187,23 +243,16 @@ Files & Publications</div>
 <a id="video_two" href="https://www.youtube.com/embed/dwVID5os1g0" target="video_feature"><b>ATMEGA 328</b></a></span>
 	<span class="w3-tag w3-small w3-gray"> 
 <a id="video_two" href="https://www.youtube.com/embed/takpmt5s5Ho" target="video_feature"><b>PLC - Ταινία Μεταφοράς</b></a></span>
-     
-
-
-
-<br>
-<!-- END videos --></p>
-</div><!-- ////////////////////////////////////////////////////////// -->
+<br></p></div>
+<!-- END videos ///////////////////////////////////////////////////////// -->
 
 <!--Footer Section ////////////////////////////////////////////////////////// -->
 <div class="w3-center w3-grey w3-padding-16">
 <a href="https://alexandroshub.github.io/index"><img src="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" style="width:40px;"></a>
-<br><i style="font-size:15px" class="fa">&#xf25e;</i> Papaspyrou Alexandros 2018
 <!-- Signature --><br><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:270px;" alt="Signature" align="bottom">
-</div><!-- ////////////////////////////////////////////////////////// -->
-
+</div>
 <!--menu links Section ////////////////////////////////////////////////////////// -->
-<div class="w3-center w3-black"> ABOUT | PORTFOLIO | BLOG | LINKS | CV 
+<div class="w3-center w3-black"> <i style="font-size:15px" class="fa">&#xf25e;</i> Papaspyrou Alexandros 2018
 </div><!-- ////////////////////////////////////////////////////////// -->
 
 </body>
