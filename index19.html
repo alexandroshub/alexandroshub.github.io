@@ -85,7 +85,26 @@ body, html { height: 100%; line-height: 1.8;}
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Welcome</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Welcome</span><br>
-   <span class="w3-large">Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία,<br> όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία..</span>
+  
+   
+   
+   
+  <body onload="typeWriter()">
+<p id="demo" class="w3-large"></p>
+<script>
+var i = 0;
+var txt = 'Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία, όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία .... ';
+var speed = 40;
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+</body>
+
     <p><a href="https://robodayblog.wordpress.com/" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">BLOG</a></p>
   </div> 
  <span class="w3-hide-small">
@@ -185,12 +204,13 @@ body, html { height: 100%; line-height: 1.8;}
 </div>
 
 <!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64" id="me">
+<div class="w3-container w3-light-grey w3-padding-64" id="me" >
   <div class="w3-row-padding">
-    <div class="w3-col m6">
+    <div class="w3-col m6" >
       <h3>About Me.</h3>
       <p>Γεννήθηκα και μεγάλωσα στην Αθήνα και από μικρός κατάλαβα το ενδιαφέρον μου για την επιστήμη, τις τεχνολογίες και την πληροφορική, για αυτό και επέλεξα να σπουδάσω και να ασχοληθώ με αυτό το αντικείμενο, αναζητώντας πάντα νέες ευκαιρίες και πάντα ψάχνοντας για καινοτομία.</p>
     <p><a href="https://alexandroshub.github.io/cv.html" class="w3-button w3-black"><i class="fa fa-user-o"></i> CV</a> <a href="https://alexandroshub.github.io/cv.html" class="w3-button w3-blue"><i class="fa fa-linkedin w3-hover-opacity"></i></a></p>
+   
     </div>
     <div class="w3-col m6">
       <p class="w3-wide"><i class="fa fa-laptop w3-margin-right"></i>Projects </p>
@@ -208,6 +228,7 @@ body, html { height: 100%; line-height: 1.8;}
     </div>
   </div>
 </div>
+
 
 <!-- MAIN Section //////////////////////////////////////////////////////////-->
 <div class="w3-center w3-dark-grey w3-padding-16">
