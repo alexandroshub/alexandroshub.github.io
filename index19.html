@@ -85,26 +85,17 @@ body, html { height: 100%; line-height: 1.8;}
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">Welcome</span><br>
     <span class="w3-xxlarge w3-hide-large w3-hide-medium">Welcome</span><br>
-  
-   
-   
-   
-  <body onload="typeWriter()">
+
+<body onload="typeWriter()">
 <p id="demo" class="w3-large"></p>
 <script>
 var i = 0;
-var txt = 'Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία, όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία .... ';
-var speed = 40;
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
+var txt = "Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία, όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία .... ";
+var speed = 40; function typeWriter() {
+if (i < txt.length) {  document.getElementById("demo").innerHTML += txt.charAt(i); i++; setTimeout(typeWriter, speed);}}
 </script>
 </body>
-
+<!-- <span class="w3-large">Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία,<br> όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία..</span> -->
     <p><a href="https://robodayblog.wordpress.com/" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">BLOG</a></p>
   </div> 
  <span class="w3-hide-small">
