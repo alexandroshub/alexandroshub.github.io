@@ -1,0 +1,67 @@
+<!--
+░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+Welcome in my personal website 100% HTML Hosted by Github
+Handcrafted With ❤ By: Alexandros Papaspyrou
+-->
+<!DOCTYPE html>
+<html>
+<title>Papaspyrou</title>
+<link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bgimg {
+    background-image: url('https://cdn.pixabay.com/photo/2015/03/26/10/58/apple-692186_960_720.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+</style>
+<body>
+
+<div class="bgimg">
+  <div class="w3-display-topmiddle w3-large" style="padding:24px 48px">
+    <p> 
+    <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:90px;">    </p>
+  </div>
+ <div class="w3-display-middle w3-large" style="padding:14px 28px">
+    <p>
+ <img src="https://www.freepngimg.com/thumb/enter/2-2-enter-png-picture-thumb.png " style="width:150px;" class="w3-left w3-hover-opacity" onclick="typeWriter()"> 
+</p>
+ </div>
+   <div class="w3-display-topleft w3-large" style="padding:14px 28px">
+   <p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Αυτή τη στιγμή γίνεται Update. Ελάτε ξανά.';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+  </div>
+ <div class="w3-display-bottommiddle w3-large" style="padding:14px 28px">
+    <p><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:400px;"></p>
+  </div>
+</div>
+
+</body>
+</html>
