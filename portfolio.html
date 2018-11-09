@@ -1,4 +1,3 @@
-
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -8,7 +7,7 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou</title>
+<title>Papaspyrou | Portfolio</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,7 @@ body, html {
 .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png");
+    background-image: url("https://66.media.tumblr.com/a28d0e003dc51bc821c3ffac661a9702/tumblr_pbnlsrwxmW1si59zfo9_1280.png");
     min-height: 75%;
 }
 .menu {
@@ -53,41 +52,34 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
 
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- ////////////////////////// Navbar ////////////////////////// -->
 <div class="w3-top">
-	<div class="w3-bar w3-gray w3-card-2 w3-opacity-min w3-hover-opacity-off" id="myNavbar">
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
-<img src="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
-<b> Papaspyrou</b><span class="w3-hide-small"> Alexandros</span></a>
-
-<!-- Right-sided navbar links -->
- <div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/portfolio.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-orange w3-grayscale-min" title="Check out my Portfolio"><i class="fa fa-folder-open-o"></i></a>
-<a href="https://alexandroshub.github.io/cv.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-black w3-grayscale-min" title="Check out my CV"><i class="fa fa-user-circle-o"></i></a> 
-<a href="https://alexandroshub.github.io/links.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-purple w3-grayscale-min" title="Check out more links"><i class="fa fa-external-link"></i></a>
-<a href="https://robodayblog.wordpress.com" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-green w3-grayscale-min" title="Check out my Blog"><i class="fa fa-rss"></i></a>
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
+<img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
+<b> Papaspyrou</b><span class="w3-hide-small w3-hide-medium"> Alexandros</span></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right ">
+    <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cogs"></i>  Projects</a>
+    <a href="#code" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-code"> </i>  Code</a>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  </div>
+ </div>  
 </div>
-<!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i></a></div></div>
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large w3-hide-medium" style="display:none" id="mySidebar">
-<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red" >Close ×</a> 
-	<a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-close"></i>  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
 	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-commenting-o"></i>  &nbsp; Blog</a> 
-    	<a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-external-link"></i>  &nbsp; Links</a> 
-	<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<hr>
-    &nbsp; <a href="https://getpocket.com/@27bdfp78TaK97g4e6dA987eA2dgaT938154I38G999WdrUw2a6c6ei72S21olQ68">
-    <i class="fa fa-get-pocket w3-hover-opacity" style="font-size:14px;color:white"></i></a> &nbsp; | 
-    	&nbsp; <a href="https://www.facebook.com/papaspyrou.a">
-    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href=" https://twitter.com/A_Papaspyrou ">
-    <i class="fa fa-twitter w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
-    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-   <center> <img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:180px;" alt="Signature" align="bottom"></center>
-  	<!--  -->
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+    <hr>
+    ENJOY THE 2019 VERSION
+	<hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
 </nav>
 <script>// Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
@@ -112,7 +104,7 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 
   </div>
   <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: 1.10.2018</span>
+    <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: 10.11.2018</span>
   </div>
 </header>
 
@@ -184,22 +176,22 @@ function w3_close() {mySidebar.style.display = "none";} </script>
   </div>
 </div>
  </div>
-
-<h5 class="w3-center w3-padding-64">
-   <span class="w3-tag w3-wide">Blog</span></h5>
-   <!--BLOG Section ////////////////////////////////////////////////////////// -->
+ </div>
+<h5 class="w3-center w3-padding-64" id="projects">
+   <span class="w3-tag w3-wide">Projects</span></h5>
+   <!--BLOG Section ////////////////////////////////////////////////////////// ->
 <div class="w3-center">
 <iframe src="https://robodayblog.wordpress.com" height="400" width="75%"></iframe>
 </div>
 <!-- ////////////////////////////////////////////////////////// -->
  
-    <h5 class="w3-center w3-padding-64">
-   <span class="w3-tag w3-wide">Videos</span></h5>
-<!--Videos Section ////////////////////////////////////////////////////////// -->
+    <h5 class="w3-center w3-padding-64" id="code">
+   <span class="w3-tag w3-wide">CODE</span></h5>
+<!--Videos Section ////////////////////////////////////////////////////////// ->
 <div class="w3-center">
-  <!-- Main video --><p>
+  <!-- Main video -><p>
 <iframe id="YourID" name="video_feature" width="75%" height="400" src="https://www.youtube.com/embed/uVIjsjr_GVE" frameborder="0"></iframe>
-<!-- Other videos --><br>
+<!-- Other videos -><br>
 <span class="w3-tag w3-small w3-light-gray"><a id="video_two" href="https://www.youtube.com/embed/fkQYsenF0og" target="video_feature"><b> LDR switch
 </b></a></span>
 <span class="w3-tag w3-small w3-gray"><a id="video_two" href="https://www.youtube.com/embed/KKg15xo4_SA" target="video_feature"><b> W3 University  </b></a></span>
@@ -211,7 +203,7 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 	<span class="w3-tag w3-small w3-gray"> 
 <a id="video_two" href="https://www.youtube.com/embed/takpmt5s5Ho" target="video_feature"><b>PLC - Ταινία Μεταφοράς</b></a></span>
 <br></p></div>
-<!-- END videos ///////////////////////////////////////////////////////// -->
+<!- END videos ///////////////////////////////////////////////////////// -->
 
 </div>
 <!-- End page content -->
