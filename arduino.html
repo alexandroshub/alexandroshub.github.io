@@ -1,5 +1,4 @@
-<!--10/7/18
-
+<!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
@@ -8,7 +7,7 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou</title>
+<title>Papaspyrou | Portfolio > Arduino</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +15,13 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
+    line-height: 1.8;
+}
+.w3-bar .w3-button {
+    padding: 16px;
 }
 .bgimg {
     background-position: center;
@@ -49,20 +52,42 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
 
-<!-- Links (sit on top) -->
+<!-- ////////////////////////// Navbar ////////////////////////// -->
 <div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3"><a href="https://alexandroshub.github.io/index.html" class="w3-button w3-block w3-black">HOME</a></div>
-    <div class="w3-col s3"><a href="#about" class="w3-button w3-block w3-black">ABOUT</a></div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">PROJECTS</a>
-    </div>
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
+<img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
+<b> Papaspyrou</b><span class="w3-hide-small w3-hide-medium"> Alexandros</span></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right ">
+    <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-cogs"></i>  Projects</a>
+    <a href="#code" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-code"> </i>  Code</a>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
   </div>
+ </div>  
 </div>
-
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-close"></i>  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+    <hr>
+    ENJOY THE 2019 VERSION
+	<hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+</nav>
+<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() { if (mySidebar.style.display === 'block') 
+{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";} </script>
+<!--  ////////////////////////// Navbar  ////////////////////////// -->
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
 	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
@@ -90,7 +115,7 @@ body, html {
 Το αντικείμενο του Αυτοματισμού, είναι γενικό και πολύπλευρο, για αυτό και εφαρμογές του βρίσκονται πολυάριθμες στην καθημερινή ζωή και στη βιομηχανία. Ο Αυτοματισμός είναι ένα από τα πιο “ιστορικά” πεδία της επιστήμης, διότι η ανάπτυξή του συνοδεύει την εξέλιξη όλων των άλλων τεχνολογιών. Η γνώση του Αυτοματισμού, επομένως, αποτελεί γνώση της “τεχνολογικής ιστορίας” μας και της κληρονομιάς μας. Στην περίπτωση του Αυτοματισμού, μάλιστα, η ιστορία αυτή είναι ιδιαίτερα πλούσια μιας και οι Αρχαίοι Έλληνες επέδειξαν ιδιαίτερη εφευρετικότητα και ανέπτυξαν πολλές και σημαντικές λύσεις αυτοματισμού, που χρησιμοποιούμε μέχρι και σήμερα. Χάρη στην καθολική και γενικευμένη διάδοση των εφαρμογών του, ο Αυτοματισμός αποκτά ένα σημαντικό ρόλο στη ζωή μας.</p>
     
     <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">WELCOME</span></h5>
-    <p>Καλώς ήλθατε στο κόσμο τον ηλεκτρονικών και των αυτοματισμών! Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…  Μέσα από αυτή την ενότητα θέλω να σας βοηθήσω να γνωρίσετε και να αγαπήσετε τον κόσμο των ηλεκτρονικών. Τα Tutorials θα σας εξηγούν, διδάσκουν, και θα σας εμπνέουν στο να παίξετε και να ψαχτείτε με τα ηλεκτρονικά και τους αυτοματισμούς! Θα έχουμε ένα ευρύ φάσμα από tutorials που θα καλύπτουν τόσο τη βασική θεωρία των ηλεκτρονικών και παραδείγματα για την κατασκευή project.</p>
+    <p>Καλώς ήλθατε στο κόσμο τον ηλεκτρονικών και των αυτοματισμών! Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…  Μέσα από αυτή την ενότητα θέλω να σας βοηθήσω να γνωρίσετε και να αγαπήσετε τον κόσμο των ηλεκτρονικών. Τα Tutorials θα σας εξηγούν, διδάσκουν, και θα σας εμπνέουν στο να παίξετε και να ψαχτείτε με τα ηλεκτρονικά και τους αυτοματισμούς! Θα έχουμε ένα ευρύ φάσμα από tutorials που θα καλύπτουν τόσο τη βασική θεωρία των ηλεκτρονικών και παραδείγματα για την κατασκευή project.</p><a href="https://create.arduino.cc/projecthub/Papaspyrou_A" class="w3-button w3-blue"><i class="fa fa-th"> </i>projecthub</a>
     <div class="w3-panel w3-leftbar w3-light-grey">
       <p><i>http://www.ardumotive.com</i></p>
       <p>The 1st Arduino Playgroung in Greece - Open Source Hardware</p>
