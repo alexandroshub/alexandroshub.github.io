@@ -1,3 +1,4 @@
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -52,41 +53,32 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
 
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- ////////////////////////// Navbar ////////////////////////// -->
 <div class="w3-top">
-	<div class="w3-bar w3-gray w3-card-2 w3-opacity-min w3-hover-opacity-off" id="myNavbar">
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
-<img src="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
-<b> Papaspyrou</b><span class="w3-hide-small"> Alexandros</span></a>
-
-<!-- Right-sided navbar links -->
- <div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/portfolio.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-orange w3-grayscale-min" title="Check out my Portfolio"><i class="fa fa-folder-open-o"></i></a>
-<a href="https://alexandroshub.github.io/cv.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-black w3-grayscale-min" title="Check out my CV"><i class="fa fa-user-circle-o"></i></a> 
-<a href="https://alexandroshub.github.io/links.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-purple w3-grayscale-min" title="Check out more links"><i class="fa fa-external-link"></i></a>
-<a href="https://robodayblog.wordpress.com" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-green w3-grayscale-min" title="Check out my Blog"><i class="fa fa-rss"></i></a>
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
+<img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
+<b> Papaspyrou</b><span class="w3-hide-small w3-hide-medium"> Alexandros</span></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right ">
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  </div>
+ </div>  
 </div>
-<!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i></a></div></div>
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large w3-hide-medium" style="display:none" id="mySidebar">
-<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red" >Close ×</a> 
-	<a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"> Close ×</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
 	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-commenting-o"></i>  &nbsp; Blog</a> 
-    	<a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-external-link"></i>  &nbsp; Links</a> 
-	<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<hr>
-    &nbsp; <a href="https://getpocket.com/@27bdfp78TaK97g4e6dA987eA2dgaT938154I38G999WdrUw2a6c6ei72S21olQ68">
-    <i class="fa fa-get-pocket w3-hover-opacity" style="font-size:14px;color:white"></i></a> &nbsp; | 
-    	&nbsp; <a href="https://www.facebook.com/papaspyrou.a">
-    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href=" https://twitter.com/A_Papaspyrou ">
-    <i class="fa fa-twitter w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
-    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-   <center> <img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:180px;" alt="Signature" align="bottom"></center>
-  	<!--  -->
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+    <hr>
+    ENJOY THE 2019 VERSION
+	<hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
 </nav>
 <script>// Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
@@ -134,6 +126,7 @@ function w3_close() {mySidebar.style.display = "none";} </script>
  -->
 </span><br>  
 		<a href="http://www.sev.org.gr">sev</a> | 
+		<a href="http://www.sepe.gr/">sepe</a> | 
 		<a href="https://www.meetup.com">meetup</a> | 
        	<a href="https://www.eventbrite.co.uk">eventbrite</a> | 
   		<a href="http://www.mec.gr/events">mec</a> | 
@@ -170,9 +163,9 @@ function w3_close() {mySidebar.style.display = "none";} </script>
         <a href="http://www.securitymanager.gr/newsite/index.php">securitymanager</a>| 
         <a href="https://www.hackster.io/">hackster</a>| 
     <br><span class="w3-red">Mobile & Apps</span>
-		<a href="http://everycircuit.com/">everycircuit</a>  |  
-        <a href="https://scratch.mit.edu">scratch</a>  |        
-        <a href="http://appinventor.mit.edu/explore/">appinventor</a>  |   
+		<a href="http://everycircuit.com/">everycircuit</a>  | 
+        <a href="https://scratch.mit.edu">scratch</a>  |       
+        <a href="http://appinventor.mit.edu/explore/">appinventor</a>  | 
       	<a href="http://www.doctorandroid.gr/">doctorandroid</a>  |         
 	<br><span class="w3-red">Shopping</span>
 		<a href="https://www.hellasdigital.gr/">hellasdigital</a>|
@@ -180,18 +173,22 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 		<a href="https://grobotronics.com/">grobotronics</a>|
 		<a href="http://www.gearbest.com/">gearbest</a> | 
  		<a href="https://www.edendrinos.gr">edendrinos</a> | 
+	<br><span class="w3-red">SEO</span>
+    	<a href="">-</a> | 
 
 <br><span class="w3-tag w3-black">NEWS</span>
   	<br><span class="w3-red"> NEWSPAPERS </span>
 		<a href="http://www.efsyn.gr/epistimi"> efsyn</a> | 
 		<a href="https://www.naftemporiki.gr/techscience">naftemporiki</a> | 
-		<a href="http://www.skai.gr/news/technology/">skai</a> |     		 
-        <a href="http://www.kathimerini.gr/technology">kathimerini</a> |    
+		<a href="http://www.skai.gr/news/technology/">skai</a> |     
+        <a href="https://www.bloomberg.com/technology">bloomberg</a> |  
+        <a href="https://www.huffingtonpost.gr/news/tech/">huffingtonpost</a> |  
+        <a href="http://www.kathimerini.gr/technology">kathimerini</a> | 
         <a href="http://www.tovima.gr/science/">tovima</a> |   
         <a href="https://www.protothema.gr/technology/">protothema</a> | 
         <a href="http://www.iefimerida.gr/τεχνολογία">iefimerida</a>  |
         <a href="http://www.in.gr/tech/">in</a>  |
-         <a href="http://www.ana.gr/home/18/Epistimi">ana</a>  |
+        <a href="http://www.ana.gr/home/18/Epistimi">ana</a>  |
   	<br><span class="w3-red"> BLOGS </span>
 		<a href="http://www.infocom.gr/"> infocom</a>  | 
         <a href="http://www.insomnia.gr/"> Insomnia</a>  |  
@@ -199,10 +196,11 @@ function w3_close() {mySidebar.style.display = "none";} </script>
         <a href="http://lifehacker.com/">lifehacker</a>| 
         <a href="http://www.pcsteps.gr/">pcsteps</a> | 
         <a href="https://www.adslgr.com">adslgr</a> | 
+        <a href="https://dimitrology.com/">dimitrology</a> |        
   	<br><span class="w3-red"> MAGAZINE </span>
 		<a href="https://gr.pcmag.com/">pcmag</a> |         
         <a href="http://www.onlinemagazine.gr/">onlinemagazine</a> |    
-        <a href="http://www.techinsider.gr/">techinsider</a> |   
+        <a href="http://www.techinsider.gr/">techinsider</a> |         <a href="http://www.itech4u.gr/">itech4u</a> |
   	<br><span class="w3-red"> MORE </span>
     	<a href="http://www.dwrean.net/"> Dwrean</a>  |  
     	<a href="http://www.xrisima.com/">Xrisima</a>  |  
@@ -331,6 +329,22 @@ function w3_close() {mySidebar.style.display = "none";} </script>
         <a href="https://m.esa.int/ESA">ESA</a> | 
     <br><span class="w3-red">FRIENDS</span> 
         <a href="https://ekrestart.wordpress.com/">ekrestart</a> | 
+
+<br><span class="w3-tag w3-purple">MORE</span><br> 
+		<a href="https://www.sepenet.gr">sepenet</a>  |    
+        <a href="https://www.open.gr/">open</a>  |     	
+        <a href="http://www.runet.gr/">runet</a>  |      
+<!--
+		http://www.psounis.gr/
+        https://www.robby.gr/
+        http://automatismoi.freeservers.com/
+        http://automatismoi.freeservers.com/FUZZY/isagogiasafh.htm
+        https://pcinfo.gr/
+        https://www.eberus.com/
+        https://www.aqs.gr/
+        https://www.cqs.com.gr/
+-->     
+        
 </div></div></div></div></div>
 <!-- End page content -->
 
