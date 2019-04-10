@@ -19,32 +19,7 @@ body, html { height: 100%; line-height: 1.8;}
 .w3-bar .w3-button { padding: 16px;}
 </style>
 <body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// --> <!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="1610585155641169"
-  theme_color="#A9A9A9"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
-</div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
-
-<!--  ////////////////////////// QR  ////////////////////////// -->
-<style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3>
-<a href="https://snappy.appypie.com/index/app-download/appId/9a986a9e031f">
-<img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"></a><p>or click anywhere to close this window</p> </center></div></div> <script>function on() {document.getElementById("overlay").style.display = "block";} function off() {document.getElementById("overlay").style.display = "none";}</script>
-<!--  ////////////////////////// QR  ////////////////////////// -->
 <!-- ////////////////////////// Navbar ////////////////////////// -->
-
 <!-- Top menu -->
 <div class="w3-top">
   <div class="w3-black " style="max-width:100%;margin:auto">
@@ -55,9 +30,7 @@ body, html { height: 100%; line-height: 1.8;}
     </div>
   </div>
 </div>
-
 <!--
-
 
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card" id="myNavbar">
@@ -93,11 +66,7 @@ body, html { height: 100%; line-height: 1.8;}
 </nav>
 
  
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONTACT ME</span></h5>
   
-  
-
-    <div id="x" class="w3-container menu w3-padding-48 w3-card"> 
 <div class="w3-third  w3-middle" >
 <img src="https://66.media.tumblr.com/442c9634fe2886cbd5125f22cc090087/tumblr_picpslSyeZ1si59zfo1_400.png" alt="Me" style="width:70%"> 
     
@@ -137,7 +106,7 @@ body, html { height: 100%; line-height: 1.8;}
 <a class="w3-button w3-light-grey" href=" https://alexispapy.tumblr.com "><i class="fa fa-tumblr"></i></a>
 <a class="w3-button w3-light-grey" href="  "><i class="fa fa-asterisk  "></i></a>
 </p>
-</div></div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
