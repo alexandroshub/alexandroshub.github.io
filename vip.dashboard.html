@@ -19,7 +19,15 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 #more {display: none;}
-</style>        <div class="w3-col m12">
+</style>    
+            <p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+</script>
+            
+            <div class="w3-col m12">
 <div class="w3-card w3-round w3-white">
 <div class="w3-container w3-padding">
 <h6 class="w3-opacity">Notes</h6>
