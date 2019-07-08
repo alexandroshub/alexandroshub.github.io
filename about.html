@@ -1,3 +1,4 @@
+<!-- ToU HTML  V.08.07.19 -->
 
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -35,60 +36,55 @@ body, html {
 }
 </style>
 <body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="1610585155641169"
-  theme_color="#A9A9A9"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
-</div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- ////////////////////////// Navbar ////////////////////////// -->
 
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- Top menu -->
 <div class="w3-top">
-<div class="w3-bar w3-black w3-card" id="myNavbar">
-    <a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
-<img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-left w3-hover-opacity"> &nbsp; 
-<b> Papaspyrou</b><span class="w3-hide-small w3-hide-medium"> Alexandros</span></a>
-
-<!-- Right-sided navbar links -->
- <div class="w3-right w3-hide-small">
-<a href="https://alexandroshub.github.io/portfolio.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-orange w3-grayscale-min" title="Check out my Portfolio"><i class="fa fa-folder-open-o"></i></a>
-<a href="https://alexandroshub.github.io/cv.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-black w3-grayscale-min" title="Check out my CV"><i class="fa fa-user-circle-o"></i></a> 
-<a href="https://alexandroshub.github.io/links.html" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-purple w3-grayscale-min" title="Check out more links"><i class="fa fa-external-link"></i></a>
-<a href="https://robodayblog.wordpress.com" style="text-decoration: none" class="w3-bar-item w3-button w3-hover-green w3-grayscale-min" title="Check out my Blog"><i class="fa fa-rss"></i></a>
+  <div id="myNavbar" style="max-width:100%;margin:auto; background:#1d1919">
+    <div class="w3-button w3-padding-16 w3-left w3-hover-red" onclick="w3_open()"><b><font color="#ebf0f6"><i class="fa fa-bars"></i></font></b></div>
+   		<div class="w3-center w3-padding-16">
+        <a href="https://alexandroshub.github.io/index.html" style="text-decoration: none" class="w3-bar-item  w3-wide">
+        <b><font color="#ebf0f6">Papaspyrou</font></b>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <b><font color="#ebf0f6">Alexandros</font></b></a> 
+    </div>
+  </div>
 </div>
-<!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i></a></div></div>
+
+<!--
+
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+  
+    <!-- Hide right-floated links on small screens and replace them with a menu icon ->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  
+<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
+ 
+<span class="w3-center w3-hide-small w3-hide-medium"><b>Papaspyrou</b></span>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <span class="w3-hide-small w3-hide-medium"><b>Alexandros</b></span></a> 
+</div>
+    <!-- Right-sided navbar links ->
+    <div class="w3-right ">
+    <a href="#port" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i></a>
+    <a href="#me" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-o"></i></a>
+  
+  </div>
+ </div>  
+</div>
+
+-->
 <!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card-2 w3-animate-left w3-hide-large w3-hide-medium" style="display:none" id="mySidebar">
-<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red" >Close ×</a> 
-	<a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
 	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-commenting-o"></i>  &nbsp; Blog</a> 
-    	<a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-external-link"></i>  &nbsp; Links</a> 
-	<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<hr>
-    &nbsp; <a href="https://getpocket.com/@27bdfp78TaK97g4e6dA987eA2dgaT938154I38G999WdrUw2a6c6ei72S21olQ68">
-    <i class="fa fa-get-pocket w3-hover-opacity" style="font-size:14px;color:white"></i></a> &nbsp; | 
-    	&nbsp; <a href="https://www.facebook.com/papaspyrou.a">
-    <i class="fa fa-facebook-official w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href=" https://twitter.com/A_Papaspyrou ">
-    <i class="fa fa-twitter w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-    	&nbsp; <a href="https://gr.linkedin.com/in/alexandrospapaspyrou">
-    <i class="fa fa-linkedin w3-hover-opacity" style="font-size:14px;color:white"></i></a>
-   <center> <img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:180px;" alt="Signature" align="bottom"></center>
-  	<!--  -->
+	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-teal"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+        <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
+    <hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
 </nav>
+
 <script>// Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 function w3_open() { if (mySidebar.style.display === 'block') 
@@ -101,11 +97,6 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
 <span class="w3-tag">By: Papaspyrou Alexandros</span> 
-<span class="w3-tag w3-red w3-hide-medium">@Privacy</span>
-<span class="w3-tag w3-red w3-hide-medium">@License</span>
-<span class="w3-tag w3-red w3-hide-medium">@Terms</span>
-<span class="w3-tag w3-red w3-hide-medium">@Help</span>
-<span class="w3-tag w3-red w3-hide-medium">@Contact</span>
  </div>
   <div class="w3-display-middle w3-center">
 
@@ -114,7 +105,7 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 
   </div>
   <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: 01.11.2018</span>
+    <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: 08.07.2019</span>
   </div>
 </header>
 
@@ -131,7 +122,9 @@ function w3_close() {mySidebar.style.display = "none";} </script>
   <div class="w3-content" style="max-width:950px">
  
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WELCOME</span></h5>
-  
+       <p>
+     Welcome in my personal website 100% HTML Hosted by Github Handcrafted With ❤ By: Alexandros Papaspyrou Affected by w3schools html
+     </p>
     <div class="w3-row w3-center w3-card w3-padding">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
         <div class="w3-col s6 tablink">ABOUT</div>
@@ -147,18 +140,9 @@ function w3_close() {mySidebar.style.display = "none";} </script>
     
    
     </div><div class="w3-twothird" >
-     <p>
-     Welcome in my personal website 
-<br>100% HTML Hosted by Github
-<br>Handcrafted With ❤ By: Alexandros Papaspyrou
-<br>Affected by w3schools html
-     </p>
+
  <p>
- <a class="w3-button w3-red" href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top">Sent me Email<i class="w3-margin-left fa fa-envelope"></i></a>
-  <a class="w3-button w3-blue" href="https://m.me/papaspyrou.alexandros"> Sent me Message<i class="w3-margin-left fa fa-comments-o"></i></a>
-  <a class="w3-button w3-green" href="tel:+306949452023">Call Me<i class="w3-margin-left fa fa-phone"></i></a>
-<a class="w3-button w3-light-grey" href="#">Talk to my BOT<i class="w3-margin-left fa fa-cogs"></i></a>
-<button onclick="skype()" class="w3-button w3-blue" ><i class="fa fa-skype"></i></button><script>function skype() { alert("a-papaspyrou@outlook.com.gr");}</script>
+
 </p></div></div>
 
 <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
@@ -168,15 +152,10 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 <a class="w3-button w3-light-grey" href="https://alexandroshub.github.io/portfolio.html">Check out my work<i class="w3-margin-left fa fa-folder-open"></i></a>
 <a class="w3-button w3-red" href="https://alexandroshub.github.io/plus.html"> PLUS<i class="w3-margin-left fa fa-plus-square"></i></a> 
 <a class="w3-button w3-blue" href="http://alexispapy0.wixsite.com/roboday"> ROBODAY<i class="w3-margin-left fa fa-plus-square"></i></a></p>
-<p><span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2017/05/21/αυτοματισμός/" style="text-decoration: none">AUTOMATION</a></span>   
- <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a href="https://robodayblog.wordpress.com/2016/05/22/arduino/" style="text-decoration: none">ARDUINO</a></span> <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/07/21/rasbery/" style="text-decoration: none">  RASPBERY PI</a></span><span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/05/30/iot-roboday/" style="text-decoration: none">IOT</a></span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">HACK</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">PC</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">ROBOTS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">FUTURE</span>
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom">NEWS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">PLUS</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">WEB</span>
-     <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/06/24/internet-1/" style="text-decoration: none">INTERNET</a></span>      
-     <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/05/26/wtf-is-linux/" style="text-decoration: none">LINUX</a></span>
-        
-        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://alexandroshub.github.io/links" style="text-decoration: none">LINKS</a></span>
- </p>
+ <a class="w3-button w3-red" href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top">Sent me Email<i class="w3-margin-left fa fa-envelope"></i></a>
+  <a class="w3-button w3-blue" href="https://m.me/papaspyrou.alexandros"> Sent me Message<i class="w3-margin-left fa fa-comments-o"></i></a>
+  <a class="w3-button w3-green" href="tel:+306949452023">Call Me<i class="w3-margin-left fa fa-phone"></i></a>
+<a class="w3-button w3-light-grey" href="#">Talk to my BOT<i class="w3-margin-left fa fa-cogs"></i></a>
 
 	<h5>SOCIAL</h5><p>
 <a class="w3-button w3-light-grey" href="https://twitter.com/A_Papaspyrou"><i class="fa fa-twitter"></i></a>
