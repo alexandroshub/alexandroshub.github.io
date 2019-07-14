@@ -1,3 +1,5 @@
+<!-- dashboard _Jul2019_  -->
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -5,23 +7,53 @@
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
 -->
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-<title>Papaspyrou</title>
+<title>Papaspyrou | Dashboard</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
-<meta charset="UTF-8">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-#more {display: none;}
-</style>    
-            <p>Date/Time: <span id="datetime"></span></p>
 
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {padding: 16px}
+</style>
+<body>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="#A9A9A9"
+  logged_in_greeting="Hi! How can i help you?"
+  logged_out_greeting="Hi! How can i help you?">
+</div>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->   
+
+
+
+<!-- BAR Section //////////////////////////////////////////////////////////-->
+<div class="w3-bar w3-dark-grey  w3-large ">
+<a class="w3-bar-item"><i class="fa fa-clock-o"></i> COMMING SOON</a>
+<a href="https://alexandroshub.github.io/index" class="w3-red w3-bar-item w3-button  w3-right"><i class="fa fa-sign-in w3-margin-right" ></i><b>HOME
+</b></a>
+</div><!-- ////////////////////////////////////////////////////////// -->
+
+<p>Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
@@ -35,3 +67,6 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
             </div>
           </div>
         </div>
+        
+</body>
+</html>
