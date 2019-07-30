@@ -1,14 +1,15 @@
 
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤ By: Alexandros Papaspyrou
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou V.14.07.19
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou</title>
+<title>Papaspyrou | Portfolio > Arduino</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +17,13 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
+    line-height: 1.8;
+}
+.w3-bar .w3-button {
+    padding: 16px;
 }
 .bgimg {
     background-position: center;
@@ -49,135 +54,166 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
 
-<!-- Links (sit on top) -->
+<!-- ////////////////////////// Navbar ////////////////////////// -->
+<!-- Top menu -->
 <div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">TOP</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">AUTOMATION
-</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">PROJECTS</a>
+  <div class="w3-black " style="max-width:100%;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></div>
+   		<div class="w3-center w3-padding-16">
+        <a href="https://alexandroshub.github.io/index.html" style="text-decoration: none" class="w3-bar-item  w3-wide">
+        <b>Papaspyrou</b>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <b>Alexandros</b></a> 
     </div>
   </div>
 </div>
 
+<!--
+
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+  
+    <!-- Hide right-floated links on small screens and replace them with a menu icon ->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  
+<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
+ 
+<span class="w3-center w3-hide-small w3-hide-medium"><b>Papaspyrou</b></span>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <span class="w3-hide-small w3-hide-medium"><b>Alexandros</b></span></a> 
+</div>
+    <!-- Right-sided navbar links ->
+    <div class="w3-right ">
+    <a href="#port" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i></a>
+    <a href="#me" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-o"></i></a>
+  
+  </div>
+ </div>  
+</div>
+
+-->
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+    <hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+</nav>
+<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() { if (mySidebar.style.display === 'block') 
+{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";} </script>
+<!--  ////////////////////////// Navbar  ////////////////////////// -->
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-     <span class="w3-tag">By: Papaspyrou Alexandros</span> 
-  </div>
+	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+	<span class="w3-tag">By: Papaspyrou Alexandros</span> 
+	</div>
   <div class="w3-display-middle w3-center">
 
-	<span class="w3-text-white w3-hide-small" style="font-size:130px">#C&C++</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">#C&C++</span>
+	<span class="w3-text-white w3-hide-small" style="font-size:130px">C,C++,C#</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">C,C++,C#</span>
 
   </div>
   <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">15 Adr street, 5015</span>
+    <span class="w3-text-white">@portfolio</span>
   </div>
 </header>
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
 
-<!-- About Container -->
-<div class="w3-container" id="about">
-  <div class="w3-content" style="max-width:700px">
-   <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">AUTOMATION</span></h5>
-    <p>Αυτοματισμός, είναι το πεδίο της επιστήμης και της τεχνολογίας που ασχολείται με την επιβολή επιθυμητής συμπεριφοράς στα φαινόμενα και με την κατανόηση των μηχανισμών μέσω των οποίων καθορίζεται η λειτουργία ενός φαινομένου. Αυτοματισμός ονομάζεται και Επιστήμη του Ελέγχου. <hr>
-Το αντικείμενο του Αυτοματισμού, είναι γενικό και πολύπλευρο, για αυτό και εφαρμογές του βρίσκονται πολυάριθμες στην καθημερινή ζωή και στη βιομηχανία. Ο Αυτοματισμός είναι ένα από τα πιο “ιστορικά” πεδία της επιστήμης, διότι η ανάπτυξή του συνοδεύει την εξέλιξη όλων των άλλων τεχνολογιών. Η γνώση του Αυτοματισμού, επομένως, αποτελεί γνώση της “τεχνολογικής ιστορίας” μας και της κληρονομιάς μας. Στην περίπτωση του Αυτοματισμού, μάλιστα, η ιστορία αυτή είναι ιδιαίτερα πλούσια μιας και οι Αρχαίοι Έλληνες επέδειξαν ιδιαίτερη εφευρετικότητα και ανέπτυξαν πολλές και σημαντικές λύσεις αυτοματισμού, που χρησιμοποιούμε μέχρι και σήμερα. Χάρη στην καθολική και γενικευμένη διάδοση των εφαρμογών του, ο Αυτοματισμός αποκτά ένα σημαντικό ρόλο στη ζωή μας.</p>
-    
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">WELCOME</span></h5>
-    <p>Καλώς ήλθατε στο κόσμο τον ηλεκτρονικών και των αυτοματισμών! Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…  Μέσα από αυτή την ενότητα θέλω να σας βοηθήσω να γνωρίσετε και να αγαπήσετε τον κόσμο των ηλεκτρονικών. Τα Tutorials θα σας εξηγούν, διδάσκουν, και θα σας εμπνέουν στο να παίξετε και να ψαχτείτε με τα ηλεκτρονικά και τους αυτοματισμούς! Θα έχουμε ένα ευρύ φάσμα από tutorials που θα καλύπτουν τόσο τη βασική θεωρία των ηλεκτρονικών και παραδείγματα για την κατασκευή project.</p>
-    <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
-      <p>Chef, Coffeeist and Owner: Liam Brown</p>
-    </div>
-    <img src="https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
-    <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
-    <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
-  </div>
-</div>
+
+
+
 
 <!-- Menu Container -->
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
  
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">intro</span></h5>
   
     <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-        <div class="w3-col s6 tablink">Eat</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'c');" id="myLink">
+        <div class="w3-col s4 tablink">C</div>
       </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-        <div class="w3-col s6 tablink">Drink</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'cpp');">
+        <div class="w3-col s4 tablink">C++</div>
+      </a>
+        <a href="javascript:void(0)" onclick="openMenu(event, 'cs');">
+        <div class="w3-col s4 tablink">C#</div>
       </a>
     </div>
 
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Bread Basket</h5>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-    
-      <h5>Honey Almond Granola with Fruits</h5>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-    
-      <h5>Belgian Waffle</h5>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-    
-      <h5>Scrambled eggs</h5>
-      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-    
-      <h5>Blueberry Pancakes</h5>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+    <div id="c" class="w3-container menu w3-padding-48 w3-card">
+      <h5>intro</h5>
+    <p>Η γλώσσα C αναπτύχθηκε το 1972 από τον Dennis Ritchie στα ΑΤ&Τ (Bell) Laboratories..</p>
+    <a href="https://visualstudio.microsoft.com/" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>visualstudio</a>
+    <a href="https://www.microchip.com/mplab/avr-support/atmel-studio-7" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>atmel studio</a>
+    <a href="https://visualstudio.microsoft.com/" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>visualstudio</a>
     </div>
 
-    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Coffee</h5>
-      <p class="w3-text-grey">Regular coffee 2.50</p><br>
-    
-      <h5>Chocolato</h5>
-      <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
-    
-      <h5>Corretto</h5>
-      <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
-    
-      <h5>Iced tea</h5>
-      <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
-    
-      <h5>Soda</h5>
-      <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
+    <div id="cpp" class="w3-container menu w3-padding-48 w3-card">
+      <h5>intro</h5>
+  <p>x.</p><a href="https://create.arduino.cc/projecthub/Papaspyrou_A" class="w3-button w3-blue"><i class="fa fa-th"> </i>projecthub</a>
     </div>  
-    <img src="https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
+    
+      <div id="cs" class="w3-container menu w3-padding-48 w3-card">
+      <h5>intro</h5>
+  <p>xxx.</p>
+  <a href="https://create.arduino.cc/projecthub/Papaspyrou_A" class="w3-button w3-blue"><i class="fa fa-th"> </i>projecthub</a>
+    </div>  
+   
+    <br>
+    <!-- Advertisement --><div class="w3-container w3-display-container w3-round w3-border w3-margin-bottom w3-hide-small"><span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"><i class="fa fa-remove"></i></span><p><strong><i class="fa fa fa-bullhorn fa-fw w3-margin-right w3-text-black"></i>Advertisement</strong></p><p class="w3-small"><b> The 1st Arduino Playgroung in Greece - Open Source Hardware </b>http://www.ardumotive.com</p></div><!-- End of Advertisement -->   
   </div>
+</div>
+
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <img src="https://66.media.tumblr.com/17f2571f237f232867fb13f5adfa3f9f/tumblr_pumzq040se1si59zfo2_1280.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+       
+<div class="w3-panel w3-leftbar w3-light-grey"><p><strong>Εισαγωγή στα ηλεκτρονικά:</strong> -λινκ- </p></div>
+    
+<div class="w3-panel w3-leftbar w3-light-grey"><p><strong>Εισαγωγή στο arduino:</strong> -λινκ- </p></div>
+   
+   </div>
 </div>
 
 <!-- Contact/Area Container -->
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROJECTS</span></h5>
-    <p>Find us at some address at some place.</p>   
-    <p><span class="w3-tag">MICHATRON</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
-    <iframe style="height: 510px; width: 100%; margin: 10px 0 10px;" allowTransparency="true" src="https://codebender.cc/embed/sketch:208552" frameborder="0"></iframe>
-
-    <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+   
+    <p><strong>και μή ξεχνάτε.</strong> Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger. </p>
     
   </div>
-
-
-<!-- End page content -->
 </div>
-
+</div>
+<!-- End page content -->
+<!--    
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+ -->
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16 w3-large">
-<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:270px;" alt="Signature" align="bottom">
+<footer class="w3-center w3-black w3-padding-16">
+<!-- top --> 
+<a href="#home" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
+  <div class="w3-xlarge w3-section"></div>
+  <!-- twitter --><a href=" https://twitter.com/A_Papaspyrou" title="Twitter"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <!-- facebook -->
+  <a href="https://www.facebook.com/papaspyrou.a" title="Facebook"><i class="fa fa-facebook-f w3-hover-opacity">
+  </i></a>  | 
+  <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:280px;" alt="Signature" align="bottom">
+
 </footer>
+
 
 <script> // Tabbed Menu
 function openMenu(evt, menuName) {
