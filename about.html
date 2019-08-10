@@ -109,6 +109,169 @@ function w3_close() {mySidebar.style.display = "none";} </script>
   </div>
 </header>
 
+	<!-- GDBR -->
+	<!-- Quantcast Choice. Consent Manager Tag -->
+<script type="text/javascript" async=true>
+    var elem = document.createElement('script');
+    elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+    (function() {
+    var gdprAppliesGlobally = true;
+    function addFrame() {
+        if (!window.frames['__cmpLocator']) {
+        if (document.body) {
+            var body = document.body,
+                iframe = document.createElement('iframe');
+            iframe.style = 'display:none';
+            iframe.name = '__cmpLocator';
+            body.appendChild(iframe);
+        } else {
+            // In the case where this stub is located in the head,
+            // this allows us to inject the iframe more quickly than
+            // relying on DOMContentLoaded or other events.
+            setTimeout(addFrame, 5);
+        }
+        }
+    }
+    addFrame();
+    function cmpMsgHandler(event) {
+        var msgIsString = typeof event.data === "string";
+        var json;
+        if(msgIsString) {
+        json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+        } else {
+        json = event.data;
+        }
+        if (json.__cmpCall) {
+        var i = json.__cmpCall;
+        window.__cmp(i.command, i.parameter, function(retValue, success) {
+            var returnMsg = {"__cmpReturn": {
+            "returnValue": retValue,
+            "success": success,
+            "callId": i.callId
+            }};
+            event.source.postMessage(msgIsString ?
+            JSON.stringify(returnMsg) : returnMsg, '*');
+        });
+        }
+    }
+    window.__cmp = function (c) {
+        var b = arguments;
+        if (!b.length) {
+        return __cmp.a;
+        }
+        else if (b[0] === 'ping') {
+        b[2]({"gdprAppliesGlobally": gdprAppliesGlobally,
+            "cmpLoaded": false}, true);
+        } else if (c == '__cmp')
+        return false;
+        else {
+        if (typeof __cmp.a === 'undefined') {
+            __cmp.a = [];
+        }
+        __cmp.a.push([].slice.apply(b));
+        }
+    }
+    window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+    window.__cmp.msgHandler = cmpMsgHandler;
+    if (window.addEventListener) {
+        window.addEventListener('message', cmpMsgHandler, false);
+    }
+    else {
+        window.attachEvent('onmessage', cmpMsgHandler);
+    }
+    })();
+    window.__cmp('init', {
+    		'Language': 'el',
+		'Initial Screen Title Text': 'Σεβόμαστε την ιδιωτικότητά σας',
+		'Initial Screen Reject Button Text': 'Δεν αποδέχομαι',
+		'Initial Screen Accept Button Text': 'Αποδέχομαι',
+		'Initial Screen Purpose Link Text': 'Εμφάνιση σκοπών',
+		'Purpose Screen Title Text': 'Σεβόμαστε την ιδιωτικότητά σας',
+		'Purpose Screen Body Text': 'Μπορείτε να ορίσετε τις προτιμήσεις σας συγκατάθεσης και να προσδιορίσετε με ποιους τρόπους θέλετε να χρησιμοποιούνται τα δεδομένα σας σύμφωνα με τους παρακάτω σκοπούς. Μπορείτε να ορίσετε τις προτιμήσεις σας για εμάς, ανεξάρτητα από αυτές για τους τρίτους συνεργάτες μας. Κάθε σκοπός συνοδεύεται από μια περιγραφή, ώστε να γνωρίζετε με ποιους τρόπους χρησιμοποιούμε, εμείς και οι συνεργάτες μας, τα δεδομένα σας.',
+		'Purpose Screen Vendor Link Text': 'Προβολή πλήρους καταλόγου προμηθευτών',
+		'Purpose Screen Cancel Button Text': 'Άκυρο',
+		'Purpose Screen Save and Exit Button Text': 'Αποθήκευση και έξοδος',
+		'Vendor Screen Title Text': 'Σεβόμαστε την ιδιωτικότητά σας',
+		'Vendor Screen Body Text': 'Μπορείτε να ορίσετε προτιμήσεις συγκατάθεσης χωριστά για κάθε έναν από τους παρακάτω τρίτους. Αναπτύξτε τη λίστα κάτω κάθε εταιρείας, για να διαπιστώσετε για ποιους σκοπούς χρησιμοποιεί τα δεδομένα, ώστε να κάνετε αντίστοιχα τις επιλογές σας. Σε ορισμένες περιπτώσεις, οι εταιρείες μπορεί να ενημερώνουν ότι χρησιμοποιούν τα δεδομένα σας χωρίς να ζητήσουν τη συγκατάθεσή σας, βάσει των έννομων συμφερόντων τους. Μπορείτε να κάνετε κλικ στις αντίστοιχες πολιτικές απορρήτου και να ζητήσετε να εξαιρεθείτε.',
+		'Vendor Screen Accept All Button Text': 'Αποδοχή όλων',
+		'Vendor Screen Reject All Button Text': 'Απόρριψη όλων',
+		'Vendor Screen Purposes Link Text': 'Επιστροφή στους σκοπούς',
+		'Vendor Screen Cancel Button Text': 'Άκυρο',
+		'Vendor Screen Save and Exit Button Text': 'Αποθήκευση και έξοδος',
+		'Initial Screen Body Text': 'Τόσο εμείς όσο και οι συνεργάτες μας χρησιμοποιούμε τεχνολογία όπως τα cookies στον ιστότοπό μας, για εξατομίκευση περιεχομένου και διαφημίσεων, παροχή λειτουργιών μέσων κοινωνικής δικτύωσης και ανάλυση των δεδομένων επισκεπτών μας. Κάντε κλικ παρακάτω για να επιβεβαιώσετε ότι συμφωνείτε με τη χρήση αυτής της τεχνολογίας στο web. Οποιαδήποτε στιγμή, μπορείτε να αλλάξετε γνώμη και να αλλάξετε επιλογές συγκατάθεσης, επιστρέφοντας σε αυτό τον ιστότοπο.',
+		'Initial Screen Body Text Option': 1,
+		'Publisher Purpose IDs': [1,2,3,4,5],
+		'Post Consent Page': 'https://alexandroshub.github.io/thnx',
+		'Min Days Between UI Displays': 60,
+		'Publisher Name': 'alexandroshub',
+		'Publisher Logo': 'https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png',
+		'Display UI': 'always',
+		'UI Layout': 'banner',
+    });
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag -->
+    <style>
+        .qc-cmp-button {
+          background-color: #FF5733 !important;
+          border-color: #FF5733 !important;
+        }
+        .qc-cmp-button:hover {
+          background-color: transparent !important;
+          border-color: #FF5733 !important;
+        }
+        .qc-cmp-alt-action,
+        .qc-cmp-link {
+          color: #FF5733 !important;
+        }
+        .qc-cmp-button {
+          color: #ebf0f6 !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button {
+          color: #ebf0f6 !important;
+        }
+        .qc-cmp-button.qc-cmp-button.qc-cmp-secondary-button:hover {
+          color:#ffffff !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button {
+          border-color: #FF5733 !important;
+          background-color: transparent !important;
+        }
+        .qc-cmp-button.qc-cmp-secondary-button:hover {
+          background-color: #FF5733 !important;
+        }
+        .qc-cmp-ui,
+        .qc-cmp-ui .qc-cmp-main-messaging,
+        .qc-cmp-ui .qc-cmp-messaging,
+        .qc-cmp-ui .qc-cmp-beta-messaging,
+        .qc-cmp-ui .qc-cmp-title,
+        .qc-cmp-ui .qc-cmp-sub-title,
+        .qc-cmp-ui .qc-cmp-purpose-info,
+        .qc-cmp-ui .qc-cmp-table,
+        .qc-cmp-ui .qc-cmp-table-header,
+        .qc-cmp-ui .qc-cmp-vendor-list,
+        .qc-cmp-ui .qc-cmp-vendor-list-title {
+            color: #ebf0f6 !important;
+        }
+        .qc-cmp-ui a,
+        .qc-cmp-ui .qc-cmp-alt-action {
+          color: #ebf0f6 !important;
+        }
+        .qc-cmp-ui {
+            background-color: #003366 !important;
+        }
+        .qc-cmp-small-toggle.qc-cmp-toggle-on,
+        .qc-cmp-toggle.qc-cmp-toggle-on {
+            background-color: #ebf0f6 !important;
+            border-color: #ebf0f6 !important;
+        }
+    </style>
+	<!-- /GDBR -->
+	
+	
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
 
