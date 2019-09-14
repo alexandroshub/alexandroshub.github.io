@@ -1,3 +1,4 @@
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -39,32 +40,77 @@ body, html { height: 100%; line-height: 1.8;}
 <!-- Appzi: Capture Insightful Feedback -->
 <script async src="https://app.appzi.io/bootstrap/bundle.js?token=g7Yon"></script>
 <!-- End Appzi -->
-<!--  ////////////////////////// messenger_platform  ////////////////////////// --> 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="1610585155641169"
-  theme_color="#A9A9A9"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
-</div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
 <!--  ////////////////////////// QR  ////////////////////////// -->
 <style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3>
 <a href="https://snappy.appypie.com/index/app-download/appId/9a986a9e031f">
 <img src="https://d2wuvg8krwnvon.cloudfront.net/appqrcode/mobile_9a986a9e031f.png" width="50%" height="50%"></a><p>or click anywhere to close this window</p> </center></div></div> <script>function on() {document.getElementById("overlay").style.display = "block";} function off() {document.getElementById("overlay").style.display = "none";}</script>
 <!--  ////////////////////////// QR  ////////////////////////// -->
-
 <!-- //////////////////////////Top menu////////////////////////// -->
+
+<!-- FUTURE - ->
+<style>
+.sidenav {  height: 100%;  width: 0;  position: fixed;  z-index: 1;  top: 0;  left: 0;  background-color: #111;  overflow-x: hidden;  transition: 0.5s;  padding-top: 60px;}
+.sidenav a {  padding: 8px 8px 8px 32px;  text-decoration: none;  font-size: 25px;  color: #818181;  display: block;  transition: 0.3s;}
+.sidenav a:hover {  color: #f1f1f1;}
+.sidenav .closebtn {  position: absolute;  top: 0;  right: 25px;  font-size: 36px;  margin-left: 50px;}
+#main {  transition: margin-left .5s;  padding: 16px;}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}}
+</style>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
+    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
+    <hr>
+<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
+  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+</div>
+
+
+<div id="main">
+<br>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <img src="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity"></span>
+   
+      </div>
+   
+
+<style>
+.container {  display: inline-block;  cursor: pointer;}
+.bar1, .bar2, .bar3 {  width: 35px;  height: 5px;  background-color: #333;  margin: 6px 0;  transition: 0.4s;}
+.change .bar1 {  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);}
+.change .bar2 {opacity: 0;}
+.change .bar3 {  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);}
+</style>
+<div class="container" onclick="myXFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<script>function myXFunction(x) {x.classList.toggle("change");}</script>
+<!-- MENU TO X end - ->
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+<!-- FUTURE -->
+
+
 <div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
 <!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
 <!-- contact --><a href="https://alexandroshub.github.io/contact.html" class="w3-button w3-padding-16 w3-hide-small w3-right w3-hover-black"><b><font color="orange"><i class="fa fa-envelope"></i></font></b></a>
@@ -344,6 +390,8 @@ function w3_close() { mySidebar.style.display = "none";}
 <!-- googletagmanager -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-128580719-1'); </script>
+<!-- CHAT OR EMAIL https://www.tawk.to/ --> 
+<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
 </body>
 </html>
 <!--  
@@ -354,8 +402,25 @@ function w3_close() { mySidebar.style.display = "none";}
 <!-- EMAIL FORM https://zotabox.com/dashboard/ ->
 <script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/7/1/7144a7b28e2afa4ba16adef6b404a508/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>	
 <!-- SUB & SHARE www.addthis.com/dashboard -> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e"></script> 
-<!-- OLD CHAT OR EMAIL https://www.tawk.to/ -> 
-<script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// --> 
+<!-- Load Facebook SDK for JavaScript - ->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code - ->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="#A9A9A9"
+  logged_in_greeting="Hi! How can i help you?"
+  logged_out_greeting="Hi! How can i help you?">
+</div>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
 <!--
 ┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
 ├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
