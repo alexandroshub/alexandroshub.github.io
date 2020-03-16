@@ -1,4 +1,5 @@
 
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -53,60 +54,43 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
 
-<!-- ////////////////////////// Navbar ////////////////////////// -->
+<!--  //////// Navbar ///////// Navbar //////// Navbar /////// -->
 <!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-black " style="max-width:100%;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></div>
-   		<div class="w3-center w3-padding-16">
-        <a href="https://alexandroshub.github.io/index.html" style="text-decoration: none" class="w3-bar-item  w3-wide">
-        <b>Papaspyrou</b>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <b>Alexandros</b></a> 
-    </div>
+<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
+<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
+<!-- contact --><a href="https://alexandroshub.github.io/contact.html" class="w3-button w3-padding-16 w3-hide-small w3-right w3-hover-black"><b><font color="orange"><i class="fa fa-envelope"></i></font></b></a>
+<!-- me --><a href="https://alexandroshub.github.io/cv.html" class="w3-button w3-padding-16 w3-hide-small w3-right w3-hover-black"><b><font color="orange"><i class="fa fa-user"></i></font></b></a>
+<!-- files --><a href="https://alexandroshub.github.io/portfolio.html" class="w3-button w3-padding-16 w3-hide-small w3-right w3-hover-black"><b><font color="orange"><i class="fa fa-th"></i></font></b></a>
+<!-- logo --><div class="w3-padding-16">
+<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"> 
+    </div> 
   </div>
 </div>
-
-<!--
-
-
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card" id="myNavbar">
-  
-    <!-- Hide right-floated links on small screens and replace them with a menu icon ->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-  
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
- 
-<span class="w3-center w3-hide-small w3-hide-medium"><b>Papaspyrou</b></span>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <span class="w3-hide-small w3-hide-medium"><b>Alexandros</b></span></a> 
-</div>
-    <!-- Right-sided navbar links ->
-    <div class="w3-right ">
-    <a href="#port" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i></a>
-    <a href="#me" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-o"></i></a>
-  
-  </div>
- </div>  
-</div>
-
--->
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
 	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
-    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
-    <hr>
-<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
 <a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
 </nav>
-<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
+<!-- scripts --><script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+// Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 function w3_open() { if (mySidebar.style.display === 'block') 
 {mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
 }// Close the sidebar with the close button
 function w3_close() {mySidebar.style.display = "none";} </script>
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!--  //////// Navbar ///////// Navbar //////// Navbar /////// -->
+
+
+
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
 	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
@@ -146,14 +130,29 @@ function w3_close() {mySidebar.style.display = "none";} </script>
     </div>
 
     <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-      <h5>intro</h5>
-    <p>Αυτοματισμός, είναι το πεδίο της επιστήμης και της τεχνολογίας που ασχολείται με την επιβολή επιθυμητής συμπεριφοράς στα φαινόμενα και με την κατανόηση των μηχανισμών μέσω των οποίων καθορίζεται η λειτουργία ενός φαινομένου. Αυτοματισμός ονομάζεται και Επιστήμη του Ελέγχου. <br><br>
-Το αντικείμενο του Αυτοματισμού, είναι γενικό και πολύπλευρο, για αυτό και εφαρμογές του βρίσκονται πολυάριθμες στην καθημερινή ζωή και στη βιομηχανία. Ο Αυτοματισμός είναι ένα από τα πιο “ιστορικά” πεδία της επιστήμης, διότι η ανάπτυξή του συνοδεύει την εξέλιξη όλων των άλλων τεχνολογιών. Η γνώση του Αυτοματισμού, επομένως, αποτελεί γνώση της “τεχνολογικής ιστορίας” μας και της κληρονομιάς μας. Στην περίπτωση του Αυτοματισμού, μάλιστα, η ιστορία αυτή είναι ιδιαίτερα πλούσια μιας και οι Αρχαίοι Έλληνες επέδειξαν ιδιαίτερη εφευρετικότητα και ανέπτυξαν πολλές και σημαντικές λύσεις αυτοματισμού, που χρησιμοποιούμε μέχρι και σήμερα. Χάρη στην καθολική και γενικευμένη διάδοση των εφαρμογών του, ο Αυτοματισμός αποκτά ένα σημαντικό ρόλο στη ζωή μας.</p>
+<p> <b>Αυτοματισμός</b> είναι το πεδίο της επιστήμης και της τεχνολογίας που ασχολείται με την επιβολή επιθυμητής συμπεριφοράς στα φαινόμενα και με την κατανόηση των μηχανισμών μέσω των οποίων καθορίζεται η λειτουργία ενός φαινομένου. Αυτοματισμός ονομάζεται και Επιστήμη του Ελέγχου. <br><br>
+<b>Το αντικείμενο του Αυτοματισμού</b>, είναι γενικό και πολύπλευρο, για αυτό και εφαρμογές του βρίσκονται πολυάριθμες στην καθημερινή ζωή και στη βιομηχανία. Ο Αυτοματισμός είναι ένα από τα πιο “ιστορικά” πεδία της επιστήμης, διότι η ανάπτυξή του συνοδεύει την εξέλιξη όλων των άλλων τεχνολογιών. Η γνώση του Αυτοματισμού, επομένως, αποτελεί γνώση της “τεχνολογικής ιστορίας” μας και της κληρονομιάς μας. Στην περίπτωση του Αυτοματισμού, μάλιστα, η ιστορία αυτή είναι ιδιαίτερα πλούσια μιας και οι Αρχαίοι Έλληνες επέδειξαν ιδιαίτερη εφευρετικότητα και ανέπτυξαν πολλές και σημαντικές λύσεις αυτοματισμού, που χρησιμοποιούμε μέχρι και σήμερα. Χάρη στην καθολική και γενικευμένη διάδοση των εφαρμογών του, ο Αυτοματισμός αποκτά ένα σημαντικό ρόλο στη ζωή μας.
+<br><i> Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…</i></p>
     </div>
 
     <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
       <h5>intro</h5>
-  <p>Καλώς ήλθατε στο κόσμο τον ηλεκτρονικών και των αυτοματισμών! Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…  Μέσα από αυτή την ενότητα θέλω να σας βοηθήσω να γνωρίσετε και να αγαπήσετε τον κόσμο των ηλεκτρονικών. Τα Tutorials θα σας εξηγούν, διδάσκουν, και θα σας εμπνέουν στο να παίξετε και να ψαχτείτε με τα ηλεκτρονικά και τους αυτοματισμούς! Θα έχουμε ένα ευρύ φάσμα από tutorials που θα καλύπτουν τόσο τη βασική θεωρία των ηλεκτρονικών και παραδείγματα για την κατασκευή project.</p><a href="https://create.arduino.cc/projecthub/Papaspyrou_A" class="w3-button w3-blue"><i class="fa fa-th"> </i>projecthub</a>
+  <p>Το Arduino είναι µια χαµηλού κόστους, εύχρηστη πλατφόρµα ανάπτυξης έργων ηλεκτρονικής, αυτοµατισµού και ροµποτικής, που χρησιµοποιείται ευρέως για εκπαιδευτικούς σκοπούς αλλά και στη δηµιουργία πρωτότυπων κατασκευών. Το χαµηλό κόστος του και η ευκολία χρήσης επιτρέπει σε µαθητές και χρήστες µε πολύ µικρή
+εµπειρία να δηµιουργήσουν τις δικές τους πειραµατικές διατάξεις!
+Το Arduino είναι ένας µικροελεγκτής- ένα εύχρηστο και φθηνό ενσωµατωµένο
+σύστηµα. Ο µικροελεγκτής επιτρέπει τον έλεγχο ηλεκτρονικών κυκλωµάτων,
+αισθητήρων και συστηµάτων επέκτασης, µέσω ενός αποθηκευµένου
+προγράµµατος που συντάσσεται σε γλώσσα Wiring C. Έτσι, µε το Arduino
+µπορούµε να κάνουµε τα πάντα, από φωτάκια που αναβοσβήνουν µόνα τους
+µέχρι αυτόνοµα ροµποτικά οχήµατα! Το σύστηµα Arduino δηµιουργήθηκε το
+2005 στο Interaction Design Institute στην Ιβρέα της Ιταλίας, και πήρε το όνοµά
+του από τον Arduin, στρατιωτικό διοικητή της Ιβρέας τον 10µ.Χ αιώνα. Το
+λογισµικό του Arduino είναι ένα ολοκληρωµένο περιβάλλον ανάπτυξης
+(Integrated Development Environment, IDE) βασισµένο στο σύστηµα Processing
+και τη γλώσσα Wiring. Eίναι ένα εύχρηστο λογισµικό ανοικτού κώδικα, µε
+πλούσιο διαδικτυακό υλικό υποστήριξης
+
+</p><a href="https://create.arduino.cc/projecthub/Papaspyrou_A" class="w3-button w3-blue"><i class="fa fa-th"> </i>projecthub</a>
     </div>  
    
     <br>
@@ -174,9 +173,29 @@ function w3_close() {mySidebar.style.display = "none";} </script>
    </div>
 </div>
 
-<!-- Contact/Area Container -->
+
+<!-- Area Container -->
 <div class="w3-container" id="where" style="padding-bottom:32px;">
   <div class="w3-content" style="max-width:700px">
+  
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Eγκατάσταση λογισµικού</span></h5>
+    <p>Το πρώτο βήµα χρήσης του Arduino είναι η εγκατάσταση του λογισµικού Arduino IDE. Πρόκειται για ένα ολοκληρωµένο προγραµµατιστικό περιβάλλον ανάπτυξης (integrated development environment, IDE) που βασίζεται στο περιβάλλον Processing. Βασικό χαρακτηριστικό του Processing όπως και του Arduino IDE είναι ότι διευκολύνει την ανάπτυξη εφαρµογών µε γραφικά. Μέσα στο Arduino IDE µπορούµε να συντάξουµε τα προγράµµατά µας και στη συνέχεια να τα «φορτώσουµε» στην εκάστοτε πλακέτα, η οποία στη συνέχεια θα εκτελεί τις εντολές που έχουµε αποθηκεύσει σε αυτήν
+    <br>
+    <span class="w3-tag w3-purple">Download και εγκατάσταση του Arduino IDE </span><br> 
+    Για να «κατεβάσετε» το πρόγραµµα, επισκεφθείτε την ιστοσελίδα του Arduino (https://www.arduino.cc) στην καρτέλα software downloads. Ο οδηγός µας περιλαµβάνει λεπτοµερείς οδηγίες download και εγκατάστασης, και συµβουλές για τα συνηθισµένα προβλήµατα που µπορεί να αντιµετωπίσετε.
+    
+    Το προγραµµατιστικό περιβάλλον του Arduino IDE βασίζεται τη σύνταξη κώδικα στη γλώσσα Wiring C, µια απλοποιηµένη εκδοχή της γλώσσας C/C++, που έχει αναπτυχθεί σε περιβάλλον προγραµµατισµού Processing. Η χρήση αυτής της γλώσσας προγραµµατισµού εισάγει τους µαθητές στην έννοια του προγραµµατισµού και τη γραφή χειρόγραφου κώδικα.
+    <br>
+    <span class="w3-tag w3-purple">Σύνταξη προγράµµατος µε το Arduino IDE</span><br> 
+    Μετά την εγκατάσταση του προγράµµατος, βρισκόµαστε στο παράθυρο µε το µεγάλο λευκό άδειο χώρο όπου γράφουµε το πρόγραµµα σε γλώσσα Wiring C του Arduino. Τα προγράµµατα που γράφουµε ονοµάζονται «σκίτσα» στην ορολογία του Arduino (sketches). Κάθε πρόγραµµα έχει δύο διαδικασίες (υποπρογράµµατα ή οµάδες εντολών) που προϋπάρχουν και ΕΙΝΑΙ ΑΠΑΡΑΙΤΗΤΕΣ στο πρόγραµµά µας: τις setup() και loop().
+<br>    • Στη setup βάζουµε τις εντολές που θέλουµε να εκτελεστούν µια φορά µόνο. 
+<br>    • Στη loop βάζουµε τις εντολές που θέλουµε να επαναλαµβάνονται, αφού, όταν τελειώσει, η loop ξαναρχίζει από την αρχή της.     Αυτό συνεχίζεται µέχρι να αποσυνδέσουµε το Arduino από την τάση τροφοδοσίας ή να πατήσουµε το κουµπί Reset.
+ <br><br>   Το πρόγραµµα προσφέρει τη δυνατότητα ενσωµάτωσης άλλων εργαλείων προγραµµατισµού τα οποία είναι ίσως πιο εύχρηστα για τους µαθητές, όπως η γλώσσα ArduΒlock, µια γλώσσα προγραµµατισµού µε πλακίδια παρόµοια µε τη Scratch. Το ArduBlock εκτελείται µέσα από το IDE, και παρέχει διεπαφή για τον οπτικό προγραµµατισµό του Arduino. ∆υστυχώς το ArduBlock µπορεί να µην είναι συµβατό µε τις πιο νέες εκδόσεις του Arduino™ IDE. </p>   
+
+<span class="w3-tag w3-red">Περισσότερα σύντομα!!</span>
+
+    
+    
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROJECTS</span></h5>
     <p>Ακολουθούν ορισμένες πολύ ενδιαφέρουσες εφαρμογές με arduino.</p>   
     <p><span class="w3-tag w3-purple">MICHATRON</span> 
@@ -187,24 +206,18 @@ function w3_close() {mySidebar.style.display = "none";} </script>
     
   </div>
 </div>
-</div>
-<!-- End page content -->
-<!--    
-   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
- .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
- -->
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-<!-- top --> 
-<a href="#home" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-  <div class="w3-xlarge w3-section"></div>
-  <!-- twitter --><a href=" https://twitter.com/A_Papaspyrou" title="Twitter"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-  <!-- facebook -->
-  <a href="https://www.facebook.com/papaspyrou.a" title="Facebook"><i class="fa fa-facebook-f w3-hover-opacity">
-  </i></a>  | 
-  <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:280px;" alt="Signature" align="bottom">
 
-</footer>
+<!-- ///////// footer ///////// footer /////// footer /////////// -->
+<style>
+.footer {   left: 0;   bottom: 0;   width: 100%;   background-color: #e7e7e7;   color: #565a5c;   text-align: center;}
+</style>
+<div class="footer">
+ <h1>Alexandros Hub</h1>
+  <!-- top --><a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p>© 2020 Alexandros Hub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div></div></div>
+<!-- ///////// footer ///////// footer /////// footer /////////// -->
 
 
 <script> // Tabbed Menu
