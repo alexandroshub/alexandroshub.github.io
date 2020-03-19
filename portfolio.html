@@ -1,6 +1,3 @@
-
-
-
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -53,52 +50,29 @@ body, html {
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->   
 <!-- ////////////////////////// Navbar ////////////////////////// -->
-
-<!--
-
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card" id="myNavbar">
-  
-    <!-- Hide right-floated links on small screens and replace them with a menu icon ->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-  
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
- 
-<span class="w3-center w3-hide-small w3-hide-medium"><b>Papaspyrou</b></span>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <span class="w3-hide-small w3-hide-medium"><b>Alexandros</b></span></a> 
-</div>
-    <!-- Right-sided navbar links ->
-    <div class="w3-right ">
-    <a href="#port" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i></a>
-    <a href="#me" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-o"></i></a>
-    </div>
- </div>  
-</div>
--->
-
 <!-- Top menu -->
-<div class="w3-top">
-  <div id="myNavbar" style="max-width:100%;margin:auto; background:#283E4A">
-    <div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="#FF5733"><i class="fa fa-bars"></i></font></b></div>
-   		<div class="w3-center w3-padding-16">
-        <a href="https://alexandroshub.github.io/index.html" style="text-decoration: none" class="w3-bar-item  w3-wide">
-        <b><font color="#ebf0f6">Papaspyrou</font></b>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <b><font color="#ebf0f6">Alexandros</font></b></a> 
-    </div>
+<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
+<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
+<!-- logo --><div class="w3-padding-16">  <a href="https://alexandroshub.github.io">
+<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a>
+    </div> 
   </div>
 </div>
-
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
   <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
 	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
-    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-teal"><i class="fa fa-link"></i>  &nbsp; Links</a> 
-        <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
-    <hr>
-<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+	<a href="https://alexandroshub.github.io/liveplus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a>
 </nav>
-
+<!-- scripts --><script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+</script>
 <script>// Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
 function w3_open() { if (mySidebar.style.display === 'block') 
@@ -111,9 +85,6 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
 <span class="w3-tag">By: Papaspyrou Alexandros</span> 
-<span class="w3-tag w3-red w3-hide-medium">@Arduino</span>
-<span class="w3-tag w3-red w3-hide-medium">@Coding</span>
-<span class="w3-tag w3-red w3-hide-medium">@Projects</span>
  </div>
   <div class="w3-display-middle w3-center ">
 
@@ -130,6 +101,69 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-large">
+
+
+
+
+
+<!-- MAIN Section //////////////////////////////////////////////////////////-->
+<div class="w3-center w3-padding-16 w3-black">
+	<div class="w3-row-padding">
+<!-- 1 -->    
+<div class="w3-col l3 m6 w3-margin-bottom">
+  <div class="w3-display-container">
+    <div class="w3-display-topleft w3-black w3-padding">Developing & Code</div>
+    <div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()" >
+    <i class="fa fa-info"></i></div> 
+	<script> function alrtFunction(){alert("Προγραμματισμός υπολογιστών \n\n καλείται το σύνολο των διαδικασιών σύνταξης ενός υπολογιστικού προγράμματος, συνήθως ως υλοποίηση κάποιων αλγορίθμων ύστερα από προσεκτική σχεδίαση, για την αυτοματοποιημένη εκτέλεση εργασιών ή επίλυση κάποιου υπολογιστικού προβλήματος από έναν υπολογιστή. Ο προγραμματισμός περιλαμβάνει επίσης τον έλεγχο του προγράμματος για την επαλήθευση της ακρίβειας και της ορθότητάς του (αποσφαλμάτωση), και την προπαρασκευή των οδηγιών με τις οποίες ένας υπολογιστής θα εκτελέσει τις εντολές που καθορίζονται στις προδιαγραφές του προγράμματος. Θεμελιώδη ρόλο στον υπολογιστικό προγραμματισμό διαδραματίζουν οι χιλιάδες διαφορετικές γλώσσες προγραμματισμού, δηλαδή οι προτυποποιημένες τυπικές γλώσσες απαραίτητες για τη σύνθεση ενός προγράμματος.\n\n Read More: https://alexandroshub.github.io/portfolio.html#code");}</script>
+    <a href="https://alexandroshub.github.io/portfolio.html#code">
+    <img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="Developing" style="width:100%"></a>
+  </div>  
+</div>
+<!-- 2 --> 
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/portfolio.html#intro">
+<div class="w3-display-topleft w3-black w3-padding">Electronics & IoT</div>
+<img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="IoT" style="width:100%"></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()" >
+    <i class="fa fa-info"></i></div>
+	<script> function al2tFunction(){alert("Τί είναι ο Internet of Things? \n\n Το Internet of Things είναι μία έννοια που αφορά τα αντικείμενα της καθημερινότητας μας – από βιομηχανικές μηχανές μέχρι wearable συσκευές που χρησιμοποιούν ενσωματωμένους αισθητήρες για  τη συλλογή δεδομένων & την ανάληψη κάποιας δράσης σε αυτά μέσα σε ένα δίκτυο. Κάπως έτσι λειτουργεί ένα κτίριο που χρησιμοποιεί αισθητήρες (sensors) για την αυτόματη ρύθμιση της θέρμανσης ή του φωτισμού. Άλλο παράδειγμα είναι ο ένας εξοπλισμός παραγωγής που προειδοποιεί το προσωπικό συντήρησης για μία επικείμενη βλάβη. Με απλά λόγια το Internet of Things είναι το τεχνολογικό μέλλον που θα κάνει τη ζωή μας πιο εύκολη.\n\n Read More: https://robodayblog.wordpress.com/2016/05/30/iot-roboday");}</script>
+</div></div>
+<!-- 3 -->     
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/portfolio.html#intro">
+<div class="w3-display-topleft w3-black w3-padding">
+Automations & Robotics</div>
+<img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Michatron" style="width:100%" onclick="onClick(this)"></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="al3tFunction()" >
+<i class="fa fa-info"></i></div>
+	<script> function al3tFunction(){alert("Αυτοματισμός\n\n Ο αυτοματισμός δεν είναι τίποτα άλλο παρά η εύρεση ενός αλγορίθμου για την επίλυση ενός προβλήματος, ή η κατασκευή ενός αυτόνομου μηχανισμού που εκτελεί αυτόν τον αλγόριθμο για κάποια είσοδο χωρίς ανθρώπινη παρέμβαση. \n\n Read More: https://robodayblog.wordpress.com ");}</script>
+</div></div>
+<!-- 4 --> 
+<div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container">
+<a href="https://alexandroshub.github.io/portfolio.html#publications">
+<div class="w3-display-topleft w3-black w3-padding">
+Files & Publications</div>
+<img src="https://c2.staticflickr.com/1/572/32932636012_c6413d21b5_o.png" alt="Files" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="al4tFunction()" >
+<i class="fa fa-info"></i></div>
+	<script> function al4tFunction(){alert("Η συγκεκριμένη ενότητα θα είναι σύντομα διαθέσιμη");}</script>
+</div></div></div></div>
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+
+
+
+
+
+
 <!-- About Container -->
 <div class="w3-container"></div>
 <div class="w3-center w3-padding-64" id="intro"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Intro</span>
@@ -142,6 +176,11 @@ function w3_close() {mySidebar.style.display = "none";} </script>
     <span class="w3-large w3-border-dark-grey w3-padding-16">" Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία, όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία." </span>
     </p>
 		<p><span class="w3-xlarge"><i class="fa fa-file-text" style="color:red"></i> Files</span>
+      <br>     
+        <span class="w3-tag w3-red w3-hide-medium">@Arduino</span>
+<span class="w3-tag w3-red w3-hide-medium">@Coding</span>
+<span class="w3-tag w3-red w3-hide-medium">@Projects</span>
+
    <br><span class="w3-tag w3-small w3-black"><b> Αρχείο με τις εργασίες μου</b>
 <a href="https://www.dropbox.com/sh/y7j320ldle8678d/AABMt-dGKjWB1ty2JnuflvcUa?dl=0"><i class="fa fa-dropbox"></i></a>
 <a href="https://www.dropbox.com/sh/63m0fmvfn96rwd5/AAA3YfooM9GAUJk_eMntRQjga?dl=0"><i class="fa fa-dropbox"></i></a>
@@ -172,11 +211,8 @@ function w3_close() {mySidebar.style.display = "none";} </script>
   </div>
  </div> 
 </div> 
-<!--BLOG Section ////////////////////////////////////////////////////////// ->
-<div class="w3-center">
-<iframe src="https://robodayblog.wordpress.com" height="400" width="75%"></iframe>
-</div>
-<!-- ////////////////////////////////////////////////////////// -->
+<div class="w3-center w3-padding-32 w3-black"><span class="w3-xlarge w3-border-dark-grey w3-padding-16"><i class="fa fa-quote-left"style="font-size:12px;color:orange"></i> Άν κάναμε όλα όσα είμαστε ικανοί να κάνουμε, θα εκπλήσσαμε τον εαυτό μας.<i class="fa fa-quote-right"style="font-size:12px;color:orange"></i></span><br>Thomas Edison</div>
+
 <div class="w3-center w3-padding-64" id="publications">
 <a href="#intro" class="w3-button w3-dark-grey"><i class="fa fa-arrow-up"></i></a>
 <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Publications</span>
@@ -285,19 +321,19 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 
 <!-- Promo computerevolution --><div class="w3-container w3-row w3-center w3-green w3-padding-32 w3-grayscale"><span class="w3-tag w3-small w3-pink"> GAME</span><br><b>“kremaλa”</b> Παιχνίδι σε VisualBasic για PC <span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/o2lbp2oxh7it4cz/Kremala.BETA.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/rnfdz5moi5n1mx8/_kremaλa_%20.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/j5lomf3k4fssn0c/_kremalaki2_.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/sh/uv2qaxzz310wmmf/AACtuaf3OciKJpqucZzBbcc1a?dl=0"><i class="fa fa-code"></i></a></span></div><!-- END Promo  -->
 
-<div class="w3-center w3-padding-64"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Thanks For Watching</span></div>
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-<!-- top --> 
+<!-- top --> <h1>Alexandros Hub</h1>
 <a href="#home" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-  <div class="w3-xlarge w3-section"></div>
-  <!-- twitter --><a href=" https://twitter.com/A_Papaspyrou" title="Twitter"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-  <!-- facebook -->
-  <a href="https://www.facebook.com/papaspyrou.a" title="Facebook"><i class="fa fa-facebook-f w3-hover-opacity">
-  </i></a>
-  <!-- linkedin -->
-  <a href="https://gr.linkedin.com/in/alexandrospapaspyrou" title="Linkedin"><i class="fa fa-linkedin w3-hover-opacity"></i></a> | 
-  <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:280px;" alt="Signature" align="bottom">
+ 
+
+<div class="w3-center w3-padding-32"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Thanks For Watching</span></div>
+
+  <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
 </footer>
 
 <script> // Tabbed Menu
