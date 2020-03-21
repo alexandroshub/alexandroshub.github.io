@@ -1,11 +1,9 @@
-
-
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou V.31.01.20
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou V.3.20
 <!--
 CC-BY:		Alexandros S. Papaspyrou
 URL:		https://alexandroshub.github.io
@@ -38,7 +36,25 @@ body, html { height: 100%; line-height: 1.8;}
 </style>
 </head>
 <body>
-
+<!--  /////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="orange"
+  logged_in_greeting="Hi! How can i help you?"
+  logged_out_greeting="Hi! How can i help you?">
+</div>
+<!--  //////////////////// messenger_platform  ////////////////////////// -->   
 <!--  ////////////////////////// QR  ////////////////////////// -->
 <style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style> <!-- <body onload="on()"> -->  <div id="overlay" onclick="off()"><div id="text"> <center><h3>scan & download the app</h3>
 <a href="https://snappy.appypie.com/index/app-download/appId/9a986a9e031f">
@@ -187,24 +203,6 @@ function w3_close() { mySidebar.style.display = "none";}
  -->
 
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="1610585155641169"
-  theme_color="orange"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
-</div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
 <!--
 ┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
 ├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
