@@ -1,87 +1,178 @@
-
-
-
-<!--
+<!-- COVID-19 specialPage
 
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
-
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤ By: Alexandros Papaspyrou
-Last Update: 11/11/2019-->
-
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou
+┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
+├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
+┴ ┴┴─┘└─┘┴ └─┴ ┴┘└┘─┴┘┴└─└─┘└─┘┴ ┴└─┘└─┘o└─┘┴ ┴ ┴ ┴└─┘└─┘o┴└─┘
+-->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou | plus</title>
+<title>Papaspyrou | COVID-19</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- <meta http-equiv="Refresh" content="4;url=https://robodayblog.wordpress.com/">  -->
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Raleway text Style --><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<!-- Aldrich text Style --><link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
-
 <style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-image: url('https://cms.qz.com/wp-content/uploads/2020/03/novel-coronavirus-covid-19.jpg?quality=75&strip=all&w=1600&h=900&crop=1');
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html { height: 100%; line-height: 1.8;}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center; background-size: cover;
+    background-image: url("https://cms.qz.com/wp-content/uploads/2020/03/novel-coronavirus-covid-19.jpg");
     min-height: 100%;
-    background-position: center;
-    background-size: cover;
 }
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid black;
-  border-bottom: 16px solid black;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+.w3-bar .w3-button { padding: 16px;}
 </style>
 <body>
-
-<div class="bgimg w3-display-container w3-text-white">
-  <div class="w3-display-middle w3-jumbo w3-text-black">
-    <p>COVID-19</p>
-  </div>
-<div class="w3-display-topright w3-container w3-xlarge">
-<p><a href="https://alexandroshub.github.io/next.html" class="w3-bar-item w3-black w3-button w3-wide"><i class="fa fa-arrow-right"></i></a>
-<br><br>
-<a href="https://robodayblog.wordpress.com/" class="w3-bar-item w3-black w3-button w3-wide">W</a>
-
-<a href="https://roboday.tumblr.com/" class="w3-bar-item w3-black w3-button w3-wide">t</a>
-
+<!--  ////////////////////////// messenger_platform  ////////////////////////// --> <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="#A9A9A9"
+  logged_in_greeting="Hi! How can i help you?"
+  logged_out_greeting="Hi! How can i help you?">
 </div>
-<div class="w3-display-topleft w3-container w3-xlarge">
+<!--  ////////////////////// messenger_platform  //////////////////////// -->
+<!-- ////////////////////////// Navbar ////////////////////////// -->
+<!-- Top menu -->
+<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
+<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
+<!-- name --><a class="w3-padding-16 w3-hide-small w3-right"><b><font color="white">/</font><font color="orange">coronavirus lockdown &nbsp; &nbsp; </font></b></a>
+<!-- logo --><div class="w3-padding-16"><a href="https://alexandroshub.github.io">
+<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a> 
 
- <p><a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-black w3-button w3-wide"><i class="fa fa-home"></i>
-</a></p>
- <p><a href="https://alexandroshub.github.io/plus-blog.html"><button class="w3-button w3-black">blog</button></a></p>
-
-    <p><a href="https://alexandroshub.github.io/plus-tv.html"><button class="w3-button w3-black">TV</button></a></p>
-   
-   <p><a href="https://alexandroshub.github.io/soon.html"><button class="w3-button w3-black">soon</button></a></p>
-   
+    </div> 
   </div>
+</div>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+</nav>
+<!-- scripts --><script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+</script>
+<!-- ////////////////////////// Navbar ////////////////////////// -->
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-xxlarge">COVID-19</span><br>
+<p>
+ <a class="w3-button w3-red" href="https://g.co/kgs/9sL5t1" target="_top">Google Results</a>
+  <a class="w3-button w3-blue" href="https://www.who.int/"> who</a>
+    <a class="w3-button w3-blue" href="https://www.civilprotection.gr/el"> civilprotection</a>
+  <a class="w3-button w3-green" href="https://webcache.googleusercontent.com/search?q=cache:https://eody.gov.gr/neos-koronaios-covid-19/">eody</a>
+</p>
+ <span class="w3-xxlarge">lockdown</span><br>
+<p>
+ <a class="w3-button w3-blue" href="https://forma.gov.gr/" target="_top">forma</a>
+  <a class="w3-button w3-red" href="https://ethelontes.gov.gr/" target="_top">ethelontes</a>
+</div>
+
+<span class="w3-hide-small">
   
-   
-</div>
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+</div></span>
+</header>
 
-<!-- That's all folks! --></body></html>
-<!-- Contact: a-papaspyrou@outlook.com.gr  |  Mob: 00306949452023 -->
+<!-- Footer --> 
+<footer class="w3-center w3-black ">
+<a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a><!-- top -->
+<br><!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
+</footer>
+<!-- SSM -->
+<style>
+.accordion {    background-color: #eee;    color: #444;  cursor: pointer;   padding: 18px;    width: 100%;   border: none;   text-align: left;    outline: none;   font-size: 15px;   transition: 0.4s; }
+.active, .accordion:hover {  background-color: #ccc;}
+.accordion:after {    content: '\002B';    color: #777;    font-weight: bold;    float: right;    margin-left: 5px;}
+.active:after {    content: "\2212";}
+.panel {    padding: 0 18px;    background-color: white;    max-height: 0;    overflow: hidden;    transition: max-height 0.2s ease-out;}
+</style>
+
+<!-- www.123formbuilder.com script begins here - -><p>
+<script type="text/javascript" defer src="//www.123formbuilder.com/embed/3216186.js" data-role="form" data-default-width="650px"></script><!-- www.123formbuilder.com script ends here - -></p>
+<script>
+var acc = document.getElementsByClassName("accordion"); var i; for (i = 0; i < acc.length; i++) {acc[i].onclick = function() { this.classList.toggle("active"); var panel = this.nextElementSibling; if (panel.style.maxHeight){panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; }}}
+</script>
+ -->
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+</body>
+<!--
+  _                                                                    
+ |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
+ |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
+        |          |   /                                                         
+CC-BY:		Alexandros S. Papaspyrou
+URL:		https://alexandroshub.github.io
+Version:	OCT18.10(Ath/Gr)
+
+Contact: 	a-papaspyrou@outlook.com.gr
+Mob: 		00306949452023
+Mob:		00306944
+Support: 	alexispapy@gmail.com
+Support: 	alexispapy@outlook.com
+Sub: 		papaspyrou.alexandros@gmail.com
+
+
+-->
+</html>
+<!-- googletagmanager -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-128580719-1');
+</script> 
+<!--
+┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
+├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
+┴ ┴┴─┘└─┘┴ └─┴ ┴┘└┘─┴┘┴└─└─┘└─┘┴ ┴└─┘└─┘o└─┘┴ ┴ ┴ ┴└─┘└─┘o┴└─┘ -->
