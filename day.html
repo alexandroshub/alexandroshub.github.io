@@ -1,0 +1,18 @@
+<script type="text/javascript">
+d = new Array("Κυριακή","Δευτέρα","Τρίτη","Τετάρτη","Πήμπτη","Παρασκευή","Σάββατο");
+m = new Array("January","February","Μαρτίου","Απριλίου","Μαίου","Ιουνίου","July","August","September","October","November","December");
+today = new Date();
+day = today.getDate();
+year = today.getYear();
+if (year < 2000)
+year = year + 1900;
+// get hour value. 
+        var hours = today.getHours(); 
+        var ampm = hours >= 12 ? 'μμ' : 'μμ'; 
+        hours = hours % 12; 
+        hours = hours ? hours : 12; 
+        var minutes = today.getMinutes(); 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+        var myTime = hours + " : " + minutes + " " + ampm; 
+       
+document.write("<center> Σήμερα είναι "+d[today.getDay()]+" "+day+" "+m[today.getMonth()]+" " + year + " και ώρα " + myTime+"</center>"); </script> 
