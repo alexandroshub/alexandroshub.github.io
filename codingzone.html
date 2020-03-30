@@ -1,0 +1,245 @@
+<!-- SpecialPage CodingZode
+
+
+░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+
+Welcome in my personal website 100% HTML Hosted by Github
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
+
+CC-BY:		Alexandros Papaspyrou
+URL:		https://alexandroshub.github.io
+Contact: 	a-papaspyrou@outlook.com.gr
+-->
+
+<!DOCTYPE html>
+<html>
+<title>Papaspyrou | CodingZode</title>
+<link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://clsimplex.com/images/releases/headers/quality-code.jpg");
+    min-height: 50%;
+}
+.menu {
+    display: none;
+}
+</style>
+<body>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1610585155641169"
+  theme_color="#FF9900"
+  logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
+  logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα.">
+</div>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->       
+<!-- ////////////////////////// Navbar ////////////////////////// -->
+<!-- Top menu -->
+<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
+<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
+<!-- name --><a class="w3-padding-16 w3-hide-small w3-right"><b><font color="white">/</font><font color="orange">CodingZone  &nbsp; &nbsp; </font></b></a>
+<!-- logo --><div class="w3-padding-16">  <a href="https://alexandroshub.github.io">
+<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a>
+    </div> 
+  </div>
+</div>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
+</nav>
+<!-- scripts --><script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+</script>
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
+  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
+	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
+	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
+    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
+<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
+</nav>
+<!-- scripts --><script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() { if (mySidebar.style.display === 'block') 
+{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
+}// Close the sidebar with the close button
+function w3_close() {mySidebar.style.display = "none";} </script>
+<!--  //////// Navbar ///////// Navbar //////// Navbar /////// -->
+
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+	
+	</div>
+  <div class="w3-display-middle w3-center">
+
+	<span class="w3-text-white  w3-hide-medium w3-hide-small" style="font-size:130px">CodingZone</span>
+    <span class="w3-text-white w3-hide-large" style="font-size:80px">CodingZone</span>
+ </div>
+ </header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="padding:45px 16px">
+ 
+<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">intro</span></h5> <center>
+ <h3>Git</h3>
+   <a href="https://alexandroshub.github.io/git" class="w3-button w3-black"> <i class="fa fa-code"></i></a></center>
+
+</div>
+</div>
+<!-- Promo -->
+<div class="w3-container w3-light-grey" style="padding:45px 16px"  id="port">
+  <div class="w3-row-padding"><br>
+     <center>
+     <h5 class="w3-center"><span class="w3-tag w3-wide">Programming Languages</span></h5> 
+      <div class="w3-third w3-hide-small">
+   <h3>Python</h3>
+   <a href="https://alexandroshub.github.io/python.html" class="w3-button w3-black"> <i class="fa fa-code"></i></a>
+<div class="w3-row " style="padding-bottom:16px">
+
+</div>
+    </div>
+      <div class="w3-third">
+   <h3>C Cpp C#</h3>
+<div class="w3-row " style="padding-bottom:16px">
+<a href="https://alexandroshub.github.io/cpp.html"  class="w3-button w3-black">
+ <i class="fa fa-code"></i>
+ </a>
+    </div></div>
+    <div class="w3-third w3-hide-small">
+   <h3>#</h3>
+   <a href="#" class="w3-button w3-black">  <i class="fa fa-user-o"></i></a>
+  
+<div class="w3-row " style="padding-bottom:16px">
+
+</div>
+    </div>
+ </center>  </div></div>
+
+<!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+-->
+<!-- Promo -->
+<div class="w3-container w3-grey" style="padding:45px 16px"  id="port">
+  <div class="w3-row-padding"><br>
+     <center>
+     <h5 class="w3-center"><span class="w3-tag w3-wide">Hardware Platforms</span></h5> 
+      <div class="w3-third w3-hide-small">
+   <h3>Arduino</h3>
+   <a href="https://alexandroshub.github.io/arduino.html" class="w3-button w3-black"> <i class="fa fa-code"></i></a>
+<div class="w3-row " style="padding-bottom:16px">
+
+</div>
+    </div>
+      <div class="w3-third">
+   <h3>Raspberrypi</h3>
+<div class="w3-row " style="padding-bottom:16px">
+<a href="https://alexandroshub.github.io/raspberrypi"  class="w3-button w3-black">
+ <i class="fa fa-code"></i>
+ </a>
+    </div></div>
+    <div class="w3-third w3-hide-small">
+   <h3>#</h3>
+   <a href="#" class="w3-button w3-black">  <i class="fa fa-user-o"></i></a>  
+<div class="w3-row " style="padding-bottom:16px">
+
+</div>
+    </div>
+ </center>  </div></div>
+
+<!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+--></div>
+<!-- ////////// Footer 2020 ////////// --> 
+<footer class="w3-center w3-black ">
+<a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
+<!-- top -->
+ <div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-orange w3-padding-16">Thanks For Sharing</span></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+<div class="addthis_inline_share_toolbox"></div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
+</footer>
+<!-- ////////// End Footer 2020 ////////// -->
+
+<!-- ////////// Scripts Zone ////////// -->
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e"></script>
+<!-- googletagmanager -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-128580719-1'); </script>
+
+
+<script> // Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
