@@ -6,56 +6,37 @@
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
 Last Update: 27/9/2017  |  Pre-alpha Stage -->
-<!DOCTYPE html> 
-<html>
-<title>Papaspyrou Alexandros | CV</title>
-<link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Raleway text Style --><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<!-- Aldrich text Style --><link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
-
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-image: url('/w3images/forestbridge.jpg');
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
+html {
+  height: 100%;
 }
- .fullscreen-bg { position: fixed; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; z-index: -100;}
-.fullscreen-bg__video {
-    position: absolute;
-    top: 50%; left: 50%; width: auto;
-    height: auto; min-width: 100%; min-height: 100%;
-    -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%);    
-    -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+
+body {
+  background: #000000;
+  color: #ffffff;
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  position: relative;
 }
-@media (max-width: 767px) { .fullscreen-bg { background: url('https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif') center center / cover no-repeat; } .fullscreen-bg__video {display: none;}}
-</style>
-<body>
 
-<div class="fullscreen-bg">
-<video loop muted autoplay poster="https://68.media.tumblr.com/72f70f217f99c7a24cbf91c641562c5f/tumblr_ou1xb2tPKd1si59zfo1_500.gif" class="fullscreen-bg__video">
-<source src="https://alexispapy.tumblr.com/video_file/t:weA2VFQSF-xF8Ot0glZ8CA/165556092830/tumblr_owlgzuUeWx1si59zf/480" type="video/mp4"></video></div>
+.hub {
+  display: block;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 9vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-<div class="content">
-<div class="w3-display-middle">
-<p><center><img src="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" alt="Me" style="width:40%" class="w3-circle"></center></p>
-</div></div>
-
-<span class="w3-hide-small">
-<div class="w3-display-bottomleft w3-text-white w3-padding-large" style="padding:24px 48px">
-<!-- CC -->
-<h style="font-family:Aldrich; font-size:15px;">
-<i class="fa fa-creative-commons" style="font-size:14px;color:white"></i> Papaspyrou Alexandros</h></div></span>
-
-</body>
-</html>
+.hub span:nth-child(2) {
+  background: #FF9900;
+  color: #000000;
+  border-radius: 1vw;
+  padding: 0 1vw 1vw 1vw;
+  display: inline-block;
+}
 <!--
 That's all folks! 
 
