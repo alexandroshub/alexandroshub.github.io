@@ -1,13 +1,19 @@
-<!--
+<!-- SpecialPage About V.13.4.20
+
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤  (CC)-By: Alexandros Papaspyrou V.3.4.20
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
+
+CC-BY:		Alexandros Papaspyrou
+URL:		https://alexandroshub.github.io
+Contact: 	a-papaspyrou@outlook.com.gr
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou | About</title>
+<title>Papaspyrou | About | Privacy Statement & Terms of Use</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,83 +33,47 @@ body, html {
     background-position: center;
     background-size: cover;
     background-image: url("https://66.media.tumblr.com/e275be333ccf5abfb80f288abece4434/tumblr_oz7c9bifSb1si59zfo10_1280.png");
-    min-height: 50%;
+    min-height: 60%;
 }
 .menu {
     display: none;
 }
 </style>
 <body>
-<!-- ////////////////////////// Navbar ////////////////////////// -->
 
-<!-- Top menu -->
-<div class="w3-top">
-  <div id="myNavbar" style="max-width:100%;margin:auto;">
-    <div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
-         <a href="https://alexandroshub.github.io/contact.html" class="w3-button w3-padding-16 w3-hide-small w3-right w3-hover-black"><b><font color="orange"><i class="fa fa-envelope"></i>  </font></b></a>
-         
-<div class="w3-padding-16">
-<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;">
-    </div> 
-  </div>
+<style>
+.topnav {overflow: hidden; background-color: #19273C;}
+.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+.topnav a:hover {background-color: #d9733b; color: black;}
+.topnav a.active {background-color: #72c494; color: white;}
+.topnav .icon {display: none;}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {float: right; display: block;}}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
+  .topnav.responsive a {float: none; display: block; text-align: left;}}
+</style>
+<div class="topnav" id="myTopnav">
+  <a href="https://alexandroshub.github.io" class="active"  id="home">Alexandros Hub</a>
+  <a href="https://alexandroshub.github.io/cv.html">AboutMe</a> 
+  <a href="https://alexandroshub.github.io/portfolio.html">Portfolio</a>
+  <a href="https://alexandroshub.github.io/plus.html">Plus</a> 
+  <a href="https://alexandroshub.github.io/contact.html">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
-
-<!-- scripts --><script>
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+<script>
+function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
 </script>
-
-<!--
-
-
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card" id="myNavbar">
-  
-    <!-- Hide right-floated links on small screens and replace them with a menu icon ->
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-black" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-  
-<a href="https://alexandroshub.github.io/index.html" class="w3-bar-item w3-button w3-wide">
- 
-<span class="w3-center w3-hide-small w3-hide-medium"><b>Papaspyrou</b></span>&nbsp; <img src="https://66.media.tumblr.com/fb287d1352f741032dd4b1e2a49ecc77/tumblr_phxnkoY5KO1si59zfo1_400.png" style="width:27px;" class="w3-hover-opacity">&nbsp; <span class="w3-hide-small w3-hide-medium"><b>Alexandros</b></span></a> 
-</div>
-    <!-- Right-sided navbar links ->
-    <div class="w3-right ">
-    <a href="#port" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i></a>
-    <a href="#me" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-o"></i></a>
-  
-  </div>
- </div>  
-</div>
-
--->
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
-	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
-    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-teal"><i class="fa fa-link"></i>  &nbsp; Links</a> 
-        <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
-    <hr>
-<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
-</nav>
-
-<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-function w3_open() { if (mySidebar.style.display === 'block') 
-{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
-}// Close the sidebar with the close button
-function w3_close() {mySidebar.style.display = "none";} </script>
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- //////////////////////////END of Top menu////////////////////////// -->
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-<span class="w3-tag">By: Papaspyrou Alexandros</span> 
+<span class="w3-tag"></span> 
  </div>
   <div class="w3-display-middle w3-center">
 
@@ -112,13 +82,13 @@ function w3_close() {mySidebar.style.display = "none";} </script>
     <span class="w3-text-white w3-hide-large " style="font-size:30px"> <b><font color="#FF5733">/</font></b>Privacy Statement & Terms of Use</span>
     
   </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: <span id="datetime"></span></span>
+  <!--  <div class="w3-display-bottomright w3-center w3-padding-large">
+  <span class="w3-text-white">Ημερομηνία τελευταίας τροποποίησης: <span id="datetime"></span></span>
     <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
 </script>
-  </div>
+  </div> -->
 </header>
 
 	<!-- GDBR -->
@@ -296,8 +266,8 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:950px">
  
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WELCOME</span></h5>
-     
+  <!--  <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WELCOME</span></h5>
+     -->
 <script async src="https://app.appzi.io/bootstrap/bundle.js?token=g7Yon"></script>
 <!-- End Appzi -->
 
@@ -307,18 +277,16 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
      
  <div class="w3-panel w3-leftbar w3-light-grey">
       <p><span class="w3-tag w3-wide w3-orange">Προσοχή</span>
-      <br>Το περιεχόμενο, η εμφάνιση και η ροή του site και του blog αλλάζει συνεχώς (δημιουργείται ή ανανεώνεται ή διαγράφεται). Περιεχόμενο που δεν είναι πλέον προσβάσιμο, συνήθως διαγράφεται ορίστηκα και δεν μπορεί να ανακτηθεί. </p>      
-      <p><span class="w3-tag w3-wide w3-orange">privacy</span>
+      <br>Το περιεχόμενο, η εμφάνιση και η ροή του site και του blog αλλάζει συνεχώς (δημιουργείται ή ανανεώνεται ή διαγράφεται). Περιεχόμενο που δεν είναι πλέον προσβάσιμο, συνήθως διαγράφεται ορίστηκα και δεν μπορεί να ανακτηθεί.  <a href=" https://www.patreon.com/user/creators?u=7495321" title="patreon">membership</a></p>      
+      <p><span class="w3-tag w3-wide w3-orange">Γενικά</span>
       <br>
-        Η παρούσα πολιτική απορρήτου εναρμονίζεται με το Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR) <a href="https://eur-lex.europa.eu/legal-content/EL/TXT/HTML/?uri=CELEX:32016R0679&from=EL" title="GDPR"><i class="fa fa-external-link"></i></a>. Τίθεται σε ισχύ από την ημερομηνία δημοσίευσής της και διέπει κάθε αλληλεπίδραση σας με την ιστοσελίδα μας. Με κάθε σας επίσκεψη δηλώνετε ότι την αποδέχεστε στο σύνολο της.</p>
+        Η παρούσα πολιτική απορρήτου εναρμονίζεται με το Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR) <a href="https://eur-lex.europa.eu/legal-content/EL/TXT/HTML/?uri=CELEX:32016R0679&from=EL" title="GDPR"><i class="fa fa-external-link"></i></a> και διέπει κάθε αλληλεπίδραση σας με την ιστοσελίδα μας. 
+Με κάθε σας επίσκεψη σε ιστοσελίδα του domain https://alexandroshub.github.io/, δηλώνετε ότι αποδέχεστε στο σύνολο της Πολιτικής απορρήτου, χρήσης, Cookies και το σύνολο τον διευκρινίσεων, όπως αυτες φαίνονται στο https://alexandroshub.github.io/about. Τα παραπάνω ενδέχεται να τροποποιηθούν.</p>
       
       <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Απο τον <a xmlns:cc="http://creativecommons.org/ns#" href="alexandroshub.github.io" property="cc:attributionName" rel="cc:attributionURL">Papaspyrou Alexandros</a> χορηγείται με άδεια<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Αναφορά Δημιουργού 4.0 Διεθνές </a>.
       
-       <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e"></script>
-<div class="addthis_tipjar_inline"></div>
-<!-- Appzi: Capture Insightful Feedback -->
-
+      
+     
       </div>
  
  
@@ -384,7 +352,7 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
 -->
 
     <h5 class="w3-center w3-padding-64">
-   <span class="w3-tag w3-wide">DATA</span></h5>
+   <span class="w3-tag w3-wide">Προσωπικά Δεδομένα</span></h5>
    
    <span class="w3-large w3-center" style="background-color: #003366; color: white; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">Το alexandroshub δε συλλέγει και κατ' επέκταση δεν επεξεργάζεται τα προσωπικά σας δεδομένα.</span>
    <span class="w3-small w3-center" style="background-color: red; color: white; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">Παρ' όλα αυτά υπάρχουν τρίτες υπηρεσίες στη σελίδα που μπορεί να το κάνουν.</span>
@@ -413,6 +381,11 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
       <a href="https://support.microsoft.com/el-gr/help/17442/windows-internet-explorer-delete-manage-cookies#ie=ie-11" title="Internet Explorer">Internet Explorer</a>  /  
        <a href="https://support.mozilla.org/el/kb/pws-energopoiw-th-leitoyrgia-do-not-track" title="mozilla">mozilla</a>  /  
      <a href="https://support.apple.com/el-gr/guide/safari/sfri11471/mac" title="safari">safari</a>
+    
+    <p>
+    Για ζητήματα ιδιωτικότητας  <a href="#" title="link">διαβαστε εδω</a>. 
+    Προτείνεται η χρήση του <a href="https://www.torproject.org/" title="TOR">TOR</a> σε <a href="https://tails.boum.org/" title="tails">tails</a> ή <a href="https://www.kali.org/" title="kali">kali</a>.
+    </p>
     
     <h5 class="w3-center w3-padding-64">
   <span class="w3-tag w3-wide">Ιδιοκτησία & Πνευματικά Δικαιώματα</span></h5>
@@ -494,40 +467,35 @@ Email: <a href="mailto:alexispapy@gmail.com">alexispapy@gmail.com</a>
 
 
 
-<div class="w3-center w3-padding-64"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Thanks For Watching</span></div>
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-<!-- top --> 
-<a href="#home" class="w3-button"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-  <div class="w3-xlarge w3-section"></div>
-  <!-- twitter --><a href=" https://twitter.com/A_Papaspyrou" title="Twitter"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-  <!-- facebook -->
-  <a href="https://www.facebook.com/papaspyrou.a" title="Facebook"><i class="fa fa-facebook-f w3-hover-opacity">
-  </i></a>
-  <!-- linkedin -->
-  <a href="https://gr.linkedin.com/in/alexandrospapaspyrou" title="Linkedin"><i class="fa fa-linkedin w3-hover-opacity"></i></a> | 
-  <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:280px;" alt="Signature" align="bottom">
-</footer>
+<!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+--><!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  -->
+<style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
+<footer class="w3-center"><div class="w3-row"><div class="w3-container w3-half">
+<div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-blue w3-padding-16">You've reached the end!</span></div>
+<a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a></div>
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
+<span class="w3-large w3-bottombar w3-border-blue w3-padding-16">Thanks For Sharing!</span></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div></div></div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+<i class="fa fa-creative-commons"></i>
+2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> | <a href="https://alexandroshub.github.io/tss">TSS</a> |  <!-- android --><a style="text-decoration: none" onclick="on()"title="APP"><i class="fa fa-android"></i></a> 
+</p></div></footer>
+<!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  --><!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+-->
 
-<script> // Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
+
 <!-- CHAT OR EMAIL https://www.tawk.to/ --> 
+<!--
 <script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/57e80bcdbb785b3a47cafa79/default'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');  s0.parentNode.insertBefore(s1,s0); }) ();</script>
-
+-->
 	
 	<script type="text/javascript">
   var _userway_config = {
