@@ -1,14 +1,17 @@
+<!-- SpecialPage raspberrypi _V.15.04.20
 
-<!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤ By: Alexandros Papaspyrou
--->
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
+
+CC-BY:		Alexandros Papaspyrou
+URL:		https://alexandroshub.github.io
+Contact: 	a-papaspyrou@outlook.com.gr-->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou</title>
+<title>Papaspyrou | Programming | Raspberry pi</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,22 +19,24 @@ Handcrafted With ❤ By: Alexandros Papaspyrou
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 body, html {
     height: 100%;
-    font-family: "Inconsolata", sans-serif;
+    line-height: 1.8;
+}
+.w3-bar .w3-button {
+    padding: 16px;
 }
 .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg");
-    min-height: 75%;
-}
-.menu {
-    display: none;
+    background-image: url("https://www.ecopetit.cat/wpic/mpic/124-1240714_raspberry-pi.jpg");
+    min-height: 65%;
 }
 </style>
 <body>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -40,144 +45,113 @@ body, html {
   js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<!-- Your customer chat code -->
 <div class="fb-customerchat"
   attribution=setup_tool
   page_id="1610585155641169"
-  theme_color="#A9A9A9"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
+  theme_color="#72c494"
+  logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
+  logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα.">
 </div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-
-<!-- Links (sit on top) -->
-<div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
-    <div class="w3-col s3">
-      <a href="#" class="w3-button w3-block w3-black">TOP</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#about" class="w3-button w3-block w3-black">AUTOMATION
-</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
-    </div>
-    <div class="w3-col s3">
-      <a href="#where" class="w3-button w3-block w3-black">PROJECTS</a>
-    </div>
-  </div>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->
+<!-- //////////////////////////Top menu////////////////////////// -->
+<style>
+.topnav {overflow: hidden; background-color: #19273C;}
+.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+.topnav a:hover {background-color: #d9733b; color: black;}
+.topnav a.active {background-color: #72c494; color: white;}
+.topnav .icon {display: none;}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {float: right; display: block;}}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
+  .topnav.responsive a {float: none; display: block; text-align: left;}}
+</style>
+<div class="topnav" id="myTopnav">
+  <a href="https://alexandroshub.github.io" class="active"  id="home">Alexandros Hub</a>
+  <a href="https://alexandroshub.github.io/cv.html">AboutMe</a> 
+  <a href="https://alexandroshub.github.io/portfolio.html">Portfolio</a>
+  <a href="https://alexandroshub.github.io/plus.html">Plus</a> 
+  <a href="https://alexandroshub.github.io/contact.html">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
-
+<script>
+function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
+</script>
+<!-- //////////////////////////END of Top menu////////////////////////// -->
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">Open from 6am to 5pm</span>
-  </div>
+	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+	<span class="w3-tag"></span> 
+	</div>
   <div class="w3-display-middle w3-center">
-
-	<span class="w3-text-white w3-hide-small" style="font-size:130px">#raspberrypi</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">#raspberrypi</span>
-
-  </div>
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">15 Adr street, 5015</span>
-  </div>
+<span class="w3-text-white w3-hide-small" style="font-size:130px"> raspberrypi</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px"> raspberrypi</span>
+ </div>
+<div class="w3-display-bottomright w3-center w3-padding-large"><a href="https://github.com/alexandroshub/python" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off w3-hover-black"><b> My <font color="red"> <i class="fa fa-github-alt"></i>Projects</font></b></a></div>
 </header>
-
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
-
-<!-- About Container -->
-<div class="w3-container" id="about">
-  <div class="w3-content" style="max-width:700px">
-   <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">AUTOMATION</span></h5>
-    <p>Αυτοματισμός, είναι το πεδίο της επιστήμης και της τεχνολογίας που ασχολείται με την επιβολή επιθυμητής συμπεριφοράς στα φαινόμενα και με την κατανόηση των μηχανισμών μέσω των οποίων καθορίζεται η λειτουργία ενός φαινομένου. Αυτοματισμός ονομάζεται και Επιστήμη του Ελέγχου. <hr>
-Το αντικείμενο του Αυτοματισμού, είναι γενικό και πολύπλευρο, για αυτό και εφαρμογές του βρίσκονται πολυάριθμες στην καθημερινή ζωή και στη βιομηχανία. Ο Αυτοματισμός είναι ένα από τα πιο “ιστορικά” πεδία της επιστήμης, διότι η ανάπτυξή του συνοδεύει την εξέλιξη όλων των άλλων τεχνολογιών. Η γνώση του Αυτοματισμού, επομένως, αποτελεί γνώση της “τεχνολογικής ιστορίας” μας και της κληρονομιάς μας. Στην περίπτωση του Αυτοματισμού, μάλιστα, η ιστορία αυτή είναι ιδιαίτερα πλούσια μιας και οι Αρχαίοι Έλληνες επέδειξαν ιδιαίτερη εφευρετικότητα και ανέπτυξαν πολλές και σημαντικές λύσεις αυτοματισμού, που χρησιμοποιούμε μέχρι και σήμερα. Χάρη στην καθολική και γενικευμένη διάδοση των εφαρμογών του, ο Αυτοματισμός αποκτά ένα σημαντικό ρόλο στη ζωή μας.</p>
-    
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">WELCOME</span></h5>
-    <p>Καλώς ήλθατε στο κόσμο τον ηλεκτρονικών και των αυτοματισμών! Ζούμε σε μια εποχή εκπληκτικά υψηλής τεχνολογίας, που περιβάλλεται από ηλεκτρονικά μαραφέτια και gadgets. Η κατανόηση του πώς να διαβάσει σχηματικές αναπαραστάσεις, συγκόλλησης, το πρόγραμμα και την κατασκευή κυκλωμάτων θα σας βοηθήσει να κατανοήσετε του κόσμου στον οποίο ζούμε…  Μέσα από αυτή την ενότητα θέλω να σας βοηθήσω να γνωρίσετε και να αγαπήσετε τον κόσμο των ηλεκτρονικών. Τα Tutorials θα σας εξηγούν, διδάσκουν, και θα σας εμπνέουν στο να παίξετε και να ψαχτείτε με τα ηλεκτρονικά και τους αυτοματισμούς! Θα έχουμε ένα ευρύ φάσμα από tutorials που θα καλύπτουν τόσο τη βασική θεωρία των ηλεκτρονικών και παραδείγματα για την κατασκευή project.</p>
-    <div class="w3-panel w3-leftbar w3-light-grey">
-      <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
-      <p>Chef, Coffeeist and Owner: Liam Brown</p>
-    </div>
-    <img src="https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
-    <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
-    <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
-  </div>
-</div>
-
 <!-- Menu Container -->
 <div class="w3-container" id="menu">
   <div class="w3-content" style="max-width:700px">
- 
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
-  
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"> dd</span></h5>  
     <div class="w3-row w3-center w3-card w3-padding">
       <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-        <div class="w3-col s6 tablink">Eat</div>
+        <div class="w3-col s6 tablink">intro</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-        <div class="w3-col s6 tablink">Drink</div>
+        <div class="w3-col s6 tablink">links</div>
       </a>
     </div>
-
     <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Bread Basket</h5>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-    
-      <h5>Honey Almond Granola with Fruits</h5>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-    
-      <h5>Belgian Waffle</h5>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-    
-      <h5>Scrambled eggs</h5>
-      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-    
-      <h5>Blueberry Pancakes</h5>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+<p>
+<span class="w3-tag w3-red">Περισσότερα σύντομα!!</span>
+</p>
     </div>
-
     <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-      <h5>Coffee</h5>
-      <p class="w3-text-grey">Regular coffee 2.50</p><br>
-    
-      <h5>Chocolato</h5>
-      <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
-    
-      <h5>Corretto</h5>
-      <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
-    
-      <h5>Iced tea</h5>
-      <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
-    
-      <h5>Soda</h5>
-      <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
-    </div>  
-    <img src="https://c1.staticflickr.com/4/3676/32780334312_14c9b2df93_o.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
-  </div>
+      <h5></h5>
+  <p>
+  <a href="#" class="w3-button w3-blue">xx</a>
+  </p>
+            </div><br>
+            <span class="w3-tag w3-red">Περισσότερα σύντομα!!</span>
+            και μή ξεχνάτε. Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger.
+		</div><br>
+	</div>
 </div>
-
-<!-- Contact/Area Container -->
-<div class="w3-container" id="where" style="padding-bottom:32px;">
-  <div class="w3-content" style="max-width:700px">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">PROJECTS</span></h5>
-    <p>Find us at some address at some place.</p>   
-    <p><span class="w3-tag">MICHATRON</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
-    <iframe style="height: 510px; width: 100%; margin: 10px 0 10px;" allowTransparency="true" src="https://codebender.cc/embed/sketch:208552" frameborder="0"></iframe>
-
-    <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-    
-  </div>
-
-
-<!-- End page content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16 w3-large">
-<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:270px;" alt="Signature" align="bottom">
-</footer>
+<!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+--><!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  -->
+<style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
+<footer class="w3-center"><div class="w3-row"><div class="w3-container w3-half">
+<div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-blue w3-padding-16">You've reached the end!</span></div>
+<a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a></div>
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
+<span class="w3-large w3-bottombar w3-border-blue w3-padding-16">Thanks For Sharing!</span></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e"></script><!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div></div></div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
+  <style>div.a {font-size: 12px;}</style>
+<div class="a">
+<p><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+<i class="fa fa-creative-commons"></i>
+2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> | <a href="https://alexandroshub.github.io/tss">TSS</a> |  <!-- android --><a style="text-decoration: none" onclick="on()"title="APP"><i class="fa fa-android"></i></a> 
+</p></div></footer>
+<!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  --><!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+-->
+<!-- ////////// Scripts Zone ////////// -->
+<!-- googletagmanager -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-128580719-1');
+</script>
 
 <script> // Tabbed Menu
 function openMenu(evt, menuName) {
@@ -196,5 +170,4 @@ function openMenu(evt, menuName) {
 document.getElementById("myLink").click();
 </script>
 
-</body>
-</html>
+</body></html>
