@@ -26,7 +26,7 @@ body, html {
 .bgimg {
     background-position: center;
     background-size: cover;
-    background-image: url("https://66.media.tumblr.com/a28d0e003dc51bc821c3ffac661a9702/tumblr_pbnlsrwxmW1si59zfo9_1280.png");
+    background-image: url("https://66.media.tumblr.com/e2bab769af835a216d0ee4b49fdd161b/tumblr_ou1xb2tPKd1si59zfo4_1280.png");
     min-height: 75%;
 }
 .menu {
@@ -49,38 +49,37 @@ body, html {
   theme_color="#283E4A">
 </div>
 <!--  ////////////////////////// messenger_platform  ////////////////////////// -->   
-<!-- ////////////////////////// Navbar ////////////////////////// -->
-<!-- Top menu -->
-<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
-<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
-<!-- name --><a class="w3-padding-16 w3-hide-small w3-right"><b><font color="white">/</font><font color="orange">Portfolio  &nbsp; &nbsp; </font></b></a>
-<!-- logo --><div class="w3-padding-16">  <a href="https://alexandroshub.github.io">
-<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a>
-    </div> 
-  </div>
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+<style>
+.topnav {overflow: hidden; background-color: #19273C;}
+.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+.topnav a:hover {background-color: #d9733b; color: black;}
+.topnav a.active {background-color: #72c494; color: white;}
+.topnav .icon {display: none;}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {float: right; display: block;}}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
+  .topnav.responsive a {float: none; display: block; text-align: left;}}
+</style>
+<div class="topnav" id="myTopnav">
+  <a href="https://alexandroshub.github.io" class="active"  id="home">Alexandros Hub</a>
+  <a href="https://alexandroshub.github.io/cv.html">AboutMe</a> 
+  <a href="https://alexandroshub.github.io/portfolio.html">Portfolio</a>
+  <a href="https://alexandroshub.github.io/plus.html">Plus</a> 
+  <a href="https://alexandroshub.github.io/contact.html">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
-	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://alexandroshub.github.io/liveplus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
-    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a>
-</nav>
-<!-- scripts --><script>
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
+<script>
+function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
 </script>
-<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-function w3_open() { if (mySidebar.style.display === 'block') 
-{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
-}// Close the sidebar with the close button
-function w3_close() {mySidebar.style.display = "none";} </script>
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
+<!-- //////////////////////////END of Top menu////////////////////////// -->
+
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
@@ -91,7 +90,7 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 
 
 	<span class="w3-text-white w3-hide-small" style="font-size:130px">
-    <b><font color="#FF9900">/</font></b>Portfolio</span>
+    Portfolio</span>
     <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px"> <b><font color="#FF9900">/</font></b>Portfolio</span>
 
   </div>
@@ -161,10 +160,46 @@ Files & Publications</div>
 </div>
 
 
+<!--  **************************************************************************** ->
+  <div class="w3-content" style="max-width:350px">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  
+  
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-
-
-
+<div class="carousel-inner">
+      <div class="item active">
+        <img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Los Angeles" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="Chicago" style="width:100%;">
+      </div>
+         <div class="item">
+        <img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="New york" style="width:100%;">
+      </div>
+    </div>
+  
+  
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+<!--  **************************************************************************** -->
 
 <!-- About Container -->
 <div class="w3-container"></div>
@@ -288,7 +323,10 @@ Files & Publications</div>
 </div>
 <br>
 
-<!-- Promo Section - "We know design" -->
+  <!-- Promo computerevolution --><div class="w3-container w3-row w3-center w3-green w3-padding-32 w3-grayscale"><span class="w3-tag w3-small w3-pink"> GAME</span><br><b>“kremaλa”</b> Παιχνίδι σε VisualBasic για PC <span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/o2lbp2oxh7it4cz/Kremala.BETA.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/rnfdz5moi5n1mx8/_kremaλa_%20.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/j5lomf3k4fssn0c/_kremalaki2_.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/sh/uv2qaxzz310wmmf/AACtuaf3OciKJpqucZzBbcc1a?dl=0"><i class="fa fa-code"></i></a></span></div><!-- END Promo  -->
+  
+
+<!--
 <div class="w3-container w3-light-grey w3-grayscale-min" style="padding:40px 16px"  id="port">
   <div class="w3-row-padding"> 
   <div class="w3-center w3-padding-64" id="code">
@@ -298,13 +336,13 @@ Files & Publications</div>
   
     <div class="w3-col m6">
   
-  <!-- Promo computerevolution --><div class="w3-container w3-row w3-center w3-green w3-padding-32 w3-grayscale"><span class="w3-tag w3-small w3-pink"> GAME</span><br><b>“kremaλa”</b> Παιχνίδι σε VisualBasic για PC <span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/o2lbp2oxh7it4cz/Kremala.BETA.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/rnfdz5moi5n1mx8/_kremaλa_%20.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/s/j5lomf3k4fssn0c/_kremalaki2_.rar?dl=0"><i class="fa fa-dropbox"></i></a></span>&nbsp;<span class="w3-tag w3-small w3-pink"><a href="https://www.dropbox.com/sh/uv2qaxzz310wmmf/AACtuaf3OciKJpqucZzBbcc1a?dl=0"><i class="fa fa-code"></i></a></span></div><!-- END Promo  -->
+
 
 
     </div>
     <div class="w3-col m6">
      <!--    ================ -->
-
+<!--
 <div class="w3-row w3-hide-small" style="padding-bottom:30px">
 <font color="red">#</font><font color="blue">include </font>  
 <font color="green">"hello_world.h"</font>   
@@ -322,20 +360,30 @@ Files & Publications</div>
 
 
 
-<!-- ////////// Footer 2020 ////////// --> 
-<footer class="w3-center w3-black ">
-<a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-<!-- top -->
- <div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-orange w3-padding-16">Thanks For Sharing</span></div>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
 
-<div class="addthis_inline_share_toolbox"></div>
-<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
+<!-- may
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+--><!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  -->
+<style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
+<footer class="w3-center"><div class="w3-row"><div class="w3-container w3-half">
+<div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-blue w3-padding-16">You've reached the end!</span></div>
+<a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a></div>
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
+<span class="w3-large w3-bottombar w3-border-blue w3-padding-16">Thanks For Sharing!</span></div><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55942e200b33038e"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div></div></div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
   <style>div.a {font-size: 12px;}</style>
 <div class="a">
-<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
-</footer>
-<!-- ////////// End Footer 2020 ////////// -->
+<p><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+<i class="fa fa-creative-commons"></i>
+2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> | <a href="https://alexandroshub.github.io/tss">TSS</a> |  <!-- android --><a style="text-decoration: none" onclick="on()"title="APP"><i class="fa fa-android"></i></a> 
+</p></div></footer>
+<!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  --><!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+-->
 
 <!-- ////////// Scripts Zone ////////// -->
 
