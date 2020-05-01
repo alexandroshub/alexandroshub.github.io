@@ -1,16 +1,17 @@
-<!--
+
+
+<!-- SpecialPage contact  V.01.05.20
+
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
 Welcome in my personal website 100% HTML Hosted by Github
-Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou V.3.20
-┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
-├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
-┴ ┴┴─┘└─┘┴ └─┴ ┴┘└┘─┴┘┴└─└─┘└─┘┴ ┴└─┘└─┘o└─┘┴ ┴ ┴ ┴└─┘└─┘o┴└─┘
+Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou
+
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou | contact</title>
+<title>Papaspyrou | Contact</title>
 <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,17 +20,26 @@ Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou V.3.20
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html { height: 100%; line-height: 1.8;}
-/* Full height image header */
-.bgimg-1 {
-    background-position: center; background-size: cover;
-    background-image: url("https://images.wallpaperscraft.com/image/bottle_message_shore_154574_1280x720.jpg");
-    min-height: 100%;
+body, html {
+    height: 100%;
+    line-height: 1.8;
 }
-.w3-bar .w3-button { padding: 16px;}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://cdn.pixabay.com/photo/2020/03/09/18/10/aeroplane-4916661_960_720.jpg");
+    min-height: 60%;
+}
+.menu {
+    display: none;
+}
 </style>
 <body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// --> <!-- Load Facebook SDK for JavaScript -->
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -42,56 +52,55 @@ body, html { height: 100%; line-height: 1.8;}
 <div class="fb-customerchat"
   attribution=setup_tool
   page_id="1610585155641169"
-  theme_color="#A9A9A9"
-  logged_in_greeting="Hi! How can i help you?"
-  logged_out_greeting="Hi! How can i help you?">
+  theme_color="#72c494"
+  logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
+  logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα.">
 </div>
-<!--  ////////////////////// messenger_platform  //////////////////////// -->
-<!-- ////////////////////////// Navbar ////////////////////////// -->
-<!-- Top menu -->
-<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
-<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
-<!-- name --><a class="w3-padding-16 w3-hide-small w3-right"><b><font color="orange">SOCIAL & CONTACT &nbsp; &nbsp; </font></b></a>
-<!-- logo --><div class="w3-padding-16"><a href="https://alexandroshub.github.io">
-<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a> 
-
-    </div> 
-  </div>
+<!--  ////////////////////////// messenger_platform  ////////////////////////// -->      
+<!-- //////////////////////////Top menu////////////////////////// -->
+<style>
+.topnav {overflow: hidden; background-color: #19273C;}
+.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
+.topnav a:hover {background-color: #223A2C; color: white;}
+.topnav a.active {background-color: #72c494; color: #D4EDDE;}
+.topnav .icon {display: none;}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {float: right; display: block;}}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
+  .topnav.responsive a {float: none; display: block; text-align: left;}}
+</style>
+<div class="topnav" id="myTopnav">
+  <a href="https://alexandroshub.github.io" class="active"  id="home"><b>Alexandros</b>Hub</a>
+  <a href="https://alexandroshub.github.io/cv.html"><i class="far fa-id-card"></i> &nbsp; AboutMe</a> 
+  <a href="https://alexandroshub.github.io/portfolio.html"><script src='https://kit.fontawesome.com/a076d05399.js'></script> <i class="far fa-folder-open"></i> &nbsp; Portfolio</a>
+  <a href="https://alexandroshub.github.io/plus.html"><i class="fas fa-icons"></i>  &nbsp;Plus</a> 
+  <a href="https://alexandroshub.github.io/contact.html"><i class="far fa-comment"></i>  &nbsp;Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
-	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
-    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
-<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
-</nav>
-<!-- scripts --><script>
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
-</script>
-<!-- ////////////////////////// Navbar ////////////////////////// -->
-
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">CONTACT ME</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">CONTACT ME</span><br>
-<body onload="typeWriter()">
-<p id="demo" class="w3-large"></p>
-<!--
 <script>
-var i = 0;
-var txt = "Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία, όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία .... ";
-var speed = 40; function typeWriter() {
-if (i < txt.length) {  document.getElementById("demo").innerHTML += txt.charAt(i); i++; setTimeout(typeWriter, speed);}}
-</script> 
--->
-</body>
+function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
+</script>
+<!-- //////////////////////////END of Top menu////////////////////////// -->
+
+
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+	<span class="w3-text-white w3-hide-small" style="font-size:130px">CONTACT</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">CONTACT</span>
+  </div>
+</header>
+
+
+<div class="w3-row">
+
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
 
 <p>
  <a class="w3-button w3-red" href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top">Sent me Email<i class="w3-margin-left fa fa-envelope"></i></a>
@@ -122,88 +131,134 @@ if (i < txt.length) {  document.getElementById("demo").innerHTML += txt.charAt(i
 <a class="w3-button w3-light-grey" href=" https://alexispapy.tumblr.com "><i class="fa fa-tumblr"></i></a>
 <a class="w3-button w3-light-grey" href="  "><i class="fa fa-asterisk  "></i></a>
 </p>
+
+</div></div>
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
+
+<div class="w3-content" style="max-width:400px">
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://alexandroshub.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>                
+
+</div>
 </div>
 
-<span class="w3-hide-small">
-  
-  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-</div></span>
-</header>
+</div>
 
-<!-- Footer --> 
-<footer class="w3-center w3-black ">
-<a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a><!-- top -->
-<br><!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content w3-center" style="max-width:700px">
+
+<link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
+<name style=" font-family:Londrina Shadow; font-size:50px;">git 4 beginers</name><br>
+
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/SWYqp7iY_Tc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">LINKS</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">HOW TO</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+
+<!--
+gitapps: https://githubuniverse.com * https://reactjs.org * https://www.electronjs.org
+
+code: https://www.w3schools.com * https://stackoverflow.com * https://stackexchange.com * https://www.w3resource.com * https://css-tricks.com * https://www.geeksforgeeks.org/
+-->
+<h5><span class="w3-tag w3-wide">editors</span></h5>
+  
+<a href="https://www.sublimetext.com" class="w3-button w3-blue">sublimetext</a>
+<a href="https://atom.io" class="w3-button w3-blue">atom</a>
+<a href="https://code.visualstudio.com/" class="w3-button w3-blue">vsCode</a>
+
+<h5><span class="w3-tag w3-wide">git</span></h5>
+<a href="https://git-scm.com/downloads" class="w3-button w3-blue">git-scm</a>
+<a href="https://gitforwindows.org" class="w3-button w3-blue">gitforwindows</a>
+
+
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>intro</h5>
+  <p>
+
+</p>
+    </div>  
+   
+    <br>
+  
+
+    <p><strong>και μή ξεχνάτε.</strong> Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger. </p>
+    
+  </div>
+</div>
+
+<!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+--><!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  -->
+<style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
+<footer class="w3-center"><div class="w3-row"><div class="w3-container w3-half">
+<div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-blue w3-padding-16">You've reached the end!</span></div>
+<a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a></div>
+<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
+<span class="w3-large w3-bottombar w3-border-blue w3-padding-16">Thanks For Sharing!</span></div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div></div></div>
+<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
   <style>div.a {font-size: 12px;}</style>
 <div class="a">
-<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
-</footer>
-<!-- SSM -->
-<style>
-.accordion {    background-color: #eee;    color: #444;  cursor: pointer;   padding: 18px;    width: 100%;   border: none;   text-align: left;    outline: none;   font-size: 15px;   transition: 0.4s; }
-.active, .accordion:hover {  background-color: #ccc;}
-.accordion:after {    content: '\002B';    color: #777;    font-weight: bold;    float: right;    margin-left: 5px;}
-.active:after {    content: "\2212";}
-.panel {    padding: 0 18px;    background-color: white;    max-height: 0;    overflow: hidden;    transition: max-height 0.2s ease-out;}
-</style>
-
-<!-- www.123formbuilder.com script begins here - -><p>
-<script type="text/javascript" defer src="//www.123formbuilder.com/embed/3216186.js" data-role="form" data-default-width="650px"></script><!-- www.123formbuilder.com script ends here - -></p>
-<script>
-var acc = document.getElementsByClassName("accordion"); var i; for (i = 0; i < acc.length; i++) {acc[i].onclick = function() { this.classList.toggle("active"); var panel = this.nextElementSibling; if (panel.style.maxHeight){panel.style.maxHeight = null; } else { panel.style.maxHeight = panel.scrollHeight + "px"; }}}
-</script>
- -->
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-    } else {
-        mySidebar.style.display = 'block';
-    }
-}
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-}
-</script>
-</body>
-<!--
-  _                                                                    
- |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
- |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
-        |          |   /                                                         
-CC-BY:		Alexandros S. Papaspyrou
-URL:		https://alexandroshub.github.io
-Version:	OCT18.10(Ath/Gr)
-
-Contact: 	a-papaspyrou@outlook.com.gr
-Mob: 		00306949452023
-Mob:		00306944
-Support: 	alexispapy@gmail.com
-Support: 	alexispapy@outlook.com
-Sub: 		papaspyrou.alexandros@gmail.com
-
-
+<p><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+<i class="fa fa-creative-commons"></i>
+2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> | <a href="https://alexandroshub.github.io/tss">TSS</a> |  <!-- android --><a style="text-decoration: none" onclick="on()"title="APP"><i class="fa fa-android"></i></a> 
+</p></div></footer>
+<!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  --><!-- 
+   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+ .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
 -->
+
+
+<script> // Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
 </html>
-<!-- googletagmanager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-128580719-1');
-</script> 
-<!--
-┌─┐┬  ┌─┐─┐ ┬┌─┐┌┐┌┌┬┐┬─┐┌─┐┌─┐┬ ┬┬ ┬┌┐  ┌─┐┬┌┬┐┬ ┬┬ ┬┌┐  ┬┌─┐
-├─┤│  ├┤ ┌┴┬┘├─┤│││ ││├┬┘│ │└─┐├─┤│ │├┴┐ │ ┬│ │ ├─┤│ │├┴┐ ││ │
-┴ ┴┴─┘└─┘┴ └─┴ ┴┘└┘─┴┘┴└─└─┘└─┘┴ ┴└─┘└─┘o└─┘┴ ┴ ┴ ┴└─┘└─┘o┴└─┘ -->
