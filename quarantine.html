@@ -1,3 +1,4 @@
+
 <!--
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -34,63 +35,18 @@ body, html {
 }
 </style>
 <body>
-<!-- ////////////////////////// Navbar ////////////////////////// -->
-<!-- Top menu -->
-<div class="w3-top"><div id="myNavbar" style="max-width:100%;margin:auto;">
-<!-- menu --><div class="w3-button w3-padding-16 w3-left w3-hover-black" onclick="w3_open()"><b><font color="orange"><i class="fa fa-bars"></i></font></b></div>
-<!-- logo --><div class="w3-padding-16"><a href="https://alexandroshub.github.io">
-<img src="https://66.media.tumblr.com/4274e751a7e37a44163346c2f5a85e7d/tumblr_pxnn87AzrB1si59zfo1_540.png" style="width:150px;"></a> 
-    </div> 
-  </div>
-</div>
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"><i class="fa fa-times-circle"></i> &nbsp;  Close</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="	fa fa-folder-open-o"></i>&nbsp;  Portfolio</a>
-	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://alexandroshub.github.io/plus" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="	fa fa-plus-circle"></i>  &nbsp; Plus</a> 
-    <a href="https://alexandroshub.github.io/contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-lime"><i class="fa fa-envelope-o"></i>  &nbsp; Contact</a> 
-<a href="https://alexandroshub.github.io/cono" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-pink"><i class="fa fa-connectdevelop fa-fw"></i> CoNo</a>
-</nav>
-<!-- scripts --><script>
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {var navbar = document.getElementById("myNavbar"); if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) { navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black"; } else { navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-black", ""); }}
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() { var x = document.getElementById("navDemo");  if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; } else { x.className = x.className.replace(" w3-show", ""); }}
-</script>
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-top" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red"> Close ×</a>
-  <a href="https://alexandroshub.github.io/portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-send-o"></i>&nbsp;  Portfolio</a>
-	<a href="https://alexandroshub.github.io/cv.html" onclick="w3_close()"  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> &nbsp;  CV </a> 
-	<a href="https://robodayblog.wordpress.com/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-green"><i class="fa fa-coffee"></i>  &nbsp; Blog</a> 
-    <a href="https://alexandroshub.github.io/links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-purple"><i class="fa fa-link"></i>  &nbsp; Links</a> 
-    <hr>
-<a href="https://m.me/papaspyrou.alexandros" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue"><i class="fa fa-comments-o"></i> Messenger</a>
-  <a href="https://alexandroshub.github.io/vip.dashboard.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-</nav>
-<script>// Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
-function w3_open() { if (mySidebar.style.display === 'block') 
-{mySidebar.style.display = 'none';} else {mySidebar.style.display = 'block';}
-}// Close the sidebar with the close button
-function w3_close() {mySidebar.style.display = "none";} </script>
-<!--  ////////////////////////// Navbar  ////////////////////////// -->
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container" id="home">
-   <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-<span class="w3-tag">#menoumespiti</span> 
- </div>
+ 
   <div class="w3-display-middle w3-center">
 
 	<span class="w3-text-white w3-hide-small" style="font-size:130px">Quarantine    </span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">Quarantine    </span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">Quarantine    </span><span class="w3-tag">#in the age of information ignorance is a choice</span> 
 
   </div>
   <div class="w3-display-bottomright w3-center w3-padding-large">
-      <a href="https://alexandroshub.github.io/covid19.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off w3-hover-black"><b> corona<font color="green">virus</font></b></a>
+      <a href="https://alexandroshub.github.io/covid19.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off w3-hover-black"><b> covid<font color="green">19</font></b></a>
   </div>
 </header>
 
@@ -114,21 +70,57 @@ function w3_close() {mySidebar.style.display = "none";} </script>
 <!-- End page content -->
 </div></div></div></div>
 
-<!-- ////////// Footer 2020 ////////// --> 
-<footer class="w3-center w3-black ">
-<a href="#home" class="w3-button w3-hover-orange"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-<!-- top -->
- <div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-orange w3-padding-16">Thanks For Sharing</span></div>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-
-<div class="addthis_inline_share_toolbox"></div>
-<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:330px;" alt="Signature" align="bottom">
-  <style>div.a {font-size: 12px;}</style>
-<div class="a">
-<p>© 2020 AlexandrosHub  All rights reserved. | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> </p></div>
-</footer>
-<!-- ////////// End Footer 2020 ////////// -->
-
+   <footer class="w3-container w3-padding-small w3-padding-16" style="background-color: #0f1724; color: #D1D3D8;">
+      <div class="w3-row-padding">
+         <div class="w3-half" >
+            <h3 style="color:#72c494">BLOG POSTS</h3>
+            <ul class="w3-ul">
+               <li class="w3-padding-small" style="background:#0f1724" onmouseover="this.style.background='#223A2C';" onmouseout="this.style.background='#0f1724';"><a href="https://robodayblog.wordpress.com/2020/05/24/5g/" style="text-decoration: none"> 
+                  <img src="https://robodayblog.files.wordpress.com/2016/06/big-data-gif.gif?w=450&h=450&crop=1" class="w3-left w3-margin-right" style="width:50px">
+                  <span class="w3-large"><b>QnA για το 5G</b> </span><br><span>Το δίκτυο 5G αποτελεί την επόμενη γενιά σύνδεσης κινητών συσκευών στο διαδίκτυο.</span></a>
+               </li>
+               <li class="w3-padding-small" style="background:#0f1724" onmouseover="this.style.background='#223A2C';" onmouseout="this.style.background='#0f1724';"><a href="https://robodayblog.wordpress.com/2020/05/07/%ce%b5%ce%b9%cf%83%ce%b1%ce%b3%cf%89%ce%b3%ce%ae-%cf%83%cf%84%ce%b1-%ce%b7%ce%bb%ce%b5%ce%ba%cf%84%cf%81%ce%bf%ce%bd%ce%b9%ce%ba%ce%ac/"  style="text-decoration: none"><img src="https://robodayblog.files.wordpress.com/2018/02/light-bulb-3104355_960_720.jpg?w=723" class="w3-left w3-margin-right" style="width:50px"><span class="w3-large"><b>Εισαγωγή στα ηλεκτρονικά</b> </span><br><span>Εισαγωγή στα ηλεκτρονικά στην ηλεκτρολογία στα συστήματα και στους αυτοματισμούς.</span></a></li>
+            </ul>
+         </div>
+         <div class="w3-half">
+            <h3 style="color:#72c494">POPULAR LINKS</h3>
+            <p>
+               <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2017/05/21/αυτοματισμός/" style="text-decoration: none">AUTOMATION</a></span>   
+               <span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a href="https://robodayblog.wordpress.com/2016/05/22/arduino/" style="text-decoration: none">ARDUINO</a></span> <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/07/21/rasbery/" style="text-decoration: none">  RASPBERY PI</a></span><span class="w3-tag w3-grey w3-small w3-margin-bottom"> <a href="https://robodayblog.wordpress.com/2016/05/30/iot-roboday/" style="text-decoration: none"> IOT</a></span>
+               <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+               <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/06/24/internet-1/" style="text-decoration: none">INTERNET</a></span>      
+               <span class="w3-tag w3-grey w3-small w3-margin-bottom"><a href="https://robodayblog.wordpress.com/2016/05/26/wtf-is-linux/" style="text-decoration: none">LINUX</a></span>
+            </p>
+            <h3 style="color:#72c494">SHARE</h3>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->            
+            <div class="addthis_inline_share_toolbox"></div>
+            <hr style="width:40% ; height:4px;border:none;color:#333;background-color:#72c494;border-radius:5px ;" />
+         </div>
+      </div>
+   </footer>
+   <!-- 
+      .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+      //////////// Footer 2020 ////////////////  Footer 2020 /////////////  -->
+   <style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
+   <footer class="w3-center">
+      <div class="w3-row">
+         <a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a><br>
+         <!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
+         <style>div.a {font-size: 12px;}</style>
+         <div class="a">
+            <p>
+               <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+               <i class="fa fa-creative-commons"></i>2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a>
+            </p>
+         </div>
+      </div>
+   </footer>
+   <!-- //////////// Footer 2020 ////////////////  Footer 2020 /////////////
+      .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+      -->
+  
 <script> // Tabbed Menu
 function openMenu(evt, menuName) {
   var i, x, tablinks;
