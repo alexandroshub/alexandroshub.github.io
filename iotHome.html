@@ -1,4 +1,5 @@
-<!-- SpecialPage iotMain V. 01.05.20
+
+<!-- SpecialPage iotMain V. 23.10.20
 
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -59,7 +60,7 @@ body, html {
 <style>
 .topnav {overflow: hidden; background-color:rgb(0, 0, 0);}
 .topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
-.topnav a:hover {background-color: #223A2C; color: white;}
+.topnav a:hover {color: white;}
 .topnav a.active {background-color: #4B759B; color: #D4EDDE;}
 .topnav .icon {display: none;}
 @media screen and (max-width: 600px) {
@@ -90,6 +91,10 @@ function myFunction() {var x = document.getElementById("myTopnav"); if (x.classN
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<style>
+#blackgrady {
+  height: 100px; background-image: linear-gradient(to top, rgba(255,0,0,0),rgba(0,0,0,0.7), rgba(0,0,0,1));
+}</style><div id="blackgrady"></div>
   <div class="w3-display-middle w3-center">
 	<span class="w3-text-white w3-hide-small" style="font-size:130px">IOT</span>
     <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">IOT</span>
@@ -111,32 +116,16 @@ function myFunction() {var x = document.getElementById("myTopnav"); if (x.classN
 τα αντικείμενα που χρησιμοποιούμε καθημερινά θα είναι συνδεδεμένα στο Internet και θα είναι σε θέση να προσδιορίσουν τον εαυτό τους σε άλλες συσκευές.</p> 
   
     <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-        <div class="w3-col s6 tablink">LINKS</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'intro');" id="myLink">
+        <div class="w3-col s6 tablink">intro</div>
       </a>
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-        <div class="w3-col s6 tablink">HOW TO</div>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'links');">
+        <div class="w3-col s6 tablink">links</div>
       </a>
     </div>
 
-    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+    <div id="intro" class="w3-container menu w3-padding-48 w3-card">
 
-<!--
-gitapps: https://githubuniverse.com * https://reactjs.org * https://www.electronjs.org
-
-code: https://www.w3schools.com * https://stackoverflow.com * https://stackexchange.com * https://www.w3resource.com * https://css-tricks.com * https://www.geeksforgeeks.org/
--->
-<h5><span class="w3-tag w3-wide">editors</span></h5>
-  
-<a href="https://www.sublimetext.com" class="w3-button w3-blue">sublimetext</a>
-<a href="https://atom.io" class="w3-button w3-blue">atom</a>
-<a href="https://code.visualstudio.com/" class="w3-button w3-blue">vsCode</a>
-
-<h5><span class="w3-tag w3-wide">git</span></h5>
-<a href="https://git-scm.com/downloads" class="w3-button w3-blue">git-scm</a>
-<a href="https://gitforwindows.org" class="w3-button w3-blue">gitforwindows</a>
-</div>
-<div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
 <link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
 <name style=" font-family:Londrina Shadow; font-size:50px;"> What is IoT</name><br>
 <p>
@@ -146,10 +135,16 @@ code: https://www.w3schools.com * https://stackoverflow.com * https://stackexcha
 <i>«Αν είχαμε υπολογιστές που ήξεραν τα πάντα για όλα τα πράγματα – με τη χρήση των δεδομένων που συλλέγονται χωρίς καμία βοήθεια από εμάς. – Θα είναι σε θέση να παρακολουθούν και να μετράνε τα πάντα, και σε μεγάλο βαθμό να συμβάλουν στη μείωση των αποβλήτων, της απώλειας και του κόστους. Εμείς θα γνωρίζουμε όταν χρειάζονται τα πράγματα αντικατάσταση, επισκευή ή την ανάκληση, η ακόμα και αν τα προιόντα είναι φρέσκα η αν έχει περάσει η ημερομηνία λήξης τους.”.</i><br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p_R5ZVWMhzM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
  <a href="https://www.iot-now.com/2019/07/07/97056-what-is-iot/" class="w3-button w3-blue">what is iot</a>
+ 
+  
+</div>
+<div id="links" class="w3-container menu w3-padding-48 w3-card">
+<h5><span class="w3-tag w3-wide">editors</span></h5>
+
 </div>  
 <br><p><strong>και μή ξεχνάτε.</strong> Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger. </p>
 </div>
-</div>
+</div></div>
    <!-- 
       .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
       .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
