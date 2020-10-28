@@ -1,120 +1,190 @@
-
-
-<!-- SpecialPage contact  V.03.05.20
+<!-- SpecialPage contact v.alien2
 
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
 ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
 Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou
-
 -->
 <!DOCTYPE html>
 <html>
-<title>Papaspyrou | Contact</title>
-<link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html {
-    height: 100%;
-    line-height: 1.8;
-}
-.w3-bar .w3-button {
-    padding: 16px;
-}
-.bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");
-    min-height: 70%;
-}
-.menu {
-    display: none;
-}
-</style>
-<body>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="1610585155641169"
-  theme_color="#72c494"
-  logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
-  logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα.">
-</div>
-<!--  ////////////////////////// messenger_platform  ////////////////////////// -->      
-<!-- //////////////////////////Top menu////////////////////////// -->
-<style>
-.topnav {overflow: hidden; background-color: #19273C;}
-.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
-.topnav a:hover {background-color: #223A2C; color: white;}
-.topnav a.active {background-color: #72c494; color: #D4EDDE;}
-.topnav .icon {display: none;}
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {float: right; display: block;}}
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
-  .topnav.responsive a {float: none; display: block; text-align: left;}}
-</style>
-<div class="topnav" id="myTopnav">
-  <a href="https://alexandroshub.github.io" class="active"  id="home"><b>Alexandros</b>Hub</a>
-  <a href="https://alexandroshub.github.io/cv.html"><i class="far fa-id-card"></i> &nbsp; AboutMe</a> 
-  <a href="https://alexandroshub.github.io/portfolio.html"><script src='https://kit.fontawesome.com/a076d05399.js'></script> <i class="far fa-folder-open"></i> &nbsp; Portfolio</a>
-  <a href="https://alexandroshub.github.io/plus.html"><i class="fas fa-icons"></i>  &nbsp;Plus</a> 
-  <a href="https://alexandroshub.github.io/contact.html"><i class="far fa-comment"></i>  &nbsp;Contact</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<script>
-function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
-</script>
-<!-- //////////////////////////END of Top menu////////////////////////// -->
+  <title>Papaspyrou | Contact</title>
+  <link rel="icon" href="https://78.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif;
+    }
+    body,
+    html {
+      height: 100%;
+      line-height: 1.8;
+    }
+    .w3-bar .w3-button {
+      padding: 16px;
+    }
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");
+      min-height: 40%;
+    }
+    .menu {
+      display: none;
+    }
+  </style>
+  <body>
+    <!--  ////////////////////////// messenger_platform  ////////////////////////// -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <!-- Your customer chat code -->
+    <div
+      class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="1610585155641169"
+      theme_color="#72c494"
+      logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
+      logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
+    ></div>
+    <!--  ////////////////////////// messenger_platform  ////////////////////////// -->
+    <!-- //////////////////////////Top menu v.alien2 ////////////////////////// -->
+    <style>
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        display: block;
+        color: #4b759b;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+        color: white;
+      }
+      .topnav a.active {
+        color: #d4edde;
+      }
+      .topnav .icon {
+        display: none;
+      }
+      @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {
+          display: none;
+        }
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {
+          position: relative;
+        }
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    </style>
+    <div class="topnav" id="myTopnav">
+      <a href="https://alexandroshub.github.io" class="active" id="home">
+        <img src="https://64.media.tumblr.com/5bda3cb7ce87ed9de69c85af725ebe78/f06bf6e1e4ca1249-32/s500x750/68ec78a36cb70324f7aa6a0d7657b46926fc44b2.png" style="width: 28px;" />
+      </a>
+      <a href="https://alexandroshub.github.io/cv.html"><i class="far fa-id-card"></i> &nbsp; AboutMe</a>
+      <a href="https://alexandroshub.github.io/portfolio.html">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <i class="far fa-folder-open"></i> &nbsp; Portfolio
+      </a>
+      <a href="https://alexandroshub.github.io/plus.html"><i class="fas fa-icons"></i> &nbsp;Plus</a>
+      <a href="https://alexandroshub.github.io/contact.html"><i class="far fa-comment"></i> &nbsp;Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    <!-- //////////////////////////END of Top menu////////////////////////// -->
 
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+      <style>
+        #blackytop {
+          height: 100px;
+          background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+        }
+      </style>
+      <div id="blackytop"></div>
 
+      <div class="w3-display-middle w3-center">
+        <span class="w3-text-white w3-hide-small" style="font-size: 130px;">CONTACT</span>
+        <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size: 80px;">CONTACT</span>
+      </div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-middle w3-center">
-	<span class="w3-text-white w3-hide-small" style="font-size:130px">CONTACT</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px">CONTACT</span>
-    <br>
-     <a class="w3-button w3-red" href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top">Sent me Email<i class="w3-margin-left fa fa-envelope"></i></a>
-  <a class="w3-button w3-blue" href="https://m.me/papaspyrou.alexandros"> Sent me Message<i class="w3-margin-left fa fa-comments-o"></i></a>
-  <a class="w3-button w3-green" href="tel:+306940548867">Call Me<i class="w3-margin-left fa fa-phone"></i></a>
-<a class="w3-button w3-blue" href="skype:live:48c538b11931770b?call">Call Me <i class="fa fa-skype"></i></a>
-   <a class="w3-button w3-black w3-opacity w3-hover-opacity-off w3-hover-black" href="https://discord.gg/WAnYJjD"> <b> Chat on  <font color="orange">Discord</font></b><i class="w3-margin-left fa fa-comments-o"></i></a>
-  
-  </div>
-</header>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <style>
+        #whitetop2 {
+          height: 50px;
+          background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(247, 245, 242, 1));
+        }
+      </style>
+      <div id="whitetop2"></div>
+    </header>
 
-
-<div class="w3-row">
-
-<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
-
-<p>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2Ry9L_ppJeeCOBPmeUkoXG4DAb3IpjEpUYF_DmE-5h8ooiQ/viewform?embedded=true" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Φόρτωση…</iframe><br>
-
-</p>
-<!--
+    <div class="w3-row">
+      <div class="w3-container w3-half">
+        <div class="w3-center w3-padding-32">
+          <p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2Ry9L_ppJeeCOBPmeUkoXG4DAb3IpjEpUYF_DmE-5h8ooiQ/viewform?embedded=true" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">
+              Φόρτωση…
+            </iframe>
+            <br />
+          </p>
+          <!--
 <h5>SOCIAL</h5><p>
 <a class="w3-button w3-light-grey" href="https://twitter.com/A_Papaspyrou"><i class="fa fa-twitter"></i></a>
 <a class="w3-button w3-light-grey" href=" https://gr.linkedin.com/in/alexandrospapaspyrou  "><i class="fa fa-linkedin"></i></a>
@@ -135,78 +205,132 @@ function myFunction() {var x = document.getElementById("myTopnav"); if (x.classN
 <a class="w3-button w3-light-grey" href="  "><i class="fa fa-asterisk  "></i></a>
 </p>
 -->
-</div></div>
-<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
-
-<div class="w3-content" style="max-width:400px">
-<div id="disqus_thread"></div>
-<script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
+        </div>
+      </div>
+      <div class="w3-container w3-half">
+        <div class="w3-center w3-padding-32">
+          <div class="w3-content" style="max-width: 400px;">
+            <div id="disqus_thread"></div>
+            <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+              /*
 var disqus_config = function () {
 this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://alexandroshub.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>                
+              (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                  s = d.createElement("script");
+                s.src = "https://alexandroshub.disqus.com/embed.js";
+                s.setAttribute("data-timestamp", +new Date());
+                (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+        </div>
+      </div>
+    </div>
 
-</div>
-</div>
-</div>
-<p><strong>και μή ξεχνάτε.</strong> Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger. </p>
-</div>
+    <footer style="background-color: #0f1724; color: #d1d3d8;">
+      <style>
+        #blogkgrady {
+          height: 30px;
+          background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(241, 241, 241, 1));
+        }
+      </style>
+      <div id="blogkgrady"></div>
+      <div class="w3-row-padding">
+        <center>
+          <p>
+            <strong>και μή ξεχνάτε.</strong> Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα, ή να προτείνετε κάτι ακόμα,<br />
+            μπορείτε να μας γράψετε στο messenger.
+          </p>
 
-<!-- 
-   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
- .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
---><!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  -->
-<style>footer {background-color: #19273C; color: #4B759B; padding: 10px;}</style>
-<footer class="w3-center"><div class="w3-row"><div class="w3-container w3-half">
-<div class="w3-center w3-padding-32"><span class="w3-large w3-bottombar w3-border-blue w3-padding-16">You've reached the end!</span></div>
-<a href="#home" class="w3-button w3-hover-blue"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a></div>
-<div class="w3-container w3-half"><div class="w3-center w3-padding-32">
-<span class="w3-large w3-bottombar w3-border-blue w3-padding-16">Thanks For Sharing!</span></div>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_inline_share_toolbox"></div></div></div>
-<!-- Signature --><img src= "https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width:340px;" alt="Papaspyrou Alexandros" align="bottom">
-  <style>div.a {font-size: 12px;}</style>
-<div class="a">
-<p><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-<i class="fa fa-creative-commons"></i>
-2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> | <a href="https://alexandroshub.github.io/tss">TSS</a> |  <!-- android --><a style="text-decoration: none" onclick="on()"title="APP"><i class="fa fa-android"></i></a> 
-</p></div></footer>
-<!-- //////////// Footer 2020 ////////////  Footer 2020 ////////////  --><!-- 
-   .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
- .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
--->
+          <a class="w3-button w3-red" href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top">Sent me Email<i class="w3-margin-left fa fa-envelope"></i></a>
+          <a class="w3-button w3-blue" href="https://m.me/papaspyrou.alexandros"> Sent me Message<i class="w3-margin-left fa fa-comments-o"></i></a>
+          <a class="w3-button w3-green" href="tel:+306940548867">Call Me<i class="w3-margin-left fa fa-phone"></i></a>
+          <a class="w3-button w3-blue" href="skype:live:48c538b11931770b?call">Call Me <i class="fa fa-skype"></i></a>
+          <a class="w3-button w3-black w3-opacity w3-hover-opacity-off w3-hover-black" href="https://discord.gg/WAnYJjD">
+            <b> Chat on <font color="orange">Discord</font></b><i class="w3-margin-left fa fa-comments-o"></i>
+          </a>
+        </center>
+      </div>
+    </footer>
 
+    <!-- 
+      .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+      //////////// Footer 2020 ////////////////  Footer 2020 /////////////  -->
+    <style>
+      footer {
+        background-color: #19273c;
+        color: #4b759b;
+      }
+    </style>
+    <footer class="w3-center">
+      <style>
+        #footy {
+          height: 50px;
+          background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(15, 23, 36, 1));
+        }
+      </style>
+      <div id="footy"></div>
+      <div class="w3-row">
+        <p class="w3-tooltip">
+          you have reached the end <br />
+          <span class="w3-text w3-tag">
+            <a href="#home"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
+          </span>
+        </p>
+        <!-- Signature -->
+        <img src="https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width: 340px;" alt="Papaspyrou Alexandros" align="bottom" />
+        <style>
+          div.a {
+            font-size: 12px;
+          }
+        </style>
+        <div class="a">
+          <p>
+            <link
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+              rel="stylesheet"
+              integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+              crossorigin="anonymous"
+            />
+            <i class="fa fa-creative-commons"></i>2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a> |
+            <a href="https://alexandroshub.github.io/tss">TSS</a> |
+            <!-- android -->
+            <a style="text-decoration: none;" onclick="on()" title="APP"><i class="fa fa-android"></i></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- //////////// Footer 2020 ////////////////  Footer 2020 /////////////
+      .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
+      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
+      -->
 
-<script> // Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
-
-</body>
+    <script>
+      // Tabbed Menu
+      function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+      }
+      document.getElementById("myLink").click();
+    </script>
+  </body>
 </html>
