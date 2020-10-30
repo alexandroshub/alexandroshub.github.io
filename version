@@ -1,0 +1,76 @@
+
+<!-- SpecialPage version v.alien2 + icon
+
+  ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+  ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+  ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+  Welcome in my personal website 100% Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou and Hosted by Github 
+  -->
+<!DOCTYPE html>
+<html>
+  <title>AlexandrosHUB | version </title>
+  <!--/new/--><link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
+  <!--  /////// meta information  /////// -->
+  <meta charset="UTF-8">
+  <meta name="author" content="Alexandros Papaspyrou">
+  <meta name="description" content="Personal website of Papaspyrou Alexandros">
+  <meta name="keywords" content="Automations, Programming , Technology">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--  /////// style information  /////// -->
+  <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    .bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 1)),
+    url('https://images2.alphacoders.com/853/thumb-1920-85302.jpg');    
+    min-height: 100%;
+    }
+  </style>
+  <!--  /////// content  /////// -->  
+  <body style="background-color:black;">
+    <!-- Sidebar with image -->
+    <nav class="w3-sidebar" style="width:50%">
+      <div class="bgimg">
+      <style> pEX { writing-mode: vertical-rl; text-orientation: upright;}</style>
+<pEX>ALIEN</pEX>
+
+</div>
+      
+    </nav>
+  
+    <!-- Page Content -->
+    <div class=" w3-padding-large w3-black" style="margin-left:50%">
+    
+      <!-- Header  <h1 class="w3-jumbo"> -->
+      <header class="w3-container w3-center" style="padding:25px 16px" id="home">
+        <h1><b>ALIEN</b></h1><h3>V2</h3>
+        <p>design & content απο άλλο πλανήτη</p>       
+
+      </header>
+ 
+      <!-- About Section -->
+      <div class="w3-content w3-justify w3-text-grey" id="about">
+   <hr class="w3-opacity">
+        
+        <p>
+        Ο ανανεωμένος σχεδιασμός, το μοναδικό νέο και σύγχρονο περιεχόμενο, η βελτιστοποίηση και ανανέωση του κώδικα, οι εφαρμογές και αλληλεπίδραση που προσφέρεται, η διαρκής εξέλιξη και σταθερή ποιότητα η ακρίβεια και η συνέπεια, η ασφάλεια και η ελευθερία είναι τα συστατικά αυτά που κάνουν και αυτήν την έκδοση της σελίδας καθηλωτική!
+</p>
+ 
+     
+     
+        <!-- End About Section -->
+      </div>
+      <!-- Contact Section -->
+   
+     
+      <!-- END PAGE CONTENT -->
+    </div>
+
+  </body>
+</html>
