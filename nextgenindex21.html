@@ -1,3 +1,4 @@
+
 <!--==========================================================================
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -69,26 +70,7 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WR5TGN2"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->   
-    <!--  ////////////////////////// messenger_platform  ////////////////////////// -->    
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/el_GR/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat"
-      attribution=setup_tool
-      page_id="1610585155641169"
-      theme_color="#72c494"
-      logged_in_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."
-      logged_out_greeting="Πες μου ότι θέλεις με μήνυμα και θα σου απαντήσω σύντομα."></div>
-    <!--  ////////////////////////// messenger_platform  ////////////////////////// -->     
+    <!-- End Google Tag Manager (noscript) -->     
     <!--  ////////////////////////// QR  ////////////////////////// -->
     <style> #overlay {   position: fixed;     display: none;   width: 100%;     height: 100%;   top: 0;     left: 0;     right: 0;   bottom: 0;     background-color: rgba(0,0,0,0.9);   z-index: 2;     cursor: pointer;} #text{   position: absolute;    top: 50%;     left: 50%;    font-size: 20px;     color: white;    transform: translate(-50%,-50%);    -ms-transform: translate(-50%,-50%);} </style>
     <!-- <body onload="on()"> -->  
@@ -165,54 +147,29 @@
   <!-- MAIN Section ///////////////////////////////////////////-->
   <div class="w3-center w3-padding-16" style="background-color: #000; padding: 45px 16px;" id="port">
     <div class="w3-row-padding">
-      <!-- 1 -->
-      <div class="w3-col l3 m6 w3-margin-bottom" onclick="document.getElementById('lista1').style.display='block'">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto">
-            <strong>LightSwich</strong>
-          </div>
-          <div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">
-            Automation              
-          </div>
-          <img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="Developing" style="width: 100%;" />
-        </div>
-      </div>
-      <!-- 2 -->
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container" onclick="document.getElementById('lista2').style.display='block'">
-          <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto">
-            <strong>CoNo</strong>
-          </div>
-          <img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="IoT" style="width: 100%;" />
-          <div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">
-            IoT
-          </div>
-        </div>
-      </div>
-      <!-- 3 -->
-      <div class="w3-col l3 m6">
-        <div class="w3-display-container" onclick="document.getElementById('lista3').style.display='block'">
-          <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto">
-            <strong>Michatron</strong>
-          </div>
-          <img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Michatron" style="width: 100%;" onclick="onClick(this)" />
-          <div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">
-            Robotics
-          </div>
-        </div>
-      </div>
-      <!-- 4 -->
-      <div class="w3-col l3 m6">
-        <div class="w3-display-container" onclick="document.getElementById('lista4').style.display='block'">
-          <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto">
-            <strong>PC evolution</strong>
-          </div>
-          <img src="https://c2.staticflickr.com/1/572/32932636012_c6413d21b5_o.png" alt="Files" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity" />
-          <div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">
-            Publications              
-          </div>
-        </div>
-      </div>
+
+<!-- 1 -->
+ <a href="#LightSwich"><div class="w3-col l3 m6 w3-margin-bottom" onclick="document.getElementById('lista1').style.display='block'"><div class="w3-display-container"><div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>LightSwich</strong></div><img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="Developing" style="width: 100%;"  class="w3-hover-opacity"/> </a>
+<a href="https://alexandroshub.github.io/automation"><div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Automation</div></a>
+</div></div>
+<!-- 2 -->
+<a href="https://alexandroshub.github.io/cono"><div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container" onclick="document.getElementById('lista2').style.display='block'"><div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>CoNo</strong></div>
+<img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="IoT" style="width: 100%;"  class="w3-hover-opacity"/></a>
+<a href="https://alexandroshub.github.io/iot"><div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">IoT</div></a>
+</div></div>
+<!-- 3 -->
+<a href="#MICHATRON"><div class="w3-col l3 m6"><div class="w3-display-container" onclick="document.getElementById('lista3').style.display='block'">
+<div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>Michatron</strong></div>
+<img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Michatron" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity"/></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">Robotics</div>
+</div></div>
+<!-- 4 -->
+<a href="#pcevol"><div class="w3-col l3 m6"><div class="w3-display-container" onclick="document.getElementById('lista4').style.display='block'">
+<div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>PC evolution</strong></div>
+<img src="https://c2.staticflickr.com/1/572/32932636012_c6413d21b5_o.png" alt="Files" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity"/></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Publications</div>
+</div></div>
+
     </div>
   </div>
   <div style="background-color: #000; color: #D1D3D8;">
@@ -270,10 +227,11 @@
       <span class="w3-opacity w3-large w3-border-dark-grey w3-padding-16" style="text-shadow:1px 1px 0 #444"><i class="fa fa-quote-left"style="font-size:12px;color:#72c494"></i> Ζούμε σε μια κοινωνία απολύτως εξαρτώμενη από την επιστήμη και την τεχνολογία,<br> όπου σχεδόν κανένας δεν ξέρει τίποτα για την επιστήμη και την τεχνολογία. <i class="fa fa-quote-right"style="font-size:12px;color:#72c494"></i></span>
       <br>   
       <button class="w3-button w3-red w3-padding-large w3-section" onclick="window.location.href='https://alexandroshub.github.io/raspberrypi';"><b><i class="fab fa-raspberry-pi"></i> Raspberry Pi</b></button> 
-      <button class="w3-button w3-blue w3-padding-large w3-section"onclick="window.location.href='https://alexandroshub.github.io/arduino';"><b><i class="fas fa-infinity"></i> Arduino</b></button> <button class="w3-button w3-black w3-padding-large w3-section"><b><i class="fas fa-robot"></i> Robotics</b></button>  <button class="w3-button w3-white w3-padding-large w3-section"><b><i class="fas fa-network-wired"></i> IoT</b></button>
-      <button class="w3-button w3-orange w3-padding-large w3-section"><b><i class="fas fa-cog"></i> Automations</b></button>
-      <button onclick="" class="w3-button w3-purple w3-padding-large w3-section"><b><i class="fas fa-code"></i> Developing</b></button>
-    </center>
+      <button class="w3-button w3-blue w3-padding-large w3-section"onclick="window.location.href='https://alexandroshub.github.io/arduino';"><b><i class="fas fa-infinity"></i> Arduino</b></button> <!-- <button class="w3-button w3-black w3-padding-large w3-section"><b><i class="fas fa-robot"></i> Robotics</b></button> --> <button class="w3-button w3-white w3-padding-large w3-section"onclick="window.location.href='https://alexandroshub.github.io/iot';"><b><i class="fas fa-network-wired"></i> IoT</b></button>
+<button class="w3-button w3-orange w3-padding-large w3-section"onclick="window.location.href='https://alexandroshub.github.io/automation';"><b><i class="fas fa-cog"></i> Automations</b></button>
+<button class="w3-button w3-purple w3-padding-large w3-section"onclick="window.location.href='https://alexandroshub.github.io/codingzone';"><b><i class="fas fa-code"></i> Developing</b></button>
+      
+ </center>
   </div>
   <footer style="background: linear-gradient(to bottom left, #1C1C1C 0%, #294F69 100%); color: #51B7FF; padding: 25px 16px;">
     <div class="w3-row-padding">
