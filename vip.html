@@ -75,6 +75,51 @@ document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +
 <div class="w3-row-padding">
 xxx
 </div></div>        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<button onclick="openFullscreen();">Open Fullscreen</button>
+<button onclick="closeFullscreen();">Close Fullscreen</button>
+
+<script>
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+</script>
+
+
+
+  
+  
+  
+  
+  
+  
         
 </body>
 </html>
