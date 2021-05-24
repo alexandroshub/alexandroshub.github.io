@@ -134,7 +134,13 @@
   }
   .nav-tabs li a {
     color: #777;
-  } 
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
   .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
@@ -189,7 +195,7 @@
    .jumbotron {
     background-color: #2D2D30;
     color: #fff;
-    padding: 50px 25px;
+    padding: 50 25px;
     font-family: Montserrat, sans-serif;
   }
   </style>
@@ -234,8 +240,6 @@
     </div>
   </div>
 </nav>
-
-
  <style>
      
       body, html { height: 100%; line-height: 1.8;}
@@ -260,8 +264,18 @@
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
   </div></span>
   </header>
-  
-  <style>
+
+<!--
+
+░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ██████╗░██╗
+██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔══██╗██║
+███████║██║░░░░░██████╔╝███████║███████║  ██████╔╝██║
+██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ██╔═══╝░██║
+██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██║░░░░░██║
+╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═╝░░░░░╚═╝
+-->
+
+<style>
 #mySidenav a {
   position: absolute;
   left: -80px;
@@ -278,35 +292,21 @@
   left: 0;
 }
 
-#contact {
+#xxcc {
   top: 250px;
   background-color: #555
 }
 </style>
 
 <div id="mySidenav" class="sidenav">
-  <a href="https://alexandroshub.github.io/portfolio2021" id="contact">Projects </a>
+  <a href="https://alexandroshub.github.io/portfolio2021" id="xxcc">Projects </a>
 </div>
-
-
-<!--
-
-░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ██████╗░██╗
-██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔══██╗██║
-███████║██║░░░░░██████╔╝███████║███████║  ██████╔╝██║
-██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ██╔═══╝░██║
-██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██║░░░░░██║
-╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═╝░░░░░╚═╝
--->
 
 <div class="jumbotron text-center">
   <h2>Personal website of Papaspyrou Alexandros.</h2> 
   <p>All about IoT, Automations, Robotics, projects with arduino or raspberryPi and more...</p> 
 
-  <div id="search"></div>
-<script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de"></script>
-<div class="gcse-search"></div>
-
+ 
     <br> <button onclick="window.location.href='https://alexandroshub.github.io/portfolio2021'"   class="btn pull-center">Personal Projects Portfolio
 </button> 
 <button onclick="window.location.href='https://alexandroshub.github.io/dev'"   class="btn pull-center">dev
@@ -319,6 +319,12 @@
       <h2>Καλωσόρισες</h2>
    <p>είναι η προσωπική ιστοσελίδα του Αλέξανδρου Παπασπύρου</p>
 <p>εδώ μπορείς να βρεις πολλά γύρω από τους <span class="w3-tag w3-small w3-orange"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/automation';"><b><i class="fas fa-cog"></i> Aυτοματισμούς</b></a></span> τη <span class="w3-tag w3-small w3-black"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/soon';"><b><i class="fas fa-robot"></i> Ρομποτική </b></a></span> το <span class="w3-tag w3-small w3-white"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/iot';"><b><i class="fas fa-network-wired"></i> IoT</b></a></span>  και να βρεις project με <span class="w3-tag w3-small w3-blue"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/arduino';"><b><i class="fas fa-infinity"></i> Arduino</b></a></span> και <span class="w3-tag w3-small w3-red"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/raspberrypi';"><b><i class="fab fa-raspberry-pi"></i> Raspberry Pi</b></a></span> και εφαρμογές <span class="w3-tag w3-small w3-purple"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/codingzone';"><b><i class="fas fa-code"></i> Προγραμματισμού</b></a></span> αλλά και οδηγούς και περιεχόμενο ψυχαγωγίας και ενημέρωσης σε θέματα γύρω από τη τεχνολογία.</p>
+
+ <div id="search"></div>
+<script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de" ></script>
+<div class="gcse-search"></div>
+
+
   <button onclick="window.location.href='https://alexandroshub.github.io/welcome21.html'"   class="btn pull-center">read more About</button> <br>
    </div>    
 <br><br>
