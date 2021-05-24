@@ -134,13 +134,7 @@
   }
   .nav-tabs li a {
     color: #777;
-  }
-  #googleMap {
-    width: 100%;
-    height: 400px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-  }  
+  } 
   .navbar {
     font-family: Montserrat, sans-serif;
     margin-bottom: 0;
@@ -195,7 +189,7 @@
    .jumbotron {
     background-color: #2D2D30;
     color: #fff;
-    padding: 100px 25px;
+    padding: 50px 25px;
     font-family: Montserrat, sans-serif;
   }
   </style>
@@ -240,6 +234,8 @@
     </div>
   </div>
 </nav>
+
+
  <style>
      
       body, html { height: 100%; line-height: 1.8;}
@@ -264,6 +260,34 @@
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
   </div></span>
   </header>
+  
+  <style>
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#contact {
+  top: 250px;
+  background-color: #555
+}
+</style>
+
+<div id="mySidenav" class="sidenav">
+  <a href="https://alexandroshub.github.io/portfolio2021" id="contact">Projects </a>
+</div>
+
 
 <!--
 
@@ -283,9 +307,12 @@
 <script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de"></script>
 <div class="gcse-search"></div>
 
+    <br> <button onclick="window.location.href='https://alexandroshub.github.io/portfolio2021'"   class="btn pull-center">Personal Projects Portfolio
+</button> 
+<button onclick="window.location.href='https://alexandroshub.github.io/dev'"   class="btn pull-center">dev
+</button> 
 </div>
 
-<br>
 
    <div class="w3-content w3-center" style="max-width:700px">
   
@@ -311,6 +338,8 @@
       <li class="list-group-item">under construction <span class="badge">3</span></li> 
     </ul>
     </div>    </div>
+    
+    
   <div class="w3-center w3-padding-16" style="background-color: #2D2D30; ;" id="port">
   
   
@@ -337,6 +366,7 @@
 <div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Publications</div>
 </div></div>
     </div>
+
   </div>
  
  
