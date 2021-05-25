@@ -1,0 +1,575 @@
+<!--==========================================================================
+  ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+  ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+  ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+    
+    
+      ▞▚ ▙▄ ▛ █▬█ ▞▚  ▛ █ 
+      
+      
+      Updated: v2.1 May21
+      Website: https://alexandroshub.github.io
+      Contact: 	a-papaspyrou@outlook.com.gr
+      CC-BY international 4 2011-2021 Alexandros Papaspyrou
+  
+     Contact: alexandroshub@protonmail.com  // 	a-papaspyrou@outlook.com.gr | alexispapy@gmail.com | alexispapy@outlook.com | papaspyrou.alexandros@gmail.com
+     Mob: 	+30 694 054 8867
+      
+     Welcome in my personal website 100% HTML Hosted by Github
+     Handcrafted With ❤ (CC)-By: Pᴀᴘᴀsᴘʏʀᴏᴜ Aʟᴇxᴀɴᴅʀᴏs ॐ
+     🅐🅛🅔🅧🅐🅝🅓🅡🅞🅢 🅗🅤🅑   
+     
+     
+▄▀█ █░░ █▀▀ ▀▄▀ ▄▀█ █▄░█ █▀▄ █▀█ █▀█ █▀   █░█ █░█ █▄▄
+█▀█ █▄▄ ██▄ █░█ █▀█ █░▀█ █▄▀ █▀▄ █▄█ ▄█   █▀█ █▄█ █▄█
+
+==========================================================================   -->
+<!DOCTYPE html>
+<html lang="el">
+  <title>AlexandrosHUB | Automations, IoT and all about tech!</title>
+  <link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
+  <head>
+  <!--  /////// meta information  /////// -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Alexandros Papaspyrou">
+    <meta name="description" content="Personal website of Papaspyrou Alexandros. All about IoT projects with arduino or raspberryPi, Automations, Robotics and more...">
+    <meta name="keywords" content="Automations, Programming , Technology">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+ <!--  /////// end of meta & base information and start the link /////// -->  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  /////// end of link and start style css /////// -->
+<style>
+  body {
+    font: 400 15px/1.8 Lato, sans-serif;
+    color: #777;
+  }
+  h3, h4 {
+    margin: 10px 0 30px 0;
+    letter-spacing: 10px;      
+    font-size: 20px;
+    color: #111;
+  }
+  .container {
+    padding: 80px 120px;
+  }
+  .person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+  }
+  .person:hover {
+    border-color: #f1f1f1;
+  }
+
+	.carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+    background: #2d2d30;
+    color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail p {
+    margin-top: 15px;
+    color: #555;
+  }
+  .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+  }
+  .modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-header, .modal-body {
+    padding: 40px 50px;
+  }
+  .nav-tabs li a {
+    color: #777;
+  }
+  #googleMap {
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+  footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }  
+  .form-control {
+    border-radius: 0;
+  }
+  textarea {
+    resize: none;
+  }
+  
+   .jumbotron {
+    background-color: #2D2D30;
+    color: #fff;
+    padding: 50 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  </style>
+
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png");
+  min-height: 100%;
+   -webkit-filter: grayscale(80%);
+    filter: grayscale(80%); /* make all photos black and white */ 
+}
+
+.bgimg-2 {
+  background-image: url("https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png");
+  min-height: 300px;
+   -webkit-filter: grayscale(70%);
+    filter: grayscale(70%); /* make all photos black and white */ 
+}
+
+.bgimg-3 {
+  background-image: url("https://cdn.wallpapersafari.com/54/49/AxDn6E.jpg");
+  min-height: 200px;
+   -webkit-filter: grayscale(70%);
+    filter: grayscale(70%); /* make all photos black and white */ 
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+<!--
+
+░█████╗░██╗░░░░░██████╗░██╗░░██╗░█████╗░  ██████╗░██╗
+██╔══██╗██║░░░░░██╔══██╗██║░░██║██╔══██╗  ██╔══██╗██║
+███████║██║░░░░░██████╔╝███████║███████║  ██████╔╝██║
+██╔══██║██║░░░░░██╔═══╝░██╔══██║██╔══██║  ██╔═══╝░██║
+██║░░██║███████╗██║░░░░░██║░░██║██║░░██║  ██║░░░░░██║
+╚═╝░░╚═╝╚══════╝╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝  ╚═╝░░░░░╚═╝
+-->
+<!--  https://eu.mouseflow.com/websites  -->
+<script type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/dfbacec1-bde7-49cd-97d2-3ab050633146.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><b>AlphaPi</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">HOME</a></li>
+        <li><a href="#portf">PORTFOLIO</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://alexandroshub.github.io/plus.html">Plus</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">▞▚ ▙▄ ▛ █▬█ ▞▚  ▛ █</span>
+  </div>
+</div>
+<style>
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#xxcc {
+  top: 250px;
+  background-color: #555
+}
+</style>
+
+<div id="mySidenav" class="sidenav">
+  <a href="https://alexandroshub.github.io/portfolio2021" id="xxcc">Projects </a>
+</div>
+    <div class="w3-display-bottomright">♒︎ June21</div>
+
+
+
+<div class="jumbotron text-center">
+  <h2>Personal website of Pᴀᴘᴀsᴘʏʀᴏᴜ Aʟᴇxᴀɴᴅʀᴏs.</h2> 
+  <p>All about IoT, Automations, Robotics, projects with arduino or raspberryPi and more...</p> 
+
+</div>
+
+
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">Καλωσόρισες</h3>
+ 
+ 
+<p>Είναι η προσωπική ιστοσελίδα του Αλέξανδρου Παπασπύρου. Εδώ μπορείς να βρεις πολλά γύρω από τους <span class="w3-tag w3-small w3-orange"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/automation';"><b><i class="fas fa-cog"></i> Aυτοματισμούς</b></a></span> τη <span class="w3-tag w3-small w3-black"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/soon';"><b><i class="fas fa-robot"></i> Ρομποτική </b></a></span> το <span class="w3-tag w3-small w3-white"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/iot';"><b><i class="fas fa-network-wired"></i> IoT</b></a></span>  και να βρεις project με <span class="w3-tag w3-small w3-blue"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/arduino';"><b><i class="fas fa-infinity"></i> Arduino</b></a></span> και <span class="w3-tag w3-small w3-red"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/raspberrypi';"><b><i class="fab fa-raspberry-pi"></i> Raspberry Pi</b></a></span> και εφαρμογές <span class="w3-tag w3-small w3-purple"><a style="text-decoration: none;" onclick="window.location.href='https://alexandroshub.github.io/codingzone';"><b><i class="fas fa-code"></i> Προγραμματισμού</b></a></span> αλλά και οδηγούς και περιεχόμενο ψυχαγωγίας και ενημέρωσης σε θέματα γύρω από τη τεχνολογία. Μπορείς να ψάξεις για οτι αλλο θελεις!</p>
+
+ <div id="search"></div>
+<script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de" ></script>
+<div class="gcse-search"></div>
+
+
+  <button onclick="window.location.href='https://alexandroshub.github.io/welcome21.html'"   class="btn pull-center">Περισσότερα για την σελίδα</button> <br>
+  
+  
+</div>
+
+<div id="portf" class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="font-size:25px;color: #f7f7f7;">Portfolio</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+     <p class="text-center">Development & Automation Projects</p>
+    <ul class="list-group">
+      <li class="list-group-item">CoNo <span class="label label-danger">NEW iot project!</span></li>
+      <li class="list-group-item">under construction <span class="badge">3</span></li> 
+    </ul>
+ 
+ 
+   <br> <button onclick="window.location.href='https://alexandroshub.github.io/portfolio2021'"   class="btn pull-center">Personal Projects Portfolio
+</button> 
+<button onclick="window.location.href='https://alexandroshub.github.io/dev'"   class="btn pull-center">dev Projects
+</button> 
+
+   <div class="w3-center w3-padding-16" style="background-color: #2D2D30; ;" id="port">
+  
+  
+    <div class="w3-row-padding">
+<!-- 1 -->
+ <a href="#LightSwich"><div class="w3-col l3 m6 w3-margin-bottom" onclick="document.getElementById('lista1').style.display='block'"><div class="w3-display-container"><div class="w3-display-topleft w3-padding" style="background-colorpadding: 45px 16px: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>LightSwich</strong></div><img src="https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png" alt="Developing" style="width: 100%;"  class="w3-hover-opacity"/> </a>
+<a href="https://alexandroshub.github.io/automation"><div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Automation</div></a>
+</div></div>
+<!-- 2 -->
+<a href="https://alexandroshub.github.io/cono"><div class="w3-col l3 m6 w3-margin-bottom"><div class="w3-display-container" onclick="document.getElementById('lista2').style.display='block'"><div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>CoNo</strong></div>
+<img src="https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png" alt="IoT" style="width: 100%;"  class="w3-hover-opacity"/></a>
+<a href="https://alexandroshub.github.io/iot"><div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">IoT</div></a>
+</div></div>
+<!-- 3 -->
+<a href="#MICHATRON"><div class="w3-col l3 m6"><div class="w3-display-container" onclick="document.getElementById('lista3').style.display='block'">
+<div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>Michatron</strong></div>
+<img src="https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png" alt="Michatron" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity"/></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">Robotics</div>
+</div></div>
+<!-- 4 -->
+<a href="#pcevol"><div class="w3-col l3 m6"><div class="w3-display-container" onclick="document.getElementById('lista4').style.display='block'">
+<div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #72c494; padding: 45px 16px;" id="auto"><strong>PC evolution</strong></div>
+<img src="https://c2.staticflickr.com/1/572/32932636012_c6413d21b5_o.png" alt="Files" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity"/></a>
+<div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Publications</div>
+</div></div>
+    </div>
+
+  </div>
+ 
+ 
+ 
+ 
+ 
+  </div>
+</div>
+
+
+
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+ 
+  <h3 class="text-center">AP +</h3>  
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">+ Blog</a></li>
+    <li><a data-toggle="tab" href="#menu1">+ Podcast</a></li>
+    <li><a data-toggle="tab" href="#menu2">+ OTR</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>BLOG POSTS</h2>
+     <ul class="w3-ul">
+          <li class="w3-padding-small"><a href="https://robodayblog.wordpress.com/2020/05/24/5g/" style="text-decoration: none"> 
+            <span class="w3-large"><b>QnA για το 5G</b> </span><br><span>Το δίκτυο 5G αποτελεί την επόμενη γενιά σύνδεσης κινητών συσκευών στο διαδίκτυο.</span></a>
+          </li>
+          <li class="w3-padding-small" onmouseover="background='#0f1724';"><a href="https://robodayblog.wordpress.com/2020/05/07/%ce%b5%ce%b9%cf%83%ce%b1%ce%b3%cf%89%ce%b3%ce%ae-%cf%83%cf%84%ce%b1-%ce%b7%ce%bb%ce%b5%ce%ba%cf%84%cf%81%ce%bf%ce%bd%ce%b9%ce%ba%ce%ac/"  style="text-decoration: none">
+            <span class="w3-large"><b>Εισαγωγή στα ηλεκτρονικά</b> </span><br><span>Εισαγωγή στα ηλεκτρονικά στην ηλεκτρολογία στα συστήματα και στους αυτοματισμούς.</span></a>
+          </li>
+        </ul>
+        <button onclick="window.location.href='https://alexandroshub.wordpress.com'"   class="btn pull-right">AlexandrosHub +Blog</button>
+        
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>POD POSTS</h2>
+        <p>Στη σειρά podcasting  <a href=" https://anchor.fm/alexandroshub"><b><i class="fa fa-podcast" aria-hidden="true"></i><font color="red">PlusTechShow</font></b></a> θα ακούσεις οτιδήποτε μπορείς να φανταστείς γύρω από την τεχνολογία την επιστήμη την καθημερινότητά σου το παρελθόν το παρόν και το μέλλον με βάση μας σε αυτό το ταξίδι στην ιστορία και στην πραγματικότητα του αυτοματισμού.</p>
+<!--  <iframe src="https://open.spotify.com/embed-podcast/episode/1c8wBnBxQpLnapoVlit2AE" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+<iframe src="https://anchor.fm/alexandroshub/embed" height="102px" width="80%" frameborder="0" scrolling="no"></iframe>
+         
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>OTR POSTS</h2>
+      <p>soon...</p>
+    </div>
+  </div>
+
+  </div>
+<div  id="contact" class="bgimg-3">
+  <div class="caption">
+  <span class="border" style="font-size:25px;color: #f7f7f7;">LETS GET IN TOUCH!
+</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+
+  <p class="text-center"><em>Θα ήθελα πολύ να ακούσω τη γνώμη και τις προτάσεις σου!</em></p>
+
+<p><a href="https://www.facebook.com/alexandroshub/">  <i class="fa fa-facebook-official w3-hover-opacity"></i></a> <a href=" https://www.instagram.com/alexandroshub/"><i class="fa fa-instagram w3-hover-opacity"></i></a> @alexandroshub</p>
+      
+  <div class="row">
+    <div class="col-md-4">
+    
+      <p><span class="glyphicon glyphicon-map-marker"></span>Athens, GR</p>
+      <p><span class="glyphicon glyphicon-phone"></span><a href="tel:+306940548867">Phone: +30 6940548867</a></p>
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:alexandroshub@protonmail.com?Subject=Web%20Email" target="_top"> Email: alexandroshub@protonmail.com</p>
+      <p><i class="fa fa-comments-o"></i><a href="https://discord.gg/WAnYJjD">Chat on Discord</a></p>
+              <button onclick="window.location.href='https://alexandroshub.github.io/contact'"   class="btn pull-left">Contact</button>
+<br></div>
+    
+
+  </div>
+
+
+  </div>
+</div>
+
+<!--
+▄▀█ █░░ █▀█ █░█ ▄▀█   █▀█ █
+█▀█ █▄▄ █▀▀ █▀█ █▀█   █▀▀ █
+-->
+<!-- Image of location/map -->
+<img src="https://live.staticflickr.com/5670/22216562610_61c1f6febe_c.jpg" class="img-responsive" style="width:100%">
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top" class="up-arrow" data-toggle="tooltip">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Made By  <a href="https://alexandroshub.github.io/welcome21.html" target="_blank"title="Visit AlexandrosHub">AlexandrosHub</a></p>
+  
+  <p   style="font-size: 9px; color:#9CA5AC">
+        <link
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+          crossorigin="anonymous"/>
+        <i class="fa fa-creative-commons"></i>2021 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a></p>
+</footer>
+ <!--
+───╔╗──────────────╔╗────────╔╗────╔╗
+───║║──────────────║║────────║║────║║
+╔══╣║╔══╦╗╔╦══╦═╗╔═╝╠═╦══╦══╗║╚═╦╗╔╣╚═╗
+║╔╗║║║║═╬╬╬╣╔╗║╔╗╣╔╗║╔╣╔╗║══╣║╔╗║║║║╔╗║
+║╔╗║╚╣║═╬╬╬╣╔╗║║║║╚╝║║║╚╝╠══║║║║║╚╝║╚╝║
+╚╝╚╩═╩══╩╝╚╩╝╚╩╝╚╩══╩╝╚══╩══╝╚╝╚╩══╩══╝
+-->
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+  <!--
+    _                                                                    
+    |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
+    |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
+          |          |   /                                                         
+    -->
+</body>
+</html>
