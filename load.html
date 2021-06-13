@@ -1,0 +1,160 @@
+<div class="page">
+  <header class="header">
+    <h1 class="header-title">AlexandrosHub * AlphaPi</h1>
+    <p class="header-subtitle">Alexandros Papaspyrou</p>
+  </header>
+  	 
+     <meta http-equiv="Refresh" content="2;url=https://alexandroshub.github.io/Qindex">
+
+
+
+<style>
+.loader {
+  --loader-size: calc(var(--block-size) / 2);
+  --loader-size-half: calc(var(--loader-size) / 2);
+  --loader-size-half-neg: calc(var(--loader-size-half) * -1);
+  --light-color: rgba(255, 255, 255, 0.3);
+  --dot-size: 5px;
+  --dot-size-half: calc(var(--dot-size) / 2);
+  --dot-size-half-neg: calc(var(--dot-size-half) * -1);
+  
+  display: block;
+  position: relative;
+  width: var(--loader-size);
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+}
+
+
+
+
+
+/**
+  loader--8
+**/
+.loader--8 {
+  --loader-size: calc(var(--block-size) / 3);
+  --anim-duration: 0.8s;
+  aspect-ratio: 1 / 1;
+  border: 1px dashed var(--light-color);
+  border-radius: 50%;
+  perspective: 50vmin;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(15deg);
+}
+
+.loader--8::before,
+.loader--8::after {   
+  animation: loader-8 var(--anim-duration) cubic-bezier(0.39, 0.24, 0, 0.99) infinite;
+}
+
+.loader--8::before {
+  --z-dist: 8vmin;
+  width: var(--dot-size);
+  aspect-ratio: 1 / 1;
+  background: currentColor;
+  border-radius: 50%;
+  top: calc(50% - var(--dot-size-half));
+  left: calc(50% - var(--dot-size-half));
+  animation-delay: calc(var(--anim-duration) / 4 * -1);
+}
+
+.loader--8::after {
+  --z-dist: 4vmin;
+  width: 65%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+}
+
+@keyframes loader-8 {
+  0%, 100% {
+    transform: translateZ(calc(var(--z-dist) * -1)) scale(0.6);
+  }
+  
+  55% {
+    transform: translateZ(var(--z-dist));
+  }
+}
+
+
+
+
+/**
+  miscs
+**/
+
+.container {
+  --block-size: 18vmin;
+  
+  display: grid;
+  grid-template-columns: repeat(3, var(--block-size));
+  grid-template-rows: repeat(3, var(--block-size));
+  grid-gap: 1vmin;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.1);
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  transition: opacity 0.4s ease;
+}
+
+.container:hover .item {
+  opacity: 0.3;
+}
+
+.container:hover .item:hover {
+  opacity: 1;
+}
+
+.page {
+  margin: auto;
+}
+
+.header {
+  margin-bottom: 4vmin;
+}
+
+.header-title {
+  font-size: 3.75vmin;
+}
+
+.header-subtitle {
+  font-size: 2vmin;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+html, body {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.3px;
+  background: linear-gradient(to right top, #F27121, #E94057, #8A2387);
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+</style>
+  <main class="">
+    <center>
+      <i class="loader loader--8"></i>
+    </center>
+
+  </main>
+</div>
