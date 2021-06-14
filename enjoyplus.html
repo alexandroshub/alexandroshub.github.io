@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>LINKS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Enjoy</span> PLUS</h1>
+    <p>Περισσότερα από όσα μπορείς να φανταστείς και να ζητήσεις!</p>
+    <img src="https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">About</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Καλωσόρισες στην ενότητα που πραγματικά πιστεύω πως θα βρεις ότι ψάχνεις. Το plus ήταν μία ιδέα, πέρα από το περιεχόμενο το καθαρά τεχνολογικό που δημιουργώ να υπάρχει και μία ενότητα στη σελίδα με λίγο διαφορετικό ύφος. Με αναρτήσεις στο blog μου με podcast αλλά και με βίντεο και με live ώστε να μπορώ να μοιράζομαι μαζί σας τη γνώμη και την άποψή μου. Με μία λίστα από ενδιαφέροντα και χρήσιμα links με ποιοτικό ασφαλές και ηθικό περιεχόμενο και με θεματολογία προφανώς γύρω από την τεχνολογία. Αλλά και μία ακόμα ενότητα με multimedia περιεχόμενο συνήθως βίντεο π.χ. κάποιες εκπομπές ή ταινίες που πιστεύω πως αξίζει κάποιος να δει.
+    Σε αυτή την ενότητα κατά καιρούς ίσως να προστίθονται και άλλες κατηγορίες, για αυτό θα σου πρότεινα να την επισκέπτεσαι συχνά ή να γραφτείς στα newsletters να λαμβάνεις ένα email πού θα σε ενημερώνει μόλις βγει κάτι καινούργιο που αξίζει να το δεις.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Ready? GO!</h3>
+    
+
+<!-- /////////////////////////////////////////// -->
+<script>
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+</script>
+	  <!--
+<rssapp-ticker id="G5Gym187KzbQwYFt"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script> -->
+ <div style="background-color: #000; color: #D1D3D8;">
+    <marquee behavior="scroll" direction="left">
+      <span class="w3-tag" style="background-color: #BD1D1F; color: #D1D3D8;"> <b>OFF THE RECORD</b> </span> <a href="https://alexispapy.tumblr.com/">soon...</a>    
+      
+      //   alexandrosHUB respects your freedom and the social solidarity of your community. So it's free as in freedom.
+    </marquee>
+  </div>
+  
+<rssapp-wall id="HdNUdUnkDYEmwNwL"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>	   
+
+	  </div>
+<!--  //////////////////////////////////////////// -->
+
+
+ 
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+    
+    
+
+<button class="accordion2">CINEMA</button>
+<div class="panel">
+ <div class="container">
+  <h2>AlexandrosHub CINEMA</h2>
+  <p>1η βδομάδα Πρεμιέρα με τη ταινία: <b>Έτερος Εγώ</b> και δώρο το making of και το ήξερες ότι.!</p>
+<iframe src="https://www.youtube.com/embed/y3zho2aV2bs"  width="60%" height="100%"></iframe>
+<iframe src="https://www.youtube.com/embed/VRefVArMcnk"  width="20%" height="100%"></iframe>
+<iframe src="https://www.youtube.com/embed/BHPX1twKrgE"  width="15%" height="100%"></iframe>
+
+<br>
+ <p>2η βδομάδα με τη ταινία: <b>Happiness</b> και δώρο το 
+Are You Lost In The World Like Me</p>
+<iframe src="https://www.youtube.com/embed/4yBrW0zG8y8"  width="35%" height="100%"></iframe>
+<iframe src="https://www.youtube.com/embed/e9dZQelULDk"  width="60%" height="100%"></iframe>
+
+<br>
+<p>3η βδομάδα με τη ταινία: <b>1984 </b> Σε μια ολοκληρωτική κοινωνία που συνθλίβει την ψυχή, όπου «ο πόλεμος είναι ειρήνη», «η ελευθερία είναι αδυναμία» και «η άγνοια είναι δύναμη» </p>
+<!--
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"> <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x1yjeuw" width="100%" height="100%" allowfullscreen > </iframe> </div>
+-->
+<iframe  src="https://www.dailymotion.com/embed/video/x1yjeuw" width="49%" height="100%" > </iframe>
+<iframe  src="https://www.dailymotion.com/embed/video/x1yleur" width="49%" height="100%" > </iframe>
+<br>
+<p>4η βδομάδα με τη ταινία: <b>They Live </b> Ο Nada διαπιστώνει πως οι άνθρωποι βομβαρδίζονται από την κυβέρνηση και τα media με υποσυνείδητα μηνύματα που τους διατάζουν να "μην αμφισβητούν την εξουσία", "να υπακούν" και άλλα τέτοια...  και δώρο το <b>FREE WILL</b></p>
+<iframe  src="https://hdvid.tv/embed-h5spc8x60v0u.html" width="49%" height="100%" > </iframe>
+<iframe  src="https://www.youtube.com/embed/oU-BgkgODyA" width="49%" height="100%" > </iframe>
+
+<p>έλα ξανα σε <b>7</b> μέρες...</p>
+
+</div>
+</div>
+
+
+<!-- SITE MAP -->
+<button class="accordion2">4U MEDIA</button>
+<div class="panel">
+<b><font color="#FF5733">περιεχόμενο που πρέπει να δείς</font></b> 
+ <br>
+ 
+ <iframe  src="https://www.youtube.com/embed/nZbZaZmebvU" width="24%" height="100%" > </iframe>
+ <iframe  src="https://www.youtube.com/embed/yzvFTPM21bs" width="24%" height="100%" > </iframe>
+ <iframe  src="https://www.youtube.com/embed/bmP9ZQx9a3c" width="24%" height="100%" > </iframe>
+ <iframe  src="https://www.youtube.com/embed/vgc45flSp9o" width="24%" height="100%" > </iframe>
+ 
+ <p>σύντομα<b>7</b> περισοτερα...</p>
+
+</div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>John Doe saved us from a web disaster.</p><br>
+    
+    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than John Doe.</p>
+  <!-- End About Section -->
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Links</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+  <p>"The Web without links is like a world without roads." <font color="#FF5733"><a href="https://saveyourinternet.eu/">#saveyourinternet</a> </font>  </p>
+  
+  
+<style>
+.accordion2 {
+  background-color: #000;
+  color: #eee;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+
+
+.accordion2:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active2:after {
+  content: "\2212";
+}
+.active2, .accordion2:hover {
+  background-color: #18191a;
+  color: cyan;
+    font-weight: bold;
+
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #0b0c0d;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+
+
+<button class="accordion2">BETTER YOU
+</button>
+<div class="panel">
+<a href="https://www.mindful.org/meditation/mindfulness-getting-started/
+">mindful</a>  | 
+<a href="https://nutritionhome.gr/news/">nutritionhome</a>  | 
+<a href="https://mariamanganari.gr/%CE%BF%CE%B4%CE%B7%CE%B3%CF%8C%CF%82-mindfulness-%CE%B3%CE%B9%CE%B1-%CE%B1%CF%81%CF%87%CE%AC%CF%81%CE%B9%CE%BF%CF%85%CF%82-%CF%84%CE%BF-%CF%84%CE%B9-%CF%84%CE%BF-%CF%80%CF%8E%CF%82-%CE%BA%CE%B1/
+">Οδηγός Mindfulness</a>  | 
+ <br>       
+
+<!--
+https://www.iatronet.gr/ygeia/psyxiki-ygeia/article/57052/ti-einai-to-mindfulness-kai-pws-efarmozetai.html
+
+https://www.mindfulness360.net/home
+
+https://successhype.com/
+-->
+
+</div>
+
+<button class="accordion2">UP date yourself</button>
+<div class="panel">
+ CULTURE | NEWS | LEARN
+  
+<br><span class="w3-tag w3-black"> content creators που μ' αρέσουν </span>
+<br><span class="w3-red">youtube</span>
+
+<br><span class="w3-red">instagram</span>
+
+<br><span class="w3-red">podcasts</span> <span class="w3-green">MYspotify</span>
+
+<br><span class="w3-red">websites</span>
+       	<a href="https://terry.gr">terry</a> |
+
+
+
+<!-- //////// CULTURE //////// --><br><span class="w3-tag w3-black"> CULTURE </span>
+
+	<br><span class="w3-red">videos</span>
+    	<a href="https://www.youtube.com/channel/UCYhH65nE2M8rGwMWvAlVu2A">greekdocumentaries</a>  | 
+	<br><span class="w3-red">CINEMA</span>
+    	<a href="http://greekdocumentaries2.blogspot.gr/">greekdocumentaries</a>  |  		
+        <a href="http://www.dailymotion.com/CosmosgreekDocumentaries"> CosmosgreekDocumentaries</a>  | 		
+        <a href="http://thegeeksmedia.blogspot.gr/">thegeeksmedia</a>  | 
+		<a href="https://oipeirates.se/">oipeirates</a>  |  
+		<a href="http://gamatotv.me/">gamatotv</a>  | 
+        <!-- 
+        -->
+	<br><span class="w3-red">Wallpaper</span>
+		<a href="http://wallpaperswide.com/">wallpaperswide</a> |
+		<a href="https://wallpaperscraft.com/">wallpaperscraft</a> |
+		<a href="https://pixabay.com/">pixabay</a> |
+       	<a href="https://unsplash.com/">unsplash</a> |
+       	<a href="https://www.pexels.com/">pexels</a> |
+       	<a href="https://imgbin.com/">imgbin</a> |
+		<a href="https://www.pexels.com/">pexels</a> |      
+        
+	<br><span class="w3-red">png images</span>
+       <a href="https://www.cleanpng.com/">cleanpng</a> |      
+       <a href=" https://www.stickpng.com/">stickpng</a> |    
+       <a href=" https://imgbin.com/">imgbin</a> |    
+       <a href=" https://www.vexels.com/">vexels</a> |    
+       <a href=" https://pngtree.com/">pngtree</a> |    
+        <!-- 
+        -->
+	<br><span class="w3-red">SPACE</span> 
+        <a href="https://www.manosdanezis.gr/">manosdanezis</a> | 
+        <a href="http://www.astronio.gr/">astronio</a> | 
+        <a href="https://m.esa.int/ESA">ESA</a> | 
+        <!-- 
+        -->
+<!-- //////// LEARN //////// --><br><span class="w3-tag w3-black">Learn</span>
+
+<br><span class="w3-red">general</span>
+        <a href="https://www.eduguide.gr/">eduguide</a>| 
+
+	<br><span class="w3-red">general</span>
+        <a href="http://alison.com/">alison</a>| 
+        <a href="https://www.coursera.org/">coursera</a>| 
+        <a href="https://www.futurelearn.com/">futurelearn</a>| 
+        <a href="https://www.edx.org/">edx</a>| 
+        <a href="https://www.doaj.org/">doaj</a>| 
+        <a href="http://www.openculture.com/">openculture</a>| 
+        <a href="http://noexcuselist.com/">noexcuselist</a>| 
+        <a href="https://www.khanacademy.org/">khanacademy</a>| 
+        <a href="http://science.howstuffworks.com/">howstuffworks</a>| 
+        <a href="http://videolectures.net/">videolectures</a>| 
+        <!-- 
+        -->
+	<br><span class="w3-red">greek</span>
+        <a href="https://mathesis.cup.gr/">mathesis</a>| 
+        <a href="https://opencourses.gr/">opencourses</a>| 
+        <a href="https://repository.kallipos.gr/">kallipos</a>| 
+        <a href="https://coursity.gr/">coursity</a>| 
+        <a href="https://www.blod.gr/">blod</a>| 
+        <!-- 
+        -->
+	<br><span class="w3-red">computers</span>        
+		<a href="https://www.udacity.com/">udacity</a>| 
+		<a href="https://www.codecademy.com/">codecademy</a>| 
+		<a href="https://aws.amazon.com/training/learning-paths/machine-learning/">amazon</a>| 
+		<a href="http://freecomputerbooks.com/">freecomputerbooks</a>| 
+        <!-- 
+        -->
+	<br><span class="w3-red">tutorials</span>
+		<a href="https://www.drawspace.com/">drawspace</a> |     
+		<a href="https://layersmagazine.com/category/tutorials">layersmagazine</a> |   
+        <!-- 
+        -->
+        <br><span class="w3-red">languages</span>
+        <!-- 
+        https://lingvist.com/
+        https://www.coffeestrap.com/#/
+        https://www.busuu.com/
+        https://www.languagedrops.com/
+        http://www.bbc.co.uk/languages/
+        https://www.duolingo.com/
+        https://www.babbel.com/
+        -->    
+	<br><span class="w3-red">eBOOKS</span>
+		<a href="https://free-ebooks.gr/">ebooks</a>| 
+        <a href="http://www.openbook.gr/">openbook</a>| 
+        <a href="http://ebooks.edu.gr/new/">edu</a>| 
+        <a href="http://photodentro.edu.gr/lor/">photodentro</a>| 
+        <a href="https://www.marxists.org/ellinika/">marxists</a>| 
+        <a href="http://www.kavafis.gr/index.asp">kavafis</a>| 
+        <a href="http://www.ptable.com/?lang=el">ptable</a>| 
+        <!-- 
+        -->
+<!-- //////// NEWS //////// --><br><span class="w3-tag w3-black">NEWS</span>
+<!--	<br><span class="w3-red"> NEWSPAPERS </span>
+		<a href="http://www.efsyn.gr/epistimi"> efsyn</a> | 
+		<a href="https://www.naftemporiki.gr/techscience">naftemporiki</a> | 
+		<a href="http://www.skai.gr/news/technology/">skai</a> |     
+        <a href="https://www.bloomberg.com/technology">bloomberg</a> |  
+        <a href="https://www.huffingtonpost.gr/news/tech/">huffingtonpost</a> |  
+        <a href="http://www.kathimerini.gr/technology">kathimerini</a> | 
+        <a href="http://www.tovima.gr/science/">tovima</a> |   
+        <a href="https://www.protothema.gr/technology/">protothema</a> | 
+        <a href="http://www.iefimerida.gr/τεχνολογία">iefimerida</a>  |
+        <a href="https://www.altsantiri.gr/texnologia/">altsantiri</a>  |
+        <a href="http://www.in.gr/tech/">in</a>  |
+        <a href="http://www.ana.gr/home/18/Epistimi">ana</a>  |
+        -->
+	<br><span class="w3-red"> BLOGS </span>
+        <a href="https://www.wlearn.gr/">wlearn</a> | 
+		<a href="http://www.infocom.gr/"> infocom</a>  | 
+        <a href="http://www.insomnia.gr/"> Insomnia</a>  |  
+        <a href="https://unboxholics.com">Unboxholics</a>  |  
+        <a href="http://lifehacker.com/">lifehacker</a>| 
+        <a href="http://www.pcsteps.gr/">pcsteps</a> | 
+        <a href="https://www.adslgr.com">adslgr</a> | 
+        <a href="https://dimitrology.com/">dimitrology</a> |        
+		<a href="https://thehackernews.com/">thehackernews</a> |   
+		<a href="https://blog.elcomsoft.com/">elcomsoft</a> |   
+        <!-- 
+        https://blog.elink.io/
+        https://www.pontikis.net/
+        https://www.ired.gr/
+        https://byteblog.gr/
+        -->
+	<br><span class="w3-red"> MAGAZINE </span>
+		<a href="https://gr.pcmag.com/">pcmag</a> |         
+        <a href="http://www.onlinemagazine.gr/">onlinemagazine</a> |    
+        <a href="http://www.techinsider.gr/">techinsider</a> |         
+        <a href="http://www.itech4u.gr/">itech4u</a> |
+        <!-- 
+        -->
+	<br><span class="w3-red"> MORE </span>
+    	<a href="http://www.dwrean.net/"> Dwrean</a>  |  
+    	<a href="http://www.xrisima.com/">Xrisima</a>  |  
+    	<a href="http://osarena.net/">Osarena</a>  |  
+    	<a href="https://pinguin.land">Pinguin Land</a>  |         
+    	<a href="https://ellak.gr/">ellak</a>  |  
+        <a href="https://cerebrux.net/">Cerebrux</a>  |  
+        <a href="http://www.epinoo.gr/">Epinoo</a>  |  
+        <a href="http://www.bitcoin-gr.org/">Bitcoin</a>  |  
+        <a href="http://policenet.gr/τεχνολογία">policenet</a>  |
+        <a href="https://www.athinorama.gr/tech/">athinorama</a>  |
+        <a href="http://www.nooz.gr/tech">nooz</a>  |
+		<!-- 
+        -->        
+	<br><span class="w3-red">JOBMAN</span>
+        <a href="https://www.rejoin.gr">rejoin</a> | 
+        <a href="https://www.xe.gr">xe</a> | 
+        <a href="https://www.skywalker.gr/elGR/">skywalker</a> | 
+        <a href="https://www.kariera.gr">kariera</a> | 
+        <a href="https://www.justjobs.gr">justjobs</a> | 
+        <a href="https://www.jobfind.gr">jobfind</a> | 
+        <a href="https://www.careernet.gr">careernet</a> | 
+        <a href="https://gr.indeed.com">indeed</a> | 
+        <a href="http://www.jobseeker.gr">jobseeker</a> | 
+        <a href="http://www.oaed.gr">oaed</a> | 
+        <a href="http://www.asep.gr">asep</a> | 
+        <a href="https://www.glassdoor.com/index.htm">glassdoor</a> | 
+		<a href="https://gr.indeed.com/">indeed</a> | 
+		<a href="https://www.careerbuilder.com/">careerbuilder</a> | 
+		<a href="https://www.monster.com/">monster</a> |  
+		<a href="https://www.simplyhired.com/">simplyhired</a> | 
+		<a href="https://www.peopleperhour.com/">peopleperhour</a> | 
+        <a href="http://www.proslipsis.gr">proslipsis</a>
+		<!-- 
+        -->
+
+<span class="w3-tag w3-black">EVENTS</span><span class="w3-tag w3-blue">
+<!--
+<a href="http://www.infocomsecurity.gr/"> 9o INFOCOM SECURITY </a>
+<a href="https://jobfestival.gr"> Athens #JobFestival 2018 </a> 
+<a href=" https://www.e-businessworld.gr ">e-Business & Social Media World 2018</a> 
+ -->
+ 
+</span><br>  
+		<a href="http://www.sev.org.gr">sev</a> | 
+		<a href="http://www.sepe.gr/">sepe</a> | 
+		<a href="https://www.meetup.com">meetup</a> | 
+       	<a href="https://www.eventbrite.co.uk">eventbrite</a> | 
+  		<a href="http://www.mec.gr/events">mec</a> | 
+        <a href="http://www.helexpo.gr">helexpo</a> |
+        <a href="https://ellak.gr/events">ellak</a> |
+        <a href="http://www.technopolis-athens.com/web/guest/home">technopolis</a> |
+        <a href="http://www.mindspace.gr/">mindspace</a>| 
+        <a href="http://www.innovathens.gr/">innovathens</a>|       	
+        <a href="https://www.hackerspace.gr">hackerspace</a> |
+        <a href="https://thecube.gr">thecube</a> |  
+        <a href=" http://www.infocomworld.gr">infocomworld</a> |  
+        <a href="https://www.sap.com/greece/index.html">sap</a> | 
+        <a href="https://youpoweredhub.csod.com/client/youpoweredhub/default.aspx">youpoweredhub</a>
+        <!-- 
+        
+        
+        -->         
+   
+<!--
+<br><span class="w3-tag w3-black">PUAS</span><br> 
+		<a href="http://auto.teipir.gr/">auto</a>  |  
+        <a href="http://www.teipir.gr/index.php/el/">teipir</a>  |  
+        <a href="http://www.idpe.uniwa.gr">idpe</a>  |  
+        <a href="http://www.uniwa.gr/">uniwa</a>  |  
+		<a href="http://lib.puas.gr/">lib</a>  |  
+		<a href="http://www.teipir.gr/mke/">mke</a>  |   
+		<a href="http://gdias.teipir.gr/">gdias</a>  |   
+		<a href="http://www.teipir.gr/index.php/el/">teipir</a>  |   
+		<a href="http://auto-hsae.teipir.gr/#homepageh">hsae</a>  |   
+
+<br><span class="w3-black">FRIENDS</span> 
+        <a href="https://ekrestart.wordpress.com/">ekrestart</a> | 
+-->
+<br><span class="w3-tag w3-black">MORE</span><br> 
+		<a href="https://www.sepenet.gr">sepenet</a>  |    
+        <a href="https://www.open.gr/">open</a>  |     	
+        <a href="http://www.runet.gr/">runet</a>  |      
+         <a href="http://www.runet.gr/">runet</a>  |      
+         <a href="http://www.psounis.gr/ ">psounis</a>  |   
+         <a href="https://www.robby.gr/">robby</a>  |     
+         <a href="https://pcinfo.gr/">pcinfo</a>  |     
+         <a href="http://automatismoi.freeservers.com/">automatismoi</a>  |     
+         <a href="https://odir.org">odir</a>  |    
+         <a href="https://www.quora.com/">quora</a>  |    
+         
+<br><span class="w3-tag w3-purple">NEW APPS</span><br> 
+		<a href="https://trello.com/">trello</a>  |    
+<!--
+        https://discordapp.com/
+        https://www.teamspeak.com/en/
+        https://asana.com/
+        https://basecamp.com/
+        
+        https://www.atlassian.com/
+ 
+        http://automatismoi.freeservers.com/FUZZY/isagogiasafh.htm
+        https://www.eberus.com/
+        https://www.aqs.gr/
+        https://www.cqs.com.gr/
+https://subscribe.packtpub.com/
+https://www.processlibrary.com/en/
+
+https://www.privacywall.org/
+https://www.info.com/
+https://www.startpage.com/
+
+https://www.coindesk.com/coindesk20
+
+https://www.secnews.gr/
+****
+https://stinpriza.org/
+****
+-->      
+
+
+</div>
+<!-- TOOLS | PROGRAMMES | MAKE -->
+<button class="accordion2">TOOLS | PROGRAMMES | MAKE
+</button>
+<div class="panel">
+<span class="w3-tag">"The Web without links is like a world without roads."</span> <br> <span class="w3-tag">In the age of information ignorance is a choice.</span>
+
+<style>
+.hide {display: none;}
+.myDIV:hover + .hide {display: block;  color: blue;}
+</style>
+
+<div class="myDIV">Why?</div>
+<div class="hide">Από το 2011 που έφτιαξα την πρώτη μου σελίδα και ξεκίνησα να ανεβάζω περιεχόμενο ο κύριος λόγος ήταν πως με ενοχλούσε να ακούω από άλλους ανθρώπους την φράση " δεν ξέρω" η " δεν το έχω ξαναδεί αυτό" η " δεν ξέρω πώς γίνεται". Πραγματικά θεωρώ πως η άγνοια και οι συνέπειές της είναι επιλογή. Διαφωνώ με όσους την προτιμούν και θέλω να προσπαθώ με κάθε τρόπο να δίνω καθαρή ειδική ηθική αληθινή και σωστή πρόσβαση και γνώση σε όσο περισσότερο μπορώ. 
+Μετά από την επίσκεψή σου σε σε αυτήν τη σελίδα δεν έχεις πια δικαιολογία ότι Δεν ήξερες. Οι σύνδεσμοι που θα βρεις εδώ αλλά και το περιεχόμενο που υπάρχει πλέον στο Plus σου δίνουν πρόσβαση σε εργαλεία και γνώσεις που πραγματικά θέλεις να πας τον εαυτό σου ένα βήμα μπροστά πλέον έχεις ανοίξει αυτήν την πόρτα που έμενε κλειστή. Η απόφαση για το σε ποια πλευρά ανήκεις και κατά πόσο είσαι ικανός να επιλέξεις το σωστό δρόμο είναι πλέον αποκλειστικά δική σου επιλογή.</div>
+
+ <div class="w3-panel w3-leftbar w3-light-grey">
+             <!-- <p>«Αυτή είναι η τελευταία σου ευκαιρία.  Μετά από αυτό το σημείο δεν υπάρχει γυρισμός.  Παίρνεις το μπλε χάπι, η ιστορία τελειώνει.  Ξυπνάς στο κρεβάτι σου και πιστεύεις ό,τι θέλεις εσύ.  Παίρνεις το κόκκινο χάπι, παραμένεις στην Χώρα των Θαυμάτων, και θα σου δείξω πόσο βαθιά φθάνει η πραγματικότητα.  Θυμήσου, το μόνο που σου προσφέρω είναι η αλήθεια.  Τίποτε παραπάνω» </p> -->
+            </div>
+
+
+
+
+
+  <br><span class="w3-tag w3-green">RECOMENDED</span>
+		Μάθε προγραμματισμο παίζοντας 
+        <a href="https://cssgridgarden.com/#el">cssgridgarden</a>  | 
+         <a href="https://flexboxfroggy.com/#el">flexboxfroggy</a>  | 
+         
+<br> 
+<br><span class="w3-tag w3-black">Privacy is a Human Right</span><span class="w3-tag w3-gray">Encryption is not a Crime, Key Disclosure Laws are Unethical.</span>
+
+
+
+
+
+<a href=" https://www.waterfox.net/">waterfox</a> | 
+<a href=" https://www.gnu.org/software/gnuzilla/">gnuzilla</a> | 
+<a href=" https://www.palemoon.org/">whonix</a> | 
+<a href=" https://brave.com/">brave</a> | 
+<a href=" https://www.mozilla.org/el/firefox/new/ ">mozilla</a> | 
+<a href=" https://www.torproject.org/">torproject</a> | 
+
+<br><span class="w3-red">safer web apps</span>
+<a href=" https://www.qubes-os.org/">qubes</a> | 
+<a href=" https://protonmail.com/">protonmail</a> | 
+<a href=" https://keepass.info/">keepass</a> | 
+<a href=" https://signal.org/el/">signal</a>  | 
+<a href=" https://www.kali.org/downloads/">kali</a> | 
+<a href=" https://duckduckgo.com/">duckduckgo</a> | 
+<a href=" https://keybase.io/">keybase</a> | 
+<a href=" https://bitcoin.org/el/ ">bitcoin</a> | 
+<a href=" https://wikileaks.org/ ">wikileaks</a> | 
+<a href=" https://letsencrypt.org/">letsencrypt</a> | 
+<a href=" https://www.whonix.org/">whonix</a> | 
+
+
+<a href=" https://www.mozilla.org/el/firefox/new/ ">mozilla</a> | 
+<a href=" https://www.torproject.org/">Storproject</a> | 
+<a href=" https://www.qubes-os.org/">qubes</a> | 
+<a href=" https://protonmail.com/">protonmail</a> | 
+<a href=" https://keepass.info/">keepass</a> | 
+<a href=" https://signal.org/el/">signal</a>  | 
+<a href=" https://www.kali.org/downloads/">kali</a> | 
+<a href=" https://duckduckgo.com/">duckduckgo</a> | 
+<a href=" https://keybase.io/">keybase</a> | 
+<a href=" https://bitcoin.org/el/ ">bitcoin</a> | 
+<a href=" https://wikileaks.org/ ">wikileaks</a> | 
+<a href=" https://letsencrypt.org/">letsencrypt</a> | 
+<a href=" https://www.whonix.org/">whonix</a> | 
+  <!-- https://www.hackerspace.gr/
+ https://shop.hak5.org/products/wifi-pineapple 
+  
+  -->
+ <br><span class="w3-red">Διανομές Linux</span>
+		<a href="https://rufus.ie/">rufus</a> | 
+        <a href="https://www.archlinux.org/">archlinux</a> | 
+        <a href="https://getfedora.org/">getfedora</a> |  
+        <a href="https://ubuntu.com//">ubuntu</a> | 
+        <a href="https://ubuntu.com//">ubuntu</a> | 
+
+
+<br><span class="w3-tag w3-black">PROGRAMMES</span><span class="w3-tag w3-purple"><a href="https://gr.giveawayoftheday.com/">giveawayoftheday</a></span>
+
+        
+  	<br><span class="w3-red">OPEN</span>
+		<a href="http://www.linuxinsider.gr/">linuxinsider</a> | 
+        <a href="https://www.apachefriends.org/index.html">apachefriends</a> |  
+        <a href="https://www.wireshark.org/">wireshark</a> |  
+        <a href="https://www.blender.org/">blender</a> |  
+        <a href="https://www.clementine-player.org/el/">clementine</a> |  
+        <a href="https://www.gimp.org/">gimp</a> |  
+        <a href="https://notepad-plus-plus.org/">notepad</a> |  
+        <a href="https://www.heidisql.com/">heidisql</a> |  
+        <a href="https://el.libreoffice.org/">libreoffice</a> |  
+        <a href="http://www.openoffice.org/el/">openoffice</a> |  
+        <a href="http://www.videolan.org/vlc/">vlc</a>|  
+        <a href="https://www.clementine-player.org/el/">clementine</a>| 
+        <a href="https://opensource.com">opensource</a>| 
+	<br><span class="w3-red">FREE</span>
+		<a href="https://prezi.com/">Prezi</a>| 
+        <a href="http://www.rainmeter.net">RainMeter</a>|
+        <a href="http://redmp3.cc/"> freemp3 </a>
+       	<a href="https://kickass.unblocked.la/">kickass</a>  |   
+        <a href="https://thepiratebay.vg/">tpb</a>  |     
+        <!-- 
+        
+        
+        -->        
+        
+        
+<br><span class="w3-tag w3-black">TOOLS</span>
+
+        <br><span class="w3-red"> Android emulators </span>
+        <a href="https://www.bignox.com/">bignox</a> |    
+        <a href="https://www.memuplay.com/">memuplay</a> |    
+        <a href="https://www.andyroid.net/">andyroid</a> |    
+        <a href="https://www.bluestacks.com/">bluestacks</a> | 
+        
+	<br><span class="w3-red"> MATH </span>
+		<a href="http://m.wolframalpha.com/input/?i=bode+plot"> BODE</a> | 
+        <a href="http://integrals.wolfram.com/index.jsp">Olokliromata</a>| 
+        <a href="http://m.wolframalpha.com/input/?i=derivative+of">Paragogoi</a>|
+        <a href="http://www.numerics.info/calculator">Calculator</a>| 
+
+    <br><span class="w3-red">WEB</span>
+        <a href="https://www.webnode.gr/">webnode</a>| 
+        <a href="https://www.yola.com">Yola</a>| 
+        <a href="https://www.wix.com">Wix</a>| 
+    	<a href="http://www.weebly.com">Weebly</a>| 
+    <br><span class="w3-red">Browser</span>
+		<a href="http://www.opera.com/el">Opera</a>  |  
+        <a href="https://www.chromium.org">Chromium</a>  |  
+        <a href="https://www.torproject.org/">TOR</a>  |  
+		<a href="https://www.mozilla.org/el/firefox/new/">Firefox</a>  |         <!-- 
+        
+        
+        --> 
+    <br><span class="w3-red">Design</span>
+        <a href="https://www.tinkercad.com/">tinkercad</a>|  
+    <br><span class="w3-red">Diagrams</span>
+        <a href="https://cacoo.com/lang/el/">Cacoo</a>|   
+    <br><span class="w3-red">EDIT</span>
+		<a href="https://hitfilm.com/express">hitfilm</a>|
+		<a href="http://www.video-editor-software.com/">software</a>|
+		<a href="https://www.lwks.com/">lwks</a>|
+		<a href="http://www.avs4you.com/AVS-Video-Editor.aspx">avs4you</a> |  
+  		<a href="https://www.blackmagicdesign.com/products/davinciresolve"> blackmagicdesign</a> |  		
+        <a href="https://www.shotcut.org/download/">shotcut</a> |  
+  		<a href="https://www.pizap.com/">pizap</a> | 
+        <a href="https://www.canva.com/">Canva</a> |
+		<a href="http://art.pho.to/">-art-pho.to</a> | 
+		<a href="http://pho.to/">pho.to</a> | 
+        <a href="https://pixlr.com/">Pixlr</a> | 
+    	<a href="http://100widgets.com/js/2.htm">link</a> | 
+		<a href="https://www.picmonkey.com/">picmonkey</a> | 
+		<a href="https://www.befunky.com/">befunky</a> | 
+        <a href="https://www.pdfescape.com/windows">pdfescape</a> | 
+            <!-- 
+        
+        
+        -->
+<br><span class="w3-tag w3-black">MAKE</span>
+    <br><span class="w3-red">Chip</span>
+        <a href="http://makezine.com/">makezine</a>|
+        <a href="https://www.adafruit.com/">adafruit</a>|
+        <a href="http://beagleboard.org/bone">beagleboard</a>|  
+        <a href="http://beagleboard.org/bone">beagleboard</a>|        
+		<a href="https://www.raspberrypi.org/">raspberrypi</a> | 
+		<a href="https://www.arduino.cc/">arduino</a> | 
+		<a href="https://www.sparkfun.com/">sparkfun</a> | 
+		<a href="https://www.adafruit.com/">adafruit</a> | 
+        <a href="http://www.wikihow.com/Main-Page">wikihow</a>  | 
+        <a href="https://www.dummies.com/">dummies</a>  | 
+    	<a href="http://www.instructables.com/">instructables</a>
+        <!-- 
+        
+        
+        -->     
+<br><span class="w3-red">Code</span>
+        <a href="https://www.w3schools.com">w3schools</a>|
+        <a href="https://css-tricks.com/">css-tricks</a>|
+        <a href="https://codyhouse.co/">codyhouse</a>|
+        <a href="https://codepen.io/">codepen</a>|        
+<br><span class="w3-red">Programming</span>
+        <a href="https://www.ruby-lang.org/en/">ruby</a>|
+		<a href="https://pythonprogramming.net/">pythonprogramming</a>|
+<br><span class="w3-blue">widgets</span>       
+		<a href="https://the-best-widgets.blogspot.com/">theΒest</a>|
+        <a href="http://www.bloggertips.gr/">Βloggertips</a>|
+		<a href="http://widgets-gr.blogspot.com/">widgets</a>|
+		<a href=" https://kataxorisi.blogspot.com/">kataxorisi</a>|
+		<a href="https://bloggertrics.blogspot.com/">bloggertrics</a>|
+        <a href="https://www.theedublogger.com/popular-widgets-for-your-blog/">theedublogger</a>|
+        <a href="http://widgets-gr.blogspot.com/">widgets-gr</a>|
+        <a href="https://widgetscode.com/">widgetscode</a>|
+        <a href="https://mashable.com/2007/09/06/widgets-2/?europe=true">mashable</a>|
+        <!-- 
+        
+        
+        --> 
+<br><span class="w3-red">IoT</span>
+        <a href="http://electronicsforu.com/">electronicsforu</a>| 
+        <a href="http://electronicsofthings.com/">electronicsofthings</a>| 
+        <a href="http://www.securitymanager.gr/newsite/index.php">securitymanager</a>| 
+        <a href="https://www.hackster.io/">hackster</a>| 
+    <br><span class="w3-red">Mobile & Apps</span>
+		<a href="http://everycircuit.com/">everycircuit</a>  | 
+        <a href="https://scratch.mit.edu">scratch</a>  |       
+        <a href="http://appinventor.mit.edu/explore/">appinventor</a>  | 
+      	<a href="http://www.doctorandroid.gr/">doctorandroid</a>  |         
+	<br><span class="w3-red">Shopping</span>
+		<a href="https://www.hellasdigital.gr/">hellasdigital</a>|
+		<a href="https://www.devobox.com/">devobox</a>|
+		<a href="https://grobotronics.com/">grobotronics</a>|
+		<a href="http://www.gearbest.com/">gearbest</a> | 
+ 		<a href="https://www.edendrinos.gr">edendrinos</a> | 
+	<br><span class="w3-red">SEO</span>
+    	<a href="https://marketingplatform.google.com/about/analytics/">google</a> | 
+    	<a href="https://paramarketing.gr/seo/">paramarketing</a> |
+        <a href="https://www.papaki.com/blog/2013/04/30/%CF%83%CF%8D%CE%BD%CE%B4%CE%B5%CF%83%CE%B7-google-adwords-%CE%BA%CE%B1%CE%B9-analytics-%CF%83%CE%B5-%CF%84%CE%B9-%CE%BF%CF%86%CE%B5%CE%BB%CE%B5%CE%AF/">papaki-</a> | 
+         <!-- 
+https://css-tricks.com/        
+https://www.codegrepper.com/code-examples/        https://getbootstrap.com/
+https://www.sitepoint.com/community/
+https://www.michaelburrows.xyz/
+https://codepen.io/
+https://htmlcolorcodes.com/
+https://www.color-hex.com/color/05070c
+
+https://www.virtualrecruitmentdays.com/
+https://www.mintox.com/
+https://www.elegantthemes.com/
+https://www.macworld.com/
+
+
+EVENTS
+http://www.researchersnight.gr/root.el.aspx
+
+IOT
+https://iot.eclipse.org/
+
+https://texnikos-ipologiston.gr/%CF%84%CE%B9-%CE%B5%CE%AF%CE%BD%CE%B1%CE%B9-%CF%84%CE%BF-internet-of-things/#.X5IBydAzbDc
+
+https://www.pcsteps.gr/213103-%CF%84%CE%B9-%CE%B5%CE%AF%CE%BD%CE%B1%CE%B9-%CF%84%CE%BF-internet-of-things-iot-smart-home/
+
+https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started
+
+https://drive.google.com/file/d/1xBZEjdYvO0QLrfSDtugMs-LTuE1DDR7k/view
+https://www.mcielectronics.cl/website_MCI/static/documents/Guia_de_configuracion_raspberry_pi_3b_ingles.pdf
+
+SAFE
+https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Falexandroshub.github.io%2F
+
+https://global.sitesafety.trendmicro.com/index.php
+https://sitechecker.pro/app/main/project/1389306/audit/summary
+
+
+https://hotforsecurity.bitdefender.com/blog/tag/covid-19
+
+
+https://www.techgear.gr/iot
+        -->           
+</div>
+
+<!-- SITE MAP -->
+<button class="accordion2">tools</button>
+<div class="panel">
+<b><font color="#FF5733">ΗΧΟΣ & ΕΙΚΟΝΑ</font></b> 
+  	<br><span class="w3-black">png</span>
+		<a href="https://www.stickpng.com/">stickpng</a> | 
+		<a href="https://purepng.com/">purepng</a> | 
+		<a href="https://favpng.com/">favpng</a> | 
+		<a href="https://pngimg.com/">pngimg</a> | 
+		<a href="https://www.pixelsquid.com/">pixelsquid</a> | 
+	<br><span class="w3-black">videos</span>
+		<a href="https://www.pond5.com/">pond5</a> | 
+		<a href="https://www.videezy.com/">videezy</a> | 
+		<a href="https://www.pexels.com/">pexels</a> | 
+		<a href="https://www.videvo.net/">videvo</a> |         
+		<a href="https://dissolve.com/">dissolve</a> | 
+        <a href="https://pikwizard.com/">pikwizard</a> | 
+        <a href="https://www.wedistill.io/">wedistill</a> | 
+	<br><span class="w3-black">useful</span>
+  		<a href="https://www.zamzar.com/">zamzar</a> | 
+		<a href="https://privnote.com/">privnote</a> | 
+
+<br><b><font color="#FF5733">Office</font></b>    
+<br><span class="w3-black">email</span>
+		<a href="https://www.bluemail.me/">bluemail</a>  |  
+		<a href="https://www.thunderbird.net"/>thunderbird</a>  |  
+		<a href="https://protonmail.com/">protonmail</a>  |  
+        <a href="https://www.gmx.com/">gmx</a>  |  
+        <a href="https://lavabit.com/">lavabit</a>  |  
+  	<br><span class="w3-black">Office</span>
+		<a href="http://www.openoffice.org/el/">openoffice</a>  |  
+		<a href="https://el.libreoffice.org/">libreoffice</a>  |  
+		<a href="https://wiki.gnome.org/Apps/Evince">Evince</a>  |  
+        <a href="https://www.foxitsoftware.com/pdf-reader/">foxitsoftware</a>  |  
+        <a href="https://www.sublimetext.com/">sublimetext</a>  |  
+		<a href="https://notepad-plus-plus.org/download/">notepad++</a>  |  
+		<a href="https://www.wps.com">wps</a>  |  
+
+<br><b><font color="#FF5733">Full Stack</font></b>    
+<br><span class="w3-black">FrontEnd</span>
+<font color="cyan"></font>
+
+	<a href="https://html.com/">html</a> | 
+	<a href="https://www.javascript.com/">javascript</a> | 
+	<a href="https://reactjs.org/">reactjs</a> | 
+	<a href="https://vuejs.org/">vuejs</a> | 
+	<a href="https://reactjs.org/">reactjs</a> | 
+	<a href="https://angularjs.org/">reactjs</a> | 
+
+<br><span class="w3-black">BackEnd</span>
+php / python / ruby / java 
+<br><span class="w3-black">DataBase</span>
+<br><span class="w3-black">DevOps</span>
+<br><span class="w3-black">modileApp</span>
+
+<!-- 
+Mobile: kotlin / swift / javascript / dart / java 
+Game: C# Cpp javascript java   
+
+-->
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion2");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active2");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+ 
+<!--  //////////////////////////////////////////// -->
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+
+  </div>
+  
+  
+
+
+<footer class="w3-container w3-padding-12 w3-center w3-opacity w3-xlarge" style="margin:-24px">
+        <p>Lets get in touch!</p>
+ <a href="https://www.facebook.com/alexandroshub/" class="w3-hover-text-blue">  <i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href=" https://www.instagram.com/alexandroshub/ " class="w3-hover-text-blue">   <i class="fa fa-instagram w3-hover-opacity"></i></a>
+       
+        <p class="w3-medium">
+          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+          <i class="fa fa-creative-commons"></i> AlexandrosHub | <a href="https://alexandroshub.github.io/about"style="text-decoration: none" target="_blank" class="w3-hover-text-blue">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact" style="text-decoration: none" target="_blank" class="w3-hover-text-blue">Contact</a>
+        </p>
+        <!-- End footer -->
+      </footer>
+      
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
