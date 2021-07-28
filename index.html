@@ -1,160 +1,115 @@
-<div class="page">
-  <header class="header">
-    <h1 class="header-title">AlexandrosHub * AlphaPi</h1>
-    <p class="header-subtitle">Alexandros Papaspyrou</p>
-  </header>
-  	 
-     <meta http-equiv="Refresh" content="2;url=https://alexandroshub.github.io/Qindex">
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<title>AlexandrosHUB | Automations, IoT and all about tech!</title>
+  <link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
+  <meta charset="UTF-8">
+  
+       <meta http-equiv="Refresh" content="4;url=https://alexandroshub.github.io/Qindex">
+       
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
+  
+  
 <style>
-.loader {
-  --loader-size: calc(var(--block-size) / 2);
-  --loader-size-half: calc(var(--loader-size) / 2);
-  --loader-size-half-neg: calc(var(--loader-size-half) * -1);
-  --light-color: rgba(255, 255, 255, 0.3);
-  --dot-size: 5px;
-  --dot-size-half: calc(var(--dot-size) / 2);
-  --dot-size-half-neg: calc(var(--dot-size-half) * -1);
-  
-  display: block;
-  position: relative;
-  width: var(--loader-size);
-  display: grid;
-  place-items: center;
-  color: white;
-}
-
-.loader::before,
-.loader::after {
-  content: '';
+.bb::before, .bb::after, .bb {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-
-
-
-
-/**
-  loader--8
-**/
-.loader--8 {
-  --loader-size: calc(var(--block-size) / 3);
-  --anim-duration: 0.8s;
-  aspect-ratio: 1 / 1;
-  border: 1px dashed var(--light-color);
-  border-radius: 50%;
-  perspective: 50vmin;
-  transform-style: preserve-3d;
-  transform: rotateX(45deg) rotateY(15deg);
-}
-
-.loader--8::before,
-.loader--8::after {   
-  animation: loader-8 var(--anim-duration) cubic-bezier(0.39, 0.24, 0, 0.99) infinite;
-}
-
-.loader--8::before {
-  --z-dist: 8vmin;
-  width: var(--dot-size);
-  aspect-ratio: 1 / 1;
-  background: currentColor;
-  border-radius: 50%;
-  top: calc(50% - var(--dot-size-half));
-  left: calc(50% - var(--dot-size-half));
-  animation-delay: calc(var(--anim-duration) / 4 * -1);
-}
-
-.loader--8::after {
-  --z-dist: 4vmin;
-  width: 65%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-}
-
-@keyframes loader-8 {
-  0%, 100% {
-    transform: translateZ(calc(var(--z-dist) * -1)) scale(0.6);
-  }
-  
-  55% {
-    transform: translateZ(var(--z-dist));
-  }
-}
-
-
-
-
-/**
-  miscs
-**/
-
-.container {
-  --block-size: 18vmin;
-  
-  display: grid;
-  grid-template-columns: repeat(3, var(--block-size));
-  grid-template-rows: repeat(3, var(--block-size));
-  grid-gap: 1vmin;
-}
-
-.item {
-  background: rgba(255, 255, 255, 0.1);
-  display: grid;
-  place-items: center;
-  border-radius: 4px;
-  transition: opacity 0.4s ease;
-}
-
-.container:hover .item {
-  opacity: 0.3;
-}
-
-.container:hover .item:hover {
-  opacity: 1;
-}
-
-.page {
+.bb {
+  width: 200px;
+  height: 200px;
   margin: auto;
+  background: url("https://64.media.tumblr.com/5bda3cb7ce87ed9de69c85af725ebe78/f06bf6e1e4ca1249-32/s500x750/68ec78a36cb70324f7aa6a0d7657b46926fc44b2.png") no-repeat 50%/70% rgba(0, 0, 0, 0.1);
+  color: #69ca62;
+  box-shadow: inset 0 0 0 1px rgba(105, 202, 98, 0.5);
+}
+.bb::before, .bb::after {
+  content: "";
+  z-index: -1;
+  margin: -5%;
+  box-shadow: inset 0 0 0 2px;
+  animation: clipMe 8s linear infinite;
+}
+.bb::before {
+  animation-delay: -4s;
+}
+.bb:hover::after, .bb:hover::before {
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
-.header {
-  margin-bottom: 4vmin;
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 220px, 2px, 0px);
+  }
+  25% {
+    clip: rect(0px, 2px, 220px, 0px);
+  }
+  50% {
+    clip: rect(218px, 220px, 220px, 0px);
+  }
+  75% {
+    clip: rect(0px, 220px, 220px, 218px);
+  }
 }
-
-.header-title {
-  font-size: 3.75vmin;
-}
-
-.header-subtitle {
-  font-size: 2vmin;
-  text-transform: uppercase;
-  opacity: 0.6;
-}
-
-html, body {
-  margin: 0;
-  display: flex;
-  width: 100%;
+html,
+body {
   height: 100%;
-  font-family: 'Noto Sans', sans-serif;
-  color: white;
-  text-align: center;
-  letter-spacing: 0.3px;
-  background: linear-gradient(to right top, #F27121, #E94057, #8A2387);
-
 }
 
-*, *::before, *::after {
+body {
+  position: relative;
+  background-color: #0f222b;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 </style>
-  <main class="">
-    <center>
-      <i class="loader loader--8"></i>
-    </center>
 
-  </main>
-</div>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="bb"></div>
+  
+  
+  
+  
+
+</body>
+
+</html>
+ 
+
+
