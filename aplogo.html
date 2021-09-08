@@ -1,0 +1,86 @@
+<style class="INLINE_PEN_STYLESHEET_ID">
+    * {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Open Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+.bg {
+  background: url(https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png);
+  background-size: cover;
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.slogan {
+  color: white;
+  margin-top: 24px;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.mask {
+  width: 400px;
+  height: 400px;
+  -webkit-animation: move 100s infinite;
+          animation: move 100s infinite;
+  background-image: url(https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png);
+  background-size: cover;
+  -webkit-mask: url(https://alexandroshub.github.io/tumblr_p2qvm8VJG21si59zfo1_400.svg);
+          mask: url(https://alexandroshub.github.io/tumblr_p2qvm8VJG21si59zfo1_400.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+}
+  </style>
+
+  
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-d8236034cc3508e70b0763f2575a8bb5850f9aea541206ce56704c013047d712.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  <div class="bg"></div>
+<div class="mask"></div>
+
+  
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+  <script  src="https://cdpn.io/cp/internal/boomboom/pen.js?key=pen.js-7df4cb82-7bdb-6684-69fd-7d790b87ae6d" crossorigin></script>
+</body>
+
+</html>
