@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<title>Papaspyrou | Arduino</title>
+ <!--/new/--><link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("");
+    min-height: 40%;
+}
+.menu {
+    display: none;
+}
+
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Viga";
+  src: url("Viga-Regular.ttf");
+}
+.navbar .container img{
+  width: 60px;
+  margin-right: 10px;
+}
+.jumbotron .container img{
+  width:400px;
+}
+html,
+body {
+  font-family: "roboto", sans-serif;
+  font-weight: 500 !important;
+  scroll-behavior: smooth;
+}
+.home {
+  background-image: url("https://i.ibb.co/S0dv35y/header.png");
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
+  background-position: bottom;
+}
+.home {
+  padding-top: 150px;
+}
+
+.home h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 54px;
+}
+.home img {
+  /* background-color: ; */
+  padding-bottom: 50px;
+}
+.about {
+  margin-bottom: 100px;
+}
+.about .card {
+  border-left: 5px solid #0c4dff;
+}
+.about .card,
+.galery .card .project .card {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+.about .card:hover,
+.galery .card:hover,
+.project .card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.contact {
+  padding-bottom: 150px;
+}
+.contact .pp {
+  border-radius: 50%;
+  width: 100px;
+  border: 4px solid #cbd5e0;
+}
+.contact h1 {
+  font-size: 60px;
+  color: #2d3748;
+  margin-top: 20px;
+}
+.contact .smd {
+  cursor: pointer;
+  margin: 0 10px;
+  transition: all 0.1s;
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  color: #2d3748;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.footer p {
+  margin: 0;
+}
+
+#contact{
+  margin-top: 100px;
+}
+
+  </style>
+
+  
+
+<body id="APtop">
+
+        <!-- Bootstrap CSS -->
+    <link rel="icon" href="https://img.icons8.com/fluent/48/000000/source-code.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+
+
+ 
+<!--  <div id="particles-js" style="position: fixed; top: 0; bottom: 0; left: 0; right: 0"></div> -->
+   
+
+    
+    <div class="container pt-5 mb-5">
+
+      <div class="about">
+        <div class="container d-flex justify-content-center">
+          <div class="row">
+            <div class="card mb-3" style="max-width: 650px">
+              <div class="row g-0">
+                <div class="col">
+                  <div class="card-body">
+                    <h5 class="card-title">WTF is Arduino</h5>
+                    <h6>Το Arduino είναι µια χαµηλού κόστους, εύχρηστη πλατφόρµα ανάπτυξης έργων ηλεκτρονικής, αυτοµατισµού και ροµποτικής, που χρησιµοποιείται ευρέως για εκπαιδευτικούς σκοπούς αλλά και στη δηµιουργία πρωτότυπων κατασκευών. Το χαµηλό κόστος του και η ευκολία χρήσης επιτρέπει σε µαθητές και χρήστες µε πολύ µικρή εµπειρία να δηµιουργήσουν τις δικές τους πειραµατικές διατάξεις! Το Arduino είναι ένας µικροελεγκτής- ένα εύχρηστο και φθηνό ενσωµατωµένο σύστηµα. Ο µικροελεγκτής επιτρέπει τον έλεγχο ηλεκτρονικών κυκλωµάτων, αισθητήρων και συστηµάτων επέκτασης, µέσω ενός αποθηκευµένου προγράµµατος που συντάσσεται σε γλώσσα Wiring C. Έτσι, µε το Arduino µπορούµε να κάνουµε τα πάντα, από φωτάκια που αναβοσβήνουν µόνα τους µέχρι αυτόνοµα ροµποτικά οχήµατα! Το σύστηµα Arduino δηµιουργήθηκε το 2005 στο Interaction Design Institute στην Ιβρέα της Ιταλίας, και πήρε το όνοµά του από τον Arduin, στρατιωτικό διοικητή της Ιβρέας τον 10µ.Χ αιώνα. Το λογισµικό του Arduino είναι ένα ολοκληρωµένο περιβάλλον ανάπτυξης (Integrated Development Environment, IDE) βασισµένο στο σύστηµα Processing και τη γλώσσα Wiring. Eίναι ένα εύχρηστο λογισµικό ανοικτού κώδικα, µε πλούσιο διαδικτυακό υλικό υποστήριξης.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- galery -->
+
+    <div class="bg-linear-primary" style="background-color: #162230">
+      <div id="galery" class="pt-5 mb-5"></div>
+
+      <div class="label-menu d-flex justify-content-center fs-3 pb-5">
+        <p style="color: #38D4FB">Arduino</p>
+        <p style="color: #115968">Tutorials</p>
+		<p style="color: #F8F8F8">&</p>
+        <p style="color: #257FA1">Workshop</p>
+      </div>
+
+      <div class="galery">
+        <div class="container pb-5">
+          <div class="row text-center justify-content-center">
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://hackster.imgix.net/uploads/attachments/446767/led_AOuhtzYEQe.png?auto=compress%2Cformat&w=900&h=675&fit=min" class="img-fluid pb-1" />
+                  <h5>LED</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://www.ardumotive.com/uploads/1/2/7/2/12726513/5117767.png" class="img-fluid pb-1" />
+                  <h5>Photoresistor</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://hackster.imgix.net/uploads/attachments/383800/d_NQF2pLFP0B.jpg?auto=compress%2Cformat&w=900&h=675&fit=min" class="img-fluid pb-1" />
+                  <h5>Motor</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/b0853bb20f35070390d7f8a48cfc692b/large.png" class="img-fluid pb-1" />
+                  <h5>Display</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://roboino.top/wp-content/uploads/2021/04/foto_modulos-3.png" class="img-fluid pb-1" />
+                  <h5>Sensors</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://i.ibb.co/jkCfL8r/gmbr.jpg" class="img-fluid pb-1" />
+                  <h5>Ini gambar 6</h5>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://i.ibb.co/jkCfL8r/gmbr.jpg" class="img-fluid pb-1" />
+                  <h5>Ini gambar 8</h5>
+                </div>
+              </div>
+            </div>
+            
+          <div class="col-6 col-md-3 my-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="https://i.ibb.co/jkCfL8r/gmbr.jpg" class="img-fluid pb-1" />
+                  <h5>Ini gambar 7</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- project -->
+    <div id="project" class="pt-5 mb-5"></div>
+    <div class="container">
+      <div class="label-menu d-flex justify-content-center fs-3 pb-5">
+        <p style="color: #38D4FB">Arduino</p>
+        <p style="color: #115968">Projects</p>
+      </div>
+
+      <div class="project">
+        <div class="container pb-5">
+          <div class="row justify-content-center">
+            <div class="col-md-4 my-3">
+              <div class="card h-100">
+                <div class="m-3">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZlSygF5sjIyOeEFJrX7R4pOA-vDta9axHeYu3opQVIF_ayuixvVVfJXIGEIJndecENo&usqp=CAU" class="card-img" alt=" grafika-komputer" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-text text-center">Wether Station</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 my-3">
+              <div class="card h-100">
+                <div class="m-3">
+                  <img src="https://i.pinimg.com/474x/63/cd/d5/63cdd59f3559fea7e48185b237c52e12.jpg" class="card-img" alt=" grafika-komputer" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-text text-center">AGV</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 my-3">
+              <div class="card h-100">
+                <div class="m-3">
+                  <img src="https://i.ibb.co/FqJyNQY/server-room.png" class="card-img" alt=" grafika-komputer" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-text text-center">SmartHome</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+<footer class="container-fluid text-center">
+
+  <a href="#APtop" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Handcrafted with <span>&#128420;</span> By  <a href="https://alexandroshub.github.io/welcome21.html" target="_blank"title="Visit AlexandrosHub">AlexandrosHub</a></p>
+  
+  <p   style="font-size: 9px; color:#9CA5AC">
+        <link
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+          crossorigin="anonymous"/>
+        <i class="fa fa-creative-commons"></i>2021 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a></p>
+ <br><br>
+</footer>
+
+</body>
+</html>
