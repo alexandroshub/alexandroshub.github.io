@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  
+<style>
+/* ===== NAVBAR SECTION ===== */
+
+.navbar-brand {
+    color: white;
+    padding: 0 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.nav-menu {
+    background: transparent;
+    padding: 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+
+    transition: all .4s;
+}
+
+@media (max-width:34em) {
+    .nav-menu {
+        background: #000 !important;
+    }
+}
+
+.nav-item {
+    padding: 0 10px;
+}
+
+.menu-item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+
+@media (max-width: 34em) {
+    .menu-item {
+        padding: 10px 10px 10px;
+    }
+}
+
+.navbar-toggler {
+    cursor: pointer;
+    outline: 0;
+}
+
+.ham {
+    transition: width 0.3s;
+    background: #F9F8F7;
+}
+
+.line1, .line3  {
+    width: 28px;
+    height: 2px;
+    margin: 6px;    
+    transition:  0.4s;
+    
+}
+
+.change .line1 {
+    transform: rotate(-45deg) translate(-3px, 2px);
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-3px, -2px);
+}
+
+.menu-item:hover {
+    color: yellow;
+}
+
+.nav-active {
+    color: yellow;
+}
+
+.dropdown-item {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.costum-navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #000 !important;  
+    position: fixed;
+}
+
+/* ===== END OF NAVBAR SECTION ===== */
+
+
+/* ===== HERO SECTION ===== */
+
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, .7), 
+        rgba(0, 0, 0, .6)),   
+        url('https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-hero {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sub-text-hero {
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 9px;
+    color: orange;
+}
+
+.nav-bottom {
+    background: transparent !important;
+    padding: 30px;
+    position: absolute;
+    width: 100%;
+    
+    bottom: 10px;
+}
+
+.item-bottom {
+    padding: 0 20px;
+    transition: .2s;
+    font-size: 20px;
+}
+
+.item-bottom:hover {
+    background: transparent;
+    transform: translateY(-2px);
+}
+
+/* ===== END OF HERO SECTION ===== */
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <!-- ===== NAVBAR SECTION ===== -->
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dosis:300" rel="stylesheet">
+
+
+<body>
+  
+    <nav class="navbar navbar-default navbar-expand-lg nav-menu">
+
+      <div class="container-fluid">
+
+        <a href="#" class="navbar-brand text-uppercase"> Alpha Pi </a>
+
+        <button class="navbar-toggler nav-button" type="button" data-toggle="collapse" data-target="#myNavbar">
+          <div class="line1 ham"></div>
+          <div class="line2 ham"></div>
+          <div class="line3 ham"></div>      
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+
+          <ul class="navbar-nav ml-aulo">
+
+            <li class="nav-item">
+              <a class="nav-link m-2 menu-item nav-active active" href="#"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link m-2 menu-item" href="#"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link m-2 menu-item" href="#"> Services </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link m-2 menu-item" href="#"> Contact </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+    </nav>
+  
+  <section class="hero-section">
+    
+    <div class="container-fluid">
+      
+      <div class="row justify-content-center">
+        
+        <div class="col-12">
+          <h1 class="text-hero text-center text-white text-uppercase"> all about tech </h1>
+        </div>
+
+        <div class="col-12">
+          <p class="lead text-center text-uppercase sub-text-hero"> ▞▚ ▙▄ ▛ █▬█ ▞▚  ▛ █ </p>
+        </div>
+        
+      </div>  
+      
+    </div>
+            
+  </section>
+  
+  
+  <!-- ===== ABOUT US ===== -->
+
+  <section class="about py-5">
+    
+    <div class="container">
+      
+      <!-- ===== TITLE CONTENT ===== -->
+      <div class="row">
+        
+        <div class="col text-center my-4 mb-5">
+          <h1 class="about-heading text-dark text-uppercase"> Welcome </h1>
+        </div>
+        
+      </div>
+      <!-- ===== END OF TITLE CONTENT ===== -->
+      
+      <div class="row">
+        <div class="col-12">
+   
+<div class="text-center">
+  <h2>Personal website of Pᴀᴘᴀsᴘʏʀᴏᴜ Aʟᴇxᴀɴᴅʀᴏs.</h2> 
+  <p>All about IoT, Automations, Robotics, projects with arduino or raspberryPi and more...</p> 
+
+
+<button type="button" class="btn btn-default active" data-toggle="collapse" data-target="#dexo">Γιατί AP ?</button>
+  <div id="dexo" class="collapse">
+  <b> Χαίρομαι που το ρωτάς!  </b>
+
+ Απ' το 2011 ασχολούμαι με την τεχνολογία και internet και από τους πρώτους μου  στόχους ήταν να υπάρχει ενας διαδικτυακός ιστότοπος  που να φιλοξενεί τις εργασίες και τις απόψεις μου,  και προφανώς η πρόσβαση να είναι ελεύθερη!  Αυτή τη στιγμή είστε στην 3η έκδοση  της τέταρτης προσπάθειας  αυτού του στόχου μου!
+  </div>  
+  
+    <a href="https://alexandroshub.github.io/aplogo">Logo</a>
+
+</div>
+
+
+
+
+        </div>
+      </div>
+      
+    </div>
+    
+  </section>
+  
+  <!-- ===== END OF ABOUT US ===== -->
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script id="rendered-js" >
+// ===== NAVBAR ===== //
+$(window).scroll(function () {
+
+  let position = $(this).scrollTop();
+  if (position >= 100) {
+    $('.nav-menu').addClass('costum-navbar');
+  } else {
+    $('.nav-menu').removeClass('costum-navbar');
+  }
+
+});
+
+
+// ===== HAMBURGER BUTTON ===== //
+$(document).ready(function () {
+
+  $('.nav-button').click(function () {
+    $('.nav-button').toggleClass('change');
+  });
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
