@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <meta content="width=1024" name="viewport">
+  <link href='https://fonts.googleapis.com/css?family=Averia+Serif+Libre:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    address,
+    blockquote,
+    body,
+    code,
+    fieldset,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    html,
+    li,
+    ol,
+    p,
+    pre,
+    ul,
+    variable {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      font-weight: 400
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    caption,
+    td,
+    th {
+      font-weight: 400
+    }
+
+    fieldset,
+    img {
+      border: 0
+    }
+
+    ol {
+      padding-left: 1.4em;
+      list-style: decimal
+    }
+
+    ul {
+      padding-left: 1.4em;
+      list-style: square
+    }
+
+    q:after,
+    q:before {
+      content: ''
+    }
+
+    html {
+      background-color: #e3e5da;
+    }
+
+    body {
+      background: url(https://s3-eu-west-1.amazonaws.com/xmas-whacker/bg1.jpg) repeat-x !important;
+      z-index: 0;
+    }
+
+    #scene {
+      background: url(https://s3-eu-west-1.amazonaws.com/xmas-whacker/background2.jpg) no-repeat;
+      width: 1024px;
+      height: 640px;
+      margin: 0 auto;
+      position: relative;
+      top: 0;
+      z-index: 50
+    }
+
+    canvas {
+      display: block;
+      position: absolute;
+      z-index: 500;
+      height: 650px;
+      width: 100%
+    }
+
+    #sign {
+      position: absolute;
+      background: url(https://s3-eu-west-1.amazonaws.com/xmas-whacker/sign-dark.png) no-repeat;
+      height: 606px;
+      width: 394px;
+      top: 201px;
+      left: 263px;
+      z-index: 2000;
+      padding: 34px 38px 0;
+      text-align: center
+    }
+    
+    #container {
+      width: 1024px;
+      position: relative;
+      margin: 0 auto;
+      top: -640px;
+    }
+
+      #sparkle {
+      position: absolute;
+      background: url("https://64.media.tumblr.com/3ef0a7c670508d24a5f81974d8711a9d/52d202ea8394f0a9-e3/s540x810/2aa917032808deaa115cee0b60aaf5a81ec9011e.png") no-repeat;
+      height: 199px;
+      width: 811px;
+      top: 0px;
+      left: 150px;
+      z-index: 900
+    }
+
+    #toggle {
+      position: absolute;
+      top: 756px;
+      right: 0;
+      width: 56px;
+      height: 49px;
+      z-index: 2000;
+      cursor: pointer
+    }
+
+    #tree {
+      position: absolute;
+      background: url(https://s3-eu-west-1.amazonaws.com/xmas-whacker/tree.png) no-repeat;
+      height: 427px;
+      width: 195px;
+      top: 170px;
+      right: 40px;
+      z-index: 2010
+    }
+
+    #deer {
+      position: absolute;
+      background: url(https://s3-eu-west-1.amazonaws.com/xmas-whacker/deer.png) no-repeat;
+      height: 97px;
+      width: 62px;
+      top: 459px;
+      right: 59px;
+      z-index: 2000;
+      transition: All .1s ease-in-out;
+      -webkit-transition: All .1s ease-in-out;
+      -moz-transition: All .1s ease-in-out;
+      -o-transition: All .1s ease-in-out
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particle_canvas"></canvas>
+  <div id="scene">
+    <div id="deer"></div>
+    <div id="tree"></div>
+  </div>
+  <div id="container">
+    <div id="sparkle"></div>
+    <div id="robin"></div>
+  </div><br>
+  </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.spritely/0.6.5/jquery.spritely.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      function e(e, t, n, r) {
+        this.origin = e;
+        this.position = new o(e.x, e.y);
+        this.velocity = t || new o(0, 0);
+        this.size = n;
+        this.amplitude = r;
+        this.dx = Math.random() * 100;
+        this.update = function(e) {
+          this.position.y += this.velocity.y * e;
+          this.dx += this.velocity.x * e;
+          this.position.x = this.origin.x + this.amplitude * Math.sin(this.dx)
+        }
+      }
+
+      function n() {
+        return (new Date).getTime() * .001
+      }
+
+      function r(e, t) {
+        return Math.floor((e || 0) + Math.random() * ((t + 1 || 100) - (e || 0)))
+      }
+
+      function i(e, t) {
+        return (e || 0) + Math.random() * ((t || 1) - (e || 0))
+      }
+
+      function s(e, t, n) {
+        return Math.min(Math.max(e, t), n)
+      }
+
+      function o(e, t) {
+        this.x = e || 0;
+        this.y = t || 0;
+        this.add = function(e) {
+          this.x += e.x;
+          this.y += e.y
+        };
+        this.magnitude = function() {
+          return Math.sqrt(this.x * this.x + this.y * this.y)
+        }
+      }
+
+      function u(e, t, n) {
+        this.r = e || 0;
+        this.g = t || 0;
+        this.b = n || 0
+      }
+      window.addEventListener("resize", function() {
+        t.resize(window.innerWidth, window.innerHeight);
+        t.init()
+      }, false);
+      window.addEventListener("load", function() {
+        t.init();
+        t.start()
+      }, false);
+      var t = {
+        canvas: null,
+        ctx: null,
+        particles: [],
+        running: false,
+        start_time: 0,
+        frame_time: 0,
+        init: function() {
+          this.canvas = document.getElementById("particle_canvas");
+          this.ctx = this.canvas.getContext("2d");
+          this.resize(window.innerWidth, window.innerHeight);
+          this.pAmount = 5e3;
+          this.pSize = [.5, 1.5];
+          this.pSwing = [.1, 1];
+          this.pSpeed = [40, 100], this.pAmplitude = [25, 50];
+          this._init_particles()
+        },
+        start: function() {
+          this.running = true;
+          this.start_time = this.frame_time = n();
+          this._loop()
+        },
+        stop: function() {
+          this.running = false
+        },
+        resize: function(e, t) {
+          this.canvas.width = e;
+          this.canvas.height = t
+        },
+        _loop: function() {
+          if (t.running) {
+            t._clear();
+            t._update();
+            t._draw();
+            t._queue()
+          }
+        },
+        _init_particles: function() {
+          this.particles.length = 0;
+          for (var t = 0; t < this.pAmount; t++) {
+            var n = new o(i(0, this.canvas.width), i(-this.canvas.height, 0));
+            var r = new o(i(this.pSwing[0], this.pSwing[1]), i(this.pSpeed[0], this.pSpeed[1]));
+            var s = i(this.pSize[0], this.pSize[1]);
+            var u = i(this.pAmplitude[0], this.pAmplitude[1]);
+            this.particles.push(new e(n, r, s, u))
+          }
+        },
+        _update: function() {
+          var e = n();
+          var t = e - this.frame_time;
+          for (var r = 0; r < this.particles.length; r++) {
+            var i = this.particles[r];
+            i.update(t);
+            if (i.position.y - i.size > this.canvas.height) {
+              i.position.y = -i.size;
+              i.position.x = i.origin.x = Math.random() * this.canvas.width;
+              i.dx = Math.random() * 100
+            }
+          }
+          this.frame_time = e
+        },
+        _draw: function() {
+          this.ctx.fillStyle = "rgb(255,255,255)";
+          for (var e = 0; e < this.particles.length; e++) {
+            var t = this.particles[e];
+            this.ctx.fillRect(t.position.x, t.position.y, t.size, t.size)
+          }
+        },
+        _clear: function() {
+          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+        },
+        _queue: function() {
+          window.requestAnimationFrame(t._loop)
+        }
+      }
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $('#robin').sprite({
+        fps: 20,
+        no_of_frames: 23
+      });
+      
+
+      function animateDeer() {
+        $("#deer").animate({
+            "right": "10px"
+          }, 1000,
+          function() {
+            $("#deer").delay(500).animate({
+              "right": "59px"
+            });
+          });
+      }
+
+      function init() {
+        var myFunction = function() {
+          animateDeer();
+          var rand = Math.round(Math.random() * (18000 - 7000)) + 7000; // generate new time (between 15sec and 6sec)
+          setTimeout(myFunction, rand);
+        }
+        myFunction();
+      }
+      $(function() {
+        init();
+      });
+    });
+  </script>
+</body>
+
+</html>
