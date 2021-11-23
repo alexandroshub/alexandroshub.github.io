@@ -1,4 +1,81 @@
-<!--  ContactMe ud 2.11.21
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  
+<style>
+.navbar-brand { padding: 0px; }
+.navbar-brand>img { height: 100%; padding: 15px; width: auto; }
+
+/* EXAMPLE 6 - Background Logo*/
+.example6 .navbar-brand{ background: url(https://64.media.tumblr.com/3ef0a7c670508d24a5f81974d8711a9d/52d202ea8394f0a9-e3/s540x810/2aa917032808deaa115cee0b60aaf5a81ec9011e.png) center / contain no-repeat;
+  width: 200px; }
+
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header { transform-style: preserve-3d;  height: 50px; }
+.navbar-alignit .navbar-brand { top: 50%; display: block; position: relative; height: auto; transform: translate(0,-50%); margin-right: 15px; margin-left: 15px; }
+.navbar-nav>li>.dropdown-menu {z-index: 9999;}
+body {font-family: "Lato";}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+
+
+
+
+  <nav class="navbar navbar-inverse navbar-static-top example6  " style="margin-bottom: 0";>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar6">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand text-hide" href="http://disputebills.com">AlphaPi
+        </a>
+      </div>
+      <div id="navbar6" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="https://alexandroshub.github.io">Home</a></li>
+          <li><a href="https://alexandroshub.github.io/porto.ap.html">Portfolio</a></li>
+          <li><a href="https://alexandroshub.github.io/ap.contact.html">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+         	  <li><a href="https://alexandroshub.github.io/plus.ap.html">Plus</a></li>
+			  <li><a href="https://alexandroshub.github.io/cv">My CV</a></li>
+              <li><a href="https://alexandroshub.github.io/stem">STEAM</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Development</li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  
+  
+  
+
+
+<!--  ContactMe ud 23.11.21
   ==========================================================================
   
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -28,15 +105,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Raleway", sans-serif;
-    }
     body,
     html {
       height: 100%;
