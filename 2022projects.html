@@ -1,16 +1,10 @@
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-
-
-
 <!--    ==========================================================================
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
   ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
   
-      Updated: 28.2.22
+      Updated: 1.3.22
       Website: https://alexandroshub.github.io
       Contact email: alexandroshub@protonmail.com
   
@@ -35,7 +29,7 @@
   <meta name="description" content="Personal website of Papaspyrou Alexandros. All about IoT projects with arduino or raspberryPi, Automations, Robotics and more...">
   <meta name="keywords" content="Automations, Programming , Technology, IoT , RaspberyPi">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
 <!--fontawesome--><script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -226,127 +220,36 @@ ddaa {
 
 
 
-
-
-
-
-
-
-
-  
-  
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&amp;display=swap">
-
   <style class="INLINE_PEN_STYLESHEET_ID">
-.main{
-  height:30vh;
-  width:100%;  
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-h1x{
-  text-align:center;
-  text-transform: uppercase;
-  color: #000; 
-  font-size: 4rem;
+.main{  height:30vh;  width:100%;    display:flex;  align-items:center;  justify-content:center;  text-align:center;}
+h1x{  text-align:center;  text-transform: uppercase;  color: #000;   font-size: 4rem;}
+.roller{  height: 4.125rem;  line-height: 4rem;  position: relative;  overflow: hidden;   width: 100%;  display: flex;  justify-content: center;  align-items: center;  color: #1D3557;}
+#spare-time{  font-size: 1.3rem;  font-style: italic;  letter-spacing: 1rem;  margin-top: 0;  color: #9c269b;  }
+.roller #rolltext {  position: absolute;  top: 0;   animation: slide 5s infinite;  }
+
+@keyframes slide {  0% {   top:0; }  25%{   top: -4rem;  }  50%{   top: -8rem; }  72.5%{ top: -12.25rem; }}
+
+@media screen and (max-width: 600px){  h1x{  text-align:center;  text-transform: uppercase;  color: #F1FAEE;   font-size: 2.125rem; }
+  .roller{  height: 2.6rem;   line-height: 2.125rem;    } 
+  #spare-time {    font-size: 1rem;    letter-spacing: 0.1rem;  }  
+  .roller #rolltext {    animation: slide-mob 5s infinite;  }
+@keyframes slide-mob {  0%{ top:0; }  25%{ top: -2.125rem; }  50%{ top: -4.25rem; }  72.5%{ top: -6.375rem; }}
+
 }
 
-.roller{
-  height: 4.125rem;
-  line-height: 4rem;
-  position: relative;
-  overflow: hidden; 
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  color: #1D3557;
-}
-
-
-#spare-time{
-  font-size: 1rem;
-  font-style: italic;
-  letter-spacing: 1rem;
-  margin-top: 0;
-  color: #A8DADC;
-  
-}
-
-.roller #rolltext {
-  position: absolute;
-  top: 0;
-  animation: slide 5s infinite;  
-}
-
-@keyframes slide {
-  0%{
-    top:0;
-  }
-  25%{
-    top: -4rem;    
-  }
-  50%{
-    top: -8rem;
-  }
-  72.5%{
-    top: -12.25rem;
-  }
-}
-
-@media screen and (max-width: 600px){
-  h1x{
-  text-align:center;
-  text-transform: uppercase;
-  color: #F1FAEE; 
-  font-size: 2.125rem;
-}
-  
-  .roller{
-  height: 2.6rem; 
-  line-height: 2.125rem;  
-  }
-  
-  #spare-time {
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-  }
-  
-  .roller #rolltext {  
-  animation: slide-mob 5s infinite;  
-}
-  
-  @keyframes slide-mob {
-  0%{
-    top:0;
-  }
-  25%{
-    top: -2.125rem;    
-  }
-  50%{
-    top: -4.25rem;
-  }
-  72.5%{
-    top: -6.375rem;
-  }
-}
-}
-  </style>
-
+</style>
   
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-d0f3648046d2aaca07bd0037b9e061a26c74a8a999b75672ad6a638cca641472.js"></script>
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-4793b73c6332f7f14a9b6bba5d5e62748e9d1bd0b5c52d7af6376f3d1c625d7e.js"></script>
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
-</head>
 
+</head>
 <body>
 
+<div class="jumbotron text-center"style="  background-color:#ececee;">
 
-
-<div class="jumbotron text-center">
+  
    <div class="main">
   
   <h1x> 
@@ -434,13 +337,11 @@ background-image: linear-gradient(to right, rgba(239,140,53),rgb(218,39,73), rgb
   </div>
 </div>
 
-
 </div>
 
 
 
 
- 
 
 
 
@@ -448,20 +349,12 @@ background-image: linear-gradient(to right, rgba(239,140,53),rgb(218,39,73), rgb
 
 
 
-
-
-
-
-
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-  <style class="INLINE_PEN_STYLESHEET_ID">
-    @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+<style class="INLINE_PEN_STYLESHEET_ID">
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 :root {
   --d: 700ms;
   --e: cubic-bezier(0.19, 1, 0.22, 1);
@@ -469,175 +362,47 @@ background-image: linear-gradient(to right, rgba(239,140,53),rgb(218,39,73), rgb
   --font-serif: "Cardo", serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
-.page-content {
-  display: grid;
-  grid-gap: 1rem;
-  padding: 1rem;
-  max-width: 1024px;
-  margin: 0 auto;
-  font-family: var(--font-sans);
-}
-@media (min-width: 600px) {
-  .page-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 800px) {
-  .page-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+.page-content {  display: grid;  grid-gap: 1rem;  padding: 1rem;  max-width: 1024px;  margin: 0 auto;  font-family: var(--font-sans);}
 
-.card {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 1rem;
-  width: 100%;
-  text-align: center;
-  color: whitesmoke;
-  background-color: whitesmoke;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-@media (min-width: 600px) {
-  .card {
-    height: 350px;
-  }
-}
-.card:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 110%;
-  background-size: cover;
-  background-position: 0 0;
-  transition: transform calc(var(--d) * 1.5) var(--e);
-  pointer-events: none;
-}
-.card:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200%;
-  pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-  transform: translateY(-50%);
-  transition: transform calc(var(--d) * 2) var(--e);
-}
-.card:nth-child(1):before {
-  background-image: url(https://www.mckinsey.com/~/media/mckinsey/industries/semiconductors/our%20insights/whats%20new%20with%20the%20internet%20of%20things/internet-of-things_thumbnailv2_1536x1536_200_standard.jpg);
-}
-.card:nth-child(2):before {
-  background-image: url(https://bestarion.com/wp-content/uploads/2021/05/iot-developer.jpeg);
-}
-.card:nth-child(3):before {
-  background-image: url(https://t3.ftcdn.net/jpg/03/48/39/74/360_F_348397404_wXuf22GUPNAh67htBZZnaDSx3Bj92yep.jpg);
-}
-.card:nth-child(4):before {
-  background-image: url(https://www.robot-advance.com/EN/news-112_EN.jpg);
-}
-
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  transition: transform var(--d) var(--e);
-  z-index: 1;
-}
-.content > * + * {
-  margin-top: 1rem;
-}
-
-.title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.copy {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.btn {
-  cursor: pointer;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.65rem;
-  font-weight: bold;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: white;
-  background-color: black;
-  border: none;
-}
-.btn:hover {
-  background-color: #0d0d0d;
-}
-.btn:focus {
-  outline: 1px dashed yellow;
-  outline-offset: 3px;
-}
-
+@media (min-width: 600px) {.page-content {grid-template-columns: repeat(2, 1fr);}}
+@media (min-width: 800px) {.page-content {grid-template-columns: repeat(4, 1fr);}}
+.card {  position: relative;  display: flex;  align-items: flex-end;  overflow: hidden;  padding: 1rem;  width: 100%;  text-align: center;  color: whitesmoke;  background-color: whitesmoke;  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);}
+@media (min-width: 600px) {  .card {    height: 350px;  }}
+.card:before {  content: "";  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 110%;  background-size: cover;  background-position: 0 0;  transition: transform calc(var(--d) * 1.5) var(--e);  pointer-events: none;}
+.card:after {  content: "";  display: block;  position: absolute;  top: 0;  left: 0;  width: 100%;  height: 200%;  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);  transform: translateY(-50%);  transition: transform calc(var(--d) * 2) var(--e);}
+.card:nth-child(1):before {  background-image: url(https://www.mckinsey.com/~/media/mckinsey/industries/semiconductors/our%20insights/whats%20new%20with%20the%20internet%20of%20things/internet-of-things_thumbnailv2_1536x1536_200_standard.jpg);}
+.card:nth-child(2):before {  background-image: url(https://bestarion.com/wp-content/uploads/2021/05/iot-developer.jpeg);}
+.card:nth-child(3):before {  background-image: url(https://t3.ftcdn.net/jpg/03/48/39/74/360_F_348397404_wXuf22GUPNAh67htBZZnaDSx3Bj92yep.jpg);}
+.card:nth-child(4):before {  background-image: url(https://www.robot-advance.com/EN/news-112_EN.jpg);}
+.content {  position: relative;  display: flex;  flex-direction: column;  align-items: center;  width: 100%;  padding: 1rem;  transition: transform var(--d) var(--e);  z-index: 1;}
+.content > * + * {  margin-top: 1rem;}
+.title {  font-size: 1.3rem;  font-weight: bold;  line-height: 1.2;}
+.copy {  font-family: var(--font-serif);  font-size: 1.125rem;  font-style: italic;  line-height: 1.35;}
+.btn {  cursor: pointer;  margin-top: 1.5rem;  padding: 0.75rem 1.5rem;  font-size: 0.65rem;  font-weight: bold;  letter-spacing: 0.025rem;  text-transform: uppercase;  color: white;  background-color: black;  border: none;}
+.btn:hover {  background-color: #0d0d0d;}
+.btn:focus {  outline: 1px dashed yellow;  outline-offset: 3px;}
 @media (hover: hover) and (min-width: 600px) {
-  .card:after {
-    transform: translateY(0);
-  }
-
-  .content {
-    transform: translateY(calc(100% - 4.5rem));
-  }
-  .content > *:not(.title) {
-    opacity: 0;
-    transform: translateY(1rem);
-    transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-  }
-
-  .card:hover,
-.card:focus-within {
-    align-items: center;
-  }
-  .card:hover:before,
-.card:focus-within:before {
-    transform: translateY(-4%);
-  }
-  .card:hover:after,
-.card:focus-within:after {
-    transform: translateY(-50%);
-  }
-  .card:hover .content,
-.card:focus-within .content {
-    transform: translateY(0);
-  }
-  .card:hover .content > *:not(.title),
-.card:focus-within .content > *:not(.title) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(var(--d) / 8);
-  }
-
-  .card:focus-within:before, .card:focus-within:after,
+.card:after {    transform: translateY(0);  }
+.content {    transform: translateY(calc(100% - 4.5rem));  }
+.content > *:not(.title) {    opacity: 0;    transform: translateY(1rem);    transition: transform var(--d) var(--e), opacity var(--d) var(--e);  }
+.card:hover,
+.card:focus-within {    align-items: center;  }
+.card:hover:before,
+.card:focus-within:before {    transform: translateY(-4%);  }
+.card:hover:after,
+.card:focus-within:after {    transform: translateY(-50%);  }
+.card:hover .content,
+.card:focus-within .content {    transform: translateY(0);  }
+.card:hover .content > *:not(.title),
+.card:focus-within .content > *:not(.title) {    opacity: 1;    transform: translateY(0);    transition-delay: calc(var(--d) / 8);  }
+.card:focus-within:before, .card:focus-within:after,
 .card:focus-within .content,
-.card:focus-within .content > *:not(.title) {
-    transition-duration: 0s;
-  }
+.card:focus-within .content > *:not(.title) {    transition-duration: 0s;  }
 }
-  </style>
+</style>
 
   
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-d0f3648046d2aaca07bd0037b9e061a26c74a8a999b75672ad6a638cca641472.js"></script>
@@ -926,9 +691,9 @@ Data Science με Python
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-             <li><a href="https://alexandroshub.github.io/dev"><i class="far fa-paper-plane"style="color: red;"></i><b> Dev</b>project</a></li>
-             
-              <li><a href="https://alexandroshub.wordpress.com"><i class="far fa-paper-plane" style='color:red'></i><b> Blog</b></a></li>
+         
+         <li><a href="https://alexandroshub.github.io/dev"><i style="color: red;" class="fa">&#xf126;</i></i><b> Dev</b>project</a></li>
+         <li><a href="https://alexandroshub.wordpress.com"><i style="color: red;" class="fa">&#xf126;</i></i><b> Blog</b></a></li>
               <li><a href="https://alexandroshub.github.io/contact"><i class="far fa-paper-plane" style='color:red'></i><b> Contact</b></a></li>
             </ul>
           </div>
