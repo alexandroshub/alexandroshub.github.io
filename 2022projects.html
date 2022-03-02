@@ -1,10 +1,9 @@
-
 <!--    ==========================================================================
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
   ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
   
-      Updated: 1.3.22
+      Updated: 2.3.22
       Website: https://alexandroshub.github.io
       Contact email: alexandroshub@protonmail.com
   
@@ -418,29 +417,29 @@ background-image: linear-gradient(to right, rgba(239,140,53),rgb(218,39,73), rgb
   <div class="card">
     <div class="content">
       <h2 class="title">Automation</h2>
-      <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-      <button class="btn">View more</button>
+      <p class="copy">Τι είναι ο αυτοματισμός και ποιες οι εφαρμογές του.</p>
+      <button class="btn" onclick="location.href='https://alexandroshub.github.io/automation'">View more</button>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">IoT</h2>
-      <p class="copy">Plan your next beach trip with these fabulous destinations</p>
-      <button class="btn">View more</button>
+      <p class="copy">Το διαδίκτυο των πραγμάτων από τη θεωρία στην πράξη</p>
+      <button class="btn" onclick="location.href='https://alexandroshub.github.io/iot'">View more</button>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">Development</h2>
-      <p class="copy">It's the desert you've always dreamed of</p>
-      <button class="btn">View more</button>
+      <p class="copy">Εφαρμογές προγραμματισμού σε πλήθος γλωσσών και προγραμμάτων </p>
+      <button class="btn" onclick="location.href='https://alexandroshub.github.io/dev'">View more</button>
     </div>
   </div>
   <div class="card">
     <div class="content">
       <h2 class="title">STEAM</h2>
-      <p class="copy">Seriously, straight up, just blast off into outer space today</p>
-      <button class="btn">View more</button>
+      <p class="copy">Εκπαιδευτική ρομποτική και πειράματα από τη θεωρία στην πράξη</p>
+      <button class="btn" onclick="location.href='https://alexandroshub.github.io/stem'">View more</button>
     </div>
   </div>
 </main>
@@ -465,6 +464,135 @@ background-image: linear-gradient(to right, rgba(239,140,53),rgb(218,39,73), rgb
   
 
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jumbotron text-center"style="  background-color:#ececee;">
+
+
+
+<style>
+.filterDiv {
+  float: left;
+  background-image: linear-gradient(to left, rgba(239,140,53), rgba(189,24,133));  
+  color: #ffffff;
+  width: 100px;
+  line-height: 50px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #666;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('dev')"> dev</button>
+  <button class="btn" onclick="filterSelection('platforms')"> platforms</button>
+  <button class="btn" onclick="filterSelection('prog')"> prog</button>
+</div>
+
+<div class="container">
+  <div class="filterDiv platforms">Arduino</div>
+  <div class="filterDiv platforms">RaspberyPi</div>
+  <div class="filterDiv dev">Python</div>
+  <div class="filterDiv dev">html/css/js</div>
+  <div class="filterDiv dev">C/C#/Cpp</div>
+  <div class="filterDiv prog">Matlab</div>
+  <div class="filterDiv prog">labview</div>
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</div>
+
 
 <!--
 ▄▀█ █░░ █▀█ █░█ ▄▀█   █▀█ █
