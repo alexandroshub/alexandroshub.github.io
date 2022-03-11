@@ -1,9 +1,10 @@
+
 <!--    ==========================================================================
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
   ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
   
-      Updated: 2.3.22
+      Updated: 11.3.22
       Website: https://alexandroshub.github.io
       Contact email: alexandroshub@protonmail.com
   
@@ -592,6 +593,233 @@ for (var i = 0; i < btns.length; i++) {
 }
 </script>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+.containera {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 15px 0;
+  text-align: left;
+}
+.containera:hover .carda {
+  filter: grayscale(1);
+}
+.containera:hover .carda:hover {
+  filter: grayscale(0);
+}
+
+.carda {
+  background-color: #222222;
+  border-radius: 30px;
+  height: 300px;
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  margin: 0 15px;
+  transition: flex 300ms ease-in-out 200ms;
+  cursor: pointer;
+  position: relative;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: white;
+  background-size: cover;
+}
+.carda--nami {
+  background-image: url("https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png");
+}
+.carda--robin {
+  background-image: url("https://c2.staticflickr.com/4/3813/32932633412_c084fcfbf4_o.png");
+}
+.carda--boa {
+  background-image: url("https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png");
+}
+.carda--boa2 {
+  background-image: url("https://c2.staticflickr.com/3/2817/32706842880_b828022e51_o.png");
+}
+.carda:not(:first-child):not(:last-child) {
+  margin: 0 7.5px;
+}
+.carda:first-child {
+  margin-right: 7.5px;
+}
+.carda:last-child {
+  margin-left: 7.5px;
+}
+.carda_stats {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 20px;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out 100ms;
+}
+.carda_stats svg {
+  max-width: 18px;
+}
+.carda_stats-item {
+  border-radius: 50em;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
+}
+.carda_stats-item svg {
+  width: 100%;
+}
+.carda_stats-item span {
+  padding-left: 5px;
+}
+.carda_title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0px 20px;
+  margin-bottom: 5px;
+  z-index: 1;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.75);
+  letter-spacing: 0.75px;
+}
+.carda_title span {
+  font-size: 0.5em;
+  display: block;
+  font-weight: 300;
+  margin-top: 5px;
+}
+.carda_desc {
+  max-height: 0;
+  overflow: hidden;
+  line-height: 1.25em;
+  transition: max-height 200ms ease-in-out 0ms, opacity 100ms ease, padding 200ms ease-in-out 0ms;
+  z-index: 1;
+  padding: 0 20px;
+  background-color: white;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+.carda:hover {
+  flex: 2;
+}
+.carda:hover .carda_desc {
+  max-height: 100%;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 20px 20px;
+  transition: max-height 100ms ease-in-out 500ms, padding 300ms ease-in-out 300ms;
+  opacity: 1;
+}
+.carda:hover .carda_stats {
+  opacity: 1;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+ <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+<div class="containera"  style=" background-color: #111; color: white;" >
+  <div class="carda carda--nami">
+        
+  <!--  <div class="card_stats">
+      <div class="card_stats-item">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 426.668 426.668" style="enable-background:new 0 0 426.668 426.668;" xml:space="preserve">
+<path fill="#F05228" d="M401.788,74.476c-63.492-82.432-188.446-33.792-188.446,49.92
+	c0-83.712-124.962-132.356-188.463-49.92c-65.63,85.222-0.943,234.509,188.459,320.265
+	C402.731,308.985,467.418,159.698,401.788,74.476z"/>
+        </svg>
+        <span>24</span> 
+      </div>
+    </div> -->
+    <p class="carda_title">
+      IoT
+      <span>CoNo project (smart home)</span>
+    </p>
+    <p class="carda_desc">Yλοποιήθηκε χρησιμοποιώντας ένα Arduino, αισθητήριο DHT11, το τσιπάκι ESP8266 για σύνδεση στο δίκτυο και την πλατφόρμα τις https://thingspeak.com.
+    <br>
+      <a href="https://alexandroshub.github.io/cono"  target="_blank" style=" text-decoration: none;">Readmore</a>
+      </p>
+ </div>
+  <div class="carda carda--robin">
+    <!--    <div class="card_stats">
+      <div class="card_stats-item">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 426.668 426.668" style="enable-background:new 0 0 426.668 426.668;" xml:space="preserve">
+<path fill="#F05228" d="M401.788,74.476c-63.492-82.432-188.446-33.792-188.446,49.92
+	c0-83.712-124.962-132.356-188.463-49.92c-65.63,85.222-0.943,234.509,188.459,320.265
+	C402.731,308.985,467.418,159.698,401.788,74.476z"/>
+        </svg>
+        <span>24</span>
+      </div>
+    </div> -->
+    <p class="carda_title">
+      Robotics      
+      <span>MICHATRON project (Arduino)</span>
+    </p>
+    <p class="carda_desc">
+     Αυτόματη ρομποτική πλατφόρμα, ξεκινάει με μη χειροκίνητο τρόπο… Ακολουθεί μια μαύρη γραμμή… Προσπερνάει τα εμπόδια που θα βρει… και όταν φτάσει στο τέρμα… Σταματάει αυτόματα! <br>
+      <a href="https://alexandroshub.github.io/soon"  target="_blank" style=" text-decoration: none;">Readmore</a>
+    </p>
+  </div>
+  <div class="carda carda--boa">
+   <!--     <div class="card_stats">
+      <div class="card_stats-item">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 426.668 426.668" style="enable-background:new 0 0 426.668 426.668;" xml:space="preserve">
+<path fill="#F05228" d="M401.788,74.476c-63.492-82.432-188.446-33.792-188.446,49.92
+	c0-83.712-124.962-132.356-188.463-49.92c-65.63,85.222-0.943,234.509,188.459,320.265
+	C402.731,308.985,467.418,159.698,401.788,74.476z"/>
+        </svg>
+        <span>30</span>
+      </div>
+    </div> -->
+    <p class="carda_title">
+       Automation
+      <span>LDR switch Το κύκλωμα του Φωτοδιακόπτη (electronics)</span>
+    </p>
+    <p class="carda_desc">
+     Ο πιο απλός αυτοματισμός μπορεί να είναι ένας φωτοδιακόπτης . Όταν βραδιάζει, ανάβουν τα φώτα του σπιτιού.  <br>
+      <a href="https://alexandroshub.github.io/soon"  target="_blank" style=" text-decoration: none;">Readmore</a>
+    </p>
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
 
 
 <!--
