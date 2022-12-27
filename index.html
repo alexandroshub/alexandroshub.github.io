@@ -1,3 +1,4 @@
+
 <!--==========================================================================
 
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -230,13 +231,12 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 .bgimg-1 {
-  background-image: url("https://c2.staticflickr.com//3/2795/33046870276_99da24ee4b_o.png");
-  min-height: 100%;
+  background-image: url("https://i.pinimg.com/originals/4a/ae/bf/4aaebf41f6b1f0a10991689cf0e90a19.gif");
+  min-height: 80%;
    -webkit-filter: grayscale(80%);
-    filter: grayscale(80%); /* make all photos black and white */ 
+    filter: grayscale(50%); /* make all photos black and white */ 
 }
 
 .bgimg-2 {
@@ -324,6 +324,58 @@ h3 {
         <li><a href="https://alexandroshub.github.io/porto.ap.html">PORTFOLIO</a></li>
         <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQIREL5UNjlHSFBIMUFHTVNMTTFNN1o0M1FWMFdaMi4u">CONTACT</a></li>
           <li><a href="https://alexandroshub.github.io/plus.ap.html">PLUS</a></li>
+          
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+         	  <li><a href="https://alexandroshub.github.io/plus.ap.html">Plus</a></li>
+			  <li><a href="https://alexandroshub.github.io/cv">My CV</a></li>
+              <li><a href="https://alexandroshub.github.io/stem">STEAM</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Development</li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          
+          
+          
+          
+                   
+         
+         
+<style>
+.overlay {  height: 100%;  width: 100%;  display: none;  position: fixed;  z-index: 1;  top: 0;  left: 0;  background-color: rgb(0,0,0);  background-color: rgba(0,0,0, 0.9);}
+
+.overlay-content {  position: relative;  top: 46%;  width: 80%;  text-align: center;  margin-top: 30px;  margin: auto;}
+.overlay .closebtn {  position: absolute;  top: 20px;  right: 45px;  font-size: 60px;  cursor: pointer;  color: white;}
+.overlay .closebtn:hover {  color: #ccc;}
+
+.overlay input[type=text] {  padding: 15px;  font-size: 17px;  border: none;  float: left;  width: 80%;  background: white;}
+.overlay input[type=text]:hover {  background: #f1f1f1;}
+.overlay button {  float: left;  width: 20%;  padding: 15px;  background: #ddd;  font-size: 17px;  border: none;  cursor: pointer;}
+.overlay button:hover {background: #bbb;}
+</style>
+
+
+<div id="myOverlay" class="overlay">
+<span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+<div class="overlay-content">
+  
+ <script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de"></script>
+<div class="gcse-search"></div>
+   
+</div></div>
+<li><a class="openBtn" onclick="openSearch()"><i class="fa">&#xf002;</i></a></li>
+
+<script>
+function openSearch() {document.getElementById("myOverlay").style.display = "block";}
+function closeSearch() {document.getElementById("myOverlay").style.display = "none";}
+</script>
+         
+         
+          
+          
+          
       </ul>
     </div>
   </div>
