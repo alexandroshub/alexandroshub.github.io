@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 on CodePen</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color-scheme: light dark;
+        font: 110%/1.5 system-ui, sans-serif;
+        background: Canvas;
+        color: CanvasText;
+      }
+      body {
+        height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+      main {
+        max-width: 350px;
+      }
+      a {
+        color: #56bbf9;
+      }
+      h1 {
+        margin-block-end: 0.2em;
+      }
+      output {
+        font-size: 90%;
+        opacity: 60%;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main><h1>404</h1>
+
+<output>Page Not Found</output>
+
+<p>
+  Unable to render Embed Preview. It's likely that the preview expired, so try
+  refreshing or re-running.
+</p>
+
+<ul>
+  <li>
+    <a href="#0" onClick="window.location.reload()">Refresh</a>
+  </li>
+  <li>
+    <a href="/" target="_top" rel="noopener noreferrer">Go to CodePen</a>
+  </li>
+  <li>
+    <a href="/support/" target="_top" rel="noopener noreferrer"
+      >Contact Support</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://blog.codepen.io/documentation/"
+      target="_top"
+      rel="noopener noreferrer"
+      >Visit&nbsp;Documentation</a
+    >
+  </li>
+</ul>
+
+<script>
+  window && window.parent && window.parent.postMessage('404', '*');
+</script>
+</main>
+  </body>
+</html>
