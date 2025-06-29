@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Python Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>𝙰𝚕𝚎𝚡𝚊𝚗𝚍𝚛𝚘𝚜𝙷𝚞𝚋 | Python</title>
+  <!--/2022/--><link rel="icon" href="https://64.media.tumblr.com/95f2ae6a166a2ce9e4feabdbd0e03e2c/3645bebb47f6e366-00/s400x600/d202567175a6296a1d7d0e497f4e89f514ae03db.png" type="image/png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Orbitron:wght@500&display=swap');
 
@@ -17,11 +19,6 @@
       transition: background 0.5s, color 0.5s;
     }
 
-    body.light {
-      background: #f5f7fb;
-      color: #1b1e2e;
-    }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -30,7 +27,7 @@
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
 
     .logo {
@@ -65,44 +62,13 @@
       width: 22px;
       height: 3px;
       background-color: #00e0ff;
-      margin: 4px 0;
+      margin: 3px 0;
     }
 
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #101d34;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 1rem 0;
-        text-align: center;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    .toggle-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      padding: 8px 14px;
-      background: #00e0ff;
-      border: none;
-      border-radius: 8px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1001;
-      transition: 0.3s;
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: flex; }
     }
 
     header {
@@ -124,6 +90,20 @@
       font-size: 1.1rem;
     }
 
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 8px 14px;
+      background: #00e0ff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
     .projects {
       display: flex;
       flex-wrap: wrap;
@@ -138,15 +118,10 @@
       width: 280px;
       padding: 1.5rem;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
-      transition: transform 0.4s, box-shadow 0.4s, opacity 0.6s;
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+      transition: transform 0.4s, opacity 0.6s;
       transform: translateY(40px);
       opacity: 0;
-    }
-
-    .card:hover {
-      box-shadow: 0 0 25px rgba(0, 224, 255, 0.5);
-      transform: translateY(-5px);
     }
 
     .card.visible {
@@ -183,21 +158,14 @@
 </head>
 <body>
 
-  <button class="toggle-btn" onclick="toggleTheme()">🌗 Theme</button>
 
-  <nav class="navbar">
-    <div class="logo">PyPortfolio</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="#">Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </div>
-  </nav>
 
-  <header>
+ <header>
+ 
+ <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+  <a href="https://alexandroshub.github.io" class="logo" style="font-family: 'Audiowide';font-size: 48px;text-decoration: none;color:white;">AlphaPi</a> <ff style="font-family: 'Audiowide';font-size: 34px;text-decoration: none;color:#00e0ff;">.py</ff>   <h3>Connect. Code. Create</h3>
+  <span class="footer-subtitle"><br></span>
+      
     <h1 id="type-title"></h1>
     <p>Από AI και αυτοματισμούς μέχρι data analysis και web apps — αυτό είναι το portfolio μου. Καθαρός, δομημένος κώδικας σε Python, πάντα με έμφαση στην ποιότητα και την τεχνική ακρίβεια.</p>
   </header>
@@ -224,14 +192,17 @@
     <p>Η Python είναι απλή, ευανάγνωστη και ισχυρή. Ιδανική τόσο για αρχάριους όσο και για επαγγελματίες. Από AI μέχρι web development, η Python είναι παντού.</p>
     <p>🎓 Ξεκίνα με: <a href="https://realpython.com/" target="_blank">RealPython</a>, <a href="https://www.learnpython.org/" target="_blank">LearnPython.org</a></p>
     <p>🎥 Video Tutorial: <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">Python Full Course - freeCodeCamp</a></p>
-    <p>📦 Tip: Χρησιμοποίησε Jupyter Notebooks για data science και πειραματισμό με κώδικα.</p>
+    <p>📦 Extra tip: Χρησιμοποίησε Jupyter Notebooks για πειραματισμό με data science!</p>
   </section>
 
   <footer>
-    © <span id="year"></span> | Created with 💙 and Python
-  </footer>
+    © <span id="year"></span> <a href="https://alexandroshub.github.io/welcome21.html" title="Visit AlexandrosHub" style="text-decoration: none;color:#c0d3f5;">▞▚ ▛ AlexandrosHub</a>  | <a href="https://alexandroshub.github.io/about"style="text-decoration: none;color:#c0d3f5;">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact" target="_blank" title="Contact AlexandrosHub and ask whatever you want!" style="text-decoration: none;color:#c0d3f5;">Contact</a> 
+    <br>  Created with 💙 and Python
+ </footer>
 
   <script>
+
+  
     // Typing animation
     const titleText = "My Python Projects";
     let i = 0;
@@ -251,3 +222,18 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(card => observer.observe(card));
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Menu toggle
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
