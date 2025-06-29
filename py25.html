@@ -17,6 +17,11 @@
       transition: background 0.5s, color 0.5s;
     }
 
+    body.light {
+      background: #f5f7fb;
+      color: #1b1e2e;
+    }
+
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -25,7 +30,7 @@
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .logo {
@@ -60,13 +65,44 @@
       width: 22px;
       height: 3px;
       background-color: #00e0ff;
-      margin: 3px 0;
+      margin: 4px 0;
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; width: 100%; }
-      .nav-links.active { display: flex; }
-      .menu-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #101d34;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 8px 14px;
+      background: #00e0ff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: 0.3s;
     }
 
     header {
@@ -88,20 +124,6 @@
       font-size: 1.1rem;
     }
 
-    .toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      padding: 8px 14px;
-      background: #00e0ff;
-      border: none;
-      border-radius: 8px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
     .projects {
       display: flex;
       flex-wrap: wrap;
@@ -116,10 +138,15 @@
       width: 280px;
       padding: 1.5rem;
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
-      transition: transform 0.4s, opacity 0.6s;
+      box-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s, opacity 0.6s;
       transform: translateY(40px);
       opacity: 0;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 25px rgba(0, 224, 255, 0.5);
+      transform: translateY(-5px);
     }
 
     .card.visible {
@@ -155,6 +182,8 @@
   </style>
 </head>
 <body>
+
+  <button class="toggle-btn" onclick="toggleTheme()">🌗 Theme</button>
 
   <nav class="navbar">
     <div class="logo">PyPortfolio</div>
@@ -195,7 +224,7 @@
     <p>Η Python είναι απλή, ευανάγνωστη και ισχυρή. Ιδανική τόσο για αρχάριους όσο και για επαγγελματίες. Από AI μέχρι web development, η Python είναι παντού.</p>
     <p>🎓 Ξεκίνα με: <a href="https://realpython.com/" target="_blank">RealPython</a>, <a href="https://www.learnpython.org/" target="_blank">LearnPython.org</a></p>
     <p>🎥 Video Tutorial: <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">Python Full Course - freeCodeCamp</a></p>
-    <p>📦 Extra tip: Χρησιμοποίησε Jupyter Notebooks για πειραματισμό με data science!</p>
+    <p>📦 Tip: Χρησιμοποίησε Jupyter Notebooks για data science και πειραματισμό με κώδικα.</p>
   </section>
 
   <footer>
@@ -222,18 +251,3 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
-      });
-    }, { threshold: 0.1 });
-    cards.forEach(card => observer.observe(card));
-
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Menu toggle
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
-
-</body>
-</html>
