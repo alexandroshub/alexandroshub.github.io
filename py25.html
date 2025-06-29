@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Python Projects</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Orbitron:wght@500&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0f1a;
+      color: #c0d3f5;
+      font-family: 'Fira Code', monospace;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(145deg, #0a0f1a, #101d34);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #00e0ff;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: #0f1626;
+    }
+
+    .card {
+      background: #101d34;
+      width: 280px;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .card:hover {
+      transform: rotateY(5deg) scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 224, 255, 0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: #00e0ff;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0a0f1a;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .projects { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Python Projects</h1>
+    <p>Από AI και αυτοματισμούς μέχρι data analysis και web apps — αυτό είναι το portfolio μου. Καθαρός, δομημένος κώδικας σε Python, πάντα με έμφαση στην ποιότητα και την τεχνική ακρίβεια.</p>
+  </header>
+
+  <section class="projects">
+    <div class="card">
+      <h3>🔍 Data Analyzer</h3>
+      <p>Ένα εργαλείο Python που αναλύει αρχεία CSV/JSON και δημιουργεί δυναμικά insights με Pandas και Matplotlib. Ιδανικό για επιχειρησιακή ανάλυση.</p>
+    </div>
+
+    <div class="card">
+      <h3>🤖 ChatBot Assistant</h3>
+      <p>Python bot βασισμένο σε NLP που απαντά σε ερωτήσεις, κάνει summary και παρέχει γρήγορες πληροφορίες. Χρησιμοποιεί NLTK + OpenAI API.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌐 Flask Dashboard</h3>
+      <p>Full stack web εφαρμογή με Flask + SQLite + Chart.js. Δείχνει real-time μετρήσεις από εξωτερικές APIs σε ιντερφέις με γραφήματα και πίνακες.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 | Created with 💙 and Python
+  </footer>
+
+</body>
+</html>
