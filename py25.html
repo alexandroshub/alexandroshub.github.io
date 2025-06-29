@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,13 +7,66 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Orbitron:wght@500&display=swap');
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
     body {
       background: #0a0f1a;
       color: #c0d3f5;
       font-family: 'Fira Code', monospace;
       line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #101d34;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      color: #00e0ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #c0d3f5;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00e0ff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 22px;
+      height: 3px;
+      background-color: #00e0ff;
+      margin: 3px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: flex; }
     }
 
     header {
@@ -26,12 +79,27 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       color: #00e0ff;
+      min-height: 3rem;
     }
 
     header p {
       max-width: 600px;
       margin: 1rem auto;
       font-size: 1.1rem;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 8px 14px;
+      background: #00e0ff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     .projects {
@@ -49,14 +117,14 @@
       padding: 1.5rem;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
-      transition: transform 0.4s, box-shadow 0.4s;
-      transform-style: preserve-3d;
-      perspective: 1000px;
+      transition: transform 0.4s, opacity 0.6s;
+      transform: translateY(40px);
+      opacity: 0;
     }
 
-    .card:hover {
-      transform: rotateY(5deg) scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 224, 255, 0.3);
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     .card h3 {
@@ -64,8 +132,17 @@
       color: #00e0ff;
     }
 
-    .card p {
-      font-size: 0.95rem;
+    .info-section {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-left: 5px solid #00e0ff;
+    }
+
+    .info-section a {
+      color: #00e0ff;
+      text-decoration: none;
     }
 
     footer {
@@ -75,40 +152,88 @@
       font-size: 0.9rem;
       opacity: 0.6;
     }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      .projects { flex-direction: column; align-items: center; }
-    }
   </style>
 </head>
 <body>
 
+  <nav class="navbar">
+    <div class="logo">PyPortfolio</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
   <header>
-    <h1>My Python Projects</h1>
+    <h1 id="type-title"></h1>
     <p>Από AI και αυτοματισμούς μέχρι data analysis και web apps — αυτό είναι το portfolio μου. Καθαρός, δομημένος κώδικας σε Python, πάντα με έμφαση στην ποιότητα και την τεχνική ακρίβεια.</p>
   </header>
 
   <section class="projects">
     <div class="card">
       <h3>🔍 Data Analyzer</h3>
-      <p>Ένα εργαλείο Python που αναλύει αρχεία CSV/JSON και δημιουργεί δυναμικά insights με Pandas και Matplotlib. Ιδανικό για επιχειρησιακή ανάλυση.</p>
+      <p>Python εργαλείο που αναλύει CSV/JSON και δημιουργεί insights. Χρήση Pandas & Matplotlib.</p>
     </div>
 
     <div class="card">
       <h3>🤖 ChatBot Assistant</h3>
-      <p>Python bot βασισμένο σε NLP που απαντά σε ερωτήσεις, κάνει summary και παρέχει γρήγορες πληροφορίες. Χρησιμοποιεί NLTK + OpenAI API.</p>
+      <p>Bot με NLP για απαντήσεις και συνοψίσεις. Χρήση NLTK + OpenAI API.</p>
     </div>
 
     <div class="card">
       <h3>🌐 Flask Dashboard</h3>
-      <p>Full stack web εφαρμογή με Flask + SQLite + Chart.js. Δείχνει real-time μετρήσεις από εξωτερικές APIs σε ιντερφέις με γραφήματα και πίνακες.</p>
+      <p>Flask app με Chart.js για real-time δεδομένα και στατιστικές αναλύσεις.</p>
     </div>
   </section>
 
+  <section class="info-section">
+    <h2>📘 Γιατί να μάθεις Python</h2>
+    <p>Η Python είναι απλή, ευανάγνωστη και ισχυρή. Ιδανική τόσο για αρχάριους όσο και για επαγγελματίες. Από AI μέχρι web development, η Python είναι παντού.</p>
+    <p>🎓 Ξεκίνα με: <a href="https://realpython.com/" target="_blank">RealPython</a>, <a href="https://www.learnpython.org/" target="_blank">LearnPython.org</a></p>
+    <p>🎥 Video Tutorial: <a href="https://www.youtube.com/watch?v=_uQrJ0TkZlc" target="_blank">Python Full Course - freeCodeCamp</a></p>
+    <p>📦 Extra tip: Χρησιμοποίησε Jupyter Notebooks για πειραματισμό με data science!</p>
+  </section>
+
   <footer>
-    © 2025 | Created with 💙 and Python
+    © <span id="year"></span> | Created with 💙 and Python
   </footer>
+
+  <script>
+    // Typing animation
+    const titleText = "My Python Projects";
+    let i = 0;
+    const typeTitle = () => {
+      if (i < titleText.length) {
+        document.getElementById("type-title").textContent += titleText.charAt(i);
+        i++;
+        setTimeout(typeTitle, 100);
+      }
+    };
+    typeTitle();
+
+    // Scroll animation
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(card => observer.observe(card));
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Menu toggle
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
