@@ -1,153 +1,62 @@
-
 <!DOCTYPE html>
 <html lang='en' class=''>
-
+    <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶</title>
+  <link rel="icon" href="https://64.media.tumblr.com/e6e97f26b1f202c48ecae78be696ced5/afc46cbefaec4590-c9/s1280x1920/cc60083b81dc89aeb2d990d5ccbfef7985edee8c.png" type="image/png">
 <head>
-
   <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
-
-  <meta name="robots" content="noindex">
-
-  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
-  <link rel="canonical" href="https://codepen.io/argyleink/pen/vEBmZNw">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-
   <style id="INLINE_PEN_STYLESHEET_ID">
-    /* 
-  these type the CSS variable as color
-  unlocking the ability for the browser 
-  to animate just that portion
-*/
+    /*   these type the CSS variable as color   unlocking the ability for the browser   to animate just that portion*/
 @property --＠color-1 {
   syntax: "<color>";
   inherits: false;
   initial-value: hsl(98 100% 62%);
 }
-
 @property --＠color-2 {
   syntax: "<color>";
   inherits: false;
   initial-value: hsl(204 100% 59%);
 }
-
 /* keyframes that change the color variable */
-@-webkit-keyframes gradient-change {
-  to {
-    --＠color-1: hsl(210 100% 59%);
-    --＠color-2: hsl(310 100% 59%);
-  }
-}
-@keyframes gradient-change {
-  to {
-    --＠color-1: hsl(210 100% 59%);
-    --＠color-2: hsl(310 100% 59%);
-  }
-}
-
-article {
-  /* apply variable changes over time */
-  -webkit-animation: gradient-change 2s linear infinite alternate;
-          animation: gradient-change 2s linear infinite alternate;
-  
-  background: linear-gradient(
-    /* 
-      in oklch produces more vibrant gradient results 
-      learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation
-    */
+@-webkit-keyframes gradient-change { to { --＠color-1: hsl(210 100% 59%); --＠color-2: hsl(310 100% 59%); }}
+@keyframes gradient-change { to { --＠color-1: hsl(210 100% 59%); --＠color-2: hsl(310 100% 59%); }}
+article { /* apply variable changes over time */
+  -webkit-animation: gradient-change 2s linear infinite alternate; animation: gradient-change 2s linear infinite alternate; background: linear-gradient(
+    /*       in oklch produces more vibrant gradient results       learn more https://developer.chrome.com/docs/css-ui/access-colors-spaces#color_interpolation    */
     to right in oklch, 
     /* use the variables in a gradient (or wherever!) */
-    var(--＠color-1), 
-    var(--＠color-2)
-  );
-  
+    var(--＠color-1),  var(--＠color-2)
+  ); 
   /* old browser support */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
   /* modern browser version */
   background-clip: text;
   color: transparent;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 @layer demo.support {
-  h1 {
-    font-size: 10vmin;
-    line-height: 1.1;
-  }
-
-  body {
-    background: hsl(204 100% 5%);
-
-    min-block-size: 100%;
-    box-sizing: border-box;
-    display: grid;
-    place-content: center;
-
-    font-family: system-ui, sans-serif;
-    font-size: min(200%, 4vmin);
-
-    padding: 5vmin;
-  }
-
-  h1, p, body {
-    margin: 0;
-    text-wrap: balance;
-  }
-
-  h1 {
-    line-height: 1.25cap;
-  }
-
-  p {
-    font-family: "Dank Mono", ui-monospace, monospace;
-  }
-
-  html {
-    block-size: 100%;
-  }
-
-  article {
-    display: grid;
-    gap: 1lh;
-    text-align: center;
-  }
+  h1 {  font-size: 10vmin; line-height: 1.1;}
+  body { background: hsl(204 100% 5%);  min-block-size: 100%; box-sizing: border-box;  display: grid;
+    place-content: center; font-family: system-ui, sans-serif; font-size: min(200%, 4vmin);  padding: 5vmin; }
+  h1, p, body { margin: 0; text-wrap: balance; }
+  h1 { line-height: 1.25cap; }
+  p { font-family: "Dank Mono", ui-monospace, monospace;  }
+  html { block-size: 100%; }
+  article { display: grid; gap: 1lh; text-align: center;}
 }
-  </style>
-
-  
+</style>
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
 <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
 </head>
-
 <body>
   <article>
-  <h1>Alpha Pi</h1>
+<a href="https://alexandroshub.github.io" class="active" id="home"><link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+<a href="https://alexandroshub.github.io" class="logo" style="font-family: 'Audiowide';font-size: 80px;text-decoration: none;color:white;">AlphaPi</a></a>
     <h3>from idea to automation (and beyond)</h3>
-      <h4></h4>
   <p>Connect. Code. Create</p>
-  
    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
-  
 </article>
-  
-  
 </body>
-
 </html>
