@@ -1,0 +1,155 @@
+<!--==========================================================================
+
+  ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
+  ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
+  ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
+==========================================================================   -->      
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap & Fonts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    background: rgba(30, 30, 40, 0.9);
+    backdrop-filter: blur(6px);
+    border: none;
+    font-size: 14px !important;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    min-height: 55px;
+}
+
+/* Logo styling - vertically centered */
+.navbar .navbar-header .logo {
+    display: inline-block;
+    line-height: 55px;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-family: 'Audiowide';
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu links */
+.navbar li a {
+    color: #e0e0e0 !important;
+    padding: 18px 20px; /* matches navbar height */
+    transition: all 0.3s ease;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li a:hover {
+    color: white !important;
+    background: linear-gradient(90deg, rgba(239,140,53,0.8), rgba(218,39,73,0.8), rgba(189,24,133,0.8));
+    border-radius: 0;
+}
+
+/* Toggle button for mobile */
+.navbar-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin-top: 10px;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: rgba(40, 40, 50, 0.98) !important;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.dropdown-menu li a {
+    color: #ddd !important;
+    padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(239,140,53,0.3) !important;
+    color: white !important;
+}
+
+/* Remove Bootstrap default white background when opening */
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.open > a:hover {
+    background: rgba(239,140,53,0.3) !important;
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .navbar li a {
+        padding: 12px 15px;
+        font-size: 16px;
+        height: auto;
+    }
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-label="Εναλλαγή πλοήγησης">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portf">Projects</a></li>      
+        <li><a href="#plus">Plus</a></li>     
+        <li><a href="https://alexandroshub.github.io/ap.contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="https://alexandroshub.github.io/cv">My CV</a></li>
+            <li><a href="https://alexandroshub.github.io/porto.ap.html">PORTFOLIO</a></li>
+            <li><a href="https://alexandroshub.github.io/plus.ap.html">PLUS +</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Automations</li>
+            <li><a href="https://alexandroshub.github.io/iot.html">IoT</a></li>
+            <li><a href="https://alexandroshub.github.io/ai.html">AI</a></li>
+            <li><a href="https://alexandroshub.github.io/ardu22.html">Arduino</a></li>
+            <li><a href="https://alexandroshub.github.io/raspberrypi">Raspberrypi</a></li>
+            <li><a href="https://alexandroshub.github.io/stem">STEAM</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Creative Side</li>
+            <li><a href="https://alexandroshub.github.io/art.html">ART gelery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- //////////////////////////Top menu////////////////////////// -->   
