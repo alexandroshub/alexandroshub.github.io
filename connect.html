@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AP | Connect with Me</title>
+
+  <!-- Unicons -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #00ffcc;
+      overflow-x: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-top: 40px;
+      color: #00ffcc;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .contact-content {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-content:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-left: 4px solid #00ffcc;
+      border-radius: 8px;
+    }
+
+    .contact-card-icon {
+      font-size: 1.8rem;
+      color: #00ffcc;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .contact-card-title {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #00ffcc;
+    }
+
+    .contact-card-data {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 14px;
+      background-color: #00ffcc;
+      color: #0d0d0d;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #00ddb3;
+      transform: scale(1.05);
+    }
+
+    .contact-button-icon {
+      margin-left: 6px;
+    }
+
+    .footer-socials {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .footer-social {
+      font-size: 1.8rem;
+      margin: 0 10px;
+      color: #00ffcc;
+      transition: transform 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .footer-social:hover {
+      transform: scale(1.2);
+      color: #00ddb3;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .contact-button {
+        font-size: 0.85rem;
+      }
+
+      .footer-social {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 class="section-title">📬 Επικοινώνησε μαζί μου</h2>
+  <p class="section-subtitle">Είμαι πάντα ανοιχτός για συνεργασίες, ιδέες ή απλώς μια καλή κουβέντα. Διάλεξε τον τρόπο που σου ταιριάζει!</p>
+
+  <div class="contact-container container grid">
+    <div class="contact-content">
+      <div class="contact-info">
+
+        <!-- Email -->
+        <div class="contact-card">
+          <i class="uil uil-envelope-edit contact-card-icon"></i>
+          <h3 class="contact-card-title">Email</h3>
+          <span class="contact-card-data">alexispapy@outlook.com</span>
+          <a href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top" class="contact-button">
+            📧 Send Email <i class="uil uil-arrow-right contact-button-icon"></i>
+          </a>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="contact-card">
+          <i class="uil uil-whatsapp contact-card-icon"></i>
+          <h3 class="contact-card-title">WhatsApp</h3>
+          <span class="contact-card-data">+30 694 0548 867</span>
+          <a href="https://wa.me/306940548867?text=Hello%20Alexandros%2C%20I%20saw%20your%20website!" target="_blank" class="contact-button">
+            💬 Chat on WhatsApp <i class="uil uil-arrow-right contact-button-icon"></i>
+          </a>
+          <a href="tel:+306940548867" target="_blank" class="contact-button">
+            📞 Call Me <i class="uil uil-arrow-right contact-button-icon"></i>
+          </a>
+        </div>
+
+        <!-- Messenger -->
+        <div class="contact-card">
+          <i class="uil uil-facebook-messenger contact-card-icon"></i>
+          <h3 class="contact-card-title">Messenger</h3>
+          <a href="https://m.me/papaspyrou.alexandros" target="_blank" class="contact-button">
+            💬 Message Me <i class="uil uil-arrow-right contact-button-icon"></i>
+          </a>
+        </div>
+
+      
+      </div>
+    </div>
+
+    <!-- Form & Socials -->
+    <div class="contact-content">
+      <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQIREL5UNjlHSFBIMUFHTVNMTTFNN1o0M1FWMFdaMi4u" height="500px" width="100%" title="forma"></iframe>
+
+      <div class="footer-socials">
+        <p style="margin-bottom: 10px;">📲 Follow me everywhere:</p>
+        <a href="https://www.instagram.com/alexandroshub/" target="_blank" class="footer-social" title="Instagram">
+          <i class="uil uil-instagram"></i>
+        </a>
+        <a href="https://discord.gg/WAnYJjD" target="_blank" class="footer-social" title="Discord">
+          <i class="uil uil-discord"></i>
+        </a>
+        <a href="https://mastodon.social/@alphapi" target="_blank" class="footer-social" title="Mastodon">M
+          <i class="uil uil-mastodon"></i>
+        </a>
+        <a href="https://bio.link/alphapi" target="_blank" class="footer-social" title="Bio Link">
+          <i class="uil uil-share-alt"></i>
+        </a>
+        
+    </div>
+      </div>   </div> 
+      <!--
+    _                                                                    
+    |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
+    |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
+          |          |   /                                                         
+-->
+
+
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+
+<style>
+.alpha-footer {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.alpha-footer-bg {
+  background-color: #1e1e1e; /* Dark gray-black */
+  padding: 1.5rem 0; /* Shorter height */
+}
+
+.alpha-footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.alpha-footer-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  font-family: 'Audiowide', sans-serif;
+  color: #ffffff;
+}
+
+.alpha-footer-subtitle {
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+.alpha-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alpha-footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.alpha-footer-links li a:hover {
+  color: #ff9800;
+}
+
+.alpha-footer-socials {
+  justify-self: flex-end;
+}
+
+.alpha-footer-social {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.alpha-footer-social:hover {
+  color: #ff9800;
+}
+
+.alpha-footer-copy {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #cccccc;
+}
+
+.alpha-footer-copy a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.alpha-footer-copy a:hover {
+  color: #ff9800;
+}
+
+/* Mobile + small screen adjustments */
+@media (max-width: 992px) {
+  .alpha-footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 1rem;
+  }
+  .alpha-footer-socials {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .alpha-footer-title {
+    padding-left: 1rem; /* Extra left padding for logo */
+  }
+}
+</style>
+
+<footer class="alpha-footer">
+  <div class="alpha-footer-bg">
+    <div class="alpha-footer-container">
+  
+<div><h1 class="alpha-footer-title">      <a href="https://alexandroshub.github.io"style="color: white; text-decoration: none;">AlphaPi</a></h1>
+<span class="alpha-footer-subtitle">Connect. Code. Create</span></div>
+
+</div> <!-- Copy -->
+    <p class="alpha-footer-copy">
+      <a href="https://alexandroshub.github.io/welcome21.html" title="Visit AlexandrosHub">▞▚ ▛ AlexandrosHub</a> | 
+      <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | 
+      <a href="https://alexandroshub.github.io/ap.contact.html">Contact</a>
+    </p>
+  </div>
+</footer>
+
+      </body></html>
