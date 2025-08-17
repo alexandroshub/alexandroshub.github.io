@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+  <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 | CV </title>
+  <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+
+
+<head>
+
+  <meta charset='UTF-8'>
+
+  <meta name="robots" content="noindex">
+
+    
+  <link rel="canonical" href="https://codepen.io/leonam-silva-de-souza/pen/emmGKvr">
+
+  
+  
+
+  <style id="INLINE_PEN_STYLESHEET_ID">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
+:root {
+    --hue-color: 242;
+
+    --skin-color: hsl(342, 92%, 46%);
+    --mirage-color: hsl(210, 10%, 23%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    --body-font: 'Poppins', sans-serif;
+    --signature-font: 'Turret Road', sans-serif;
+
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    --font-medium: 500;
+    --font-bold: 600;
+
+    --mb025: .25rem;
+    --mb05: .5rem;
+    --mb075: .75rem;
+    --mb1: 1rem;
+    --mb15: 1.5rem;
+    --mb2: 2rem;
+    --mb25: 2.5rem;
+    --mb3: 3rem;
+
+    --z-fixed: 10;
+    --z-modal: 100;
+
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body, button, input { font-family: var(--body-font); font-size: var(--normal-font-size); }
+    body { background-color: var(--body-color); color: var(--text-color); }
+h1, h2, h3 { color: var(--title-color); font-weight: var(--font-bold); }
+ul { list-style: none; }
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+button { cursor: pointer; }
+    button, input { border: none; outline: none; }
+.container { max-width: 1250px; margin-left: auto; margin-right: auto; }
+.grid { display: grid; }
+.button { 
+    display: inline-flex; 
+    align-items: center; 
+    column-gap: .5rem; 
+    background-color: var(--skin-color); 
+    color: var(--title-color); 
+    padding: 0.75rem 1.4rem; 
+    border-radius: .25rem; 
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+    transition: .4s;
+}
+    .button::after { 
+        position: absolute; 
+        content: ''; 
+        left: 0; 
+        top: 0; 
+        width: 100%; 
+        height: 100%; 
+        background-color: var(--mirage-color); 
+        z-index: -1;
+        transform-origin: center; 
+        transform: scale(0); 
+        border-radius: .25rem;
+        transition: .3s; 
+    }
+        .button:hover::after { transform: scale(1); }
+.section { padding: 6.5rem 0 2rem; }
+.section-title { text-align: center; font-size: var(--h1-font-size); margin-bottom: var(--mb3); }
+    .section-title::before { content: attr(data-heading); display: block; font-size: var(--normal-font-size); font-weight: var(--font-medium); color: var(--skin-color); }
+::-webkit-scrollbar { width: 0.6rem; background-color: var(--scroll-box-color); border-radius: .5rem; }
+::-webkit-scrollbar-thumb { background-color: var(--scroll-thumb-color); border-radius: .5rem; }
+
+/* Sidebar */
+
+.sidebar { position: fixed; width: 100px; height: 100vh; background-color: var(--body-color); border-right: 1px solid var(--box-color); }
+.nav-logo { position: absolute; left: 0; right: 0; top: 1.8rem; width: 40px; height: 40px; border-radius: 50%; background-color: var(--skin-color); text-align: center; margin: auto; }
+.nav-logo-text { font-size: 1.125rem; color: var(--title-color); font-weight: var(--font-bold); line-height: 40px; }
+.nav-menu { position: fixed; transform: rotate(-90deg) translateX(-100%); transform-origin: left top; width: 100vh; }
+.menu { display: flex; }
+.nav-list { display: flex; flex-direction: row-reverse; margin: -2px auto 0 auto; }
+.nav-link { float: right; height: 100%; line-height: 100px; padding: 0 1rem; color: var(--title-color); font-weight: var(--font-medium); position: relative; transition: .4s; }
+.nav-toggle {
+    height: 32px;
+    width: 36px;
+    cursor: pointer;
+    position: fixed;
+    right: 1.5rem;
+    top: 2rem;
+    font-size: 1.2rem;
+    border-radius: .25rem;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.nav-close { font-size: 1.5rem; position: absolute; top: 1rem; right: 1.25rem; cursor: pointer; display: none; }
+    .nav-link.active-link, .nav-link:hover { color: var(--skin-color); }
+        .nav-link.active-link::after, .nav-link:hover::after {
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--skin-color);
+            border-radius: 50%;
+            bottom: 1.8rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+.btn-share { position: absolute; bottom: 1.8rem; left: 0; right: 0; text-align: center; cursor: pointer; }
+.social-share { font-size: 1.5rem; }
+
+/* Main - Home */
+
+.main { margin-left: 100px; }
+.home { background: url('https://64.media.tumblr.com/fef9dd28183e24271ba9f6c87e30b0b5/afc46cbefaec4590-24/s1280x1920/7475cd1e649c1be8633fd8b7de5bf6ea8403fd80.jpg'); background-size: cover; background-position: center center; height: 100vh; }
+.home-container { position: relative; height: 100%; align-items: center; }
+.home-social { position: absolute; top: 1.8rem; left: 0; display: flex; align-items: center; column-gap: 3.5rem; }
+.home-social-follow { font-weight: var(--font-medium); position: relative; }
+    .home-social-follow::after { content: ''; position: absolute; width: 1rem; height: 2px; background-color: var(--text-color); right: -45%; top: 50%; }
+.home-social-links { display: inline-flex; column-gap: 1rem; }
+.home-social-link { font-size: 1.08rem; color: var(--text-color); transition: .4s; }
+    .home-social-link:hover { transform: translateY(.25rem); }
+.home-img { display: none; }
+.home-title { font-size: var(--biggest-font-size); }
+.home-subtitle { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb075); }
+.home-description { max-width: 450px; margin-bottom: var(--mb2); }
+.my-info { display: flex; column-gap: 1.8rem; position: absolute; left: 0; bottom: 1.8rem; }
+.info-item { display: flex; align-items: center; }
+.info-title, .info-subtitle { font-size: var(--small-font-size); }
+    .info-title { font-weight: var(--font-medium); }
+.info-icon { font-size: 1.8rem; color: var(--skin-color); margin-right: var(--mb075); }
+
+/* Main - About */
+
+.about-container { grid-template-columns: repeat(2, 1fr); column-gap: 4rem; align-items: center; }
+.about-img { width: 480px; border-radius: .75rem; justify-self: center; }
+.about-heading { font-size: var(--h3-font-size); margin-bottom: var(--mb075); }
+.about-description { text-align: justify; padding-right: 6rem; margin-bottom: var(--mb2); }
+.about-info { display: grid; grid-template-columns: repeat(3, 140px); column-gap: .5rem; margin-bottom: var(--mb3); }
+.about-box { text-align: center; border-radius: .25rem; padding: 1rem 1.25rem; background-color: var(--box-color); }
+.about-icon { font-size: 1.5rem; color: var(--skin-color); margin-bottom: var(--mb075); }
+.about-title { font-size: var(--small-font-size); }
+.about-subtitle { font-size: var(--small-font-size); }
+
+/* Main - Qualification */
+
+.qualification-container { grid-template-columns: repeat(2 ,340px); column-gap: 3rem; justify-content: center; }
+.qualification-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb2); }
+.timeline-item { position: relative; margin-bottom: var(--mb25); padding-left: 3rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before { content: ''; width: 1px; position: absolute; left: 0.48rem; top: 0; height: 100%; background-color: var(--skin-color); }
+.circle-dot { position: absolute; left: 0; top: 0; height: 1rem; width: 1rem; border: 2px solid var(--skin-color); border-radius: 50%; background-color: var(--skin-color); transition: .4s; }
+    .timeline-item:hover .circle-dot { background-color: var(--body-color); }
+.timeline-title { font-size: var(--normal-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb025); }
+.timeline-text { font-size: var(--smaller-font-size); margin-bottom: var(--mb1); }
+.timeline-date { display: flex; align-items: center; column-gap: .4rem; font-size: var(--normal-font-size); color: var(--skin-color); }
+
+/* Main - Skills */ 
+
+.skills-container { grid-template-columns: 360px 320px; column-gap: 3rem; justify-content: center; }
+.skills-header { display: flex; align-items: center; cursor: pointer; }
+    .skills-header:not(:last-child) { margin-bottom: var(--mb25); }
+.skills-icon, .skills-arrow { font-size: 2rem; color: var(--skin-color); }
+    .skills-icon { margin-right: var(--mb075); }
+    .skills-arrow { margin-left: auto; }
+        .skills-active .skills-arrow { transform: rotate(-90deg); transition: .4s; }
+.skills-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); }
+.skills-subtitle { font-size: var(--small-font-size); }
+.skills-list { row-gap: 1.8rem; }
+.skills-titles { display: flex; justify-content: space-between; margin-bottom: var(--mb05); }
+.skills-name { font-size: var(--normal-font-size); font-weight: var(--font-medium); }
+.skills-bar, .skills-percentage { height: 5px; border-radius: .25rem; }
+    .skills-bar { background-color: var(--box-color); }
+    .skills-percentage { display: block; background-color: var(--skin-color); }
+.skills [data-content] { display: none; }
+    .skills-active[data-content] { display: block; }
+
+/* Main - Work */ 
+
+.work-container { grid-template-columns: repeat(3, 330px); gap: 1.8rem; justify-content: center; padding-top: 1rem; }
+.work-filters { display: flex; justify-content: center; align-items: center; column-gap: .75rem; margin-bottom: 2rem; }
+.work-item { cursor: pointer; color: var(--title-color); padding: 0.25rem .75rem; font-weight: var(--font-medium); border-radius: .5rem; }
+.work-card { background-color: var(--box-color); padding: 1.25rem; border-radius: .5rem; }
+.portfolio-item-details { display: none; }
+.work-img { border-radius: .5rem; margin-bottom: var(--mb1); }
+.work-title { font-size: var(--normal-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb05); }
+.work-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; column-gap: .25rem; cursor: pointer; }
+.work-button-icon { font-size: 1rem; transition: .4s; }
+    .work-button:hover .work-button-icon { transform: translateX(.25rem); }
+.active-work { background-color: var(--skin-color); color: var(--title-color); }
+
+.portfolio-popup { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, .5); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 1rem;
+    opacity: 0;
+    visibility: hidden; 
+    z-index: var(--z-modal); 
+    transition: .4s; 
+}
+.portfolio-popup.open { opacity: 1; visibility: visible; }
+.portfolio-popup-inner { background-color: var(--box-color); width: 900px; border-radius: .5rem; padding: 2.5rem; position: relative; }
+.portfolio-popup-content { grid-template-columns: repeat(2, 1fr); align-items: center; column-gap: 3rem; }
+.portfolio-popup-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: var(--skin-color); cursor: pointer; }
+.portfolio-popup-img { border-radius: .5rem; }
+.portfolio-popup-subtitle { font-size: var(--smaller-font-size); margin-bottom: var(--mb025); }
+.details-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb1); }
+.details-description { font-size: var(--small-font-size); margin-bottom: var(--mb2); }
+.details-info li { margin-bottom: var(--mb075); text-transform: capitalize; font-size: var(--small-font-size); }
+    .details-info li:last-child { margin-bottom: 0; }
+    .details-info li span { font-weight: normal; }
+    .details-info li a { text-transform: lowercase; color: var(--skin-color); }
+
+/* Main - Services */ 
+
+.services-container { grid-template-columns: repeat(3, 250px); justify-content: center; column-gap: 1.8rem; }
+.services-content { position: relative; background-color: var(--box-color); padding: 6rem 0 2rem 2.5rem; border-radius: .25rem; }
+.services-icon { display: block; font-size: 1.8rem; color: var(--skin-color); margin-bottom: var(--mb1); }
+.services-title { font-size: var(--h3-font-size); margin-bottom: var(--mb1); font-weight: var(--font-medium); }
+.services-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; column-gap: .25rem; cursor: pointer; }
+.services-button-icon { font-size: 1rem; transition: .4s; }
+    .services-button:hover .services-button-icon { transform: translateX(.25rem); }
+.services-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: rgba(0, 0, 0, .5); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden; 
+    transition: .4s;
+}
+.active-modal { opacity: 1; visibility: visible; }
+.services-modal-content { width: 500px; position: relative; background-color: var(--box-color); padding: 4.5rem 2.5rem 2.5rem; border-radius: .5rem; }
+.services-modal-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: var(--skin-color); cursor: pointer; }
+.services-modal-title, .services-modal-description { text-align: center; }
+    .services-modal-title { font-size: var(--h3-font-size); font-weight: var(--font-medium); margin-bottom: var(--mb1); }
+    .services-modal-description { font-size: var(--small-font-size); padding: 0 3.5rem; margin-bottom: var(--mb2); }
+.services-modal-services { row-gap: var(--mb075); }
+.services-modal-service { display: flex; align-items: center; column-gap: .5rem; }
+.services-modal-icon { color: var(--skin-color); font-size: 1.1rem; }
+.services-modal-info { font-size: var(--small-font-size); }
+
+/* Main - Testimonials */
+
+@media screen and (min-width: 992px) {
+    .testimonials-container { width: 750px; margin-left: auto !important; margin-right: auto !important; }
+}
+
+.testimonial-card { background-color: var(--box-color); padding: 1.8rem 2rem; border-radius: .5rem; margin-bottom: 3rem; }
+.testimonial-quote { display: inline-flex; font-size: 1.5rem; color: var(--skin-color); margin-bottom: var(--mb1); }
+.testimonial-description { margin-bottom: var(--mb1); font-size: var(--small-font-size); text-align: justify; }
+.testimonial-date { font-size: var(--normal-font-size); margin-bottom: var(--mb2); }
+.testimonial-profile { display: flex; align-items: center; column-gap: 1rem; }
+.testimonial-profile-img { width: 60px; height: 60px; border-radius: 3rem; }
+.testimonial-profile-name { font-size: var(--h3-font-size); font-weight: var(--font-medium); color: var(--title-color); }
+.testimonial-profile-detail { font-size: var(--small-font-size); display: block; }
+.testimonial-profile-data { display: flex; flex-direction: column; row-gap: .4rem; }
+
+/* Swiper */
+
+.swiper-pagination-bullet { background-color: var(--box-color); }
+.swiper-pagination-bullet-active { background-color: var(--skin-color); }
+
+/* Main - Contact */
+
+.contact-container { grid-template-columns: 300px 340px; column-gap: 3rem; justify-content: center; align-items: center; }
+.contact-info { display: grid; row-gap: 1rem; }
+.contact-card { background-color: var(--box-color); padding: 1rem; border-radius: .5rem; text-align: center; }
+.contact-card-icon { font-size: 1.8rem; color: var(--title-color); margin-bottom: var(--mb025); }
+.contact-card-title, .contact-card-data { font-size: var(--small-font-size); }
+    .contact-card-title { font-weight: var(--font-medium); }
+    .contact-card-data { display: block; margin-bottom: var(--mb075); }
+.contact-button { color: var(--skin-color); font-size: var(--small-font-size); display: flex; align-items: center; justify-content: center; column-gap: .25rem; cursor: pointer; }
+.contact-button-icon { font-size: 1rem; transition: .4s; }
+    .contact-button:hover .contact-button-icon { transform: translateX(.25rem); }
+.input-container { position: relative; margin-top: 1rem; margin-bottom: 1.9rem; }
+.input { 
+    width: 100%; 
+    border: 2px solid var(--text-color); 
+    background-color: transparent; 
+    padding: 0.6rem 1.2rem; 
+    color: var(--title-color); 
+    font-weight: var(--font-medium); 
+    font-size: var(--normal-font-size); 
+    letter-spacing: .5px; 
+    border-radius: .5rem;
+    outline: none; 
+    transition: .4s; 
+}
+textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem; resize: none; font-family: var(--body-font); }
+    .input-container label {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        padding: 0 .4rem;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: var(--font-medium);
+        pointer-events: none;
+        z-index: 15;
+        transition: .5s;
+    }
+        
+        .input-container.textarea label { top: 1rem; transform: translateY(0); }
+    .input-container span { 
+        position: absolute; 
+        top: 0; 
+        left: 25px; 
+        transform: translateY(-50%); 
+        font-size: var(--small-font-size); 
+        padding: 0 .4rem; 
+        pointer-events: none; 
+        z-index: var(--z-fixed); 
+        color: transparent; 
+    }
+        .input-container span::before, .input-container span::after { 
+            content: '';
+            position: absolute;
+            width: 10%;
+            opacity: 0;
+            height: 5px;
+            background-color: var(--body-color);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: .4s;
+        }
+            .input-container span::before { left: 50%; }
+            .input-container span::after { right: 50%; }
+            .input-container.focus label { top: 0; transform: translateY(-50%); left: 25px; font-size: var(--smaller-font-size); }
+                .input-container.focus span::before, .input-container.focus span::after  { width: 50%; opacity: 1; }
+
+/* Footer */
+
+.footer { padding-top: 2rem; }
+.footer-container { grid-template-columns: repeat(3, 1fr); column-gap: 1.6rem; }
+.footer-bg { background-color: var(--box-color); padding: 3rem 0 3.5rem; }
+.footer-title { font-size: var(--h1-font-size); margin-bottom: var(--mb025); }    
+.footer-subtitle { font-size: var(--small-font-size); }
+.footer-links { display: flex; justify-self: center; column-gap: 2rem; }
+    .footer-links:hover { color: var(--skin-color); }
+.footer-socials { justify-self: flex-end; }
+.footer-social { font-size: 1.25rem; margin-right: var(--mb15); }
+    .footer-social:hover { color: var(--skin-color); }
+.footer-copy { font-size: var(--smaller-font-size); text-align: center; margin-top: 4.5rem; }
+    .footer-copy a { font-family: var(--signature-font); } 
+        .footer-copy a:hover { color: var(--skin-color); }
+    .footer-title, .footer-subtitle, .footer-links, .footer-social, .footer-copy a { color: var(--title-color); }
+
+/* Media Queries */
+
+@media screen and (max-width: 1408px) {
+    .container { margin-left: var(--mb25); margin-right: var(--mb25); }
+}
+
+@media screen and (max-width: 1216px) {
+    .about-container { column-gap: 2.5rem; }
+    .about-description { padding-right: 0; }
+    .work-container { grid-template-columns: repeat(2, 330px); gap: 3rem; }
+}
+
+@media screen and (max-width: 1024px) {
+    .container { margin-left: var(--mb15); margin-right: var(--mb15); }
+    .sidebar { width: 100%; z-index: 999; transform: translateX(-100%); }
+    .show-sidebar { transform: translateX(0); }
+    .nav-logo, .btn-share { display: none; }
+    .nav-menu { height: 100%; width: 100%; transform: rotate(0deg) translateX(0); display: flex; justify-content: center; }
+    .nav-list { flex-direction: column; height: 100%; justify-content: center; align-items: center; }
+    .nav-link { padding: 1rem 0; line-height: 1.5; }
+        .nav-link.active-link::after, .nav-link:hover::after { bottom: 0; }
+    .nav-close { display: block; }
+    .nav-toggle { display: flex; }
+
+    .main { margin-left: 0; }
+
+    .about-container { grid-template-columns: 1fr; row-gap: 2.5rem; }
+    .about-img { width: 350px; }
+    .about-data { text-align: center; }
+    .about-info { justify-content: center; }
+    .about-box { padding: 0.75rem .5rem; }
+    .about-description { padding: 0 4rem; text-align: center; }
+
+    .qualification-container { grid-template-columns: repeat(2, 290px); }
+    .skills-container { grid-template-columns: 340px 300px; }
+    .skills-list { row-gap: 1.7rem; }
+
+    .work-card { padding: 1rem; }
+    .work-img { margin-bottom: var(--mb075); }
+    .work-title { margin-bottom: var(--mb025); }
+
+    .services-container { grid-template-columns: repeat(3, 220px); }
+
+    .testimonial-card { padding: 1.25rem 1.5rem; }
+
+    .portfolio-item-details { margin-bottom: var(--mb15); }
+    .details-info li { margin-bottom: var(--mb05); }
+    .details-title { margin-bottom: var(--mb075); }
+}
+
+@media screen and (max-width: 768px) {
+    .about-img { width: 250px; }
+    .qualification-container { grid-template-columns: 290px; row-gap: 3rem; }
+    .skills-container { grid-template-columns: 300px; row-gap: 3rem; }
+    .work-container { grid-template-columns: 330px; }
+
+    .services-container { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .services-content { padding: 3.5rem .5rem 1.25rem 1.5rem; }
+    .services-icon { font-size: 1.5rem; }
+
+    .contact-container { grid-template-columns: 360px; row-gap: 3rem; }
+    .footer-container { grid-template-columns: repeat(2, 1fr); row-gap: 3rem; }
+    .footer-socials { justify-self: start; }
+    .footer-links { flex-direction: column; row-gap: 1.5rem; }
+    .footer-bg { padding: 2rem 0 3rem; }
+    .footer-copy { margin-top: var(--mb3); }
+
+    .portfolio-popup-inner { width: 420px; padding: 2.8rem 1.5rem 2.5rem; }
+    .portfolio-popup-content { grid-template-columns: 1fr; row-gap: 1.6rem; }
+    .details-title { font-size: var(--normal-font-size); }
+    .portfolio-popup-close { top: .5rem;  }
+}
+
+@media screen and (max-width: 576px) {
+    .nav-toggle { right: initial; left: 1.5rem; }
+    .home { background-image: none; height: initial; align-items: initial; padding: 7rem 0 2rem; }
+    .home-container { row-gap: 2rem; }
+    .home-img { display: block; width: 250px; justify-self: center; }
+    .my-info { display: none; }
+    .home-social { left: initial; right: -1rem; flex-direction: column; row-gap: 3.5rem; }
+    .home-social-follow { font-size: var(--smaller-font-size); transform: rotate(90deg); }
+    .home-social-links { flex-direction: column; row-gap: .25rem; }
+    .home-social-link { font-size: var(--normal-font-size); }
+
+    .about-info { grid-template-columns: repeat(3, 1fr); }
+    .about-description { padding: 0; }
+
+    .services-modal-content { padding: 4.5rem 1.5rem 2.5rem; }
+    .services-modal-description { padding: 0; }
+
+    .work-container, .contact-container { grid-template-columns: 300px; }
+
+    .footer-container { grid-template-columns: 1fr;  }
+    .footer-links { justify-self: flex-start; }
+
+}
+
+@media screen and (max-width: 350px) {
+    .container { margin-left: var(--mb1); margin-left: var(--mb1); }
+    .home-img { width: 200px; }
+    .home-title { font-size: var(--h1-font-size); }
+    .home-subtitle { font-size: var(--normal-font-size); }
+    
+    .about-info { grid-template-columns: repeat(2, 1fr); row-gap: .5rem; }
+    .work-container, .skills-container, .qualification-container, .contact-container { grid-template-columns: 1fr; }
+    .skills-title { font-size: var(--normal-font-size); }
+    .work-item { font-size: var(--normal-font-size); }
+    .work-filters { column-gap: .25rem; }
+    .services-container { grid-template-columns: max-content; }
+    .services-content { padding-right: 3.5rem; }
+}
+
+  </style>
+
+  
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+</head>
+
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-toggle" id="nav-toggle">
+        <i class="uil uil-bars"></i>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#" class="nav-logo-text">AP</a>
+            </div>
+
+            <div class="nav-menu">
+                <div class="menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active-link">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#work" class="nav-link">Work</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btn-share">
+                <i class="uil uil-share-alt social-share"></i>
+            </div>
+
+            <div class="nav-close" id="nav-close">
+                <i class="uil uil-times"></i>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="home" id="home">
+            <div class="home-container container grid">
+                <div class="home-social">
+                    <span class="home-social-follow">Follow Me</span>
+                    <div class="home-social-links">
+                        <a href="https://www.facebook.com" target="_blank" class="home-social-link">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com" target="_blank" class="home-social-link">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+
+                        <a href="https://www.x.com" target="_blank" class="home-social-link">
+                            <i class="uil uil-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <img src="https://64.media.tumblr.com/1ef542183afe62ff8f403d01db3b8614/afc46cbefaec4590-0c/s1280x1920/175688ffcae20f395443ead68bfb98c15ccad56c.jpg" alt="" class="home-img">
+
+            <div class="home-data">
+                <h1 class="home-title">Hi, I'm Alex</h1>
+                <h3 class="home-subtitle">Automation Eng.</h3>
+                <p class="home-description">I have high level experience in web design, development knowledge and producing quality work</p>
+                <a href="#about" class="button">
+                    <i class="uil uil-user button-icon"></i>
+                    Download PDF
+                </a>
+            </div>
+
+            <div class="my-info">
+                <div class="info-item">
+                    <i class="uil uil-facebook-messenger info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">Messenger</h3>
+                        <span class="info-subtitle">user.fb123</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="uil uil-whatsapp info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">Whatsapp</h3>
+                        <span class="info-subtitle">+30 694 0548 867</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="uil uil-envelope-edit info-icon"></i>
+
+                    <div>
+                        <h3 class="info-title">Email</h3>
+                        <span class="info-subtitle">user@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="section-title" data-heading="My Intro">About me</h2>
+
+            <div class="about-container container grid">
+                <img src="https://64.media.tumblr.com/f1e64114c3c61f81602a0268d5c23172/afc46cbefaec4590-09/s1280x1920/7ce59e20080166e33a310a34d4d5fd0d88306c5b.jpg" alt="" class="about-img">
+
+                <div class="about-data">
+                    <h3 class="about-heading">Hi, I'm Alexandros Papaspyrou, based in Athens (Greece)</h3>
+                    <p class="about-description">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>#more {display: none;}</style>
+
+
+
+<p>I'm an automation engineer and I am interested in working in technology related fields. I look for new opportunities and to learn about new technologies and innovations. <span id="dots">...</span><span id="more">From previous professional experiences I have developed the ability to communicate effectively with different profiles of people and to (co)work successfully under time pressure conditions. I also had the opportunity to develop my technical knowledge in matters related to fixed telephony and xDSL internet, PC printers, and electroic devices.
+I have worked with Arduino and gained experience in soldering and electronics. During my studies I was involved with HTML C++ VB PHP/MySQL programming and specific programs such as Multisim Matlab Simulink LabView HAMPP and Siemens PLC and in a previous job I was introduced to Beckhoff ( TwinCAT).Good knowledge of English. Very good knowledge in Microsoft and Libre Office, very good knowledge and use of computer and social media.
+
+With a passion for technology and a commitment to delivering exceptional customer experiences, I thrive in dynamic, fast-paced environments. Outside of work, you’ll find me pursuing an active lifestyle through gym workouts and running, capturing the beauty of the world through photography, and expressing my creativity through painting and various art projects. These hobbies not only keep me energized but also inspire my professional endeavors by promoting a balanced and innovative mindset.  </span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+<br>
+     <div class="about-info">
+                        <div class="about-box">
+                            <i class="uil uil-award about-icon"></i>
+                            <h3 class="about-title">Experience</h3>
+                            <span class="about-subtitle">10 + Years</span>
+                        </div>
+
+                        <div class="about-box">
+                            <i class="uil uil-suitcase-alt about-icon"></i>
+                            <h3 class="about-title">Completed</h3>
+                            <span class="about-subtitle">60 + Projects</span>
+                        </div>
+
+                        <div class="about-box">
+                            <i class="uil uil-headphones-alt about-icon"></i>
+                            <h3 class="about-title">Support</h3>
+                            <span class="about-subtitle">Online 24/7</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="button"><i class="uil uil-navigator button-icon"></i>Contact me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="qualification section">
+            <h2 class="section-title" data-heading="My Journey">Qualifications</h2>
+
+            <div class="qualification-container container grid">
+                <div class="education">
+                    <h3 class="qualification-title"><i class="uil uil-graduation-cap"></i>Education</h3>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Piraeus University of Applied Sciences
+</h3>
+                            <p class="timeline-text">Department of Automation Engineering</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2026</span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Tech High School of Zwgrafou</h3>
+                            <p class="timeline-text">Computer Science</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2013 - 2015</span>
+                        </div> 
+                    </div>
+<br><h3 class="qualification-title"><i class="uil uil-graduation-cap"></i>More:</h3>
+
+ 					<div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Seminars</h3>
+                            <p class="timeline-text">Computer Science</p>
+                            <span class="timeline-date">more</span>
+                        </div> 
+
+
+
+                </div>
+                
+
+
+
+
+
+                <div class="experience">
+                    <h3 class="qualification-title"><i class="uil uil-suitcase"></i>Experience</h3>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Teleperformance</h3>
+                            <p class="timeline-text">Lead / Senior UX Designer</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2018 - Present</span>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Vodafone
+</h3>
+                            <p class="timeline-text"> 1st Level Technical Support Representative</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2015 - 2018</span>
+                        </div>
+                      
+                          <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Gabogle Inc. (Somwtown, NJ)</h3>
+                            <p class="timeline-text">Web site / UX Designer</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2015 - 2018</span>
+                        </div>
+                      
+
+                        <div class="timeline-item">
+                            <div class="circle-dot"></div>
+                            <h3 class="timeline-title">Copalopa Inc. (Sometown, NJ)</h3>
+                            <p class="timeline-text">Junior UX Designer</p>
+                            <span class="timeline-date"><i class="uil uil-calendar-alt"></i>2013 - 2015</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title" data-heading="My Abilities">My Experience</h2>
+
+           <center><a href="#contact" class="button"><i class="uil uil-navigator button-icon"></i>Contact me</a></center>
+           
+        </section>
+
+        <section class="work section" id="work">
+            <h2 class="section-title" data-heading="My Portfolio">Recent Works</h2>
+
+
+<center><a href="#contact" class="button"><i class="uil uil-navigator button-icon"></i>Contact me</a></center>
+
+
+
+        </section>
+
+	
+        <section class="contact section" id="contact">
+            <h2 class="section-title" data-heading="Get in Touch">Contact me</h2>
+
+            <center><a href="#contact" class="button"><i class="uil uil-navigator button-icon"></i>Contact me</a></center>
+            
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-bg">
+                <div class="footer-container container grid">
+                    <div>
+                         <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'><h1 class="footer-title" style="font-family: 'Audiowide';text-decoration: none;color:white;">AlphaPi</h1>
+                           
+                        <span class="footer-subtitle">Connect. Code. Create</span>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#services" class="footer-links">Services</a>
+                        </li>
+                        <li>
+                            <a href="#work" class="footer-links">Work</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer-links">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank" class="footer-social">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com" target="_blank" class="footer-social">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+
+                        <a href="https://www.x.com" target="_blank" class="footer-social">
+                            <i class="uil uil-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="footer-copy">  <a href="https://alexandroshub.github.io/welcome21.html" title="Visit AlexandrosHub">▞▚ ▛ AlexandrosHub</a> | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/ap.contact.html">Contact</a></p>          
+      
+  <p   style="font-size: 9px; color:#9CA5AC">
+        <link
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+          crossorigin="anonymous"/> </p>    
+              
+ </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+  
+  <script  src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-260a1cc6-21b6-a92a-7e55-5625f7601496" crossorigin></script>
+</body>
+
+</html>
