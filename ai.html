@@ -1,0 +1,364 @@
+
+
+
+
+
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap & Fonts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    background: rgba(30, 30, 40, 0.9);
+    backdrop-filter: blur(6px);
+    border: none;
+    font-size: 14px !important;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    min-height: 55px;
+}
+
+/* Logo styling - vertically centered */
+.navbar .navbar-header .logo {
+    display: inline-block;
+    line-height: 55px;
+    vertical-align: middle;
+    padding: 0 10px;
+    font-family: 'Audiowide';
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu links */
+.navbar li a {
+    color: #e0e0e0 !important;
+    padding: 18px 20px; /* matches navbar height */
+    transition: all 0.3s ease;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li a:hover {
+    color: white !important;
+    background: linear-gradient(90deg, rgba(239,140,53,0.8), rgba(218,39,73,0.8), rgba(189,24,133,0.8));
+    border-radius: 0;
+}
+
+/* Toggle button for mobile */
+.navbar-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin-top: 10px;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: rgba(40, 40, 50, 0.98) !important;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.dropdown-menu li a {
+    color: #ddd !important;
+    padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(239,140,53,0.3) !important;
+    color: white !important;
+}
+
+/* Remove Bootstrap default white background when opening */
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.open > a:hover {
+    background: rgba(239,140,53,0.3) !important;
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .navbar li a {
+        padding: 12px 15px;
+        font-size: 16px;
+        height: auto;
+    }
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-label="Εναλλαγή πλοήγησης">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portf">Projects</a></li>      
+        <li><a href="https://alexandroshub.github.io/ap.contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="https://alexandroshub.github.io/cv">My CV</a></li>
+            <li><a href="https://alexandroshub.github.io/porto.ap.html">PORTFOLIO</a></li>
+            <li><a href="https://alexandroshub.github.io/plus.ap.html">PLUS +</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Automations</li>
+            <li><a href="https://alexandroshub.github.io/iot.html">IoT</a></li>
+            <li><a href="https://alexandroshub.github.io/ai.html">AI</a></li>
+            <li><a href="https://alexandroshub.github.io/ardu22.html">Arduino</a></li>
+            <li><a href="https://alexandroshub.github.io/raspberrypi">Raspberrypi</a></li>
+            <li><a href="https://alexandroshub.github.io/stem">STEAM</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Creative Side</li>
+            <li><a href="https://alexandroshub.github.io/art.html">ART gelery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {height: 100%; margin: 0; line-height: 1.8;}
+.w3-bar .w3-button {padding: 16px;}
+.menu {display: none;}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image:
+    linear-gradient(to bottom, rgba(34, 34, 34, 1),
+                              rgba(255, 0, 0, 0),
+                              rgba(255, 0, 0, 0),
+                              rgba(0, 0, 0, 1)),
+    url("https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");
+  min-height: 50%;
+}
+
+ul.breadcrumb {
+  padding: 4px 8px;
+  list-style: none;
+  background-color: #222222;
+  margin: 0;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: #fff;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+#baroty {
+  height: 40px;
+  background-image: linear-gradient(to top, rgba(17,17,17), rgba(0,0,0));
+}
+</style>
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle">
+    <p style="text-align: center; font-family: 'Audiowide'; font-size: 70px; text-decoration: none; color: white;"> AI</p>
+  </div>
+</header>
+
+<div id="baroty"></div>
+
+
+
+
+
+
+
+
+
+
+<!-- START AI MYTHS SECTION -->
+<style>
+  #aiSection_container {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f0f4ff, #e8f5e9);
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+
+  .aiSection_header {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .aiSection_header div {
+    background-color: #e3f2fd;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    color: #333;
+  }
+
+  .aiSection_title {
+    text-align: center;
+    font-size: 2.2em;
+    color: #2e7d32;
+    margin-bottom: 10px;
+  }
+
+  .aiSection_subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  .aiSection_myths {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .aiSection_myth {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    color: #333;
+  }
+
+  .aiSection_myth:hover {
+    transform: scale(1.02);
+  }
+
+  .aiSection_myth h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .aiSection_myth p {
+    font-size: 1.1em;
+    margin: 5px 0;
+  }
+
+  #aiSection_myth1 {
+    background: linear-gradient(135deg, #ffccbc, #ffe0b2);
+  }
+
+  #aiSection_myth2 {
+    background: linear-gradient(135deg, #b2ebf2, #e0f7fa);
+  }
+
+  #aiSection_myth3 {
+    background: linear-gradient(135deg, #fff9c4, #fffde7);
+  }
+
+  .aiSection_icon {
+    font-size: 1.8em;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  @media (min-width: 768px) {
+    .aiSection_myths {
+      flex-direction: row;
+    }
+    .aiSection_myth {
+      flex: 1;
+    }
+  }
+</style>
+
+<section id="aiSection_container">
+  <div class="aiSection_header">
+    <div>📘</div>
+    <div>📂 </div>
+    <div>⏱️</div>
+  </div>
+
+  <h2 class="aiSection_title">🤖 Μύθοι και Αλήθειες για την Τεχνητή Νοημοσύνη</h2>
+  <p class="aiSection_subtitle">Ας ξεκαθαρίσουμε τις παρανοήσεις και ανακαλύψουμε την αλήθεια πίσω από τους πιο συνηθισμένους μύθους</p>
+
+  <div class="aiSection_myths">
+    <div class="aiSection_myth" id="aiSection_myth1">
+      <h3><span class="aiSection_icon">🧠</span>Μύθος #1</h3>
+      <p>«Το AI θα αντικαταστήσει τους ανθρώπους»</p>
+      <p><strong>Αλήθεια:</strong> Το AI συμπληρώνει, δεν αντικαθιστά</p>
+    </div>
+    <div class="aiSection_myth" id="aiSection_myth2">
+      <h3><span class="aiSection_icon">📉</span>Μύθος #2</h3>
+      <p>«Το AI είναι πολύπλοκο για εμένα»</p>
+      <p><strong>Αλήθεια:</strong> Φιλικά εργαλεία για όλους</p>
+    </div>
+    <div class="aiSection_myth" id="aiSection_myth3">
+      <h3><span class="aiSection_icon">⚠️</span>Μύθος #3</h3>
+      <p>«Το AI είναι επικίνδυνη»</p>
+      <p><strong>Αλήθεια:</strong> Ασφαλή εργαλεία με όρια</p>
+      <p><strong>Κατευθυντήριες:</strong> Ηθικές αρχές και υπεύθυνη χρήση</p>
+    </div>
+  </div>
+</section>
+<!-- END AI MYTHS SECTION -->
