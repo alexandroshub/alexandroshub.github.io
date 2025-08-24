@@ -93,6 +93,9 @@ ddaa {
 <!-- Font Awesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+<!-- Font Awesome CDN (place in <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="background-color:#1e1e2f; color:white; width:80px;">
   <!-- Avatar image -->
@@ -100,30 +103,31 @@ ddaa {
 
   <!-- Navigation Items -->
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-    <i class="fas fa-arrow-circle-up w3-xlarge"></i>
+    <i class="fa-solid fa-circle-up w3-xlarge"></i>
     <p style="font-size:10px;">TOP</p>
   </a>
 
   <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-    <i class="fas fa-user-astronaut w3-xlarge"></i>
+    <i class="fa-solid fa-user-ninja w3-xlarge"></i>
     <p style="font-size:10px;">ABOUT</p>
   </a>
 
   <a href="#content" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-    <i class="fas fa-lightbulb w3-xlarge"></i>
+    <i class="fa-solid fa-lightbulb w3-xlarge"></i>
     <p style="font-size:10px;">CONTENT</p>
   </a>
 
   <a href="#media" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-    <i class="fas fa-photo-video w3-xlarge"></i>
+    <i class="fa-solid fa-photo-film w3-xlarge"></i>
     <p style="font-size:10px;">MEDIA</p>
   </a>
 
   <a href="#links" class="w3-bar-item w3-button w3-padding-large w3-hover-opacity">
-    <i class="fas fa-link w3-xlarge"></i>
+    <i class="fa-solid fa-link w3-xlarge"></i>
     <p style="font-size:10px;">LINKS</p>
   </a>
 </nav>
+
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
@@ -266,83 +270,7 @@ footer.navigation:hover h4 { -webkit-animation-play-state: running; }
       transform: translateY(0);
     }
 
-    .plus-footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1e1e2f;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
 
-  
-  .plus-wrapper {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-    font-family: 'Segoe UI', sans-serif;
-    color: #222;
-  }
-
-  .plus-heading {
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
-    color: #1e1e2f;    
-  background: -webkit-linear-gradient(rgba(239,140,53),rgb(218,39,73), rgba(189,24,133));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
-
-  .plus-card {
-    background: white;
-    color: #222;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .plus-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .plus-intro {
-    background: #fffbe6;
-    border-left: 5px solid #ff5e57;
-  }
-
-  .plus-cta {
-    display: inline-block;
-    background: #ff5e57;
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    margin-top: 1rem;
-    margin-right: 0.5rem;
-  }
-
-  .plus-cta:hover {
-    background: #e14c45;
-  }
-
-  .plus-emoji {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-  }
-
-  .plus-hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-
-  .plus-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 </style>
 
 <div class="plus-wrapper">
