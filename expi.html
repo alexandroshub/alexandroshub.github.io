@@ -3,90 +3,84 @@
     background: radial-gradient(circle at top, #0f0f0f, #1a1a1a);
     color: #e0e0e0;
     font-family: 'Courier New', monospace;
-    padding: 60px 20px;
+    padding: 40px 16px;
     text-align: center;
   }
 
   .cv-title {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 6vw, 2.8rem);
     color: #00ffcc;
     margin-bottom: 10px;
     text-shadow: 0 0 10px #00ffcc;
   }
 
   .cv-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     color: #ccc;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .cv-section {
     max-width: 800px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 32px auto;
     background-color: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
-    padding: 30px;
+    padding: 24px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0,255,204,0.05);
   }
 
   .cv-section h3 {
     color: #00ffcc;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    margin-bottom: 16px;
   }
 
   .cv-section p {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     color: #ccc;
     line-height: 1.6;
+    margin: 0;
   }
 
   .cv-buttons {
-    margin-top: 40px;
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
   }
 
   .cv-buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 24px;
-    font-size: 1rem;
+    padding: 12px 20px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     font-weight: bold;
     color: #121212;
     background-color: #00ffcc;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.3s ease;
+    flex: 1 1 auto;
+    max-width: 240px;
   }
 
   .cv-buttons a:hover {
     background-color: #00ddb3;
   }
 
-  @media (max-width: 600px) {
-    .cv-title {
-      font-size: 2rem;
-    }
-
-    .cv-subtitle {
-      font-size: 1rem;
-    }
-
-    .cv-section h3 {
-      font-size: 1.3rem;
-    }
-
-    .cv-section p {
-      font-size: 0.9rem;
+  @media (max-width: 480px) {
+    .cv-section {
+      padding: 20px;
     }
 
     .cv-buttons a {
-      font-size: 0.9rem;
-      padding: 10px 20px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
     }
   }
 </style>
+
 
 <section class="cv-container">
   <h1 class="cv-title">Papaspyrou Alexandros</h1>
@@ -109,7 +103,7 @@
 
   <div class="cv-buttons">
     <a href="https://gr.linkedin.com/in/alexandrospapaspyrou" target="_blank">🔗 LinkedIn Προφίλ</a>
-    <a href="https://drive.google.com/file/d/1Grqe_PGyChcgqhTyxP8sNqc8HapC-uYU/view?usp=share_link" download>📄 Λήψη Βιογραφικού PDF</a>
+    <a href="https://drive.google.com/file/d/13ih79iINth9tCoLWtHJAF6ErzKe93hEA/view?usp=sharing" download>📄 Λήψη Βιογραφικού PDF</a>
  <a href="https://alexandroshub.github.io/ap.contact">💬 Επικοινώνησε μαζί μου</a>
 
   </div>
