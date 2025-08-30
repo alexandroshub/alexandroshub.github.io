@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papaspyrou Alexandros | IoT Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0f0f0f, #1a1a1a);
+      font-family: 'Inter', sans-serif;
+      color: #e0e0e0;
+      scroll-behavior: smooth;
+    }
+
+    header, section, footer {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.7;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+    }
+
+    .section-box {
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,255,204,0.05);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+  .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.buttons a {
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #121212;
+  background-color: #00ffcc;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.buttons a:hover {
+  background-color: #00ddb3;
+}
+
+
+    footer {
+      font-size: 0.9rem;
+      color: #888;
+      padding-bottom: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      header, section, footer {
+        padding: 40px 16px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .buttons a {
+        font-size: 1rem;
+        padding: 16px;
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Papaspyrou Alexandros</h1>
+    <p>Μηχανικός Αυτοματισμών & IoT Developer</p>
+    <div class="buttons">
+      <a href="#skills">🔧 Skills</a>
+      <a href="#contact">💬 Contact</a>
+      <a href="https://drive.google.com/file/d/13ih79iINth9tCoLWtHJAF6ErzKe93hEA/view?usp=sharing" download>📄 Download CV</a>
+    </div>
+  </header>
+
+  <section id="skills" class="section-box">
+    <h2>🔧 Skills</h2>
+    <p>Programming in Python, C++, JavaScript. IoT systems development with Raspberry Pi and Arduino. PCB design, automation, robotics, and smart applications.</p>
+  </section>
+
+  <section class="section-box">
+    <h2>📁 Experience</h2>
+    <p>Developed automation systems for smart homes. Participated in STEM projects and educational workshops. Created Android apps and web interfaces for device control.</p>
+  </section>
+
+  <section class="section-box">
+    <h2>🎯 Goals</h2>
+    <p>To contribute to the evolution of technology through innovative solutions in IoT, robotics, and automation. Seeking collaborations with teams that share the same passion for creation.</p>
+  </section>
+
+  <section class="section-box">
+    <h2>💡 Bonus Insight</h2>
+    <p><em>“The most underrated skill in data careers isn’t coding — it’s asking the right questions.”</em><br>
+    Strategic thinking and problem-first mindset are what truly set professionals apart. Learn to ask better questions, and the data will follow.</p>
+  </section>
+
+  <section id="contact" class="section-box">
+    <h2>📬 Contact Me</h2>
+    <p>Let’s build something smart together. Reach out via LinkedIn or my contact page.</p>
+    <div class="buttons">
+      <a href="https://gr.linkedin.com/in/alexandrospapaspyrou" target="_blank">🔗 LinkedIn</a>
+      <a href="https://alexandroshub.github.io/ap.contact" target="_blank">💬 Contact Page</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Papaspyrou Alexandros. Built with ❤️ and curiosity.</p>
+  </footer>
+
+</body>
+</html>
