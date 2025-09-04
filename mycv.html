@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandros Papaspyrou - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="25" r="1.5" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="50" r="2.5" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="2" fill="%23ffffff" opacity="0.1"/></svg>');
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            color: #3498db;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ecf0f1;
+        }
+        
+        .contact-item i {
+            color: #3498db;
+            width: 16px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px;
+            border-right: 3px solid #3498db;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        
+        .summary {
+            font-size: 1rem;
+            color: #555;
+            text-align: justify;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .job {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .job::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .company {
+            font-weight: 700;
+            color: #3498db;
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            background: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 15px;
+            white-space: nowrap;
+        }
+        
+        .job-description ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+        
+        .job-description li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+        
+        .job-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .skills-category {
+            margin-bottom: 20px;
+        }
+        
+        .skills-category-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.9rem;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .skills-list li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .education-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .school {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+        
+        .projects-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date {
+                margin-top: 5px;
+            }
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #88d8a3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .metric {
+            background: linear-gradient(120deg, #ffd93d 0%, #ff9800 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">ALEXANDROS PAPASPYROU</h1>
+                <p class="title">Technical Support Specialist | Automation Engineer</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>a-papaspyrou@outlook.com.gr</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+30 6940548867</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>alexandroshub.github.io</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/alexandrospapaspyrou</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Programming & Development</h3>
+                        <ul class="skills-list">
+                            <li>C++, HTML, PHP/MySQL</li>
+                            <li>Visual Basic</li>
+                            <li>Arduino programming</li>
+                            <li>Embedded systems development</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Automation & Control</h3>
+                        <ul class="skills-list">
+                            <li>Siemens PLC programming</li>
+                            <li>BECKHOFF TwinCAT systems</li>
+                            <li>Industrial automation solutions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Software & Tools</h3>
+                        <ul class="skills-list">
+                            <li>MATLAB, Simulink, LabVIEW</li>
+                            <li>Multisim circuit simulation</li>
+                            <li>Microsoft Office Suite</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Hardware & Electronics</h3>
+                        <ul class="skills-list">
+                            <li>PCB soldering and assembly</li>
+                            <li>Electronics troubleshooting</li>
+                            <li>Computer hardware diagnostics</li>
+                            <li>Network troubleshooting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">Languages</h3>
+                        <ul class="skills-list">
+                            <li>Greek (Native)</li>
+                            <li>English (Professional)</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="degree">Automation Engineering Technology</div>
+                        <div class="school">University of West Attica (UNIWA)</div>
+                        <div class="date">Expected Graduation 2026</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Computer Systems & Networks Support</div>
+                        <div class="school">EPAL Zografou Technical School</div>
+                        <div class="date">2011</div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Key Projects</h2>
+                    
+                    <div class="projects-item">
+                        <div class="project-title">Arduino-Based Electronics</div>
+                        <div class="project-description">
+                            Designed embedded systems, custom PCB solutions with advanced soldering techniques
+                        </div>
+                    </div>
+                    
+                    <div class="projects-item">
+                        <div class="project-title">Industrial Automation</div>
+                        <div class="project-description">
+                            BECKHOFF PLC systems programming for robotic applications with safety protocols
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            
+            <main class="content">
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <div class="summary">
+                        Experienced Technical Support Specialist with <span class="highlight">6+ years</span> in customer-facing technical roles and embedded systems development. Proven track record of handling <span class="metric">40+ daily technical cases</span> with high resolution rates. Specialized in automation systems, PLC programming, and hardware troubleshooting with exceptional customer service skills.
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">TELEPERFORMANCE</div>
+                                <div class="job-title">Operations Customer Expert</div>
+                            </div>
+                            <div class="date">Feb 2025 - Present</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Lead operations optimization initiatives for customer service processes</li>
+                                <li>Mentor team members on best practices and quality standards</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">TELEPERFORMANCE</div>
+                                <div class="job-title">Process Mentor & Dispatcher</div>
+                            </div>
+                            <div class="date">Apr 2024 - Feb 2025</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Coached <span class="metric">15+ technical support agents</span> on complex case resolution</li>
+                                <li>Coordinated case distribution and workload management</li>
+                                <li>Improved team first-call resolution rate by implementing new troubleshooting protocols</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">TELEPERFORMANCE</div>
+                                <div class="job-title">Technical Support Agent</div>
+                            </div>
+                            <div class="date">May 2023 - Apr 2024</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Provided specialized technical support for <span class="highlight">HP computers and printers</span></li>
+                                <li>Achieved <span class="metric">95%+ customer satisfaction rating</span> consistently</li>
+                                <li>Resolved complex hardware/software issues with <span class="metric">85% first-call resolution</span></li>
+                                <li>Handled average of <span class="metric">35+ technical cases daily</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">VODAFONE GREECE</div>
+                                <div class="job-title">Tech Specialist (Retention)</div>
+                            </div>
+                            <div class="date">Mar 2021 - Sep 2021</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Specialized in retaining high-value customers through technical issue resolution</li>
+                                <li>Handled escalated cases for <span class="highlight">IPTV, fixed telephony, and internet services</span></li>
+                                <li>Achieved <span class="metric">90%+ customer retention rate</span> through effective problem-solving</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">VODAFONE GREECE</div>
+                                <div class="job-title">Technical Support Representative</div>
+                            </div>
+                            <div class="date">Oct 2017 - Mar 2021</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Managed <span class="metric">40+ daily technical cases</span> for telecommunications services</li>
+                                <li>Achieved consistent <span class="metric">80%+ first-time resolution rates</span></li>
+                                <li>Specialized in <span class="highlight">ADSL, VDSL, and fiber optic troubleshooting</span></li>
+                                <li>Provided updates on pending cases and escalation management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">SIMWORX (THE CUBE)</div>
+                                <div class="job-title">Junior Embedded Developer</div>
+                            </div>
+                            <div class="date">May 2017 - Aug 2017</div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Developed <span class="highlight">BECKHOFF TwinCAT PLC programming</span> for ROBOCOASTER project</li>
+                                <li>Implemented autonomous control systems for robotic platform operations</li>
+                                <li>Collaborated with UK engineering team on industrial automation systems</li>
+                                <li>Gained hands-on experience with industrial control systems and safety protocols</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
