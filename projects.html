@@ -1,3 +1,4 @@
+
 <!--==========================================================================
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -5,7 +6,7 @@
         
       ▞▚ ▙▄ ▛ █▬█ ▞▚  ▛ █ 
             
-      Updated: v2.3 16.8.25
+      Updated: v2.3 14.9.25
       Website: https://alexandroshub.github.io
       Contact: 	a-papaspyrou@outlook.com.gr
       CC-BY international 4 2011-2025 Alexandros Papaspyrou
@@ -455,6 +456,164 @@ ul.breadcrumb li a:hover {
 <div class="description"><h1 class="title">
 <span class="gradient-text">from idea to automation</span> and beyond
 </h1>
+
+
+
+<section class="iot-intro" style="
+  max-width: 900px;
+  margin: 60px auto 40px auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #a5d6a7, #81d4fa);
+  box-shadow: 0 0 20px rgba(0, 150, 136, 0.2);
+  font-family: 'Orbitron', sans-serif;
+  color: #004d40;
+  text-align: center;
+">
+  <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #00695c;">
+    🧠 From Concept to Connection
+  </h2>
+  <p style="font-size: 1rem; line-height: 1.6; color: #1b5e20;">
+    Every great system begins with a spark. My approach transforms raw ideas into intelligent, connected experiences—through design, development, and automation. Whether it's a smart device or a scalable IoT platform, each step is crafted with clarity, purpose, and precision. Scroll down to explore the journey.
+  </p>
+</section>
+
+
+<section class="intro-section" style="max-width: 800px; margin: 0 auto; padding: 1rem; font-family: 'Segoe UI', sans-serif; color: #004d40;">
+  <h2 style="color: #00796b;">Transforming Ideas into Intelligent Systems</h2>
+  <p style="font-size: 1rem; line-height: 1.6; color: #2e7d32;">
+    In today’s connected world, innovation means more than just creativity—it demands structure, insight, and execution. This streamlined path reflects my approach to building smart, scalable, and secure IoT solutions—from the first spark of an idea to full automation. Each step is intentional, each decision data-driven. Here's how I turn concepts into connected realities.
+  </p>
+</section>
+
+
+<!-- IoT Process Path Injection -->
+<style>
+  .iot-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+
+  .step-box {
+    background: linear-gradient(to right, #b2dfdb, #c8e6c9);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 180px;
+    min-height: 100px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  .step-box:hover {
+    transform: scale(1.05);
+  }
+
+  .step-title {
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.85rem;
+    color: #2e7d32;
+  }
+
+  .step-number {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #00796b;
+    opacity: 0.4;
+  }
+
+  .arrow {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #00796b;
+    opacity: 0.3;
+  }
+
+  .step-box:last-child .arrow {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .step-box {
+      width: 100%;
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+</style>
+
+<div class="iot-path">
+  <template id="iot-step-template">
+    <div class="step-box">
+      <div class="step-number"></div>
+      <div class="step-title"></div>
+      <div class="step-desc"></div>
+      <div class="arrow">→</div>
+    </div>
+  </template>
+</div>
+
+<script>
+  const steps = [
+    ["Ideate", "Innovative concept generation"],
+    ["Explore", "Tech & trend research"],
+    ["Validate", "Feasibility analysis"],
+    ["Design", "System architecture"],
+    ["Prototype", "Early model testing"],
+    ["Connect", "Devices & sensors"],
+    ["Develop", "Code & firmware"],
+    ["Integrate", "Platform linking"],
+    ["Secure", "Data protection"],
+    ["Test", "Diagnostics & QA"],
+    ["Document", "Guides & APIs"],
+    ["Deploy", "Production launch"],
+    ["Monitor", "Live analytics"],
+    ["Optimize", "Performance tuning"],
+    ["Scale", "Infrastructure growth"],
+    ["Automate", "Smart workflows"],
+    ["Predict", "AI-driven insights"]
+  ];
+
+  const container = document.querySelector('.iot-path');
+  const template = document.getElementById('iot-step-template');
+
+  steps.forEach((step, index) => {
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('.step-number').textContent = index + 1;
+    clone.querySelector('.step-title').textContent = step[0];
+    clone.querySelector('.step-desc').textContent = step[1];
+    container.appendChild(clone);
+  });
+</script>
+
+
+
+
+
+
     <h2>🚀 Featured Projects</h2>
     <div class="project-grid">
       
@@ -631,23 +790,23 @@ ul.breadcrumb li a:hover {
 
     <div class="alexhub-card">
       <img src="https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg" alt="Robotics Project">
-      <h3>Automated Scraping and Reporting for Quotes or Leads</h3>
-      <p>Bluetooth-controlled robotic arm with Arduino and custom Android app.</p>
+      <h3>soon . . .</h3>
+      <p>xx.</p>
       <div class="alexhub-tags">
-        <span>Arduino</span><span>Bluetooth</span><span>Android</span>
+        <span>xx</span><span>xx</span><span>xx</span>
       </div>
-      <a href="https://github.com/yourrepo" target="_blank">🔗 View on GitHub</a>
+      <a href="xx" target="_blank">🔗xx</a>
     </div>
 
     <!-- Add more project cards here -->
     <div class="alexhub-card">
       <img src="https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg" alt="Robotics Project">
-      <h3>Robotic Arm Controller</h3>
-      <p>Bluetooth-controlled robotic arm with Arduino and custom Android app.</p>
+       <h3>soon . . .</h3>
+      <p>xx.</p>
       <div class="alexhub-tags">
-        <span>Arduino</span><span>Bluetooth</span><span>Android</span>
+        <span>xx</span><span>xx</span><span>xx</span>
       </div>
-      <a href="https://github.com/yourrepo" target="_blank">🔗 View on GitHub</a>
+      <a href="xx" target="_blank">🔗xx</a>
 
     </div>
 
@@ -898,12 +1057,22 @@ ul.breadcrumb li a:hover {
 
 <div class="footer-section">
   <div class="footer-column">
-    <h6>📁 Knowledge Hub</h6>
+    <h6>📁 Hub</h6>
     <ul class="footer-links">
- 		<li><a href="#"><i class="fas fa-book-open"style='font-size:24px;color:cyan'></i><b> Insight</b> ‘Ενέργεια & Ροή’</a></li>
+ 		<li><a href="#"><i class="fa fa-book-open"style='font-size:24px;color:cyan'></i><b> Insight</b> ‘Ενέργεια & Ροή’</a></li>
         <li><a href="#"><i class="fa fa-code" style='font-size:24px;color:purple'></i><b> CodeLab</b> ‘NeuroPulse’</a></li>
         <li><a href="#"><i class="fa fa-cogs" style='font-size:24px;color:green'></i><b> Project</b> ‘AutoMorph’</a></li>
-    </ul>
+        
+ <li><a href=""><i class="fa fa-file-alt" style="color: green;"></i><b> Publication</b>  'Η εξέλιξη των Η/Υ'</a></li>
+              <li><a href="http://scanfcode.com/category/front-end-development/">
+              <i class="fa fa-file-alt" style="color: green;"></i><b> Publication</b>  'Τεχνικές MPPT'
+              
+              </a></li>
+              <li><a href="http://scanfcode.com/category/back-end-development/"><i class="fa fa-code"style="color: purple;"></i><b> Dev</b>  'kremaλa'</a></li>
+              <li><a href="http://scanfcode.com/category/java-programming-language/"><i class="fas fa-cogs"></i><b> PROJECT</b>  'MICHATRON'</a></li>
+              <li><a href="http://scanfcode.com/category/android/"> <i class="fas fa-cogs"></i><b> PROJECT</b>  'LightSwich'</a></li>
+            </ul>        
+        
   </div>
 
   <div class="footer-column">
