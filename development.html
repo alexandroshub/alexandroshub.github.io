@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Μάθε προγραμματισμό και ανάπτυξη εφαρμογών με δωρεάν μαθήματα, ebooks και tutorials. C, C++, Python, HTML, CSS, JavaScript, VB και άλλα στο AlexandrosHub.">
+  <meta name="keywords" content="Προγραμματισμός, Ανάπτυξη, C, C++, Python, HTML, CSS, JavaScript, VB, Δωρεάν Μαθήματα, Ebooks, Tutorials, AlexandrosHub">
+  <meta name="author" content="AlexandrosHub">
+  <title>Developer Hub | AlexandrosHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9fdfc;
+      color: #333;
+      line-height: 1.8;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2196f3, #4caf50);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    section {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #e0f7fa;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      color: #2196f3;
+    }
+
+    .feature-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #4caf50;
+    }
+
+    .feature-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .resources {
+      margin: 3rem 0;
+    }
+
+    .resources a {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #2196f3;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .resources a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+      border-radius: 8px;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .intro {
+        font-size: 1.1rem;
+      }
+
+      iframe {
+        height: 220px;
+      }
+    }
+    
+    
+    
+    
+    
+/* Developer Hub Header Menu */
+.devhub-menu {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.devhub-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.devhub-menu li {
+  display: inline-block;
+}
+
+.devhub-menu a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.devhub-menu a:hover {
+  background: linear-gradient(90deg, rgba(180,180,180,0.4), rgba(100,200,180,0.4), rgba(100,180,220,0.4));
+  color: #fff;
+}
+    
+  </style>
+</head>
+<body>
+
+<!-- ////////////////////////// Developer Navigation ////////////////////////// -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* Base styling */
+.devnav-container {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(90deg, #2196f3, #4caf50);
+  color: white;
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 1000;
+}
+
+.devnav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.devnav-logo {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+.devnav-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1 1 100%;
+  margin-top: 0.5rem;
+}
+
+.devnav-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.devnav-menu a:hover {
+  background: linear-gradient(90deg, rgba(180,180,180,0.4), rgba(100,200,180,0.4), rgba(100,180,220,0.4));
+}
+
+/* Dropdown styling */
+.devnav-dropdown {
+  position: relative;
+}
+
+.devnav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(30, 30, 40, 0.95);
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.devnav-dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.devnav-dropdown-content a:hover {
+  background: rgba(100,180,220,0.2);
+  color: white;
+}
+
+.devnav-dropdown:hover .devnav-dropdown-content {
+  display: block;
+}
+
+/* Mobile toggle */
+.devnav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .devnav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .devnav-logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .devnav-toggle {
+    display: block;
+    text-align: right;
+    color: white;
+  }
+
+  .devnav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+  }
+
+  .devnav-menu.show {
+    display: flex;
+  }
+
+  .devnav-menu a {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .devnav-dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: rgba(30,30,40,0.9);
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<div class="devnav-container">
+  <div class="devnav-inner">
+    <a href="https://alexandroshub.github.io" class="devnav-logo">AlphaPi</a>
+    <div class="devnav-toggle" onclick="document.querySelector('.devnav-menu').classList.toggle('show')">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="devnav-menu">
+      <a href="https://alexandroshub.github.io/connect">Contact</a>
+      <a href="https://alexandroshub.github.io/mycv">My CV</a>
+      <a href="https://alexandroshub.github.io/projects.html">Portfolio</a>
+      <a href="https://alexandroshub.github.io/plus.ap.html">Plus +</a>
+      <div class="devnav-dropdown">
+        <a href="#">Automations ▾</a>
+        <div class="devnav-dropdown-content">
+          <a href="https://alexandroshub.github.io/iot.html">IoT</a>
+          <a href="https://alexandroshub.github.io/iot.html">Robotics</a>
+          <a href="https://alexandroshub.github.io/ai.html">AI</a>
+          <a href="https://alexandroshub.github.io/ardu22.html">Arduino</a>
+          <a href="https://alexandroshub.github.io/raspberrypi">Raspberry Pi</a>
+          <a href="https://alexandroshub.github.io/stem">STEAM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////// Developer Navigation ////////////////////////// -->
+
+
+<header>
+  <h1>Developer Hub</h1>
+  <p>Μάθε να προγραμματίζεις και να δημιουργείς εφαρμογές με σύγχρονα εργαλεία και δωρεάν εκπαιδευτικό υλικό.</p>
+</header>
+
+<section>
+  <p class="intro">
+    Ο προγραμματισμός είναι η βάση της σύγχρονης τεχνολογίας. Από embedded συστήματα και web εφαρμογές μέχρι αυτοματισμούς και AI, η γνώση γλωσσών όπως syntax, logic, structure σε C, C++, Python, HTML, CSS,  Git, VS Code, scripting, UI/UX techniqes , JavaScript και VB ανοίγει αμέτρητες δυνατότητες. Στο <strong>AlexandrosHub</strong> θα βρεις tutorials, ebooks και μαθήματα για να εξελιχθείς.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">💻</div>
+      <div class="feature-title">Γλώσσες Προγραμματισμού</div>
+      <div class="feature-desc">Μάθε C, C++, Python και VB για desktop, embedded και αυτοματισμούς.</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌐</div>
+      <div class="feature-title">Web Development</div>
+      <div class="feature-desc">Κατάκτησε HTML, CSS και JavaScript για δυναμικές και responsive ιστοσελίδες.</div>
+    </div>
+        <div class="feature">
+      <div class="feature-icon">⚙️</div>
+      <div class="feature-title">Automation & Scripting</div>
+      <div class="feature-desc">Explore Python, Bash, and JavaScript for automating tasks, building tools, and connecting systems intelligently.</div>
+    </div>
+   
+  </div>
+
+  <h2 style="margin-top:3rem;">🎥 Video Course</h2>
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLWKjhJtqVAbkFiqHnNaxpOPhh9tSWMXIF" allowfullscreen></iframe>
+  <p style="text-align:center; font-size:0.95rem;">JavaScript Full Course – freeCodeCamp</p>
+
+<h2>🎥 Embedded Video Course</h2>
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLPW8O6W-1chwyTzI3BHwBLbGQoPFxPAPM" allowfullscreen></iframe>
+  <p style="text-align:center; font-size:0.95rem;">Modern Embedded Systems Programming – Quantum Leaps</p>
+  
+  <div class="resources">
+    <h2>📚 Δωρεάν Ebooks & Μαθήματα</h2>
+    <a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript – Online Book</a>
+    <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank">GitHub: Free Programming Books</a>
+    <a href="https://www.learncpp.com/" target="_blank">LearnCpp.com – Οδηγός C++</a>
+    <a href="https://www.python-course.eu/python3_course.php" target="_blank">Python 3 Course – Python Course EU</a>
+        <a href="https://blog.bogozi.com/free-ebooks-for-developers/" target="_blank">Free eBooks for Developers – Bogozi</a>
+    <a href="https://www.infobooks.org/free-pdf-books/computers/web-development/" target="_blank">Web Development Books – InfoBooks</a>
+    
+ <h2>🧠 Learn to Code for Free</h2>
+ <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp – Full Curriculum</a>
+    <a href="https://cs50.harvard.edu/x/" target="_blank">CS50 – Harvard Intro to Computer Science</a>
+        <a href="https://www.hostinger.com/tutorials/learn-coding-online-for-free" target="_blank">Hostinger – 100+ Free Coding Sites</a>
+    <a href="https://mikkegoes.com/learn-to-code-for-free/" target="_blank">MikkeGoes – Beginner Coding Resources</a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">MDN Web Docs – HTML/CSS/JS Reference</a>
+    
+   <a href="https://www.codecademy.com/" target="_blank">Codecademy – Interactive Courses</a>
+  
+  </div>
+</section>
+
+<footer>
+  © 2026 AlexandrosHub | Ανάπτυξη με δημιουργικότητα
+</footer>
+
+</body>
+</html>
