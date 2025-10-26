@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Your Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent1: #0f3460;
+            --accent2: #1e9bff;
+            --accent3: #00d4aa;
+            --text: #f0f0f0;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--accent1));
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 10, 20, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent3);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            border-radius: 2px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: var(--accent3);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent2);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            transform: translateY(-3px);
+        }
+
+        /* Form Styles */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent2);
+            box-shadow: 0 0 0 2px rgba(30, 155, 255, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Subscribe Section */
+        .subscribe-section {
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .subscribe-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subscribe-form {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px 0 0 5px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .subscribe-form input:focus {
+            outline: none;
+            border-color: var(--accent2);
+        }
+
+        .subscribe-form button {
+            padding: 0 25px;
+            background: linear-gradient(to right, var(--accent2), var(--accent3));
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background: linear-gradient(to right, var(--accent3), var(--accent2));
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .burger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(10, 10, 20, 0.95);
+                width: 250px;
+                height: calc(100vh - 70px);
+                padding: 20px;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+
+            .subscribe-form input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .subscribe-form button {
+                border-radius: 5px;
+                padding: 12px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">AlphaPi</a>
+            
+            <div class="burger" id="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+      <li><a href="https://alexandroshub.github.io">Home</a></li>
+	  <li><a href="https://alexandroshub.github.io/projects.html">Projects</a></li>
+      <li><a href="https://alexandroshub.github.io/hiimalex">About.me</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Get in touch with me</h1>
+            <p>I'd love to hear from you. Send me a message and i'll respond as soon as possible.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact me</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Athens, GR</p>
+                    <p><i class="fas fa-phone"></i><a href="tel:+306940548867" target="_blank" class="contact-button" style="text-decoration: none;color:white;"> +30 694 0548 867</a></p>
+                    <p><i class="fas fa-envelope"></i><a href="mailto:alexispapy@gmail.com?Subject=Web%20Email" target="_top"style="text-decoration: none;color:white;" >alexispapy@outlook.com</a></p>
+                    <p><i class="fas fa-clock"></i> Mon - Fri: 6:00 PM - 9:00 PM</p>
+                    
+                    <h3 style="margin-top: 30px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/A_Papaspyrou"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/alexandroshub/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/alexandrospapaspyrou/"><i class="fab fa-linkedin-in"></i></a>
+						<a href="https://bio.link/alphapi"><i class="fab fa-hubspot"></i></a> 
+                    </div>
+                    
+                    <br>
+<button type="submit" class="btn" ><a href="https://wa.me/306940548867?text=Hello%20Alexandros%2C%20I%20saw%20your%20website!" target="_blank" class="contact-button"style="text-decoration: none;color:white;"><i class="fab fa-whatsapp"style="text-decoration: none;color:white;" ></i>WhatsApp</a></button>                    
+                </div>
+                
+    <div class="contact-form">
+    <form action="https://formspree.io/f/movpvaon" method="POST" id="contactForm">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        
+ <!-- <div class="form-group">
+            <label for="file">Upload File</label>
+            <input type="file" id="file" name="file" class="form-control" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt">
+            <small style="display: block; margin-top: 5px; opacity: 0.7;">Accepted formats: PDF, DOC, JPG, PNG, TXT (Max: 10MB)</small>
+        </div> -->
+        
+        <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Subscribe Section -->
+<section class="subscribe-section">
+    <div class="container subscribe-container">
+        <h2 class="section-title">Stay Updated</h2>
+        <p>Subscribe to our newsletter to receive updates and exclusive offers.</p>
+        
+        <!-- Google Forms Subscription Form -->
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScX3UDy7ZsknWD9eQgjf5f_IoutnWf8T6NnimdEwR3Wc9xVsA/formResponse" 
+              method="POST" 
+              class="subscribe-form" 
+              id="subscribeForm"
+              target="_blank">
+            
+            <!-- Email Field -->
+            <input type="email" 
+                   name="entry.123456789" 
+                   placeholder="Your email address" 
+                   required 
+                   class="form-control">
+
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+        
+        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">
+            We respect your privacy. Unsubscribe at any time.
+        </p>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+       
+        <div class="container footer-content">
+            <div class="copyright">
+               <a href="https://alexandroshub.github.io/welcome21.html" title="Visit AlexandrosHub" style="text-decoration: none;color:white;">▞▚ ▛ AlexandrosHub</a>
+            </div>
+            <div class="footer-links">
+                 |  <a href="https://alexandroshub.github.io/about"style="text-decoration: none;color:white;">Privacy Statement & Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu toggle
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Form submission handling
+     contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        } else {
+            alert('There was an error sending your message. Please try again.');
+        }
+    } catch (error) {
+        alert('There was an error sending your message. Please try again.');
+    }
+});
+        
+        subscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            subscribeForm.reset();
+        });   
+
+    </script>
+</body>
+</html>
