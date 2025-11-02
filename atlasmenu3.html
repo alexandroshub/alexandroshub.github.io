@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AlphaPi — Modern Header Navigation</title>
+
+  <!-- Icons & Font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0a0a0a;
+      --glass: rgba(10,10,10,0.72);
+      --border: #16171b;
+      --text: #e8eaf0;
+      --muted: #b7bcc9;
+      --brand-1: #1e9bff;
+      --brand-2: #00d4aa;
+      --hover: #16181d;
+      --focus: rgba(46,125,195,0.12);
+      --shadow: 0 12px 24px rgba(0,0,0,0.35);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --transition: 260ms cubic-bezier(.2,.7,.2,1);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -20%, #0f2237 0%, transparent 40%),
+        radial-gradient(800px 400px at 90% -10%, #05362b 0%, transparent 45%),
+        linear-gradient(180deg,#0a0a0a 0%,#0d0f13 100%);
+    }
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    .header{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:var(--glass);
+      border-bottom:1px solid var(--border);
+      box-shadow:var(--shadow);
+      transition:background var(--transition),border-color var(--transition),box-shadow var(--transition);
+    }
+    .header.scrolled{ background:rgba(8,10,12,0.92); border-color:#222632; box-shadow:0 10px 28px rgba(0,0,0,0.45); }
+
+    .nav-wrap{
+      max-width:1220px;margin:0 auto;padding:14px 20px;
+      display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;
+    }
+
+    /* Branding */
+    .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .brand .logo{font-family:'Audiowide',sans-serif;font-size:1.5rem;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+    .brand .tag{padding:4px 10px;font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:999px;background:#0e1218}
+
+    /* Primary nav */
+    .nav{display:flex;align-items:center;justify-content:center;gap:6px}
+    .nav>li{list-style:none;position:relative}
+    .nav-link{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:var(--radius-sm);
+      color:var(--text);font-weight:500;transition:background var(--transition),color var(--transition),transform var(--transition);
+    }
+    .nav-link:hover{background:var(--hover);color:#f2f5fb}
+    .nav-link:focus-visible{outline:0;box-shadow:0 0 0 6px var(--focus)}
+
+    .icon{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--muted);transition:color var(--transition),transform var(--transition)}
+    .nav-link:hover .icon{color:var(--brand-2);transform:translateY(-1px)}
+
+    /* Dropdown */
+    .dropdown{position:relative}
+    .menu{
+      position:absolute;top:calc(100% + 10px);left:0;min-width:260px;padding:10px;background:#0c0f14;border:1px solid var(--border);
+      border-radius:var(--radius);box-shadow:var(--shadow);opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity var(--transition),transform var(--transition)
+    }
+    .dropdown:hover .menu,.dropdown:focus-within .menu{opacity:1;transform:translateY(0);pointer-events:auto}
+    .menu-section{padding:8px 10px 6px;margin-bottom:6px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+    .menu-list{display:grid;gap:4px}
+    .menu-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;transition:background var(--transition),color var(--transition),transform var(--transition)}
+    .menu-item:hover{background:var(--hover)}
+    .menu-item i{color:var(--muted)}
+    .menu-item:hover i{color:var(--brand-1)}
+
+    /* CTA */
+    .cta{display:flex;align-items:center;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:#0d1218;color:var(--text);font-weight:600;transition:transform var(--transition),background var(--transition),border-color var(--transition)}
+    .btn:hover{transform:translateY(-1px);background:#121720;border-color:#252a36}
+    .btn-primary{background:linear-gradient(90deg,var(--brand-1),var(--brand-2));border:none;color:#041218}
+    .btn-primary:hover{filter:brightness(1.08)}
+
+    /* Burger (always visible but styled differently across breakpoints) */
+    .burger{
+      display:inline-flex;width:48px;height:48px;border-radius:12px;border:1px solid var(--border);background:#0e1218;align-items:center;justify-content:center;color:var(--text);transition:background var(--transition),transform var(--transition),box-shadow var(--transition);
+      cursor:pointer;
+    }
+    .burger:hover{background:#141925;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .burger:focus{outline:0;box-shadow:0 0 0 6px var(--focus)}
+    /* desktop emphasis: darker, stronger border and light glow for contrast */
+    @media(min-width:1000px){
+      .burger{ background:#0b0d10; border:1px solid rgba(255,255,255,0.06); box-shadow: 0 6px 20px rgba(9,15,20,0.6), 0 0 18px rgba(30,155,255,0.06); color: #f5fbff }
+    }
+
+    /* Mobile panel */
+    .panel{
+      position:fixed;top:0;right:0;height:100vh;width:86vw;max-width:380px;background:#0b0e13;border-left:1px solid var(--border);
+      box-shadow:-24px 0 48px rgba(0,0,0,0.45);transform:translateX(100%);opacity:0;transition:transform var(--transition),opacity var(--transition);z-index:1001;display:grid;grid-template-rows:auto 1fr auto;
+    }
+    .panel.open{transform:translateX(0);opacity:1}
+    .panel-header{display:flex;align-items:center;justify-content:space-between;padding:18px 18px;border-bottom:1px solid var(--border)}
+    .panel-body{padding:16px;overflow:auto}
+    .panel-group{display:grid;gap:10px}
+    .panel-item{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;background:#0f131b}
+    .panel-item:hover{background:#141a24}
+    .panel-footer{padding:16px;border-top:1px solid var(--border)}
+
+    /* Responsive behavior */
+    @media(max-width:1000px){
+      .nav{display:none}
+      /* burger stays visible as mobile trigger */
+    }
+    @media(max-width:560px){
+      .brand .tag{display:none}
+      .nav-wrap{grid-template-columns:auto 1fr auto}
+    }
+
+    /* Demo spacing (optional) */
+    .hero-space{height:120vh;padding-top:90px}
+  </style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="nav-wrap">
+    <!-- Brand -->
+    <a href="https://alexandroshub.github.io" class="brand" aria-label="AlphaPi home">
+      <span class="logo">AlphaPi</span>
+      <span class="tag">Handcrafted</span>
+    </a>
+
+    <!-- Primary nav (hidden on small screens) -->
+    <ul class="nav" role="menubar" aria-label="Primary">
+      <li><a class="nav-link" href="#about" role="menuitem"><i class="fa fa-th-large icon"></i> About</a></li>
+      <li><a class="nav-link" href="#portf" role="menuitem"><i class="fa fa-folder-open icon"></i> Projects</a></li>
+      <li><a class="nav-link" href="#plus" role="menuitem"><i class="fa fa-plus-square icon"></i> Hub</a></li>
+      <li><a class="nav-link" href="https://alexandroshub.github.io/blog" role="menuitem"><i class="fa fa-book icon"></i> Blog</a></li>
+      <li><a class="nav-link" href="https://alexandroshub.github.io/gallery" role="menuitem"><i class="fa fa-image icon"></i> Gallery</a></li>
+
+      <!-- Dropdown: More -->
+      <li class="dropdown">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bars icon"></i> More <i class="fa fa-chevron-down" style="font-size:12px;color:var(--muted)"></i>
+        </button>
+        <div class="menu" role="menu" aria-label="More submenu">
+          <div class="menu-section">Main</div>
+          <div class="menu-list">
+            <a class="menu-item" href="https://alexandroshub.github.io/emailform" role="menuitem"><i class="fa fa-envelope"></i> Contact</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/mycv" role="menuitem"><i class="fa fa-id-card"></i> My CV</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/projects.html" role="menuitem"><i class="fa fa-folder-open"></i> Portfolio</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/plus.ap.html" role="menuitem"><i class="fa fa-plus-circle"></i> Digital Hub</a>
+          </div>
+
+          <div class="menu-section">Automations</div>
+          <div class="menu-list">
+            <a class="menu-item" href="https://alexandroshub.github.io/iot.html"><i class="fa fa-wifi"></i> IoT</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/robotics.html"><i class="fa fa-android"></i> Robotics</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/ai.html"><i class="fa fa-cogs"></i> AI</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/ardu22.html"><i class="fa fa-microchip"></i> Arduino</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/raspberrypi"><i class="fa fa-microchip"></i> Raspberry Pi</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/stem"><i class="fa fa-flask"></i> STEAM</a>
+          </div>
+
+          <div class="menu-section">Creative side</div>
+          <div class="menu-list">
+            <a class="menu-item" href="https://alexandroshub.github.io/art.html"><i class="fa fa-paint-brush"></i> Art Gallery</a>
+          </div>
+
+          <div class="menu-section">Resources</div>
+          <div class="menu-list">
+            <a class="menu-item" href="https://alexandroshub.github.io/docs"><i class="fa fa-file-lines"></i> Docs</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/tools"><i class="fa fa-wrench"></i> Tools</a>
+            <a class="menu-item" href="https://alexandroshub.github.io/community"><i class="fa fa-users"></i> Community</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Actions + Burger -->
+    <div class="cta">
+      <a class="btn" href="https://alexandroshub.github.io/emailform" aria-label="Contact"><i class="fa fa-envelope"></i> Contact</a>
+      <a class="btn btn-primary" href="https://alexandroshub.github.io/projects.html" aria-label="Explore"><i class="fa fa-rocket"></i> Explore</a>
+      <!-- Primary burger used for mobile and visible on desktop with stronger style -->
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i class="fa fa-bars" style="font-size:16px"></i></button>
+    </div>
+  </div>
+
+  <!-- Mobile panel -->
+  <aside class="panel" id="panel" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="panel-header">
+      <span class="logo" style="font-family:Audiowide;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;">AlphaPi</span>
+      <button class="burger" id="close" aria-label="Close menu"><i class="fa fa-xmark"></i></button>
+    </div>
+    <div class="panel-body">
+      <nav class="panel-group" aria-label="Mobile primary">
+        <a class="panel-item" href="#about"><i class="fa fa-th-large"></i> About</a>
+        <a class="panel-item" href="#portf"><i class="fa fa-folder-open"></i> Projects</a>
+        <a class="panel-item" href="#plus"><i class="fa fa-plus-square"></i> Hub</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/blog"><i class="fa fa-book"></i> Blog</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/gallery"><i class="fa fa-image"></i> Gallery</a>
+      </nav>
+
+      <div class="menu-section" style="margin-top:12px">More</div>
+      <nav class="panel-group" aria-label="Mobile more">
+        <a class="panel-item" href="https://alexandroshub.github.io/emailform"><i class="fa fa-envelope"></i> Contact</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/mycv"><i class="fa fa-id-card"></i> My CV</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/projects.html"><i class="fa fa-folder-open"></i> Portfolio</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/plus.ap.html"><i class="fa fa-plus-circle"></i> Digital Hub</a>
+      </nav>
+
+      <div class="menu-section" style="margin-top:12px">Automations</div>
+      <nav class="panel-group" aria-label="Mobile automations">
+        <a class="panel-item" href="https://alexandroshub.github.io/iot.html"><i class="fa fa-wifi"></i> IoT</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/robotics.html"><i class="fa fa-android"></i> Robotics</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/ai.html"><i class="fa fa-cogs"></i> AI</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/ardu22.html"><i class="fa fa-microchip"></i> Arduino</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/raspberrypi"><i class="fa fa-microchip"></i> Raspberry Pi</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/stem"><i class="fa fa-flask"></i> STEAM</a>
+      </nav>
+
+      <div class="menu-section" style="margin-top:12px">Creative side</div>
+      <nav class="panel-group" aria-label="Mobile creative">
+        <a class="panel-item" href="https://alexandroshub.github.io/art.html"><i class="fa fa-paint-brush"></i> Art Gallery</a>
+      </nav>
+
+      <div class="menu-section" style="margin-top:12px">Resources</div>
+      <nav class="panel-group" aria-label="Mobile resources">
+        <a class="panel-item" href="https://alexandroshub.github.io/docs"><i class="fa fa-file-lines"></i> Docs</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/tools"><i class="fa fa-wrench"></i> Tools</a>
+        <a class="panel-item" href="https://alexandroshub.github.io/community"><i class="fa fa-users"></i> Community</a>
+      </nav>
+    </div>
+    <div class="panel-footer">
+      <a class="btn" style="width:100%;justify-content:center" href="https://alexandroshub.github.io/emailform"><i class="fa fa-envelope"></i> Get in touch</a>
+    </div>
+  </aside>
+</header>
+
+<!-- Demo hero space (remove for production) -->
+<section class="hero-space"></section>
+
+<script>
+  // Header scrolled state
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 6);
+  document.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // Mobile panel controls
+  const burger = document.getElementById('burger');
+  const closeBtn = document.getElementById('close');
+  const panel = document.getElementById('panel');
+
+  function openPanel(){
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    burger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!panel.classList.contains('open')) return;
+    const withinPanel = panel.contains(e.target);
+    const withinBurger = burger.contains(e.target);
+    if (!withinPanel && !withinBurger) closePanel();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+  });
+
+  // Accessible dropdown toggles
+  document.querySelectorAll('.dropdown > button.nav-link').forEach(btn => {
+    const menu = btn.parentElement.querySelector('.menu');
+    btn.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      if (!open){
+        menu.style.opacity = '1'; menu.style.transform = 'translateY(0)'; menu.style.pointerEvents = 'auto';
+      } else {
+        menu.style.opacity = '0'; menu.style.transform = 'translateY(-6px)'; menu.style.pointerEvents = 'none';
+      }
+    });
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown'){ e.preventDefault(); const first = menu.querySelector('.menu-item'); if(first) first.focus(); }
+    });
+    menu.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape'){ btn.setAttribute('aria-expanded','false'); menu.style.opacity='0'; menu.style.transform='translateY(-6px)'; menu.style.pointerEvents='none'; btn.focus(); }
+    });
+  });
+</script>
+
+</body>
+</html>
