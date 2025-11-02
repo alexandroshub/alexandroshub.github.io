@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pearson-Inspired Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #000;
+      --accent: #FFD200;
+      --light: #f5f5f5;
+      --dark: #222;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: var(--primary);
+    }
+
+    nav {
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+
+    header {
+      background: url('https://64.media.tumblr.com/e7784b7eabaae567ae186f1c44c71edc/afc46cbefaec4590-c6/s1280x1920/ed6afe486c7d5f1c951e935ffa71c41aefe4f554.png ') center/cover no-repeat;
+      height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 15px 30px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e6be00;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div><strong>  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'><h1 class="footer-title" style="font-family: 'Audiowide';text-decoration: none;color:white;">AlphaPi</h1></strong></div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">K–12</a>
+      <a href="#">College</a>
+      <a href="#">Work</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>Unlock Learning Potential</h1>
+      <p>Empowering learners at every stage of life.</p>
+      <a href="#" class="cta-button">Explore Learning</a>
+    </div>
+  </header>
+
+  <section>
+    <h2 style="text-align:center;">What We Offer</h2>
+    
+    
+    
+    
+    
+    <div class="cards">
+      <div class="card"> <h3>K–12 Education</h3> <p>Curriculum and tools for school success.</p> </div>
+      <div class="card"> <h3>Higher Education</h3> <p>College-level resources and digital platforms.</p> </div>
+      <div class="card"> <h3>Workforce Skills</h3> <p>Upskilling and career development programs.</p> </div>
+    </div>
+  </section>
+
+  <footer>
+   
+   
+   
+ZX
+   
+  </footer>
+
+  <script>
+    // Scroll-triggered animation
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
