@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pearson-Inspired Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #000;
+      --accent: #FFD200;
+      --light: #f5f5f5;
+      --dark: #222;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: var(--primary);
+    }
+
+    nav {
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+
+    header {
+      background: url('https://64.media.tumblr.com/3dfc01c82be2318e418fd1b181a25308/387eabfc55705902-75/s1280x1920/a419ac727d45a0082d37428b488215510fbf68d7.jpg ') center/cover no-repeat;
+      height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 15px 30px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e6be00;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div><strong>  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'><h1 class="footer-title" style="font-family: 'Audiowide';text-decoration: none;color:white;">AlphaPi</h1></strong></div>
+    <div>
+      <a href="https://alexandroshub.github.io/">Home</a>
+      <a href="https://alexandroshub.github.io/emailform">contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>Swarm Robotics</h1>
+      <p>The Limits of Collective Intelligence: A Critical Analysis of Decentralized Decision Making in Swarm Robotics Systems</p>
+      <a href="#" class="cta-button">▞▚ ▛</a>
+    </div>
+  </header>
+
+  <section>
+    <h2 style="text-align:center;">Whats new</h2>
+    
+    
+    
+    
+    
+    <div class="cards">
+      <div class="card"> <h3>links</h3>
+
+  <ul>
+    <li><a href="https://www.mdpi.com/1424-8220/21/6/2062">mdpi</a></li>
+    <li><a href="link.springer.com/chapter/10.1007/978-3-642-15461-4_22">springer</a></li>
+     <li><a href="https://en.wikipedia.org/wiki/Swarm_robotics">wikipedia</a></li>
+     
+     <!--
+ https://el.wikipedia.org/wiki/%CE%91%CF%85%CF%84%CE%BF%CE%BC%CE%B1%CF%84%CE%B9%CF%83%CE%BC%CF%8C%CF%82
+ 
+ https://en.wikipedia.org/wiki/Robotics
+ 
+     -->
+  </ul>    </div>
+      <div class="card"> 
+      
+      <h3>video</h3>
+       <ul>
+       <!--
+      https://www.youtube.com/watch?v=nKMp5tyM_rs
+      
+      https://www.youtube.com/watch?v=RPnexOEZT88
+
+https://www.youtube.com/watch?v=bPJpaqNhKbU
+
+https://www.youtube.com/watch?v=stzQNjtDg0g
+
+https://www.youtube.com/watch?v=I70TeUfwfM0
+       -->
+    <li><a href="">soon..</a></li>
+   
+  </ul>  
+      </div>
+      <div class="card"> <h3>notes</h3> <!--
+    http://www.teiath.gr/userfiles/lamveny/documents/ptyxiakes/odigos_syggrafis__vivliografikis_ptyxiakis.pdf
+    
+    
+      https://www.zotero.org/
+      https://cursor.com/
+      
+      --></div>
+    </div>
+  </section>
+
+  <footer>
+       
+        <div class="container footer-content">
+            <div class="copyright">
+               <a href="https://alexandroshub.github.io/welcome21.html" title="Visit AlexandrosHub" style="text-decoration: none;color:white;">▞▚ ▛ AlexandrosHub</a>
+            </div>
+            <div class="footer-links">
+                 |  <a href="https://alexandroshub.github.io/about"style="text-decoration: none;color:white;">Privacy Statement & Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+  <script>
+    // Scroll-triggered animation
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
