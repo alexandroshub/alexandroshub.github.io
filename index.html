@@ -1,6 +1,3 @@
-
-
-
 <!--==========================================================================
 
 	  ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
@@ -213,7 +210,7 @@
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(to top, rgba(239,140,53),rgb(218,39,73), rgba(189,24,133));
+background-image: linear-gradient(to bottom,#2D2D30 0%,#1e9bff 25%,#00d4aa 75%,#2D2D30 100%);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -486,14 +483,18 @@ body {
 
 /* Logo styling - vertically centered */
 .navbar .navbar-header .logo {
-    display: inline-block;
-    line-height: 55px;
-    vertical-align: middle;
-    padding: 0 10px;
-    font-family: 'Audiowide';
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 55px;
+            font-family: 'Audiowide';
+            display: inline-block;
+            vertical-align: middle;
+			background: linear-gradient(to right, #1e9bff, #00d4aa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+		    padding: 0 10px;
 }
 
 /* Menu links */
@@ -878,7 +879,22 @@ Join me as I explore the world of automations, robotics and the Internet of Thin
  <p style="text-align:center; margin-top:2.5rem;">
       <a href="https://alexandroshub.github.io/projects.html" style="background: linear-gradient(90deg,#2d7a69,#2e94b9); color:#fff; font-weight:700; padding:1rem 2rem; border-radius:8px; text-decoration:none; box-shadow:0 4px 10px rgba(46,148,185,0.4); transition:background-color 0.3s ease;">
         🚀 Δες τα Έργα μου
-      </a>
+      </a>    &emsp;
+      <a href="https://alexandroshub.github.io/mycv.html" 
+style="
+display:inline-block;
+font-size:1.5rem;
+font-weight:700;
+background: linear-gradient(135deg, #ef8c35, #da2749, #bd1885);
+color:#fff;
+padding:14px 24px;
+border-radius:12px;
+text-decoration:none;
+box-shadow: 0 4px 12px rgba(218,39,73,0.3); 
+transition: transform 0.3s ease, 
+box-shadow 0.3s ease;
+
+"onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 16px rgba(218,39,73,0.4)'"onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(218,39,73,0.3)'" > Δες τo CV μου </a>
     </p>
     
     
@@ -1235,26 +1251,12 @@ function topFunction() {
   <div class="about-section">
  <center>
    <p style="font-size: 1.3rem;"><strong>👨‍💻 Ποιος είμαι:</strong> Μεγάλωσα στην Αθήνα και από μικρή ηλικία εξερευνώ τον κόσμο της τεχνολογίας. Έχω αφιερώσει τη διαδρομή μου στην καινοτομία, παρακολουθώντας σεμινάρια, ημερίδες και δημιουργώντας έργα που συνδυάζουν λογική, αισθητική και λειτουργικότητα.</p>
+ <p class="cta">🚀 Εξερεύνησε μαζί μου το αύριο της τεχνολογίας.</p>
 
-<a href="https://alexandroshub.github.io/mycv.html" 
-style="
-display:inline-block;
-font-size:1.5rem;
-font-weight:700;
-background: linear-gradient(135deg, #ef8c35, #da2749, #bd1885);
-color:#fff;
-padding:14px 24px;
-border-radius:12px;
-text-decoration:none;
-box-shadow: 0 4px 12px rgba(218,39,73,0.3); 
-transition: transform 0.3s ease, 
-box-shadow 0.3s ease;
 
-"onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 16px rgba(218,39,73,0.4)'"onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(218,39,73,0.3)'" > Δες τo CV μου </a>
 </center>
  
  
- <p class="cta">🚀 Εξερεύνησε μαζί μου το αύριο της τεχνολογίας.</p>
   </div>
 </section>
 
@@ -1534,12 +1536,14 @@ box-shadow 0.3s ease;
  <style> ddaa {  font-size: 24px;   background: -webkit-linear-gradient(rgba(239,140,53),rgb(218,39,73), rgba(189,24,133));  -webkit-background-clip: text;  -webkit-text-fill-color: transparent;}</style>
 
 </div>
+<div id="portf"><!--
 
-<div id="portf" class="bgimg-2">
+<div id="portf" class="bgimg-2"><!--
   <div class="caption">
   <span class="border" style="font-size:25px;color: #f7f7f7;">Power of Workflows</span>
-  </div>
+  </div>-->
 </div>
+
 
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
@@ -1618,6 +1622,10 @@ har {
 </div>
  <center>
  
+
+<a href="https://alexandroshub.github.io/plus.ap.html" class="promo-button">Δές τα στο <strong>Portfolio Hub</strong> και εμπνεύσου</a>
+
+<!--
  <style>
   
 
@@ -1707,7 +1715,6 @@ har {
 
     </style>
 
-
     <div class="button-container">
         <div class="button-wrapper">
             <a href="https://alexandroshub.github.io/porto.ap.html" class="big-button">
@@ -1715,7 +1722,7 @@ har {
             </a>
         </div>
     </div>
-  
+  -->
 </center></div></div>
 
 <!--
@@ -1756,7 +1763,7 @@ har {
     <a href="https://alexandroshub.github.io/plus.ap.html" class="promo-button">Επισκέψου το <strong>Digital Hub</strong> και ξεκίνα το ταξίδι σου</a>
     </div>
   </section>   <br><br>
-  <div  id="contact" class="bgimg-3"><span class="border" style="font-size:23px;color: #2d2d30;"> <span p style="  font-family: 'Inter', sans-serif;
+ <div  id="contact" class="bgimg-3"><span class="border" style="font-size:23px;color: #2d2d30;"> <span p style="  font-family: 'Inter', sans-serif;
 background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">&nbsp; LETS GET IN TOUCH: </span> <a href=" https://www.instagram.com/alexandroshub/ " style="background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;"><b><i class="fa fa-instagram w3-hover"></i></b></a>
 </span></div>
 
@@ -1836,35 +1843,10 @@ background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: t
 }
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  </div>
 <!--
 <div style="color: #525252;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
 
-<h1 class="title"><span class="gradient-text"> PLUS </span></h1>
- <p> Καλωσόρισες στην ενότητα PLUS του AlexandrosHub – το πιο ζωντανό σημείο συνάντησης για όποιον αγαπά την τεχνολογία και θέλει να παραμείνει πάντα στην αιχμή της πληροφορίας! </p>  <ddaa><b>Η Ψηφιακή Γωνιά Τεχνολογικής Έμπνευσης 🚀 </b></ddaa>
-<!--
 Τι θα βρεις στο PLUS;
 
 Blogs & Insightful Articles: Ανακαλύψτε πρωτότυπα άρθρα, αναλύσεις και οδηγούς γύρω από automation, IoT, ρομποτική και σύγχρονα τεχνολογικά trends. Διάβασε backstage εμπειρίες από projects, mini-tutorials και inspo-posts για το πώς αλλάζει η τεχνολογία την καθημερινότητά μας.
@@ -1879,10 +1861,7 @@ Extra Bits: Εδώ θα βρεις και προτάσεις για eBooks, even
 PLUS σημαίνει “άποψη, γνώση, έμπνευση και τεχνο-διασκέδαση”, όλα σε ένα σημείο.
 Φόρτισε το μυαλό σου με καινοτομία!
 -- >
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#menu">+ B</a></li>
-    <li><a data-toggle="tab" href="#menu1">+ P</a></li>
-  </ul>
+  
 
   <div class="tab-content">
     <div id="menu" class="tab-pane fade in active">
@@ -1895,13 +1874,9 @@ PLUS σημαίνει “άποψη, γνώση, έμπνευση και τεχ�
             <span class="w3-large"><b>Εισαγωγή στα ηλεκτρονικά</b> </span><br><span>Εισαγωγή στα ηλεκτρονικά στην ηλεκτρολογία στα συστήματα και στους αυτοματισμούς.</span></a>
           </li>
         </ul><br>
-        <button onclick="window.location.href='https://medium.com/@papaspyrou.alexandros'" alt="Medium blog logo" style="width:40;height:2;" title="Visit AlexandrosHub" alt="Visit AlexandrosHub">Medium Blog</button><br><br>
-         <button onclick="window.location.href='https://alexandroshub.wordpress.com'" alt="AP logo" style="width:60px;height:60px;" title="Visit PLUS"><img class="w3-image w3-round-large" src="https://64.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" alt="Buildings" width="90" height="90"></button>
-         <button onclick="window.location.href='https://alexispapy.tumblr.com'" alt="AP logo" style="width:60px;height:60px;" title="Visit +"><img class="w3-image w3-round-large" src="https://64.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" alt="Buildings" width="90" height="90"></button>
-         <button onclick="window.location.href='https://ap-otr.tumblr.com'" alt="AP logo" style="width:60px;height:60px;" title="Visit OTR"><img class="w3-image w3-round-large" src="https://64.media.tumblr.com/1a28f3759c3dcb54570d754893844188/tumblr_p2qvm8VJG21si59zfo1_400.png" alt="Buildings" width="90" height="90"></button>
    
    </div> 
-  <!--iv id="menu1" class="tab-pane fade">
+  <!-- iv id="menu1" class="tab-pane fade">
       <h2>POD POSTS</h2>
         <p>Στη σειρά podcasting  <a href=" https://anchor.fm/alexandroshub"><b><i class="fa fa-podcast" aria-hidden="true"></i><font color="#43e97b"> PlusTechShow</font></b></a> θα ακούσεις οτιδήποτε μπορείς να φανταστείς γύρω από την τεχνολογία την επιστήμη την καθημερινότητά σου το παρελθόν το παρόν και το μέλλον με βάση μας σε αυτό το ταξίδι στην ιστορία και στην πραγματικότητα του αυτοματισμού.</p>
 <!--  <iframe src="https://open.spotify.com/embed-podcast/episode/1c8wBnBxQpLnapoVlit2AE" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
@@ -1917,8 +1892,6 @@ PLUS σημαίνει “άποψη, γνώση, έμπνευση και τεχ�
      -->
      <!-- 
       
-      <button type = ".myButton" type = "submit" name = "ap" value = "ap" onclick="window.location.href='https://ap-otr.tumblr.com/'">
-<p>need a pass!</p><img src="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" alt="AP logo" style="width:60px;height:60px;"></button>
 
  
 <style>
@@ -2096,8 +2069,11 @@ function showSlides(n) {
 
 
 
+ 
 
 	 <footer class="footer">
+
+
  <div class="footer-bg">
                     <div>
                          <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'><h1 class="footer-title" style="font-family: 'Audiowide';text-decoration: none;color:white;">AlphaPi</h1>
