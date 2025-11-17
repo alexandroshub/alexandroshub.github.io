@@ -1,0 +1,49 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', sans-serif; background-color: #f0f4f8; scroll-behavior: smooth; transition: background 0.3s, color 0.3s; }
+body.dark { background-color: #121212; color: #e0e0e0; }
+
+header { position: sticky; top: 0; z-index: 1000; background: linear-gradient(to right, #1e9bff, #00d4aa); box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: background 0.3s; }
+body.dark header { background: linear-gradient(to right, #1e1e1e, #2c2c2c); }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; color: #fff; }
+
+.logo { font-size: 1.4rem; font-weight: 700; }
+
+.nav-links { list-style: none; display: flex; gap: 1rem; }
+.nav-links a { text-decoration: none; color: #fff; font-weight: 500; transition: color 0.2s ease; }
+body.dark .nav-links a { color: #e0e0e0; }
+.nav-links a:hover, .nav-links a.active { color: #0a2; font-weight: 700; }
+
+.dropdown { position: relative; }
+.dropdown-menu { position: absolute; top: 100%; left: 0; background-color: #0f1f2f; display: none; flex-direction: column; min-width: 160px; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+body.dark .dropdown-menu { background-color: #222; }
+.dropdown-menu li { padding: 0.6rem 0.9rem; }
+.dropdown-menu li a { color: #fff; }
+.dropdown:hover .dropdown-menu { display: flex; }
+
+.btn { background-color: #fff; padding: 0.5rem 0.9rem; border-radius: 6px; color: #00d4aa; font-weight: 700; text-decoration: none; }
+.btn:hover { background-color: #e6fbf7; }
+
+/* Burger menu */
+.burger { display: none; flex-direction: column; cursor: pointer; margin-left: 0.5rem; }
+.burger div { width: 26px; height: 3px; background-color: white; margin: 4px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links { position: absolute; top: 64px; left: 0; width: 100%; flex-direction: column; background-color: #0f1f2f; display: none; padding: 0.75rem 1rem; }
+  body.dark .nav-links { background-color: #222; }
+  .nav-links.show { display: flex; }
+  .dropdown:hover .dropdown-menu { position: static; }
+  .burger { display: flex; }
+}
+
+/* Burger animation when active */
+.burger.active div:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.active div:nth-child(2) { opacity: 0; }
+.burger.active div:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Theme toggle */
+.toggle-btn { background: none; border: 2px solid #00d4aa; color: #fff; padding: 0.35rem 0.7rem; border-radius: 6px; cursor: pointer; font-weight: 700; margin-left: 0.5rem; transition: all 0.25s; }
+.toggle-btn:hover { background-color: #00d4aa; color: #043; }
+body.dark .toggle-btn { border-color: #00d4aa; color: #e0e0e0; }
