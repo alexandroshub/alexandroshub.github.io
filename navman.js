@@ -1,7 +1,7 @@
 // Load the fragment, then initialize interactions
 async function loadNavbar() {
   const mount = document.getElementById('navbar');
-  const res = await fetch('navman.html');
+  const res = await fetch('https://alexandroshub.github.io/navman.html');
   const html = await res.text();
   mount.innerHTML = html;
 
