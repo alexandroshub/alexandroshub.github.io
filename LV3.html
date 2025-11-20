@@ -1,4 +1,5 @@
 
+
 <!--==========================================================================
 
 	  ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
@@ -1274,196 +1275,199 @@ function topFunction() {
   </p>
 
 
- <div class="hero-links">
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* ===========================
+   Hero Section με animated background
+   =========================== */
+.hubwow-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(90deg, rgba(33,150,243,0.5), rgba(76,175,80,0.5));
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(33,150,243,0.25), 0 6px 20px rgba(76,175,80,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated cloud-like overlay */
+.hubwow-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(255,255,255,0.1) 0%, transparent 70%);
+  background-size: 200% 200%;
+  animation: hubwow-cloudmove 18s linear infinite;
+  z-index: 0;
+}
+
+@keyframes hubwow-cloudmove {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 100%; }
+}
+
+.hubwow-hero h1,
+.hubwow-hero .hubwow-lead,
+.hubwow-links {
+  position: relative;
+  z-index: 1; /* keep text above animated overlay */
+}
+
+.hubwow-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: -webkit-linear-gradient(#fff,#e0f7fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hubwow-hero .hubwow-lead {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #f0fdf4;
+}
+
+/* ===========================
+   Links Grid
+   =========================== */
+.hubwow-links {
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.hubwow-links p {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.hubwow-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.hubwow-links li {
+  perspective: 1000px;
+}
+
+.hubwow-links a {
+  display: block;
+  padding: 20px;
+  border-radius: 18px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: #0f172a;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hubwow-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,#2196f3,#4caf50);
+  opacity: 0.15;
+  transition: opacity 0.4s ease;
+}
+
+.hubwow-links a:hover {
+  transform: translateY(-8px) rotateX(6deg);
+  box-shadow: 0 16px 32px rgba(33,150,243,0.25), 0 16px 32px rgba(76,175,80,0.25);
+}
+
+.hubwow-links a:hover::before {
+  opacity: 0.35;
+}
+
+.hubwow-links a strong {
+  color: #2196f3;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media screen and (max-width: 600px) {
+  .hubwow-hero h1 { font-size: 1.8rem; }
+  .hubwow-hero .hubwow-lead { font-size: 1.1rem; }
+  .hubwow-links ul { grid-template-columns: 1fr; }
+}
+</style>
+
+
+<section class="hubwow-hero">
+  <div class="hubwow-links">
     <p><strong>Εξερεύνησε θεματικές ενότητες:</strong></p>
     <ul>
       <li><a href="https://alexandroshub.github.io/automation">Αυτοματισμούς</a></li>
       <li><a href="https://alexandroshub.github.io/systemcontrol.html">Συστήματα Ελέγχου</a></li>
       <li><a href="https://alexandroshub.github.io/robotics.html">Ρομποτική</a></li>
       <li><a href="https://alexandroshub.github.io/iot">Internet of Things (IoT)</a></li>
-      <li><a href="https://alexandroshub.github.io/arduino">Arduino</a> & <a href="https://alexandroshub.github.io/raspberrypi">Raspberry Pi</a></li>
-      <li><a href="https://alexandroshub.github.io/development.html">Προγραμματισμό</a> & <a href="https://alexandroshub.github.io/stem">STEM</a></li>
+      <li><a href="https://alexandroshub.github.io/arduino">Arduino</a></li>
+      <li><a href="https://alexandroshub.github.io/raspberrypi">Raspberry Pi</a></li>
+      <li><a href="https://alexandroshub.github.io/development.html">Προγραμματισμό</a></li>
+      <li><a href="https://alexandroshub.github.io/stem">STEM</a></li>
       <li><a href="https://alexandroshub.github.io/plus.ap.html">+ Plus: Tutorials, οδηγοί & εκπαιδευτικό περιεχόμενο</a></li>
     </ul>
   </div>
-<!--
-  <div class="search-section">
-    <p style="font-size: 1.5rem;">🔎 Αναζήτησε ό,τι σε ενδιαφέρει με τη δυναμική αναζήτηση:</p>
-    <script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de"></script>
-    <div class="gcse-search"></div>
-  </div>
--->
-
-<!--
-<section class="innovation-hero">
-  <h2>Innovation Pipeline: From Vision to Deployment</h2>
-  <p class="hero-subtitle">A streamlined process for building intelligent systems, smart devices, and scalable applications.</p>
-
-  <div class="innovation-grid">
-    <div class="innovation-card">
-      <div class="card-icon">💡</div>
-      <div class="card-title">Ideation & Strategy</div>
-      <div class="card-desc">Define goals, research trends, and architect solutions for real-world impact.</div>
-    </div>
-    <div class="innovation-card">
-      <div class="card-icon">🛠️</div>
-      <div class="card-title">Engineering & Prototyping</div>
-      <div class="card-desc">Develop embedded systems, write firmware, and build functional prototypes.</div>
-    </div>
-    <div class="innovation-card">
-      <div class="card-icon">📱</div>
-      <div class="card-title">App Development</div>
-      <div class="card-desc">Design intuitive interfaces and deploy cross-platform applications with seamless UX.</div>
-    </div>
-    <div class="innovation-card">
-      <div class="card-icon">📊</div>
-      <div class="card-title">Analytics & Automation</div>
-      <div class="card-desc">Monitor performance, extract insights, and automate workflows using smart data.</div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .innovation-hero {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #f9fdfc, #eef9ff);
-    border-radius: 16px;
-    font-family: 'Inter', 'Orbitron', sans-serif;
-    text-align: center;
-    box-shadow: 0 0 40px rgba(0, 128, 128, 0.08);
-  }
-
-  .innovation-hero h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(90deg, #2196f3, #4caf50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .innovation-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .innovation-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 1.8rem;
-    width: 250px;
-    box-shadow: 0 8px 24px rgba(0, 128, 128, 0.06);
-    border: 1px solid #e0f7fa;
-    transition: transform 0.3s ease;
-  }
-
-  .innovation-card:hover {
-    transform: translateY(-6px);
-  }
-
-  .card-icon {
-    font-size: 2.2rem;
-    margin-bottom: 0.8rem;
-    color: #2196f3;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #4caf50;
-    margin-bottom: 0.5rem;
-  }
-
-  .card-desc {
-    font-size: 0.9rem;
-    color: #333;
-  }
-
-  @media screen and (max-width: 768px) {
-    .innovation-grid {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .innovation-card {
-      width: 100%;
-      max-width: 320px;
-    }
-  }
-</style> -->
-
-  <div class="about-section">
- <center>
-   <p style="font-size: 1.3rem;"><strong>👨‍💻 Ποιος είμαι:</strong> Μεγάλωσα στην Αθήνα και από μικρή ηλικία εξερευνώ τον κόσμο της τεχνολογίας. Έχω αφιερώσει τη διαδρομή μου στην καινοτομία, παρακολουθώντας σεμινάρια, ημερίδες και δημιουργώντας έργα που συνδυάζουν λογική, αισθητική και λειτουργικότητα.</p>
- <p class="cta">🚀 Εξερεύνησε μαζί μου το αύριο της τεχνολογίας.</p>
-
-
-</center>
- 
- 
-  </div>
 </section>
 
 
-<div style="display:flex; flex-wrap: wrap; justify-content:center; gap: 16px; margin: 2rem 0;">
 
-  <a href="https://alexandroshub.github.io/connect.html"
-     style="
-       display: inline-block;
-       font-size: 1.5rem;
-       font-weight: 700;
-       background: linear-gradient(135deg, #2e94b9, #2d7a69);
-       color: #fff;
-       padding: 14px 24px;
-       border-radius: 12px;
-       text-decoration: none;
-       box-shadow: 0 4px 12px rgba(46,148,185,0.3);
-       transition: transform 0.3s ease, box-shadow 0.3s ease;
-       text-align: center;
-       min-width: 220px;
-     "
-     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 16px rgba(46,148,185,0.4)'"
-     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(46,148,185,0.3)'"
-  >
-    💬 Στείλτε Μήνυμα
-  </a>
+</section>
 
-  <a href="https://drive.google.com/file/d/13ih79iINth9tCoLWtHJAF6ErzKe93hEA/view?usp=sharing"
-     style="
-       display: inline-block;
-       font-size: 1.5rem;
-       font-weight: 600;
-       background: linear-gradient(135deg, #00bfa5, #2e94b9);
-       color: #fff;
-       padding: 14px 24px;
-       border-radius: 12px;
-       text-decoration: none;
-       box-shadow: 0 4px 12px rgba(0,191,165,0.3);
-       transition: transform 0.3s ease, box-shadow 0.3s ease;
-       text-align: center;
-       min-width: 220px;
-     "
-     onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 16px rgba(0,191,165,0.4)'"
-     onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0,191,165,0.3)'"
-  >
-    📂 Κατέβασε Βιογραφικό
-  </a>
-</div><br>
+<br><br>
+
+<!-- Dorbesh Baba Mini Hero Block -->
+<div id="dbb-hero-block" style="font-family:Inter,sans-serif;max-width:960px;margin:auto;padding:24px;border:1px solid #e2e8f0;border-radius:16px;background:#f8fafc;box-shadow:0 4px 12px rgba(0,0,0,0.04);display:flex;flex-wrap:wrap;gap:24px;align-items:center">
+  <!-- Avatar + Info -->
+  <div id="dbb-left" style="flex:0 0 160px;text-align:center">
+    <img src="https://64.media.tumblr.com/5824d89c1e13809501948a5bd46e1d48/387eabfc55705902-1e/s1280x1920/f5506f672d711cd7aa68f7e094a6d0a9f0aa1ffb.pnj" alt="Papaspyrou Alexandros" style="width:120px;height:120px;border-radius:50%;border:4px solid #d1fae5;box-shadow:0 4px 10px rgba(52,211,153,0.2);margin-bottom:12px ">
+   
+  </div>
+
+  <!-- Hero Text -->
+  <div id="dbb-right" style="flex:1;min-width:240px">
+    <div style="font-size:14px;color:#64748b;font-weight:500;margin-bottom:6px">🚀 Εξερεύνησε μαζί μου το αύριο της τεχνολογίας.</div>
+    <div style="font-size:20px;font-weight:800;line-height:1.4;color:#0f172a;margin-bottom:12px">
+      I'm Papaspyrou Alexandros, <br>Technical Support Specialist & Automation Engineer.
+    </div>       
+    <div style="display:flex;align-items:center;gap:10px">
+   <div id="dbb-status" style="font-size:13px;color:#475569"> Μεγάλωσα στην Αθήνα και από μικρή ηλικία εξερευνώ τον κόσμο της τεχνολογίας. Έχω αφιερώσει τη διαδρομή μου στην καινοτομία, παρακολουθώντας σεμινάρια, ημερίδες και δημιουργώντας έργα που συνδυάζουν λογική, αισθητική και λειτουργικότητα.</div>  </div> 
+   
+<br> <a href="https://drive.google.com/file/d/13ih79iINth9tCoLWtHJAF6ErzKe93hEA/view?usp=sharing" class="promo-button">
+  📂 Κατέβασε <strong>CV</strong> μου.</a>
+
+<a href="#contact" class="promo-button-secondary"><strong>💬 Στείλτε Μήνυμα</strong></a>
+   
+</div> </div>
+
+
 
 
 
@@ -1706,6 +1710,1202 @@ function topFunction() {
 </div>
 
 
+
+
+
+
+
+
+
+
+
+<!-- ====== IoT PORTFOLIO HERO SECTION - START ====== -->
+<section class="hero-section-alexandros" role="banner">
+    <!-- Animated Background -->
+    <div class="grid-bg-alexandros"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particle-alexandros particle-1-alexandros"></div>
+    <div class="particle-alexandros particle-2-alexandros"></div>
+    <div class="particle-alexandros particle-3-alexandros"></div>
+    <div class="particle-alexandros particle-4-alexandros"></div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper-alexandros">
+        <!-- 3D Rotating Icon -->
+        <div class="icon-container-alexandros">
+            <div class="rotating-icon-alexandros">
+                <div class="icon-face-alexandros">⚡</div>
+            </div>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="main-title-alexandros">Connect. Code. Create</h1>
+        
+        <!-- Tagline -->
+        <p class="tagline-alexandros">Όπου η Τεχνολογία Συναντά τη Δημιουργικότητα</p>
+        
+        <!-- Tech Badge -->
+        <div class="tech-badge-alexandros">
+            🚀 Από την Ιδέα στην Αυτόματη Υλοποίηση
+        </div>
+
+        <!-- Description -->
+        <p class="description-alexandros">
+            Εξερεύνησε μια συλλογή από <span class="highlight-text-alexandros">καινοτόμα έργα IoT</span>, 
+            <span class="highlight-text-alexandros">έξυπνους αυτοματισμούς</span> και 
+            <span class="highlight-text-alexandros">Arduino κατασκευές</span> που μετατρέπουν 
+            την καθημερινότητα σε έξυπνη εμπειρία. Κώδικας, έρευνα και δημιουργικότητα 
+            σε κάθε project.
+        </p>
+
+        <!-- Feature Cards -->
+        <div class="features-grid-alexandros">
+            <div class="feature-card-alexandros">
+                <div class="feature-icon-alexandros">🤖</div>
+                <h2 class="feature-title-alexandros">Smart Automations</h2>
+                <p class="feature-text-alexandros">Έξυπνα συστήματα που μαθαίνουν και προσαρμόζονται στις ανάγκες σου</p>
+            </div>
+            
+            <div class="feature-card-alexandros">
+                <div class="feature-icon-alexandros">🔌</div>
+                <h2 class="feature-title-alexandros">IoT Solutions</h2>
+                <p class="feature-text-alexandros">Διασυνδεδεμένες συσκευές που επικοινωνούν και συνεργάζονται</p>
+            </div>
+            
+            <div class="feature-card-alexandros">
+                <div class="feature-icon-alexandros">💡</div>
+                <h2 class="feature-title-alexandros">Arduino Projects</h2>
+                <p class="feature-text-alexandros">Από πρωτότυπα σε λειτουργικά συστήματα με ανοιχτό κώδικα</p>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="#portfolio" class="cta-button-alexandros" aria-label="Δες τα έργα μου">
+            <span>Εξερεύνησε τα Projects ↓</span>
+        </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator-alexandros">
+        <div class="mouse-alexandros"></div>
+        <p class="scroll-text-alexandros">Scroll</p>
+    </div>
+</section>
+
+<style>
+    /* ====== HERO SECTION STYLES - SCOPED ====== */
+    .hero-section-alexandros {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1829 100%);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Animated Background Grid */
+    .grid-bg-alexandros {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(rgba(33, 150, 243, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: gridMove-alexandros 20s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes gridMove-alexandros {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(50px, 50px); }
+    }
+
+    /* Floating Particles */
+    .particle-alexandros {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .particle-1-alexandros {
+        width: 4px;
+        height: 4px;
+        background: #2196f3;
+        box-shadow: 0 0 20px #2196f3;
+        top: 20%;
+        left: 10%;
+        animation: float-alexandros 8s ease-in-out infinite;
+    }
+
+    .particle-2-alexandros {
+        width: 6px;
+        height: 6px;
+        background: #4caf50;
+        box-shadow: 0 0 25px #4caf50;
+        top: 60%;
+        right: 15%;
+        animation: float-alexandros 10s ease-in-out infinite 2s;
+    }
+
+    .particle-3-alexandros {
+        width: 3px;
+        height: 3px;
+        background: #00bcd4;
+        box-shadow: 0 0 15px #00bcd4;
+        bottom: 30%;
+        left: 25%;
+        animation: float-alexandros 12s ease-in-out infinite 1s;
+    }
+
+    .particle-4-alexandros {
+        width: 5px;
+        height: 5px;
+        background: #8bc34a;
+        box-shadow: 0 0 20px #8bc34a;
+        top: 40%;
+        right: 30%;
+        animation: float-alexandros 9s ease-in-out infinite 3s;
+    }
+
+    @keyframes float-alexandros {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+        25% { transform: translate(30px, -40px) scale(1.2); opacity: 0.8; }
+        50% { transform: translate(-20px, -80px) scale(1); opacity: 0.4; }
+        75% { transform: translate(40px, -60px) scale(1.1); opacity: 0.7; }
+    }
+
+    /* Main Content Container */
+    .content-wrapper-alexandros {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* 3D Rotating Icon */
+    .icon-container-alexandros {
+        perspective: 1000px;
+        margin-bottom: 30px;
+    }
+
+    .rotating-icon-alexandros {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate3d-alexandros 8s linear infinite;
+    }
+
+    @keyframes rotate3d-alexandros {
+        0% { transform: rotateY(0deg) rotateX(10deg); }
+        100% { transform: rotateY(360deg) rotateX(10deg); }
+    }
+
+    .icon-face-alexandros {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(76, 175, 80, 0.2));
+        border: 2px solid rgba(33, 150, 243, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(33, 150, 243, 0.3);
+    }
+
+    /* Main Title */
+    .main-title-alexandros {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        background: linear-gradient(120deg, #2196f3, #4caf50, #00bcd4, #8bc34a);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift-alexandros 3s ease infinite;
+        text-shadow: 0 0 40px rgba(33, 150, 243, 0.5);
+    }
+
+    @keyframes gradientShift-alexandros {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    /* Tagline */
+    .tagline-alexandros {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: #fff;
+        margin-bottom: 25px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 0.3s;
+    }
+
+    @keyframes fadeInUp-alexandros {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Glowing Badge */
+    .tech-badge-alexandros {
+        display: inline-block;
+        padding: 12px 30px;
+        margin-bottom: 30px;
+        background: rgba(33, 150, 243, 0.1);
+        border: 2px solid #2196f3;
+        border-radius: 50px;
+        color: #4caf50;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        font-weight: 600;
+        box-shadow: 0 0 30px rgba(33, 150, 243, 0.4), inset 0 0 20px rgba(76, 175, 80, 0.1);
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 0.6s, pulse-alexandros 2s ease-in-out infinite 1.6s;
+    }
+
+    @keyframes pulse-alexandros {
+        0%, 100% { box-shadow: 0 0 30px rgba(33, 150, 243, 0.4), inset 0 0 20px rgba(76, 175, 80, 0.1); }
+        50% { box-shadow: 0 0 50px rgba(33, 150, 243, 0.8), inset 0 0 30px rgba(76, 175, 80, 0.2); }
+    }
+
+    /* Description */
+    .description-alexandros {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.8;
+        color: #b8c5d6;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 0.9s;
+    }
+
+    .highlight-text-alexandros {
+        color: #4caf50;
+        font-weight: 600;
+        position: relative;
+        display: inline-block;
+    }
+
+    .highlight-text-alexandros::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, #2196f3, #4caf50);
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: underlineExpand-alexandros 1s ease forwards 2s;
+    }
+
+    @keyframes underlineExpand-alexandros {
+        to { transform: scaleX(1); }
+    }
+
+    /* Feature Cards */
+    .features-grid-alexandros {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 1.2s;
+    }
+
+    .feature-card-alexandros {
+        background: rgba(26, 31, 58, 0.6);
+        border: 1px solid rgba(33, 150, 243, 0.3);
+        border-radius: 20px;
+        padding: 30px 20px;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-card-alexandros::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(33, 150, 243, 0.1) 0%, transparent 70%);
+        transform: scale(0);
+        transition: transform 0.6s ease;
+    }
+
+    .feature-card-alexandros:hover::before {
+        transform: scale(1);
+    }
+
+    .feature-card-alexandros:hover {
+        transform: translateY(-10px);
+        border-color: #2196f3;
+        box-shadow: 0 20px 60px rgba(33, 150, 243, 0.4);
+    }
+
+    .feature-icon-alexandros {
+        font-size: 48px;
+        margin-bottom: 15px;
+        display: inline-block;
+        transition: transform 0.4s ease;
+    }
+
+    .feature-card-alexandros:hover .feature-icon-alexandros {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    .feature-title-alexandros {
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .feature-text-alexandros {
+        font-size: 0.95rem;
+        color: #8c9fb3;
+        line-height: 1.6;
+    }
+
+    /* CTA Button */
+    .cta-button-alexandros {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 18px 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(135deg, #2196f3, #4caf50);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        box-shadow: 0 10px 40px rgba(33, 150, 243, 0.4);
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 1.5s;
+    }
+
+    .cta-button-alexandros::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    .cta-button-alexandros:hover::before {
+        width: 400px;
+        height: 400px;
+    }
+
+    .cta-button-alexandros:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 50px rgba(33, 150, 243, 0.6);
+    }
+
+    .cta-button-alexandros span {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator-alexandros {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: fadeInUp-alexandros 1s ease forwards 2s;
+    }
+
+    .mouse-alexandros {
+        width: 30px;
+        height: 50px;
+        border: 2px solid #2196f3;
+        border-radius: 20px;
+        position: relative;
+        margin: 0 auto 10px;
+    }
+
+    .mouse-alexandros::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 8px;
+        background: #4caf50;
+        border-radius: 2px;
+        animation: mouseScroll-alexandros 2s ease-in-out infinite;
+    }
+
+    @keyframes mouseScroll-alexandros {
+        0%, 20% { transform: translateX(-50%) translateY(0); opacity: 1; }
+        100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+    }
+
+    .scroll-text-alexandros {
+        color: #4caf50;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-section-alexandros {
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .rotating-icon-alexandros {
+            width: 80px;
+            height: 80px;
+        }
+
+        .icon-face-alexandros {
+            font-size: 40px;
+        }
+
+        .features-grid-alexandros {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 0 10px;
+        }
+
+        .feature-card-alexandros {
+            padding: 25px 15px;
+        }
+
+        .description-alexandros {
+            padding: 0 15px;
+        }
+
+        .cta-button-alexandros {
+            padding: 15px 40px;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .content-wrapper-alexandros {
+            padding: 30px 15px;
+        }
+
+        .tech-badge-alexandros {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+<!-- ====== IoT PORTFOLIO HERO SECTION - END ====== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ====== PORTFOLIO GRID SECTION - START ====== -->
+<section class="portfolio-section-alexandros" id="portfolio">
+    <!-- Section Header -->
+    <div class="portfolio-header-alexandros">
+        <div class="section-badge-alexandros">
+            <span class="badge-icon-alexandros">⚡</span>
+            <span class="badge-text-alexandros">Featured Work</span>
+        </div>
+        <h2 class="portfolio-title-alexandros">Τα Έργα μου</h2>
+        <p class="portfolio-subtitle-alexandros">
+            Από έξυπνους διακόπτες μέχρι ολοκληρωμένα ρομποτικά συστήματα - 
+            κάθε project είναι μια πρόκληση που μετατρέπεται σε λύση
+        </p>
+        <div class="title-divider-alexandros">
+            <span class="divider-dot-alexandros"></span>
+            <span class="divider-line-alexandros"></span>
+            <span class="divider-dot-alexandros"></span>
+        </div>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid-alexandros">
+        <!-- Project 1: LightSwich -->
+        <a href="https://alexandroshub.github.io/portfolio2021#LightSwich" class="project-card-alexandros">
+            <div class="card-inner-alexandros">
+                <div class="image-container-alexandros">
+                    <img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.png" 
+                         alt="LightSwich - Smart Automation Project" 
+                         class="project-image-alexandros"/>
+                    <div class="image-overlay-alexandros"></div>
+                    <div class="hover-effect-alexandros"></div>
+                </div>
+                
+                <div class="card-content-alexandros">
+                    <div class="project-category-alexandros">
+                        <span class="category-icon-alexandros">🔌</span>
+                        <span>Automation</span>
+                    </div>
+                    <h3 class="project-name-alexandros">LightSwich</h3>
+                    <p class="project-description-alexandros">
+                        Έξυπνος διακόπτης φωτισμού με IoT δυνατότητες. 
+                        Ελέγχει τον φωτισμό από οπουδήποτε με ασύρματη σύνδεση 
+                        και προγραμματισμό σεναρίων αυτοματισμού.
+                    </p>
+                    <div class="project-tech-alexandros">
+                        <span class="tech-tag-alexandros">Arduino</span>
+                        <span class="tech-tag-alexandros">ESP8266</span>
+                        <span class="tech-tag-alexandros">MQTT</span>
+                    </div>
+                    <div class="view-project-alexandros">
+                        <span>Δες Περισσότερα</span>
+                        <svg class="arrow-icon-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 2: CoNo -->
+        <a href="https://alexandroshub.github.io/cono" class="project-card-alexandros">
+            <div class="card-inner-alexandros">
+                <div class="image-container-alexandros">
+                    <img src="https://64.media.tumblr.com/eddf210a3ca429c92fec68c3e6dfe7fd/afc46cbefaec4590-93/s1280x1920/66973f2cf00a198fc6a572b07f907d9d898d88ad.webp" 
+                         alt="CoNo - IoT Control System" 
+                         class="project-image-alexandros"/>
+                    <div class="image-overlay-alexandros"></div>
+                    <div class="hover-effect-alexandros"></div>
+                </div>
+                
+                <div class="card-content-alexandros">
+                    <div class="project-category-alexandros">
+                        <span class="category-icon-alexandros">🌐</span>
+                        <span>IoT</span>
+                    </div>
+                    <h3 class="project-name-alexandros">CoNo</h3>
+                    <p class="project-description-alexandros">
+                        Σύστημα ελέγχου και παρακολούθησης IoT συσκευών. 
+                        Κεντρική διαχείριση, real-time monitoring και 
+                        έξυπνη αυτοματοποίηση για το σπίτι σου.
+                    </p>
+                    <div class="project-tech-alexandros">
+                        <span class="tech-tag-alexandros">NodeMCU</span>
+                        <span class="tech-tag-alexandros">Sensors</span>
+                        <span class="tech-tag-alexandros">Cloud</span>
+                    </div>
+                    <div class="view-project-alexandros">
+                        <span>Δες Περισσότερα</span>
+                        <svg class="arrow-icon-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 3: Michatron -->
+        <a href="https://alexandroshub.github.io/portfolio2021#MICHATRON" class="project-card-alexandros">
+            <div class="card-inner-alexandros">
+                <div class="image-container-alexandros">
+                    <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" 
+                         alt="Michatron - Robotics Project" 
+                         class="project-image-alexandros"/>
+                    <div class="image-overlay-alexandros"></div>
+                    <div class="hover-effect-alexandros"></div>
+                </div>
+                
+                <div class="card-content-alexandros">
+                    <div class="project-category-alexandros">
+                        <span class="category-icon-alexandros">🤖</span>
+                        <span>Robotics</span>
+                    </div>
+                    <h3 class="project-name-alexandros">Michatron</h3>
+                    <p class="project-description-alexandros">
+                        Αυτόνομο ρομποτικό σύστημα με δυνατότητες navigation 
+                        και object detection. Συνδυάζει sensors, AI algorithms 
+                        και μηχανική ακρίβεια σε ένα έργο.
+                    </p>
+                    <div class="project-tech-alexandros">
+                        <span class="tech-tag-alexandros">Arduino Mega</span>
+                        <span class="tech-tag-alexandros">Motors</span>
+                        <span class="tech-tag-alexandros">AI</span>
+                    </div>
+                    <div class="view-project-alexandros">
+                        <span>Δες Περισσότερα</span>
+                        <svg class="arrow-icon-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Project 4: PC Evolution -->
+        <a href="https://alexandroshub.github.io/portfolio2021#pcevol" class="project-card-alexandros">
+            <div class="card-inner-alexandros">
+                <div class="image-container-alexandros">
+                    <img src="https://64.media.tumblr.com/c69060aed05415950b58e52ca141a413/afc46cbefaec4590-03/s1280x1920/95120cf8e55abe5f5703ce3bfbea4422d6aeb543.png" 
+                         alt="PC Evolution - Technology Research" 
+                         class="project-image-alexandros"/>
+                    <div class="image-overlay-alexandros"></div>
+                    <div class="hover-effect-alexandros"></div>
+                </div>
+                
+                <div class="card-content-alexandros">
+                    <div class="project-category-alexandros">
+                        <span class="category-icon-alexandros">📚</span>
+                        <span>Publications</span>
+                    </div>
+                    <h3 class="project-name-alexandros">PC Evolution</h3>
+                    <p class="project-description-alexandros">
+                        Έρευνα και τεκμηρίωση της εξέλιξης των υπολογιστών 
+                        από τις απαρχές μέχρι σήμερα. Αναλύσεις, διαγράμματα 
+                        και πρωτότυπα insights για το μέλλον της τεχνολογίας.
+                    </p>
+                    <div class="project-tech-alexandros">
+                        <span class="tech-tag-alexandros">Research</span>
+                        <span class="tech-tag-alexandros">Analysis</span>
+                        <span class="tech-tag-alexandros">Tech History</span>
+                    </div>
+                    <div class="view-project-alexandros">
+                        <span>Δες Περισσότερα</span>
+                        <svg class="arrow-icon-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="portfolio-footer-alexandros">
+        <p class="footer-text-alexandros">Θέλεις να δεις περισσότερα projects;</p>
+        <a href="https://alexandroshub.github.io/projects.html" class="footer-cta-alexandros" target="_blank" rel="noopener">
+            <span>Εξερεύνησε το Portfolio και εμπνεύσου</span>
+            <svg class="cta-arrow-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>
+        
+        <a href="https://alexandroshub.wordpress.com/" class="footer-cta-alexandros" target="_blank" rel="noopener">
+            <span>Επισκέψου το blog</span>
+            <svg class="cta-arrow-alexandros" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+            </svg>
+        </a>
+        
+    </div>
+</section>
+
+<style>
+    /* ====== PORTFOLIO GRID SECTION STYLES ====== */
+    .portfolio-section-alexandros {
+        background: linear-gradient(180deg, #0f1829 0%, #1a1f3a 50%, #0a0e27 100%);
+        padding: 100px 20px 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Ambient Background Elements */
+    .portfolio-section-alexandros::before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(33, 150, 243, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+    }
+
+    .portfolio-section-alexandros::after {
+        content: '';
+        position: absolute;
+        bottom: 10%;
+        left: -5%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(76, 175, 80, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(60px);
+        pointer-events: none;
+    }
+
+    /* Section Header */
+    .portfolio-header-alexandros {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 70px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-badge-alexandros {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: rgba(33, 150, 243, 0.1);
+        border: 1px solid rgba(33, 150, 243, 0.3);
+        border-radius: 50px;
+        color: #4caf50;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        animation: badgePulse-alexandros 2s ease-in-out infinite;
+    }
+
+    @keyframes badgePulse-alexandros {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .badge-icon-alexandros {
+        font-size: 1.2rem;
+        animation: rotate-alexandros 3s linear infinite;
+    }
+
+    @keyframes rotate-alexandros {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .portfolio-title-alexandros {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 20px;
+        background: linear-gradient(120deg, #fff 0%, #4caf50 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .portfolio-subtitle-alexandros {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        color: #8c9fb3;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .title-divider-alexandros {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .divider-dot-alexandros {
+        width: 6px;
+        height: 6px;
+        background: #2196f3;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #2196f3;
+    }
+
+    .divider-line-alexandros {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #2196f3, transparent);
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid-alexandros {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+    }
+
+    /* Project Card */
+    .project-card-alexandros {
+        text-decoration: none;
+        display: block;
+        position: relative;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-inner-alexandros {
+        background: rgba(26, 31, 58, 0.5);
+        border: 1px solid rgba(33, 150, 243, 0.2);
+        border-radius: 24px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card-alexandros:hover {
+        transform: translateY(-8px);
+    }
+
+    .project-card-alexandros:hover .card-inner-alexandros {
+        border-color: #2196f3;
+        box-shadow: 0 20px 60px rgba(33, 150, 243, 0.3);
+        background: rgba(26, 31, 58, 0.8);
+    }
+
+    /* Image Container */
+    .image-container-alexandros {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 Aspect Ratio */
+        overflow: hidden;
+        background: #0a0e27;
+    }
+
+    .project-image-alexandros {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card-alexandros:hover .project-image-alexandros {
+        transform: scale(1.1);
+    }
+
+    .image-overlay-alexandros {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 39, 0.9) 100%);
+        opacity: 0.6;
+        transition: opacity 0.4s ease;
+    }
+
+    .project-card-alexandros:hover .image-overlay-alexandros {
+        opacity: 0.8;
+    }
+
+    .hover-effect-alexandros {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 80px;
+        height: 80px;
+        background: rgba(33, 150, 243, 0.2);
+        border: 2px solid #2196f3;
+        border-radius: 50%;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card-alexandros:hover .hover-effect-alexandros {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Card Content */
+    .card-content-alexandros {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-category-alexandros {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: rgba(33, 150, 243, 0.1);
+        border: 1px solid rgba(33, 150, 243, 0.3);
+        border-radius: 20px;
+        color: #4caf50;
+        font-size: 0.85rem;
+        font-weight: 600;
+        width: fit-content;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .project-card-alexandros:hover .project-category-alexandros {
+        background: rgba(33, 150, 243, 0.2);
+        border-color: #2196f3;
+    }
+
+    .category-icon-alexandros {
+        font-size: 1rem;
+    }
+
+    .project-name-alexandros {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+        transition: color 0.3s ease;
+    }
+
+    .project-card-alexandros:hover .project-name-alexandros {
+        color: #2196f3;
+    }
+
+    .project-description-alexandros {
+        font-size: 0.95rem;
+        color: #8c9fb3;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    /* Tech Tags */
+    .project-tech-alexandros {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .tech-tag-alexandros {
+        padding: 5px 12px;
+        background: rgba(76, 175, 80, 0.1);
+        border: 1px solid rgba(76, 175, 80, 0.3);
+        border-radius: 12px;
+        color: #4caf50;
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .project-card-alexandros:hover .tech-tag-alexandros {
+        background: rgba(76, 175, 80, 0.2);
+        border-color: #4caf50;
+    }
+
+    /* View Project Link */
+    .view-project-alexandros {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #2196f3;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: gap 0.3s ease;
+    }
+
+    .project-card-alexandros:hover .view-project-alexandros {
+        gap: 12px;
+    }
+
+    .arrow-icon-alexandros {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card-alexandros:hover .arrow-icon-alexandros {
+        transform: translateX(4px);
+    }
+
+    /* Portfolio Footer */
+    .portfolio-footer-alexandros {
+        text-align: center;
+        margin-top: 80px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-text-alexandros {
+        font-size: 1.2rem;
+        color: #b8c5d6;
+        margin-bottom: 25px;
+    }
+
+    .footer-cta-alexandros {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 40px;
+        background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(76, 175, 80, 0.2));
+        border: 2px solid #2196f3;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-cta-alexandros::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .footer-cta-alexandros:hover::before {
+        left: 100%;
+    }
+
+    .footer-cta-alexandros:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(33, 150, 243, 0.4);
+        border-color: #4caf50;
+    }
+
+    .cta-arrow-alexandros {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-cta-alexandros:hover .cta-arrow-alexandros {
+        transform: translate(3px, -3px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .portfolio-grid-alexandros {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-section-alexandros {
+            padding: 60px 15px 60px;
+        }
+
+        .portfolio-header-alexandros {
+            margin-bottom: 50px;
+        }
+
+        .portfolio-grid-alexandros {
+            grid-template-columns: 1fr;
+            gap: 25px;
+            padding: 0 10px;
+        }
+
+        .card-content-alexandros {
+            padding: 20px;
+        }
+
+        .project-name-alexandros {
+            font-size: 1.4rem;
+        }
+
+        .portfolio-footer-alexandros {
+            margin-top: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .portfolio-title-alexandros {
+            font-size: 2rem;
+        }
+
+        .portfolio-subtitle-alexandros {
+            font-size: 0.95rem;
+        }
+
+        .footer-cta-alexandros {
+            padding: 14px 30px;
+            font-size: 0.95rem;
+        }
+    }
+</style>
+<!-- ====== PORTFOLIO GRID SECTION - END ====== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="position:relative;">
 
 
@@ -1713,82 +2913,13 @@ function topFunction() {
 
 
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
- <h1 class="title"><span class="gradient-text"> Connect. Code. Create</span></h1>
- <span class="highlight">Από την Ιδέα στην Αυτόματη Υλοποίηση 🚀</span>
 
- <p> Εδώ θα δεις μία συλλογή από εργασίες έρευνες μελέτες προγράμματα κώδικες παρουσιάσεις και κατασκευές που έχω κάνει γύρω από θέματα τεχνολογίας και αυτοματισμού. </p> 
- 
-<!--
- <p>Στο Portfolio μου θα βρείτε επιλεγμένα έργα που αποδεικνύουν στη πράξη το εύρος και την ποιότητα των υπηρεσιών μου:  </p>
-
-
-
-IoT Monitoring Solutions: Δημιουργία custom IoT πλατφόρμων με αισθητήρες, τηλεμετρία, smart analytics και πρόσβαση μέσω cloud/mobile apps.
-
-Smart Homes & Buildings: Ενσωμάτωση αυτοματισμών σε φωτισμό, θερμοκρασία, ασφάλεια. User-friendly interfaces για ολική διαχείριση με ένα “tap”!
-
-Automated Production Lines: Ανάπτυξη και υλοποίηση PLC/SCADA για βιομηχανίες — real-time παρακολούθηση, αύξηση παραγωγικότητας, ασφάλεια εγκαταστάσεων.
-
-ROBOTICS & Edge Computing: Ρομποτικές εφαρμογές με Raspberry Pi, αυτόνομα έργα, συνεργατικά bots για εκπαιδευτικά & επαγγελματικά setups.
-
-Custom Hardware & Software: Σχεδιασμός και κατασκευή PCB, προγραμματισμός μικροελεγκτών για ιδιαίτερες ανάγκες, ενσωμάτωση με mobile/web apps.
-
-STEAM Projects: Καινοτόμες κατασκευές και εκπαιδευτικά workshops.
-
--->
- <style>
-har {
-	display: block;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-</style>
-
-<har>
-</har>
    <div class="w3-center w3-padding-16" style="background-color: #2D2D30; ;" id="port">
-    
-    <div class="w3-row-padding">
-<!-- 1 -->
- <a href="https://alexandroshub.github.io/portfolio2021#LightSwich">
- <div class="w3-col l3 m6 w3-margin-bottom" onclick="document.getElementById('lista1').style.display='block'">
- <div class="w3-display-container">
-     <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #2FABCF; padding: 45px 16px;" id="auto"><strong>LightSwich</strong>
-     </div>
-<img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.png" alt="Developing" style="width: 100%;"  class="w3-hover-opacity"/>
-<a href="https://alexandroshub.github.io/automation"><div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Automation</div></a>
-</div>
-</div> </a>
-<!-- 2 -->
-<a href="https://alexandroshub.github.io/cono">
-<div class="w3-col l3 m6 w3-margin-bottom">
-<div class="w3-display-container" onclick="document.getElementById('lista2').style.display='block'">
-    <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #2FABCF; padding: 45px 16px;" id="auto"><strong>CoNo</strong></div>
-<img src="https://64.media.tumblr.com/eddf210a3ca429c92fec68c3e6dfe7fd/afc46cbefaec4590-93/s1280x1920/66973f2cf00a198fc6a572b07f907d9d898d88ad.webp" alt="IoT" style="width: 100%;"  class="w3-hover-opacity"/>
-<a href="https://alexandroshub.github.io/iot">
-<div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">IoT</div></a>
-</div></div></a>
-<!-- 3 -->
-<a href="https://alexandroshub.github.io/portfolio2021#MICHATRON">
-<div class="w3-col l3 m6 w3-margin-bottom">
-<div class="w3-display-container" onclick="document.getElementById('lista3').style.display='block'">
-    <div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #2FABCF; padding: 45px 16px;" id="auto"><strong>Michatron</strong></div>
-<img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="Michatron" style="width: 100%;" class="w3-hover-opacity"/>
-<a href="https://alexandroshub.github.io/iot"><div class="w3-display-bottomleft w3-black w3-padding" onclick="al2tFunction()">Robotics</div></a></div></div></a>
-<!-- 4 -->
-<a href="https://alexandroshub.github.io/portfolio2021#pcevol">
-<div class="w3-col l3 m6">
-<div class="w3-display-container" onclick="document.getElementById('lista4').style.display='block'">
-<div class="w3-display-topleft w3-padding" style="background-color: rgba(8, 12, 18, 0.7); color: #2FABCF; padding: 45px 16px;" id="auto"><strong>PC evolution</strong></div>
-<img src="https://64.media.tumblr.com/c69060aed05415950b58e52ca141a413/afc46cbefaec4590-03/s1280x1920/95120cf8e55abe5f5703ce3bfbea4422d6aeb543.png" alt="Files" style="width: 100%;" onclick="onClick(this)" class="w3-hover-opacity"/>
-<a href="https://alexandroshub.github.io/iot"><div class="w3-display-bottomleft w3-black w3-padding" onclick="alrtFunction()">Publications</div></a></div></div></a>
 
-</div>
  <center>
  
 
-<a href="https://alexandroshub.github.io/projects.html" class="promo-button">Δές τα στο <strong>Portfolio Hub</strong> και εμπνεύσου</a>
+
 
 
 
@@ -2358,6 +3489,25 @@ background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: t
 
 .promo-button:hover {
   opacity: 0.85;
+}
+
+/* Secondary CTA */
+.promo-button-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #ffffff;                /* neutral background */
+  color: #1e9bff;                     /* text in primary palette */
+  border: 2px solid #1e9bff;          /* subtle border */
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.promo-button-secondary:hover {
+  background: #f0f9ff;                /* light hover fill */
+  color: #00d4aa;                     /* shift to secondary palette */
+  border-color: #00d4aa;
 }
 
 @media (max-width: 768px) {
