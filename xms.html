@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaPi * xmas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1428 0%, #1a2847 50%, #0d2454 100%);
+            font-family: 'Audiowide', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Snow effect */
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 1.5em;
+            opacity: 0.8;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            background: linear-gradient(135deg, #ff1744 0%, #00e676 50%, #00b0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.5));
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(0, 230, 118, 0.6));
+            }
+        }
+
+        /* Christmas tree */
+        .tree-container {
+            position: relative;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .tree-layer {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: clamp(20px, 5vw, 50px) solid transparent;
+            border-right: clamp(20px, 5vw, 50px) solid transparent;
+            border-bottom: clamp(35px, 7vw, 80px) solid #00d84b;
+            filter: drop-shadow(0 0 10px rgba(0, 216, 75, 0.5));
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        .tree-layer:nth-child(1) { animation-delay: 0s; }
+        .tree-layer:nth-child(2) { animation-delay: 0.2s; }
+        .tree-layer:nth-child(3) { animation-delay: 0.4s; }
+        .tree-layer:nth-child(4) { animation-delay: 0.6s; }
+        .tree-layer:nth-child(5) { animation-delay: 0.8s; }
+
+        .tree-trunk {
+            width: clamp(15px, 3vw, 25px);
+            height: clamp(30px, 6vw, 50px);
+            background: #8B4513;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+
+        /* Ornaments on tree */
+        .ornament {
+            position: absolute;
+            width: clamp(8px, 2vw, 15px);
+            height: clamp(8px, 2vw, 15px);
+            border-radius: 50%;
+            animation: bobble 2s ease-in-out infinite;
+        }
+
+        .ornament:nth-child(1) {
+            background: #ff1744;
+            left: 15%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .ornament:nth-child(2) {
+            background: #ffd600;
+            left: 70%;
+            top: 35%;
+            animation-delay: 0.3s;
+        }
+
+        .ornament:nth-child(3) {
+            background: #00b0ff;
+            left: 30%;
+            top: 55%;
+            animation-delay: 0.6s;
+        }
+
+        .ornament:nth-child(4) {
+            background: #ff1744;
+            left: 65%;
+            top: 65%;
+            animation-delay: 0.9s;
+        }
+
+        .ornament:nth-child(5) {
+            background: #00e676;
+            left: 40%;
+            top: 75%;
+            animation-delay: 0.4s;
+        }
+
+        .ornament:nth-child(6) {
+            background: #ffd600;
+            left: 75%;
+            top: 80%;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 216, 75, 0.5)); }
+            50% { filter: drop-shadow(0 0 25px rgba(255, 193, 7, 0.8)); }
+        }
+
+        @keyframes bobble {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.1); }
+        }
+
+        /* Wishes text */
+        .wishes {
+            text-align: center;
+        }
+
+        .wishes h2 {
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+
+        .wishes p {
+            font-size: clamp(0.9rem, 3vw, 1.3rem);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+            animation: slideInRight 1s ease-out 0.5s both;
+        }
+
+        .wishes .year {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #00e676;
+            font-weight: 700;
+            margin-top: 0.8rem;
+            animation: slideInUp 1s ease-out 0.7s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Lights */
+        .lights {
+            position: absolute;
+            width: 100%;
+            height: clamp(3px, 1vw, 5px);
+            background: linear-gradient(90deg, #ff1744 0%, #00e676 25%, #00b0ff 50%, #ffd600 75%, #ff1744 100%);
+            border-radius: 50%;
+            top: -30px;
+            filter: blur(5px);
+            animation: lightPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes lightPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Decorative stars */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkleStar 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkleStar {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                gap: 1rem;
+                padding: 1.5rem;
+                border-radius: 15px;
+            }
+
+            .wishes p {
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+
+            .wishes {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="snowflakes" id="snowflakes"></div>
+
+    <div class="container">
+        <div class="lights"></div>
+        
+        <div class="logo">AlphaPi</div>
+        
+       
+
+        <div class="wishes">
+            <h2>Merry Christmas</h2>
+            <p>Wishing you joy, peace, and prosperity this holiday season</p>
+            <p>May your celebrations be filled with warmth and wonder</p>
+            <p class="year">Happy New Year 🎉</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate snowflakes
+        function createSnowflake() {
+            const snowflakes = document.getElementById('snowflakes');
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = ['❄', '❅', '❆'][Math.floor(Math.random() * 3)];
+            
+            const left = Math.random() * window.innerWidth;
+            const duration = 8 + Math.random() * 4;
+            const delay = Math.random() * 2;
+            
+            snowflake.style.left = left + 'px';
+            snowflake.style.animationDuration = duration + 's';
+            snowflake.style.animationDelay = delay + 's';
+            snowflake.style.fontSize = (0.5 + Math.random() * 1.5) + 'rem';
+            snowflake.style.opacity = 0.3 + Math.random() * 0.7;
+            
+            snowflakes.appendChild(snowflake);
+            
+            setTimeout(() => snowflake.remove(), (duration + delay) * 1000);
+        }
+        
+        // Create snowflakes continuously
+        setInterval(createSnowflake, 300);
+        
+        // Generate random stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDuration = (2 + Math.random() * 3) + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        createStars();
+    </script>
+</body>
+</html>
