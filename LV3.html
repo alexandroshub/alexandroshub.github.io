@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -2626,6 +2627,214 @@ document.addEventListener("click", function(event) {
     </div>
   </section>   <br><br>
 
+
+
+
+
+
+
+
+<!-- Recent Posts Styles (no Bootstrap) -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+:root {
+  --ah-bg: #ffffff;
+  --ah-text: #212529;
+  --ah-heading: #2d465e;
+  --ah-accent: #0d83fd;
+  --ah-surface: #ffffff;
+}
+
+#ah-posts .ah-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+#ah-posts .ah-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+#ah-posts .ah-col {
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: calc(33.333% - 24px);
+}
+
+@media (max-width: 992px) {
+  #ah-posts .ah-col {
+    flex: 1 1 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 576px) {
+  #ah-posts .ah-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+#ah-posts .ah-section-title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#ah-posts .ah-section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ah-heading);
+  position: relative;
+}
+
+#ah-posts .ah-section-title h2::before,
+#ah-posts .ah-section-title h2::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: var(--ah-accent);
+  display: inline-block;
+}
+
+#ah-posts .ah-section-title h2::before {
+  margin: 0 10px 10px 0;
+}
+
+#ah-posts .ah-section-title h2::after {
+  margin: 0 0 10px 10px;
+}
+
+#ah-posts .ah-section-title p {
+  color: var(--ah-text);
+  margin-bottom: 0;
+}
+
+#ah-posts .ah-article {
+  background: var(--ah-surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+#ah-posts .ah-img {
+  height: 200px; /* fixed height for all images */
+  overflow: hidden;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+#ah-posts .ah-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures same height without distortion */
+  border-radius: 8px;
+}
+
+#ah-posts .ah-category {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+#ah-posts .ah-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+#ah-posts .ah-title a {
+  color: var(--ah-heading);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#ah-posts .ah-title a:hover {
+  color: var(--ah-accent);
+}
+</style>
+
+<!-- Recent Posts Block -->
+<section id="ah-posts" class="ah-section" style="padding: 60px 0;">
+  <div class="ah-container">
+    <div class="ah-section-title" data-aos="fade-up">
+      <h2>Recent Posts</h2>
+      <p>Τα τελευταία άρθρα από τον κόσμο του IoT, AI και Cybersecurity</p>
+    </div>
+
+    <div class="ah-row">
+      <!-- Post 1 -->
+      <div class="ah-col" data-aos="fade-up" data-aos-delay="100">
+        <article class="ah-article">
+          <div class="ah-img">
+            <img src="https://alexandroshub.wordpress.com/wp-content/uploads/2025/09/ai-generated-9011964_1280.jpg?w=1024" alt="IoT Post">
+          </div>
+          <p class="ah-category">IoT</p>
+          <h2 class="ah-title">
+            <a href="https://alexandroshub.wordpress.com/2025/09/21/%ce%b5%ce%b9%cf%83%ce%b1%ce%b3%cf%89%ce%b3%ce%ae-%cf%83%cf%84%ce%bf-%ce%b4%ce%b9%ce%b1%ce%b4%ce%af%ce%ba%cf%84%cf%85%ce%bf-%cf%84%cf%89%ce%bd-%cf%80%cf%81%ce%b1%ce%b3%ce%bc%ce%ac%cf%84%cf%89%ce%bd/">Εισαγωγή στο Διαδίκτυο των Πραγμάτων</a>
+          </h2>
+        </article>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="ah-col" data-aos="fade-up" data-aos-delay="200">
+        <article class="ah-article">
+          <div class="ah-img">
+            <img src="https://alexandroshub.wordpress.com/wp-content/uploads/2025/10/copilot_20251012_125046.png?w=1024" alt="AI Post">
+          </div>
+          <p class="ah-category">AI</p>
+          <h2 class="ah-title">
+            <a href="https://alexandroshub.wordpress.com/2025/10/12/%cf%84%ce%b5%cf%87%ce%bd%ce%b7%cf%84%ce%ae-%ce%bd%ce%bf%ce%b7%ce%bc%ce%bf%cf%83%cf%8d%ce%bd%ce%b7-%cf%83%cf%84%ce%b9%cf%82-%ce%b5%cf%80%ce%b9%cf%87%ce%b5%ce%b9%cf%81%ce%ae%cf%83%ce%b5%ce%b9%cf%82/">Τεχνητή Νοημοσύνη στις Επιχειρήσεις</a>
+          </h2>
+        </article>
+      </div>
+   <!-- Post 2 -->
+      <div class="ah-col" data-aos="fade-up" data-aos-delay="200">
+        <article class="ah-article">
+          <div class="ah-img">
+            <img src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/11817338/11817338-1612134291776-9c1449d481b17.jpg" alt="AI Post">
+          </div>
+          <p class="ah-category">PODCAST</p>
+          <h2 class="ah-title">
+            <a href="https://creators.spotify.com/pod/profile/alexandroshub/episodes/Project-Management-A-Guide-to-Success-and-Evolution-e37a7m6">Project Management: A Guide to Success and Evolution</a>
+          </h2>
+        </article>
+      </div>
+      <!-- Post 3 -->
+      <div class="ah-col" data-aos="fade-up" data-aos-delay="300">
+        <article class="ah-article">
+          <div class="ah-img">
+            <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*2FRRW39of3neMfHuygOcbQ.png" alt="Cybersecurity Post">
+          </div>
+          <p class="ah-category">Cybersecurity</p>
+          <h2 class="ah-title">
+            <a href="https://medium.com/@papaspyrou.alexandros/your-biggest-cybersecurity-weakness-is-yourself-ab205862e8a8">Your Biggest Cybersecurity Weakness Is Yourself</a>
+          </h2>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AOS only -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
@@ -2779,6 +2988,8 @@ document.addEventListener("click", function(event) {
   <div  id="contact" class="bgimg-3"><span class="border" style="font-size:23px;color: #2d2d30;"> <span p style="  font-family: 'Inter', sans-serif;
 background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">&nbsp; LETS GET IN TOUCH: </span> <a href=" https://www.instagram.com/alexandroshub/ " style="background: linear-gradient(90deg, #2196f3, #4caf50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;"><b><i class="fa fa-instagram w3-hover"></i></b></a>
 </span></div>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="contactWrap">
     <h2 class="contactHeading">Get in Touch</h2>
