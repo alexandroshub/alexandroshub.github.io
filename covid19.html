@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading State Demo</title>
+    <title>Loading State - Clean</title>
     <style>
         * {
             margin: 0;
@@ -16,9 +15,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         /* Loading Overlay */
@@ -40,6 +36,7 @@
         .loading-overlay.hidden {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         /* Spinner Container */
@@ -130,142 +127,105 @@
             }
         }
 
-        /* Main Content */
+        /* Main Content - Hidden initially */
         .main-content {
-            text-align: center;
-            color: white;
             padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .main-content.visible {
+            opacity: 1;
         }
 
         .main-content h1 {
+            color: white;
             font-size: 48px;
             margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.3s;
+            text-align: center;
         }
 
         .main-content p {
-            font-size: 20px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.6s;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            color: white;
         }
 
-        /* Demo Button */
-        .demo-btn {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: white;
-            color: #667eea;
-            border: none;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 0.9s;
-        }
-
-        .demo-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Alternative Spinner Styles */
-        .spinner-dots {
-            display: flex;
-            gap: 15px;
-        }
-
-        .dot {
-            width: 20px;
-            height: 20px;
-            background: white;
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out;
-        }
-
-        .dot:nth-child(1) { animation-delay: -0.32s; }
-        .dot:nth-child(2) { animation-delay: -0.16s; }
-
-        @keyframes bounce {
-            0%, 80%, 100% {
-                transform: scale(0);
-                opacity: 0.5;
-            }
-            40% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        .content-section h2 {
+            margin-bottom: 15px;
+            font-size: 28px;
         }
     </style>
 </head>
 <body>
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
-        <!-- Option 1: Rotating Spinner -->
         <div class="spinner-container">
             <div class="spinner"></div>
             <div class="spinner-inner"></div>
         </div>
         
-        <!-- Loading Text -->
         <div class="loading-text">
             <span class="loading-dots">Φόρτωση</span>
         </div>
         
-        <!-- Progress Bar -->
         <div class="progress-bar">
             <div class="progress-fill"></div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1>🚀 Το περιεχόμενο φορτώθηκε!</h1>
-        <p>Το loading state έχει ολοκληρωθεί επιτυχώς</p>
-        <button class="demo-btn" onclick="showLoading()">
-            Δοκίμασε ξανά το Loading
-        </button>
+    <!-- Main Content - Shows after loading -->
+    <div class="main-content" id="mainContent">
+        <h1>Connect. Code. Create</h1>
+        
+        <div class="content-section">
+            <h2>🚀 Από την Ιδέα στην Αυτόματη Υλοποίηση</h2>
+            <p>Εξερεύνησε μια συλλογή από καινοτόμα έργα IoT, έξυπνους αυτοματισμούς και Arduino κατασκευές που μετατρέπουν την καθημερινότητα σε έξυπνη εμπειρία.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>🤖 Smart Automations</h2>
+            <p>Έξυπνα συστήματα που μαθαίνουν και προσαρμόζονται στις ανάγκες σου</p>
+        </div>
+
+        <div class="content-section">
+            <h2>🔌 IoT Solutions</h2>
+            <p>Διασυνδεδεμένες συσκευές που επικοινωνούν και συνεργάζονται</p>
+        </div>
+
+        <div class="content-section">
+            <h2>💡 Arduino Projects</h2>
+            <p>Από πρωτότυπα σε λειτουργικά συστήματα με ανοιχτό κώδικα</p>
+        </div>
     </div>
 
     <script>
         // Simulate page load
         window.addEventListener('load', function() {
+            // Wait 2 seconds to show loading animation
             setTimeout(function() {
-                hideLoading();
-            }, 2000); // 2 seconds loading time
+                // Hide loading overlay
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                
+                // Show main content after loading disappears
+                setTimeout(function() {
+                    document.getElementById('mainContent').classList.add('visible');
+                }, 500);
+            }, 2000);
         });
-
-        function hideLoading() {
-            const overlay = document.getElementById('loadingOverlay');
-            overlay.classList.add('hidden');
-        }
-
-        function showLoading() {
-            const overlay = document.getElementById('loadingOverlay');
-            overlay.classList.remove('hidden');
-            
-            // Hide after 2 seconds for demo
-            setTimeout(hideLoading, 2000);
-        }
     </script>
-</body>
-</html>
-
-
-
 
 <!-- COVID-19 specialPage
 
