@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 swarm robotics</title>
@@ -235,7 +236,58 @@ https://www.youtube.com/watch?v=I70TeUfwfM0
    
   </ul>  
       </div>
-      <div class="card"> <h3>notes</h3> <!--
+      <div class="card"> <h3>notes</h3>
+      
+        🎯<br> Στόχος: Ολοκλήρωση πτυχιακής εργασίας 
+        <br>swarm robotics collective intelligence limits
+        <br>🧩 Στρατηγική Προσέγγισης: 
+        <br>1️⃣ Προετοιμασία & Δομή 
+        <br>2️⃣ Παραγωγή Περιεχομένου 
+        <br>3️⃣ Επιμέλεια & Τεκμηρίωση 
+      <br>    <br>
+    
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #000;
+}
+</style>
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<br>
+<button onclick="move()">Progress</button> 
+
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 33) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+</script>  
+      
+      <!--
     http://www.teiath.gr/userfiles/lamveny/documents/ptyxiakes/odigos_syggrafis__vivliografikis_ptyxiakis.pdf
     
     
