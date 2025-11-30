@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -579,7 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const interval = setInterval(() => {
     progress += increment;
     if (progress >= 100) {
-      progress = 33;
+      progress = 51;
       clearInterval(interval);
     }
     const offset = circumference - (progress / 100) * circumference;
@@ -590,6 +591,222 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
+
+<section class="iot-intro" style="
+  max-width: 900px;
+  margin: 60px auto 40px auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #a5d6a7, #81d4fa);
+  box-shadow: 0 0 20px rgba(0, 150, 136, 0.2);
+  font-family: 'Orbitron', sans-serif;
+  color: #004d40;
+  text-align: center;
+">
+  <h6 style="font-size: 1.3rem; margin-bottom: 1rem; color: #00695c;"><b>intro </b> </h6>
+  <p style="font-size: 1rem; line-height: 1.6; color: #1b5e20;">
+Η παρούσα εργασία παρουσιάζει μια κριτική ανάλυση των θεμελιακών ορίων που επιβάλλει η αποκεντρωμένη λήψη αποφάσεων σε συστήματα swarm robotics. Επισημαίνεται ότι οι βιολογικά εμπνευσμένοι αλγόριθμοι (όπως ACO και PSO) δεν προσφέρουν μαθηματικές εγγυήσεις βέλτιστης σύγκλισης και είναι ευάλωτοι σε αστοχίες κλιμάκωσης και συσσώρευση σφαλμάτων σε πραγματικό κόσμο. Μέσω συνδυασμού θεωρητικών αναλύσεων (θεωρία πληροφορίας, No Free Lunch Theorem), πειραματικών αποδείξεων (GRASP Lab, ETH Zurich, SWARMORPH, Kilobot) και φιλοσοφικών διερευνήσεων, η εργασία καταδεικνύει ότι η απόλυτη αποκέντρωση δεν αποτελεί πανάκεια για τη δημιουργία γνήσιας συλλογικής νοημοσύνης, αλλά έχει σαφώς καθορισμένα όρια. Αντίθετα με τη δημοφιλή άποψη ότι τα swarms είναι κλιμακώσιμα και ανθεκτικά χωρίς όρια, η εργασία αποδεικνύει ότι η απόδοση πέφτει δραματικά με τη μεγέθυνση, η επικοινωνία θέτει ανυπέρβλητα όρια και τα σμήνη δεν έχουν πραγματική "κατανόηση" των ενεργειών τους. Συμπερασματικά, τα μελλοντικά αποτελεσματικά συστήματα θα πρέπει να είναι υβριδικά-ιεραρχικά ή ετερογενή, όχι απολύτως αποκεντρωμένα, αναγνωρίζοντας έτσι τα πραγματικά όρια της φύσης και της πληροφορίας.
+  </p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+   
+    /* Glossary button */
+    #glossaryBtn {
+      padding: 12px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 20px;
+      font-size: 16px;
+    }
+    #glossaryBtn:hover {
+      background: #45a049;
+    }
+
+    /* Modal overlay */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    /* Modal content */
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    /* Close button */
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+
+    /* Animation */
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Glossary text styling */
+    .glossary-text {
+      white-space: pre-line;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .glossary-text strong {
+      color: #2c3e50;
+    }
+  </style>
+
+  <!-- Glossary Button -->
+  <button id="glossaryBtn">Glossary</button>
+
+  <!-- Modal -->
+  <div id="glossaryModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="glossary-text">
+        <strong>Αποκεντρωμένη Λήψη Αποφάσεων (Decentralized Decision-Making):</strong> Η διαδικασία λήψης αποφάσεων κατανεμημένη σε πολλαπλούς κόμβους (π.χ., ρομπότ) που δεν έχουν πρόσβαση σε παγκόσμιες πληροφορίες και λαμβάνουν αποφάσεις με βάση τοπικές πληροφορίες.
+        
+        <strong>Αποκεντρωμένη Νοημοσύνη (Decentralized Intelligence):</strong>Η δημιουργία νοημόνων αποφάσεων και δράσεων μέσω της κατανεμημένης επεξεργασίας πληροφοριών χωρίς κεντρικό ελεγκτή.
+        
+        <strong>Αυτο-οργάνωση (Self-Organization):</strong> Η ικανότητα ενός συστήματος να δημιουργεί προτύπα και δομές χωρίς εξωτερικό σχεδιασμό ή μεσολάβηση.
+     
+<strong>Βέλτιστη Λύση (Optimal Solution):</strong> Η καλύτερη δυνατή λύση για ένα δεδομένο πρόβλημα, συχνά καθορίζεται μαθηματικά με ελαχιστοποίηση ή μεγιστοποίηση μιας αντικειμενικής συνάρτησης.
+
+<strong>Βιώσιμη Ανάπτυξη (Sustainable Development):</strong> Η ανάπτυξη που εξισορροπεί τις τρέχουσες ανάγκες με την ικανότητα των μελλοντικών γενεών να ικανοποιήσουν τις δικές τους ανάγκες.
+
+<strong>Γειτονική Επικοινωνία (Neighbor Communication):</strong> Η επικοινωνία ενός ρομπότ μόνο με τα γειτονικά ρομπότ που είναι εντός του εύρους επικοινωνίας.
+
+<strong>Δείκτης (Index):</strong> Ένα μέγεθος που μετρά ένα συγκεκριμένο χαρακτηριστικό ενός συστήματος (π.χ., Δείκτης Προσαρμοστικότητας).
+
+<strong>Διαδοχή (Propagation):</strong> Η διάδοση ενός σήματος ή πληροφορίας από ένα σημείο σε άλλο.
+
+<strong>Διακέντρωση (Decentralization):</strong> Η κατανομή της εξουσίας και της ελέγχου σε πολλαπλά σημεία, αντί σε ένα κεντρικό σημείο.
+<strong>Διάμετρος Δικτύου (Network Diameter):</strong> Η μέγιστη ελάχιστη απόσταση ανάμεσα σε δύο κόμβους ενός δικτύου.
+<strong>Δυναμική Περιβάλλοντος (Environmental Dynamics):</strong> Η ικανότητα του περιβάλλοντος να αλλάζει και να εξελίσσεται με το χρόνο.
+**Εγγύηση Ορθότητας (Correctness Guarantee):** Μια μαθηματική εγγύηση ότι ένας αλγόριθμος θα παράγει ορθή λύση.
+**Εμπόδια (Obstacles):** Πρόσθετα αντικείμενα ή δυσμενείς συνθήκες στο περιβάλλον που δεν είναι δυνατή η διέλευση.
+**Ευελιξία (Flexibility):** Η ικανότητα ενός συστήματος να προσαρμόζεται σε αλλαγές των συνθηκών.
+**Ζώνη Συνδεσιμότητας (Connectivity Zone):** Η περιοχή γύρω από ένα ρομπότ εντός της οποίας μπορεί να επικοινωνήσει με άλλα ρομπότ.
+**Ηγέτης (Leader):** Ένας κόμβος σε ένα σύστημα που έχει ιδιαίτερο ρόλο στη λήψη αποφάσεων ή τον συντονισμό.
+**Θεώρημα (Theorem):** Μια μαθηματική πρόταση που έχει αποδειχθεί αληθής.
+**Θεώρηση Αποδόσεων (Throughput):** Ο όγκος των δεδομένων που μεταδίδονται ανά μονάδα χρόνου.
+**Κατανεμημένος Αλγόριθμος (Distributed Algorithm):** Ένας αλγόριθμος που εκτελείται ταυτόχρονα σε πολλαπλούς κόμβους χωρίς κεντρικό συντονιστή.
+**Κατώφλι Χάους (Edge of Chaos):** Το όριο ανάμεσα στο σταθερό καθεστώς και το χαοτικό καθεστώς, όπου το σύστημα είναι πιο προσαρμοστικό.
+**Κλιμάκωση (Scalability):** Η ικανότητα ενός συστήματος να διατηρεί ή να βελτιώνει την απόδοσή του καθώς αυξάνει το μέγεθος του.
+**Κόμβος (Node):** Ένας μεμονωμένος κύκλος ή ρομπότ σε ένα δίκτυο.
+**Κρίσιμη Εφαρμογή (Critical Application):** Μια εφαρμογή όπου η αποτυχία ή η λάθος λειτουργία θα είχε σοβαρές συνέπειες.
+**Λήψη Αποφάσεων (Decision-Making):** Η διαδικασία επιλογής μιας δράσης από πολλαπλές εναλλακτικές επιλογές.
+**Τοπικό (Local):** Αναφέρεται σε ένα περιορισμένο μέρος ενός συστήματος.
+**Μαθηματική Θεωρία (Mathematical Theory):** Ένα σύστημα αξιωμάτων, ορισμών και θεωρημάτων που περιγράφουν αντικείμενα ενός ορισμένου τύπου.
+**Μετάδοση (Transmission):** Η αποστολή δεδομένων ή σημάτων από ένα σημείο σε άλλο.
+**Μηχανική Μάθηση (Machine Learning):** Η περιοχή της Τεχνητής Νοημοσύνης που ασχολείται με αλγορίθμους που μαθαίνουν από δεδομένα.
+**Μικρό-Ρομπότ (Microrobot):** Ένα ρομπότ πολύ μικρού μεγέθους, συχνά χιλιοστών.
+**Νοημοσύνη (Intelligence):** Η ικανότητα να κατανοούμε, να μαθαίνουμε, να προσαρμοζόμαστε και να λαμβάνουμε ευφυείς αποφάσεις.
+**Νευρωνικό Δίκτυο (Neural Network):** Ένα υπολογιστικό μοντέλο εμπνευσμένο από βιολογικά νευρωνικά δίκτυα.
+**Οδηγός (Controller):** Το σύστημα που καθοδηγεί και ελέγχει ένα ρομπότ.
+**Ομοιογενές Σμήνος (Homogeneous Swarm):** Ένα σμήνος όπου όλα τα ρομπότ είναι ίδια.
+**Παγκόσμιος (Global):** Αναφέρεται στο σύνολο ενός συστήματος, σε αντίθεση με τοπικό που αναφέρεται σε μέρος του.
+**Παράδειγμα (Paradigm):** Ένα σύνολο ιδεών, δογμάτων και πρακτικών που ορίζουν έναν τρόπο σκέψης.
+**Παρουσίαση Ορίων (Presentation of Limits):** Η καθαρή και σαφής κατάθεση των περιορισμών που υπάρχουν σε ένα σύστημα.
+**Περιβάλλον (Environment):** Ο χώρος και οι συνθήκες στις οποίες λειτουργεί το σύστημα.
+**Πληροφορία (Information):** Δεδομένα που έχουν μεταφραστεί σε κάτι που έχει νόημα και χρησιμότητα.
+**Πολυπλοκότητα (Complexity):** Ο βαθμός δυσκολίας ή της σύνθετης φύσης ενός συστήματος.
+**Πρακτικό Πείραμα (Experimental Study):** Μια μελέτη που διεξάγεται με πραγματικά ρομπότ, όχι σε προσομοίωση.
+**Πρότυπο (Pattern):** Ένας επαναλαμβανόμενος ή αναγνωρίσιμος τρόπος κίνησης ή συμπεριφοράς.
+**Προσαρμοστικότητα (Adaptability):** Η ικανότητα ενός συστήματος να προσαρμόζεται σε αλλαγές των συνθηκών.
+**Προσομοίωση (Simulation):** Η αναπαραγωγή της λειτουργίας ενός συστήματος σε υπολογιστή.
+**Ρομπότ (Robot):** Μια μηχανή που μπορεί να εκτελεί εργασίες αυτόματα.
+**Ρυθμός (Rate):** Η ταχύτητα ή η συχνότητα κάτι.
+**Σάρωση (Scan):** Η συστηματική εξέταση ενός χώρου ή ενός σημάτος.
+**Σημείο Συμφωνίας (Consensus Point):** Το σημείο στο οποίο όλοι οι κόμβοι έχουν συμφωνήσει.
+**Σμήνος (Swarm):** Μια ομάδα από πολλαπλά ρομπότ που λειτουργούν συλλογικά.
+**Σύγκλιση (Convergence):** Η διαδικασία προσέγγισης σε ένα σταθερό σημείο ή κατάσταση.
+**Συλλογική Νοημοσύνη (Collective Intelligence):** Η ικανότητα ενός συστήματος πολλαπλών κόμβων να λαμβάνει αποφάσεις και να επιλύει προβλήματα χωρίς κεντρικό ελεγκτή.
+**Συντονισμός (Coordination):** Η αρμονική δράση πολλαπλών κόμβων προς ένα κοινό στόχο.
+**Σχηματισμός (Formation):** Μια συγκεκριμένη διάταξη ρομπότ στο χώρο.
+**Τοπική Αποτελεσματικότητα (Local Efficiency):** Η αποτελεσματικότητα σε ένα τοπικό επίπεδο.
+**Τοπική Πληροφορία (Local Information):** Πληροφορία που διατίθεται μόνο σε ένα μέρος του συστήματος.
+**Θόρυβος (Noise):** Ανεπιθύμητες τυχαίες διακυμάνσεις σε σήματα ή πληροφορίες.
+**Υβριδικό Σύστημα (Hybrid System):** Ένα σύστημα που συνδυάζει στοιχεία από διαφορετικές αρχιτεκτονικές.
+**Υπο-βέλτιστη Λύση (Suboptimal Solution):** Μια λύση που είναι καλή αλλά όχι η καλύτερη δυνατή.
+**Υπο-σμήνος (Subswarm):** Ένα μέρος ενός σμήνους που έχει χωριστεί από το υπόλοιπο.
+**Φερόμονη (Pheromone):** Ένα χημικό σήμα που χρησιμοποιείται για επικοινωνία (στο ACO ως μαθηματική αναπαράσταση).
+**Φιλοσοφία Ελέγχου (Control Philosophy):** Ο θεμελιώδης τρόπος σκέψης σχετικά με τον τρόπο ελέγχου ενός συστήματος.
+**Φυσική Πληροφορία (Natural Information):** Πληροφορία που προέρχεται από τη φύση ή φυσικά συστήματα.
+**Χαμηλή Κρισιμότητα (Low Criticality):** Εφαρμογές όπου η αποτυχία δεν έχει σοβαρές συνέπειες.
+**Χαοτικό Σύστημα (Chaotic System):** Ένα σύστημα που είναι ιδιαίτερα ευαίσθητο στις αρχικές συνθήκες.
+**Χαρτογράφηση (Mapping):** Η δημιουργία χαρτών ενός περιβάλλοντος.
+**Χωρητικότητα Καναλιού (Channel Capacity):** Ο μέγιστος ρυθμός μετάδοσης δεδομένων μέσω ενός καναλιού.
+
+
+
+        <strong>Χωρητικότητα Καναλιού (Channel Capacity):</strong> Ο μέγιστος ρυθμός μετάδοσης δεδομένων μέσω ενός καναλιού.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const modal = document.getElementById("glossaryModal");
+    const btn = document.getElementById("glossaryBtn");
+    const span = document.querySelector(".close");
+
+    // Open modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // Close modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // Close when clicking outside modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 <!--
 
@@ -629,141 +846,6 @@ soon . . .
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- IoT Process Path Injection -->
-<!--
-<style>
-  .iot-path {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 2rem auto;
-    max-width: 1200px;
-  }
-
-  .step-box {
-    background: linear-gradient(to right, #b2dfdb, #c8e6c9);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 180px;
-    min-height: 100px;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-
-  .step-box:hover {
-    transform: scale(1.05);
-  }
-
-  .step-title {
-    font-weight: bold;
-    color: #004d40;
-    margin-bottom: 0.5rem;
-  }
-
-  .step-desc {
-    font-size: 0.85rem;
-    color: #2e7d32;
-  }
-
-  .step-number {
-    position: absolute;
-    top: 6px;
-    left: 8px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #00796b;
-    opacity: 0.4;
-  }
-
-  .arrow {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: #00796b;
-    opacity: 0.3;
-  }
-
-  .step-box:last-child .arrow {
-    display: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    .step-box {
-      width: 100%;
-    }
-
-    .arrow {
-      display: none;
-    }
-  }
-</style>
-
-<div class="iot-path">
-  <template id="iot-step-template">
-    <div class="step-box">
-      <div class="step-number"></div>
-      <div class="step-title"></div>
-      <div class="step-desc"></div>
-      <div class="arrow">→</div>
-    </div>
-  </template>
-</div>
-
-<script>
-  const steps = [
-    ["Ideate", "Innovative concept generation"],
-    ["Explore", "Tech & trend research"],
-    ["Validate", "Feasibility analysis"],
-    ["Design", "System architecture"],
-    ["Prototype", "Early model testing"],
-    ["Connect", "Devices & sensors"],
-    ["Develop", "Code & firmware"],
-    ["Integrate", "Platform linking"],
-    ["Secure", "Data protection"],
-    ["Test", "Diagnostics & QA"],
-    ["Document", "Guides & APIs"],
-    ["Deploy", "Production launch"],
-    ["Monitor", "Live analytics"],
-    ["Optimize", "Performance tuning"],
-    ["Scale", "Infrastructure growth"],
-    ["Automate", "Smart workflows"],
-    ["Predict", "AI-driven insights"]
-  ];
-
-  const container = document.querySelector('.iot-path');
-  const template = document.getElementById('iot-step-template');
-
-  steps.forEach((step, index) => {
-    const clone = template.content.cloneNode(true);
-    clone.querySelector('.step-number').textContent = index + 1;
-    clone.querySelector('.step-title').textContent = step[0];
-    clone.querySelector('.step-desc').textContent = step[1];
-    container.appendChild(clone);
-  });
-</script>
--->
 
 
 </div>
