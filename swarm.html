@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -580,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const interval = setInterval(() => {
     progress += increment;
     if (progress >= 100) {
-      progress = 51;
+      progress = 60;
       clearInterval(interval);
     }
     const offset = circumference - (progress / 100) * circumference;
@@ -589,6 +590,250 @@ document.addEventListener("DOMContentLoaded", () => {
   }, step);
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>/* Hide element if the viewport width is 600px or less */ @media screen and (max-width: 600px) {  #div1 {    display: none;  }}</style>
+<div id="div1">
+
+
+<style>
+.thesisTimeline-track {
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  align-items:center;
+  padding:40px 0;
+  list-style:none;
+  margin:0;
+}
+.thesisTimeline-track::before {
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:50%;
+  transform:translateY(-50%);
+  height:4px;
+  background:#ccc;
+  border-radius:2px;
+}
+.thesisTimeline-item {
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
+.thesisTimeline-dot {
+  width:20px; height:20px;
+  border-radius:50%;
+  border:2px solid #4f7cff;
+  background:#fff;
+  cursor:pointer;
+  transition:.2s;
+}
+.thesisTimeline-dot:hover { transform:scale(1.1); }
+.thesisTimeline-label {
+  position:absolute;
+  top:28px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:.9rem;
+  color:#555;
+}
+.thesisTimeline-popover {
+  position:absolute;
+  top:-140px;
+  left:50%;
+  transform:translateX(-50%) translateY(10px);
+  min-width:220px;
+  max-width:280px;
+  padding:14px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.9);
+  border:1px solid #ccc;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+  z-index:10;
+}
+.thesisTimeline-popover::after {
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%) rotate(45deg);
+  width:12px; height:12px;
+  background:rgba(255,255,255,0.9);
+  border-left:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+.thesisTimeline-item.thesisTimeline-active .thesisTimeline-popover,
+.thesisTimeline-item:hover .thesisTimeline-popover {
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
+.thesisTimeline-title { margin:0 0 6px; font-size:1rem; }
+.thesisTimeline-close {
+  position:absolute;
+  top:6px; right:8px;
+  border:none; background:transparent;
+  font-size:18px; cursor:pointer;
+  color:#666;
+}
+@media(max-width:640px){
+  .thesisTimeline-track { grid-template-columns:1fr; gap:50px; }
+  .thesisTimeline-track::before { display:none; }
+  .thesisTimeline-label { position:static; transform:none; margin-top:8px; }
+  .thesisTimeline-popover {
+    position:relative; top:auto; left:auto;
+    transform:none; margin-top:12px; max-width:100%;
+  }
+  .thesisTimeline-popover::after { display:none; }
+}
+
+</style>
+
+<ol class="thesisTimeline-track">
+  <li class="thesisTimeline-item">
+    <button class="thesisTimeline-dot"><span class="thesisTimeline-label">Ιδέα</span></button>
+    <div class="thesisTimeline-popover">
+      <h3 class="thesisTimeline-title">Ιδέα</h3>
+      <p>Περιγραφή concept και στόχοι.</p>
+      <button class="thesisTimeline-close">×</button>
+    </div>
+  </li>
+  <li class="thesisTimeline-item">
+    <button class="thesisTimeline-dot"><span class="thesisTimeline-label">Έρευνα</span></button>
+    <div class="thesisTimeline-popover">
+      <h3 class="thesisTimeline-title">Έρευνα</h3>
+      <p>Περιγραφή concept και στόχοι.</p>
+      <button class="thesisTimeline-close">×</button>
+    </div>
+  </li>
+  <li class="thesisTimeline-item">
+    <button class="thesisTimeline-dot"><span class="thesisTimeline-label">Υλοποίηση</span></button>
+    <div class="thesisTimeline-popover">
+      <h3 class="thesisTimeline-title">Υλοποίηση</h3>
+      <p>Αρχιτεκτονική και milestones.</p>
+      <button class="thesisTimeline-close">×</button>
+    </div>
+  </li>
+   <li class="thesisTimeline-item">
+    <button class="thesisTimeline-dot"><span class="thesisTimeline-label">Αξιολόγηση</span></button>
+    <div class="thesisTimeline-popover">
+      <h3 class="thesisTimeline-title">Αξιολόγηση</h3>
+      <p>Μετρικές και συμπεράσματα.</p>
+      <button class="thesisTimeline-close">×</button>
+    </div>
+  </li>
+   <li class="thesisTimeline-item">
+    <button class="thesisTimeline-dot"><span class="thesisTimeline-label">Τελικό αποτέλεσμα</span></button>
+    <div class="thesisTimeline-popover">
+      <h3 class="thesisTimeline-title">Τελικό αποτέλεσμα</h3>
+      <p>Παρουσίαση και demo.</p>
+      <button class="thesisTimeline-close">×</button>
+    </div>
+  </li>
+  <!-- επόμενα στάδια... -->
+</ol>
+
+
+<script>
+// Unique Thesis Timeline Script
+(function(){
+  const thesisTrack = document.querySelector('.thesisTimeline-track');
+  if (!thesisTrack) return;
+
+  function thesisCloseAll(){
+    const activeItems = thesisTrack.querySelectorAll('.thesisTimeline-item.thesisTimeline-active');
+    activeItems.forEach(item=>{
+      item.classList.remove('thesisTimeline-active');
+      const btn=item.querySelector('.thesisTimeline-dot');
+      if(btn) btn.setAttribute('aria-expanded','false');
+    });
+  }
+
+  function thesisToggleItem(item){
+    const isActive=item.classList.contains('thesisTimeline-active');
+    thesisCloseAll();
+    if(!isActive){
+      item.classList.add('thesisTimeline-active');
+      const btn=item.querySelector('.thesisTimeline-dot');
+      if(btn) btn.setAttribute('aria-expanded','true');
+    }
+  }
+
+  // Delegated click handling
+  thesisTrack.addEventListener('click',e=>{
+    const dot=e.target.closest('.thesisTimeline-dot');
+    const closeBtn=e.target.closest('.thesisTimeline-close');
+    const item=e.target.closest('.thesisTimeline-item');
+
+    if(dot && item){
+      e.preventDefault(); e.stopPropagation();
+      thesisToggleItem(item);
+      return;
+    }
+    if(closeBtn && item){
+      e.preventDefault(); e.stopPropagation();
+      item.classList.remove('thesisTimeline-active');
+      const btn=item.querySelector('.thesisTimeline-dot');
+      if(btn) btn.setAttribute('aria-expanded','false');
+      return;
+    }
+  });
+
+  // Click outside closes all
+  document.addEventListener('click',e=>{
+    if(!e.target.closest('.thesisTimeline-track')) thesisCloseAll();
+  });
+
+  // Keyboard accessibility
+  thesisTrack.addEventListener('keydown',e=>{
+    const dot=e.target.closest('.thesisTimeline-dot');
+    if(!dot) return;
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      const item=e.target.closest('.thesisTimeline-item');
+      if(item) thesisToggleItem(item);
+    }
+  });
+
+  // Escape closes all
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') thesisCloseAll();
+  });
+})();
+
+</script>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -609,9 +854,6 @@ document.addEventListener("DOMContentLoaded", () => {
 Η παρούσα εργασία παρουσιάζει μια κριτική ανάλυση των θεμελιακών ορίων που επιβάλλει η αποκεντρωμένη λήψη αποφάσεων σε συστήματα swarm robotics. Επισημαίνεται ότι οι βιολογικά εμπνευσμένοι αλγόριθμοι (όπως ACO και PSO) δεν προσφέρουν μαθηματικές εγγυήσεις βέλτιστης σύγκλισης και είναι ευάλωτοι σε αστοχίες κλιμάκωσης και συσσώρευση σφαλμάτων σε πραγματικό κόσμο. Μέσω συνδυασμού θεωρητικών αναλύσεων (θεωρία πληροφορίας, No Free Lunch Theorem), πειραματικών αποδείξεων (GRASP Lab, ETH Zurich, SWARMORPH, Kilobot) και φιλοσοφικών διερευνήσεων, η εργασία καταδεικνύει ότι η απόλυτη αποκέντρωση δεν αποτελεί πανάκεια για τη δημιουργία γνήσιας συλλογικής νοημοσύνης, αλλά έχει σαφώς καθορισμένα όρια. Αντίθετα με τη δημοφιλή άποψη ότι τα swarms είναι κλιμακώσιμα και ανθεκτικά χωρίς όρια, η εργασία αποδεικνύει ότι η απόδοση πέφτει δραματικά με τη μεγέθυνση, η επικοινωνία θέτει ανυπέρβλητα όρια και τα σμήνη δεν έχουν πραγματική "κατανόηση" των ενεργειών τους. Συμπερασματικά, τα μελλοντικά αποτελεσματικά συστήματα θα πρέπει να είναι υβριδικά-ιεραρχικά ή ετερογενή, όχι απολύτως αποκεντρωμένα, αναγνωρίζοντας έτσι τα πραγματικά όρια της φύσης και της πληροφορίας.
   </p>
 </section>
-
-
-
 
 
 
