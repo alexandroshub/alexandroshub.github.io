@@ -1,81 +1,915 @@
-<style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat');
 
-body {
-  background: #EEEEEE;
+
+
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 Raspberry Pi </title>
+	<link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">  
+    <meta name="author" content="Alexandros Papaspyrou">
+<!--========================================================================== Updated: v2.3 26.11.25
+	  ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
+	  Ｃｏｎｎｅｃｔ Ｃｏｄｅ Ｃｒｅａｔｅ  🅐🅛🅔🅧🅐🅝🅓🅡🅞🅢 🅗🅤🅑 
+
+	  Welcome in my personal website Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou Hosted by Github
+      Website: https://alexandroshub.github.io |  Updated: v3 *20.11.25 
+      Contact: a-papaspyrou@outlook.com.gr  |  Mob: 	+30 694 054 8867
+      Contact: alexandroshub@protonmail.com  https://discord.gg/zSEH54w8nM
+     
+	▄▀█ █░░ █▀▀ ▀▄▀ ▄▀█ █▄░█ █▀▄ █▀█ █▀█ █▀   █░█ █░█ █▄▄
+	█▀█ █▄▄ ██▄ █░█ █▀█ █░▀█ █▄▀ █▀▄ █▄█ ▄█   █▀█ █▄█ █▄█
+==========================================================================   -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+
+<!-- TOP MENU START -->
+<!-- Bootstrap & Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0;
+background: #0a0a0c;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+background: linear-gradient(to right, #1b2a4a, #2d2d30);  backdrop-filter: blur(6px);
+  border: none;
+  font-size: 14px !important;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  min-height: 55px;
+}
+
+.navbar .navbar-header .logo {
+  display: inline-block;
+  line-height: 55px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-family: 'Audiowide';
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar li a {
+  color: #e0e0e0 !important;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li a:hover {
+  color: white !important;
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+
+  border-radius: 0;
+}
+
+.navbar-toggle {
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+  border: none;
+  margin-top: 10px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.dropdown-menu {
+background: #0a0a0c;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+background: linear-gradient(to right, #1b2a4a, #2d2d30);	border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.dropdown-menu li a {
+  color: #ddd !important;
+  padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+            background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.open > a:hover {
+            background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+  .navbar li a {
+    padding: 12px 15px;
+    font-size: 16px;
+    height: auto;
+  }
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-label="Εναλλαγή πλοήγησης">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+
+    
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://alexandroshub.github.io/LV3#contact">Contact</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&nbsp; More ▾           </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://alexandroshub.github.io/cv"><i class="fa fa-id-card"></i>&nbsp; My CV</a></li>
+            <li><a href="https://alexandroshub.github.io/porto.ap.html"><i class="fa fa-folder-open"></i>&nbsp; Portfolio</a></li>
+            <li><a href="https://alexandroshub.github.io/plus.ap.html"><i class="fa fa-plus-circle"></i>&nbsp; Plus +</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Automations</li>
+            <li><a href="https://alexandroshub.github.io/iot.html"><i class="fa fa-wifi"></i>&nbsp; IoT</a></li>
+            <li><a href="https://alexandroshub.github.io/ai.html"><i class="fa fa-brain"></i>&nbsp; AI</a></li>
+            <li><a href="https://alexandroshub.github.io/ardu22.html"><i class="fa fa-microchip"></i>&nbsp; Arduino</a></li>
+            <li><a href="https://alexandroshub.github.io/raspberrypi"><i class="fa fa-microchip"></i>&nbsp; Raspberry Pi</a></li>
+            <li><a href="https://alexandroshub.github.io/stem"><i class="fa fa-flask"></i>&nbsp; STEAM</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Creative Side</li>
+            <li><a href="https://alexandroshub.github.io/art.html"><i class="fa fa-paint-brush"></i>&nbsp; Art Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Required Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- TOP MENU END -->
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+
+
+</head><body>
+
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {height: 100%; margin: 0; line-height: 1.8;}
+.w3-bar .w3-button {padding: 16px;}
+.menu {display: none;}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image:
+    linear-gradient(to bottom, rgba(34, 34, 34, 1),
+                              rgba(255, 0, 0, 0),
+                              rgba(255, 0, 0, 0),
+                              rgba(0, 0, 0, 1)),
+    url("https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");
+  min-height: 50%;
+}
+
+ul.breadcrumb {
+  padding: 4px 8px;
+  list-style: none;
+  background-color: #222222;
+  margin: 0;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: #fff;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+#baroty {
+  height: 40px;
+  background-image: linear-gradient(to top, rgba(17,17,17), rgba(0,0,0));
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- === HERO SECTION (unique: neoHero-*) === -->
+<section class="neoHero-wrap">
+  <div class="neoHero-inner">
+    <h1 class="neoHero-title"> 
+<style>
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(118, 167, 63) 0%,
+    rgb(51, 143, 118) 40%,
+    rgb(55, 141, 167) 50%,
+    rgb(117, 152, 242) 70%,
+    rgb(144, 118, 236) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>
+Your <span class="gradient-text">Raspberry Pi</span> Playground for Innovation</h1>
+      <p class="neoHero-sub">Tech with a soul. Beyond the code, into the mind.</p>
+
+   
+    <div class="neoHero-ctaRow">
+      <a href="https://github.com/alexandroshub/python" class="neoHero-btn neoHero-primary"> 👨‍💻 </a>
+      <a href="https://alexandroshub.github.io/projects.html" class="neoHero-btn neoHero-secondary">Εξερεύνησε τα Projects</a>
+    </div>
+    
+  </div>
+  <!-- Animated waves -->
+  <div class="neoHero-waves">
+    <svg viewBox="0 0 1600 600" preserveAspectRatio="none">
+      <path class="neoHero-wave1"
+        d="M0 300 C 300 150, 600 450, 1200 220 C 1500 100, 1800 380, 2000 260"
+        fill="none" />
+      <path class="neoHero-wave2"
+        d="M0 420 C 300 250, 600 520, 1200 340 C 1500 200, 1800 500, 2000 420"
+        fill="none" />
+    </svg>
+  </div> 
+</section>
+
+<style>
+/* === HERO BASE === */
+.neoHero-wrap {
+  position: relative;
+  height: 60vh;                        
+  width: 100%;
+  /* πιο φωτεινό gradient */
+  background: linear-gradient(135deg, #0a122d 0%, #1b2a4a 50%, #2d2d30 100%);
+  color: #fff;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+/* πρόσθετο layer με glow */
+.neoHero-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(77,240,255,0.15), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255,74,110,0.12), transparent 60%);
+  z-index: 0;
+  animation: heroGlow 12s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  from { opacity: 0.4; transform: scale(1); }
+  to   { opacity: 0.7; transform: scale(1.05); }
+}
+.neoHero-inner {
+  position: relative;
+  z-index: 5;
+  max-width: 650px;
+}
+.neoHero-title {
+  font-size: 54px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+.neoHero-sub {
+  font-size: 18px;
+  opacity: 0.75;
+  margin-bottom: 30px;
+}
+/* === CTA BUTTONS === */
+.neoHero-ctaRow {
+  display: flex;
+  gap: 14px;
+}
+.neoHero-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.neoHero-primary {
+  background: #4df0ff;
+  color: #000;
+  box-shadow: 0 0 14px rgba(77, 240, 255, 0.4);
+}
+.neoHero-primary:hover { transform: translateY(-3px); }
+
+.neoHero-secondary {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+}
+.neoHero-secondary:hover { transform: translateY(-3px);   color: #fff; }
+
+/* === WAVES BACKGROUND === */
+.neoHero-waves {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.55; /* λίγο πιο έντονο */
+}
+
+.neoHero-waves svg {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  left: -20%;
+  top: -20%;
+}
+
+/* Animated strokes */
+.neoHero-wave1,
+.neoHero-wave2 {
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 6;
+  stroke-dashoffset: 0;
+  animation: neoHeroMove 14s linear infinite;
+}
+
+.neoHero-wave1 {
+  stroke: rgba(77, 240, 255, 0.9); /* πιο φωτεινό μπλε */
+}
+.neoHero-wave2 {
+  stroke: rgba(255, 74, 110, 0.85); /* πιο έντονο ροζ */
+  animation-delay: -4s;
+}
+
+@keyframes neoHeroMove {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -400; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .neoHero-title { font-size: 38px; }
+}
+
+</style>
+
+
+
+  <style>
+  
+    .projects {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .tags span {
+      display: inline-block;
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+ 
+  </style>
+
+
+  <section class="projects" id="from">
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Tilt+Neon&display=swap");
+
+.description h1 {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(118, 167, 63) 0%,
+    rgb(51, 143, 118) 40%,
+    rgb(55, 141, 167) 50%,
+    rgb(117, 152, 242) 70%,
+    rgb(144, 118, 236) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+</style>
+
+
+
+
+
+
+
+
+<script> // Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">intro</span></h5>
+  
+  
+  
+  
+  
+  <!-- Raspberry Tribute Block (namespaced: rpTributeX) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Playfair+Display:wght@400;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+<section class="rpTributeX" aria-labelledby="rpTributeX-title">
+  <!-- Nav / Logo -->
+  <div class="rpTributeX-nav">
+    <img
+      class="rpTributeX-logo"
+      src="https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"
+      alt="Raspberry Pi logo"
+      decoding="async"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Banner -->
+  <h1 id="rpTributeX-title" class="rpTributeX-heading">Raspberry Pi Foundation</h1>
+
+  <div class="rpTributeX-hero">
+    <p class="rpTributeX-caption">
+      From concept to reality — building a movement to democratize computing. Everyone can get involved with technology:
+      write code, play games, interact with hardware, invent together.
+    </p>
+    <figure class="rpTributeX-figure">
+      <img
+        class="rpTributeX-image"
+        src="https://my.element14.com/wcsstore/ExtendedSitesCatalogAssetStore/cms/asset/images/common/campaign/raspberrypi/pi-4-hero.png"
+        alt="Raspberry Pi 4 board hero image"
+        decoding="async"
+        loading="lazy"
+      />
+    </figure>
+  </div>
+
+  <!-- Info columns -->
+  <div class="rpTributeX-info" role="list">
+    <div class="rpTributeX-col" role="listitem">
+      The Raspberry Pi Foundation is a UK-based charity putting the power of computing and digital making into people’s hands worldwide.
+    </div>
+    <div class="rpTributeX-col" role="listitem">
+      They engage millions of young people through clubs, events, and partnerships with youth organizations to build computing skills.
+    </div>
+    <div class="rpTributeX-col" role="listitem">
+      The Foundation makes computing accessible via low-cost, high-performance single-board computers and free software.
+    </div>
+  </div>
+
+  <hr class="rpTributeX-divider" />
+
+  <!-- Quote -->
+  <div class="rpTributeX-quote">
+    <div class="rpTributeX-quoteText">
+      <img
+        class="rpTributeX-quoteIcon"
+        src="https://img.icons8.com/small/452/quote.png"
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+        loading="lazy"
+      />
+      <blockquote class="rpTributeX-blockquote">
+        <p>Get as much education as you can. Nobody can take that away from you.</p>
+      </blockquote>
+    </div>
+    <div class="rpTributeX-quoteAuthor">
+      <img
+        class="rpTributeX-authorImg"
+        src="https://media.wired.co.uk/photos/606da3df5b10d6006e4b2220/4:3/w_1704,h_1278,c_limit/UU7A0166.jpg"
+        alt="Eben Upton, Co‑Founder of Raspberry Pi"
+        decoding="async"
+        loading="lazy"
+      />
+      <div class="rpTributeX-authorMeta">
+        <span class="rpTributeX-authorName">Eben Upton</span>
+        <span class="rpTributeX-authorRole">Co‑Founder</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rpTributeX-divider" />
+</section>
+
+<style>
+/* Raspberry Tribute Block (namespaced: rpTributeX) */
+.rpTributeX {
+  --rp-bg: #fffbf5;
+  --rp-text: #4E4F50;
+  --rp-heading: #282120;
+  --rp-card: #ffffff;
+  --rp-shadow: rgba(0,0,0,0.12);
+  --rp-accent: #d41c2c; /* subtle raspberry accent */
+  --rp-max: 1100px;
+
+  box-sizing: border-box;
+  background-color: var(--rp-bg);
+  color: var(--rp-text);
+  font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* prevent global img conflicts */
+.rpTributeX img { display: block; max-width: 100%; height: auto; }
+
+.rpTributeX-heading {
+  font-family: Raleway, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--rp-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  margin: 12px auto 16px;
+  line-height: 1.15;
+  max-width: var(--rp-max);
+}
+
+.rpTributeX-nav {
+  max-width: var(--rp-max);
+  margin: 0 auto;
+}
+.rpTributeX-logo {
+  width: clamp(64px, 10vw, 110px);
+  margin: 12px auto 4px;
+}
+
+/* Hero */
+.rpTributeX-hero {
+  max-width: var(--rp-max);
+  margin: 0 auto;
+}
+.rpTributeX-caption {
+  font-weight: 300;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  margin: 0 auto 16px;
+  max-width: 72ch;
+}
+.rpTributeX-figure {
+  margin: 0 auto;
+  max-width: 900px;
+}
+.rpTributeX-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Info columns */
+.rpTributeX-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 18px auto 8px;
+}
+.rpTributeX-col {
+  text-align: left;
+  font-weight: 300;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px var(--rp-shadow), 0 1px 2px rgba(0,0,0,0.24);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Divider */
+.rpTributeX-divider {
+  display: block;
+  height: 0;
+  border: 0;
+  border-top: 3px solid var(--rp-text);
+  max-width: 900px;
+  margin: 32px auto;
+}
+
+/* Quote */
+.rpTributeX-quote {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.rpTributeX-quoteText {
+  padding: 8px;
+}
+.rpTributeX-quoteIcon {
+  width: clamp(24px, 6vw, 48px);
+  margin: 0 auto 8px;
+  opacity: 0.8;
+}
+.rpTributeX-blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.875rem);
+  max-width: 60ch;
+  margin: 0 auto;
+  line-height: 1.35;
+}
+.rpTributeX-quoteAuthor {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+.rpTributeX-authorImg {
+  width: 200px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.rpTributeX-authorMeta {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+}
+.rpTributeX-authorName {
+  font-weight: 700;
+  color: var(--rp-heading);
+}
+.rpTributeX-authorRole {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Gallery */
+.rpTributeX-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px;
+}
+.rpTributeX-card {
+  background-color: var(--rp-card);
+  border-radius: 15px;
+  box-shadow: 0 1px 3px var(--rp-shadow), 0 1px 2px rgba(0,0,0,0.24);
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.rpTributeX-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.rpTributeX-cardImg {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.rpTributeX-cardBody {
+  padding: 14px 16px;
+  text-align: left;
+}
+.rpTributeX-cardTitle {
+  font-family: Raleway, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.05rem;
+  color: var(--rp-heading);
+  margin: 0 0 6px 0;
+}
+.rpTributeX-cardText {
+  font-size: 0.95rem;
+  color: #555;
   margin: 0;
 }
 
-.header {
-  align-items: flex-start;
+/* Footer */
+.rpTributeX-footer {
+  max-width: 900px;
+  margin: 24px auto 0;
+}
+.rpTributeX-footerIcons {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 8px;
   display: flex;
-  height: 400px;
-  background-image: url("https://bc-robotics.com/wp-content/uploads/2019/09/pi4-banner2.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  gap: 8px;
   justify-content: center;
-  width: 100%;
-  margin-top: -20px;
-}
-
-.headertext {
-  color: white;
-  font-family: "montserrat", sans-serif;
-  font-size: 50px;
-  font-weight: 500;
-  margin: 100px 30px 0 30px;
-  border: .1em solid white;
-  padding: 0 .4em;
-  text-transform: uppercase;
-}
-
-.content {
-  background: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  display: flex;
-  font-family: "Open sans", sans-serif;
-  font-size: 17px;
   align-items: center;
-  margin: -100px auto 30px auto;
-  max-width: 700px;
+}
+.rpTributeX-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 200ms ease, transform 200ms ease;
+}
+.rpTributeX-icon:hover {
+  filter: none;
+  transform: scale(1.06);
+}
+.rpTributeX-footerText {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
 }
 
-.aboutText {
-  padding: 0 20px;
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .rpTributeX-info { grid-template-columns: 1fr 1fr; }
+  .rpTributeX-gallery { grid-template-columns: 1fr 1fr; }
+  .rpTributeX-blockquote { max-width: 70ch; }
 }
-</style>
 
-  <script>
-  window.console = window.console || function(t) {};
-</script>
+@media (max-width: 720px) {
+  .rpTributeX-quote { grid-template-columns: 1fr; }
+  .rpTributeX-gallery { grid-template-columns: 1fr; }
+  .rpTributeX-info { grid-template-columns: 1fr; }
+  .rpTributeX-authorImg { width: 180px; height: 200px; }
+}
 
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
+/* Dark-mode friendly tweaks */
+@media (prefers-color-scheme: dark) {
+  .rpTributeX {
+    --rp-bg: #121212;
+    --rp-text: #e6e6e6;
+    --rp-heading: #ffffff;
+    --rp-card: #1b1b1b;
+    --rp-shadow: rgba(0,0,0,0.5);
+    background-color: var(--rp-bg);
+    color: var(--rp-text);
   }
-</script>
+  .rpTributeX-divider { border-top-color: var(--rp-text); }
+  .rpTributeX-col,
+  .rpTributeX-card { border-color: rgba(255,255,255,0.08); }
+  .rpTributeX-caption,
+  .rpTributeX-cardText { color: #d0d0d0; }
+}
 
-
-  <div class="header">
-  <h1 class="headertext">Raspberry pi</h1>
-</div>
-<div class="content">
-  <div class="point">
-    <p class="aboutText">
-    <br>
-Το Raspberry Pi είναι ένας μικρός υπολογιστής σε μέγεθος μιας πιστωτικής κάρτας. Δημιουργήθηκε στο Ηνωμένο Βασίλειο από το Raspberry Pi Foundation για την ευκολότερη εκμάθηση της επιστήμης των υπολογιστών στα σχολεία.
-  <br>
-    </p>
-  </div>
-  
-</div>
+</style>
   
   
   
+  
+   <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/wjWZhV1v3Pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">intro</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">links</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
 
 
 
@@ -84,153 +918,276 @@ body {
 
 
 
+        <a href="https://www.raspberrypi.org/" target="_blank"><img id="header-img" 
+        src="http://www.coyan.es/Blog/ficheros-subidos/2012/06/raspberry-pi-logo-girando.gif" 
+        alt="Raspberry Pi spinning logo"></a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--    ==========================================================================
-
-░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
-▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
-▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
-
-    Alien v2
-    Updated: SpecialPage 'RPi' Nov 14, 2020
-    Website: https://alexandroshub.github.io
-    Contact: 	a-papaspyrou@outlook.com.gr
-	CC-BY international 4 2011-2020 Alexandros Papaspyrou
+        <h2 id="text"> What is the Raspberry Pi?</h2>
+        <p class="text0" id="text">The Raspberry Pi is a series of credit card sized single-board computers developed in the United Kingdom by the Raspberry Pi Foundation. It was originally designed to promote teaching of basic computer science in schools and in developing countries. The original model, costing around $35, became far more popular than anticipated, selling outside it's target market.<br> 
+          By February 2019, sales of all models reached 25 million, making it the best-selling British computer and the third best-selling general purpose computer after the PC and Mac.</p>
+        
+     
+      
+      <p class="quote"><i>"We'd hoped we might sell about 10,000 in the first year - so far it's been 400,000."</i><br><br> - Eben Upton, a founder of the Raspberry Pi Foundation speaking in 2012 </p>
+        
+    
+          
+      <h2 id="text">Specifications</h2>
+        
+      <p class="text1" id="text">
+        The Raspberry Pi family has come a long way since the first model. The original model, released in February 2012,	featured 2 USB 2.0 ports, a	700MHz processor,	512MB of RAM and an ethernet port. In 2018 the Raspberry Pi Foundation released the $35 Raspberry Pi 3 B+ with impressive specs:
+      </p>
+        <ul class="spec-list">
+          <li><b>System on a chip (SoC) :</b>  Broadcom BCM2837<br>
+          <li><b>CPU:</b>  4× ARM Cortex-A53, 1.2GHz<br>
+          <li><b>GPU:</b>  Broadcom VideoCore IV<br>
+          <li><b>RAM:</b>  1GB LPDDR2 (900 MHz)<br>
+          <li><b>Networking:</b>  10/100 Ethernet, 2.4GHz 802.11n wireless<br>
+          <li><b>Bluetooth:</b>  Bluetooth 4.1<br>
+          <li><b>Storage:</b>  Micro SD<br>
+          <li><b>GPIO:</b>  40-pin header<br>
+          <li><b>AV:</b> HDMI, 3.5mm analogue audio-video jack<br>        
+          <li><b>USB:</b> 4 × USB 2.0, Ethernet<br>
+          <li>Camera Serial Interface (CSI)<br> 
+          <li>Display Serial Interface (DSI)<br>
+          </ul>
+                     
+     
        
-   Welcome in my personal website 100% HTML Hosted by Github
-   Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
-  ==========================================================================  -->
+
+            <h2>Where can I get one?</h2>
+            <h3>United Kingdom:</h3>
+              <a href="https://thepihut.com/products/raspberry-pi-3-model-b-plus?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/thepihut.png" alt="The PiHut logo."></a>
+              <a href="https://shop.pimoroni.com/products/raspberry-pi-3-b-plus?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/pimoroni.png" alt="The Pimoroni logo."></a> 
+
+            <h3>U.S.A:</h3>
+              <a href="https://www.adafruit.com/product/3775?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/adafruit.png" alt="The Adafruit logo."></a>
+              <a href="https://www.pishop.us/product/raspberry-pi/pi-boards/raspberry-pi-3-model-b-plus/?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/pishop-us.png" alt="The PiShop.us logo."></a> 
+     
+            <h3>Australia & New Zealand:</h3>
+              <a href="https://raspberry.piaustralia.com.au/raspberry-pi-3-model-b-plus?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/piaustralia.png" alt="The Pi Australia logo."></a>
+              <a href="https://core-electronics.com.au/raspberry-pi-3-model-b-plus.html?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/coreelectronics.png" alt="The Core Electronics logo."></a> 
+
+            <h3>China:</h3>
+              <a href="https://item.taobao.com/item.htm?spm=0.7095261.0.0.29491debwhELXl&id=565703159178&src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/junroc.jpg" alt="The Taobao logo."></a>
+              <a href="https://www.seeedstudio.com/Raspberry-Pi-3-Model-B%2B-p-3037.html?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/seeed.png" alt="The Seeed logo."></a> 
+
+            <h3>Worldwide:</h3>
+              <a href="http://uk.rs-online.com/web/generalDisplay.html?id=raspberrypi&src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/rscomponents.png" alt="The RS logo."></a>
+              <a href="http://www.element14.com/community/community/raspberry-pi?src=raspberrypi" target="_blank"><img class="pi-seller-img" src="https://static.raspberrypi.org/files/resellers/element14.png" alt="The Pimoroni logo."></a> 
+         
+      
+
+
+
+
+
+
+       <h2 class='text-center'>Timeline</h2>
+
+    <ul>
+      <li class='text-info'>2012, April - Raspberry Pi 1 model B launched for $35</li>
+      <li>2012, October - 1,000,000 units sold</li>
+      <li class='text-info'>2013, February - Raspberry Pi 1 model A launched for $25</li>
+      <li>2013, October - 2,000,000 units sold</li>
+      <li class='text-info'>2014, April - Raspberry Pi 1 Compute Module launched for $30</li>
+      <li>2014, May - 3,000,000 units sold</li>
+      <li>2014, June - Raspberry Pi demo at the Buckingham Palace</li>
+      <li class='text-info'>2014, July - Raspberry Pi 1 model B+ launched for $35</li>
+      <li class='text-info'>2014, November - Raspberry Pi model A+ launched for $20</li>
+      <li class='text-info'>2015, February - Raspberry Pi 2 model B launched for $35</li>
+      <li>2015, February - 5,000,000 units sold</li>
+      <li>2015, May - Raspberry Pi 1 model B+ price decreased from $35 to $25</li>
+      <li class='text-info'>2015, November - Raspberry Pi Zero launched for $5</li>
+      <li class='text-info'>2016, February - Raspberry Pi 3 launched for $35</li>
+      <li>2016, June - This tribute page was created :)</li>
+      <li class='text-info'>2017, January - Raspberry Pi 3 Compute Module launched for $30, lite version for $25</li>
+      <li class='text-info'>2017, February - Raspberry Pi Zero W launched for $10</li>
+      <li>2017, March - Over 12,000,000 units sold</li>
+      <li>2017, July - Over 14,000,000 units sold</li>
+      <li class='text-info'>2018, March - Raspberry Pi 3 model B+ launched for $35</li>
+      <li>2018, December - Over 23,000,000 units sold</li>
+      <li class='text-info'>2019, January - Raspberry Pi 3+ Compute Module launched for $25</li>
+      <li>2019, June - This tribute page was updated</li>
+    </ul>
+
+    <blockquote>
+      <p><em>"What people are applying the Raspberry Pi to outstrips any of the things you intended it for, doesn't it?"</em></p>
+      <footer><cite>- Duke of York</cite></footer>
+    </blockquote>
+
+
+      Read more about the Raspberry Pi at <a href='https://en.wikipedia.org/wiki/Raspberry_Pi'>Wikipedia</a>, and visit their <a href='https://www.raspberrypi.org/'>official website</a>.
+
+
+
+
+
+
+
+
+
+
+    <img src="https://s3-eu-west-1.amazonaws.com/forums.recalbox.com/4f782666-0601-46a1-8e0b-54fc14661828.png">
+
+</div>
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5></h5>
+
+
+
   
-<!DOCTYPE html>
-<html>
-<title>Papaspyrou | Programming | Raspberry pi</title>
-	<!--/new logo/--><link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
-	<!--  /////// meta information  /////// -->
-      <meta charset="UTF-8">
-      <meta name="author" content="Alexandros Papaspyrou">
-      <meta name="description" content="Personal website of Papaspyrou Alexandros. All about IoT projects with arduino or raspberryPi, Automations, Robotics and more...">
-      <meta name="keywords" content="Automations, Programming , Technology, IoT , RaspberyPi">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--  /////// link information  /////// -->
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>/* style information */
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html {height: 100%; line-height: 1.8;}
-.w3-bar .w3-button {padding: 16px;}
-.bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://wallpapercave.com/wp/wp1864217.jpg");
-    min-height: 40%;
-}
-</style>
-<body>
-<!-- //////////////////////////Top menu////////////////////////// -->
-<style>
-.topnav {overflow: hidden; background-color:rgb(0, 0, 0);}
-.topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
-.topnav a:hover {color: white;}
-.topnav a.active {color: #D4EDDE;}
-.topnav .icon {display: none;}
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {float: right; display: block;}}
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
-  .topnav.responsive a {float: none; display: block; text-align: left;}}
-</style>
-<div class="topnav" id="myTopnav">
-  <a href="https://alexandroshub.github.io" class="active"  id="home">▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █
+
+<h1>Raspberry Pi</h1>
+<a href="https://tinyurl.com/3m6rvxvv" target="_blank" rel="noopener noreferrer">
+  <img src="https://crystalpng.com/wp-content/uploads/2025/05/google-logo-100x100.png"
+       style="height:18px; vertical-align:middle; margin-right:4px;">
+  Raspberry Pi (search)
 </a>
-  <a href="https://alexandroshub.github.io/cv.html"><i class="far fa-id-card"></i> &nbsp; AboutMe</a> 
-  <a href="https://alexandroshub.github.io/portfolio.html"><script src='https://kit.fontawesome.com/a076d05399.js'></script> <i class="far fa-folder-open"></i> &nbsp; Portfolio</a>
-  <a href="https://alexandroshub.github.io/plus.html"><i class="fas fa-icons"></i>  &nbsp;Plus</a> 
-  <a href="https://alexandroshub.github.io/contact.html"><i class="far fa-comment"></i>  &nbsp;Contact</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<script>
-function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
-</script>
-<!-- //////////////////////////END of Top menu////////////////////////// -->
-<!-- Header with image -->
-
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
-</div>
-
-
-<!-- Area Container -->
-<div class="w3-container" id="where" style="padding-bottom:32px;">
-  <div class="w3-content" style="max-width:700px">
 <br>
-<style>
-.accordion2 {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
+<br>
+<details>
+  <summary>The Raspberry Pi Shop</summary>
+  <a href="https://www.raspberrypi.com/products/" target="_blank" rel="noopener noreferrer">
+  Raspberry Shop (New Tab)
+  </a>
+</details>
+<br>
+<details>
+<summary>Why is this site so empty
+  </summary>
+  <p>This site isn't finished yet. You may experience some issues.</p>
+  </details>
+  <br>
+<p class="version-text">V.41225</p>
+<div class="container">
+<img src="https://m.media-amazon.com/images/I/81XB4LUuFOL._AC_SX425_.jpg" 
+     alt="Raspberry 5" 
+     style="width: 300px; height: 200px; object-fit: cover;">
+<p>Source: <a href="https://amzn.eu/d/hsiaaoc" target="_blank" rel="noopener noreferrer">amazon (New Tab)</a></p>
+<hr>
+<h2>Introduction</h2>
+<p>The Raspberry Pi is a mini-computer that lets you build all kinds of projects – from SmartHome gadgets and personal servers to endless other cool ideas.</p>
+<hr>
+<h2>Foundation</h2>
+<p>The Raspberry Pi Foundation was founded in May 2009 in Cambridge, UK.</p>
+  <br>
+<details>
+  <summary>Where is the Raspberry Pi Foundation located?</summary>
+  <p>In Cambridge, United Kingdom (UK)</p>
+</details>
+<br>
+<details>
+  <summary>Who founded the Raspberry Pi Foundation?</summary>
+  <p>The main founders are Eben Upton, Rob Mullins, Jack Lang, Alan Mycroft, Pete Lomas, and David Braben.</p>
+</details>
+<br>
+<details>
+  <summary>What is the mission of the Raspberry Pi Foundation?</summary>
+  <p>To promote computer science education and digital skills for young people and learners worldwide, providing low-cost, accessible computing solutions.</p>
+</details>
+<br>
+<details>
+  <summary>Is the Raspberry Pi Foundation a non-profit organization?</summary>
+  <p>Yes, it is a charity / non-profit organization.</p>
+</details>
+<br>
+<details>
+  <summary>How does the Raspberry Pi Foundation support education?</summary>
+  <p>Through:</p>
+  <ul>
+    <li>Affordable hardware (Raspberry Pi computers)</li>
+    <li>Educational resources, tutorials, and coding clubs (like CoderDojo and Raspberry Pi Clubs)</li>
+    <li>Teacher training programs</li>
+    <li>Online learning platforms and free learning materials</li>
+  </ul>
+</details>
+<br>
+<details>
+  <summary>What projects or programs does the Raspberry Pi Foundation run?</summary>
+  <ul>
+    <li>Raspberry Pi Projects & Resources for learning coding, electronics, and digital making</li>
+    <li>CoderDojo clubs for kids</li>
+    <li>Raspberry Pi Certified Educator program</li>
+    <li>Community events like Raspberry Jams</li>
+  </ul>
+</details>
+<br>
+<details>
+  <summary>Can anyone join or contribute to the Raspberry Pi Foundation?</summary>
+  <p>Yes, individuals can support, donate, or participate in community projects, attend clubs, or contribute to educational content.</p>
+</details>
+<br>
+<details>
+  <summary>How is the Raspberry Pi Foundation funded?</summary>
+  <p>Through sales of Raspberry Pi computers, donations, grants, and educational partnerships.</p>
+</details>
+<br>
+<details>
+  <summary>When was the first Raspberry Pi released?</summary>
+  <p>The first Raspberry Pi was released on the 29th of February, 2012. This was the Raspberry Pi 1 Model B. The Model A of the Raspberry Pi 1 was released on the 4th of February, 2013.</p>
+</details>
+<br>
+<details>
+  <summary>What is the difference between Model A and Model B?</summary>
+  <ul>
+    <li><b>Model A:</b> Cheaper, fewer USB ports (1 instead of 2), no Ethernet, lower RAM (256–512 MB).</li>
+    <li><b>Model B:</b> More USB ports (2), Ethernet port, higher RAM (512 MB), slightly higher power consumption.</li>
+  </ul>
+</details>
+<hr>
+<h2>Naming and Logo</h2>
+  <h4>Logo</h4>
+<p>The logo is a raspberry.</p>
+<div class="container">
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/c/cb/Raspberry_Pi_Logo.svg/570px-Raspberry_Pi_Logo.svg.png" 
+     alt="Raspberry Pi Foundation Logo" 
+     style="width: 50px; height: 50px; object-fit: contain;">
+  <p>The current 2026 logo of the Raspberry Pi Company</p>
+  <hr>
+  <h4>Naming</h4>
+  <p>The name is a play on words; raspberry pie (homophonic with the English pronunciation of Pi) means "raspberry tart" or "raspberry cake" in English. "Raspberry" connects to the tradition of naming computers after fruits, such as Apple or Acorn;[9] on the other hand, "Raspberry" has a derogatory connotation in English, similar to "cucumber" or "lemon" in German, and refers to the computer's low price and (compared to PCs of its time) low performance. "Pi" stands for "Python interpreter." Originally, the computer was intended to be delivered with a built-in interpreter for the Python programming language, similar to how almost all home computers of the 1980s had a built-in BASIC interpreter.[10]</p>
+  <p>Source:<br><a href="https://de.wikipedia.org/wiki/Raspberry_Pi" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+  <hr>
+  <h2>Operating System (OS)</h2>
+  <p>Raspberry Pi OS is the official operating system developed by the Raspberry Pi Foundation for Raspberry Pi computers. It is a Linux-based distribution derived from Debian, optimized for the Pi’s ARM architecture. The OS comes in multiple versions, including a full desktop environment, lightweight versions, and minimal images for advanced users. It includes pre-installed educational and programming tools, such as Python, Scratch, and development utilities, making it ideal for learning, coding, and general computing on Raspberry Pi devices. Raspberry Pi OS is designed to be lightweight, efficient, and user-friendly, supporting both beginners and experienced users.</p>
+  <hr>
+  <h2>Get started</h2>
+  <h4>Getting started with your Raspberry Pi</h4>
+<a href="#" 
+   onclick="if(confirm('Do you want to open this link? This link may be unsafe. It\'s not my fault if you get any issues.')) { window.open('https://www.raspberrypi.com/documentation/computers/getting-started.html', '_blank', 'noopener'); } return false;">
+   Raspberry Pi Documentation; Getting started with your Raspberry Pi
+</a>
+  <hr>
+  <h2>Pictures</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Raspberry_Pi_1%2C_Pi_5%2C_Pi_400%2C_Zero_2_and_Pico.jpg/500px-Raspberry_Pi_1%2C_Pi_5%2C_Pi_400%2C_Zero_2_and_Pico.jpg" 
+     alt="Raspberry Pi 1, Pi 5, Pi 400, Pi Zero 2 and Pi Pico" 
+     style="width: 300px; height: 200px; object-fit: contain;">
+  <p>Raspberry Pi 1, Pi 5, Pi 400, Pi Zero 2 and Pi Pico</p>
+  <p>Source:<br><a href="https://www.wikipedia.org" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+<hr>
+  <h2>Videos</h2>
+  <iframe width="150" height="270" 
+        src="https://www.youtube.com/embed/WzNNc0UABWE" 
+        title="Raspberry Pi 4 Setup" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+</div></div>
+ 
+      </div>    
+    
+    
+      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Eγκατάσταση λογισµικού</span></h5>
 
 
 
-.accordion2:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
+Το Raspberry Pi είναι ένας μικρός υπολογιστής σε μέγεθος μιας πιστωτικής κάρτας. Δημιουργήθηκε στο Ηνωμένο Βασίλειο από το Raspberry Pi Foundation για την ευκολότερη εκμάθηση της επιστήμης των υπολογιστών στα σχολεία.
 
-.active2:after {
-  content: "\2212";
-}
-.active2, .accordion2:hover {
-  background-color: #ccc;
-}
 
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-</style>
 
-<button class="accordion2">Intro
-</button>
-<div class="panel">
-<center>
-<iframe src="https://player.vimeo.com/video/90103691?autoplay=1" width="85%" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/90103691">What is a Raspberry Pi?</a> from <a href="https://vimeo.com/raspberrypi">Raspberry Pi</a> on <a href="https://vimeo.com">Vimeo</a></p>
-</center>
-
-<p>
 Το Raspberry Pi είναι ένας μικρός υπολογιστής σε μέγεθος μιας πιστωτικής κάρτας. Δημιουργήθηκε στο Ηνωμένο Βασίλειο από το Raspberry Pi Foundation για την ευκολότερη εκμάθηση της επιστήμης των υπολογιστών  στα σχολεία.
 <br>
 <h3>Ιστορική αναδρομή</h3>
@@ -263,12 +1220,8 @@ o Raspbian είναι το official λειτουργικό σύστημα του
 <br>
 Για να προσαρμόσουμε την ανάλυση της οθόνης μας θα πρέπει να πάμε στο <b>Menu-> Προτιμήσεις-> Raspberry Pi Configuration</b> και να πατήσουμε πάνω εκεί που λέει Set Resolution. Όπως βλέπουμε εμφανίζει αρκετές επιλογές για να διαλέξουμε ποια ανάλυση είναι η καλύτερη για την οθόνη μας. Εμείς θα επιλέξουμε την 1280x720 60MHz με αναλογία 16:9 .
 
-</p>
-</div>
 
-<button class="accordion2">Eγκατάσταση λογισµικού
-</button>
-<div class="panel">
+
 
  <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"> ΕΓΚΑΤΑΣΤΑΣΗ ΣΕ ΕΙΚΟΝΙΚΟ ΥΠΟΛΟΓΙΣΤΗ</span></h5>  
 <p>  Θα χρειαστούμε <b>α)</b> το <a href="https://www.virtualbox.org/wiki/Downloads">
@@ -278,57 +1231,340 @@ virtualbox</a>
 
 <br><br><span class="w3-tag w3-red">Περισσότερα σύντομα!!</span>
 </p>
-</div>
 
 
-</div>
 
-<script>
-var acc = document.getElementsByClassName("accordion2");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active2");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  });
-}
-</script>
+
+
+
+
 
 </div>
-</div>
 
-<!-- ////////// Scripts Zone ////////// -->
-<!-- googletagmanager -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
-<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-128580719-1');
-</script>
 
-<script> // Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a href="#" class="neoHero-btn neoHero-secondary" style="color: #000; border: 1px solid rgba(255,255,255,0.25); float: right;">top &#x2923;</a><br></p>
+ 
+
+      
+</section>
+
+
+
+
+<style>
+
+
+
+  .sci-fi-console {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid #00c8b5;
+    border-radius: 12px;
+    background: #2f2f2f;
+    box-shadow: 0 0 8px rgba(0,200,181,0.3);
   }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+
+  .intro-text {
+    text-align: center;
+    margin-bottom: 20px;
   }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+
+  .intro-text h3 {
+    color: #00c8b5;
+    text-shadow: none;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .intro-text p {
+    font-size: 0.9em;
+    color: #dddddd;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .screen-frame {
+    position: relative;
+    border: 2px solid #00c8b5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,200,181,0.2);
+    margin-bottom: 20px;
+  }
+
+  .screen-frame iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    display: block;
+  }
+
+  .screen-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,200,181,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .video-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .video-buttons button {
+    background: transparent;
+    border: 1px solid #00c8b5;
+    color: #00c8b5;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  .video-buttons button:hover {
+    background: #00c8b5;
+    color: #1f1f1f;
+    box-shadow: 0 0 5px rgba(0,200,181,0.4);
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 10px;
+    color: #dddddd;
+  }
+
+  .cta-section h4 {
+    margin-bottom: 5px;
+    color: #00c8b5;
+    font-weight: 600;
+  }
+
+  .cta-section p {
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #00c8b5;
+    color: #1f1f1f;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 6px rgba(0,200,181,0.3);
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #00a89c;
+  }
+  
+  
+</style>
+
+
+
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="footer-section">
+  <div class="footer-column">
+    <h6>🔗 Συνδέσεις μαθημάτων</h6>
+     <ul class="footer-links">
+ 		        
+	
+            </ul>       
+        
+  </div>
+
+  <div class="footer-column">
+    <h6>🚀 Explore More</h6>
+    <ul class="footer-links">
+ 
+ 
+ <p>
+ <br>
+  </p>
+ 
+    </ul>
+  </div>
+</div>
+
+<style>
+  .footer-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    background: #1e1e1e;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-column {
+    flex: 1 1 250px;
+    min-width: 250px;
+  }
+
+  .footer-column h6 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #00ffe7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #00ffe7;
+    transform: translateX(5px);
+  }
+
+  .footer-links i {
+    flex-shrink: 0;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-links a:hover i {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  .green { color: #00ff88; }
+  .purple { color: #bb86fc; }
+  .blue { color: #00bfff; }
+</style>
+
+	  
+<!--
+    _                                                                    
+    |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
+    |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
+          |          |   /                                                         
+-->
+
+
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+
+<style>
+/* Namespaced for safety */
+.ap-footer {
+  background: #111; /* dark background */
+  color: #eee;      /* light text */
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
-document.getElementById("myLink").click();
-</script>
+
+.ap-footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ap-footer-title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.ap-footer-rights {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.ap-footer-links {
+  font-size: 0.9rem;
+}
+
+.ap-footer-links a {
+  color: #4dd0e1; /* accent cyan */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ap-footer-links a:hover {
+  color: #80deea; /* lighter hover */
+}
+
+.ap-separator {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+</style>
+
+<footer class="ap-footer">
+  <div class="ap-footer-container">
+    <h2 class="ap-footer-title">AlphaPi</h2>
+    <p class="ap-footer-rights">All rights reserved</p>
+    <nav class="ap-footer-links">
+      <a href="https://alexandroshub.github.io/apTOU">Terms of service</a>
+      <span class="ap-separator">|</span>
+      <a href="https://alexandroshub.github.io/LV3#contact">Contact</a>
+      <span class="ap-separator">|</span>
+   <a href="https://www.instagram.com/alexandroshub/"><i class="uil uil-instagram"></i></a>
+         <span class="ap-separator">|</span>
+      <a href="https://alexandroshub.github.io/welcome21.html">▞▚ ▛</a>
+
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
+<!--
+▄▀█ █░░ █▀█ █░█ ▄▀█   █▀█ █
+█▀█ █▄▄ █▀▀ █▀█ █▀█   █▀▀ █
+-->
 
 
-      <!-- //////////// Footer 2020 ////////////////  Footer 2020 /////////////
-      .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-.     .-. 
-      .'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `._.'   `.
-      -->
-</body></html>
+  <script id="rendered-js" >
+alert("This site is not done yet. Expect some issues.");
+  </script>
