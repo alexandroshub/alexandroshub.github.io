@@ -1,100 +1,541 @@
-<!--    ==========================================================================
-  ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
-  ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
-  ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
-  
-      Alien v2
-      Updated: SpecialPage 'iot' Nov 18, 2020
-      Website: https://alexandroshub.github.io
-      Contact: 	a-papaspyrou@outlook.com.gr
-  	CC-BY international 4 2011-2020 Alexandros Papaspyrou
-         
-     Welcome in my personal website 100% HTML Hosted by Github
-     Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
-    ==========================================================================  -->
 <!DOCTYPE html>
-<html>
-  <title>Papaspyrou | IOT</title>
-  <!--/new logo/-->
-  <link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
-  <!--  /////// meta information  /////// -->
-  <meta charset="UTF-8">
-  <meta name="author" content="Alexandros Papaspyrou">
-  <meta name="description" content="Personal website of Papaspyrou Alexandros. All about IoT projects with arduino or raspberryPi, Automations, Robotics and more...">
-  <meta name="keywords" content="Automations, Programming , Technology, IoT , RaspberyPi">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--  /////// link information  /////// -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>/* style information */
-    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-    body, html {height: 100%; line-height: 1.8;}
-    .w3-bar .w3-button {padding: 16px;}
-    .bgimg {
-    background-position: center;
-    background-size: cover;
-    background-image: url("https://64.media.tumblr.com/3b97c2e6d0a2b85aa042fd72b4a86165/8e8b5ebe3641abc6-83/s2048x3072/0318fa29e7a3b437afcc7f8e31e47082e7a81993.jpg");
-    min-height: 40%;
-    }
-  </style>
-  <body>
-    <!-- //////////////////////////Top menu////////////////////////// -->
-    <style>
-      .topnav {overflow: hidden; background-color:rgb(0, 0, 0);}
-      .topnav a {float: left; display: block; color: #4B759B; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px;}
-      .topnav a:hover {color: white;}
-      .topnav a.active {color: #D4EDDE;}
-      .topnav .icon {display: none;}
-      @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {display: none;}
-      .topnav a.icon {float: right; display: block;}}
-      @media screen and (max-width: 600px) {
-      .topnav.responsive {position: relative;}
-      .topnav.responsive .icon {position: absolute; right: 0; top: 0;}
-      .topnav.responsive a {float: none; display: block; text-align: left;}}
-    </style>
-    <div class="topnav" id="myTopnav">
-      <a href="https://alexandroshub.github.io" class="active"  id="home"><img src= "https://64.media.tumblr.com/5bda3cb7ce87ed9de69c85af725ebe78/f06bf6e1e4ca1249-32/s500x750/68ec78a36cb70324f7aa6a0d7657b46926fc44b2.png" style="width:28px;"></a>
-      <a href="https://alexandroshub.github.io/cv.html"><i class="far fa-id-card"></i> &nbsp; AboutMe</a> 
-      <a href="https://alexandroshub.github.io/portfolio.html">
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script> <i class="far fa-folder-open"></i> &nbsp; Portfolio
-      </a>
-      <a href="https://alexandroshub.github.io/plus.html"><i class="fas fa-icons"></i>  &nbsp;Plus</a> 
-      <a href="https://alexandroshub.github.io/contact.html"><i class="far fa-comment"></i>  &nbsp;Contact</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-      </a>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 IoT</title>
+	<link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">  
+    <meta name="author" content="Alexandros Papaspyrou">
+<!--========================================================================== Updated: v2.3 26.11.25
+	  ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
+	  Ｃｏｎｎｅｃｔ Ｃｏｄｅ Ｃｒｅａｔｅ  🅐🅛🅔🅧🅐🅝🅓🅡🅞🅢 🅗🅤🅑 
+
+	  Welcome in my personal website Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou Hosted by Github
+      Website: https://alexandroshub.github.io |  Updated: v3 *20.11.25 
+      Contact: a-papaspyrou@outlook.com.gr  |  Mob: 	+30 694 054 8867
+      Contact: alexandroshub@protonmail.com  https://discord.gg/zSEH54w8nM
+     
+	▄▀█ █░░ █▀▀ ▀▄▀ ▄▀█ █▄░█ █▀▄ █▀█ █▀█ █▀   █░█ █░█ █▄▄
+	█▀█ █▄▄ ██▄ █░█ █▀█ █░▀█ █▄▀ █▀▄ █▄█ ▄█   █▀█ █▄█ █▄█
+==========================================================================   -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+
+<!-- TOP MENU START -->
+<!-- Bootstrap & Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0;
+background: #0a0a0c;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+background: linear-gradient(to right, #1b2a4a, #2d2d30);  backdrop-filter: blur(6px);
+  border: none;
+  font-size: 14px !important;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  min-height: 55px;
+}
+
+.navbar .navbar-header .logo {
+  display: inline-block;
+  line-height: 55px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-family: 'Audiowide';
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar li a {
+  color: #e0e0e0 !important;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li a:hover {
+  color: white !important;
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+
+  border-radius: 0;
+}
+
+.navbar-toggle {
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+  border: none;
+  margin-top: 10px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.dropdown-menu {
+background: #0a0a0c;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+background: linear-gradient(to right, #1b2a4a, #2d2d30);	border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.dropdown-menu li a {
+  color: #ddd !important;
+  padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+            background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.open > a:hover {
+            background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+  .navbar li a {
+    padding: 12px 15px;
+    font-size: 16px;
+    height: auto;
+  }
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-label="Εναλλαγή πλοήγησης">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
     </div>
-    <script>
-      function myFunction() {var x = document.getElementById("myTopnav"); if (x.className === "topnav") {x.className += " responsive";} else {x.className = "topnav";}}
-    </script>
-    <!-- //////////////////////////END of Top menu////////////////////////// -->
-    <!-- Header with image -->
-    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
-      <style>
-        #blackgrady {
-        height: 100px; background-image: linear-gradient(to top, rgba(255,0,0,0),rgba(0,0,0,0.7), rgba(0,0,0,1));
-        }
-      </style>
-      <div id="blackgrady"></div>
-      <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-        <span class="w3-tag"></span> 
-      </div>
-      <div class="w3-display-middle w3-center">
-        <span class="w3-text-white w3-hide-small" style="font-size:130px"> IoT</span>
-        <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:80px"> IoT</span>
-      </div>
-    </header>
-    <!-- Add a background color and large text to the whole page -->
-    <div class="w3-sand w3-grayscale w3-large"></div>
-    <!-- Add a background color and large text to the whole page -->
-    <div class="w3-large">
-      <br>
-      <!-- Menu Container -->
-      <div class="w3-container" id="menu">
-        <div class="w3-content w3-center" style="max-width:700px">
-          <h2>Internet of Things</h2>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+
+    
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://alexandroshub.github.io/LV3#contact">Contact</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&nbsp; More ▾           </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://alexandroshub.github.io/cv"><i class="fa fa-id-card"></i>&nbsp; My CV</a></li>
+            <li><a href="https://alexandroshub.github.io/porto.ap.html"><i class="fa fa-folder-open"></i>&nbsp; Portfolio</a></li>
+            <li><a href="https://alexandroshub.github.io/plus.ap.html"><i class="fa fa-plus-circle"></i>&nbsp; Plus +</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Automations</li>
+            <li><a href="https://alexandroshub.github.io/iot.html"><i class="fa fa-wifi"></i>&nbsp; IoT</a></li>
+            <li><a href="https://alexandroshub.github.io/ai.html"><i class="fa fa-brain"></i>&nbsp; AI</a></li>
+            <li><a href="https://alexandroshub.github.io/ardu22.html"><i class="fa fa-microchip"></i>&nbsp; Arduino</a></li>
+            <li><a href="https://alexandroshub.github.io/raspberrypi"><i class="fa fa-microchip"></i>&nbsp; Raspberry Pi</a></li>
+            <li><a href="https://alexandroshub.github.io/stem"><i class="fa fa-flask"></i>&nbsp; STEAM</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Creative Side</li>
+            <li><a href="https://alexandroshub.github.io/art.html"><i class="fa fa-paint-brush"></i>&nbsp; Art Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Required Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- TOP MENU END -->
+
+<!-- //////////////////////////Top menu////////////////////////// -->
+
+
+</head><body>
+
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {height: 100%; margin: 0; line-height: 1.8;}
+.w3-bar .w3-button {padding: 16px;}
+.menu {display: none;}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image:
+    linear-gradient(to bottom, rgba(34, 34, 34, 1),
+                              rgba(255, 0, 0, 0),
+                              rgba(255, 0, 0, 0),
+                              rgba(0, 0, 0, 1)),
+    url("https://66.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg");
+  min-height: 50%;
+}
+
+ul.breadcrumb {
+  padding: 4px 8px;
+  list-style: none;
+  background-color: #222222;
+  margin: 0;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+  color: #fff;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+#baroty {
+  height: 40px;
+  background-image: linear-gradient(to top, rgba(17,17,17), rgba(0,0,0));
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- === HERO SECTION (unique: neoHero-*) === -->
+<section class="neoHero-wrap">
+  <div class="neoHero-inner">
+    <h1 class="neoHero-title"> 
+<style>
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(118, 167, 63) 0%,
+    rgb(51, 143, 118) 40%,
+    rgb(55, 141, 167) 50%,
+    rgb(117, 152, 242) 70%,
+    rgb(144, 118, 236) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>
+Your <span class="gradient-text">Internet of Things</span> Playground for Innovation</h1>
+      <p class="neoHero-sub">Tech with a soul. Beyond the code, into the mind.</p>
+
+   
+    <div class="neoHero-ctaRow">
+      <a href="https://github.com/alexandroshub/python" class="neoHero-btn neoHero-primary"> 👨‍💻 Δες τα .py</a>
+      <a href="https://alexandroshub.github.io/projects.html" class="neoHero-btn neoHero-secondary">Εξερεύνησε τα Projects</a>
+    </div>
+    
+  </div>
+  <!-- Animated waves -->
+  <div class="neoHero-waves">
+    <svg viewBox="0 0 1600 600" preserveAspectRatio="none">
+      <path class="neoHero-wave1"
+        d="M0 300 C 300 150, 600 450, 1200 220 C 1500 100, 1800 380, 2000 260"
+        fill="none" />
+      <path class="neoHero-wave2"
+        d="M0 420 C 300 250, 600 520, 1200 340 C 1500 200, 1800 500, 2000 420"
+        fill="none" />
+    </svg>
+  </div> 
+</section>
+
+<style>
+/* === HERO BASE === */
+.neoHero-wrap {
+  position: relative;
+  height: 60vh;                        
+  width: 100%;
+  /* πιο φωτεινό gradient */
+  background: linear-gradient(135deg, #0a122d 0%, #1b2a4a 50%, #2d2d30 100%);
+  color: #fff;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+/* πρόσθετο layer με glow */
+.neoHero-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(77,240,255,0.15), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255,74,110,0.12), transparent 60%);
+  z-index: 0;
+  animation: heroGlow 12s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  from { opacity: 0.4; transform: scale(1); }
+  to   { opacity: 0.7; transform: scale(1.05); }
+}
+.neoHero-inner {
+  position: relative;
+  z-index: 5;
+  max-width: 650px;
+}
+.neoHero-title {
+  font-size: 54px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+.neoHero-sub {
+  font-size: 18px;
+  opacity: 0.75;
+  margin-bottom: 30px;
+}
+/* === CTA BUTTONS === */
+.neoHero-ctaRow {
+  display: flex;
+  gap: 14px;
+}
+.neoHero-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.neoHero-primary {
+  background: #4df0ff;
+  color: #000;
+  box-shadow: 0 0 14px rgba(77, 240, 255, 0.4);
+}
+.neoHero-primary:hover { transform: translateY(-3px); }
+
+.neoHero-secondary {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+}
+.neoHero-secondary:hover { transform: translateY(-3px);   color: #fff; }
+
+/* === WAVES BACKGROUND === */
+.neoHero-waves {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.55; /* λίγο πιο έντονο */
+}
+
+.neoHero-waves svg {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  left: -20%;
+  top: -20%;
+}
+
+/* Animated strokes */
+.neoHero-wave1,
+.neoHero-wave2 {
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 6;
+  stroke-dashoffset: 0;
+  animation: neoHeroMove 14s linear infinite;
+}
+
+.neoHero-wave1 {
+  stroke: rgba(77, 240, 255, 0.9); /* πιο φωτεινό μπλε */
+}
+.neoHero-wave2 {
+  stroke: rgba(255, 74, 110, 0.85); /* πιο έντονο ροζ */
+  animation-delay: -4s;
+}
+
+@keyframes neoHeroMove {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -400; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .neoHero-title { font-size: 38px; }
+}
+
+</style>
+
+
+
+  <style>
+  
+    .projects {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .tags span {
+      display: inline-block;
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+ 
+  </style>
+
+
+  <section class="projects" id="from">
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Tilt+Neon&display=swap");
+
+.description h1 {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: clamp(3rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(118, 167, 63) 0%,
+    rgb(51, 143, 118) 40%,
+    rgb(55, 141, 167) 50%,
+    rgb(117, 152, 242) 70%,
+    rgb(144, 118, 236) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+</style>
+
+
+
+
+
+
+
+
+<script> // Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+    
+
+
+
+      <h2>Internet of Things</h2>
           <p>είναι μια έννοια της πληροφορικής που περιγράφει ένα μέλλον όπου όλα
             τα αντικείμενα που χρησιμοποιούμε καθημερινά θα είναι συνδεδεμένα στο Internet και θα είναι σε θέση να προσδιορίσουν τον εαυτό τους σε άλλες συσκευές.
           </p>
@@ -118,68 +559,17 @@
             Είναι η δεύτερη μου εφαρμογή πάνω στο iot, και ακόμα τη δουλεύω. 
             Μέρος της δουλειάς αυτής μπορείς να δεις παρακάτω.
             <br><a href="https://alexandroshub.github.io/fossa.iot" class="w3-button w3-black">try FOSSA</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script> // Tabbed Menu
-      function openMenu(evt, menuName) {
-        var i, x, tablinks;
-        x = document.getElementsByClassName("menu");
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < x.length; i++) {
-           tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-        }
-        document.getElementById(menuName).style.display = "block";
-        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-      }
-      document.getElementById("myLink").click();
-    </script>
-    <br>
-    <!-- Area Container -->
-    <div class="w3-container" id="where" style="padding-bottom:32px;">
-      <div class="w3-content" style="max-width:700px">
-        <style>
-          .accordion2 {
-          background-color: #eee;
-          color: #444;
-          cursor: pointer;
-          padding: 18px;
-          width: 100%;
-          border: none;
-          text-align: left;
-          outline: none;
-          font-size: 15px;
-          transition: 0.4s;
-          }
-          .accordion2:after {
-          content: '\002B';
-          color: #777;
-          font-weight: bold;
-          float: right;
-          margin-left: 5px;
-          }
-          .active2:after {
-          content: "\2212";
-          }
-          .active2, .accordion2:hover {
-          background-color: #ccc;
-          }
-          .panel {
-          padding: 0 18px;
-          background-color: white;
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.2s ease-out;
-          }
-        </style>
-        <button class="accordion2">Intro
-        </button>
-        <div class="panel">
-          <p>
+            
+     </div>       
+            
+            
+            
+            
+            
+            
+            
+    
+  <p>
             Το Internet of Things είναι μια δύσκολη έννοια για να προσδιοριστεί με ακρίβεια. Κάθε ορισμός συμμερίζεται την ιδέα ότι η πρώτη έκδοση του Internet ήταν για τα δεδομένα που δημιουργήθηκαν από ανθρώπους, ενώ η επόμενη έκδοση είναι για τα δεδομένα που δημιουργούνται από τα πράγματα. 
             <br>
             Το 1999 ο <a href="https://www.smithsonianmag.com/innovation/kevin-ashton-describes-the-internet-of-things-180953749/" class="w3-button w3-blue">Kevin Ashton</a> έκανε τον προσδιορισμό στο παρακάτω απόσπασμα από ένα άρθρο του:
@@ -191,59 +581,347 @@
           <a href="https://www.iot-now.com/2019/07/07/97056-what-is-iot/" class="w3-button w3-blue">what is iot</a>
           <hr>
           <a href="https://developers.mydevices.com/cayenne/features/" class="w3-button w3-blue">mydevices</a>
-          <a href="https://blynk.io/" class="w3-button w3-blue">blynk</a>
-        </div>
-        <button class="accordion2">2
-        </button>
-        <div class="panel"></div>
-        <button class="accordion2">3
-        </button>
-        <div class="panel"></div>
-        <br>
-        <button class="accordion2">Πές την γνώμη σου!
-        </button>
-        <div class="panel">
-          <div id="disqus_thread"></div>
-          <script>
-            /**
-             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function () {
-              // DON'T EDIT BELOW THIS LINE
-              var d = document,
-                s = d.createElement("script");
-              s.src = "https://alexandroshub.disqus.com/embed.js";
-              s.setAttribute("data-timestamp", +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-        <br>
-      </div>
-      <script>
-        var acc = document.getElementsByClassName("accordion2");
-        var i;
+          <a href="https://blynk.io/" class="w3-button w3-blue">blynk</a>    
+      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Eγκατάσταση λογισµικού</span></h5>
+   <p>Το πρώτο βήµα χρήσης είναι η εγκατάσταση του λογισµικού. Πρόκειται για ένα ολοκληρωµένο προγραµµατιστικό περιβάλλον ανάπτυξης. </p>     <a href="https://www.python.org/" class="w3-button w3-hover-blue">Εγκατάσταση της Python</a>
+   
+  <br>
+  
+  </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a href="#" class="neoHero-btn neoHero-secondary" style="color: #000; border: 1px solid rgba(255,255,255,0.25); float: right;">top &#x2923;</a><br></p>
+ 
+
+      
+</section>
+
+
+
+
+<style>
+
+
+
+  .sci-fi-console {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid #00c8b5;
+    border-radius: 12px;
+    background: #2f2f2f;
+    box-shadow: 0 0 8px rgba(0,200,181,0.3);
+  }
+
+  .intro-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .intro-text h3 {
+    color: #00c8b5;
+    text-shadow: none;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .intro-text p {
+    font-size: 0.9em;
+    color: #dddddd;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .screen-frame {
+    position: relative;
+    border: 2px solid #00c8b5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,200,181,0.2);
+    margin-bottom: 20px;
+  }
+
+  .screen-frame iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    display: block;
+  }
+
+  .screen-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,200,181,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .video-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .video-buttons button {
+    background: transparent;
+    border: 1px solid #00c8b5;
+    color: #00c8b5;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  .video-buttons button:hover {
+    background: #00c8b5;
+    color: #1f1f1f;
+    box-shadow: 0 0 5px rgba(0,200,181,0.4);
+  }
+
+  .cta-section {
+    text-align: center;
+    margin-top: 10px;
+    color: #dddddd;
+  }
+
+  .cta-section h4 {
+    margin-bottom: 5px;
+    color: #00c8b5;
+    font-weight: 600;
+  }
+
+  .cta-section p {
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #00c8b5;
+    color: #1f1f1f;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 6px rgba(0,200,181,0.3);
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #00a89c;
+  }
+  
+  
+</style>
+
+
+
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div class="footer-section">
+  <div class="footer-column">
+    <h6>🔗 Συνδέσεις μαθημάτων</h6>
+     <ul class="footer-links">
+ 		        
+	
+            </ul>       
         
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
-            this.classList.toggle("active2");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-            } else {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-            } 
-          });
-        }
-      </script>
-    </div>
+  </div>
+
+  <div class="footer-column">
+    <h6>🚀 Explore More</h6>
+    <ul class="footer-links">
+ 
+ 
+ <p>
+ <br>
+  </p>
+ 
+    </ul>
+  </div>
+</div>
+
+<style>
+  .footer-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+    background: #1e1e1e;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-column {
+    flex: 1 1 250px;
+    min-width: 250px;
+  }
+
+  .footer-column h6 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #00ffe7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #00ffe7;
+    transform: translateX(5px);
+  }
+
+  .footer-links i {
+    flex-shrink: 0;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-links a:hover i {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  .green { color: #00ff88; }
+  .purple { color: #bb86fc; }
+  .blue { color: #00bfff; }
+</style>
+
+	  
+<!--
+    _                                                                    
+    |_) _. ._   _.  _ ._     ._ _         /\  |  _      _. ._   _| ._ _   _ 
+    |  (_| |_) (_| _> |_) \/ | (_) |_|   /--\ | (/_ >< (_| | | (_| | (_) _> 
+          |          |   /                                                         
+-->
+
+
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+
+<style>
+/* Namespaced for safety */
+.ap-footer {
+  background: #111; /* dark background */
+  color: #eee;      /* light text */
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.ap-footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ap-footer-title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.ap-footer-rights {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+.ap-footer-links {
+  font-size: 0.9rem;
+}
+
+.ap-footer-links a {
+  color: #4dd0e1; /* accent cyan */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ap-footer-links a:hover {
+  color: #80deea; /* lighter hover */
+}
+
+.ap-separator {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+</style>
+
+<footer class="ap-footer">
+  <div class="ap-footer-container">
+    <h2 class="ap-footer-title">AlphaPi</h2>
+    <p class="ap-footer-rights">All rights reserved</p>
+    <nav class="ap-footer-links">
+      <a href="https://alexandroshub.github.io/apTOU">Terms of service</a>
+      <span class="ap-separator">|</span>
+      <a href="https://alexandroshub.github.io/LV3#contact">Contact</a>
+      <span class="ap-separator">|</span>
+   <a href="https://www.instagram.com/alexandroshub/"><i class="uil uil-instagram"></i></a>
+         <span class="ap-separator">|</span>
+      <a href="https://alexandroshub.github.io/welcome21.html">▞▚ ▛</a>
+
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
+<!--
+▄▀█ █░░ █▀█ █░█ ▄▀█   █▀█ █
+█▀█ █▄▄ █▀▀ █▀█ █▀█   █▀▀ █
+-->
     <!-- ////////// Scripts Zone ////////// -->
     <!-- googletagmanager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
@@ -265,28 +943,3 @@
       document.getElementById("myLink").click();
     </script>
     <!--  ---------------------------------- -->
-    <footer style="background: linear-gradient(to bottom left, #1C1C1C 0%, #294F69 100%); color: #51B7FF; padding: 25px 16px;">
-      <center>
-        <p>Αν θέλετε να μοιραστείτε την άποψη σας για το θέμα,<br> ή να προτείνετε κάτι ακόμα, μπορείτε να μας γράψετε στο messenger.</p>
-        <i class="fab fa-facebook-messenger"onclick="window.location.href='https://www.messenger.com/t/alexandroshub';" style="cursor:pointer" title="m.me/alexandroshub"></i>
-        <p class="w3-tooltip">
-          you have reached the end <br />
-          <span class="w3-text w3-tag">
-          <a href="#home"  style="text-decoration: none"><i class="fa fa-chevron-circle-up w3-margin-right"></i>Επιστροφή στην κορυφή</a>
-          </span>
-        </p>
-        <!-- Signature -->
-        <img src="https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width: 340px;" alt="Papaspyrou Alexandros" align="bottom" />
-        <p   style="font-size: 12px;">
-          <link
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-            rel="stylesheet"
-            integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
-            crossorigin="anonymous"
-            />
-          <i class="fa fa-creative-commons"></i>2020 AlexandrosHub CC-BY | <a href="https://alexandroshub.github.io/about">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact">Contact</a>
-        </p>
-      </center>
-    </footer>
-  </body>
-</html>
