@@ -863,7 +863,101 @@ details[open] .content {
  <p>
  <br>
   </p>
+
+
+
+
+
+
+  <style>
+.mslearn-section-overview {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  /* ΜΟΝΟ στο component */
+  background: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+  width: fit-content;
+}
+
+.mslearn-section-dot {
+ width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #a5b4fc, #4f46e5);
+      box-shadow: 0 0 10px rgba(129, 140, 248, 0.9);
+}
+
+.mslearn-section-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+}
+
+/* 🔵 ΠΙΟ ΜΠΛΕ PILL */
+.mslearn-section-pill {
+	  padding: 4px 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.6), rgba(30, 64, 175, 0.1));
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      color: #e5e7ff;
+      font-size: 13px;
+      font-weight: 600;
+      backdrop-filter: blur(14px);
+      box-shadow:
+        0 0 12px rgba(59, 130, 246, 0.8),
+        0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+.mslearn-section-pill2 {
+  padding: 4px 12px;
+  border-radius: 999px;
+
+  /* Μωβ/μπλε gradient */
+  background: linear-gradient(
+    180deg,
+    #ede9fe 0%,
+    #e0e7ff 100%
+  );
+
+  border: 1px solid rgba(129, 140, 248, 0.6);
+  color: #1e1b4b;
+  font-size: 13px;
+  font-weight: 600;
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(59, 130, 246, 0.8),
+    0 18px 40px rgba(15, 23, 42, 0.95);
+}
+
+
+  </style>
+<section class="mslearn-section-overview">
+  <span class="mslearn-section-dot"></span>
+  <span class="mslearn-section-label">Section</span>
+  <span class="mslearn-section-pill">Επισκόπηση</span>
+  <span class="mslearn-section-pill2">Επισκόπηση</span>
+
+</section>
+
  
+
+
+
+
+
+
+		
     </ul>
   </div>
 </div>
