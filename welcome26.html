@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlexandrosHub | Προσωπική Ιστοσελίδα</title>
+    <link rel="icon" href="https://66.media.tumblr.com/9f91f0dbdfacf1b392ea57952b64b007/5c25108e88c20a16-06/s500x750/e4c92b25ff82c66650a9593cc1c7e43a06570b50.png" type="image/png">
+    <meta name="author" content="Alexandros Papaspyrou">
+    <meta name="description" content="Προσωπική ιστοσελίδα του Παπασπύρου Αλέξανδρου - Προγραμματισμός, Αυτοματισμοί, Τεχνολογία">
+    <meta name="keywords" content="Automations, Programming, Technology, Αυτοματισμοί, Προγραμματισμός, Τεχνολογία">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --clr-primary: #0a192f;
+            --clr-secondary: #112240;
+            --clr-accent1: #1e9bff;
+            --clr-accent2: #00d4aa;
+            --clr-accent-gradient: linear-gradient(90deg, var(--clr-accent1), var(--clr-accent2));
+            --clr-text: #ccd6f6;
+            --clr-text-light: #8892b0;
+            --clr-white: #ffffff;
+            --clr-light: #e6f1ff;
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--clr-primary);
+            color: var(--clr-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+        
+        .btn-primary {
+            background: var(--clr-accent-gradient);
+            color: var(--clr-white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 155, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--clr-accent1);
+            color: var(--clr-accent1);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(30, 155, 255, 0.1);
+        }
+        
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--clr-accent-gradient);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--clr-accent1);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.7)),
+                url('https://64.media.tumblr.com/4485b2d8ece3aa0f04430f6ad12c6748/77abf54cc288f0e2-77/s1280x1920/9ef9a46fe9b721a066d9e4cc85bc5912c24f29e9.png');
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--clr-text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--clr-text-light);
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--clr-accent-gradient);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--clr-text-light);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--clr-secondary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background-color: var(--clr-secondary);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .search-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--clr-secondary);
+            border-radius: var(--border-radius);
+            margin-top: 3rem;
+        }
+        
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--clr-secondary);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--clr-primary);
+            color: var(--clr-text);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--clr-accent-gradient);
+            color: var(--clr-white);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--clr-accent-gradient);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: var(--clr-text-light);
+        }
+        
+        .footer-column a:hover {
+            color: var(--clr-accent1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--clr-text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                margin: 3rem auto 0;
+                transform: none;
+                top: 0;
+            }
+            
+            .hero {
+                text-align: center;
+                padding-top: 150px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: var(--clr-secondary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .search-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Custom Google Search */
+        .gcse-search {
+            background-color: var(--clr-primary);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: inset 0 0 0 1px rgba(136, 146, 176, 0.2);
+        }
+        
+        .gcse-search input {
+            background-color: var(--clr-secondary) !important;
+            color: var(--clr-text) !important;
+            border: 1px solid rgba(136, 146, 176, 0.3) !important;
+            border-radius: var(--border-radius) !important;
+            padding: 12px 20px !important;
+        }
+        
+        .gcse-search button {
+            background: var(--clr-accent-gradient) !important;
+            border-radius: var(--border-radius) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="https://alexandroshub.github.io/" class="logo">AlphaPi</a>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Αρχική</a>
+                <a href="#about" class="nav-link">Σχετικά</a>
+                <a href="https://alexandroshub.github.io/cv" class="nav-link">Βιογραφικό</a>
+                <a href="https://alexandroshub.github.io/contact" class="nav-link">Επικοινωνία</a>
+                <a href="https://alexandroshub.github.io/about" class="nav-link">Όροι Χρήσης</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Αλέξανδρος Παπασπύρου</h1>
+                <h2 class="fade-in delay-1">Αυτοματισμοί & Τεχνολογία</h2>
+                <p class="fade-in delay-2">Καλωσόρισες στην προσωπική μου ιστοσελίδα, σχεδιασμένη και προγραμματισμένη με κάθε λεπτομέρεια για ευχάριστη, χρήσιμη και ασφαλή περιήγηση.</p>
+                <div class="fade-in delay-3">
+                    <a href="#about" class="btn btn-primary">Περισσότερα</a>
+                    <a href="https://alexandroshub.github.io/contact" class="btn btn-secondary">Επικοινωνία</a>
+                </div>
+            </div>
+            
+            <div class="hero-image fade-in delay-2">
+                <img src="https://64.media.tumblr.com/4485b2d8ece3aa0f04430f6ad12c6748/77abf54cc288f0e2-77/s1280x1920/9ef9a46fe9b721a066d9e4cc85bc5912c24f29e9.png">
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">Λίγα λόγια για τη σελίδα!</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="fade-in">Καλωσόρισες στο alexandroshub, την προσωπική μου ιστοσελίδα, της οποίας το design, το coding, το quality και το safety έχουν σχεδιαστεί και γραφτεί (προγραμματιστεί) με κάθε λεπτομέρεια ώστε να είναι ευχάριστες, εύχρηστες, χρήσιμες, ασφαλείς και ποιοτικές για όλους. Θα ήθελα πολύ να ακούσω τη γνώμη και τις προτάσεις σου.</p>
+                    
+                    <div class="fade-in delay-1">
+                        <a href="https://alexandroshub.github.io/contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Στείλε Μήνυμα
+                        </a>
+                    </div>
+                    
+                    <p class="fade-in delay-2">Πριν συνεχίσεις, θα ήθελα να σου προτείνω να ελέγξεις τους όρους χρήσης, την πολιτική απορρήτου και άλλες πληροφορίες χρήσιμες για την περιήγηση σου στο alexandroshub.</p>
+                    
+                    <div class="fade-in delay-3">
+                        <a href="https://alexandroshub.github.io/about" class="btn btn-secondary">
+                            <i class="fas fa-external-link-alt"></i> Όροι Χρήσης & Απόρρητο
+                        </a>
+                    </div>
+                    
+                    <p class="fade-in delay-1">Γεννήθηκα και μεγάλωσα στην Αθήνα και από μικρός κατάλαβα το ενδιαφέρον μου για την επιστήμη, τις τεχνολογίες και την πληροφορική, για αυτό και επέλεξα να σπουδάσω και να ασχοληθώ με αυτό το αντικείμενο. Με αρκετά σεμινάρια και ημερίδες που αφορούν την τεχνολογία, τους Η/Υ και τους αυτοματισμούς, αναζητώντας πάντα νέες ευκαιρίες και καινοτομία.</p>
+                </div>
+                
+                <div class="stats fade-in delay-2">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Σελίδες</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Posts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Βίντεο</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-buttons fade-in delay-3" style="margin-top: 3rem;">
+                <a href="https://alexandroshub.github.io/cv" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Κατέβασε το Βιογραφικό
+                </a>
+                <a href="https://alexandroshub.github.io/cv" class="btn btn-secondary">
+                    <i class="fas fa-external-link-alt"></i> Προεπισκόπηση
+                </a>
+            </div>
+            
+            <p class="fade-in delay-1" style="margin-top: 3rem;">Αυτή τη στιγμή, αν κάνεις μία αναζήτηση στο site μου, θα βρεις σίγουρα χρήσιμους και ενδιαφέροντες οδηγούς, project, αναρτήσεις στο blog, μία ψυχαγωγική γωνία και πολλά άλλα!</p>
+            
+            <!-- Search Section -->
+            <div class="search-section fade-in delay-2">
+                <div class="search-container">
+                    <h3 class="search-title">Αναζήτηση στο AlexandrosHub</h3>
+                    <script async src="https://cse.google.com/cse.js?cx=da9cf2b4ec807d8de"></script>
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="cta-section fade-in delay-3">
+                <h3 class="cta-title">Είσαι έτοιμος να συνεχίσεις;</h3>
+                <p>Νομίζω πως έχουμε πει αρκετά και πλέον είσαι έτοιμος να συνεχίσεις και να επισκεφτείς την προσωπική μου ιστοσελίδα. Σου εύχομαι καλή περιήγηση και για ότι χρειαστείς παραμένω στη διάθεσή σου.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://alexandroshub.github.io/" class="btn btn-primary" style="background: #ff4757; border: none;">
+                        <i class="fas fa-external-link-alt"></i> ΕΙΣΟΔΟΣ ΣΤΟ ALEXANDROSHUB
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">AlexandrosHub</div>
+                    <p>Προσωπική ιστοσελίδα του Παπασπύρου Αλέξανδρου. Αυτοματισμοί, Προγραμματισμός, Τεχνολογία.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/alexandroshub/" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/alexandroshub/" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/A_Papaspyrou" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://gr.linkedin.com/in/alexandrospapaspyrou" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Σύνδεσμοι</h3>
+                        <ul>
+                            <li><a href="https://alexandroshub.github.io/">Αρχική</a></li>
+                            <li><a href="https://alexandroshub.github.io/cv">Βιογραφικό</a></li>
+                            <li><a href="https://alexandroshub.github.io/mycv">Πληροφορίες</a></li>
+                            <li><a href="#about">Σχετικά</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Πηγές</h3>
+                        <ul>
+                            <li><a href="https://alexandroshub.github.io/about">Όροι Χρήσης</a></li>
+                            <li><a href="https://alexandroshub.github.io/about">Πολιτική Απορρήτου</a></li>
+                            <li><a href="https://alexandroshub.github.io/contact">Επικοινωνία</a></li>
+                            <li><a href="#home">Αναζήτηση</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Πληροφορίες</h3>
+                        <ul>
+                            <li><a href="mailto:">Email</a></li>
+                            <li><a href="tel:">Τηλέφωνο</a></li>
+                            <li><a href="https://alexandroshub.github.io/">Blog</a></li>
+                            <li><a href="https://alexandroshub.github.io/">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    <i class="fab fa-creative-commons"></i> AlexandrosHub | 
+                    <a href="https://alexandroshub.github.io/about">Πολιτική Απορρήτου & Όροι Χρήσης</a> | 
+                    <a href="https://alexandroshub.github.io/contact">Επικοινωνία</a>
+                </p>
+                <p style="margin-top: 1rem;">&copy; 2023 Alexandros Papaspyrou. Με την επιφύλαξη παντός δικαιώματος.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight && navLink) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    navLink.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
