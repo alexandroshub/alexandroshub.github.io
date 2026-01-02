@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alphapi.hub | AlexandrosHub – Technology, Creativity & Beyond</title>
+    <!-- ===== ΑΝΑΦΟΡΑ ΣΤΟ ΠΡΩΤΟΤΥΠΟ ===== -->
+    <!-- Εμπνευσμένο & βασισμένο στο: https://alexandroshub.github.io/ -->
+    <!-- Μετατροπή σε πλήρη, σύγχρονο web hub με όλο το υλικό και το πνεύμα της αρχικής σελίδας. -->
+    <!-- ================================= -->
+    <link rel="icon" type="image/x-icon" href="https://alexandroshub.github.io/favicon.ico">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Exo+2:ital,wght@0,300;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --clr-bg-dark: #0a0a0f;
+            --clr-bg-card: rgba(16, 18, 27, 0.85);
+            --clr-text-primary: #e6e7eb;
+            --clr-text-secondary: #9aa0a6;
+            --clr-border: rgba(255, 255, 255, 0.08);
+            --clr-accent1: #1e9bff;
+            --clr-accent2: #00d4aa;
+            --clr-accent-gradient: linear-gradient(90deg, var(--clr-accent1), var(--clr-accent2));
+            --clr-hover-glow: rgba(30, 155, 255, 0.4);
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Exo 2', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--clr-bg-dark);
+            color: var(--clr-text-primary);
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(30, 155, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(0, 212, 170, 0.05) 0%, transparent 20%);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* === CYBER GRID BACKGROUND === */
+        .cyber-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(var(--clr-border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--clr-border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: -25px -25px;
+            z-index: -1;
+            pointer-events: none;
+            animation: gridMove 40s linear infinite;
+        }
+        @keyframes gridMove {
+            0% { background-position: -25px -25px; }
+            100% { background-position: -25px 975px; }
+        }
+
+        /* === MAIN CONTAINER & LAYOUT === */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--clr-border);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-icon {
+            font-size: 2.5rem;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .site-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+        .site-tagline {
+            font-size: 1rem;
+            color: var(--clr-text-secondary);
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex-grow: 1;
+            max-width: 400px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--clr-border);
+            border-radius: 50px;
+            color: var(--clr-text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: var(--clr-accent1);
+            box-shadow: 0 0 15px var(--clr-hover-glow);
+        }
+
+        /* Main Nav Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 0.9rem 1.8rem;
+            background: var(--clr-bg-card);
+            border: 1px solid var(--clr-border);
+            border-radius: 10px;
+            color: var(--clr-text-secondary);
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: rgba(30, 155, 255, 0.15);
+            color: var(--clr-accent1);
+            border-color: var(--clr-accent1);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* === UNIVERSAL CARD STYLE === */
+        .hub-card {
+            background: var(--clr-bg-card);
+            border: 1px solid var(--clr-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            height: 100%;
+        }
+        .hub-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--clr-accent1);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 60px rgba(30, 155, 255, 0.05);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-icon {
+            font-size: 2rem;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        /* === HERO / WELCOME SECTION === */
+        .hero-section {
+            margin-bottom: 4rem;
+        }
+        .hero-card {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        .hero-gradient {
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--clr-text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            margin: 0.5rem;
+            border-radius: 50px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .btn-primary {
+            background: var(--clr-accent-gradient);
+            color: var(--clr-bg-dark);
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--clr-hover-glow);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--clr-accent2);
+            border: 2px solid var(--clr-accent2);
+        }
+        .btn-secondary:hover {
+            background: rgba(0, 212, 170, 0.1);
+            transform: scale(1.05);
+        }
+
+        /* === MAIN CONTENT GRID === */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* === MY UNIVERSE SECTION (Original "Plus") === */
+        .universe-intro {
+            grid-column: 1 / -1;
+            border-left: 5px solid var(--clr-accent1);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+        .link-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--clr-accent2);
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .link-item:hover {
+            background: rgba(0, 212, 170, 0.1);
+            transform: translateX(5px);
+        }
+        .link-item a {
+            color: var(--clr-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .link-item a:hover {
+            color: var(--clr-accent2);
+        }
+        .link-desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-secondary);
+        }
+
+        /* === PROJECTS & HUBS (From Original Site) === */
+        .tech-hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .tech-hub-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .tech-hub-item:hover {
+            border-color: var(--clr-accent1);
+            background: rgba(30, 155, 255, 0.08);
+        }
+        .tech-hub-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hub-item-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .hub-item-desc {
+            font-size: 0.9rem;
+            color: var(--clr-text-secondary);
+            margin-bottom: 1.2rem;
+        }
+        .hub-item-link {
+            color: var(--clr-accent1);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* === MEDIA / CINEMA HUB === */
+        .media-player-container {
+            margin-top: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+        #mediaPlayer {
+            width: 100%;
+            height: 360px;
+            border: none;
+            display: block;
+        }
+        .video-thumbnails {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        .video-thumb {
+            flex: 0 0 auto;
+            width: 160px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .video-thumb:hover,
+        .video-thumb.active {
+            border-color: var(--clr-accent1);
+        }
+        .video-thumb img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            display: block;
+        }
+        .video-thumb p {
+            padding: 0.6rem;
+            font-size: 0.85rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* === MIND LAB SECTION === */
+        .mindlab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .mindlab-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+        .mindlab-timer {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--clr-accent2);
+            margin: 1rem 0;
+        }
+        .quote-box {
+            font-style: italic;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--clr-accent1);
+        }
+        .quote-author {
+            text-align: right;
+            margin-top: 1rem;
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* === DASHBOARD / STATS === */
+        .stats-dashboard {
+            grid-column: 1 / -1;
+            margin-top: 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 1.8rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 4px solid;
+            transition: transform 0.3s ease;
+        }
+        .stat-box:hover { transform: translateY(-5px); }
+        .stat-box:nth-child(1) { border-color: var(--clr-accent1); }
+        .stat-box:nth-child(2) { border-color: #ff6b8b; }
+        .stat-box:nth-child(3) { border-color: #00d4aa; }
+        .stat-box:nth-child(4) { border-color: #9d4edd; }
+        .stat-value {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+        .stat-desc {
+            font-size: 0.95rem;
+            color: var(--clr-text-secondary);
+        }
+
+        /* === FOOTER === */
+        .main-footer {
+            margin-top: 5rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--clr-border);
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--clr-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--clr-accent1);
+        }
+        .copyright {
+            color: var(--clr-text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 992px) {
+            .main-header { flex-direction: column; align-items: flex-start; }
+            .search-container { max-width: 100%; }
+            .hero-title { font-size: 2.8rem; }
+        }
+        @media (max-width: 768px) {
+            .main-container { padding: 1.5rem; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .card-title { font-size: 1.5rem; }
+            .tab-btn { padding: 0.8rem 1.2rem; font-size: 0.9rem; }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .site-title { font-size: 2rem; }
+            .btn-primary, .btn-secondary { padding: 0.9rem 1.8rem; font-size: 1rem; }
+        }
+
+        /* === TAB CONTENT VISIBILITY === */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--clr-accent-gradient);
+            color: var(--clr-bg-dark);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        #backToTop:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Cyber Grid Background -->
+    <div class="cyber-grid"></div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header with Logo & Search -->
+        <header class="main-header">
+            <div class="logo-title">
+                <div class="logo-icon"><i class="fas fa-infinity"></i></div>
+                <div>
+                    <h1 class="site-title">alphapi.hub</h1>
+                    <p class="site-tagline">Από την ιδέα στον αυτοματισμό... και πέρα απ' αυτόν</p>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-box" id="searchBox" placeholder="🔍 Αναζήτηση σε συνδέσμους, έργα, ιδέες...">
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="tab-universe"><i class="fas fa-user-ninja"></i>My Universe</button>
+                <button class="tab-btn" data-tab="tab-projects"><i class="fas fa-microchip"></i>Projects & Tech Hubs</button>
+                <button class="tab-btn" data-tab="tab-media"><i class="fas fa-photo-film"></i>Cinema Hub</button>
+                <button class="tab-btn" data-tab="tab-mindlab"><i class="fas fa-brain"></i>Mind Lab</button>
+                <button class="tab-btn" data-tab="tab-resources"><i class="fas fa-link"></i>Resource Nexus</button>
+            </nav>
+        </header>
+
+        <!-- Hero / Welcome Section -->
+        <section class="hero-section">
+            <div class="hub-card hero-card">
+                <h1 class="hero-title">
+                    <span class="hero-gradient">Tech with a soul.</span>
+                    Beyond the code, into the mind.
+                </h1>
+                <p class="hero-subtitle">
+                    Καλωσόρισες στο προσωπικό μου hub. Εδώ η τεχνολογία συναντά την προσωπική ματιά, η γνώση είναι ανοιχτή και οι ιδέες ξεφεύγουν από τον κώδικα.
+                </p>
+                <a href="https://alexandroshub.github.io/" target="_blank" class="btn-primary"><i class="fas fa-rocket"></i> Αρχική Πύλη</a>
+                <a href="#newsletter" class="btn-secondary"><i class="fas fa-paper-plane"></i> Newsletter</a>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT: Tabbed Sections -->
+        <main>
+            <!-- ===== TAB 1: MY UNIVERSE (Original Plus Section) ===== -->
+            <section id="tab-universe" class="tab-content active">
+                <div class="hub-card universe-intro">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-user-ninja"></i></div>
+                        <h2 class="card-title">My Universe | PLUS+</h2>
+                    </div>
+                    <p>Γεια σου ανήσυχο πνεύμα 👋 Αυτή είναι η καρδιά του hub. Ο χώρος για σκέψη, δημιουργικότητα και ό,τι με εμπνέει πέρα από τα projects. Δες τα προσωπικά μου άρθρα, άκουσε τις συζητήσεις και εξερεύνησε.</p>
+
+                    <div class="links-grid">
+                        <div class="link-item">
+                            <a href="https://alexandroshub.wordpress.com/" target="_blank"><i class="fas fa-blog"></i> Personal Blog</a>
+                            <p class="link-desc">Αναρτήσεις με την προσωπική μου ματιά πάνω στην τεχνολογία και την καθημερινότητα.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://anchor.fm/alexandroshub" target="_blank"><i class="fas fa-podcast"></i> Podcast Channel</a>
+                            <p class="link-desc">Συζητήσεις, ιδέες και ιστορίες που αξίζει να ακούσεις.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://medium.com/@papaspyrou.alexandros" target="_blank"><i class="fab fa-medium"></i> Medium Blog</a>
+                            <p class="link-desc">Περιεχόμενο γραμμένο για ένα ευρύτερο, τεχνολογικό κοινό.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://alexispapy.tumblr.com/" target="_blank"><i class="fab fa-tumblr"></i> apBlog (Tumblr)</a>
+                            <p class="link-desc">Άλλο ένα σημείο έκφρασης και δημιουργικότητας.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TAB 2: PROJECTS & TECH HUBS (From Original Site) ===== -->
+            <section id="tab-projects" class="tab-content">
+                <div class="hub-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                        <h2 class="card-title">Projects & Tech Hubs</h2>
+                    </div>
+                    <p>Το πρακτικό πυρήνα της δουλειάς μου, όπως παρουσιάζεται στην αρχική πύλη. Αυτοματισμοί, ρομποτική και IoT.</p>
+
+                    <h3 style="margin: 2rem 0 1rem 0; color: var(--clr-accent1);">Featured Projects</h3>
+                    <div class="tech-hub-grid">
+                        <div class="tech-hub-item">
+                            <i class="fas fa-robot"></i>
+                            <h4 class="hub-item-title">Arduino Lab</h4>
+                            <p class="hub-item-desc">Smart IoT Automations</p>
+                            <a href="#" class="hub-item-link">Explore →</a>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-swarm"></i>
+                            <h4 class="hub-item-title">Swarm Robotics</h4>
+                            <p class="hub-item-desc">Collective Intelligence & Analysis</p>
+                            <a href="#" class="hub-item-link">Explore →</a>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 2.5rem 0 1rem 0; color: var(--clr-accent1);">Technology Hub</h3>
+                    <div class="tech-hub-grid">
+                        <div class="tech-hub-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4 class="hub-item-title">Automations</h4>
+                            <p class="hub-item-desc">Smart systems for modern living.</p>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-industry"></i>
+                            <h4 class="hub-item-title">Robotics</h4>
+                            <p class="hub-item-desc">Robotic systems & intelligent automation.</p>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-wifi"></i>
+                            <h4 class="hub-item-title">Internet of Things</h4>
+                            <p class="hub-item-desc">Connected devices & smart solutions.</p>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-microcontroller"></i>
+                            <h4 class="hub-item-title">Arduino</h4>
+                            <p class="hub-item-desc">Microcontroller projects & embedded systems.</p>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-code"></i>
+                            <h4 class="hub-item-title">Development</h4>
+                            <p class="hub-item-desc">Programming projects & software development.</p>
+                        </div>
+                        <div class="tech-hub-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4 class="hub-item-title">Digital Hub+</h4>
+                            <p class="hub-item-desc">Tutorials, guides & educational content.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TAB 3: CINEMA HUB (4U MEDIA) ===== -->
+            <section id="tab-media" class="tab-content">
+                <div class="hub-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-photo-film"></i></div>
+                        <h2 class="card-title">Cinema Hub | 4U Media</h2>
+                    </div>
+                    <p>Περιεχόμενο που αξίζει να δείς. Ντοκιμαντέρ, ταινίες και αναλύσεις που προκαλούν τη σκέψη.</p>
+
+                    <div class="media-player-container">
+                        <iframe id="mediaPlayer" src="https://www.youtube.com/embed/bmP9ZQx9a3c" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="video-thumbnails">
+                        <div class="video-thumb active" data-video="bmP9ZQx9a3c">
+                            <img src="https://img.youtube.com/vi/bmP9ZQx9a3c/0.jpg" alt="Video Thumb">
+                            <p>Κοινωνίες Matrix</p>
+                        </div>
+                        <div class="video-thumb" data-video="nZbZaZmebvU">
+                            <img src="https://img.youtube.com/vi/nZbZaZmebvU/0.jpg" alt="Video Thumb">
+                            <p>Σύμπαν & Βιοϋπολογιστές</p>
+                        </div>
+                        <div class="video-thumb" data-video="L0xdHHDSy7U">
+                            <img src="https://img.youtube.com/vi/L0xdHHDSy7U/0.jpg" alt="Video Thumb">
+                            <p>Covid19: Επικοινωνία</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TAB 4: MIND LAB ===== -->
+            <section id="tab-mindlab" class="tab-content">
+                <div class="hub-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-brain"></i></div>
+                        <h2 class="card-title">Mind Lab</h2>
+                    </div>
+                    <p>Ένας χώρος για την προσοχή, την ανάκτηση και την ανάπτυξη. Γιατί η τεχνολογία χρειάζεται μια υγιή σκέψη.</p>
+
+                    <div class="mindlab-grid">
+                        <div class="hub-card mindlab-card">
+                            <i class="fas fa-spa" style="font-size: 2.5rem;"></i>
+                            <h3>Guided Focus</h3>
+                            <p>Ξεκαθάρισε το μυαλό σου σε 5 λεπτά.</p>
+                            <div class="mindlab-timer" id="meditationTimer">05:00</div>
+                            <button onclick="startMeditationTimer()" class="btn-secondary" style="padding: 0.7rem 1.5rem;">Έναρξη</button>
+                        </div>
+                        <div class="hub-card mindlab-card">
+                            <i class="fas fa-quote-left" style="font-size: 2.5rem;"></i>
+                            <h3>Daily Reflection</h3>
+                            <p>Ποια ιδέα από τον κόσμο της τεχνολογίας σε κάνει να αμφιβάλλεις σήμερα;</p>
+                        </div>
+                        <div class="hub-card" style="grid-column: span 2;">
+                            <div class="quote-box">
+                                "The real problem of humanity is that we have Paleolithic emotions, medieval institutions and godlike technology."
+                                <div class="quote-author">— Edward O. Wilson</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== TAB 5: RESOURCE NEXUS (Expanded Links) ===== -->
+            <section id="tab-resources" class="tab-content">
+                <div class="hub-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-link"></i></div>
+                        <h2 class="card-title">Resource Nexus</h2>
+                    </div>
+                    <p>Η μεγαλύτερη, ταξινομημένη συλλογή χρήσιμων συνδέσμων που έχω δημιουργήσει. Από AI μέχρι πολιτική τεχνολογίας.</p>
+
+                    <div class="links-grid">
+                        <div class="link-item">
+                            <a href="https://chat.openai.com" target="_blank"><i class="fas fa-robot"></i> ChatGPT</a>
+                            <p class="link-desc">AI chatbot για συνομιλία, συγγραφή, γενικές ερωτήσεις.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://www.canva.com" target="_blank"><i class="fas fa-paint-brush"></i> Canva</a>
+                            <p class="link-desc">Δωρεάν εργαλείο σχεδίασης γραφικών και βίντεο με AI.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://getsession.org" target="_blank"><i class="fas fa-user-secret"></i> Session</a>
+                            <p class="link-desc">Decentralized messenger, no phone number required.</p>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://signal.org" target="_blank"><i class="fas fa-lock"></i> Signal</a>
+                            <p class="link-desc">Widely trusted for strong encryption and sleek UX.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== DASHBOARD / STATS SECTION ===== -->
+            <section class="stats-dashboard">
+                <div class="hub-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h2 class="card-title">Hub Dashboard</h2>
+                    </div>
+                    <p>Ζωντανά στατιστικά και μετρικές για τον κόσμο αυτής της πύλης.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <i class="fas fa-users" style="font-size: 2rem; color: var(--clr-accent1);"></i>
+                            <div class="stat-value" id="visitorCount">1,247</div>
+                            <p class="stat-desc">Unique Visitors</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-mouse-pointer" style="font-size: 2rem; color: #ff6b8b;"></i>
+                            <div class="stat-value" id="linkClicks">5,832</div>
+                            <p class="stat-desc">Link Clicks</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-clock" style="font-size: 2rem; color: #00d4aa;"></i>
+                            <div class="stat-value">04:32</div>
+                            <p class="stat-desc">Avg. Stay Time</p>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fas fa-comments" style="font-size: 2rem; color: #9d4edd;"></i>
+                            <div class="stat-value">89</div>
+                            <p class="stat-desc">Discussions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-links">
+                <a href="https://alexandroshub.github.io/" target="_blank">Αρχική Πύλη</a>
+                <a href="https://alexandroshub.github.io/about" target="_blank">Όροι</a>
+                <a href="https://alexandroshub.github.io/ap.contact.html" target="_blank">Επικοινωνία</a>
+                <a href="#" id="newsletter">Newsletter</a>
+            </div>
+            <p class="copyright">
+                Handcrafted With ❤ by <strong>Pᴀᴘᴀsᴘʏʀᴏᴜ Aʟᴇxᴀɴᴅʀᴏs</strong> | © 2026 αalphapi.hub | All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        // ===== TAB NAVIGATION =====
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                // Update active button
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Show target content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === targetTab) {
+                        setTimeout(() => content.classList.add('active'), 50);
+                    }
+                });
+            });
+        });
+
+        // ===== VIDEO PLAYER FUNCTIONALITY =====
+        const videoThumbs = document.querySelectorAll('.video-thumb');
+        const mediaPlayer = document.getElementById('mediaPlayer');
+
+        videoThumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const videoId = thumb.getAttribute('data-video');
+                mediaPlayer.src = `https://www.youtube.com/embed/${videoId}`;
+                // Update active thumbnail
+                videoThumbs.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+
+        // ===== MEDITATION TIMER =====
+        function startMeditationTimer() {
+            const timerDisplay = document.getElementById('meditationTimer');
+            let timeLeft = 300; // 5 minutes in seconds
+            timerDisplay.textContent = '05:00';
+            timerDisplay.style.color = 'var(--clr-accent2)';
+
+            const countdown = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                timerDisplay.textContent = `${minutes}:${seconds}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "00:00";
+                    timerDisplay.style.color = "#ff6b8b";
+                    alert("⏰ Χρόνος! Κάτσε και αναπνεύσε βαθιά για λίγα δευτερόλεπτα.");
+                }
+                timeLeft--;
+            }, 1000);
+        }
+
+        // ===== SEARCH FUNCTIONALITY =====
+        const searchBox = document.getElementById('searchBox');
+        searchBox.addEventListener('keyup', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allLinks = document.querySelectorAll('.link-item a');
+            let found = false;
+
+            allLinks.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const parentItem = link.closest('.link-item');
+                if (text.includes(searchTerm)) {
+                    parentItem.style.display = 'block';
+                    found = true;
+                } else {
+                    parentItem.style.display = 'none';
+                }
+            });
+
+            // Optional: Show message if nothing found
+            // You can implement this if needed
+        });
+
+        // ===== BACK TO TOP BUTTON =====
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== ANIMATED STATS =====
+        function animateCounter(element, start, end, duration) {
+            let startTime = null;
+            const step = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const current = Math.min(Math.floor(progress / duration * (end - start) + start), end);
+                element.textContent = current.toLocaleString();
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        // Animate the visitor count on page load
+        window.addEventListener('load', () => {
+            animateCounter(document.getElementById('visitorCount'), 0, 1247, 2000);
+            // animateCounter(document.getElementById('linkClicks'), 0, 5832, 2500);
+        });
+
+        // Simple notification for newsletter
+        document.getElementById('newsletter').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("📬 Σύντομα! Το newsletter σύστημα βρίσκεται υπό ανάπτυξη. Σε ευχαριστούμε για το ενδιαφέρον!");
+        });
+
+        // ===== LIVE TIME =====
+        function updateLiveTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('el-GR', { hour: '2-digit', minute: '2-digit' });
+            const liveTimeElement = document.getElementById('liveTime');
+            if(liveTimeElement) liveTimeElement.textContent = timeStr;
+        }
+        setInterval(updateLiveTime, 60000);
+        updateLiveTime();
+    </script>
+</body>
+</html>
