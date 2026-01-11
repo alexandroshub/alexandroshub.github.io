@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Links | AlexandrosHub</title>
+    <style>
+        :root {
+            --clr-primary: #0a192f;
+            --clr-secondary: #112240;
+            --clr-accent1: #1e9bff;
+            --clr-accent2: #00d4aa;
+            --clr-accent-gradient: linear-gradient(90deg, var(--clr-accent1), var(--clr-accent2));
+            --clr-text: #ccd6f6;
+            --clr-text-light: #8892b0;
+            --clr-white: #ffffff;
+            --clr-light: #e6f1ff;
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            --box-shadow-lg: 0 20px 60px -20px rgba(2, 12, 27, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Montserrat', sans-serif;
+            background-color: var(--clr-primary);
+            color: var(--clr-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .social-card {
+            background: var(--clr-secondary);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem 2rem;
+            box-shadow: var(--box-shadow-lg);
+            text-align: center;
+            border: 1px solid rgba(30, 155, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--clr-accent-gradient);
+        }
+        
+        .profile-header {
+            margin-bottom: 2rem;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid transparent;
+            background: var(--clr-accent-gradient);
+            padding: 3px;
+            overflow: hidden;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .profile-title {
+            color: var(--clr-text-light);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-location {
+            color: var(--clr-accent1);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0 3rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--clr-text);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link:hover {
+            background: rgba(30, 155, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: var(--clr-accent1);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--clr-accent-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover::before {
+            opacity: 1;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Platform-specific colors */
+        .social-link[data-platform="github"] .social-icon {
+            background: rgba(24, 23, 23, 0.2);
+            color: #f5f5f5;
+        }
+        
+        .social-link[data-platform="linkedin"] .social-icon {
+            background: rgba(10, 102, 194, 0.2);
+            color: #0a66c2;
+        }
+        
+        .social-link[data-platform="twitter"] .social-icon {
+            background: rgba(29, 161, 242, 0.2);
+            color: #1da1f2;
+        }
+        
+        .social-link[data-platform="facebook"] .social-icon {
+            background: rgba(24, 119, 242, 0.2);
+            color: #1877f2;
+        }
+        
+        .social-link[data-platform="instagram"] .social-icon {
+            background: rgba(225, 48, 108, 0.2);
+            color: #e1306c;
+        }
+        
+        .social-link[data-platform="youtube"] .social-icon {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+        }
+        
+        .social-link[data-platform="portfolio"] .social-icon {
+            background: rgba(30, 155, 255, 0.2);
+            color: var(--clr-accent1);
+        }
+        
+        .social-link[data-platform="email"] .social-icon {
+            background: rgba(212, 72, 93, 0.2);
+            color: #d4485d;
+        }
+        
+        .social-info {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .social-platform {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        
+        .social-handle {
+            font-size: 0.85rem;
+            color: var(--clr-text-light);
+        }
+        
+        .social-arrow {
+            color: var(--clr-text-light);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .social-link:hover .social-arrow {
+            color: var(--clr-accent1);
+            transform: translateX(3px);
+        }
+        
+        .footer-note {
+            color: var(--clr-text-light);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--clr-accent1);
+            text-decoration: none;
+            margin-top: 1rem;
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            background: rgba(30, 155, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .back-link:hover {
+            background: rgba(30, 155, 255, 0.2);
+            transform: translateX(-3px);
+        }
+        
+        .social-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--clr-text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        .delay-8 { animation-delay: 0.8s; }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .social-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .profile-name {
+                font-size: 1.5rem;
+            }
+            
+            .social-link {
+                padding: 0.9rem 1.2rem;
+            }
+            
+            .social-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--clr-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--clr-accent-gradient);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(90deg, #0088ff, #00c9a7);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="social-card">
+            <div class="profile-header fade-in">
+                <div class="profile-image">
+                    <img src="https://64.media.tumblr.com/5824d89c1e13809501948a5bd46e1d48/387eabfc55705902-1e/s1280x1920/f5506f672d711cd7aa68f7e094a6d0a9f0aa1ffb.pnj" 
+                         alt="Alexandros Papaspyrou">
+                </div>
+                <h1 class="profile-name">Αλέξανδρος Παπασπύρου</h1>
+                <p class="profile-title">Automation Engineer & System Architect</p>
+                <div class="profile-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Athens, Greece</span>
+                </div>
+            </div>
+            
+            <div class="social-stats fade-in delay-1">
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Platforms</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Active</div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <!-- GitHub -->
+                <a href="https://github.com/alexandroshub" 
+                   class="social-link fade-in delay-2"
+                   data-platform="github"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">GitHub</div>
+                        <div class="social-handle">@alexandroshub</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/alexandrospapaspyrou" 
+                   class="social-link fade-in delay-3"
+                   data-platform="linkedin"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">LinkedIn</div>
+                        <div class="social-handle">Alexandros Papaspyrou</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Twitter -->
+                <a href="https://twitter.com/A_Papaspyrou" 
+                   class="social-link fade-in delay-4"
+                   data-platform="twitter"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">Twitter</div>
+                        <div class="social-handle">@A_Papaspyrou</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/alexandroshub/" 
+                   class="social-link fade-in delay-5"
+                   data-platform="facebook"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">Facebook</div>
+                        <div class="social-handle">AlexandrosHub</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/alexandroshub/" 
+                   class="social-link fade-in delay-6"
+                   data-platform="instagram"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">Instagram</div>
+                        <div class="social-handle">@alexandroshub</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Portfolio -->
+                <a href="https://alexandroshub.github.io/" 
+                   class="social-link fade-in delay-7"
+                   data-platform="portfolio"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">Portfolio</div>
+                        <div class="social-handle">AlexandrosHub Website</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:YOUR_EMAIL@HERE.com" 
+                   class="social-link fade-in delay-8"
+                   data-platform="email"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <div class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="social-info">
+                        <div class="social-platform">Email</div>
+                        <div class="social-handle">Professional Inquiries</div>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="footer-note fade-in">
+                <p>Connect with me across platforms for technical discussions, collaborations, and professional networking.</p>
+                <a href="https://alexandroshub.github.io/" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Main Website
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add click animation
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    top: ${y}px;
+                    left: ${x}px;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add hover sound effect (optional)
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+        
+        // Page load animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
