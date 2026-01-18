@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+
+  <title>ALPHAPI: PHILOSOPHY * A Space for Thoughtful Inquiry</title>
+
+    <link rel="canonical" href="https://codepen.io/lveent/pen/gaZyaq">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  
+<style>
+/*--- GENERAL STYLES ---*/
+body { font-size: 16px; line-height: 1.5em; font-family: 'Quattrocento Sans', sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', serif; font-weight: 700; color: #1a1a1a; }
+.content-section { min-height: 100vh; padding-top: 70px; padding-bottom: 20px; }
+.content-section h1 { color: #9C9C9C; font-weight: 400; font-size: 30px; display: inline-block; }
+.content-section h1:after { content: ''; display: block; border-bottom: 1px solid #DFDFDF; padding-top: 3px; }
+.content-section p.lead { font-family: 'Cardo', serif; font-size: 19px; line-height: 1.35em; margin-bottom: 25px; }
+.content-section p.lead em { font-size: 14px; }
+.content-section p em { font-size: 14px;}
+.content-section p mark em { font-size: inherit;}
+.content-section img.pull-right { border:1px solid #DFDFDF; margin-top: 140px;  }
+
+@media screen and (min-width: 768px) {
+  .content-section { padding-top: 130px; }
+  .content-section h1 { font-size: 34px; }
+  .content-section p.lead { margin-bottom: 30px; }
+}
+
+@media screen and (min-width: 992px) {
+  .content-section { padding-top: 160px; }
+  .content-section h1 { font-size: 38px; }
+  .content-section h1:after { padding-top: 5px; }
+  .content-section p.lead { font-size: 21px; margin-bottom: 35px; }
+}
+
+@media screen and (min-width: 1200px) {
+  .content-section { padding-top: 160px; }
+  .content-section h1:after { padding-top: 7px; }
+  .content-section p.lead { font-size: 22px; margin-bottom: 35px; }
+}
+
+
+/*--- NAVBAR ---*/
+.navbar-default { font-family: 'Montserrat', serif; background: #FFFFFF; border-bottom-color: #DFDFDF; height: 60px; margin-bottom: 0; }
+.navbar-header .navbar-toggle { margin-top: 12px; }
+.navbar-header .navbar-brand { letter-spacing: -0.03em; height: 60px; padding: 30px 10px 0 10px; font-size: 36px; line-height: 0px; font-weight: 700; color: #111; white-space: nowrap; }
+.navbar-default .navbar-brand:focus { color: #111; }
+.navbar-default .navbar-nav { background: #FFF; margin-top: 0; }
+.navbar-default .navbar-nav>li>a { color: #222; padding: 10px; border-bottom: 1px solid #DFDFDF; }
+.navbar-default .navbar-nav>li>a.selected { color: #E64B36; }
+.navbar-default a.navbar-brand:hover .navbar-default .navbar-nav>li>a:hover { background-color: #DFDFDF; }
+.navbar-default .navbar-brand:hover { color: #E64B36; }
+
+@media screen and (min-width: 768px) {
+  .navbar-default { height: 100px; }
+  .navbar-header { width: 100%; }
+  .navbar-header .navbar-brand { height: 70px; padding: 40px 0 0 15px; font-size: 42px; }
+  .navbar-default .navbar-nav>li>a { padding: 0px 20px 9px 0; }
+  .navbar-default .navbar-nav>li>a:hover { background-color: transparent; color: #E64B36; }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-default { height: 120px; }
+  .navbar-header .navbar-brand { height: 80px; padding: 45px 0 0 15px; font-size: 48px; }
+  .navbar-default .navbar-nav>li>a { padding: 10px 25px 9px 0; }
+}
+
+  
+/*--- HOME ---*/
+#home {
+  background: url('https://s17.postimg.org/m4bfqfgn3/fog_1005445_1920.jpg') no-repeat center center fixed;
+  background-size: cover; text-shadow: 1px 1px 0 rgba(255,255,255,0.5); text-align: center;
+}
+#home h1 { font-family: 'Advent Pro', sans-serif; font-size: 96px; color: #000; display: inline-block; margin: 0; padding: 0; line-height: 90px; margin-top: 60px; }
+#home h1:after { border-bottom: 1px solid #AAA;  }
+#home h5 { font-size: 16px; color: #555; }
+
+@media screen and (min-width: 768px) {
+  #home h1 { font-size: 120px; line-height: 114px; }
+  #home h5 { font-size: 19px; }
+}
+
+@media screen and (min-width: 992px) {
+  #home h1 { font-size: 132px; margin-top: 70px; }
+  #home h5 { font-size: 21px; }
+}
+
+@media screen and (min-width: 1200px) {
+  #home h1 { font-size: 142px; line-height: 124px; }
+  #home h5 { font-size: 24px; }
+}
+
+
+/*--- PORTFOLIO ---*/
+.content-section .thumbnail { position: relative; overflow: hidden; cursor: pointer; }
+.content-section .thumbnail * { transition: all .25s; }
+.content-section .thumbnail h4 { font-size: 19px; font-weight: 400; }
+.content-section .thumbnail p { line-height: 24px; }
+.content-section .thumbnail:hover h4, .content-section .thumbnail:hover p { color: #AFAFAF; }
+.content-section .thumbnail:hover img { opacity: 0.25;  }
+.content-section .thumbnail:after { font-family: 'FontAwesome'; content: '\f121'; color: #FFF; font-size: 48px; line-height: 80px; top: 70%; position: absolute; text-align: center; display: inline-block; width: 100%; transition: all .35s; opacity: 0; width: 86px; height: 86px; margin-left: auto; margin-right: auto; left: 0; right: 0; border-radius: 50%; background: transparent; border:3px solid transparent; }
+.content-section .thumbnail:hover:after { top: 25%; opacity: 1; color: #FFFFFF; background: #AF6204; border:3px solid #FFFFFF; }
+
+
+/*--- CONTACT ---*/
+#contact {
+  background: url('https://s18.postimg.org/z7eckrogp/seagulls_984529_1920.jpg') no-repeat top center fixed;
+  background-size: cover;
+}
+
+.social-cont { max-width: 400px; }
+a.btn-default { height: 44px; border-radius: 0; border: 0; width: 180px; text-align: left; margin: 0 5px 10px 0; position: relative; background-color: #FFFFFF; padding: 10px; transition: all .35s; padding: 0; line-height: 47px; overflow: hidden; }
+a.btn-default i { display: block; float: left; position: absolute; left: 12px; top: 10px; font-size: 24px; color: #FFFFFF; position: relative; z-index: 1;  }
+a.btn-default span { position: relative; z-index: 1; padding-left: 30px; }
+a.btn-default:after { content: ''; display: block; width: 44px; height: 44px; position: absolute; top: 0; left: 0; z-index: 0; transition: all .35s; }
+a.twitter-btn:after { background-color: #55ACEE; }
+a.github-btn:after { background-color: #171515; }
+a.linkedin-btn:after { background-color: #0077B5; }
+a.fcc-btn:after { background-color: #4B2B0D; }
+a.btn-default:hover, a.btn-default:focus { background-color: #FFFFFF; color: #FFFFFF; }
+a.btn-default:hover:after { width: 100%; }
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700,400italic|Montserrat:400,700|Cardo:400italic|Advent+Pro:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- NAVIGATION -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand scroll" href="#home">ALPHAPI</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        <li><a href="#home" class="scroll">HOME</a></li>
+        <li><a href="#about" class="scroll">ABOUT</a></li>
+        <li><a href="#portfolio" class="scroll">PORTFOLIO</a></li>
+        <li><a href="#contact" class="scroll">CONTACT</a></li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+    
+    
+  <!-- HOME -->
+  <div id="home" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>PHILOSOPHY</h1>
+          <h5>A Space for Thoughtful Inquiry</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- ABOUT -->
+  <div id="about" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-lg-7">
+          <h1>ABOUT</h1>
+          <p class="lead">xxx <a href="" target="_blank">link <em class="fa fa-external-link"></em></a></p>
+          <p><strong>xxx #1:</strong> xxx.</p>
+        
+          <p>xxx</p>
+          <blockquote>
+            <p>xxx <mark><em>xxx</em></mark> xxx.</p>
+          </blockquote>
+          <p>xxx<strong>"xxx"</strong> xxx.</p>
+        </div>
+        <div class="col-sm-4 col-lg-5 hidden-xs">
+          <img src="https://s4.postimg.org/wzkxhfy59/lego_dimensions_patent.jpg" alt="" class="pull-right img-responsive">
+        </div>
+      </div>
+    </div>    
+  </div>
+  
+
+  <!-- PORTFOLIO -->
+  <div id="portfolio" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>PORTFOLIO</h1>
+          <p class="lead">xxx</p>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+    
+
+
+  <!-- CONTACT -->
+  <div id="contact" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>CONTACT</h1>
+          <p class="lead">Don't be shy! Say Hello!</p>
+          <div class="social-cont">
+            <div class="row">
+              <div class="col-sm-12">
+                <a class="btn btn-default btn-lg linkedin-btn" href="xxx" role="button" target="_blank"><i class="fa fa-star"></i><span>Portfolio</span></a>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    <script id="rendered-js" >
+$(document).ready(function () {
+  $(".scroll").click(function (event) {
+    event.preventDefault();
+    $("html,body").animate({ scrollTop: $(this.hash).offset().top }, 500);
+    $('.navbar-default a').removeClass('selected');
+    $(this).addClass('selected');
+  });
+});
+//# sourceURL=pen.js
+  </script>
+
+  
+</body>
+
+</html>
