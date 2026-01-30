@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swarm Intelligence | AlexandrosHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;800&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0d1117; /* GitHub Dark style to match your hub */
+            --accent-primary: #58a6ff; /* Tech Blue */
+            --accent-secondary: #f0883e; /* Thesis Orange */
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --glass: rgba(22, 27, 34, 0.8);
+            --border: rgba(48, 54, 61, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* The Swarm Canvas Layer */
+        #swarm-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            opacity: 0.7;
+            padding-left: 5px;
+        }
+
+        /* Header Section */
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-secondary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Main Content Grid */
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 850px) {
+            .content-container { grid-template-columns: 1fr; }
+        }
+
+        /* Themed Cards */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .abstract-section h2 {
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+        }
+
+        .abstract-text {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+        }
+
+        /* Sidebar Elements */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            padding: 1rem;
+            border-left: 3px solid var(--accent-secondary);
+            background: rgba(240, 136, 62, 0.05);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .download-link {
+            display: block;
+            text-align: center;
+            background: var(--accent-primary);
+            color: #000;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .download-link:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="swarm-canvas"></canvas>
+
+    <nav>
+        <a href="index.html" class="back-btn">// BACK_TO_HUB</a>
+    </nav>
+
+    <header>
+        <p class="subtitle">Research & Development</p>
+        <h1>SWARM<br>INTELLIGENCE</h1>
+    </header>
+
+    <main class="content-container">
+        <section class="card abstract-section">
+            <h2>01. THESIS_ABSTRACT</h2>
+            <p class="abstract-text">
+                This paper investigates the emergence of complex global behaviors from simple local interactions within decentralized systems. 
+                By mimicking biological swarms (ants, bees, birds), we develop robust algorithms for collective robotics, 
+                optimizing pathfinding and resource allocation in environments where central control is impossible.
+            </p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 2rem 0;">
+            <h2>02. KEY_CONTRIBUTIONS</h2>
+            <ul style="list-style: none; color: var(--text-dim);">
+                <li style="margin-bottom: 1rem;">⚡ Decentralized Collision Avoidance</li>
+                <li style="margin-bottom: 1rem;">⚡ Scalable Multi-Agent Pathfinding (MAPF)</li>
+                <li style="margin-bottom: 1rem;">⚡ Dynamic Task Allocation in Stigmergic Systems</li>
+            </ul>
+        </section>
+
+        <aside class="sidebar">
+            <div class="card">
+                <div class="stat-box" style="margin-bottom: 1rem;">
+                    <span class="stat-label">Document Status</span>
+                    <span class="stat-value">Final Peer Review</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Keywords</span>
+                    <span class="stat-value">Robotics, AI, Emergence</span>
+                </div>
+            </div>
+
+            <a href="#" class="download-link">DOWNLOAD THESIS (PDF)</a>
+            
+            <div class="card" style="font-size: 0.85rem;">
+                <h3 style="margin-bottom: 10px; font-size: 0.9rem;">RESOURCES</h3>
+                <p style="color: var(--text-dim);">Source code for the simulation is available on the main repository.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        &copy; 2024 ALEXANDROS_HUB // BUILT_FOR_EMERGENCE
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('swarm-canvas');
+        const ctx = canvas.getContext('2d');
+        let agents = [];
+
+        // Resize handler
+        window.addEventListener('resize', resize);
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+
+        // Mouse tracking
+        const mouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        class Agent {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            draw() {
+                ctx.fillStyle = '#58a6ff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            update() {
+                // Interaction with mouse
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                
+                if (distance < 150) {
+                    this.vx -= dx * 0.01; // Repel from mouse
+                    this.vy -= dy * 0.01;
+                }
+
+                // Constant "wandering" force
+                this.vx += (Math.random() - 0.5) * 0.1;
+                this.vy += (Math.random() - 0.5) * 0.1;
+
+                // Speed limit
+                const speed = Math.sqrt(this.vx**2 + this.vy**2);
+                if (speed > 2) {
+                    this.vx = (this.vx / speed) * 2;
+                    this.vy = (this.vy / speed) * 2;
+                }
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Boundary wrap
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+        }
+
+        function init() {
+            agents = [];
+            for (let i = 0; i < 80; i++) {
+                agents.push(new Agent());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections (The "Swarm" net)
+            agents.forEach((a, i) => {
+                a.update();
+                a.draw();
+                
+                for (let j = i + 1; j < agents.length; j++) {
+                    const b = agents[j];
+                    const dist = Math.hypot(a.x - b.x, a.y - b.y);
+                    if (dist < 100) {
+                        ctx.strokeStyle = `rgba(88, 166, 255, ${1 - dist/100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
