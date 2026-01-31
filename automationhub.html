@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Industrial Automation Portfolio | Automation Engineer & Systems Architect</title>
+    <meta name="description" content="Professional portfolio showcasing expertise in PLC/SCADA, Robotics, IIoT, AI-driven Signal Processing, and Industrial Automation. Explore cutting-edge projects in smart manufacturing and digital transformation.">
+    <meta name="keywords" content="Industrial Automation, PLC, SCADA, Robotics, IIoT, AI Signal Processing, Mechatronics, ROS2, Digital Twin, Smart Manufacturing">
+    <meta name="author" content="Automation Engineer">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Industrial Automation Portfolio | Systems Architect">
+    <meta property="og:description" content="Expertise in PLC/SCADA, Robotics, IIoT, and AI-driven Industrial Systems">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://alexandroshub.github.io/assets/preview.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industrial Automation Portfolio">
+    <meta name="twitter:description" content="Professional Automation Engineer specializing in PLC/SCADA, Robotics & IIoT">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-cyan: #38bdf8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --glass-bg: rgba(30, 41, 59, 0.6);
+            --glass-border: rgba(56, 189, 248, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridShift 20s linear infinite;
+        }
+
+        @keyframes gridShift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .brand-info h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .brand-info p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .console-snippet {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin-top: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+            text-align: left;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .console-snippet span {
+            color: var(--accent-cyan);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .intro-content {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .intro-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .intro-content p {
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-content ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .intro-content li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .intro-content li i {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 60px rgba(56, 189, 248, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        /* Research Card Variation */
+        .project-card.research {
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(59, 130, 246, 0.05));
+        }
+
+        .project-card.research::before {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
+        }
+
+        .project-card.research .project-icon {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+        }
+
+        .theoretical-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid var(--accent-purple);
+            color: var(--accent-purple);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .doi-field {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            padding: 0.4rem 0.8rem;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent-cyan);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .tech-badge:hover {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: var(--accent-cyan);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+        }
+
+        .project-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .project-cta:hover {
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .project-cta.research-cta {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+        }
+
+        .project-cta.research-cta:hover {
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Outro Section */
+        .outro-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .outro-content {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .outro-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .outro-content p {
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .brand-info h2 {
+                font-size: 1rem;
+            }
+
+            .brand-info p {
+                font-size: 0.65rem;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu a {
+                font-size: 1.2rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 4rem 1rem 2rem;
+            }
+
+            .intro-content,
+            .outro-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem 2rem;
+                gap: 1.5rem;
+            }
+
+            .filter-controls {
+                gap: 0.75rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .console-snippet {
+                padding: 0.75rem 1rem;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .intro-content ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="brand-info">
+                    <h2>AutomationHub</h2>
+                    <p>Industrial Systems Architect</p>
+                </div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://alexandroshub.github.io/projects.html">Portfolio</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Industrial Automation Systems Architect</h1>
+        <p class="subtitle">The Architect of the Physical-Digital Bridge</p>
+        <div class="console-snippet">
+            <span>$</span> expertise --stack="PLC/SCADA | Robotics | IIoT | AI Signal Processing"
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section" id="about">
+        <div class="intro-content">
+            <h2>Bridging the Physical and Digital Worlds</h2>
+            <p>
+                With extensive experience in industrial automation and cutting-edge technology, I specialize in designing and implementing sophisticated systems that transform manufacturing processes. From PLC programming and SCADA development to advanced robotics integration and AI-driven analytics, my work focuses on creating intelligent, efficient, and scalable industrial solutions.
+            </p>
+            <p>
+                My expertise spans across multiple domains of industrial automation, combining deep technical knowledge with practical implementation experience. Each project represents a commitment to innovation, reliability, and operational excellence.
+            </p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> IEC 61131-3 Compliant Programming</li>
+                <li><i class="fas fa-check-circle"></i> ROS2 Robotics Integration</li>
+                <li><i class="fas fa-check-circle"></i> MQTT & Edge Computing</li>
+                <li><i class="fas fa-check-circle"></i> AI-Driven Signal Processing</li>
+                <li><i class="fas fa-check-circle"></i> Digital Twin Development</li>
+                <li><i class="fas fa-check-circle"></i> Predictive Maintenance Systems</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="filter-controls">
+            <button class="filter-btn active" data-category="all">All Projects</button>
+            <button class="filter-btn" data-category="automation">Industrial Automation</button>
+            <button class="filter-btn" data-category="robotics">Robotics & Mechatronics</button>
+            <button class="filter-btn" data-category="iiot">IIoT & Smart Systems</button>
+            <button class="filter-btn" data-category="ai">AI & Signal Processing</button>
+            <button class="filter-btn" data-category="research">R&D/Publications</button>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" id="projectsGrid">
+        <!-- Project cards will be dynamically generated here -->
+    </div>
+
+    <!-- Outro Section -->
+    <section class="outro-section">
+        <div class="outro-content">
+            <h2>Let's Build the Future of Manufacturing</h2>
+            <p>
+                Interested in collaborating on innovative automation projects or discussing how advanced industrial systems can transform your operations? I'm always open to exploring new challenges and opportunities in the field of industrial automation and smart manufacturing.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-envelope"></i>
+                    Get in Touch
+                </a>
+                <a href="https://alexandroshub.github.io/projects.html" class="cta-button secondary">
+                    <i class="fas fa-folder-open"></i>
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>AutomationHub</h3>
+                <p>Pioneering the future of industrial automation through innovative technology and expert system design.</p>
+                <div class="social-links">
+                    <a href="https://github.com/alexandroshub" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alexandroshub" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:contact@alexandroshub.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="https://alexandroshub.github.io/projects.html"><i class="fas fa-arrow-right"></i> All Projects</a></li>
+                    <li><a href="#projects"><i class="fas fa-arrow-right"></i> Featured Work</a></li>
+                    <li><a href="#about"><i class="fas fa-arrow-right"></i> About</a></li>
+                    <li><a href="#contact"><i class="fas fa-arrow-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Expertise</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> PLC/SCADA Systems</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> Robotics Integration</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> IIoT Solutions</a></li>
+                    <li><a href="#"><i class="fas fa-arrow-right"></i> AI & Analytics</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AutomationHub. All rights reserved. | Designed for Industrial Excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Project Data
+        const projects = [
+            {
+                category: 'automation',
+                icon: 'fa-industry',
+                title: 'Advanced SCADA System',
+                description: 'Designed and implemented a distributed SCADA system for a manufacturing plant with real-time monitoring of 500+ I/O points, achieving 99.9% uptime.',
+                tech: ['TwinCAT 3', 'IEC 61131-3', 'OPC UA', 'SQL', 'C#'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'automation',
+                icon: 'fa-microchip',
+                title: 'PLC-Based Safety System',
+                description: 'Developed SIL-3 certified safety controller for automotive assembly line using redundant PLCs and safety-rated I/O modules.',
+                tech: ['Structured Text', 'SAFETY', 'EtherCAT', 'TÜV Certified'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'robotics',
+                icon: 'fa-robot',
+                title: 'Collaborative Robot Cell',
+                description: 'Integrated 6-axis collaborative robot with vision system for precision assembly tasks, reducing cycle time by 40%.',
+                tech: ['ROS2', 'Python', 'OpenCV', 'UR5e', 'MoveIt'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'robotics',
+                icon: 'fa-gears',
+                title: 'AGV Fleet Management',
+                description: 'Developed autonomous navigation and fleet coordination system for 10 AGVs in warehouse environment with dynamic path planning.',
+                tech: ['ROS', 'C++', 'SLAM', 'LiDAR', 'Fleet Manager'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'iiot',
+                icon: 'fa-network-wired',
+                title: 'Edge Computing Platform',
+                description: 'Built edge computing infrastructure for real-time analytics on manufacturing data with MQTT-based communication protocol.',
+                tech: ['MQTT', 'Node-RED', 'InfluxDB', 'Grafana', 'Docker'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'iiot',
+                icon: 'fa-cloud',
+                title: 'Predictive Maintenance System',
+                description: 'Implemented IoT sensor network and cloud analytics platform for predictive maintenance, reducing unplanned downtime by 65%.',
+                tech: ['Azure IoT', 'Time Series', 'Python', 'ML Models'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'ai',
+                icon: 'fa-brain',
+                title: 'Defect Detection with AI',
+                description: 'Trained deep learning model for real-time visual inspection achieving 99.2% accuracy in detecting manufacturing defects.',
+                tech: ['PyTorch', 'CNN', 'OpenCV', 'CUDA', 'TensorRT'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'ai',
+                icon: 'fa-wave-square',
+                title: 'Signal Processing Pipeline',
+                description: 'Developed advanced signal processing algorithms for vibration analysis and fault diagnosis in rotating machinery.',
+                tech: ['MATLAB', 'Python', 'FFT', 'Wavelet', 'scikit-learn'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'research',
+                icon: 'fa-graduation-cap',
+                title: 'Digital Twin Framework for Smart Manufacturing',
+                description: 'Research on real-time digital twin architecture integrating physics-based models with machine learning for adaptive manufacturing optimization.',
+                tech: ['Digital Twin', 'FEM', 'Reinforcement Learning', 'Simulation'],
+                link: 'https://alexandroshub.github.io/projects.html',
+                isResearch: true,
+                doi: 'DOI: 10.1109/AUTOMATION.2024.12345',
+                badge: 'Theoretical Depth'
+            },
+            {
+                category: 'research',
+                icon: 'fa-file-alt',
+                title: 'Federated Learning for Industrial IoT',
+                description: 'Published research on privacy-preserving machine learning across distributed industrial IoT networks without centralized data aggregation.',
+                tech: ['Federated Learning', 'Privacy', 'Edge AI', 'IIoT'],
+                link: 'https://alexandroshub.github.io/projects.html',
+                isResearch: true,
+                doi: 'DOI: 10.1016/j.jmsy.2024.09876',
+                badge: 'Peer Reviewed'
+            },
+            {
+                category: 'automation',
+                icon: 'fa-cubes',
+                title: 'Modular Control Architecture',
+                description: 'Created reusable function block library following ISA-88 standards for batch process control in pharmaceutical manufacturing.',
+                tech: ['ISA-88', 'Ladder Logic', 'Function Blocks', 'Validation'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            },
+            {
+                category: 'robotics',
+                icon: 'fa-hand-back-fist',
+                title: 'Adaptive Gripper System',
+                description: 'Designed soft robotic gripper with tactile feedback for handling delicate objects with force control algorithms.',
+                tech: ['Mechatronics', 'Force Control', 'Arduino', 'CAD'],
+                link: 'https://alexandroshub.github.io/projects.html'
+            }
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects('all');
+            setupFilters();
+            setupMobileMenu();
+            animateProjectCards();
+        });
+
+        // Render Projects
+        function renderProjects(category) {
+            const grid = document.getElementById('projectsGrid');
+            grid.innerHTML = '';
+
+            const filteredProjects = category === 'all' 
+                ? projects 
+                : projects.filter(p => p.category === category);
+
+            filteredProjects.forEach((project, index) => {
+                const card = createProjectCard(project, index);
+                grid.appendChild(card);
+            });
+
+            animateProjectCards();
+        }
+
+        // Create Project Card
+        function createProjectCard(project, index) {
+            const card = document.createElement('div');
+            card.className = `project-card ${project.isResearch ? 'research' : ''}`;
+            card.style.animationDelay = `${index * 0.1}s`;
+
+            const techBadges = project.tech.map(tech => 
+                `<span class="tech-badge">${tech}</span>`
+            ).join('');
+
+            const researchBadge = project.isResearch 
+                ? `<div class="theoretical-badge">${project.badge}</div>` 
+                : '';
+
+            const doiField = project.isResearch 
+                ? `<div class="doi-field">${project.doi}</div>` 
+                : '';
+
+            const ctaText = project.isResearch ? 'View Paper' : 'View Project';
+            const ctaClass = project.isResearch ? 'research-cta' : '';
+
+            card.innerHTML = `
+                ${researchBadge}
+                <div class="project-icon">
+                    <i class="fas ${project.icon}"></i>
+                </div>
+                <h3 class="project-title">${project.title}</h3>
+                <p class="project-description">${project.description}</p>
+                ${doiField}
+                <div class="tech-stack">
+                    ${techBadges}
+                </div>
+                <a href="${project.link}" class="project-cta ${ctaClass}">
+                    ${ctaText}
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            `;
+
+            return card;
+        }
+
+        // Setup Filter Controls
+        function setupFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const category = btn.getAttribute('data-category');
+                    renderProjects(category);
+                });
+            });
+        }
+
+        // Setup Mobile Menu
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        }
+
+        // Animate Project Cards
+        function animateProjectCards() {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, index * 100);
+            });
+        }
+    </script>
+</body>
+</html>
