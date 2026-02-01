@@ -525,7 +525,327 @@ ul.breadcrumb li a:hover {
 
 
 
-	
+	<div class="alex-cinematic-book">
+
+<style>
+/* ===========================
+   ALEXANDROSHUB — CINEMATIC BOOK (FINAL + 2 CTA)
+   Fully Scoped — No Conflicts
+   =========================== */
+
+.alex-cinematic-book {
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+/* Ambient Background Shift */
+.alex-cinematic-book.dimmed::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    z-index: 5;
+    transition: opacity 0.6s ease;
+}
+
+/* Book Wrapper */
+.alex-cinematic-book .book-wrapper {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    perspective: 1200px;
+    margin-right: 40px;
+    z-index: 10;
+}
+
+/* Book */
+.alex-cinematic-book .book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    cursor: pointer;
+}
+
+.alex-cinematic-book .book.open {
+    transform: rotateY(-25deg);
+}
+
+/* Cover */
+.alex-cinematic-book .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform-origin: left;
+    transform: rotateY(0deg) translateZ(12px);
+    transition: transform 1s ease;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.alex-cinematic-book .book.open .cover {
+    transform: rotateY(-140deg) translateZ(12px);
+}
+
+/* Glow */
+.alex-cinematic-book .glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 260px; height: 260px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255,255,255,0.8), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    z-index: 7;
+}
+
+.alex-cinematic-book .book.open ~ .glow {
+    opacity: 1;
+}
+
+/* Pages */
+.alex-cinematic-book .pages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f3eee7 0%, #fffdf9 100%);
+    border-radius: 6px;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+    transform: translateZ(0px);
+}
+
+/* Back */
+.alex-cinematic-book .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e8e2d4;
+    transform: translateZ(-12px);
+    border-radius: 6px;
+}
+
+/* Knowledge Unlock */
+.alex-cinematic-book .unlock-text {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    color: #fff;
+    opacity: 0;
+    letter-spacing: 1px;
+    transition: opacity 0.8s ease, top 0.8s ease;
+    z-index: 20;
+}
+
+.alex-cinematic-book .book.open ~ .unlock-text {
+    opacity: 1;
+    top: -60px;
+}
+
+/* Media Panel — moved left */
+.alex-cinematic-book .media-panel {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 260px;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease, left 0.6s ease;
+    z-index: 15;
+}
+
+.alex-cinematic-book .book.open ~ .media-panel {
+    opacity: 1;
+    pointer-events: auto;
+    left: 32%;
+}
+
+/* Info */
+.alex-cinematic-book .info {
+    max-width: 300px;
+    z-index: 10;
+    margin-left: 40px;
+}
+
+.alex-cinematic-book .info h1 {
+    font-size: 1.4em;
+    margin-bottom: 4px;
+    color: #2c3e50;
+    transition: color 0.4s ease;
+}
+
+.alex-cinematic-book .info .subtitle {
+    font-size: 1.05em;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 12px;
+    opacity: 0.85;
+    transition: color 0.4s ease;
+}
+
+/* Title dim when open */
+.alex-cinematic-book.dimmed .info h1,
+.alex-cinematic-book.dimmed .info .subtitle {
+    color: #ccc !important;
+}
+
+/* CTA BUTTONS — READ + PODCAST */
+.alex-cinematic-book .cta-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* READ BUTTON */
+.alex-cinematic-book .read-btn {
+    padding: 10px 22px;
+    border: 2px solid #16a085;
+    font-size: 0.85em;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #16a085;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.alex-cinematic-book .read-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.alex-cinematic-book .read-btn:hover::before {
+    left: 100%;
+}
+
+.alex-cinematic-book .read-btn:hover {
+    background: #16a085;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(22,160,133,0.6);
+}
+
+/* PODCAST BUTTON — secondary CTA */
+.alex-cinematic-book .podcast-btn {
+    padding: 10px 22px;
+    border: 2px solid #34495e;
+    font-size: 0.85em;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #34495e;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.alex-cinematic-book .podcast-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+    transition: 0.5s;
+}
+
+.alex-cinematic-book .podcast-btn:hover::before {
+    left: 100%;
+}
+
+.alex-cinematic-book .podcast-btn:hover {
+    background: #34495e;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(52,73,94,0.6);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .alex-cinematic-book {
+        flex-direction: column;
+        text-align: center;
+    }
+    .alex-cinematic-book .book-wrapper {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .alex-cinematic-book .media-panel {
+        left: 50%;
+    }
+    .alex-cinematic-book .cta-row {
+        justify-content: center;
+    }
+}
+</style>
+
+<div class="book-wrapper">
+    <div class="book" onclick="toggleCinematicBook(this)">
+        <div class="cover">
+            <img src="https://64.media.tumblr.com/3f7b2cd617bfc7230ec703c069e99475/387eabfc55705902-68/s540x810/c76144b0d35104f18fdf4f1e26949d4d4378d556.jpg" 
+                 style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="pages"></div>
+        <div class="back"></div>
+    </div>
+
+    <div class="glow"></div>
+    <div class="unlock-text">Knowledge Unlock</div>
+
+    <div class="media-panel">
+        <iframe width="100%" height="150" 
+            src="https://www.youtube.com/embed/d9QDz8yYwQY?si=Srt65ZQtAT2qX96v" 
+            frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+<div class="info">
+    <h1>The Evolution of Computers</h1>
+    <div class="subtitle">From Abacus to Tablet</div>
+    <span>Papaspyrou Alexandros</span>
+    <p>In-depth analysis of computing technology advancement spanning from ancient calculation tools to modern tablets. Demonstrates research skills, technical writing, and deep understanding of computer hardware evolution.</p>
+
+    <div class="cta-row">
+        <a class="read-btn" href="https://online.pubhtml5.com/gegj/kmyo/" target="_blank">READ</a>
+        <a class="podcast-btn" href="https://open.spotify.com/episode/2ly4blPyXKOYyHhMcJjQth?si=n4lEaNnyRHaB8DhP2aR0EA" target="_blank">LISTEN THE PODCAST</a>
+    </div>
+</div>
+
+<script>
+function toggleCinematicBook(book) {
+    const wrapper = document.querySelector('.alex-cinematic-book');
+    book.classList.toggle('open');
+    wrapper.classList.toggle('dimmed');
+}
+</script>
+
+</div>
+
 
 
 
