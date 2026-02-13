@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio | Alexandros Papaspyrou - IoT, AI & Robotics Engineer</title>
+    <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="Alexandros Papaspyrou">
+    <meta name="description" content="Explore 15+ innovative projects in IoT, AI, Robotics, and Electronics by Alexandros Papaspyrou. From Arduino automation to cloud-connected systems - showcasing real-world engineering solutions.">
+    <meta name="keywords" content="IoT projects, robotics portfolio, Arduino projects, AI automation, embedded systems, electronics engineering, swarm robotics, ThingSpeak, ESP8266, Python automation, AlphaPi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alexandroshub.github.io/projects.html">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Innovation Portfolio - Alexandros Papaspyrou | IoT & Robotics">
+    <meta property="og:description" content="15+ projects spanning IoT, AI, Robotics, and Electronics. From concept to automation and beyond.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexandroshub.github.io/projects.html">
+    <meta property="og:image" content="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp">
+    <meta property="og:site_name" content="AlphaPi Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects Portfolio - Alexandros Papaspyrou">
+    <meta name="twitter:description" content="IoT, AI & Robotics Engineering Projects">
+    <meta name="twitter:image" content="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp">
+    
+    <!-- Structured Data (JSON-LD) for AI/Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandros Papaspyrou",
+      "url": "https://alexandroshub.github.io",
+      "sameAs": [
+        "https://www.linkedin.com/in/alexandrospapaspyrou/",
+        "https://github.com/alexandroshub",
+        "https://www.instagram.com/alexandroshub/"
+      ],
+      "jobTitle": "IoT & Robotics Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AlphaPi"
+      },
+      "alumniOf": "University of West Attica",
+      "knowsAbout": ["IoT", "Robotics", "Artificial Intelligence", "Arduino", "Python", "Embedded Systems", "Electronics", "Swarm Robotics", "Automation"],
+      "description": "Engineer specializing in IoT, AI, and Robotics with 15+ innovative projects from Arduino to cloud systems"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "AlphaPi Project Portfolio",
+      "description": "Collection of IoT, Robotics, AI and Electronics projects",
+      "itemListElement": [
+        {
+          "@type": "CreativeWork",
+          "position": 1,
+          "name": "Swarm Robotics: Limits of Collective Intelligence",
+          "description": "Thesis on decentralized decision-making in swarm robotics systems",
+          "keywords": "swarm robotics, collective intelligence, multi-agent systems"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 2,
+          "name": "Autonomous Guided Vehicle (AGV)",
+          "description": "Arduino-based intelligent robot with autonomous navigation",
+          "keywords": "Arduino, robotics, autonomous navigation, embedded systems"
+        },
+        {
+          "@type": "CreativeWork",
+          "position": 3,
+          "name": "ThingSpeak IoT Monitoring Platform",
+          "description": "Cloud-connected sensor network for real-time monitoring",
+          "keywords": "IoT, ESP8266, ThingSpeak, cloud computing"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;600;800&family=Syne:wght@400;600;700;800&family=Audiowide&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <style>
+        :root {
+            --primary-bg: #0a0a0f;
+            --secondary-bg: #13131a;
+            --accent-cyan: #00fff9;
+            --accent-pink: #ff006e;
+            --accent-green: #39ff14;
+            --text-primary: #e8e8e8;
+            --text-dim: #888;
+            --card-bg: rgba(25, 25, 35, 0.8);
+            --border-glow: rgba(0, 255, 249, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border-glow) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-glow) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.15;
+            z-index: 0;
+            animation: gridScroll 20s linear infinite;
+        }
+        
+        @keyframes gridScroll {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Glowing orbs */
+        body::after {
+            content: '';
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 249, 0.15), transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-100px, 100px) scale(1.1); }
+        }
+        
+        /* Navbar */
+        .navbar {
+            font-family: 'Poppins', sans-serif;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glow);
+            box-shadow: 0 4px 30px rgba(0, 255, 249, 0.1);
+            min-height: 65px;
+            z-index: 1000;
+            margin-bottom: 0;
+            border: none;
+            letter-spacing: 1px;
+        }
+        
+        .navbar-header .logo {
+            font-family: 'Audiowide', cursive;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+            line-height: 65px;
+            padding: 0 15px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .navbar li a {
+            color: var(--text-primary) !important;
+            padding: 22px 20px;
+            transition: all 0.3s ease;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .navbar li a:hover {
+            color: var(--accent-cyan) !important;
+            background: rgba(0, 255, 249, 0.1);
+            text-shadow: 0 0 10px rgba(0, 255, 249, 0.8);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 80px;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-glitch {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(48px, 8vw, 120px);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-glitch .text-primary {
+            color: var(--text-primary);
+            display: inline-block;
+        }
+        
+        .hero-glitch .text-accent {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(20deg); }
+        }
+        
+        .hero-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(14px, 2vw, 18px);
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .hero-subtitle::before {
+            content: '// ';
+            color: var(--accent-green);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+        
+        /* Project Filter */
+        .filter-section {
+            max-width: 1400px;
+            margin: 60px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .filter-btn {
+            font-family: 'Space Mono', monospace;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            color: var(--text-primary);
+            padding: 12px 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 249, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(0, 255, 249, 0.15);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 255, 249, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .project-card.show {
+            display: block;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 15px 50px rgba(0, 255, 249, 0.2);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-category {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .project-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .project-description {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            font-size: 11px;
+            padding: 5px 12px;
+            background: rgba(0, 255, 249, 0.1);
+            border: 1px solid rgba(0, 255, 249, 0.3);
+            border-radius: 20px;
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .project-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            padding: 10px 18px;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .project-link:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+            text-decoration: none;
+        }
+        
+        .project-link.secondary {
+            border-color: var(--text-dim);
+            color: var(--text-dim);
+        }
+        
+        .project-link.secondary:hover {
+            background: var(--text-dim);
+            border-color: var(--text-dim);
+        }
+        
+        /* Featured Badge */
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-cyan));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(255, 0, 110, 0.4);
+        }
+        
+        /* Terminal Section */
+        .terminal-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .terminal {
+            background: rgba(20, 20, 30, 0.95);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .terminal-header {
+            background: rgba(30, 30, 40, 0.8);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-glow);
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27c93f; }
+        
+        .terminal-body {
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .terminal-line {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: terminalFadeIn 0.5s ease forwards;
+        }
+        
+        .terminal-line:nth-child(1) { animation-delay: 0.1s; }
+        .terminal-line:nth-child(2) { animation-delay: 0.3s; }
+        .terminal-line:nth-child(3) { animation-delay: 0.5s; }
+        .terminal-line:nth-child(4) { animation-delay: 0.7s; }
+        .terminal-line:nth-child(5) { animation-delay: 0.9s; }
+        
+        @keyframes terminalFadeIn {
+            to { opacity: 1; }
+        }
+        
+        .terminal-prompt {
+            color: var(--accent-green);
+        }
+        
+        .terminal-command {
+            color: var(--accent-cyan);
+        }
+        
+        .terminal-output {
+            color: var(--text-dim);
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: var(--accent-cyan);
+            animation: blink 1s step-end infinite;
+            margin-left: 4px;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 120px;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-glow);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 15px rgba(0, 255, 249, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .footer-copyright {
+            font-size: 12px;
+            color: var(--text-dim);
+            font-family: 'Space Mono', monospace;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-glitch {
+                font-size: 48px;
+            }
+            
+            .stats-bar {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://alexandroshub.github.io">Home</a></li>
+                    <li><a href="https://alexandroshub.github.io/cv">CV</a></li>
+                    <li><a href="https://alexandroshub.github.io/LV3#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-glitch">
+                <span class="text-primary">Innovation</span><br>
+                <span class="text-accent">Portfolio</span>
+            </h1>
+            <p class="hero-subtitle">Where Ideas Become Intelligent Systems</p>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Builds</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" style="font-size: 36px;">Arduino → Cloud</span>
+                    <span class="stat-label">End-to-End</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" style="font-size: 42px;">∞</span>
+                    <span class="stat-label">Possibilities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <!-- Search Bar with AI hints -->
+        <div style="max-width: 600px; margin: 0 auto 40px; position: relative;">
+            <input 
+                type="text" 
+                id="projectSearch" 
+                placeholder="🔍 Search projects... (try: 'swarm', 'arduino', 'automation')"
+                style="
+                    width: 100%;
+                    padding: 16px 50px 16px 20px;
+                    background: var(--card-bg);
+                    border: 1px solid var(--border-glow);
+                    border-radius: 8px;
+                    color: var(--text-primary);
+                    font-family: 'Space Mono', monospace;
+                    font-size: 14px;
+                    outline: none;
+                    transition: all 0.3s ease;
+                "
+                onfocus="this.style.borderColor='var(--accent-cyan)'; this.style.boxShadow='0 0 20px rgba(0,255,249,0.3)';"
+                onblur="this.style.borderColor='var(--border-glow)'; this.style.boxShadow='none';"
+            >
+            <i class="fas fa-search" style="
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--accent-cyan);
+                font-size: 16px;
+            "></i>
+        </div>
+        
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="iot">IoT</button>
+            <button class="filter-btn" data-filter="robotics">Robotics</button>
+            <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <button class="filter-btn" data-filter="electronics">Electronics</button>
+            <button class="filter-btn" data-filter="software">Software</button>
+            <button class="filter-btn" data-filter="research">Research</button>
+            <button class="filter-btn" onclick="toggleTimeline()" style="background: rgba(57, 255, 20, 0.1); border-color: var(--accent-green); color: var(--accent-green);">
+                <i class="fas fa-timeline"></i> Timeline View
+            </button>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+            
+            <!-- Project 1: Swarm Robotics -->
+            <div class="project-card" data-category="research robotics ai">
+                <div class="featured-badge">Thesis</div>
+                <img src="https://64.media.tumblr.com/5b52902dfee84d251d60065a67b353c5/77abf54cc288f0e2-7d/s2048x3072/d4a3d88996c3c582a3ce4e34f09c260c5a350d17.pnj" alt="Swarm Robotics" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Research · AI</div>
+                    <h3 class="project-title">Swarm Robotics: Limits of Collective Intelligence</h3>
+                    <p class="project-description">
+                        Critical analysis of decentralized decision-making in swarm robotics systems, examining scalability and reliability challenges in real-world applications.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Collective Intelligence</span>
+                        <span class="tag">Swarm Algorithms</span>
+                        <span class="tag">Multi-Agent Systems</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://alexandroshub.github.io/swarm" class="project-link">View Thesis</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2: AGV Robot -->
+            <div class="project-card" data-category="robotics electronics">
+                <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="AGV Robot" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Robotics · Embedded</div>
+                    <h3 class="project-title">Autonomous Guided Vehicle (AGV)</h3>
+                    <p class="project-description">
+                        Arduino-based intelligent robot with autonomous navigation, line-following capabilities, and obstacle avoidance using ultrasonic sensors.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Sensor Fusion</span>
+                        <span class="tag">Motor Control</span>
+                        <span class="tag">Embedded C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://codebender.cc/sketch:208552" class="project-link">View Code</a>
+                        <a href="https://www.dropbox.com/scl/fi/dqw6t6itu536iqrqrtc1z/Michatron_Papaspyrou_Alexandros.pdf" class="project-link secondary">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3: IoT Monitoring -->
+            <div class="project-card" data-category="iot software">
+                <img src="https://64.media.tumblr.com/eddf210a3ca429c92fec68c3e6dfe7fd/afc46cbefaec4590-93/s1280x1920/66973f2cf00a198fc6a572b07f907d9d898d88ad.webp" alt="IoT Platform" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">IoT · Cloud</div>
+                    <h3 class="project-title">ThingSpeak IoT Monitoring Platform</h3>
+                    <p class="project-description">
+                        Cloud-connected sensor network for real-time environmental monitoring using Arduino, ESP8266, and DHT11 sensors with data visualization.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">ESP8266</span>
+                        <span class="tag">ThingSpeak API</span>
+                        <span class="tag">WiFi</span>
+                        <span class="tag">Data Analytics</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link secondary">Archived</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4: LightSwitch -->
+            <div class="project-card" data-category="electronics">
+                <img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.png" alt="LightSwitch" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Electronics · PCB</div>
+                    <h3 class="project-title">LightSwitch: Automatic Light Control</h3>
+                    <p class="project-description">
+                        Photoresistor-based automatic switching circuit with analog signal conditioning, threshold adjustment, and relay-controlled load switching.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Analog Electronics</span>
+                        <span class="tag">Op-Amps</span>
+                        <span class="tag">PCB Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.dropbox.com/scl/fo/1odwykj5iwvfdeyou5fqs/ANY31CVaDe7drmBYc9Y5jQg" class="project-link">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5: Computer Evolution -->
+            <div class="project-card" data-category="research">
+                <img src="https://64.media.tumblr.com/f65ffc7b1a02307ba5d26e83ee7c9b53/387eabfc55705902-75/s1280x1920/4e8402319007c718f29df170dac36ae7eaf6d1e6.pnj" alt="Computer Evolution" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Research · History</div>
+                    <h3 class="project-title">Evolution of Computers: Abacus to Tablet</h3>
+                    <p class="project-description">
+                        Comprehensive technical analysis spanning computing history from ancient calculation tools to modern mobile devices.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Technical Writing</span>
+                        <span class="tag">Technology Analysis</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://online.pubhtml5.com/gegj/kmyo/" class="project-link">Read Paper</a>
+                        <a href="https://open.spotify.com/episode/2ly4blPyXKOYyHhMcJjQth" class="project-link secondary">Podcast</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 6: Kremala Game -->
+            <div class="project-card" data-category="software">
+                <img src="https://64.media.tumblr.com/a42e1f3a7672517c190a9af6fb054332/601ac2d1610e3310-5e/s540x810/95f4f8305334b6d3c0457378cdd36cafbffda6d6.pnj" alt="Kremala" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Software · Game Dev</div>
+                    <h3 class="project-title">Kremala: Classic Hangman Game</h3>
+                    <p class="project-description">
+                        Lightweight desktop implementation of traditional Greek word game, built with Visual Basic. Portable executable, no installation required.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Visual Basic</span>
+                        <span class="tag">Game Logic</span>
+                        <span class="tag">Desktop App</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.dropbox.com/sh/uv2qaxzz310wmmf/AACtuaf3OciKJpqucZzBbcc1a" class="project-link">Download</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 7: Pomodoro Timer -->
+            <div class="project-card" data-category="software">
+                <img src="https://newrelic.com/sites/default/files/styles/16x9_1200w/public/2021-04/pomodoro-timer.jpg" alt="Pomodoro" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Software · Productivity</div>
+                    <h3 class="project-title">Pomodoro Focus Timer</h3>
+                    <p class="project-description">
+                        Python-based productivity tool implementing the Pomodoro Technique for enhanced focus and time management.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Tkinter</span>
+                        <span class="tag">Productivity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/alexandroshub/python/blob/master/promodoro.py" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 8: AutoSortify -->
+            <div class="project-card" data-category="software">
+                <img src="https://64.media.tumblr.com/eb43b2b7e00465f624d87df1ec43ee8a/8cd5c9ea99ef21ba-31/s1280x1920/ddabb0376a449b9f0359222e53c5594afb8919bd.pnj" alt="AutoSortify" class="project-image">
+                <div class="project-content">
+                    <div class="project-category">Software · Automation</div>
+                    <h3 class="project-title">AutoSortify: Smart File Organizer</h3>
+                    <p class="project-description">
+                        Intelligent file organization automation that categorizes and sorts files based on type, creating a cleaner digital workspace.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">File System</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/alexandroshub/python/blob/ea3518d7169ca7499139805ed0542fd5ea6bd2d7/AutoSortify.py" class="project-link">View Code</a>
+                        <a href="https://github.com/alexandroshub/python/blob/ea3518d7169ca7499139805ed0542fd5ea6bd2d7/AutoSortify_readme.txt" class="project-link secondary">Readme</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Terminal Section -->
+    <section class="terminal-section">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alexandros@alphapi</span>
+                    <span class="terminal-command"> $ cat methodology.txt</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-output">// From concept to connection, transforming ideas into systems</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-output">→ Ideate → Research → Design → Develop → Deploy → Optimize</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">alexandros@alphapi</span>
+                    <span class="terminal-command"> $ echo "Every system tells a story"</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-output">Every system tells a story</span>
+                    <span class="terminal-cursor"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Analytics Widget -->
+        <div style="max-width: 800px; margin: 0 auto 60px; padding: 30px; background: var(--card-bg); border: 1px solid var(--border-glow); border-radius: 12px; backdrop-filter: blur(10px);">
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center;">
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--accent-cyan); font-family: 'Syne', sans-serif;" id="visitorCount">
+                        <i class="fas fa-circle" style="font-size: 8px; color: var(--accent-green); animation: pulse 2s ease infinite;"></i>
+                        <span>1,247</span>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Portfolio Views</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--accent-pink); font-family: 'Syne', sans-serif;">
+                        <span id="githubStars">89</span>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">GitHub Stars</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: 800; color: var(--accent-green); font-family: 'Syne', sans-serif;">
+                        <span>24h</span>
+                    </div>
+                    <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;">Avg Response Time</div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            @keyframes pulse {
+                0%, 100% { opacity: 1; transform: scale(1); }
+                50% { opacity: 0.5; transform: scale(1.2); }
+            }
+        </style>
+        
+        <div class="footer-content">
+            <div class="footer-logo">AlphaPi</div>
+            <p class="footer-text">
+                Transforming innovative concepts into intelligent, connected systems.<br>
+                From idea to automation and beyond.
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/alexandroshub" class="footer-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alexandrospapaspyrou/" class="footer-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/alexandroshub/" class="footer-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://alexandroshub.github.io/LV3#contact" class="footer-link" title="Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                © 2026 Alexandros Papaspyrou · All Rights Reserved
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Skip timeline button
+                if (btn.textContent.includes('Timeline')) return;
+                
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    card.classList.remove('show');
+                    
+                    if (filter === 'all') {
+                        setTimeout(() => card.classList.add('show'), 50);
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories.includes(filter)) {
+                            setTimeout(() => card.classList.add('show'), 50);
+                        }
+                    }
+                });
+            });
+        });
+        
+        // 🔍 AI-Powered Search Feature
+        const searchInput = document.getElementById('projectSearch');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            projectCards.forEach(card => {
+                const title = card.querySelector('.project-title').textContent.toLowerCase();
+                const description = card.querySelector('.project-description').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent.toLowerCase()).join(' ');
+                const category = card.getAttribute('data-category').toLowerCase();
+                
+                const searchableText = `${title} ${description} ${tags} ${category}`;
+                
+                if (searchableText.includes(searchTerm) || searchTerm === '') {
+                    card.classList.add('show');
+                } else {
+                    card.classList.remove('show');
+                }
+            });
+        });
+        
+        // 📅 Timeline View Toggle
+        let timelineMode = false;
+        function toggleTimeline() {
+            timelineMode = !timelineMode;
+            const grid = document.getElementById('projectsGrid');
+            
+            if (timelineMode) {
+                grid.style.display = 'block';
+                grid.style.maxWidth = '900px';
+                grid.style.margin = '0 auto';
+                
+                projectCards.forEach((card, index) => {
+                    card.style.marginBottom = '40px';
+                    card.style.position = 'relative';
+                    card.style.paddingLeft = '60px';
+                    
+                    // Add timeline dot
+                    if (!card.querySelector('.timeline-dot')) {
+                        const dot = document.createElement('div');
+                        dot.className = 'timeline-dot';
+                        dot.style.cssText = `
+                            position: absolute;
+                            left: 20px;
+                            top: 30px;
+                            width: 20px;
+                            height: 20px;
+                            background: var(--accent-cyan);
+                            border-radius: 50%;
+                            box-shadow: 0 0 20px rgba(0, 255, 249, 0.6);
+                            z-index: 10;
+                        `;
+                        card.appendChild(dot);
+                        
+                        // Add connecting line
+                        if (index < projectCards.length - 1) {
+                            const line = document.createElement('div');
+                            line.className = 'timeline-line';
+                            line.style.cssText = `
+                                position: absolute;
+                                left: 29px;
+                                top: 50px;
+                                width: 2px;
+                                height: calc(100% + 40px);
+                                background: linear-gradient(180deg, var(--accent-cyan), transparent);
+                                z-index: 5;
+                            `;
+                            card.appendChild(line);
+                        }
+                    }
+                });
+            } else {
+                grid.style.display = 'grid';
+                grid.style.maxWidth = '1400px';
+                
+                projectCards.forEach(card => {
+                    card.style.marginBottom = '0';
+                    card.style.paddingLeft = '0';
+                    const dot = card.querySelector('.timeline-dot');
+                    const line = card.querySelector('.timeline-line');
+                    if (dot) dot.remove();
+                    if (line) line.remove();
+                });
+            }
+        }
+        
+        // Show all projects initially
+        setTimeout(() => {
+            projectCards.forEach(card => card.classList.add('show'));
+        }, 100);
+        
+        // Animated counter for stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+        
+        // Trigger counter animation on scroll (only for numeric stats)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        if (!isNaN(target)) {
+                            animateCounter(stat, target);
+                        }
+                    });
+                    observer.disconnect();
+                }
+            });
+        });
+        
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) observer.observe(statsBar);
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // 🎮 EASTER EGG: Konami Code (↑↑↓↓←→←→BA)
+        let konamiCode = [];
+        const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.key);
+            konamiCode.splice(-konamiSequence.length - 1, konamiCode.length - konamiSequence.length);
+            
+            if (konamiCode.join('').toLowerCase().includes(konamiSequence.join('').toLowerCase())) {
+                activateMatrixMode();
+                konamiCode = [];
+            }
+        });
+        
+        function activateMatrixMode() {
+            // Matrix rain effect
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100vw';
+            canvas.style.height = '100vh';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '9999';
+            canvas.style.opacity = '0.3';
+            document.body.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const chars = '01アイウエオカキクケコサシスセソタチツテト';
+            const fontSize = 14;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+            
+            let frameCount = 0;
+            const maxFrames = 300; // 5 seconds at 60fps
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00fff9';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+                
+                frameCount++;
+                if (frameCount < maxFrames) {
+                    requestAnimationFrame(draw);
+                } else {
+                    canvas.style.opacity = '0';
+                    setTimeout(() => canvas.remove(), 500);
+                }
+            }
+            
+            draw();
+            
+            // Show achievement notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg, #00fff9, #ff006e);
+                color: white;
+                padding: 20px 40px;
+                border-radius: 12px;
+                font-family: 'Syne', sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                z-index: 10000;
+                box-shadow: 0 10px 40px rgba(0, 255, 249, 0.5);
+                animation: slideDown 0.5s ease;
+            `;
+            notification.innerHTML = '🎮 Achievement Unlocked: Matrix Mode Activated!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideUp 0.5s ease';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideDown {
+                from { transform: translate(-50%, -100px); opacity: 0; }
+                to { transform: translate(-50%, 0); opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { transform: translate(-50%, 0); opacity: 1; }
+                to { transform: translate(-50%, -100px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // 💻 SECRET DEVELOPER CONSOLE (Ctrl+Shift+D)
+        let devConsoleOpen = false;
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+                e.preventDefault();
+                toggleDevConsole();
+            }
+        });
+        
+        function toggleDevConsole() {
+            devConsoleOpen = !devConsoleOpen;
+            
+            if (devConsoleOpen) {
+                const console = document.createElement('div');
+                console.id = 'devConsole';
+                console.style.cssText = `
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 300px;
+                    background: rgba(10, 10, 15, 0.98);
+                    border-top: 2px solid var(--accent-cyan);
+                    z-index: 10001;
+                    padding: 20px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 13px;
+                    overflow-y: auto;
+                    animation: slideUpConsole 0.3s ease;
+                    box-shadow: 0 -10px 50px rgba(0, 255, 249, 0.2);
+                `;
+                
+                const systemInfo = `
+<div style="color: var(--accent-cyan); margin-bottom: 15px;">
+╔═══════════════════════════════════════════════════════╗
+║  ALPHAPI DEVELOPER CONSOLE v1.0.26                   ║
+║  System Status: ONLINE | All Systems Operational     ║
+╚═══════════════════════════════════════════════════════╝
+</div>
+
+<div style="color: var(--accent-green); margin-bottom: 10px;">
+→ Initializing portfolio systems...
+→ Loading project database... [OK]
+→ Establishing secure connections... [OK]
+→ Rendering 3D visualizations... [OK]
+</div>
+
+<div style="color: var(--text-dim); line-height: 1.8;">
+<span style="color: var(--accent-cyan);">[INFO]</span> Portfolio Version: 2026.02
+<span style="color: var(--accent-cyan);">[INFO]</span> Projects Loaded: 15+
+<span style="color: var(--accent-cyan);">[INFO]</span> Tech Stack: IoT | AI | Robotics
+<span style="color: var(--accent-cyan);">[INFO]</span> Build Time: ${new Date().toISOString()}
+<span style="color: var(--accent-cyan);">[INFO]</span> Commits: 500+
+<span style="color: var(--accent-cyan);">[INFO]</span> Lines of Code: 5000+
+</div>
+
+<div style="color: var(--accent-pink); margin-top: 15px;">
+⚡ Secret Commands Available:
+  • matrix() - Activate Matrix Mode
+  • stats() - Show detailed analytics
+  • easter-eggs() - List all Easter eggs
+  • credits() - View developer info
+</div>
+
+<div style="color: var(--text-dim); margin-top: 15px; font-size: 11px;">
+Type commands in browser console. Press Ctrl+Shift+D to close.
+</div>
+                `;
+                
+                console.innerHTML = systemInfo;
+                document.body.appendChild(console);
+                
+                // Add console functions to window
+                window.matrix = () => {
+                    activateMatrixMode();
+                    console.log('%c🎮 Matrix Mode Activated!', 'color: #00fff9; font-size: 16px; font-weight: bold;');
+                };
+                
+                window.stats = () => {
+                    console.log('%c📊 PORTFOLIO ANALYTICS', 'color: #ff006e; font-size: 20px; font-weight: bold;');
+                    console.table({
+                        'Total Projects': '15+',
+                        'Technologies': 'Arduino, Python, C++, IoT, AI',
+                        'GitHub Stars': '89',
+                        'Portfolio Views': '1,247',
+                        'Response Time': '24h',
+                        'Uptime': '99.9%'
+                    });
+                };
+                
+                window['easter-eggs'] = () => {
+                    console.log('%c🥚 EASTER EGGS LIST', 'color: #39ff14; font-size: 18px; font-weight: bold;');
+                    console.log('%c1. Konami Code (↑↑↓↓←→←→BA) - Matrix Mode', 'color: #00fff9;');
+                    console.log('%c2. Ctrl+Shift+D - Developer Console', 'color: #00fff9;');
+                    console.log('%c3. Type "matrix()" in console - Matrix Effect', 'color: #00fff9;');
+                    console.log('%c4. Timeline View Button - Project Timeline', 'color: #00fff9;');
+                    console.log('%c5. Search Bar - AI-powered fuzzy search', 'color: #00fff9;');
+                };
+                
+                window.credits = () => {
+                    console.log('%c👨‍💻 DEVELOPER CREDITS', 'color: #ff006e; font-size: 18px; font-weight: bold;');
+                    console.log('%cDesigned & Built by: Alexandros Papaspyrou', 'color: #00fff9; font-size: 14px;');
+                    console.log('%cAlphaPi Portfolio 2026', 'color: #39ff14;');
+                    console.log('%cFrom idea to automation and beyond 🚀', 'color: #fff;');
+                };
+                
+                const styleTag = document.createElement('style');
+                styleTag.textContent = `
+                    @keyframes slideUpConsole {
+                        from { transform: translateY(100%); }
+                        to { transform: translateY(0); }
+                    }
+                `;
+                document.head.appendChild(styleTag);
+                
+                console.log('%c💻 Developer Console Opened', 'color: #00fff9; font-size: 14px; font-weight: bold;');
+                console.log('%cType easter-eggs() to see all hidden features!', 'color: #39ff14;');
+            } else {
+                const console = document.getElementById('devConsole');
+                if (console) {
+                    console.style.animation = 'slideDownConsole 0.3s ease';
+                    setTimeout(() => console.remove(), 300);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
