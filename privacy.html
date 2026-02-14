@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | AlphaPi </title>
+    <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-bg: #0a0a0f;
+            --secondary-bg: #13131a;
+            --accent-cyan: #00fff9;
+            --accent-pink: #ff006e;
+            --text-primary: #e8e8e8;
+            --text-dim: #888;
+            --card-bg: rgba(25, 25, 35, 0.8);
+            --border-glow: rgba(0, 255, 249, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-glow);
+        }
+        
+        .header h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .header .subtitle {
+            color: var(--text-dim);
+            font-size: 14px;
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .last-updated {
+            background: var(--card-bg);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        
+        .toc {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .toc h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .toc li:last-child {
+            border-bottom: none;
+        }
+        
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toc a:hover {
+            color: var(--accent-cyan);
+            padding-left: 10px;
+        }
+        
+        .toc a::before {
+            content: '→';
+            color: var(--accent-cyan);
+            font-size: 16px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 20px;
+        }
+        
+        h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-glow);
+        }
+        
+        h3 {
+            font-family: 'Syne', sans-serif;
+            color: var(--text-primary);
+            font-size: 20px;
+            margin: 30px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-dim);
+            font-size: 15px;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+            color: var(--text-dim);
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            color: var(--text-primary);
+        }
+        
+        .highlight-box {
+            background: rgba(0, 255, 249, 0.05);
+            border-left: 3px solid var(--accent-cyan);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        
+        .warning-box {
+            background: rgba(255, 193, 7, 0.05);
+            border-left: 3px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        
+        .info-box {
+            background: rgba(255, 0, 110, 0.05);
+            border-left: 3px solid var(--accent-pink);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        th {
+            background: rgba(0, 255, 249, 0.1);
+            color: var(--accent-cyan);
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .contact-card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-family: 'Space Mono', monospace;
+            margin: 5px;
+        }
+        
+        .contact-link:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-cyan);
+            padding-left: 10px;
+        }
+        
+        .back-link::before {
+            content: '← ';
+        }
+        
+        code {
+            background: rgba(0, 255, 249, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .toc {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 13px;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">AlphaPi · Alexandros Papaspyrou</p>
+        </div>
+        
+        <div class="last-updated">
+            <strong>📅 Last Updated:</strong> February 14, 2026<br>
+            <strong>🌍 Effective Date:</strong> February 14, 2026
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>📑 Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#information-collected">Information We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Information</a></li>
+                <li><a href="#cookies">Cookies and Tracking Technologies</a></li>
+                <li><a href="#third-party">Third-Party Services</a></li>
+                <li><a href="#affiliate">Affiliate Links Disclosure</a></li>
+                <li><a href="#data-security">Data Security</a></li>
+                <li><a href="#your-rights">Your Rights (GDPR)</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ul>
+        </div>
+        
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+                Welcome to AlphaPi Portfolio ("we," "our," or "us"). This Privacy Policy explains how we collect, 
+                use, disclose, and protect your information when you visit our website 
+                <strong>alexandroshub.github.io</strong> (the "Site").
+            </p>
+            <p>
+                We are committed to protecting your privacy and ensuring transparency about our data practices. 
+                By using our Site, you agree to the collection and use of information in accordance with this policy.
+            </p>
+            <div class="highlight-box">
+                <strong>🔒 Your Privacy Matters:</strong> We collect minimal data, use industry-standard security, 
+                and comply with GDPR (General Data Protection Regulation) for EU visitors.
+            </div>
+        </section>
+        
+        <!-- Information Collected -->
+        <section id="information-collected">
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Automatically Collected Information</h3>
+            <p>When you visit our Site, we automatically collect certain information about your device and browsing behavior:</p>
+            <ul>
+                <li><strong>Device Information:</strong> Browser type, operating system, device type</li>
+                <li><strong>Usage Data:</strong> Pages viewed, time spent on pages, click patterns</li>
+                <li><strong>Location Data:</strong> Approximate geographic location (country/city level)</li>
+                <li><strong>Referral Source:</strong> The website or search engine that referred you</li>
+                <li><strong>IP Address:</strong> Anonymized IP address for analytics (GDPR compliant)</li>
+            </ul>
+            
+            <h3>2.2 Information You Provide</h3>
+            <p>We may collect information you voluntarily provide:</p>
+            <ul>
+                <li><strong>Contact Forms:</strong> Name, email address, message content (if available)</li>
+                <li><strong>Newsletter Subscriptions:</strong> Email address (if applicable)</li>
+                <li><strong>Comments/Feedback:</strong> Any information you choose to share</li>
+            </ul>
+            
+            <h3>2.3 Information We DO NOT Collect</h3>
+            <div class="info-box">
+                <strong>✅ We do NOT collect:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Social Security numbers or government IDs</li>
+                    <li>Financial information or payment details</li>
+                    <li>Sensitive personal data (health, religion, political views)</li>
+                    <li>Passwords or login credentials</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- How We Use Information -->
+        <section id="how-we-use">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use the collected information for the following purposes:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Purpose</th>
+                        <th>Description</th>
+                        <th>Legal Basis (GDPR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Analytics</strong></td>
+                        <td>Understanding visitor behavior and improving site experience</td>
+                        <td>Legitimate Interest</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance</strong></td>
+                        <td>Monitoring site performance and fixing technical issues</td>
+                        <td>Legitimate Interest</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Communication</strong></td>
+                        <td>Responding to inquiries and providing support</td>
+                        <td>Consent / Contract</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing</strong></td>
+                        <td>Sending newsletters (only with explicit consent)</td>
+                        <td>Consent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security</strong></td>
+                        <td>Preventing fraud and ensuring site security</td>
+                        <td>Legitimate Interest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Cookies -->
+        <section id="cookies">
+            <h2>4. Cookies and Tracking Technologies</h2>
+            
+            <h3>4.1 What Are Cookies?</h3>
+            <p>
+                Cookies are small text files stored on your device by your web browser. 
+                They help us remember your preferences and understand how you use our Site.
+            </p>
+            
+            <h3>4.2 Types of Cookies We Use</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cookie Type</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Essential Cookies</strong></td>
+                        <td>Required for basic site functionality</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analytics Cookies</strong></td>
+                        <td>Google Analytics tracking (anonymized)</td>
+                        <td>2 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance Cookies</strong></td>
+                        <td>Monitor site speed and errors</td>
+                        <td>1 year</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preference Cookies</strong></td>
+                        <td>Remember your settings (theme, language)</td>
+                        <td>1 year</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>4.3 Managing Cookies</h3>
+            <p>You can control cookies through:</p>
+            <ul>
+                <li><strong>Browser Settings:</strong> Most browsers allow you to refuse or delete cookies</li>
+                <li><strong>Opt-Out Tools:</strong> 
+                    <a href="https://tools.google.com/dlpage/gaoptout" style="color: var(--accent-cyan);" target="_blank">
+                        Google Analytics Opt-out Browser Add-on
+                    </a>
+                </li>
+                <li><strong>Do Not Track:</strong> We respect DNT signals when possible</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ Note:</strong> Disabling cookies may affect site functionality and your user experience.
+            </div>
+        </section>
+        
+        <!-- Third-Party Services -->
+        <section id="third-party">
+            <h2>5. Third-Party Services</h2>
+            <p>We use the following third-party services that may collect information:</p>
+            
+            <h3>5.1 Google Analytics</h3>
+            <ul>
+                <li><strong>Purpose:</strong> Website traffic analysis and user behavior tracking</li>
+                <li><strong>Data Collected:</strong> Anonymized usage data, device info, location</li>
+                <li><strong>Privacy Policy:</strong> 
+                    <a href="https://policies.google.com/privacy" style="color: var(--accent-cyan);" target="_blank">
+                        Google Privacy Policy
+                    </a>
+                </li>
+                <li><strong>IP Anonymization:</strong> ✅ Enabled (GDPR compliant)</li>
+            </ul>
+            
+            <h3>5.2 GitHub Pages (Hosting)</h3>
+            <ul>
+                <li><strong>Provider:</strong> GitHub, Inc. (Microsoft)</li>
+                <li><strong>Data Collected:</strong> Server logs, IP addresses, visitor timestamps</li>
+                <li><strong>Privacy Policy:</strong> 
+                    <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" 
+                       style="color: var(--accent-cyan);" target="_blank">
+                        GitHub Privacy Statement
+                    </a>
+                </li>
+            </ul>
+            
+            <h3>5.3 CountAPI (Visitor Counter)</h3>
+            <ul>
+                <li><strong>Purpose:</strong> Anonymous visitor counting</li>
+                <li><strong>Data Collected:</strong> Page view counts only (no personal data)</li>
+                <li><strong>Privacy:</strong> No tracking, no cookies, fully anonymous</li>
+            </ul>
+            
+            <h3>5.4 Font Services (Google Fonts)</h3>
+            <ul>
+                <li><strong>Purpose:</strong> Loading custom fonts for better typography</li>
+                <li><strong>Data:</strong> Font requests may log IP addresses on Google servers</li>
+                <li><strong>Alternative:</strong> Self-hosted fonts option available</li>
+            </ul>
+        </section>
+        
+        <!-- Affiliate Links -->
+        <section id="affiliate">
+            <h2>6. Affiliate Links Disclosure</h2>
+            
+            <div class="info-box">
+                <strong>💰 Affiliate Relationship Disclosure</strong>
+                <p style="margin-top: 10px;">
+                    This website contains affiliate links to products and services. 
+                    If you click these links and make a purchase, I may earn a commission at no additional cost to you.
+                </p>
+            </div>
+            
+            <h3>6.1 Affiliate Programs</h3>
+            <p>We participate in the following affiliate programs:</p>
+            <ul>
+                <li><strong>Amazon Associates:</strong> Links to Amazon products</li>
+                <li><strong>AliExpress Affiliate:</strong> Links to electronics and components</li>
+                <li><strong>Digital Ocean:</strong> Referral program for cloud hosting</li>
+                <li><strong>Other Tech Services:</strong> Various software and tool referrals</li>
+            </ul>
+            
+            <h3>6.2 Our Commitment</h3>
+            <ul>
+                <li>✅ We only recommend products we genuinely use and trust</li>
+                <li>✅ Our opinions remain honest and unbiased</li>
+                <li>✅ Affiliate relationships are clearly disclosed</li>
+                <li>✅ You are never charged extra for using our links</li>
+            </ul>
+            
+            <h3>6.3 How Affiliate Links Work</h3>
+            <p>
+                When you click an affiliate link, a cookie may be placed on your device to track the referral. 
+                If you make a purchase within a certain timeframe (typically 24 hours to 90 days), 
+                we receive a small commission. This helps support the maintenance of this website.
+            </p>
+        </section>
+        
+        <!-- Data Security -->
+        <section id="data-security">
+            <h2>7. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your information:</p>
+            
+            <ul>
+                <li><strong>HTTPS Encryption:</strong> All data transmitted is encrypted via SSL/TLS</li>
+                <li><strong>Secure Hosting:</strong> GitHub Pages with Microsoft security infrastructure</li>
+                <li><strong>No Passwords:</strong> We don't store login credentials or payment information</li>
+                <li><strong>Regular Updates:</strong> Software and dependencies kept up-to-date</li>
+                <li><strong>Access Control:</strong> Limited access to any collected data</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <strong>🔐 Security Note:</strong> While we use best practices, no method of transmission over 
+                the internet is 100% secure. We cannot guarantee absolute security of your data.
+            </div>
+        </section>
+        
+        <!-- Your Rights (GDPR) -->
+        <section id="your-rights">
+            <h2>8. Your Rights (GDPR Compliance)</h2>
+            <p>If you are a resident of the European Economic Area (EEA), you have the following rights:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Right</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Right to Access</strong></td>
+                        <td>Request a copy of your personal data we hold</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Rectification</strong></td>
+                        <td>Request correction of inaccurate or incomplete data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Erasure</strong></td>
+                        <td>Request deletion of your personal data ("right to be forgotten")</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Restriction</strong></td>
+                        <td>Request limitation of processing your data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Portability</strong></td>
+                        <td>Receive your data in a structured, machine-readable format</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Object</strong></td>
+                        <td>Object to processing based on legitimate interests</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Withdraw Consent</strong></td>
+                        <td>Withdraw consent at any time (doesn't affect prior processing)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>8.1 How to Exercise Your Rights</h3>
+            <p>To exercise any of these rights, please contact us at:</p>
+            <div class="highlight-box">
+                <strong>📧 Email:</strong> <code>a-papaspyrou@outlook.com.gr</code><br>
+                <strong>📧 Alternative:</strong> <code>alexandroshub@protonmail.com</code>
+            </div>
+            
+            <p>We will respond to your request within <strong>30 days</strong>.</p>
+        </section>
+        
+        <!-- Children's Privacy -->
+        <section id="children">
+            <h2>9. Children's Privacy</h2>
+            <p>
+                Our Site is not directed to children under the age of 16. We do not knowingly collect 
+                personal information from children under 16.
+            </p>
+            <p>
+                If you are a parent or guardian and believe your child has provided us with personal information, 
+                please contact us immediately, and we will delete such information.
+            </p>
+        </section>
+        
+        <!-- Changes to Policy -->
+        <section id="changes">
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time to reflect changes in our practices, 
+                technology, legal requirements, or other factors.
+            </p>
+            
+            <h3>10.1 Notification of Changes</h3>
+            <ul>
+                <li><strong>Major Changes:</strong> We will notify you via prominent notice on our Site</li>
+                <li><strong>Minor Changes:</strong> Updated "Last Updated" date at the top of this page</li>
+                <li><strong>Your Responsibility:</strong> Review this policy periodically for updates</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>📅 Version History:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>v1.0</strong> - February 14, 2026 - Initial publication</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Contact Information -->
+        <section id="contact">
+            <h2>11. Contact Information</h2>
+            <p>
+                If you have any questions, concerns, or requests regarding this Privacy Policy 
+                or our data practices, please contact us:
+            </p>
+            
+            <div class="contact-card">
+                <h3>📬 Get in Touch</h3>
+                <p style="color: var(--text-dim); margin-bottom: 20px;">
+                    <strong>Alexandros Papaspyrou</strong><br>
+                    AlphaPi
+                </p>
+                <div>
+                    <a href="mailto:a-papaspyrou@outlook.com.gr" class="contact-link">
+                        📧 Primary Email
+                    </a>
+                    <a href="mailto:alexandroshub@protonmail.com" class="contact-link">
+                        🔒 Secure Email
+                    </a>
+                </div>
+                <p style="margin-top: 20px; font-size: 13px; color: var(--text-dim);">
+                    <strong>Response Time:</strong> We aim to respond within 48 hours
+                </p>
+            </div>
+        </section>
+        
+        <!-- Additional Information -->
+        <section>
+            <h2>12. Additional Information</h2>
+            
+            <h3>12.1 Data Retention</h3>
+            <p>
+                We retain your information only as long as necessary for the purposes outlined in this policy 
+                or as required by law. Analytics data is typically retained for 26 months (Google Analytics default).
+            </p>
+            
+            <h3>12.2 International Data Transfers</h3>
+            <p>
+                Your information may be transferred to and processed in countries other than your country of residence. 
+                These countries may have different data protection laws. We ensure appropriate safeguards are in place.
+            </p>
+            
+            <h3>12.3 California Privacy Rights (CCPA)</h3>
+            <p>
+                If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):
+            </p>
+            <ul>
+                <li>Right to know what personal information is collected</li>
+                <li>Right to know if personal information is sold or disclosed</li>
+                <li>Right to opt-out of sale of personal information (we don't sell data)</li>
+                <li>Right to non-discrimination for exercising CCPA rights</li>
+            </ul>
+        </section>
+        
+        <!-- Consent -->
+        <div class="highlight-box" style="margin-top: 50px;">
+            <h3 style="margin-top: 0; color: var(--accent-cyan);">✅ Your Consent</h3>
+            <p style="margin-bottom: 0;">
+                By using our Site, you consent to this Privacy Policy and agree to its terms. 
+                If you do not agree, please discontinue use of the Site immediately.
+            </p>
+        </div>
+        
+        <!-- Back Link -->
+        <a href="https://alexandroshub.github.io" class="back-link">
+            Back to Home
+        </a>
+    </div>
+</body>
+</html>
