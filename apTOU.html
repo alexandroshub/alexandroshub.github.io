@@ -3,242 +3,858 @@
   ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
   ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
   ▒█░▒█ ░░ ▒█░░░ ▀░░▀ █▀▀▀ ▀░░▀ ▀▀▀ █▀▀▀ ▄▄▄█ ▀░▀▀ ▀▀▀▀ ░▀▀▀ 
-  
-    Updated: SpecialPage 'Privacy Statement & Terms of Use' // 25.8.25
-    Website: https://alexandroshub.github.io
-    Contact: 	a-papaspyrou@outlook.com.gr
-    CC-BY international 4 2011-2020 Alexandros Papaspyrou
-    
-   Welcome in my personal website 100% HTML Hosted by Github
-   Handcrafted With ❤ (CC)-By: Alexandros Papaspyrou 
+ToU v3.3 date 18/2
   ==========================================================================  -->
+
 <!DOCTYPE html>
-<html>
- <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 Terms of Use </title>
-  <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
- 
-  <meta charset="UTF-8">  
-  
-<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
-  
-<style>
-h1 {
-  line-height: 72px;
-  margin: 24px 0;
-  color:White;
-}
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | AlphaPi · Alexandros Papaspyrou</title>
+    <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@600;700;800&family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-h6{
-  line-height:24px;
-  color:#fc3565;
-}
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #13131a;
+            --cyan: #00fff9;
+            --pink: #ff006e;
+            --green: #39ff14;
+            --text: #e8e8e8;
+            --dim: #777;
+            --card: rgba(25, 25, 38, 0.85);
+            --border: rgba(0, 255, 249, 0.15);
+        }
 
-h6 span{
-  color:white;
-  float:right;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-p {
-  line-height: 24px;
-  margin: 24px 0;
-  color:#bbbbc4;
-}
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-BODY {
-  background: #282931;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Varela Round', sans-serif;
-  height: 100%;
-}
-</style>
+        /* Grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.12;
+            z-index: 0;
+            animation: gridScroll 25s linear infinite;
+        }
+        @keyframes gridScroll {
+            from { background-position: 0 0; }
+            to   { background-position: 50px 50px; }
+        }
 
-  <script>
-  window.console = window.console || function(t) {};
-</script>
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(10,10,15,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            height: 65px;
+        }
+        .navbar-logo {
+            font-family: 'Audiowide', cursive;
+            font-size: 22px;
+            color: var(--cyan);
+            text-decoration: none;
+            text-shadow: 0 0 18px rgba(0,255,249,0.5);
+        }
+        .navbar-links a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 13px;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+        .navbar-links a:hover { color: var(--cyan); }
 
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 140px 20px 70px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0,255,249,0.08);
+            border: 1px solid var(--border);
+            color: var(--cyan);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-family: 'Space Mono', monospace;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--cyan), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-meta {
+            color: var(--dim);
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+        .hero-meta span { color: var(--cyan); }
 
+        /* Privacy Policy CTA Button (top) */
+        .privacy-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,0,110,0.1);
+            border: 1px solid var(--pink);
+            color: var(--pink);
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .privacy-cta:hover {
+            background: var(--pink);
+            color: white;
+            box-shadow: 0 0 25px rgba(255,0,110,0.4);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
 
+        /* ========== MAIN CONTENT ========== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+        .toc-title {
+            font-family: 'Syne', sans-serif;
+            color: var(--cyan);
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .toc a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc a::before { content: '→'; color: var(--cyan); }
+        .toc a:hover { color: var(--cyan); background: rgba(0,255,249,0.05); padding-left: 18px; }
+
+        /* Section */
+        section {
+            margin-bottom: 55px;
+            scroll-margin-top: 90px;
+        }
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 26px;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 17px;
+            color: var(--text);
+            margin: 25px 0 12px;
+        }
+        p { color: var(--dim); font-size: 14px; margin-bottom: 14px; }
+        p a { color: var(--cyan); text-decoration: none; }
+        p a:hover { text-decoration: underline; }
+        ul, ol { padding-left: 25px; color: var(--dim); font-size: 14px; margin-bottom: 14px; }
+        li { margin-bottom: 8px; }
+        li strong { color: var(--text); }
+        strong { color: var(--text); }
+
+        /* Cards */
+        .info-box {
+            background: rgba(0,255,249,0.05);
+            border-left: 3px solid var(--cyan);
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: rgba(255,193,7,0.05);
+            border-left: 3px solid #ffc107;
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .highlight-box {
+            background: rgba(57,255,20,0.05);
+            border-left: 3px solid var(--green);
+            padding: 18px 22px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        /* ========== SUPPORT SECTION ========== */
+        .support-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 45px 35px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 55px;
+        }
+        .support-section::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(0,255,249,0.12), transparent 70%);
+            border-radius: 50%;
+        }
+        .support-section::after {
+            content: '';
+            position: absolute;
+            bottom: -60px; left: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(255,0,110,0.1), transparent 70%);
+            border-radius: 50%;
+        }
+        .support-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        .support-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .support-desc {
+            color: var(--dim);
+            font-size: 14px;
+            max-width: 560px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .support-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-bmc {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFDD00;
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: 'Syne', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255,221,0,0.3);
+        }
+        .btn-bmc:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255,221,0,0.5);
+            text-decoration: none;
+            color: #000;
+        }
+        .btn-patreon {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FF424D;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: 'Syne', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255,66,77,0.3);
+        }
+        .btn-patreon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255,66,77,0.5);
+            text-decoration: none;
+            color: #fff;
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--dim);
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: rgba(0,255,249,0.05);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        .support-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--dim);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 13px;
+        }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: rgba(0,255,249,0.08); color: var(--cyan); font-family: 'Syne', sans-serif; font-size: 13px; }
+        tr:last-child td { border-bottom: none; }
+        td { color: var(--dim); }
+        td:first-child { color: var(--text); }
+
+        /* System requirements */
+        .sysreq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .sysreq-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 22px;
+        }
+        .sysreq-card h4 {
+            font-family: 'Syne', sans-serif;
+            color: var(--cyan);
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+        .sysreq-card h4.recommended { color: var(--green); }
+        .sysreq-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: var(--dim);
+        }
+        .sysreq-item i { color: var(--cyan); margin-top: 3px; font-size: 11px; }
+
+        /* Creative Commons */
+        .cc-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .cc-box img { border-radius: 4px; }
+        .cc-text { font-size: 13px; color: var(--dim); }
+        .cc-text a { color: var(--cyan); }
+
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+        .page-footer-logo {
+            font-family: 'Audiowide', cursive;
+            font-size: 20px;
+            color: var(--cyan);
+            text-shadow: 0 0 15px rgba(0,255,249,0.4);
+            margin-bottom: 16px;
+        }
+        .page-footer-links a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 12px;
+            transition: color 0.3s;
+        }
+        .page-footer-links a:hover { color: var(--cyan); }
+        .page-footer-links span { color: var(--border); }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dim);
+            text-decoration: none;
+            font-size: 13px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { color: var(--cyan); padding-left: 5px; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .navbar-links { display: none; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .sysreq-grid { grid-template-columns: 1fr; }
+            .support-btns { flex-direction: column; align-items: center; }
+            .cc-box { flex-direction: column; }
+            .hero { padding: 120px 20px 50px; }
+        }
+    </style>
 </head>
+<body>
 
-<body translate="no" >
-  <div class="container">
-<h1>Privacy Statement & Terms of Use</h1>
-<h6> @alexandroshub
-<br>e-mail: alexandroshub@protonmail.com
-  <span>20 Αυγούστου 2021</span></h6>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="https://alexandroshub.github.io" class="navbar-logo">&nbsp; AlphaPi</a>
+        <div class="navbar-links">
+            <a href="https://alexandroshub.github.io">Home</a>
+            <a href="https://alexandroshub.github.io/projects.html">Projects</a>
+            <a href="https://alexandroshub.github.io/cv">CV</a>
+            <a href="https://alexandroshub.github.io/LV3#contact">Contact</a>
+        </div>
+    </nav>
 
-<p> Με κάθε σας επίσκεψη σε ιστοσελίδα του domain <b><font color="#fc3565">https://alexandroshub.github.io </font></b> , δηλώνετε ότι αποδέχεστε στο σύνολο της Πολιτικής απορρήτου, χρήσης, Cookies και το σύνολο τον διευκρινίσεων, όπως αυτες φαίνονται στο <b><font color="#fc3565">https://alexandroshub.github.io/about </font></b>.
-		<br>Το περιεχόμενο, η εμφάνιση και η ροή του site και του blog αλλάζει συνεχώς (δημιουργείται ή ανανεώνεται ή διαγράφεται). Περιεχόμενο που δεν είναι πλέον προσβάσιμο, συνήθως διαγράφεται ορίστηκα και δεν μπορεί να ανακτηθεί. <a href=" https://alexispapy.tumblr.com/post/633473297550557184/how-to-revisit-old-website-data" title="OTR: How to revisit old website data">How to revisit old website data</a>
-            
-            Το περιεχόμενο και η πρόσβαση στο site ήταν είναι και θα παραμείνει ελεύθερη και δωρεάν αν θέλεις να το υποστηρίξεις κάνε κλικ εδώ: <a href=" https://www.patreon.com/user/creators?u=7495321" title="patreon">support</a>. To alexandroshub διατηρεί το δικαίωμα να διαγράψει μερικώς ή ολικώς, για οποιοδήποτε ή χωρίς λόγο και χωρίς προηγούμενη ειδοποίηση, οτιδήποτε έχει δημοσιευτεί, χωρίς κανένα περιορισμό.            
-            
-<h6>Γενικά</h6>
-            <p>Η παρούσα πολιτική απορρήτου εναρμονίζεται με το Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR) <a href="https://eur-lex.europa.eu/legal-content/EL/TXT/HTML/?uri=CELEX:32016R0679&from=EL" title="GDPR"><i class="fa fa-external-link"></i></a> και διέπει κάθε αλληλεπίδραση σας με την ιστοσελίδα μας. 
-              Με κάθε σας επίσκεψη σε ιστοσελίδα του domain https://alexandroshub.github.io/, δηλώνετε ότι αποδέχεστε στο σύνολο της Πολιτικής απορρήτου, χρήσης, Cookies και το σύνολο τον διευκρινίσεων, όπως αυτες φαίνονται στο https://alexandroshub.github.io/about. Τα παραπάνω ενδέχεται να τροποποιηθούν.
-<br>            
-            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Απο τον <a xmlns:cc="http://creativecommons.org/ns#" href="alexandroshub.github.io" property="cc:attributionName" rel="cc:attributionURL">Papaspyrou Alexandros</a> χορηγείται με άδεια<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Αναφορά Δημιουργού 4.0 Διεθνές </a>.
-        
-             
-<br> Οι παρακάτω πολιτικές και όροι ενδέχεται να τροποποιηθούν εάν αυτό κριθεί σκόπιμο η αναγκαίο, οποιαδήποτε στιγμή, με ή χωρίς προειδοποίηση, για οποιοδήποτε ή κανέναν λόγο. Εσείς από την πλευρά σας οφείλετε να τα διαβάζετε σε κάθε σας επίσκεψη.  
-              </p>
-<h6>Προσωπικά Δεδομένα</h6>
-<p>
-Στο alexandroshub μια από τις κύριες προτεραιότητές μας είναι το απόρρητο των επισκεπτών μας.</p>
-
-   <span class="w3-large w3-center" style="background-color: #fc3565; color: white; display: inline-block; font-weight: bold; border-radius: 5px;"> Το alexandroshub δε συλλέγει και κατ' επέκταση δεν επεξεργάζεται τα προσωπικά σας δεδομένα. </span>
-<p>  Παρ' όλα αυτά υπάρχουν τρίτες υπηρεσίες στη σελίδα που μπορεί να το κάνουν.
-
-<h6>Συναίνεση</h6>
-<p>Χρησιμοποιώντας τον ιστότοπό μας, συναινείτε στην Πολιτική Απορρήτου και συμφωνείτε με τους όρους της.</p>
-<p>
-<br><b>Συλλογή έπειτα από συναίνεση: </b> 
-Η κατηγορία αυτή περιλαμβάνει δεδομένα όπως το όνομά σας ή κάποιο ψευδώνυμο, τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας και κάθε πληροφορία που παρέχετε μέσω του συστήματος σχολιασμού ή της φόρμας επικοινωνίας. Για τη συλλογή των δεδομένων αυτών είναι απαραίτητη η συναίνεση από μέρους σας, δηλαδή χρειάζεται να πραγματοποιήσετε κάποια εισαγωγή στοιχείων ή επιλογή ενός σχετικού πλαισίου ελέγχου.
-
-<br><br><b>Αρχεία καταγραφής</b>
-Το alexandroshub ακολουθεί μια τυπική διαδικασία χρήσης αρχείων καταγραφής. Αυτά τα αρχεία καταγράφουν επισκέπτες όταν επισκέπτονται ιστότοπους. Όλες οι εταιρείες φιλοξενίας το κάνουν αυτό.
-<br>
-Οι πληροφορίες που συλλέγονται από αρχεία καταγραφής περιλαμβάνουν διευθύνσεις πρωτοκόλλου Διαδικτύου (IP), τύπο προγράμματος περιήγησης, πάροχο υπηρεσιών Internet (ISP), σφραγίδα ημερομηνίας και ώρας, και σελίδες παραπομπής/εξόδου. Αυτά δεν συνδέονται με πληροφορίες που είναι προσωπικά αναγνωρίσιμες. Ο σκοπός των πληροφοριών είναι η ανάλυση τάσεων και η διαχείριση του ιστότοπου.
-
-
-<br><br><b> Πληροφορίες που συλλέγουμε </b>
-Τα προσωπικά στοιχεία που σας ζητούνται να δώσετε και οι λόγοι για τους οποίους σας ζητείται να τα παράσχετε, θα γίνουν σαφείς στο σημείο που σας ζητάμε να παράσχετε τα προσωπικά σας στοιχεία. Εάν επικοινωνήσετε απευθείας μαζί μας, ενδέχεται να λάβουμε πρόσθετες πληροφορίες σχετικά με εσάς, όπως το όνομά σας, τη διεύθυνση ηλεκτρονικού ταχυδρομείου, τα περιεχόμενα του μηνύματος ή/και συνημμένα που μπορείτε να μας στείλετε και οποιαδήποτε άλλη πληροφορία μπορείτε να επιλέξετε.
-
-<br><br><b>Πώς χρησιμοποιούμε τις πληροφορίες σας:</b>
-Χρησιμοποιούμε τις πληροφορίες που συλλέγουμε με διάφορους τρόπους, μεταξύ των οποίων Παροχή, λειτουργία και συντήρηση του ιστότοπού μας
-Επικοινωνία μαζί σας
-Διαχείριση και προστασία από ανεπιθύμητο περιεχόμενο
-
-
-<br><br><b>Δικαιώματα που έχετε επί των δεδομένων σας: </b>
-Εάν σχολιάσατε στην ιστοσελίδα μας ή επικοινωνήσατε μαζί μας μέσω της φόρμας, μπορείτε να ζητήσετε ένα αρχείο με τα προσωπικά σας δεδομένα που διατηρούμε (αν υπάρχουν). Μπορείτε επίσης να αιτηθείτε τη διαγραφή των δεδομένων σας. Αυτό δεν περιλαμβάνει δεδομένα που κρατάμε για λόγους διαχείρισης ή/και ασφάλειας.
-<br><br>
-<b>Με ποιον μοιραζόμαστε τα δεδομένα σας: </b>Με κανέναν, ποτέ και για κανένα λόγο.
-
-<h6> Εάν έχετε επιπλέον ερωτήσεις ή χρειάζεστε περισσότερες πληροφορίες σχετικά με την Πολιτική Απορρήτου μας, μη διστάσετε να επικοινωνήσετε μαζί μας. 
-</h6>
-
-
-<p>
-Αυτή η Πολιτική Απορρήτου ισχύει μόνο για τις διαδικτυακές μας δραστηριότητες και για τους επισκέπτες του ιστότοπού μας όσον αφορά τις πληροφορίες που μοιράστηκαν ή/και συλλέγουν στο alexandroshub. Αυτή η πολιτική δεν ισχύει για πληροφορίες που συλλέγονται εκτός σύνδεσης ή μέσω καναλιών διαφορετικών από αυτόν τον ιστότοπο.
-</p>
-
-<h6>GDPR Δικαιώματα Προστασίας Δεδομένων</h6>
-<p>Θα θέλαμε να βεβαιωθούμε ότι έχετε πλήρη γνώση όλων των δικαιωμάτων προστασίας δεδομένων σας. Κάθε χρήστης δικαιούται τα ακόλουθα:
-
-Δικαίωμα πρόσβασης - Έχετε το δικαίωμα να ζητήσετε αντίγραφα των προσωπικών σας δεδομένων.
-Δικαίωμα διόρθωσης - Έχετε το δικαίωμα να ζητήσετε να διορθώσουμε οποιαδήποτε πληροφορία πιστεύετε ότι είναι ανακριβής. Έχετε επίσης το δικαίωμα να ζητήσετε να συμπληρώσουμε τις πληροφορίες που πιστεύετε ότι είναι ελλιπείς.
-Δικαίωμα διαγραφής - Έχετε το δικαίωμα να ζητήσετε να διαγράψουμε τα προσωπικά σας δεδομένα, υπό ορισμένες προϋποθέσεις.
-Το δικαίωμα περιορισμού της επεξεργασίας - Έχετε το δικαίωμα να ζητήσετε να περιορίσουμε την επεξεργασία των προσωπικών σας δεδομένων, υπό ορισμένες προϋποθέσεις.
-Το δικαίωμα αντίρρησης στην επεξεργασία - Έχετε το δικαίωμα να αντιταχθείτε στην επεξεργασία των προσωπικών σας δεδομένων από εμάς, υπό ορισμένες προϋποθέσεις.
-Το δικαίωμα στη φορητότητα δεδομένων - Έχετε το δικαίωμα να ζητήσετε να μεταφέρουμε τα δεδομένα που έχουμε συλλέξει σε άλλον οργανισμό ή απευθείας σε εσάς, υπό ορισμένες προϋποθέσεις. Εάν υποβάλετε ένα αίτημα, έχουμε ένα μήνα για να σας απαντήσουμε. Εάν θέλετε να ασκήσετε κάποιο από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας.
-</p>
-<h6>Πληροφορίες για παιδιά</h6>
-<p>
-Ένα άλλο μέρος της προτεραιότητάς μας είναι η προστασία των παιδιών κατά τη χρήση του Διαδικτύου. Ενθαρρύνουμε τους γονείς και τους κηδεμόνες να παρατηρούν, να συμμετέχουν ή/και να παρακολουθούν και να καθοδηγούν τη διαδικτυακή τους δραστηριότητα. Το alexandroshub.github.io δε συλλέγει εν γνώσει του καμία προσωπική πληροφορία από παιδιά ηλικίας κάτω των 13 ετών. Εάν νομίζετε ότι το παιδί σας παρείχε τέτοιου είδους πληροφορίες στον ιστότοπό μας, σας ενθαρρύνουμε να επικοινωνήσετε μαζί μας αμέσως και θα καταβάλουμε κάθε δυνατή προσπάθεια για να αφαιρέσουμε άμεσα τέτοιες πληροφορίες από τα αρχεία μας.
-
-</p>
-
- <h6>ΟΡΟΙ ΧΡΗΣΗΣ PLUS περιεχομένου  (robodayblog, ap_OffTheRecord, plusPodcast κλπ.)</h6>
-             
-            
-   <p>To robodayblog διατηρεί το δικαίωμα να διαγράψει μερικώς ή ολικώς, για οποιοδήποτε ή χωρίς λόγο και χωρίς προηγούμενη ειδοποίηση, οτιδήποτε έχει δημοσιευτεί, χωρίς κανένα περιορισμό. Δημοσιεύματα που περιέχονται στο robodayblog παρέχονται «Ως έχουν» χωρίς καμμίας μορφής εγγύηση για την ορθότητα, η έγκριση για συγκεκριμένη χρήση η προορισμό. Το robodayblog δεν έχει καμμία ευθύνη για την ακρίβεια η πληρότητα των δημοσιευμάτων. Το robodayblog περιέχει συμβουλές, γνώμες, δηλώσεις από διάφορες πηγές. Το robodayblog δεν εκπροσωπεί, αντιπροσωπεύει, ή υιοθετεί ή αποδέχεται ή πιστοποιεί την ακρίβεια ή πιστότητα οποιασδήποτε συμβουλής, γνώμης, δηλώσεως ανεξαρτήτως προέλευσης η πηγής. Η αποδοχή ή/και χρήση συμβουλών, γνωμών, δηλώσεων η οποιασδήποτε άλλης πληροφορίας που δημοσιεύεται στο robodayblog αποτελεί αποκλειστική ευθύνη του ΧΡΗΣΤΗ. Σε περίπτωση που ο ΧΡΗΣΤΗΣ δεν είναι ευχαριστημένος απο τις δυνατότητες, λειτουργίες και δημοσιεύματα στο robodayblog είναι στην αποκλειστική του ευχαίρια να διακόψει τη χρήση του robodayblog . To robodayblog περιέχει και αναφορές σε δικτυακούς τόπους τρίτων. Οι δικτυακοί τόποι τρίτων δεν είναι κάτω απο τον έλεγχο του robodayblog και το robodayblog δεν φέρει καμμία ευθύνη για δημοσιεύματα ή άλλες παραπομπές που αυτοί οι δικτυακοί τόποι περιλαμβάνουν. ΧΡΗΣΤΗΣ είναι οποιοδήποτε ενήλικο φυσικό πρόσωπο που με τη βοήθεια Ηλεκτρονικού Υπολογιστή συνδέεται μέσω Internet και προβάλλει στην οθόνη του τα κείμενα και το περιεχόμενο του robodayblog, ανεξάρτητα αν έχει κάποιο λογαριασμό είτε είναι απλά ανώνυμος επισκέπτης. </p>         
-            
-          
- <h6>Cookies και Web Beacons </h6>
-<p>Όπως κάθε άλλος ιστότοπος, το alexandroshub χρησιμοποιεί «cookies».
-
-
-
-      <p>Τα cookies είναι μικρά αρχεία κειμένου που περιέχουν πληροφορίες που αποθηκεύονται στον web browser του υπολογιστή σας κατά την περιήγησή στο internet και μπορούν να αφαιρεθούν ανά πάσα στιγμή. Οι πληροφορίες αυτές μπορεί να αφορούν εσάς, τις προτιμήσεις σας, τη συσκευή σας ή να χρησιμοποιηθούν ώστε η τοποθεσία να λειτουργεί όπως αναμένετε. Τα cookies συνήθως δεν σας ταυτοποιούν απευθείας, αλλά μπορούν να σας παρέχουν μια πιο εξατομικευμένη διαδικτυακή εμπειρία. </p>
-            <p>Μπορείτε να αποκλείσετε όλα τα cookie ανεξαρτήτως ιστοσελίδας, πηγαίνοντας στις ρυθμίσεις περιεχομένου του browser σας και επιλέγοντας να μην επιτρέπονται. Μία άλλη εύκολη λύση είναι να ανοίγετε τις σελίδες σας σε "Ανώνυμη περιήγηση", έτσι τα cookie που αποθηκεύονται στον υπολογιστή σας, θα διαγραφούν μόλις κλείσετε την καρτέλα.</p><h6>
-            <a href="https://support.google.com/chrome/answer/95647?hl=el" title="Chrome">Chrome</a>  /  
-            <a href="https://support.microsoft.com/el-gr/help/17442/windows-internet-explorer-delete-manage-cookies#ie=ie-11" title="Internet Explorer">Internet Explorer</a>  /  
-            <a href="https://support.mozilla.org/el/kb/pws-energopoiw-th-leitoyrgia-do-not-track" title="mozilla">mozilla</a>  /  
-            <a href="https://support.apple.com/el-gr/guide/safari/sfri11471/mac" title="safari">safari</a> </h6>
-            <p>
-              Για ζητήματα ιδιωτικότητας  <a href="#" title="link">διαβαστε εδω</a>. 
-              Προτείνεται η χρήση του <a href="https://www.torproject.org/" title="TOR">TOR</a> σε <a href="https://tails.boum.org/" title="tails">tails</a> ή <a href="https://www.kali.org/" title="kali">kali</a>.
-            </p>
-            
-            
-</p>
-                 
-<h6>ΑΠΟΠΟΙΗΣΗ ΕΥΘΥΝΩΝ</h6>
-	<p>Ο διαδικτυακός αυτός χώρος εξελίσσεται και συντηρείται αποκλειστικά από τον Alexandro Papaspyrou. Γίνεται κάθε προσπάθεια ώστε να παρέχονται χωρίς διακοπή όλες οι σελίδες, οι υπηρεσίες, οι επιλογές και τα περιεχόμενα αλλά δεν μπορούμε να εγγυηθούμε ότι δεν θα υπάρξουν αστοχίες και σφάλματα. Λαμβάνουμε όλα τα απαραίτητα μέτρα ώστε να μην υπάρξουν ιοί η άλλο κακόβουλο λογισμικό στην ιστοσελίδα ή στους εξυπηρετητές (servers) που την φιλοξενούν, αλλά δεν μπορούμε να εγγυηθούμε τα αποτελέσματα. Οι δημιουργοί της παρούσας ιστοσελίδας διατηρούν το δικαίωμα να διακόψουν προσωρινά ή μόνιμα τη λειτουργία της, για οποιονδήποτε λόγο. Σε αυτή την περίπτωση δεν φέρουν καμία ευθύνη για τυχόν απώλεια δεδομένων, κειμένων, φωτογραφιών κλπ. που έχουν αναρτηθεί από κάποιον χρήστη. Το site, μεταξύ άλλων, μπορεί να υποστηρίζει συχνές ερωτήσεις, δυνατότητα επικοινωνίας, διαφημίσεις, banners, δημοσκοπήσεις και μηνύματα σε σημεία που επιλέγουν οι διαχειριστές του.
-<!-- Το Site ελέγχεται καθημερινά για ιούς και κακόβουλο λογισμικό από https://www.virustotal.com , https://quttera.com ,  https://sitecheck.sucuri.net , http://alexandroshub.github.io.cutestat.com. Το περιεχόμενο και η πρόσβαση στο site ήταν, είναι και θα παραμείνει δωρεάν. Όλο το site είναι 100% HTML γραμμένο με λεπτομέρεια και αγάπη . https://www.w3schools.com/ Με online εμπειρία περισσότερο από 6 χρόνια. -->
-            </p>
-            <div class="w3-panel w3-leftbar w3-light-grey">
-              <p><i>Παρόλα αυτά, δε δίνουμε την παραμικρή εγγύηση αν κάτι δεν σας δουλέψει καλά ή δημιουργήσει οποιοδήποτε άλλο πρόβλημα στον υπολογιστή σας. Δε συλλέγουμε εν γνώσει μας δεδομένα ανήλικων ατόμων και δε φέρουμε καμία ευθύνη για τον προσδιορισμό της ηλικίας των επισκεπτών μας. Αν είστε κάτω των 18 ετών, παρακαλούμε να έχετε τη συγκατάθεση κάποιου γονέα πριν επισκεφθείτε την ιστοσελίδα μας.</i></p>
-           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-  <h6>Εξωτερικοί σύνδεσμοι / Ενσωματωμένο περιεχόμενο</h6>
-    <p>Κάθε σύνδεσμος που παραπέμπει σε εξωτερική πηγή (πέραν του domain https://alexandroshub.github.io/), βρίσκεται έξω από τον έλεγχό μας και είναι στη διακριτική σας ευχέρεια το αν και πώς θα μεταβείτε σε αυτούς. Εμείς από την πλευρά μας φροντίζουμε ώστε να μην υπάρχουν παραπομπές σε ιστοσελίδες αμφιβόλου ποιότητας ή/και ηθικής. Η ιστοσελίδα μας ενδέχεται να περιλαμβάνει ενσωματωμένο περιεχόμενο, όπως βίντεο, από άλλους ιστότοπους. Το ενσωματωμένο περιεχόμενο συμπεριφέρεται ακριβώς σαν να έχετε επισκεφθεί τον αντίστοιχο ιστότοπο και δεν έχουμε κανέναν έλεγχο ως προς την όποια πολιτική απορρήτου εφαρμόζει ο ιστότοπος αυτός. Εμείς από την πλευρά μας προσπαθούμε να μη χρησιμοποιούμε περιεχόμενο από ιστότοπους αμφίβολης ποιότητας και πρακτικών.</p>
-         
-         
-         
-<h6>System requirements</h6>
-<p>
-
-            <p>
-              <b>Audio/Video Chat</b><br>
-              iOS users must use Safari Browser on mobile for audio/video chat
-              <br>Android users must use Chrome Browser on mobile for audio/video chat
-              <br><b>Minimum System requirements</b><br>
-              2 GB RAM<br>
-              2 GB Hard Disk<br>
-              4Mbps or 400Kbps Broadband speed<br>
-              Dual Core Processor<br>
-              Web Browser: Chrome Or Safari OR Firefox<br>
-              Keyboard<br>
-              Mouse<br>
-              Operating System: Windows XP | Windows 10<br>
-              Primary Monitor Resolution: 1280 x 720<br>
-              Graphic Memory: 64MB<br>
-              <br><b>Preferred System requirements</b><br>
-              6 GB RAM<br>
-              4 GB Hard Disk<br>
-              8Mbps or 800Kbps Broadband speed<br>
-              Dual Core Processor<br>
-              Web browser: Chrome OR Safari OR Firefox<br>
-              Keyboard<br>
-              Mouse<br>
-              Camera<br>
-              Microphone<br>
-              Speakers (or Headphones)<br>
-              Operating System: Windows 10 or Newer<br>
-              Primary Monitor Resolution: 1366 x 768<br>
-              Display Type: HD Graphics<br>
-              Graphic Memory: 64MB
-            </p>
-            
-     
-
-<footer class="w3-container w3-padding-12 w3-center">
-               
-        <p class="w3-medium">
-          <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-          <i class="fa fa-creative-commons"></i> AlexandrosHub | <a href="https://alexandroshub.github.io/about"style="text-decoration: none" target="_blank" class="w3-hover-text-blue">Privacy Statement & Terms of Use</a> | <a href="https://alexandroshub.github.io/contact" style="text-decoration: none" target="_blank" class="w3-hover-text-blue">Contact</a>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-badge">Legal · Site Info</div>
+        <h1>Terms of Use<br><span>& Site Information</span></h1>
+        <p class="hero-meta">
+            Domain: <span>alexandroshub.github.io</span> &nbsp;·&nbsp;
+            Last updated: <span>February 2026</span> &nbsp;·&nbsp;
+            v3.0
         </p>
-        <!-- End footer -->
-      </footer>
+
+        <!-- Privacy Policy CTA - Εμφανές button πάνω πάνω -->
+        <a href="https://alexandroshub.github.io/privacy.html" class="privacy-cta">
+            <i class="fas fa-shield-halved"></i>
+            Privacy Policy
+            <i class="fas fa-arrow-right" style="font-size:11px;"></i>
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <div class="toc-title"><i class="fas fa-list"></i> Πίνακας Περιεχομένων</div>
+            <div class="toc-grid">
+                <a href="#general">Γενικά & Αποδοχή Όρων</a>
+                <a href="#content">Περιεχόμενο & Πνευματικά Δικαιώματα</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#personal-data">Προσωπικά Δεδομένα</a>
+                <a href="#external">Εξωτερικοί Σύνδεσμοι</a>
+                <a href="#affiliate">Affiliate Links</a>
+                <a href="#disclaimer">Αποποίηση Ευθυνών</a>
+                <a href="#children">Παιδιά & Ηλικία</a>
+                <a href="#gdpr">GDPR Δικαιώματα</a>
+                <a href="#platforms">Plus & Platforms</a>
+                <a href="#support">Υποστήριξη του Site</a>
+                <a href="#sysreq">System Requirements</a>
+            </div>
+        </div>
+
+        <!-- ========== SECTION: GENERAL ========== -->
+        <section id="general">
+            <h2><i class="fas fa-file-contract" style="font-size:20px;"></i> Γενικά & Αποδοχή Όρων</h2>
+            <p>
+                Με κάθε επίσκεψη σε οποιαδήποτε σελίδα του domain <strong>alexandroshub.github.io</strong>,
+                δηλώνετε ότι διαβάσατε και αποδέχεστε στο σύνολό τους τους παρόντες Όρους Χρήσης,
+                καθώς και την <a href="https://alexandroshub.github.io/privacy.html">Πολιτική Απορρήτου</a>.
+            </p>
+            <p>
+                Το περιεχόμενο, η εμφάνιση και η δομή του site εξελίσσεται και ανανεώνεται διαρκώς.
+                Περιεχόμενο που δεν είναι πλέον προσβάσιμο συνήθως έχει διαγραφεί και δεν μπορεί να ανακτηθεί.
+                Το alexandroshub διατηρεί το δικαίωμα να τροποποιεί ή να διαγράφει οποιοδήποτε περιεχόμενο,
+                χωρίς προηγούμενη ειδοποίηση.
+            </p>
+            <div class="highlight-box">
+                <strong>✅ Πρόσβαση:</strong> Το περιεχόμενο του site ήταν, είναι και θα παραμείνει
+                ελεύθερο και δωρεάν για όλους.
+            </div>
+        </section>
+
+        <!-- ========== SECTION: CONTENT & COPYRIGHT ========== -->
+        <section id="content">
+            <h2><i class="fas fa-copyright" style="font-size:20px;"></i> Περιεχόμενο & Πνευματικά Δικαιώματα</h2>
+            <p>
+                Το σύνολο του πρωτότυπου περιεχομένου (κείμενα, κώδικας, σχέδια, projects, εικόνες)
+                που δημιουργήθηκε από τον <strong>Alexandros Papaspyrou</strong> προστατεύεται από την
+                άδεια Creative Commons:
+            </p>
+
+            <div class="cc-box">
+                <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+                    <img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons License">
+                </a>
+                <div class="cc-text">
+                    Αυτή η εργασία άδειοδοτείται βάσει
+                    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
+                    Μπορείτε να τη χρησιμοποιήσετε, να την τροποποιήσετε και να τη μοιραστείτε,
+                    <strong>εφόσον αναφέρετε τον δημιουργό</strong>.
+                </div>
+            </div>
+
+            <h3>Τι επιτρέπεται:</h3>
+            <ul>
+                <li>✅ Αναφορά και link στο περιεχόμενο με <strong>απόδοση πίστωσης</strong></li>
+                <li>✅ Χρήση κώδικα για <strong>προσωπικά / εκπαιδευτικά projects</strong></li>
+                <li>✅ Fork και τροποποίηση, εφόσον δηλώνεται η αρχική πηγή</li>
+            </ul>
+            <h3>Τι ΔΕΝ επιτρέπεται:</h3>
+            <ul>
+                <li>❌ Αντιγραφή περιεχομένου χωρίς απόδοση πίστωσης</li>
+                <li>❌ Εμπορική χρήση χωρίς γραπτή άδεια</li>
+                <li>❌ Παρουσίαση του περιεχομένου ως δικό σας</li>
+            </ul>
+        </section>
+
+        <!-- ========== SECTION: COOKIES ========== -->
+        <section id="cookies">
+            <h2><i class="fas fa-cookie-bite" style="font-size:20px;"></i> Cookies</h2>
+            <p>
+                Όπως κάθε σύγχρονος ιστότοπος, το alexandroshub χρησιμοποιεί cookies — μικρά αρχεία κειμένου
+                που αποθηκεύονται στον browser σας. Τα cookies βοηθούν στη βελτίωση της εμπειρίας
+                πλοήγησης και στη συλλογή ανώνυμων στατιστικών.
+            </p>
+
+            <table>
+                <thead>
+                    <tr><th>Τύπος</th><th>Σκοπός</th><th>Διάρκεια</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Essential</td><td>Βασική λειτουργία του site</td><td>Session</td></tr>
+                    <tr><td>Analytics</td><td>Google Analytics (ανωνυμοποιημένα)</td><td>2 χρόνια</td></tr>
+                    <tr><td>Affiliate</td><td>Παρακολούθηση referrals (affiliate links)</td><td>24h – 90 ημέρες</td></tr>
+                    <tr><td>Preferences</td><td>Αποθήκευση προτιμήσεων χρήστη</td><td>1 χρόνος</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Πώς να διαχειριστείτε τα cookies:</h3>
+            <ul>
+                <li><a href="https://support.google.com/chrome/answer/95647?hl=el" target="_blank">Chrome</a></li>
+                <li><a href="https://support.mozilla.org/el/kb/pws-energopoiw-th-leitoyrgia-do-not-track" target="_blank">Firefox</a></li>
+                <li><a href="https://support.apple.com/el-gr/guide/safari/sfri11471/mac" target="_blank">Safari</a></li>
+                <li><a href="https://support.microsoft.com/el-gr/help/17442" target="_blank">Edge / Internet Explorer</a></li>
+                <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out</a></li>
+            </ul>
+            <p>Για λεπτομερείς πληροφορίες σχετικά με την επεξεργασία δεδομένων, δείτε την
+                <a href="https://alexandroshub.github.io/privacy.html#cookies">Πολιτική Απορρήτου → Cookies</a>.
+            </p>
+        </section>
+
+        <!-- ========== SECTION: PERSONAL DATA ========== -->
+        <section id="personal-data">
+            <h2><i class="fas fa-user-shield" style="font-size:20px;"></i> Προσωπικά Δεδομένα</h2>
+            <p>
+                Το alexandroshub <strong>δεν συλλέγει</strong> άμεσα προσωπικά δεδομένα από επισκέπτες.
+                Παρ' όλα αυτά, τρίτες υπηρεσίες που ενσωματώνονται στο site (Google Analytics, GitHub Pages)
+                ενδέχεται να συλλέγουν ανώνυμα στοιχεία χρήσης.
+            </p>
+            <p>
+                Εάν επικοινωνήσετε μαζί μας μέσω email ή φόρμας επικοινωνίας, τα στοιχεία σας
+                (όνομα, email, μήνυμα) χρησιμοποιούνται αποκλειστικά για την απάντηση στο αίτημά σας
+                και <strong>δεν μοιράζονται με τρίτους, ποτέ</strong>.
+            </p>
+            <div class="info-box">
+                <strong>🔒 Full privacy details:</strong> Για αναλυτική περιγραφή δεδομένων, cookies,
+                τρίτων υπηρεσιών και δικαιωμάτων GDPR, δείτε την
+                <a href="https://alexandroshub.github.io/privacy.html">Πολιτική Απορρήτου</a>.
+            </div>
+        </section>
+
+        <!-- ========== SECTION: EXTERNAL LINKS ========== -->
+        <section id="external">
+            <h2><i class="fas fa-external-link-alt" style="font-size:20px;"></i> Εξωτερικοί Σύνδεσμοι & Ενσωματωμένο Περιεχόμενο</h2>
+            <p>
+                Το site περιέχει συνδέσμους προς εξωτερικές πηγές (GitHub, YouTube, Dropbox, Spotify κ.ά.).
+                Αυτοί οι ιστότοποι βρίσκονται εκτός ελέγχου μας — η επίσκεψή τους γίνεται με
+                δική σας ευθύνη.
+            </p>
+            <p>
+                Το ενσωματωμένο περιεχόμενο (βίντεο YouTube, podcasts) συμπεριφέρεται σαν να επισκέπτεστε
+                απευθείας τον αντίστοιχο ιστότοπο και υπόκειται στους δικούς του όρους απορρήτου.
+            </p>
+        </section>
+
+        <!-- ========== SECTION: AFFILIATE ========== -->
+        <section id="affiliate">
+            <h2><i class="fas fa-link" style="font-size:20px;"></i> Affiliate Links</h2>
+            <div class="warning-box">
+                <strong>💰 Disclosure (FTC / GDPR Required):</strong> Ορισμένοι σύνδεσμοι σε αυτό το site
+                είναι affiliate links. Αν αγοράσετε κάτι μέσω αυτών, ενδέχεται να λάβω μια μικρή
+                προμήθεια, <strong>χωρίς κανένα επιπλέον κόστος για εσάς</strong>.
+            </div>
+            <ul>
+                <li>✅ Προτείνω μόνο προϊόντα και υπηρεσίες που <strong>χρησιμοποιώ ή εμπιστεύομαι</strong> προσωπικά</li>
+                <li>✅ Οι γνώμες μου παραμένουν <strong>ανεξάρτητες</strong> από τυχόν affiliate σχέσεις</li>
+                <li>✅ Τα affiliate links είναι πάντα σαφώς δηλωμένα</li>
+            </ul>
+            <p>Προγράμματα affiliate στα οποία συμμετέχω: Amazon Associates, AliExpress, Digital Ocean, και άλλες tech υπηρεσίες.</p>
+        </section>
+
+        <!-- ========== SECTION: DISCLAIMER ========== -->
+        <section id="disclaimer">
+            <h2><i class="fas fa-triangle-exclamation" style="font-size:20px;"></i> Αποποίηση Ευθυνών</h2>
+            <p>
+                Ο ιστότοπος αυτός συντηρείται αποκλειστικά από τον <strong>Alexandros Papaspyrou</strong>
+                σε προσωπικό επίπεδο. Καταβάλλεται κάθε δυνατή προσπάθεια για να παρέχεται αδιάλειπτη
+                και ποιοτική πρόσβαση, αλλά δεν παρέχεται καμία εγγύηση ως προς:
+            </p>
+            <ul>
+                <li>Συνεχή, αδιάλειπτη διαθεσιμότητα του site</li>
+                <li>Απόλυτη απουσία λαθών ή τεχνικών προβλημάτων</li>
+                <li>Ακρίβεια πληροφοριών που παρέχονται από τρίτα μέρη</li>
+                <li>Αποτελέσματα από τη χρήση tutorials, κώδικα ή οδηγών</li>
+            </ul>
+            <div class="warning-box">
+                Το site, μεταξύ άλλων, μπορεί να περιέχει διαφημίσεις, affiliate links και banners.
+                Σε καμία περίπτωση δεν φέρουμε ευθύνη για τυχόν απώλεια δεδομένων ή βλάβη
+                στη συσκευή σας.
+            </div>
+            <p>
+                Οι δημιουργοί διατηρούν το δικαίωμα να διακόψουν προσωρινά ή μόνιμα τη λειτουργία
+                του site, για οποιονδήποτε λόγο.
+            </p>
+        </section>
+
+        <!-- ========== SECTION: CHILDREN ========== -->
+        <section id="children">
+            <h2><i class="fas fa-child" style="font-size:20px;"></i> Παιδιά & Ηλικία</h2>
+            <p>
+                Το alexandroshub.github.io δεν απευθύνεται σε άτομα κάτω των <strong>16 ετών</strong>
+                (σύμφωνα με το GDPR). Δεν συλλέγουμε εν γνώσει μας δεδομένα ανηλίκων.
+            </p>
+            <p>
+                Αν είστε κάτω των 16, παρακαλούμε να έχετε τη συγκατάθεση γονέα ή κηδεμόνα.
+                Γονείς που πιστεύουν ότι ο ανήλικος παρείχε δεδομένα στο site, παρακαλούνται
+                να επικοινωνήσουν άμεσα μαζί μας.
+            </p>
+        </section>
+
+        <!-- ========== SECTION: GDPR ========== -->
+        <section id="gdpr">
+            <h2><i class="fas fa-scale-balanced" style="font-size:20px;"></i> GDPR — Δικαιώματα Χρηστών</h2>
+            <p>
+                Εναρμονιζόμαστε με τον Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR).
+                Κάθε χρήστης από τον ΕΟΧ έχει τα εξής δικαιώματα:
+            </p>
+            <table>
+                <thead><tr><th>Δικαίωμα</th><th>Τι σημαίνει</th></tr></thead>
+                <tbody>
+                    <tr><td>Πρόσβαση</td><td>Αίτηση αντιγράφου των δεδομένων σας</td></tr>
+                    <tr><td>Διόρθωση</td><td>Αίτηση διόρθωσης ανακριβών δεδομένων</td></tr>
+                    <tr><td>Διαγραφή</td><td>«Δικαίωμα στη λήθη» — αίτηση διαγραφής</td></tr>
+                    <tr><td>Περιορισμός</td><td>Περιορισμός επεξεργασίας δεδομένων</td></tr>
+                    <tr><td>Φορητότητα</td><td>Λήψη δεδομένων σε machine-readable format</td></tr>
+                    <tr><td>Αντίρρηση</td><td>Αντίρρηση στην επεξεργασία</td></tr>
+                </tbody>
+            </table>
+            <p>
+                Για να ασκήσετε οποιοδήποτε δικαίωμα, επικοινωνήστε:
+                <a href="mailto:alexandroshub@protonmail.com">alexandroshub@protonmail.com</a>
+                ή
+                <a href="mailto:a-papaspyrou@outlook.com.gr">a-papaspyrou@outlook.com.gr</a>.
+                Απαντάμε εντός <strong>30 ημερών</strong>.
+            </p>
+        </section>
+
+        <!-- ========== SECTION: PLATFORMS ========== -->
+        <section id="platforms">
+            <h2><i class="fas fa-layer-group" style="font-size:20px;"></i> Plus & Platforms (robodayblog, OTR, Podcast κ.ά.)</h2>
+            <p>
+                Επιπλέον πλατφόρμες που συνδέονται με το alexandroshub (robodayblog, ap_OffTheRecord,
+                plusPodcast και άλλες) διατηρούν το δικαίωμα να τροποποιούν ή να διαγράφουν το
+                περιεχόμενό τους ανά πάσα στιγμή, χωρίς προηγούμενη ειδοποίηση.
+            </p>
+            <ul>
+                <li>Τα δημοσιεύματα παρέχονται «ως έχουν» — χωρίς εγγύηση ορθότητας</li>
+                <li>Συμβουλές, γνώμες και δηλώσεις τρίτων δεν αντιπροσωπεύουν τις απόψεις μας</li>
+                <li>Η αποδοχή πληροφοριών και συμβουλών αποτελεί ευθύνη του χρήστη</li>
+                <li>Σύνδεσμοι σε τρίτα sites δεν υπόκεινται στον έλεγχό μας</li>
+            </ul>
+        </section>
+
+        <!-- ========== SECTION: SUPPORT ========== -->
+        <section id="support">
+            <h2><i class="fas fa-heart" style="font-size:20px;"></i> Υποστήριξη του Site</h2>
+            <p>
+                Το site δημιουργήθηκε και συντηρείται με αγάπη για την τεχνολογία, εντελώς δωρεάν.
+                Αν το βρίσκεις χρήσιμο και θέλεις να το υποστηρίξεις, κάθε βοήθεια μετράει!
+            </p>
+
+            <div class="support-section">
+                <span class="support-icon">☕</span>
+                <div class="support-title">Support This Project</div>
+                <p class="support-desc">
+                    Αν σου άρεσε κάποιο project, tutorial ή απλά η δουλειά που γίνεται εδώ,
+                    μπορείς να με υποστηρίξεις με έναν καφέ ή μέσω Patreon.
+                    Βοηθάει να διατηρώ το site ζωντανό, να δημιουργώ νέο περιεχόμενο
+                    και να συνεχίζω να πειραματίζομαι! 🚀
+                </p>
+                <div class="support-btns">
+                    <a href="https://www.buymeacoffee.com/alexandroshub" target="_blank" class="btn-bmc">
+                        ☕ Buy Me a Coffee
+                    </a>
+                    <a href="https://www.patreon.com/user/creators?u=7495321" target="_blank" class="btn-patreon">
+                        <i class="fab fa-patreon"></i> Support on Patreon
+                    </a>
+                    <a href="https://alexandroshub.github.io/LV3#contact" class="btn-secondary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                </div>
+                <p class="support-note">
+                    🙏 Το 100% πηγαίνει στη συντήρηση, hosting και νέο περιεχόμενο.
+                </p>
+            </div>
+        </section>
+
+        <!-- ========== SECTION: SYSTEM REQUIREMENTS ========== -->
+        <section id="sysreq">
+            <h2><i class="fas fa-desktop" style="font-size:20px;"></i> System Requirements</h2>
+            <p>Για βέλτιστη εμπειρία πλοήγησης στο site:</p>
+
+            <div class="sysreq-grid">
+                <div class="sysreq-card">
+                    <h4><i class="fas fa-check-circle" style="color: var(--dim);"></i> Ελάχιστες Απαιτήσεις</h4>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> 4 GB RAM</div>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> Σύνδεση 5 Mbps+</div>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> Chrome, Firefox ή Safari</div>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> Windows 10 / macOS 10.15 / Ubuntu 20+</div>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> Ανάλυση 1280×720</div>
+                    <div class="sysreq-item"><i class="fas fa-circle"></i> JavaScript ενεργοποιημένο</div>
+                </div>
+                <div class="sysreq-card">
+                    <h4 class="recommended"><i class="fas fa-star"></i> Προτεινόμενες Απαιτήσεις</h4>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> 8 GB RAM+</div>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> Σύνδεση 25 Mbps+</div>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> Chrome ή Firefox (latest)</div>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> Windows 11 / macOS 14+ / Ubuntu 22+</div>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> Ανάλυση 1920×1080 (Full HD)</div>
+                    <div class="sysreq-item"><i class="fas fa-circle" style="color:var(--green);"></i> Ηχεία ή ακουστικά για media</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+                <strong>📱 Mobile:</strong> Το site είναι πλήρως responsive. Για mobile/tablet
+                χρησιμοποιήστε Chrome (Android) ή Safari (iOS) για βέλτιστη εμπειρία.
+            </div>
+        </section>
+
+    </div><!-- /container -->
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="page-footer-logo">AlphaPi</div>
+        <div class="page-footer-links">
+            <a href="https://alexandroshub.github.io">Home</a>
+            <span>|</span>
+            <a href="https://alexandroshub.github.io/privacy.html">Privacy Policy</a>
+            <span>|</span>
+            <a href="https://alexandroshub.github.io/LV3#contact">Contact</a>
+            <span>|</span>
+            <a href="https://www.instagram.com/alexandroshub/">Instagram</a>
+        </div>
+        <p style="color: var(--dim); font-size: 12px; margin-top: 20px;">
+            © 2026 Alexandros Papaspyrou · All Rights Reserved
+        </p>
+        <a href="https://alexandroshub.github.io" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </footer>
 
 </body>
-
 </html>
