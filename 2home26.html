@@ -1,0 +1,2620 @@
+<!--==========================================================================
+	  ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
+	  Ｃｏｎｎｅｃｔ Ｃｏｄｅ Ｃｒｅａｔｅ  🅐🅛🅔🅧🅐🅝🅓🅡🅞🅢 🅗🅤🅑 
+
+Updated: v4.2 22/02/2026 - New Features: Stats, CTA, Badges & Enhanced UX
+==========================================================================   -->
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaPi Automations | Alexandros Papaspyrou - IoT, Robotics & Smart Automation Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+    <link rel="apple-touch-icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj">
+    
+    <!-- SEO SIGNALS - Enhanced Meta Tags -->
+    <meta name="author" content="Alexandros Papaspyrou">
+    <meta name="description" content="AlphaPi Automations by Alexandros Papaspyrou. Expert in IoT projects, Arduino, Raspberry Pi automations, robotics, AI integration, and smart home solutions. Transform your ideas into automated reality.">
+    <meta name="keywords" content="IoT automation, Arduino projects, Raspberry Pi, smart home automation, robotics Greece, AI automation, home automation Athens, STEM education, swarm robotics, automation engineer, IoT developer, AlphaPi, Alexandros Papaspyrou">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- SEO SIGNAL: Home page link -->
+    <link rel="home" href="https://alexandroshub.github.io/">
+    
+    <!-- SEO SIGNAL: Canonical URL (without /index.html) -->
+    <link rel="canonical" href="https://alexandroshub.github.io/">
+    
+    <!-- SEO SIGNAL: Theme color -->
+    <meta name="theme-color" content="#1e9bff">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#1e9bff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0c">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexandroshub.github.io/">
+    <meta property="og:title" content="AlphaPi Automations | IoT, Robotics & Smart Automation Solutions">
+    <meta property="og:description" content="Expert automation solutions with Arduino, Raspberry Pi, and IoT. Transform your ideas into intelligent automated systems.">
+    <meta property="og:image" content="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj">
+    <meta property="og:locale" content="el_GR">
+    <meta property="og:locale:alternate" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://alexandroshub.github.io/">
+    <meta name="twitter:title" content="AlphaPi Automations | IoT & Smart Solutions">
+    <meta name="twitter:description" content="Expert automation solutions with Arduino, Raspberry Pi, and IoT. Transform your ideas into intelligent automated systems.">
+    <meta name="twitter:image" content="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj">
+    
+    <!-- SEO SIGNAL: Hreflang tags -->
+    <link rel="alternate" hreflang="el" href="https://alexandroshub.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://alexandroshub.github.io/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://alexandroshub.github.io/" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="geo.region" content="GR-I1">
+    <meta name="geo.placename" content="Athens">
+    <meta name="geo.position" content="37.9838;23.7275">
+    <meta name="ICBM" content="37.9838, 23.7275">
+    
+    <!-- SEO SIGNAL: Schema.org Markup - Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandros Papaspyrou",
+      "url": "https://alexandroshub.github.io/",
+      "image": "https://64.media.tumblr.com/5824d89c1e13809501948a5bd46e1d48/387eabfc55705902-1e/s1280x1920/f5506f672d711cd7aa68f7e094a6d0a9f0aa1ffb.pnj",
+      "sameAs": [
+        "https://www.linkedin.com/in/alexandrospapaspyrou",
+        "https://www.instagram.com/alexandroshub/",
+        "https://bio.link/alphapi"
+      ],
+      "jobTitle": "Technical Support Specialist & Automation Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AlphaPi Automations"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Athens",
+        "addressCountry": "GR"
+      },
+      "email": "a-papaspyrou@outlook.com.gr",
+      "telephone": "+306940548867"
+    }
+    </script>
+    
+    <!-- SEO SIGNAL: Schema.org Markup - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://alexandroshub.github.io/#website",
+      "name": "AlphaPi Automations",
+      "url": "https://alexandroshub.github.io/",
+      "description": "IoT projects, Arduino & Raspberry Pi automations, robotics, and smart home solutions",
+      "publisher": {
+        "@type": "Person",
+        "name": "Alexandros Papaspyrou"
+      }
+    }
+    </script>
+    
+    <!-- SEO SIGNAL: Schema.org Markup - WebPage (HOME PAGE SIGNAL) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://alexandroshub.github.io/#webpage",
+      "url": "https://alexandroshub.github.io/",
+      "name": "AlphaPi Automations - IoT, Robotics & Smart Solutions Home",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://alexandroshub.github.io/#website"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "IoT and Automation Solutions"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://alexandroshub.github.io/"
+        }]
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=Orbitron:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128580719-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-128580719-1');
+    </script>
+    
+    <style>
+        /* ========== CSS RESET & BASE ========== */
+        :root {
+            /* LIGHT MODE (default) */
+            --clr-primary: #2d2d30;
+            --clr-secondary: #1b2a4a;
+            --clr-accent1: #1e9bff;
+            --clr-accent2: #00d4aa;
+            --clr-accent-gradient: linear-gradient(90deg, var(--clr-accent1), var(--clr-accent2));
+            
+            --clr-dark: #0a0a0c;
+            --clr-light: #f8fafc;
+            --clr-text: #333333;
+            --clr-text-light: #777777;
+            --clr-white: #ffffff;
+            --clr-bg: #f8fafc;
+            --clr-card-bg: #ffffff;
+            --clr-hero-bg: linear-gradient(135deg, #0a122d 0%, #1b2a4a 50%, #2d2d30 100%);
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 5rem;
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-secondary: 'Poppins', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+            --font-tech: 'Orbitron', sans-serif;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+            
+            /* Shadows - Neumorphism */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+            --shadow-glow: 0 0 20px rgba(30, 155, 255, 0.3);
+            
+            /* Neumorphism shadows */
+            --neu-shadow: 
+                8px 8px 16px rgba(0, 0, 0, 0.1),
+                -8px -8px 16px rgba(255, 255, 255, 0.9);
+            --neu-shadow-inset: 
+                inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* DARK MODE */
+        [data-theme="dark"] {
+            --clr-bg: #0a0a0c;
+            --clr-card-bg: #1a1a22;
+            --clr-text: #e8e8e8;
+            --clr-text-light: #b0b0b0;
+            --clr-light: #0a0a0c;
+            --clr-white: #ffffff;
+            --clr-hero-bg: linear-gradient(135deg, #000000 0%, #0a0a0c 50%, #13131a 100%);
+            
+            /* Dark mode neumorphism - NO white highlight */
+            --neu-shadow: 
+                8px 8px 20px rgba(0, 0, 0, 0.6),
+                -8px -8px 20px rgba(30, 155, 255, 0.05);
+            --neu-shadow-inset: 
+                inset 4px 4px 12px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 12px rgba(30, 155, 255, 0.03);
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+        
+        /* Dark mode text overrides */
+        [data-theme="dark"] .card,
+        [data-theme="dark"] .project-card-content,
+        [data-theme="dark"] .blog-post-content,
+        [data-theme="dark"] .profile-content {
+            color: var(--clr-text);
+        }
+        
+        [data-theme="dark"] .card p,
+        [data-theme="dark"] .project-card-description,
+        [data-theme="dark"] .project-card-subtitle,
+        [data-theme="dark"] .blog-post-content p,
+        [data-theme="dark"] .lead,
+        [data-theme="dark"] .profile-content p {
+            color: var(--clr-text-light);
+        }
+        
+        [data-theme="dark"] .card h3,
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .project-card-title,
+        [data-theme="dark"] .blog-post-content h4,
+        [data-theme="dark"] #ah-posts .ah-title a {
+            color: var(--clr-text);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--clr-text);
+            background-color: var(--clr-bg);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            transition: background-color var(--transition-base), color var(--transition-base);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+        h4 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+        
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        a {
+            color: var(--clr-accent1);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        a:hover {
+            color: var(--clr-accent2);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 4vw, 2rem);
+        }
+        
+        .section {
+            padding: clamp(2rem, 8vw, 5rem) 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* ========== UTILITY CLASSES ========== */
+        .text-gradient {
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            border: none;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .btn-primary {
+            background: var(--clr-accent-gradient);
+            color: var(--clr-white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 155, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--clr-accent1);
+            border: 2px solid var(--clr-accent1);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--clr-accent1);
+            color: var(--clr-white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Neumorphism Card */
+        .card {
+            background: var(--clr-card-bg);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-md);
+            box-shadow: var(--neu-shadow);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(30, 155, 255, 0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        
+        /* ========== NAVBAR - SMALLER & CENTERED ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 12, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(30, 155, 255, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            min-height: 55px;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            gap: 3rem;
+        }
+        
+        .navbar-brand {
+            font-family: 'Audiowide', cursive;
+            font-size: clamp(1.5rem, 4vw, 1.85rem);
+            font-weight: 700;
+            color: var(--clr-white);
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        
+        .navbar-brand .gradient-text {
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(30, 155, 255, 0.5);
+        }
+        
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .navbar-list {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar-link {
+            color: var(--clr-white);
+            font-weight: 500;
+            padding: 0.4rem 0.85rem;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            display: block;
+            font-size: 0.95rem;
+        }
+        
+        .navbar-link:hover {
+            background: rgba(30, 155, 255, 0.2);
+            box-shadow: 0 0 15px rgba(30, 155, 255, 0.3);
+        }
+        
+        .navbar-toggle {
+            display: none;
+            background: var(--clr-accent-gradient);
+            border: none;
+            color: var(--clr-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--radius-md);
+            width: 45px;
+            height: 45px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* DARK MODE TOGGLE */
+        .theme-toggle {
+            background: transparent;
+            border: 2px solid var(--clr-accent1);
+            color: var(--clr-white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all var(--transition-base);
+            box-shadow: var(--neu-shadow);
+        }
+        
+        .theme-toggle:hover {
+            background: var(--clr-accent1);
+            box-shadow: 0 0 20px rgba(30, 155, 255, 0.5);
+            transform: rotate(180deg);
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: var(--clr-accent-gradient) !important;
+            color: white !important;
+            border: none !important;
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle:hover {
+            opacity: 0.9;
+        }
+        
+        .dropdown-toggle::after {
+            content: none;
+        }
+        
+        .dropdown-toggle i.fa-chevron-down {
+            margin-left: 0.5rem;
+            transition: transform var(--transition-fast);
+            font-size: 0.8em;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: var(--clr-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all var(--transition-base);
+            z-index: 100;
+            border: 1px solid rgba(30, 155, 255, 0.3);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--clr-white);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+        
+        .dropdown-item:hover {
+            background: rgba(30, 155, 255, 0.2);
+            box-shadow: 0 0 10px rgba(30, 155, 255, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .dropdown-divider {
+            height: 1px;
+            background: rgba(30, 155, 255, 0.3);
+            margin: var(--spacing-xs) 0;
+        }
+        
+        .dropdown-header {
+            padding: 0.5rem 1rem;
+            color: var(--clr-accent1);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* MOBILE NAVIGATION */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem 0;
+            }
+            
+            .navbar-container {
+                padding: 0 1rem;
+                justify-content: space-between;
+            }
+            
+            .navbar-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+            
+            .navbar-menu {
+                position: fixed;
+                top: 55px;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-width: 100vw;
+                background: var(--clr-dark);
+                flex-direction: column;
+                padding: 1.5rem 1rem;
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all var(--transition-base);
+                max-height: calc(100vh - 55px);
+                overflow-y: auto;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+            
+            .navbar-menu.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .navbar-list {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+            
+            .navbar-link {
+                width: 100%;
+                text-align: left;
+                padding: 1rem;
+                border: 1px solid rgba(30, 155, 255, 0.2);
+            }
+            
+            .dropdown {
+                width: 100%;
+            }
+            
+            .dropdown-toggle {
+                width: 100%;
+                justify-content: space-between;
+                text-align: left;
+                padding: 1rem !important;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                background: rgba(30, 155, 255, 0.05);
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height var(--transition-base);
+                border: none;
+                margin-top: 0.5rem;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+                max-height: 500px;
+            }
+            
+            .dropdown.active .dropdown-toggle i.fa-chevron-down {
+                transform: rotate(180deg);
+            }
+            
+            .dropdown-item {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .theme-toggle {
+                margin-top: 1rem;
+            }
+        }
+        
+        /* ========== HERO SECTION - GRADIENT MESH BACKGROUND ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--clr-hero-bg);
+            color: var(--clr-white);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        /* Gradient Mesh Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(30, 155, 255, 0.3), transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(0, 212, 170, 0.25), transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 110, 0.15), transparent 50%);
+            animation: gradientMesh 15s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+        
+        @keyframes gradientMesh {
+            0% { 
+                background: 
+                    radial-gradient(circle at 20% 30%, rgba(30, 155, 255, 0.3), transparent 50%),
+                    radial-gradient(circle at 80% 60%, rgba(0, 212, 170, 0.25), transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(255, 0, 110, 0.15), transparent 50%);
+            }
+            50% {
+                background: 
+                    radial-gradient(circle at 70% 40%, rgba(30, 155, 255, 0.35), transparent 50%),
+                    radial-gradient(circle at 30% 70%, rgba(0, 212, 170, 0.2), transparent 50%),
+                    radial-gradient(circle at 60% 20%, rgba(255, 0, 110, 0.18), transparent 50%);
+            }
+            100% { 
+                background: 
+                    radial-gradient(circle at 40% 60%, rgba(30, 155, 255, 0.25), transparent 50%),
+                    radial-gradient(circle at 60% 30%, rgba(0, 212, 170, 0.3), transparent 50%),
+                    radial-gradient(circle at 20% 70%, rgba(255, 0, 110, 0.2), transparent 50%);
+            }
+        }
+        
+        /* Circuit board pattern */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(30, 155, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(30, 155, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+        }
+        
+        .hero-title {
+            font-family: var(--font-tech);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 0 30px rgba(30, 155, 255, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.8;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 100px 0 60px;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+            }
+        }
+        
+        /* ========== SECTIONS ========== */
+        .about-section {
+            background: var(--clr-bg);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-tech);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--clr-accent-gradient);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(30, 155, 255, 0.5);
+        }
+        
+        .lead {
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
+            line-height: 1.8;
+        }
+        
+        /* Regular grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            margin-top: var(--spacing-lg);
+            width: 100%;
+        }
+        
+        /* BENTO GRID LAYOUT - 2026 Design */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .bento-grid .project-card:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        
+        .bento-grid .project-card:nth-child(4) {
+            grid-column: span 2;
+        }
+        
+        @media (max-width: 968px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bento-grid .project-card:nth-child(1),
+            .bento-grid .project-card:nth-child(4) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+        
+        /* ========== PROJECT CARDS - Neumorphism ========== */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(30, 155, 255, 0.08);
+        }
+        
+        .project-card:hover {
+            border-color: rgba(30, 155, 255, 0.3);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: var(--spacing-sm);
+            left: var(--spacing-sm);
+            background: var(--clr-accent-gradient);
+            color: var(--clr-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 1;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .project-card-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .bento-grid .project-card:nth-child(1) .project-card-image {
+            height: 100%;
+            min-height: 350px;
+        }
+        
+        .project-card-content {
+            flex: 1;
+        }
+        
+        .project-card-title {
+            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+            margin-bottom: var(--spacing-xs);
+            font-family: var(--font-tech);
+        }
+        
+        .project-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-card-tag {
+            background: rgba(30, 155, 255, 0.1);
+            color: var(--clr-accent1);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            border: 1px solid rgba(30, 155, 255, 0.2);
+        }
+        
+        .project-card-actions {
+            margin-top: auto;
+            padding-top: var(--spacing-sm);
+        }
+        
+        /* ========== PORTFOLIO SECTION ========== */
+        .portfolio-section {
+            background: var(--clr-bg);
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--clr-accent1);
+            color: var(--clr-accent1);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            box-shadow: var(--neu-shadow);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--clr-accent-gradient);
+            color: var(--clr-white);
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* ========== PROFILE CARD ========== */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: var(--clr-card-bg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--neu-shadow);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid rgba(30, 155, 255, 0.08);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: var(--clr-accent-gradient);
+            padding: 4px;
+            box-shadow: var(--shadow-glow);
+            flex-shrink: 0;
+        }
+        
+        .profile-content {
+            flex: 1;
+        }
+        
+        .profile-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .profile-actions .btn {
+                width: 100%;
+            }
+        }
+        
+        /* ========== CONTACT SECTION ========== */
+        .contact-section {
+            background: var(--clr-dark);
+            color: var(--clr-white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            background: rgba(30, 155, 255, 0.05);
+            border: 1px solid rgba(30, 155, 255, 0.2);
+            transition: all var(--transition-base);
+        }
+        
+        .contact-item:hover {
+            background: rgba(30, 155, 255, 0.1);
+            border-color: rgba(30, 155, 255, 0.4);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--clr-accent1);
+            text-shadow: 0 0 10px rgba(30, 155, 255, 0.5);
+        }
+        
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--clr-dark);
+            color: var(--clr-white);
+            padding: var(--spacing-lg) 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            width: 100%;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .footer-copyright {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+        }
+        
+        /* ========== SCROLL INDICATOR ========== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--clr-white);
+            opacity: 0.8;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-mouse {
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--clr-white);
+            border-radius: 15px;
+            position: relative;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 0 10px rgba(30, 155, 255, 0.5);
+        }
+        
+        .scroll-mouse::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--clr-white);
+            border-radius: 2px;
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-indicator {
+                display: none;
+            }
+        }
+        
+        /* ========== ANIMATIONS ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ========== CUSTOM SCROLLBAR - Enhanced ========== */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(to right, 
+                rgba(10, 10, 12, 0.95) 0%, 
+                rgba(26, 26, 31, 0.95) 50%, 
+                rgba(10, 10, 12, 0.95) 100%);
+            border-left: 1px solid rgba(30, 155, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, 
+                rgba(30, 155, 255, 0.8) 0%, 
+                rgba(0, 212, 170, 0.8) 50%,
+                rgba(30, 155, 255, 0.8) 100%
+            );
+            border-radius: 6px;
+            border: 2px solid rgba(10, 10, 12, 0.3);
+            box-shadow: 
+                0 0 15px rgba(30, 155, 255, 0.5),
+                inset 0 0 8px rgba(255, 255, 255, 0.15);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, 
+                rgba(30, 155, 255, 1) 0%, 
+                rgba(0, 212, 170, 1) 50%,
+                rgba(30, 155, 255, 1) 100%
+            );
+            border-color: rgba(30, 155, 255, 0.5);
+            box-shadow: 
+                0 0 25px rgba(30, 155, 255, 0.8),
+                0 0 40px rgba(0, 212, 170, 0.5),
+                inset 0 0 12px rgba(255, 255, 255, 0.25);
+        }
+        
+        ::-webkit-scrollbar-thumb:active {
+            background: linear-gradient(180deg, 
+                #1e9bff 0%, 
+                #00d4aa 50%,
+                #1e9bff 100%
+            );
+            box-shadow: 
+                0 0 35px rgba(30, 155, 255, 1),
+                0 0 50px rgba(0, 212, 170, 0.8),
+                inset 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        ::-webkit-scrollbar-corner {
+            background: rgba(10, 10, 12, 0.95);
+        }
+        
+        /* Firefox scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(30, 155, 255, 0.8) rgba(10, 10, 12, 0.95);
+        }
+        
+        /* ========== BLOG POSTS ========== */
+        .hub-section {
+            background: var(--clr-bg);
+        }
+        
+        .blog-posts {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .blog-post {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--spacing-md);
+            align-items: start;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: all var(--transition-base);
+        }
+        
+        .blog-post:hover {
+            background: rgba(30, 155, 255, 0.02);
+            border-radius: var(--radius-md);
+        }
+        
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+        
+        .blog-post-date {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--clr-text-light);
+            min-width: 120px;
+        }
+        
+        .blog-post-content h4 {
+            margin-bottom: var(--spacing-xs);
+            font-family: var(--font-tech);
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            gap: var(--spacing-sm);
+            font-size: 0.875rem;
+            color: var(--clr-text-light);
+            margin-bottom: var(--spacing-xs);
+            flex-wrap: wrap;
+        }
+        
+        .blog-post-tag {
+            background: rgba(30, 155, 255, 0.1);
+            color: var(--clr-accent1);
+            padding: 0.125rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            border: 1px solid rgba(30, 155, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-post {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xs);
+            }
+            
+            .blog-post-date {
+                order: 2;
+                min-width: auto;
+            }
+        }
+        
+        /* ========== SOCIAL LINKS ========== */
+        .social-links-component {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links-component > div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .social-links-component a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .social-links-component a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* ========== RECENT POSTS ========== */
+        #ah-posts {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        #ah-posts .ah-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        #ah-posts .ah-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+        
+        #ah-posts .ah-col {
+            flex: 1 1 calc(33.333% - 24px);
+            max-width: calc(33.333% - 24px);
+            min-width: 0;
+        }
+        
+        @media (max-width: 992px) {
+            #ah-posts .ah-col {
+                flex: 1 1 calc(50% - 24px);
+                max-width: calc(50% - 24px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            #ah-posts .ah-col {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+        
+        #ah-posts .ah-article {
+            background: var(--clr-card-bg);
+            box-shadow: var(--neu-shadow);
+            padding: 24px;
+            border-radius: var(--radius-xl);
+            height: 100%;
+            border: 1px solid rgba(30, 155, 255, 0.08);
+            transition: all var(--transition-base);
+        }
+        
+        #ah-posts .ah-article:hover {
+            border-color: rgba(30, 155, 255, 0.3);
+            transform: translateY(-6px);
+        }
+        
+        #ah-posts .ah-img {
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-radius: var(--radius-lg);
+        }
+        
+        #ah-posts .ah-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+        }
+        
+        #ah-posts .ah-category {
+            font-size: 14px;
+            color: var(--clr-accent1);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        #ah-posts .ah-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-family: var(--font-tech);
+        }
+        
+        #ah-posts .ah-title a {
+            color: var(--clr-text);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        
+        #ah-posts .ah-title a:hover {
+            color: var(--clr-accent1);
+        }
+        
+        /* ========== ACCESSIBILITY ========== */
+        .keyboard-user a:focus,
+        .keyboard-user button:focus,
+        .keyboard-user input:focus {
+            outline: 3px solid var(--clr-accent1);
+            outline-offset: 2px;
+        }
+        
+        /* ========== MOBILE OPTIMIZATIONS ========== */
+        @media (max-width: 576px) {
+            .btn {
+                padding: 0.65rem 1.25rem;
+                font-size: 0.95rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        
+        /* ========== LIVE STATS WIDGET ========== */
+        .live-stats {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--clr-card-bg);
+            border: 1px solid var(--clr-accent1);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.25rem;
+            box-shadow: var(--neu-shadow);
+            z-index: 999;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .live-stats-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--clr-accent1);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .live-stats-title .pulse {
+            width: 8px;
+            height: 8px;
+            background: #39ff14;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 8px #39ff14; }
+            50% { opacity: 0.5; box-shadow: 0 0 4px #39ff14; }
+        }
+        
+        .live-stats-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .live-stats-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .live-stats-label {
+            color: var(--clr-text-light);
+        }
+        
+        .live-stats-value {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--clr-accent1);
+        }
+        
+        @media (max-width: 768px) {
+            .live-stats {
+                bottom: 10px;
+                right: 10px;
+                padding: 0.75rem 1rem;
+                min-width: 160px;
+            }
+        }
+        
+        /* ========== FREE DOWNLOAD CTA ========== */
+        .free-download-cta {
+            background: var(--clr-card-bg);
+            border: 2px solid var(--clr-accent1);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            box-shadow: var(--neu-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .free-download-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(30, 155, 255, 0.05) 0%, 
+                transparent 50%);
+            pointer-events: none;
+        }
+        
+        .free-download-badge {
+            display: inline-block;
+            background: var(--clr-accent-gradient);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .free-download-title {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-tech);
+        }
+        
+        .free-download-desc {
+            color: var(--clr-text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .free-download-form {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        
+        .free-download-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(30, 155, 255, 0.3);
+            border-radius: var(--radius-md);
+            background: var(--clr-bg);
+            color: var(--clr-text);
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+        }
+        
+        .free-download-input:focus {
+            outline: none;
+            border-color: var(--clr-accent1);
+            box-shadow: 0 0 0 3px rgba(30, 155, 255, 0.1);
+        }
+        
+        .free-download-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--clr-text-light);
+        }
+        
+        .free-download-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .free-download-stat i {
+            color: var(--clr-accent1);
+        }
+        
+        /* ========== DIFFICULTY BADGES ========== */
+        .difficulty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .difficulty-beginner {
+            background: rgba(57, 255, 20, 0.15);
+            color: #39ff14;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+        }
+        
+        .difficulty-intermediate {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+        
+        .difficulty-advanced {
+            background: rgba(255, 87, 34, 0.15);
+            color: #ff5722;
+            border: 1px solid rgba(255, 87, 34, 0.3);
+        }
+        
+        .difficulty-expert {
+            background: rgba(255, 0, 110, 0.15);
+            color: #ff006e;
+            border: 1px solid rgba(255, 0, 110, 0.3);
+        }
+        
+        .difficulty-badge i {
+            font-size: 0.65rem;
+        }
+        
+        /* ========== STATS BAR ========== */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(1rem, 4vw, 3rem);
+            padding: 1.5rem 2rem;
+            background: var(--clr-card-bg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--neu-shadow);
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stats-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stats-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: calc(-1.5rem - 0.5px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 30px;
+            background: var(--clr-accent1);
+            opacity: 0.3;
+        }
+        
+        .stats-number {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            font-family: var(--font-tech);
+            background: var(--clr-accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stats-label {
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            color: var(--clr-text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 576px) {
+            .stats-bar {
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .stats-item:not(:last-child)::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container navbar-container">
+            <a href="https://alexandroshub.github.io/" class="navbar-brand" aria-label="AlphaPi Home">
+                <span class="gradient-text">AlphaPi</span>
+            </a>
+            
+            <button class="navbar-toggle" id="navbarToggle" aria-expanded="false" aria-controls="navbarMenu" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="navbar-menu" id="navbarMenu">
+                <ul class="navbar-list">
+                    <li><a href="#about" class="navbar-link">About</a></li>
+                    <li><a href="#portfolio" class="navbar-link">Portfolio</a></li>
+                    <li><a href="#hub" class="navbar-link">Hub</a></li>
+                    <li><a href="#contact" class="navbar-link">Contact</a></li>
+                    <li class="dropdown">
+                        <button class="navbar-link dropdown-toggle" id="moreDropdown" aria-expanded="false" aria-haspopup="true">
+                            More <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" role="menu" aria-labelledby="moreDropdown">
+                            <a href="https://alexandroshub.github.io/emailform" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-envelope"></i> Contact Form
+                            </a>
+                            <a href="https://alexandroshub.github.io/mycv" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-id-card"></i> My CV
+                            </a>
+                            <a href="https://alexandroshub.github.io/projects.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-folder-open"></i> Portfolio
+                            </a>
+                            <a href="https://alexandroshub.github.io/hub.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-plus-circle"></i> Digital Hub
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-header">Automations</div>
+                            <a href="https://alexandroshub.github.io/iot.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-wifi"></i> IoT
+                            </a>
+                            <a href="https://alexandroshub.github.io/robotics.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-robot"></i> Robotics
+                            </a>
+                            <a href="https://alexandroshub.github.io/ai.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-brain"></i> AI
+                            </a>
+                            <a href="https://alexandroshub.github.io/ardu22.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-microchip"></i> Arduino
+                            </a>
+                            <a href="https://alexandroshub.github.io/raspberrypi" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-microchip"></i> Raspberry Pi
+                            </a>
+                            <a href="https://alexandroshub.github.io/stem" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-flask"></i> STEAM
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-header">Creative Side</div>
+                            <a href="https://alexandroshub.github.io/art.html" class="dropdown-item" role="menuitem">
+                                <i class="fas fa-paint-brush"></i> Art Gallery
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home" role="banner">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">
+                    <span class="text-gradient">from idea to automation</span> and beyond
+                </h1>
+                <p class="hero-subtitle">
+                    Join me as I explore the world of automations, robotics and the Internet of Things (IoT). 
+                    Let's explore the exciting possibilities of these cutting-edge technologies together.
+                </p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View Portfolio
+                    </a>
+                    <a href="https://drive.google.com/file/d/13ih79iINth9tCoLWtHJAF6ErzKe93hEA/view?usp=sharing" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                
+                <!-- FREE DOWNLOAD CTA -->
+                <div class="free-download-cta">
+                    <span class="free-download-badge">🎁 Free Resource</span>
+                    <h3 class="free-download-title">Arduino Starter Guide + 10 Projects</h3>
+                    <p class="free-download-desc">
+                        Get my complete guide with shopping lists, code templates, and step-by-step tutorials.
+                    </p>
+                    <form class="free-download-form" action="#" method="post">
+                        <input type="email" class="free-download-input" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Get Free Guide
+                        </button>
+                    </form>
+                    <div class="free-download-stats">
+                        <span class="free-download-stat">
+                            <i class="fas fa-check-circle"></i> 1,247+ downloads
+                        </span>
+                        <span class="free-download-stat">
+                            <i class="fas fa-star"></i> 4.9 rating
+                        </span>
+                        <span class="free-download-stat">
+                            <i class="fas fa-shield-alt"></i> No spam, ever
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-mouse"></div>
+                <span class="scroll-text">Scroll</span>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Welcome to <span class="text-gradient">AlexandrosHub</span></h2>
+                    <p class="lead">
+                        The platform where technology meets creativity.<br>
+                        Here you'll find innovative projects, practical solutions and work that transforms everyday life.
+                    </p>
+                </div>
+                
+                <!-- STATS BAR -->
+                <div class="stats-bar fade-in">
+                    <div class="stats-item">
+                        <div class="stats-number">15+</div>
+                        <div class="stats-label">Projects Built</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-number">8+</div>
+                        <div class="stats-label">Technologies</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-number">3+</div>
+                        <div class="stats-label">Years XP</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="stats-number">100%</div>
+                        <div class="stats-label">Open Source</div>
+                    </div>
+                </div>
+                
+                <!-- Profile Card -->
+                <article class="profile-card fade-in">
+                    <img src="https://64.media.tumblr.com/5824d89c1e13809501948a5bd46e1d48/387eabfc55705902-1e/s1280x1920/f5506f672d711cd7aa68f7e094a6d0a9f0aa1ffb.pnj" 
+                         alt="Papaspyrou Alexandros - Automation Engineer" class="profile-image" loading="lazy">
+                    <div class="profile-content">
+                        <h3>I'm Papaspyrou Alexandros</h3>
+                        <p class="text-meta">Technical Support Specialist &amp; Automation Engineer</p>
+                        <p>
+                            Growing up in Athens from a young age, I've been exploring the world of technology. 
+                            I dedicate my career to innovation, following important milestones and creating works 
+                            that combine logic, aesthetics and functionality.
+                        </p>
+                        <div class="profile-actions">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                            <a href="#hub" class="btn btn-secondary">
+                                <i class="fas fa-newspaper"></i> Read Blog
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Portfolio Section with BENTO GRID -->
+        <section id="portfolio" class="section portfolio-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Portfolio</h2>
+                    <p class="lead">A showcase of my latest projects and work</p>
+                </div>
+                
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                    <button class="filter-btn" data-filter="robotics">Robotics</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="web">Web Dev</button>
+                </div>
+                
+                <!-- BENTO GRID LAYOUT -->
+                <div class="bento-grid portfolio-grid">
+                    <!-- Arduino Lab - Large Featured -->
+                    <article class="card project-card fade-in" data-category="iot automation">
+                        <span class="card-badge">Featured</span>
+                        <img src="https://64.media.tumblr.com/e7784b7eabaae567ae186f1c44c71edc/afc46cbefaec4590-c6/s2048x3072/78e099896558571e3783ca55b903bbfc81c0643f.pnj" 
+                             alt="Arduino Lab - Smart IoT Automations" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Arduino Lab</h3>
+                            <p class="project-card-subtitle">Smart IoT Automations</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">Arduino</span>
+                                <span class="project-card-tag">IoT</span>
+                                <span class="project-card-tag">Automation</span>
+                                <span class="difficulty-badge difficulty-intermediate">
+                                    <i class="fas fa-circle"></i> Intermediate
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                Harness the power of Arduino to create intelligent, automated environments.
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/arduino.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right"></i> Visit Lab
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Swarm Robotics -->
+                    <article class="card project-card fade-in" data-category="robotics research">
+                        <span class="card-badge">Research</span>
+                        <img src="https://64.media.tumblr.com/3962b271c0513115c80b343d0f3e8754/387eabfc55705902-3a/s1280x1920/9d4e1864305ed63c19c9c8cdaa04ccc2907d99b7.jpg" 
+                             alt="Swarm Robotics Research" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Swarm Robotics</h3>
+                            <p class="project-card-subtitle">Collective Intelligence Research</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">Robotics</span>
+                                <span class="project-card-tag">AI</span>
+                                <span class="project-card-tag">Research</span>
+                                <span class="difficulty-badge difficulty-expert">
+                                    <i class="fas fa-circle"></i> Expert
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                The Limits of Collective Intelligence: A Critical Analysis of Decentralized 
+                                Decision Making in Swarm Robotics Systems
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/swarm.html" class="btn btn-primary">
+                                    <i class="fas fa-book-open"></i> Read Paper
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Home Automation System -->
+                    <article class="card project-card fade-in" data-category="iot automation">
+                        <span class="card-badge">IoT</span>
+                        <img src="https://64.media.tumblr.com/eddf210a3ca429c92fec68c3e6dfe7fd/afc46cbefaec4590-93/s1280x1920/66973f2cf00a198fc6a572b07f907d9d898d88ad.webp" 
+                             alt="Smart Home Automation System" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Smart Home System</h3>
+                            <p class="project-card-subtitle">Complete Home Automation</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">Raspberry Pi</span>
+                                <span class="project-card-tag">Node-RED</span>
+                                <span class="project-card-tag">MQTT</span>
+                                <span class="difficulty-badge difficulty-intermediate">
+                                    <i class="fas fa-circle"></i> Intermediate
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                A complete home automation system with voice control, remote access, and energy monitoring.
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/iot.html" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Robotics Arm - Wide -->
+                    <article class="card project-card fade-in" data-category="robotics">
+                        <span class="card-badge">Hardware</span>
+                        <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" 
+                             alt="6-DOF Robotic Arm" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">6-DOF Robotic Arm</h3>
+                            <p class="project-card-subtitle">Precision Control System</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">Robotics</span>
+                                <span class="project-card-tag">Control Systems</span>
+                                <span class="project-card-tag">Python</span>
+                                <span class="difficulty-badge difficulty-advanced">
+                                    <i class="fas fa-circle"></i> Advanced
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                A 6-degree-of-freedom robotic arm with computer vision integration for object manipulation.
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/robotics.html" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Web Dashboard -->
+                    <article class="card project-card fade-in" data-category="web">
+                        <span class="card-badge">Web Dev</span>
+                        <img src="https://64.media.tumblr.com/a4a5e05f5451c74c4d3deea8ac8d0a43/afc46cbefaec4590-e9/s1280x1920/5b502bf67ac9683d4a2231fb3422e80bdcec4a60.pnj" 
+                             alt="IoT Monitoring Dashboard" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">IoT Dashboard</h3>
+                            <p class="project-card-subtitle">Real-time Monitoring System</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">JavaScript</span>
+                                <span class="project-card-tag">WebSocket</span>
+                                <span class="project-card-tag">React</span>
+                                <span class="difficulty-badge difficulty-intermediate">
+                                    <i class="fas fa-circle"></i> Intermediate
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                Real-time dashboard for monitoring IoT devices with data visualization and alerts.
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/development.html" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- STEM Education -->
+                    <article class="card project-card fade-in" data-category="education">
+                        <span class="card-badge">Education</span>
+                        <img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.pnj" 
+                             alt="STEM Learning Platform" class="project-card-image" loading="lazy">
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">STEM Learning Platform</h3>
+                            <p class="project-card-subtitle">Interactive Learning Tools</p>
+                            <div class="project-card-tags">
+                                <span class="project-card-tag">Education</span>
+                                <span class="project-card-tag">STEM</span>
+                                <span class="project-card-tag">Interactive</span>
+                                <span class="difficulty-badge difficulty-beginner">
+                                    <i class="fas fa-circle"></i> Beginner
+                                </span>
+                            </div>
+                            <p class="project-card-description">
+                                Interactive platform for teaching STEM concepts through hands-on projects and simulations.
+                            </p>
+                            <div class="project-card-actions">
+                                <a href="https://alexandroshub.github.io/stem" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> Explore
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-footer" style="text-align: center; margin-top: var(--spacing-lg);">
+                    <a href="https://alexandroshub.github.io/projects.html" class="btn btn-secondary">
+                        <i class="fas fa-folder-open"></i> View Full Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hub Section (Blog Posts) -->
+        <section id="hub" class="section hub-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technology Hub</h2>
+                    <p class="lead">Latest articles, tutorials, and insights</p>
+                </div>
+                
+                <div class="grid">
+                    <!-- Topic Cards -->
+                    <article class="card fade-in">
+                        <h4><i class="fas fa-cogs"></i> Automations</h4>
+                        <p>Smart systems and automated solutions for modern living.</p>
+                        <a href="https://alexandroshub.github.io/automation" class="btn btn-secondary">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <h4><i class="fas fa-robot"></i> Robotics</h4>
+                        <p>Robotic systems and intelligent automation.</p>
+                        <a href="https://alexandroshub.github.io/robotics.html" class="btn btn-secondary">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <h4><i class="fas fa-wifi"></i> Internet of Things</h4>
+                        <p>Connected devices and smart IoT solutions.</p>
+                        <a href="https://alexandroshub.github.io/iot" class="btn btn-secondary">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    
+                    <article class="card fade-in">
+                        <h4><i class="fas fa-plus-circle"></i> Digital Hub+</h4>
+                        <p>Tutorials, guides and educational content.</p>
+                        <a href="https://alexandroshub.github.io/hub.html" class="btn btn-secondary">
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </article>
+                </div>
+                
+                <!-- Recent Posts Section -->
+                <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+                
+                <section id="ah-posts" class="ah-section" style="padding: 60px 0;">
+                    <div class="ah-container">
+                        <div class="ah-section-title" data-aos="fade-up">
+                            <p>Τα τελευταία άρθρα από τον κόσμο του IoT, AI και Cybersecurity</p>
+                        </div>
+
+                        <div class="ah-row">
+                            <!-- Post 1 -->
+                            <div class="ah-col" data-aos="fade-up" data-aos-delay="100">
+                                <article class="ah-article">
+                                    <div class="ah-img">
+                                        <img src="https://alexandroshub.wordpress.com/wp-content/uploads/2025/09/ai-generated-9011964_1280.jpg?w=1024" alt="IoT Introduction Article" loading="lazy">
+                                    </div>
+                                    <p class="ah-category">IoT</p>
+                                    <h2 class="ah-title">
+                                        <a href="https://alexandroshub.wordpress.com/2025/09/21/%ce%b5%ce%b9%cf%83%ce%b1%ce%b3%cf%89%ce%b3%ce%ae-%cf%83%cf%84%ce%bf-%ce%b4%ce%b9%ce%b1%ce%b4%ce%af%ce%ba%cf%84%cf%85%ce%bf-%cf%84%cf%89%ce%bd-%cf%80%cf%81%ce%b1%ce%b3%ce%bc%ce%ac%cf%84%cf%89%ce%bd/">Εισαγωγή στο Διαδίκτυο των Πραγμάτων</a>
+                                    </h2>
+                                </article>
+                            </div>
+                            
+                            <!-- Post 2 -->
+                            <div class="ah-col" data-aos="fade-up" data-aos-delay="200">
+                                <article class="ah-article">
+                                    <div class="ah-img">
+                                        <img src="https://alexandroshub.wordpress.com/wp-content/uploads/2025/12/chatgpt-image-22-ce94ceb5ceba-2025-01_55_54-cebc.cebc_.png?w=450&h=450&crop=1" alt="AI Browsers 2026" loading="lazy">
+                                    </div>
+                                    <p class="ah-category">AI</p>
+                                    <h2 class="ah-title">
+                                        <a href="https://alexandroshub.wordpress.com/2025/12/22/ai-browsers-2026-%cf%80%cf%8e%cf%82-%ce%b7-%cf%84%ce%b5%cf%87%ce%bd%ce%b7%cf%84%ce%ae-%ce%bd%ce%bf%ce%b7%ce%bc%ce%bf%cf%83%cf%8d%ce%bd%ce%b7-%ce%b1%ce%bb%ce%bb%ce%ac%ce%b6%ce%b5%ce%b9-%cf%84%ce%bf/">AI Browsers 2026: Πώς η Τεχνητή Νοημοσύνη Αλλάζει τον Τρόπο</a>
+                                    </h2>
+                                </article>
+                            </div>
+                            
+                            <!-- Post 3 -->
+                            <div class="ah-col" data-aos="fade-up" data-aos-delay="300">
+                                <article class="ah-article">
+                                    <div class="ah-img">
+                                        <img src="https://alexandroshub.wordpress.com/wp-content/uploads/2025/10/copilot_20251012_125046.png?w=1024" alt="AI in Business" loading="lazy">
+                                    </div>
+                                    <p class="ah-category">AI</p>
+                                    <h2 class="ah-title">
+                                        <a href="https://alexandroshub.wordpress.com/2025/10/12/%cf%84%ce%b5%cf%87%ce%bd%ce%b7%cf%84%ce%ae-%ce%bd%ce%bf%ce%b7%ce%bc%ce%bf%cf%83%cf%8d%ce%bd%ce%b7-%cf%83%cf%84%ce%b9%cf%82-%ce%b5%cf%80%ce%b9%cf%87%ce%b5%ce%b9%cf%81%ce%ae%cf%83%ce%b5%ce%b9%cf%82/">Τεχνητή Νοημοσύνη στις Επιχειρήσεις</a>
+                                    </h2>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>AOS.init();</script>
+                
+                <!-- Individual Blog Posts -->
+                <div class="section-header" style="margin-top: var(--spacing-xl);">
+                    <h3 class="section-title">Recent Articles</h3>
+                </div>
+                
+                <div class="blog-posts">
+                    <article class="blog-post fade-in">
+                        <div class="blog-post-date">
+                            <span>Dec 22, 2025</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <h4>AI Browsers 2026</h4>
+                            <div class="blog-post-meta">
+                                <span class="blog-post-tag">AI</span>
+                                <span class="blog-post-tag">Apps</span>
+                                <span>5 min read</span>
+                            </div>
+                            <p>Πώς η Τεχνητή Νοημοσύνη Αλλάζει τον Τρόπο που Δουλεύουμε στο Διαδίκτυο</p>
+                            <a href="https://alexandroshub.wordpress.com/2025/12/22/ai-browsers-2026-%cf%80%cf%8e%cf%82-%ce%b7-%cf%84%ce%b5%cf%87%ce%bd%ce%b7%cf%84%ce%ae-%ce%bd%ce%bf%ce%b7%ce%bc%ce%bf%cf%83%cf%8d%ce%bd%ce%b7-%ce%b1%ce%bb%ce%bb%ce%ac%ce%b6%ce%b5%ce%b9-%cf%84%ce%bf/" class="btn btn-secondary">
+                                Read Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post fade-in">
+                        <div class="blog-post-date">
+                            <span>Jun 27, 2025</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <h4>Your Biggest Cybersecurity Weakness Is Yourself</h4>
+                            <div class="blog-post-meta">
+                                <span class="blog-post-tag">Cybersecurity</span>
+                                <span>6 min read</span>
+                            </div>
+                            <p>Discover why human mistakes remain the leading cause of cyber breaches and learn practical strategies to strengthen your personal cybersecurity defenses.</p>
+                            <a href="https://medium.com/@papaspyrou.alexandros/your-biggest-cybersecurity-weakness-is-yourself-ab205862e8a8" class="btn btn-secondary">
+                                Read Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-post fade-in">
+                        <div class="blog-post-date">
+                            <span>Sep 21, 2025</span>
+                        </div>
+                        <div class="blog-post-content">
+                            <h4>Εισαγωγή στο Διαδίκτυο των Πραγμάτων</h4>
+                            <div class="blog-post-meta">
+                                <span class="blog-post-tag">IoT</span>
+                                <span class="blog-post-tag">Automation</span>
+                                <span>18 min read</span>
+                            </div>
+                            <p>IoT: Η Επανάσταση των Έξυπνων Συσκευών</p>
+                            <a href="https://alexandroshub.wordpress.com/2025/09/21/%ce%b5%ce%b9%cf%83%ce%b1%ce%b3%cf%89%ce%b3%ce%ae-%cf%83%cf%84%ce%bf-%ce%b4%ce%b9%ce%b1%ce%b4%ce%af%ce%ba%cf%84%cf%85%ce%bf-%cf%84%cf%89%ce%bd-%cf%80%cf%81%ce%b1%ce%b3%ce%bc%ce%ac%cf%84%cf%89%ce%bd/" class="btn btn-secondary">
+                                Read Article <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-footer" style="text-align: center; margin-top: var(--spacing-lg);">
+                    <a href="https://alexandroshub.github.io/plus.ap.html" class="btn btn-primary">
+                        <i class="fas fa-newspaper"></i> View All Articles
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="lead" style="color: var(--clr-white); opacity: 0.9;">
+                        Let's collaborate on your next technology project
+                    </p>
+                </div>
+                
+                <div class="contact-grid fade-in">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:a-papaspyrou@outlook.com.gr" style="color: var(--clr-white);">a-papaspyrou@outlook.com.gr</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+306940548867" style="color: var(--clr-white);">+30 694 054 8867</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <!-- Social Media Links -->
+                            <div class="social-links-component" style="margin: 2rem 0; text-align: center;">
+                                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center;">
+                                    <!-- WhatsApp -->
+                                    <a href="https://wa.me/306940548867?text=Hello%20Alexandros%2C%20I%20saw%20your%20website!" target="_blank" rel="noopener noreferrer"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(37, 211, 102, 0.1)); color: #25D366; font-size: 1.3rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 2px solid rgba(37, 211, 102, 0.3); text-decoration: none; position: relative;"
+                                       aria-label="Contact via WhatsApp">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    
+                                    <!-- LinkedIn -->
+                                    <a href="https://www.linkedin.com/in/alexandrospapaspyrou" target="_blank" rel="noopener noreferrer"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: rgba(10, 102, 194, 0.1); color: #0a66c2; font-size: 1.3rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;"
+                                       aria-label="Visit LinkedIn profile">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    
+                                    <!-- Instagram -->
+                                    <a href="https://www.instagram.com/alexandroshub/" target="_blank" rel="noopener noreferrer"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: rgba(225, 48, 108, 0.1); color: #e1306c; font-size: 1.3rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;"
+                                       aria-label="Follow on Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    
+                                    <!-- Bio.link -->
+                                    <a href="https://bio.link/alphapi" target="_blank" rel="noopener noreferrer"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: rgba(30, 155, 255, 0.1); color: #1e9bff; font-size: 1.3rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;"
+                                       aria-label="Visit Bio.link profile">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <div class="card" style="background: rgba(255,255,255,0.05);">
+                            <h3 style="color: var(--clr-white); margin-bottom: var(--spacing-md);">
+                                Send a Message
+                            </h3>
+                            <p style="color: var(--clr-white); opacity: 0.8; margin-bottom: var(--spacing-md);">
+                                Use the contact form on our dedicated page
+                            </p>
+                            <a href="https://alexandroshub.github.io/emailform" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Go to Contact Form
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="navbar-brand" style="font-size: 1.25rem;">
+                        <span class="gradient-text">AlphaPi</span>
+                    </h3>
+                    <p class="footer-copyright">
+                        Handcrafted With ❤️ (CC)-By: Alexandros Papaspyrou<br>
+                        Hosted by Github • Updated: 22/2/2026<br>
+                        <a href="https://alexandroshub.github.io/welcome26.html" title="Visit AlexandrosHub" style="background: linear-gradient(90deg, #1e9bff, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;">▞▚ ▛</a> • 
+                        <a href="https://www.patreon.com/profile/creators?u=7495321" style="background: linear-gradient(90deg, #1e9bff, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;"><b>support</b></a> • 
+                        <a href="https://alexandroshub.github.io/privacy.html" style="background: linear-gradient(90deg, #1e9bff, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;"><b>privacy</b></a> • 
+                        <a href="https://alexandroshub.github.io/apTOU" style="background: linear-gradient(90deg, #1e9bff, #00d4aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900;"><b>ToU</b></a>
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#about" style="color: var(--clr-white); opacity: 0.8;">About</a>
+                    <a href="#portfolio" style="color: var(--clr-white); opacity: 0.8;">Portfolio</a>
+                    <a href="#hub" style="color: var(--clr-white); opacity: 0.8;">Hub</a>
+                    <a href="#contact" style="color: var(--clr-white); opacity: 0.8;">Contact</a>
+                    <a href="https://alexandroshub.github.io/index.html" style="color: var(--clr-white); opacity: 0.8;">Home</a>
+                </div>
+            </div>
+            
+            <div class="footer-quote" style="text-align: center; margin-top: var(--spacing-md); padding-top: var(--spacing-md); border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-style: italic; color: var(--clr-white); opacity: 0.7;">
+                    "When I let go of what I am, I become what I might be." ~ Lao Tzu.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIVE STATS WIDGET -->
+    <div class="live-stats">
+        <div class="live-stats-title">
+            <span class="pulse"></span>
+            LIVE
+        </div>
+        <div class="live-stats-item">
+            <span class="live-stats-label">Visitors:</span>
+            <span class="live-stats-value" id="visitorCount">--</span>
+        </div>
+        <div class="live-stats-item">
+            <span class="live-stats-label">GitHub ⭐:</span>
+            <span class="live-stats-value" id="githubStars">--</span>
+        </div>
+        <div class="live-stats-item">
+            <span class="live-stats-label">Projects:</span>
+            <span class="live-stats-value">15</span>
+        </div>
+    </div>
+
+    <script>
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // LIVE STATS LOADING
+            loadLiveStats();
+            
+            // Refresh stats every 5 minutes
+            setInterval(loadLiveStats, 5 * 60 * 1000);
+            
+            function loadLiveStats() {
+                // Load GitHub stars
+                fetch('https://api.github.com/users/alexandroshub')
+                    .then(response => response.json())
+                    .then(data => {
+                        const stars = data.public_repos || 0;
+                        document.getElementById('githubStars').textContent = stars;
+                    })
+                    .catch(error => {
+                        console.error('GitHub stats error:', error);
+                        document.getElementById('githubStars').textContent = '15+';
+                    });
+                
+                // Load visitor count
+                fetch('https://api.countapi.xyz/hit/alexandroshub-home/visits')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('visitorCount').textContent = data.value.toLocaleString();
+                    })
+                    .catch(error => {
+                        console.error('Visitor count error:', error);
+                        document.getElementById('visitorCount').textContent = '1.2k+';
+                    });
+            }
+            
+            // DARK MODE FUNCTIONALITY
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            const themeIcon = themeToggle.querySelector('i');
+            
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            body.setAttribute('data-theme', currentTheme);
+            
+            // Update icon based on current theme
+            if (currentTheme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+            
+            // Theme toggle click handler
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Update icon
+                if (newTheme === 'dark') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            });
+            
+            // Mobile Navigation Toggle
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarMenu = document.getElementById('navbarMenu');
+            
+            if (navbarToggle && navbarMenu) {
+                navbarToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+                    navbarToggle.setAttribute('aria-expanded', !isExpanded);
+                    navbarMenu.classList.toggle('active');
+                    
+                    // Toggle icon
+                    const icon = navbarToggle.querySelector('i');
+                    if (navbarMenu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.navbar-menu') && !e.target.closest('.navbar-toggle')) {
+                        navbarMenu.classList.remove('active');
+                        navbarToggle.setAttribute('aria-expanded', 'false');
+                        const icon = navbarToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Mobile dropdown functionality
+            const moreDropdown = document.getElementById('moreDropdown');
+            const dropdownMenu = moreDropdown?.nextElementSibling;
+            
+            if (moreDropdown && dropdownMenu) {
+                moreDropdown.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    if (window.innerWidth < 768) {
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                        this.setAttribute('aria-expanded', !isExpanded);
+                        this.closest('.dropdown').classList.toggle('active');
+                    }
+                });
+                
+                // Close dropdown when clicking a link inside it
+                dropdownMenu.querySelectorAll('.dropdown-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth < 768) {
+                            moreDropdown.setAttribute('aria-expanded', 'false');
+                            moreDropdown.closest('.dropdown').classList.remove('active');
+                            navbarMenu.classList.remove('active');
+                            navbarToggle.setAttribute('aria-expanded', 'false');
+                            const icon = navbarToggle.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+            
+            // Portfolio Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-grid .project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            fadeInOnScroll();
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#') return;
+                    
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        history.pushState(null, null, href);
+                        
+                        if (window.innerWidth < 768) {
+                            navbarMenu.classList.remove('active');
+                            navbarToggle.setAttribute('aria-expanded', 'false');
+                            const icon = navbarToggle.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            });
+            
+            // Social links hover effects
+            const socialLinks = document.querySelectorAll('.social-links-component a');
+            
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                });
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-user');
+                }
+            });
+            
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-user');
+            });
+        });
+    </script>
+</body>
+</html>
