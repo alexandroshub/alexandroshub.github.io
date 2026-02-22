@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗔𝗹𝗽𝗵𝗮𝗣𝗶 ARDUINO LAB</title>
+    <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">  
+    <meta name="author" content="Alexandros Papaspyrou">
+    <meta name="description" content="Arduino Lab - Hands-on projects, tutorials, and experiments for automation enthusiasts">
+<!--========================================================================== 
+      Updated: v1.0 22.02.26
+      ▞▚ ▙▄ ▛ █▬█ ▞▚ ▛ █  ғʀᴏᴍ ɪᴅᴇᴀ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴏɴ ᴀɴᴅ ʙᴇʏᴏɴᴅ
+      Ｃｏｎｎｅｃｔ Ｃｏｄｅ Ｃｒｅａｔｅ  🅐🅛🅔🅧🅐🅝🅓🅡🅞🅢 🅗🅤🅑 
+==========================================================================   -->
+
+<!-- Google Fonts & Bootstrap -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+
+<style>
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0c;
+  color: #eee;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0;
+  background: linear-gradient(to right, #1b2a4a, #2d2d30);
+  backdrop-filter: blur(6px);
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px !important;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  min-height: 55px;
+}
+
+.navbar .navbar-header .logo {
+  display: inline-block;
+  line-height: 55px;
+  vertical-align: middle;
+  padding: 0 10px;
+  font-family: 'Audiowide';
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar li a {
+  color: #e0e0e0 !important;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li a:hover {
+  color: white !important;
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  border-radius: 0;
+}
+
+.navbar-toggle {
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+  border: none;
+  margin-top: 10px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.dropdown-menu {
+  background: linear-gradient(to right, #1b2a4a, #2d2d30);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.dropdown-menu li a {
+  color: #ddd !important;
+  padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+.navbar-nav > li.open > a,
+.navbar-nav > li.open > a:focus,
+.navbar-nav > li.open > a:hover {
+  background: linear-gradient(to right, #1e9bff, #00d4aa);
+  color: white !important;
+}
+
+/* ========== HERO SECTION ========== */
+.lab-hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0a122d 0%, #1b2a4a 50%, #2d2d30 100%);
+  color: #fff;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 55px;
+}
+
+.lab-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(77,240,255,0.15), transparent 60%),
+    radial-gradient(circle at 70% 70%, rgba(255,74,110,0.12), transparent 60%);
+  z-index: 0;
+  animation: heroGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from { opacity: 0.4; transform: scale(1); }
+  to   { opacity: 0.7; transform: scale(1.05); }
+}
+
+.lab-hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 700px;
+}
+
+.lab-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.gradient-text {
+  font-family: "Tilt Neon", sans-serif;
+  background-image: linear-gradient(
+    90deg,
+    rgb(118, 167, 63) 0%,
+    rgb(51, 143, 118) 40%,
+    rgb(55, 141, 167) 50%,
+    rgb(117, 152, 242) 70%,
+    rgb(144, 118, 236) 100%
+  );
+  color: transparent;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.lab-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.lab-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffe7, #4dd0e1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Audiowide';
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lab-hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lab-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.lab-btn-primary {
+  background: #4df0ff;
+  color: #000;
+  box-shadow: 0 0 14px rgba(77, 240, 255, 0.4);
+}
+
+.lab-btn-primary:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #000;
+}
+
+.lab-btn-secondary {
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  background: transparent;
+}
+
+.lab-btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Waves */
+.lab-hero-waves {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.55;
+}
+
+.lab-hero-waves svg {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  left: -20%;
+  top: -20%;
+}
+
+.lab-wave1,
+.lab-wave2 {
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 6;
+  stroke-dashoffset: 0;
+  animation: waveMove 14s linear infinite;
+  fill: none;
+}
+
+.lab-wave1 {
+  stroke: rgba(77, 240, 255, 0.9);
+}
+
+.lab-wave2 {
+  stroke: rgba(255, 74, 110, 0.85);
+  animation-delay: -4s;
+}
+
+@keyframes waveMove {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -400; }
+}
+
+/* ========== SECTIONS ========== */
+.lab-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Audiowide';
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== PROJECT GRID ========== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #1a1a22;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 200, 181, 0.2);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 200, 181, 0.3);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1b2a4a, #2d2d30);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-badge {
+  display: inline-block;
+  background: rgba(77, 240, 255, 0.15);
+  color: #4df0ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.project-desc {
+  color: #aaa;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  background: rgba(0, 200, 181, 0.1);
+  color: #00c8b5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 200, 181, 0.3);
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-link {
+  color: #4df0ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #00ffe7;
+  text-decoration: none;
+}
+
+.difficulty {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.difficulty i {
+  color: #ffc107;
+  margin-right: 0.25rem;
+}
+
+/* ========== RESOURCES SECTION ========== */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card {
+  background: #1a1a22;
+  border: 1px solid rgba(0, 200, 181, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  background: rgba(0, 200, 181, 0.05);
+  border-color: rgba(0, 200, 181, 0.5);
+  transform: translateY(-5px);
+}
+
+.resource-icon {
+  font-size: 3rem;
+  color: #4df0ff;
+  margin-bottom: 1rem;
+}
+
+.resource-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.resource-desc {
+  color: #aaa;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.resource-link {
+  color: #00c8b5;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #4df0ff;
+  text-decoration: none;
+}
+
+/* ========== TUTORIALS TIMELINE ========== */
+.tutorial-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.tutorial-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #4df0ff, #00c8b5);
+}
+
+.tutorial-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.tutorial-item::before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #4df0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(77, 240, 255, 0.5);
+}
+
+.tutorial-number {
+  font-size: 0.9rem;
+  color: #4df0ff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.tutorial-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.tutorial-desc {
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+.tutorial-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.tutorial-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ========== VIDEO SHOWCASE ========== */
+.video-showcase {
+  background: #1a1a22;
+  border: 2px solid #00c8b5;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+
+.video-showcase-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.video-showcase-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00c8b5;
+  margin-bottom: 0.5rem;
+}
+
+.video-frame {
+  position: relative;
+  border: 2px solid #00c8b5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0,200,181,0.2);
+  margin-bottom: 1.5rem;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
+
+.video-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.video-btn {
+  background: transparent;
+  border: 1px solid #00c8b5;
+  color: #00c8b5;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.video-btn:hover {
+  background: #00c8b5;
+  color: #1a1a22;
+  box-shadow: 0 0 10px rgba(0,200,181,0.5);
+}
+
+/* ========== COMPONENTS GALLERY ========== */
+.components-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.component-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #1a1a22;
+  border: 1px solid rgba(0, 200, 181, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.component-item:hover {
+  border-color: #00c8b5;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 200, 181, 0.3);
+}
+
+.component-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  filter: brightness(1.2);
+}
+
+.component-name {
+  font-size: 0.9rem;
+  color: #00c8b5;
+  font-weight: 600;
+}
+
+/* ========== CTA SECTION ========== */
+.lab-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(77, 240, 255, 0.05), rgba(0, 200, 181, 0.05));
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+.lab-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.lab-cta-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+/* ========== FOOTER ========== */
+.lab-footer {
+  background: #111;
+  color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.lab-footer-title {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.lab-footer-links {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.lab-footer-links a {
+  color: #4dd0e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.lab-footer-links a:hover {
+  color: #80deea;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .lab-hero {
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  .lab-hero-title {
+    font-size: 2rem;
+  }
+  
+  .lab-hero-stats {
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .lab-hero-cta {
+    flex-direction: column;
+  }
+  
+  .lab-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .project-grid,
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-frame iframe {
+    height: 250px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="https://alexandroshub.github.io" class="logo">&nbsp; AlphaPi</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://alexandroshub.github.io">Home</a></li>
+        <li><a href="https://alexandroshub.github.io/projects.html">Projects</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+        <li><a href="https://alexandroshub.github.io/LV3#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&nbsp; More ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="https://alexandroshub.github.io/cv"><i class="fa fa-id-card"></i>&nbsp; My CV</a></li>
+            <li><a href="https://alexandroshub.github.io/porto.ap.html"><i class="fa fa-folder-open"></i>&nbsp; Portfolio</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Platforms</li>
+            <li><a href="https://alexandroshub.github.io/iot.html"><i class="fa fa-wifi"></i>&nbsp; IoT</a></li>
+            <li><a href="https://alexandroshub.github.io/raspberrypi"><i class="fa fa-microchip"></i>&nbsp; Raspberry Pi</a></li>
+            <li><a href="https://alexandroshub.github.io/ai.html"><i class="fa fa-brain"></i>&nbsp; AI</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="lab-hero">
+  <div class="lab-hero-content">
+    <h1 class="lab-hero-title">
+      Welcome to the <span class="gradient-text">Arduino Lab</span>
+    </h1>
+    <p class="lab-hero-subtitle">
+      Harness the power of Arduino to create intelligent, automated environments. 
+      From blinking LEDs to autonomous robots, your journey starts here.
+    </p>
+    
+    <div class="lab-hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Tutorials</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Open Source</div>
+      </div>
+    </div>
+    
+    <div class="lab-hero-cta">
+      <a href="#projects" class="lab-btn lab-btn-primary">Explore Projects</a>
+      <a href="#tutorials" class="lab-btn lab-btn-secondary">View Tutorials</a>
+    </div>
+  </div>
+  
+  <!-- Animated waves -->
+  <div class="lab-hero-waves">
+    <svg viewBox="0 0 1600 600" preserveAspectRatio="none">
+      <path class="lab-wave1"
+        d="M0 300 C 300 150, 600 450, 1200 220 C 1500 100, 1800 380, 2000 260"
+        fill="none" />
+      <path class="lab-wave2"
+        d="M0 420 C 300 250, 600 520, 1200 340 C 1500 200, 1800 500, 2000 420"
+        fill="none" />
+    </svg>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="lab-section" id="projects">
+  <div class="section-header">
+    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+    <p class="section-subtitle">
+      Hands-on Arduino projects ranging from beginner to advanced level
+    </p>
+  </div>
+  
+  <div class="project-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/e7784b7eabaae567ae186f1c44c71edc/afc46cbefaec4590-c6/s2048x3072/78e099896558571e3783ca55b903bbfc81c0643f.pnj" alt="Smart LED Control" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Beginner</span>
+        <h3 class="project-title">Smart LED Control System</h3>
+        <p class="project-desc">
+          Build your first Arduino project with RGB LEDs, learning basic programming and circuit design.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">LED</span>
+          <span class="project-tag">Digital I/O</span>
+          <span class="project-tag">PWM</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://projecthub.arduino.cc/Papaspyrou_A" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/eddf210a3ca429c92fec68c3e6dfe7fd/afc46cbefaec4590-93/s1280x1920/66973f2cf00a198fc6a572b07f907d9d898d88ad.webp" alt="Temperature Monitor" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Intermediate</span>
+        <h3 class="project-title">IoT Temperature Monitor</h3>
+        <p class="project-desc">
+          Monitor temperature and humidity with DHT sensors and send data to the cloud via WiFi.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">DHT22</span>
+          <span class="project-tag">WiFi</span>
+          <span class="project-tag">IoT</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://alexandroshub.github.io/iot.html" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="Robotic Arm" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Advanced</span>
+        <h3 class="project-title">Servo Robotic Arm</h3>
+        <p class="project-desc">
+          Create a programmable 4-DOF robotic arm controlled via Bluetooth with inverse kinematics.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Servo</span>
+          <span class="project-tag">Bluetooth</span>
+          <span class="project-tag">Robotics</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://alexandroshub.github.io/robotics.html" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project 4 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/3962b271c0513115c80b343d0f3e8754/387eabfc55705902-3a/s1280x1920/9d4e1864305ed63c19c9c8cdaa04ccc2907d99b7.jpg" alt="Line Follower" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Intermediate</span>
+        <h3 class="project-title">Autonomous Line Follower</h3>
+        <p class="project-desc">
+          Build an autonomous robot that follows a black line using IR sensors and PID control.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">IR Sensor</span>
+          <span class="project-tag">Motor</span>
+          <span class="project-tag">PID</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://alexandroshub.github.io/projects.html#tech" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project 5 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/a4a5e05f5451c74c4d3deea8ac8d0a43/afc46cbefaec4590-e9/s1280x1920/5b502bf67ac9683d4a2231fb3422e80bdcec4a60.pnj" alt="Smart Home" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Advanced</span>
+        <h3 class="project-title">Smart Home Control Hub</h3>
+        <p class="project-desc">
+          Control your home appliances via smartphone app with ESP8266 and Arduino integration.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">ESP8266</span>
+          <span class="project-tag">Relay</span>
+          <span class="project-tag">App</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://alexandroshub.github.io/iot.html" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project 6 -->
+    <div class="project-card">
+      <img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.pnj" alt="Weather Station" class="project-image">
+      <div class="project-content">
+        <span class="project-badge">Beginner</span>
+        <h3 class="project-title">Arduino Weather Station</h3>
+        <p class="project-desc">
+          Monitor weather conditions with sensors and display data on an LCD screen in real-time.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">BMP180</span>
+          <span class="project-tag">LCD</span>
+          <span class="project-tag">Sensors</span>
+        </div>
+        <div class="project-footer">
+          <a href="https://alexandroshub.github.io/stem" class="project-link">
+            View Project <i class="fa fa-arrow-right"></i>
+          </a>
+          <span class="difficulty">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section class="lab-section">
+  <div class="video-showcase">
+    <div class="video-showcase-header">
+      <h3 class="video-showcase-title"><i class="fa fa-play-circle"></i> Video Tutorials</h3>
+      <p style="color: #aaa;">Watch and learn from step-by-step video guides</p>
+    </div>
+    
+    <div class="video-frame">
+      <iframe id="videoFrame" src="https://www.youtube.com/embed/uF9oOfRyjJw" allowfullscreen></iframe>
+      <div class="screen-glow"></div>
+    </div>
+    
+    <div class="video-buttons">
+      <button class="video-btn" onclick="changeVideo('https://www.youtube.com/embed/uF9oOfRyjJw')">
+        <i class="fa fa-play"></i> Arduino Basics
+      </button>
+      <button class="video-btn" onclick="changeVideo('https://www.youtube.com/embed/zJ-LqeX_fLU')">
+        <i class="fa fa-play"></i> Getting Started
+      </button>
+      <button class="video-btn" onclick="changeVideo('https://www.youtube.com/embed/uF9oOfRyjJw')">
+        <i class="fa fa-play"></i> Sensors Guide
+      </button>
+      <button class="video-btn" onclick="changeVideo('https://www.youtube.com/embed/zJ-LqeX_fLU')">
+        <i class="fa fa-play"></i> Motor Control
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS GALLERY -->
+<section class="lab-section">
+  <div class="section-header">
+    <h2 class="section-title">Essential <span class="gradient-text">Components</span></h2>
+    <p class="section-subtitle">
+      Common Arduino components and sensors you'll use in projects
+    </p>
+  </div>
+  
+  <div class="components-gallery">
+    <div class="component-item">
+      <img src="https://cdn-icons-png.freepik.com/512/10481/10481059.png" alt="LED">
+      <div class="component-name">LED</div>
+    </div>
+    <div class="component-item">
+      <img src="https://cdn-icons-png.freepik.com/512/10480/10480985.png" alt="LDR">
+      <div class="component-name">LDR Sensor</div>
+    </div>
+    <div class="component-item">
+      <img src="https://cdn-icons-png.freepik.com/512/10481/10481028.png" alt="Potentiometer">
+      <div class="component-name">Potentiometer</div>
+    </div>
+    <div class="component-item">
+      <img src="https://cdn-icons-png.freepik.com/512/10480/10480980.png" alt="Motor">
+      <div class="component-name">DC Motor</div>
+    </div>
+  </div>
+</section>
+
+<!-- TUTORIALS TIMELINE -->
+<section class="lab-section" id="tutorials">
+  <div class="section-header">
+    <h2 class="section-title">Learning <span class="gradient-text">Path</span></h2>
+    <p class="section-subtitle">
+      Follow our structured tutorials from beginner to advanced
+    </p>
+  </div>
+  
+  <div class="tutorial-timeline">
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 01</div>
+      <h3 class="tutorial-title">Setting Up Arduino IDE</h3>
+      <p class="tutorial-desc">
+        Download, install, and configure the Arduino development environment on your computer.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 15 min</span>
+        <span><i class="fa fa-signal"></i> Beginner</span>
+        <span><i class="fa fa-file-code-o"></i> Software</span>
+      </div>
+    </div>
+    
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 02</div>
+      <h3 class="tutorial-title">Blink LED - Your First Program</h3>
+      <p class="tutorial-desc">
+        Learn the basics of Arduino programming by making an LED blink on and off.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 20 min</span>
+        <span><i class="fa fa-signal"></i> Beginner</span>
+        <span><i class="fa fa-lightbulb-o"></i> Hardware</span>
+      </div>
+    </div>
+    
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 03</div>
+      <h3 class="tutorial-title">Reading Analog Sensors</h3>
+      <p class="tutorial-desc">
+        Understand analog inputs by reading values from potentiometers and light sensors.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 30 min</span>
+        <span><i class="fa fa-signal"></i> Beginner</span>
+        <span><i class="fa fa-line-chart"></i> Analog</span>
+      </div>
+    </div>
+    
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 04</div>
+      <h3 class="tutorial-title">Controlling Motors with PWM</h3>
+      <p class="tutorial-desc">
+        Learn Pulse Width Modulation to control motor speed and LED brightness.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 45 min</span>
+        <span><i class="fa fa-signal"></i> Intermediate</span>
+        <span><i class="fa fa-cog"></i> Motors</span>
+      </div>
+    </div>
+    
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 05</div>
+      <h3 class="tutorial-title">Serial Communication Basics</h3>
+      <p class="tutorial-desc">
+        Master serial communication between Arduino and computer for debugging and data logging.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 35 min</span>
+        <span><i class="fa fa-signal"></i> Intermediate</span>
+        <span><i class="fa fa-exchange"></i> Communication</span>
+      </div>
+    </div>
+    
+    <div class="tutorial-item">
+      <div class="tutorial-number">Tutorial 06</div>
+      <h3 class="tutorial-title">Building Smart IoT Devices</h3>
+      <p class="tutorial-desc">
+        Connect your Arduino to the internet using WiFi modules and send data to the cloud.
+      </p>
+      <div class="tutorial-meta">
+        <span><i class="fa fa-clock-o"></i> 60 min</span>
+        <span><i class="fa fa-signal"></i> Advanced</span>
+        <span><i class="fa fa-wifi"></i> IoT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="lab-section">
+  <div class="section-header">
+    <h2 class="section-title">Learning <span class="gradient-text">Resources</span></h2>
+    <p class="section-subtitle">
+      Everything you need to master Arduino development
+    </p>
+  </div>
+  
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="resource-icon"><i class="fa fa-book"></i></div>
+      <h3 class="resource-title">Documentation</h3>
+      <p class="resource-desc">
+        Official Arduino reference and programming guides
+      </p>
+      <a href="https://www.arduino.cc/reference/en/" target="_blank" class="resource-link">
+        Read Docs <i class="fa fa-external-link"></i>
+      </a>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-icon"><i class="fa fa-github"></i></div>
+      <h3 class="resource-title">Code Library</h3>
+      <p class="resource-desc">
+        Download ready-to-use code examples and libraries
+      </p>
+      <a href="https://github.com/alexandroshub" target="_blank" class="resource-link">
+        View GitHub <i class="fa fa-external-link"></i>
+      </a>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-icon"><i class="fa fa-comments"></i></div>
+      <h3 class="resource-title">Community</h3>
+      <p class="resource-desc">
+        Join Discord to ask questions and share projects
+      </p>
+      <a href="https://discord.gg/zSEH54w8nM" target="_blank" class="resource-link">
+        Join Discord <i class="fa fa-external-link"></i>
+      </a>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-icon"><i class="fa fa-shopping-cart"></i></div>
+      <h3 class="resource-title">Buy Components</h3>
+      <p class="resource-desc">
+        Find Arduino boards and components online
+      </p>
+      <a href="https://store.arduino.cc/" target="_blank" class="resource-link">
+        Official Store <i class="fa fa-external-link"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="lab-section">
+  <div class="lab-cta">
+    <h2 class="lab-cta-title">Ready to Start Building?</h2>
+    <p class="lab-cta-subtitle">
+      Join thousands of makers creating amazing Arduino projects
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="https://projecthub.arduino.cc/Papaspyrou_A" class="lab-btn lab-btn-primary">
+        <i class="fa fa-rocket"></i> Start Your First Project
+      </a>
+      <a href="https://alexandroshub.github.io/LV3#contact" class="lab-btn lab-btn-secondary">
+        <i class="fa fa-envelope"></i> Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lab-footer">
+  <h2 class="lab-footer-title">AlphaPi</h2>
+  <p style="color: #aaa; margin: 0.5rem 0;">All rights reserved</p>
+  <nav class="lab-footer-links">
+    <a href="https://alexandroshub.github.io/apTOU">Terms of service</a>
+    <span style="color: #666;">|</span>
+    <a href="https://alexandroshub.github.io/privacy.html">Privacy</a>
+    <span style="color: #666;">|</span>
+    <a href="https://alexandroshub.github.io/LV3#contact">Contact</a>
+    <span style="color: #666;">|</span>
+    <a href="https://www.instagram.com/alexandroshub/"><i class="uil uil-instagram"></i></a>
+    <span style="color: #666;">|</span>
+    <a href="https://alexandroshub.github.io/welcome21.html">▞▚ ▛</a>
+  </nav>
+  <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">
+    Handcrafted with ❤️ by Alexandros Papaspyrou | Hosted by GitHub
+  </p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+// Change video function
+function changeVideo(url) {
+  document.getElementById('videoFrame').src = url;
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.project-card, .resource-card, .tutorial-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
