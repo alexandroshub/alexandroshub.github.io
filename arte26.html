@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Gallery Style - Artwork Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #008eaa;
+            --card-bg: #f9f9f9;
+            --transition: 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f1f1f1;
+            --accent-color: #40c4ff;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        /* Header & Controls */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(128,128,128,0.2);
+        }
+
+        .museum-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 8px 16px;
+            border: 1px solid var(--text-color);
+            background: transparent;
+            color: var(--text-color);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Layout */
+        .artwork-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            min-height: calc(100-vh - 80px);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Image Side */
+        .viewer-side {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-wrapper {
+            position: relative;
+            cursor: crosshair;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 100%;
+        }
+
+        #main-image {
+            display: block;
+            max-width: 100%;
+            max-height: 70vh;
+        }
+
+        /* Hover Zoom Box */
+        .zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            width: 150px;
+            height: 150px;
+            visibility: hidden;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .zoom-result {
+            position: fixed;
+            top: 100px;
+            left: 50px;
+            border: 1px solid #000;
+            width: 300px;
+            height: 300px;
+            z-index: 10;
+            visibility: hidden;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Details Side */
+        .details-side {
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-left: 1px solid rgba(128,128,128,0.1);
+        }
+
+        .artwork-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .artwork-artist {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+        }
+
+        .artwork-desc {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        /* Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary { background: var(--text-color); color: var(--bg-color); }
+        .btn-outline { background: transparent; border: 1px solid var(--text-color); color: var(--text-color); }
+        .btn:hover { opacity: 0.8; }
+
+        /* Fullscreen Overlay */
+        #fullscreen-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fullscreen-overlay img {
+            max-width: 95%;
+            max-height: 95%;
+        }
+
+        .close-fs {
+            position: absolute;
+            top: 20px; right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1000px) {
+            .artwork-container { grid-template-columns: 1fr; }
+            .details-side { border-left: none; }
+            .zoom-result { display: none; } /* Hide zoom on mobile */
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <header>
+        <div class="museum-title">AlphaPi Art</div>
+        <button class="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+    </header>
+
+    <main class="artwork-container">
+        <section class="viewer-side">
+            <div class="image-wrapper" id="img-wrapper">
+                <div id="lens" class="zoom-lens"></div>
+                <img id="main-image" src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/607b46219860431.67cb6f6ea18f9.jpg" alt="Artwork">
+            </div>
+            <div id="result" class="zoom-result"></div>
+            
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.5;">Περάστε το ποντίκι για μεγέθυνση</p>
+        </section>
+
+        <section class="details-side">
+            <h1 class="artwork-title">Walking man</h1>
+            <div class="artwork-artist">Alexandros Papaspyrou</div>
+        
+ <div class="artwork-meta" style="font-size: 12px; margin-bottom: 20px; opacity: 0.7;">
+        Acrylic on Canvas | Contemporary Existentialism
+    </div>
+
+    <p class="artwork-desc">
+        Το έργο <strong>"Walking Man"</strong> αποτελεί μια εμβριθή σπουδή πάνω στη δυναμική του chiaroscuro και την υπαρξιακή απομόνωση. 
+        Αντλώντας έμπνευση από την αισθητική του <em>Neo-Noir</em> και την παράδοση των μεγάλων δασκάλων του Μπαρόκ, ο Παπασπύρου 
+        δημιουργεί μια φιγούρα-αρχέτυπο που αναδύεται μέσα από το υλικό σκοτάδι του ακρυλικού χρώματος.
+        <br><br>
+        Η έλλειψη προσώπου και ο μινιμαλιστικός "μη-τόπος" στον οποίο κινείται ο ήρωας, μετατρέπουν την απλή πράξη του βαδίσματος 
+        σε μια πανανθρώπινη δήλωση για την πορεία του ατόμου προς το άγνωστο. Είναι μια οπτική εξερεύνηση της μοναχικότητας 
+        ως δύναμη και της σκιώδους υφής της πραγματικότητας.
+    </p>
+
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="openFullscreen()">Fullscreen</button>
+                <button class="btn btn-outline" onclick="window.print()">Download</button>
+            </div>
+
+            <a href="https://www.nationalgallery.gr/artwork/kopela-sto-parathyro/" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 14px;">
+                ΠΕΡΙΣΣΟΤΕΡΑ ΣΤΗΝ ΙΣΤΟΣΕΛΙΔΑ &rarr;
+            </a>
+        </section>
+    </main>
+
+    <div id="fullscreen-overlay" onclick="closeFullscreen()">
+        <span class="close-fs">&times;</span>
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2b0f19218765537.67a748c14293c.jpg">
+    </div>
+
+    <script>
+        // 1. Theme Toggle Logic
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            document.querySelector('.theme-toggle').innerText = newTheme === 'light' ? 'Dark Mode' : 'Light Mode';
+        }
+
+        // 2. Fullscreen Logic
+        function openFullscreen() {
+            document.getElementById('fullscreen-overlay').style.display = 'flex';
+        }
+        function closeFullscreen() {
+            document.getElementById('fullscreen-overlay').style.display = 'none';
+        }
+
+        // 3. Hover Zoom Logic
+        function imageZoom(imgID, resultID) {
+            var img, lens, result, cx, cy;
+            img = document.getElementById(imgID);
+            result = document.getElementById(resultID);
+            lens = document.getElementById('lens');
+
+            /* Calculate ratio */
+            cx = result.offsetWidth / lens.offsetWidth;
+            cy = result.offsetHeight / lens.offsetHeight;
+
+            result.style.backgroundImage = "url('" + img.src + "')";
+            result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+
+            img.parentElement.addEventListener("mousemove", moveLens);
+            img.parentElement.addEventListener("mouseenter", () => {
+                lens.style.visibility = "visible";
+                result.style.visibility = "visible";
+            });
+            img.parentElement.addEventListener("mouseleave", () => {
+                lens.style.visibility = "hidden";
+                result.style.visibility = "hidden";
+            });
+
+            function moveLens(e) {
+                var pos, x, y;
+                e.preventDefault();
+                pos = getCursorPos(e);
+                x = pos.x - (lens.offsetWidth / 2);
+                y = pos.y - (lens.offsetHeight / 2);
+                
+                if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+                if (x < 0) {x = 0;}
+                if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+                if (y < 0) {y = 0;}
+                
+                lens.style.left = x + "px";
+                lens.style.top = y + "px";
+                result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+            }
+
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                a = img.getBoundingClientRect();
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            }
+        }
+
+        // Initialize Zoom
+        window.onload = function() {
+            imageZoom("main-image", "result");
+        };
+    </script>
+</body>
+</html>
