@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHA PI | Midnight Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #080808;
+            --surface: #121212;
+            --text-main: #e0e0e0;
+            --text-dim: #666;
+            --accent: #c5a059; /* Gallery Gold */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            /* Subtle grain effect for a premium feel */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Table filter='url(%23noiseFilter)'/%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px;
+            opacity: 0.98;
+        }
+
+        /* --- Custom Cursor --- */
+        #cursor {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+
+        /* --- Header: National Gallery Influence --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .title-wrap {
+            text-align: center;
+            border-left: 1px solid var(--accent);
+            border-right: 1px solid var(--accent);
+            padding: 0 4rem;
+        }
+
+        h1 {
+            font-family: 'GFS Didot', serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 400;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 0.8rem;
+            color: var(--accent);
+            margin-top: 1rem;
+            text-indent: 0.8rem;
+        }
+
+        /* --- Gallery Section --- */
+        .gallery {
+            position: relative;
+            z-index: 2;
+            padding: 10vh 5vw;
+            display: flex;
+            flex-direction: column;
+            gap: 20vh;
+        }
+
+        .art-item {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        /* The "Spotlight" Frame */
+        .frame {
+            position: relative;
+            max-width: 800px;
+            background: #000;
+            padding: 20px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #1a1a1a;
+        }
+
+        .frame:hover {
+            transform: rotateX(5deg) rotateY(-5deg) scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .frame img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.8) contrast(1.1);
+            transition: filter 0.5s ease;
+        }
+
+        .frame:hover img {
+            filter: brightness(1) contrast(1);
+        }
+
+        /* Floating Info Tags */
+        .info {
+            position: absolute;
+            bottom: -40px;
+            left: -20px;
+            background: var(--surface);
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            min-width: 250px;
+        }
+
+        .info h3 {
+            font-family: 'GFS Didot', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info p {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Layout Variations --- */
+        .align-right { justify-content: flex-end; }
+        .align-left { justify-content: flex-start; }
+
+        /* --- Footer --- */
+        footer {
+            padding: 10rem 0 5rem 0;
+            text-align: center;
+            font-family: 'GFS Didot', serif;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+
+    <header>
+        <div class="title-wrap">
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">MUSEUM EDITION / 2026</p>
+            <h1>Alpha Pi</h1>
+            <p class="subtitle">The Digital Atelier</p>
+        </div>
+    </header>
+
+    <main class="gallery">
+        <section class="art-item">
+            <div class="frame">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/20ad8e228145635.684d9bd6b28b3.jpg" alt="Work 1">
+                <div class="info">
+                    <h3>The Genesis</h3>
+                    <p>Digital Composition / 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="art-item align-right">
+            <div class="frame" style="max-width: 600px;">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9dfb2f218259611.67a74b235fa93.jpg" alt="Work 2">
+                <div class="info">
+                    <h3>Chroma Study</h3>
+                    <p>Abstract Series</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="art-item align-left">
+            <div class="frame" style="max-width: 900px;">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2b0f19218765537.67a748c14293c.jpg" alt="Work 3">
+                <div class="info">
+                    <h3>Structural Silence</h3>
+                    <p>Architectural Render</p>
+                </div>
+            </div>
+        </section>
+
+         <section class="art-item">
+            <div class="frame" style="max-width: 500px;">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/607b46219860431.67cb6f6ea18f9.jpg" alt="Work 4">
+                <div class="info">
+                    <h3>Kinetic Flux</h3>
+                    <p>Motion Capture Study</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>α π</p>
+        <div style="font-size: 0.7rem; font-family: 'Montserrat'; letter-spacing: 5px; margin-top: 2rem; color: #444;">ALL RIGHTS RESERVED 2026</div>
+    </footer>
+
+    <script>
+        // Custom Cursor Movement
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Parallax & Reveal Logic
+        const frames = document.querySelectorAll('.frame');
+        window.addEventListener('scroll', () => {
+            frames.forEach(frame => {
+                const speed = 0.05;
+                const rect = frame.getBoundingClientRect();
+                const visible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (visible) {
+                    const shift = (window.innerHeight / 2 - rect.top) * speed;
+                    frame.style.transform = `translateY(${shift}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
