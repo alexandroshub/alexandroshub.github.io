@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking Man - Alexandros Papaspyrou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #008eaa;
+            --card-bg: #f5f5f5;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f1f1f1;
+            --accent-color: #40c4ff;
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            margin: 0; background-color: var(--bg-color); color: var(--text-color);
+            font-family: 'Inter', sans-serif; transition: 0.3s;
+        }
+
+        header {
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(128,128,128,0.2);
+        }
+
+        .artwork-container { display: grid; grid-template-columns: 1fr 450px; min-height: 90vh; }
+
+        /* --- ZOOM CSS --- */
+        .viewer-side { padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .img-zoom-container { position: relative; display: inline-block; }
+        .img-zoom-lens {
+            position: absolute; border: 1px solid #d4d4d4; width: 100px; height: 100px;
+            background: rgba(255, 255, 255, 0.3); visibility: hidden; cursor: crosshair;
+        }
+        .img-zoom-result {
+            position: absolute; top: 0; right: -320px; border: 1px solid #000;
+            width: 300px; height: 300px; visibility: hidden; z-index: 100;
+            background-repeat: no-repeat; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        #main-image { max-width: 100%; max-height: 75vh; display: block; box-shadow: 0 15px 50px rgba(0,0,0,0.4); }
+
+        /* --- DETAILS CSS --- */
+        .details-side { padding: 60px 40px; background: var(--card-bg); overflow-y: auto; }
+        .artwork-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; }
+        .artwork-artist { font-size: 1.2rem; color: var(--accent-color); margin: 10px 0 20px 0; font-weight: 600; }
+        
+        /* Language Selector Styling */
+        .lang-selector { margin-bottom: 20px; display: flex; gap: 10px; }
+        .lang-btn { 
+            background: none; border: 1px solid var(--text-color); color: var(--text-color); 
+            padding: 5px 10px; cursor: pointer; font-size: 10px; font-weight: bold; opacity: 0.5;
+        }
+        .lang-btn.active { opacity: 1; background: var(--text-color); color: var(--bg-color); }
+
+        .artwork-desc { line-height: 1.8; opacity: 0.9; font-size: 15px; }
+        
+        .action-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .btn { padding: 12px 20px; border: none; cursor: pointer; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        .btn-black { background: var(--text-color); color: var(--bg-color); }
+        .btn-outline { background: transparent; border: 1px solid var(--text-color); color: var(--text-color); }
+
+        #fs-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 999; justify-content: center; align-items: center;
+        }
+
+        @media (max-width: 1000px) {
+            .artwork-container { grid-template-columns: 1fr; }
+            .img-zoom-result { display: none !important; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <header>
+        <div style="font-family:'Playfair Display'; letter-spacing: 2px; font-weight: bold;">ALEXANDROS PAPASPYROU</div>
+        <button class="btn btn-outline" onclick="toggleTheme()" id="themeBtn">Light Mode</button>
+    </header>
+
+    <main class="artwork-container">
+        <section class="viewer-side">
+            <div class="img-zoom-container">
+                <div id="zoom-lens" class="img-zoom-lens"></div>
+                <img id="main-image" src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2b0f19218765537.67a748c14293c.jpg" alt="Walking Man">
+                <div id="zoom-result" class="img-zoom-result"></div>
+            </div>
+        </section>
+
+        <section class="details-side">
+            <div class="lang-selector">
+                <button class="lang-btn active" id="btn-el" onclick="setLang('el')">EL</button>
+                <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+            </div>
+
+            <h1 class="artwork-title">Walking Man</h1>
+            <div class="artwork-artist">Αλέξανδρος Παπασπύρου</div>
+            
+            <div id="desc-el" class="artwork-desc">
+                <strong>Ακρυλικό σε καμβά.</strong> Μια εμβριθής σπουδή πάνω στη δυναμική του chiaroscuro και την υπαρξιακή απομόνωση. Αντλώντας έμπνευση από την αισθητική του Neo-Noir και την παράδοση των μεγάλων δασκάλων του Μπαρόκ, ο Παπασπύρου δημιουργεί μια φιγούρα-αρχέτυπο που αναδύεται μέσα από το υλικό σκοτάδι.
+                <br><br>
+                Η έλλειψη προσώπου και ο μινιμαλιστικός "μη-τόπος" στον οποίο κινείται ο ήρωας, μετατρέπουν την απλή πράξη του βαδίσματος σε μια πανανθρώπινη δήλωση για την πορεία του ατόμου προς το άγνωστο.
+            </div>
+
+            <div id="desc-en" class="artwork-desc" style="display: none;">
+                <strong>Acrylic on Canvas.</strong> A profound exploration of chiaroscuro and existential solitude. Drawing from the Neo-Noir aesthetic and the tradition of Baroque masters, Papaspyrou sculpts a universal archetype emerging from a material void of acrylic shadow.
+                <br><br>
+                The deliberate absence of identity and the minimalist "non-place" transform the act of walking into a monumental statement on the human journey into the unknown. It is a visual inquiry into the resilience of the individual within the abyss.
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-black" onclick="openFS()">Fullscreen</button>
+                <button class="btn btn-outline" onclick="downloadImg()">Download</button>
+                <button class="btn btn-outline" onclick="shareArt()">Share</button>
+            </div>
+
+            <a href="https://www.nationalgallery.gr/artwork/kopela-sto-parathyro/" target="_blank" style="display:block; margin-top:40px; color: var(--accent-color); text-decoration: none; font-size: 13px; font-weight: 700;">
+                VIEW MORE AT GALLERY →
+            </a>
+        </section>
+    </main>
+
+    <div id="fs-overlay" onclick="this.style.display='none'">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2b0f19218765537.67a748c14293c.jpg">
+    </div>
+
+    <script>
+        // --- 1. LANGUAGE TOGGLE ---
+        function setLang(lang) {
+            document.getElementById('desc-el').style.display = (lang === 'el') ? 'block' : 'none';
+            document.getElementById('desc-en').style.display = (lang === 'en') ? 'block' : 'none';
+            
+            document.getElementById('btn-el').classList.toggle('active', lang === 'el');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+
+        // --- 2. THEME TOGGLE ---
+        function toggleTheme() {
+            const b = document.body;
+            const isDark = b.getAttribute('data-theme') === 'dark';
+            b.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            document.getElementById('themeBtn').innerText = isDark ? 'Dark Mode' : 'Light Mode';
+        }
+
+        // --- 3. FULLSCREEN & DOWNLOAD & SHARE ---
+        function openFS() { document.getElementById('fs-overlay').style.display = 'flex'; }
+        
+        function downloadImg() {
+            const link = document.createElement('a');
+            link.href = document.getElementById('main-image').src;
+            link.download = 'Walking_Man_Papaspyrou.jpg';
+            link.click();
+        }
+
+        function shareArt() {
+            if (navigator.share) {
+                navigator.share({ title: 'Walking Man', url: window.location.href });
+            } else {
+                alert("Link copied!");
+                navigator.clipboard.writeText(window.location.href);
+            }
+        }
+
+        // --- 4. ZOOM SCRIPT ---
+        function initZoom() {
+            const img = document.getElementById("main-image");
+            const result = document.getElementById("zoom-result");
+            const lens = document.getElementById("zoom-lens");
+            const cx = result.offsetWidth / lens.offsetWidth;
+            const cy = result.offsetHeight / lens.offsetHeight;
+
+            result.style.backgroundImage = `url('${img.src}')`;
+            result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+
+            const moveLens = (e) => {
+                const a = img.getBoundingClientRect();
+                let x = e.pageX - a.left - window.pageXOffset - (lens.offsetWidth / 2);
+                let y = e.pageY - a.top - window.pageYOffset - (lens.offsetHeight / 2);
+                if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
+                if (x < 0) x = 0;
+                if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
+                if (y < 0) y = 0;
+                lens.style.left = x + "px";
+                lens.style.top = y + "px";
+                result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+            };
+
+            img.addEventListener("mousemove", moveLens);
+            lens.addEventListener("mousemove", moveLens);
+            img.parentElement.addEventListener("mouseenter", () => {
+                lens.style.visibility = "visible";
+                result.style.visibility = "visible";
+            });
+            img.parentElement.addEventListener("mouseleave", () => {
+                lens.style.visibility = "hidden";
+                result.style.visibility = "hidden";
+            });
+        }
+        window.addEventListener('load', initZoom);
+    </script>
+</body>
+</html>
