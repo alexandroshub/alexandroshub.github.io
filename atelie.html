@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHA PI | Official Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Montserrat:wght@200;300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --accent: #c5a059; /* Museum Gold */
+            --text: #ffffff;
+            --text-muted: #888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.8), transparent);
+        }
+
+        .logo {
+            font-family: 'GFS Didot', serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .burger {
+            cursor: pointer;
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .burger span {
+            display: block;
+            width: 25px;
+            height: 1px;
+            background: var(--accent);
+            transition: 0.3s;
+        }
+
+        /* Fullscreen Menu */
+        #menu-overlay {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: var(--surface);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s cubic-bezier(0.77,0,0.175,1);
+            z-index: 1050;
+        }
+
+        #menu-overlay.active { right: 0; }
+
+        .menu-links { list-style: none; text-align: center; }
+        .menu-links li { margin: 20px 0; }
+        .menu-links a {
+            font-family: 'GFS Didot', serif;
+            font-size: 3.5rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .menu-links a:hover { color: var(--accent); font-style: italic; }
+
+        /* --- Hero Section --- */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'GFS Didot', serif;
+            font-size: clamp(3rem, 12vw, 8rem);
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            letter-spacing: 0.5rem;
+            font-weight: 200;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* --- Gallery Grid --- */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5vw 10vw 5vw;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 4rem 2rem;
+        }
+
+        .art-portal {
+            grid-column: span 12;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Professional Staggering */
+        @media (min-width: 900px) {
+            .portal-left { grid-column: 1 / 8; }
+            .portal-right { grid-column: 6 / 13; margin-top: 100px; }
+            .portal-center { grid-column: 3 / 11; }
+        }
+
+        .image-container {
+            position: relative;
+            background: #111;
+            padding: 20px;
+            border: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+            filter: grayscale(0.4) brightness(0.8);
+            transition: 1s ease;
+        }
+
+        .art-portal:hover .image-container img {
+            filter: grayscale(0) brightness(1);
+            transform: scale(1.05);
+        }
+
+        .art-portal:hover .image-container {
+            border-color: var(--accent);
+        }
+
+        /* Art Labels */
+        .label {
+            margin-top: 1.5rem;
+            border-left: 2px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .label h2 {
+            font-family: 'GFS Didot', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .label p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        footer {
+            padding: 5rem;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            font-family: 'GFS Didot', serif;
+            color: var(--text-muted);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">ALPHA PI</a>
+        <div class="burger" onclick="toggleMenu()">
+            <span id="b1"></span>
+            <span id="b2"></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay">
+        <ul class="menu-links">
+            <li><a href="#" onclick="toggleMenu()">ΑΡΧΙΚΗ</a></li>
+            <li><a href="mailto:contact@alphapi.art" onclick="toggleMenu()">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <p>National Gallery Style Presentation</p>
+        <h1>Alpha Pi</h1>
+    </header>
+
+    <main class="gallery">
+        <a href="https://www.behance.net/gallery/228145635" class="art-portal portal-left">
+            <div class="image-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/20ad8e228145635.684d9bd6b28b3.jpg" alt="Art 1">
+            </div>
+            <div class="label">
+                <h2>The Genesis</h2>
+                <p>Digital Composition / 2026</p>
+            </div>
+        </a>
+
+        <a href="#" class="art-portal portal-right">
+            <div class="image-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9dfb2f218259611.67a74b235fa93.jpg" alt="Art 2">
+            </div>
+            <div class="label">
+                <h2>Chroma Drift</h2>
+                <p>Mixed Media Study</p>
+            </div>
+        </a>
+
+        <a href="#" class="art-portal portal-center">
+            <div class="image-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2b0f19218765537.67a748c14293c.jpg" alt="Art 3">
+            </div>
+            <div class="label">
+                <h2>Structural Silence</h2>
+                <p>Architectural Fine Art</p>
+            </div>
+        </a>
+    </main>
+
+    <footer>      <p>α π</p>
+        <p>&copy; 2026 ALPHA PI ATELIER. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu-overlay');
+            const b1 = document.getElementById('b1');
+            const b2 = document.getElementById('b2');
+            
+            menu.classList.toggle('active');
+
+            if(menu.classList.contains('active')) {
+                b1.style.transform = 'translateY(4px) rotate(45deg)';
+                b2.style.transform = 'translateY(-4px) rotate(-45deg)';
+            } else {
+                b1.style.transform = 'none';
+                b2.style.transform = 'none';
+            }
+        }
+
+        // Smooth reveal on scroll
+        const portals = document.querySelectorAll('.art-portal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        portals.forEach(p => {
+            p.style.opacity = "0";
+            p.style.transform = "translateY(50px)";
+            p.style.transition = "all 1s ease-out";
+            observer.observe(p);
+        });
+    </script>
+</body>
+</html>
