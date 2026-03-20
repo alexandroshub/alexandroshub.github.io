@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Alexandros Papaspyrou</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #6b6b6b;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    /* make text highlight look nice */
+    ::selection {
+      background: #0a0a0a;
+      color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 700px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+
+    /* ---- TOP NAV ---- */
+
+    #topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #topnav.stuck {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #e4e4e4;
+    }
+
+    .topnav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-logo {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #0a0a0a;
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+
+    /* ---- SECTION JUMP NAV ---- */
+
+    #jumpnav {
+      position: sticky;
+      top: 62px;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid #e4e4e4;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #jumpnav.show {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .jumpnav-inner {
+      display: flex;
+      align-items: stretch;
+      height: 46px;
+    }
+
+    .jlink {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 0 22px;
+      font-size: 0.8rem;
+      color: #6b6b6b;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .jlink:hover {
+      color: #0a0a0a;
+    }
+
+    .jlink.active {
+      color: #0a0a0a;
+      font-weight: 500;
+      border-bottom-color: #0a0a0a;
+    }
+
+    .jlink svg {
+      width: 13px;
+      height: 13px;
+      opacity: 0.5;
+    }
+
+    .jlink.active svg {
+      opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+      .jlink {
+        padding: 0 13px;
+        font-size: 0.75rem;
+      }
+      .jlink svg {
+        display: none;
+      }
+    }
+
+
+    /* ---- CV HEADER ---- */
+
+    .cv-header {
+      padding-top: 160px;
+      padding-bottom: 80px;
+      border-bottom: 1px solid #e4e4e4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle blue glow in background */
+    .cv-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 800px 500px at 80% 50%, rgba(37, 99, 235, 0.035) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cv-header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .cv-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 20px;
+    }
+
+    .cv-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: #6b6b6b;
+    }
+
+    .cv-name {
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      margin-bottom: 12px;
+    }
+
+    .cv-jobtitle {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      color: #6b6b6b;
+      margin-bottom: 32px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: #0a0a0a;
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .print-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1.5px solid #e4e4e4;
+      background: transparent;
+      color: #3a3a3a;
+      transition: all 0.2s ease;
+    }
+
+    .print-btn:hover {
+      border-color: #0a0a0a;
+      background: #f7f7f5;
+      transform: translateY(-1px);
+    }
+
+    .print-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.78rem;
+      color: #6b6b6b;
+      letter-spacing: 0.04em;
+    }
+
+    .green-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: blink 2.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+
+
+    /* ---- MAIN CONTENT AREA ---- */
+
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+    }
+
+    @media (max-width: 900px) {
+      .cv-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .main-col {
+      border-right: 1px solid #e4e4e4;
+    }
+
+    @media (max-width: 900px) {
+      .main-col {
+        border-right: none;
+      }
+    }
+
+    .cv-block {
+      padding: 48px clamp(24px, 4vw, 56px) 48px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .cv-block:last-child {
+      border-bottom: none;
+    }
+
+    .side-col .cv-block {
+      padding: 48px 0 48px clamp(24px, 3vw, 40px);
+    }
+
+    @media (max-width: 900px) {
+      .cv-block {
+        padding-right: 0;
+      }
+      .side-col .cv-block {
+        padding-left: 0;
+        border-top: 1px solid #e4e4e4;
+      }
+    }
+
+    .block-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* the little line that extends after the label */
+    .block-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e4e4e4;
+    }
+
+
+    /* ---- STATS ROW ---- */
+
+    .stats-row {
+      display: flex;
+      border: 1px solid #e4e4e4;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .stat-box {
+      flex: 1;
+      padding: 20px 16px;
+      text-align: center;
+      border-right: 1px solid #e4e4e4;
+    }
+
+    .stat-box:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      letter-spacing: -0.03em;
+      color: #0a0a0a;
+    }
+
+    .stat-text {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .stats-row {
+        flex-direction: column;
+      }
+      .stat-box {
+        border-right: none;
+        border-bottom: 1px solid #e4e4e4;
+      }
+      .stat-box:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .summary-text {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: #3a3a3a;
+    }
+
+
+    /* ---- EXPERIENCE ---- */
+
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #0a0a0a;
+    }
+
+    .job-dates {
+      font-size: 0.78rem;
+      color: #6b6b6b;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .job-company {
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      margin-bottom: 14px;
+    }
+
+    .job-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .job-points li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .job-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #e4e4e4;
+    }
+
+
+    /* ---- PROJECTS ---- */
+
+    .project-item {
+      padding-top: 24px;
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .project-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .project-name {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      margin-bottom: 6px;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+    }
+
+
+    /* ---- SKILLS ---- */
+
+    .skill-group {
+      margin-bottom: 28px;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3a3a3a;
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: #f7f7f5;
+      color: #3a3a3a;
+      border: 1px solid #e4e4e4;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      cursor: default;
+    }
+
+    .tag:hover {
+      background: #0a0a0a;
+      color: white;
+      border-color: #0a0a0a;
+    }
+
+
+    /* ---- EDUCATION ---- */
+
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .edu-degree {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      margin-bottom: 3px;
+    }
+
+    .edu-school {
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      margin-bottom: 2px;
+    }
+
+    .edu-year {
+      font-size: 0.78rem;
+      color: #e4e4e4;
+      letter-spacing: 0.04em;
+    }
+
+
+    /* ---- LANGUAGES ---- */
+
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .lang-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .lang-name {
+      font-size: 0.9rem;
+      color: #3a3a3a;
+    }
+
+    .lang-level {
+      font-size: 0.78rem;
+      color: #6b6b6b;
+    }
+
+
+    /* ---- CONTACT SIDEBAR BLOCK ---- */
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+
+    /* ---- BOTTOM SOCIAL SECTION ---- */
+
+    #connect {
+      background: #0a0a0a;
+      padding: 100px 0;
+    }
+
+    .connect-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 48px;
+    }
+
+    .connect-heading {
+      font-family: Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+
+    .connect-heading span {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.22s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.32);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-btn svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+
+    .social-btn:hover svg {
+      opacity: 1;
+    }
+
+
+    /* ---- FOOTER ---- */
+
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left, .footer-right {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+
+    /* ---- FADE IN ANIMATIONS ---- */
+
+    .fadein {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fadein.d1 { transition-delay: 0.08s; }
+    .fadein.d2 { transition-delay: 0.16s; }
+    .fadein.d3 { transition-delay: 0.24s; }
+
+    .fadein.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+
+    /* ---- PRINT ---- */
+    @media print {
+      #topnav, #jumpnav, #connect, footer, .print-btn {
+        display: none !important;
+      }
+      .cv-header {
+        padding-top: 32px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- top navigation bar -->
+  <nav id="topnav">
+    <div class="wrap topnav-inner">
+      <a href="alexandros.html" class="site-logo">Alexandros</a>
+      <a href="alexandros.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Back to site
+      </a>
+    </div>
+  </nav>
+
+  <!-- sticky section jump links, shows after scrolling past header -->
+  <div id="jumpnav">
+    <div class="wrap jumpnav-inner">
+      <a href="#section-experience" class="jlink active" data-target="section-experience">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+        </svg>
+        Experience
+      </a>
+      <a href="#section-education" class="jlink" data-target="section-education">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3.33 1.67 8.67 1.67 12 0v-5"/>
+        </svg>
+        Education
+      </a>
+      <a href="#section-skills" class="jlink" data-target="section-skills">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+        Skills
+      </a>
+      <a href="#section-contact" class="jlink" data-target="section-contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- cv header / hero -->
+  <div class="cv-header">
+    <div class="wrap cv-header-inner">
+
+      <div class="cv-header-left">
+        <p class="cv-eyebrow">Curriculum Vitae</p>
+        <h1 class="cv-name">Alexandros<br>Papaspyrou</h1>
+        <p class="cv-jobtitle">Technical Support Specialist &amp; Automation Engineer</p>
+        <div class="contact-row">
+          <a href="mailto:a-papaspyrou@outlook.com.gr" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            a-papaspyrou@outlook.com.gr
+          </a>
+          <a href="tel:+306940548867" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            +30 694 054 8867
+          </a>
+          <a href="https://alexandroshub.github.io" target="_blank" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+            alexandroshub.github.io
+          </a>
+          <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            linkedin.com/in/alexandrospapaspyrou
+          </a>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="print-btn" onclick="window.print()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6,9 6,2 18,2 18,9"/>
+            <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+            <rect x="6" y="14" width="12" height="8"/>
+          </svg>
+          Print / Save PDF
+        </button>
+        <div class="availability">
+          <div class="green-dot"></div>
+          Open to opportunities
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- main 2-column layout -->
+  <div class="wrap">
+    <div class="cv-body">
+
+      <!-- left / main column -->
+      <div class="main-col">
+
+        <!-- profile summary -->
+        <div class="cv-block fadein">
+          <p class="block-label">Profile</p>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-number">6+</span>
+              <span class="stat-text">Years Experience</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">40+</span>
+              <span class="stat-text">Daily Cases</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">95%</span>
+              <span class="stat-text">CSAT Rating</span>
+            </div>
+          </div>
+
+          <p class="summary-text">
+            Automation engineer and technical specialist with 6+ years bridging hands-on embedded systems development with high-performance customer-facing technical roles. Experienced in Siemens &amp; BECKHOFF PLC programming, Arduino/embedded systems, and industrial automation. Currently completing an Automation Engineering Technology degree while building real-world intelligent systems.
+          </p>
+        </div>
+
+        <!-- experience -->
+        <div id="section-experience" class="cv-block fadein">
+          <p class="block-label">Experience</p>
+          <div class="job-list">
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Operations Customer Expert</h3>
+                <span class="job-dates">Feb 2025 — Present</span>
+              </div>
+              <p class="job-company">Teleperformance</p>
+              <ul class="job-points">
+                <li>Lead operations optimization initiatives for customer service processes</li>
+                <li>Mentor team members on best practices and quality standards</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Process Mentor &amp; Dispatcher</h3>
+                <span class="job-dates">Apr 2024 — Feb 2025</span>
+              </div>
+              <p class="job-company">Teleperformance</p>
+              <ul class="job-points">
+                <li>Coached 15+ technical support agents on complex case resolution</li>
+                <li>Coordinated case distribution and workload management across teams</li>
+                <li>Improved team first-call resolution rate by implementing new troubleshooting protocols</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Technical Support Agent</h3>
+                <span class="job-dates">May 2023 — Apr 2024</span>
+              </div>
+              <p class="job-company">Teleperformance — HP Division</p>
+              <ul class="job-points">
+                <li>Provided specialized technical support for HP computers and printers</li>
+                <li>Achieved 95%+ customer satisfaction rating consistently</li>
+                <li>Resolved complex hardware/software issues with 85% first-call resolution</li>
+                <li>Handled average of 35+ technical cases daily</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Tech Specialist — Retention</h3>
+                <span class="job-dates">Mar 2021 — Sep 2021</span>
+              </div>
+              <p class="job-company">Vodafone Greece</p>
+              <ul class="job-points">
+                <li>Specialized in retaining high-value customers through technical issue resolution</li>
+                <li>Handled escalated cases for IPTV, fixed telephony, and internet services</li>
+                <li>Achieved 90%+ customer retention rate through effective problem-solving</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Technical Support Representative</h3>
+                <span class="job-dates">Oct 2017 — Mar 2021</span>
+              </div>
+              <p class="job-company">Vodafone Greece</p>
+              <ul class="job-points">
+                <li>Managed 40+ daily technical cases for telecommunications services</li>
+                <li>Achieved consistent 80%+ first-time resolution rates</li>
+                <li>Specialized in ADSL, VDSL, and fiber optic troubleshooting</li>
+                <li>Provided escalation management and pending-case updates</li>
+              </ul>
+            </div>
+
+            <div class="job-entry">
+              <div class="job-top">
+                <h3 class="job-title">Junior Embedded Developer</h3>
+                <span class="job-dates">May 2017 — Aug 2017</span>
+              </div>
+              <p class="job-company">Simworx (The Cube)</p>
+              <ul class="job-points">
+                <li>Developed BECKHOFF TwinCAT PLC programming for the ROBOCOASTER project</li>
+                <li>Implemented autonomous control systems for robotic platform operations</li>
+                <li>Collaborated with UK engineering team on industrial automation systems</li>
+                <li>Gained hands-on experience with industrial control systems and safety protocols</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- key projects -->
+        <div class="cv-block fadein">
+          <p class="block-label">Key Projects</p>
+          <div style="display: flex; flex-direction: column; gap: 28px;">
+            <div class="project-item">
+              <h4 class="project-name">Arduino-Based Electronics &amp; Embedded Systems</h4>
+              <p class="project-desc">Designed embedded systems and custom PCB solutions with advanced soldering techniques. Focused on sensor integration, actuator control, and real-time firmware development on constrained hardware.</p>
+            </div>
+            <div class="project-item">
+              <h4 class="project-name">BECKHOFF TwinCAT Industrial Automation</h4>
+              <p class="project-desc">PLC systems programming for robotic applications at Simworx. Implemented autonomous control logic with safety protocols for physical robotic platforms in a production environment alongside a UK engineering team.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- end main col -->
+
+
+      <!-- right / sidebar -->
+      <div class="side-col">
+
+        <!-- skills -->
+        <div id="section-skills" class="cv-block fadein">
+          <p class="block-label">Skills</p>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Programming &amp; Dev</p>
+            <div class="skill-tags">
+              <span class="tag">C++</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">Embedded C</span>
+              <span class="tag">HTML</span>
+              <span class="tag">PHP / MySQL</span>
+              <span class="tag">Visual Basic</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Automation &amp; Control</p>
+            <div class="skill-tags">
+              <span class="tag">Siemens PLC</span>
+              <span class="tag">BECKHOFF TwinCAT</span>
+              <span class="tag">Industrial Automation</span>
+              <span class="tag">Safety Protocols</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Tools &amp; Software</p>
+            <div class="skill-tags">
+              <span class="tag">MATLAB</span>
+              <span class="tag">Simulink</span>
+              <span class="tag">LabVIEW</span>
+              <span class="tag">Multisim</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <p class="skill-group-name">Hardware &amp; Electronics</p>
+            <div class="skill-tags">
+              <span class="tag">PCB Soldering</span>
+              <span class="tag">Electronics Troubleshooting</span>
+              <span class="tag">Network Diagnostics</span>
+              <span class="tag">Hardware Diagnostics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- education -->
+        <div id="section-education" class="cv-block fadein d1">
+          <p class="block-label">Education</p>
+          <div class="edu-list">
+            <div class="edu-item">
+              <h4 class="edu-degree">Automation Engineering Technology</h4>
+              <p class="edu-school">University of West Attica (UNIWA)</p>
+              <p class="edu-year">Expected Graduation 2026</p>
+            </div>
+            <div class="edu-item">
+              <h4 class="edu-degree">Computer Systems &amp; Networks Support</h4>
+              <p class="edu-school">EPAL Zografou Technical School</p>
+              <p class="edu-year">2011</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- languages -->
+        <div class="cv-block fadein d2">
+          <p class="block-label">Languages</p>
+          <div class="lang-row">
+            <span class="lang-name">Greek</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Professional</span>
+          </div>
+        </div>
+
+        <!-- contact -->
+        <div id="section-contact" class="cv-block fadein d3">
+          <p class="block-label">Contact</p>
+          <div class="contact-list">
+            <a href="mailto:a-papaspyrou@outlook.com.gr" class="contact-item" style="font-size: 0.875rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              a-papaspyrou@outlook.com.gr
+            </a>
+            <a href="tel:+306940548867" class="contact-item" style="font-size: 0.875rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              +30 694 054 8867
+            </a>
+            <a href="https://alexandroshub.github.io" target="_blank" class="contact-item" style="font-size: 0.875rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+              </svg>
+              alexandroshub.github.io
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- end sidebar -->
+
+    </div>
+  </div>
+  <!-- end main wrap -->
+
+
+  <!-- social section at the bottom -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Find me <span>across the web.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://substack.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+          </svg>
+          Substack
+        </a>
+        <a href="alexandros.html" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          Portfolio
+        </a>
+        <a href="mailto:a-papaspyrou@outlook.com.gr" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p class="footer-left">© 2025 Alexandros Papaspyrou</p>
+      <p class="footer-right">Athens, Greece</p>
+    </div>
+  </footer>
+
+
+  <script>
+    var topnav = document.getElementById('topnav');
+    var jumpnav = document.getElementById('jumpnav');
+    var header = document.querySelector('.cv-header');
+
+    // show glass nav on scroll and show jumpnav after the header
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 30) {
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.remove('stuck');
+      }
+
+      var headerBottom = header.getBoundingClientRect().bottom;
+      if (headerBottom < 100) {
+        jumpnav.classList.add('show');
+      } else {
+        jumpnav.classList.remove('show');
+      }
+    });
+
+    // fade in elements when they enter the viewport
+    var fadeItems = document.querySelectorAll('.fadein');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeItems.forEach(function(el) {
+      observer.observe(el);
+    });
+
+    // highlight active section in jump nav
+    var jlinks = document.querySelectorAll('.jlink');
+    var sections = ['section-experience', 'section-education', 'section-skills', 'section-contact'];
+
+    function highlightLink(id) {
+      jlinks.forEach(function(link) {
+        if (link.dataset.target === id) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    var sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          highlightLink(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+
+    sections.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+
+    // smooth scroll with offset for the two navbars
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        var offset = 120;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
