@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swarm Robotics Thesis — Alexandros Papaspyrou</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #6b6b6b;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    ::selection {
+      background: #0a0a0a;
+      color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 700px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+
+    /* ---- TOP NAV ---- */
+
+    #topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #topnav.stuck {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #e4e4e4;
+    }
+
+    /* when over the dark hero the nav text should be white */
+    #topnav.on-dark .site-logo,
+    #topnav.on-dark .back-link {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    #topnav.on-dark.stuck {
+      background: rgba(8, 8, 8, 0.85);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .topnav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-logo {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      transition: color 0.3s;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #0a0a0a;
+    }
+
+    #topnav.on-dark .back-link:hover {
+      color: white;
+    }
+
+    .back-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+
+    /* ---- HERO ---- */
+
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      background: #060608;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* the canvas sits behind everything */
+    #swarm-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* subtle grid overlay */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* fade bottom edge into white */
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2563eb;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      border-radius: 100px;
+      color: #2563eb;
+      margin-bottom: 24px;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: white;
+      max-width: 14ch;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, serif;
+      font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.45);
+      max-width: 56ch;
+      line-height: 1.6;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    /* the 3 CTA buttons */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      border: none;
+    }
+
+    .btn-main svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* primary = white filled */
+    .btn-primary {
+      background: white;
+      color: #0a0a0a;
+    }
+
+    .btn-primary:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* secondary = outlined */
+    .btn-outline {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.35);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* blue accent */
+    .btn-accent {
+      background: rgba(37, 99, 235, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-accent:hover {
+      background: rgba(37, 99, 235, 0.2);
+      border-color: rgba(37, 99, 235, 0.6);
+      color: #93c5fd;
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollpulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollpulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+
+    /* ---- ABSTRACT SECTION ---- */
+
+    #abstract {
+      padding: 100px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .abstract-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .abstract-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    .abstract-left {}
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 20px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: #6b6b6b;
+    }
+
+    .abstract-left h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin-bottom: 24px;
+      color: #0a0a0a;
+    }
+
+    .abstract-left p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #3a3a3a;
+    }
+
+    .abstract-left p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* highlights in the abstract text */
+    .abstract-left strong {
+      color: #0a0a0a;
+      font-weight: 500;
+    }
+
+    /* right side - key findings cards */
+    .findings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .finding-card {
+      padding: 20px 24px;
+      border: 1px solid #e4e4e4;
+      border-radius: 10px;
+      background: #f7f7f5;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .finding-card:hover {
+      border-color: #0a0a0a;
+      background: white;
+    }
+
+    .finding-num {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 6px;
+    }
+
+    .finding-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #3a3a3a;
+    }
+
+
+    /* ---- ROADMAP SECTION ---- */
+
+    #roadmap {
+      padding: 100px 0;
+      background: #f7f7f5;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .roadmap-header {
+      margin-bottom: 64px;
+    }
+
+    .roadmap-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: #0a0a0a;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-header p {
+      font-size: 1rem;
+    }
+
+    /* progress bar */
+    .progress-bar-wrap {
+      margin-bottom: 64px;
+    }
+
+    .progress-bar-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-label span {
+      font-size: 0.8rem;
+      color: #6b6b6b;
+      letter-spacing: 0.04em;
+    }
+
+    .progress-bar-label strong {
+      font-size: 0.95rem;
+      font-family: Georgia, serif;
+      color: #0a0a0a;
+    }
+
+    .progress-bar-track {
+      height: 3px;
+      background: #e4e4e4;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #0a0a0a;
+      border-radius: 100px;
+      transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* the 5 steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+
+    @media (max-width: 900px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step {
+      padding: 32px 24px 32px 0;
+      border-right: 1px solid #e4e4e4;
+      position: relative;
+    }
+
+    .step:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .step:first-child {
+      padding-left: 0;
+    }
+
+    @media (max-width: 900px) {
+      .step {
+        border-right: none;
+        border-bottom: 1px solid #e4e4e4;
+        padding: 28px 0;
+      }
+      .step:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .step-num {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      color: #e4e4e4;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .step-title {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+    }
+
+    /* first step inside steps, need padding left */
+    .steps-grid .step:not(:first-child) {
+      padding-left: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .steps-grid .step:not(:first-child) {
+        padding-left: 0;
+      }
+    }
+
+
+    /* ---- GLOSSARY ---- */
+
+    #glossary {
+      padding: 100px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .glossary-header {
+      margin-bottom: 64px;
+    }
+
+    .glossary-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: #0a0a0a;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: #e4e4e4;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .glossary-item {
+      background: white;
+      padding: 28px;
+      transition: background 0.2s;
+    }
+
+    .glossary-item:hover {
+      background: #f7f7f5;
+    }
+
+    .glossary-term {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    /* the english abbreviation tag */
+    .glossary-abbr {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: #0a0a0a;
+      color: white;
+      margin-left: 6px;
+      vertical-align: middle;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .glossary-def {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+    }
+
+
+    /* ---- RESOURCES ---- */
+
+    #resources {
+      padding: 100px 0;
+      background: #f7f7f5;
+    }
+
+    .resources-header {
+      margin-bottom: 64px;
+    }
+
+    .resources-header h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: #0a0a0a;
+      margin-bottom: 8px;
+    }
+
+    .resources-header p {
+      font-size: 1rem;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .resource-card {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .resource-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .resource-icon {
+      font-size: 1.5rem;
+    }
+
+    .resource-title {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.3;
+    }
+
+    .resource-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #0a0a0a;
+      margin-top: 4px;
+      transition: gap 0.2s;
+    }
+
+    .resource-link:hover {
+      gap: 9px;
+      color: #2563eb;
+    }
+
+
+    /* ---- BOTTOM CTA BAND ---- */
+
+    #cta-band {
+      background: #060608;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: white;
+      max-width: 16ch;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,0.4);
+      max-width: 44ch;
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+
+    /* ---- SOCIAL / CONNECT ---- */
+
+    #connect {
+      background: #0a0a0a;
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .connect-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 36px;
+    }
+
+    .connect-heading {
+      font-family: Georgia, serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+
+    .connect-heading span {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.875rem;
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.22s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.32);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-btn svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+
+    .social-btn:hover svg {
+      opacity: 1;
+    }
+
+
+    /* ---- FOOTER ---- */
+
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left, .footer-right {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+
+    /* ---- FADE IN ---- */
+
+    .fadein {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fadein.d1 { transition-delay: 0.1s; }
+    .fadein.d2 { transition-delay: 0.2s; }
+    .fadein.d3 { transition-delay: 0.3s; }
+
+    .fadein.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- top nav -->
+  <nav id="topnav" class="on-dark">
+    <div class="wrap topnav-inner">
+      <a href="alexandros.html" class="site-logo">Alexandros</a>
+      <a href="alexandros.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Back to site
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- hero with swarm canvas -->
+  <section id="hero">
+    <canvas id="swarm-canvas"></canvas>
+
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Thesis Research · UNIWA 2026
+      </div>
+      <div class="hero-tag">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+          <circle cx="5" cy="5" r="2"/>
+        </svg>
+        Swarm Robotics
+      </div>
+      <h1>Swarm<br>Robotics</h1>
+      <p class="hero-subtitle">
+        The Limits of Collective Intelligence: A Critical Analysis of Decentralized Decision Making in Swarm Robotics Systems
+      </p>
+      <div class="hero-buttons">
+        <a href="https://alexandroshub.wordpress.com/tag/swarmrobotics/" target="_blank" class="btn-main btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+          Read the Research
+        </a>
+        <a href="#" class="btn-main btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8"/>
+          </svg>
+          Watch Video
+        </a>
+        <a href="#" class="btn-main btn-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0118 0v6"/>
+            <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+          </svg>
+          Listen to Podcast
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- abstract -->
+  <section id="abstract">
+    <div class="wrap">
+      <div class="abstract-inner fadein">
+
+        <div class="abstract-left">
+          <p class="section-eyebrow">Executive Summary</p>
+          <h2>Research Abstract</h2>
+          <p>
+            Η παρούσα εργασία παρουσιάζει μια <strong>κριτική ανάλυση των θεμελιακών ορίων</strong> που επιβάλλει η αποκεντρωμένη λήψη αποφάσεων σε συστήματα swarm robotics. Επισημαίνεται ότι οι βιολογικά εμπνευσμένοι αλγόριθμοι (ACO και PSO) δεν προσφέρουν μαθηματικές εγγυήσεις βέλτιστης σύγκλισης.
+          </p>
+          <p>
+            Μέσω συνδυασμού <strong>θεωρητικών αναλύσεων</strong> (θεωρία πληροφορίας, No Free Lunch Theorem), <strong>πειραματικών αποδείξεων</strong> (GRASP Lab, ETH Zurich, SWARMORPH, Kilobot) και φιλοσοφικών διερευνήσεων, η εργασία καταδεικνύει τα σαφώς καθορισμένα όρια της συλλογικής νοημοσύνης.
+          </p>
+          <p>
+            Συμπερασματικά, τα μελλοντικά αποτελεσματικά συστήματα θα πρέπει να είναι <strong>υβριδικά-ιεραρχικά ή ετερογενή</strong> — όχι απολύτως αποκεντρωμένα.
+          </p>
+        </div>
+
+        <div class="findings-list fadein d1">
+          <p class="section-eyebrow">Key Findings</p>
+          <div class="finding-card">
+            <p class="finding-num">Finding 01</p>
+            <p class="finding-text">Η απόδοση των swarm συστημάτων πέφτει δραματικά με την αύξηση του μεγέθους — η κλιμάκωση δεν είναι απεριόριστη.</p>
+          </div>
+          <div class="finding-card">
+            <p class="finding-num">Finding 02</p>
+            <p class="finding-text">Η επικοινωνία μεταξύ πρακτόρων θέτει ανυπέρβλητα φυσικά και πληροφοριακά όρια στο σύστημα.</p>
+          </div>
+          <div class="finding-card">
+            <p class="finding-num">Finding 03</p>
+            <p class="finding-text">Τα σμήνη δεν έχουν πραγματική "κατανόηση" των ενεργειών τους — η νοημοσύνη είναι εμφανής, όχι πραγματική.</p>
+          </div>
+          <div class="finding-card">
+            <p class="finding-num">Finding 04</p>
+            <p class="finding-text">Υβριδικά-ιεραρχικά και ετερογενή συστήματα είναι η πραγματική μελλοντική κατεύθυνση του κλάδου.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- research roadmap -->
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="roadmap-header fadein">
+        <p class="section-eyebrow">Development Roadmap</p>
+        <h2>Research Progress</h2>
+        <p>Πώς εξελίχθηκε η εργασία από την ιδέα ως το τελικό αποτέλεσμα.</p>
+      </div>
+
+      <div class="progress-bar-wrap fadein">
+        <div class="progress-bar-label">
+          <span>Ολοκλήρωση πτυχιακής εργασίας</span>
+          <strong>100%</strong>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="steps-grid fadein">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Ιδέα</h3>
+          <p class="step-desc">Διατύπωση της κεντρικής ερευνητικής υπόθεσης και καθορισμός των στόχων. Διερεύνηση των ορίων της αποκεντρωμένης νοημοσύνης.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Έρευνα</h3>
+          <p class="step-desc">Βιβλιογραφική ανασκόπηση, ανάλυση αλγορίθμων ACO και PSO, μελέτη δεδομένων από GRASP Lab, ETH Zurich, Kilobot.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Υλοποίηση</h3>
+          <p class="step-desc">Θεωρητική ανάλυση με βάση θεωρία πληροφορίας και No Free Lunch Theorem. Σύνθεση ευρημάτων από πειραματικές μελέτες.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Αξιολόγηση</h3>
+          <p class="step-desc">Κριτική αξιολόγηση ευρημάτων, σύγκριση με επικρατούσες απόψεις και εξαγωγή συμπερασμάτων για τα όρια κλιμάκωσης.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <h3 class="step-title">Αποτέλεσμα</h3>
+          <p class="step-desc">Παρουσίαση ολοκληρωμένης εργασίας με προτάσεις για υβριδικά-ιεραρχικά συστήματα ως μελλοντική κατεύθυνση.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- glossary -->
+  <section id="glossary">
+    <div class="wrap">
+      <div class="glossary-header fadein">
+        <p class="section-eyebrow">Key Terminology</p>
+        <h2>Research Glossary</h2>
+      </div>
+
+      <div class="glossary-grid fadein">
+        <div class="glossary-item">
+          <h4 class="glossary-term">Αποκεντρωμένη Λήψη Αποφάσεων</h4>
+          <p class="glossary-def">Η διαδικασία λήψης αποφάσεων κατανεμημένη σε πολλαπλούς κόμβους που δεν έχουν πρόσβαση σε παγκόσμιες πληροφορίες.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Συλλογική Νοημοσύνη</h4>
+          <p class="glossary-def">Η ικανότητα ενός συστήματος πολλαπλών κόμβων να λαμβάνει αποφάσεις και να επιλύει προβλήματα χωρίς κεντρικό ελεγκτή.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Αυτο-οργάνωση</h4>
+          <p class="glossary-def">Η ικανότητα ενός συστήματος να δημιουργεί προτύπα και δομές χωρίς εξωτερικό σχεδιασμό ή μεσολάβηση.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">No Free Lunch Theorem <span class="glossary-abbr">NFL</span></h4>
+          <p class="glossary-def">Μαθηματικό θεώρημα που δηλώνει ότι δεν υπάρχει ένας καθολικά βέλτιστος αλγόριθμος για όλα τα προβλήματα.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">ACO <span class="glossary-abbr">Algorithm</span></h4>
+          <p class="glossary-def">Ant Colony Optimization — βιολογικά εμπνευσμένος αλγόριθμος που μιμείται τη συμπεριφορά αποικιών μυρμηγκιών για βελτιστοποίηση.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">PSO <span class="glossary-abbr">Algorithm</span></h4>
+          <p class="glossary-def">Particle Swarm Optimization — αλγόριθμος βελτιστοποίησης βασισμένος στη συλλογική κίνηση σμηνών πουλιών ή ψαριών.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Κλιμάκωση <span class="glossary-abbr">Scalability</span></h4>
+          <p class="glossary-def">Η ικανότητα ενός συστήματος να διατηρεί ή να βελτιώνει την απόδοσή του καθώς αυξάνει το μέγεθός του.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Υβριδικό Σύστημα</h4>
+          <p class="glossary-def">Σύστημα που συνδυάζει αποκεντρωμένο και ιεραρχικό έλεγχο — η κατεύθυνση που προτείνει η έρευνα.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Σύγκλιση <span class="glossary-abbr">Convergence</span></h4>
+          <p class="glossary-def">Η διαδικασία προσέγγισης σε ένα σταθερό σημείο ή κατάσταση μετά από επαναλήψεις αλγορίθμου.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Ετερογενή Σμήνη</h4>
+          <p class="glossary-def">Σμήνη που αποτελούνται από διαφορετικούς τύπους ρομπότ με διαφορετικές ικανότητες και ρόλους.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Τοπική Πληροφορία</h4>
+          <p class="glossary-def">Πληροφορία που διατίθεται μόνο σε ένα μέρος του συστήματος — ο βασικός περιορισμός της αποκέντρωσης.</p>
+        </div>
+        <div class="glossary-item">
+          <h4 class="glossary-term">Σμήνος <span class="glossary-abbr">Swarm</span></h4>
+          <p class="glossary-def">Ομάδα από πολλαπλά ρομπότ που λειτουργούν συλλογικά με κατανεμημένο έλεγχο χωρίς κεντρική αρχή.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- resources -->
+  <section id="resources">
+    <div class="wrap">
+      <div class="resources-header fadein">
+        <p class="section-eyebrow">Learning Materials</p>
+        <h2>Educational Resources</h2>
+        <p>Χρήσιμο υλικό για όποιον θέλει να εμβαθύνει στο swarm robotics.</p>
+      </div>
+
+      <div class="resources-grid fadein">
+        <div class="resource-card">
+          <div class="resource-icon">🎯</div>
+          <h4 class="resource-title">Swarm Robotics Across Scales</h4>
+          <p class="resource-desc">Giovanni Beltrame explores practical approaches to swarm robotics implementation and real-world challenges.</p>
+          <a href="https://www.classcentral.com/course/youtube-giovanni-beltrame-swarm-robotics-across-scales-a-path-for-practical-robot-swarms-343586" target="_blank" class="resource-link">Explore Course →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">🤖</div>
+          <h4 class="resource-title">Principles of Swarm Intelligence</h4>
+          <p class="resource-desc">Comprehensive study of swarm intelligence principles and their application in modern robotics systems.</p>
+          <a href="https://www.aiu.edu/mini_courses/studying-the-principles-of-swarm-intelligence-and-robotics/" target="_blank" class="resource-link">Start Learning →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">📚</div>
+          <h4 class="resource-title">Diploma in Robotics</h4>
+          <p class="resource-desc">Comprehensive robotics education covering fundamentals to advanced topics in autonomous systems.</p>
+          <a href="https://alison.com/course/diploma-in-robotics" target="_blank" class="resource-link">View Program →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">🔬</div>
+          <h4 class="resource-title">Collaborative Robotics</h4>
+          <p class="resource-desc">Fundamentals of swarm intelligence and collaborative robotics for distributed autonomous systems.</p>
+          <a href="https://niccs.cisa.gov/training/catalog/tonex/swarm-intelligence-collaborative-robotics-fundamentals" target="_blank" class="resource-link">Discover More →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">🏭</div>
+          <h4 class="resource-title">Universal Robots Academy</h4>
+          <p class="resource-desc">Free e-learning modules covering industrial robotics and automation fundamentals from Universal Robots.</p>
+          <a href="https://academy.universal-robots.com/free-e-learning/" target="_blank" class="resource-link">Access Courses →</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">📖</div>
+          <h4 class="resource-title">Swarm Robotics Courses</h4>
+          <p class="resource-desc">Curated collection of free swarm robotics courses from universities and institutions worldwide.</p>
+          <a href="https://www.classcentral.com/subject/swarm-robotics" target="_blank" class="resource-link">Browse All →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- bottom cta dark band -->
+  <section id="cta-band">
+    <div class="wrap cta-inner fadein">
+      <h2>Dive into the research.</h2>
+      <p>Διάβασε την πλήρη ανάλυση, δες την παρουσίαση ή άκουσε το podcast.</p>
+      <div class="cta-buttons">
+        <a href="https://alexandroshub.wordpress.com/tag/swarmrobotics/" target="_blank" class="btn-main btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+          </svg>
+          Read the Research
+        </a>
+        <a href="#" class="btn-main btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="10 8 16 12 10 16 10 8"/>
+          </svg>
+          Watch Video
+        </a>
+        <a href="#" class="btn-main btn-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0118 0v6"/>
+            <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+          </svg>
+          Listen to Podcast
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- social links -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Find me <span>across the web.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://substack.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          Substack
+        </a>
+        <a href="alexandros.html" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Portfolio
+        </a>
+        <a href="alexandros-cv.html" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          View CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p class="footer-left">© 2025 Alexandros Papaspyrou</p>
+      <p class="footer-right">Athens, Greece</p>
+    </div>
+  </footer>
+
+
+  <script>
+
+    // ---- NAV behavior ----
+
+    var topnav = document.getElementById('topnav');
+    var hero = document.getElementById('hero');
+
+    window.addEventListener('scroll', function() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+
+      // past hero = light nav
+      if (heroBottom < 60) {
+        topnav.classList.remove('on-dark');
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.add('on-dark');
+        if (window.scrollY > 30) {
+          topnav.classList.add('stuck');
+        } else {
+          topnav.classList.remove('stuck');
+        }
+      }
+    });
+
+
+    // ---- SWARM CANVAS ANIMATION ----
+
+    var canvas = document.getElementById('swarm-canvas');
+    var ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // each agent is a little robot/dot
+    var agents = [];
+    var NUM_AGENTS = 80;
+
+    function Agent() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.8;
+      this.vy = (Math.random() - 0.5) * 0.8;
+      this.size = Math.random() * 1.5 + 0.8;
+      // slightly different brightness per agent
+      this.brightness = Math.random() * 0.4 + 0.2;
+    }
+
+    Agent.prototype.update = function() {
+      // simple boids-like steering toward center of mass (simplified)
+      this.x += this.vx;
+      this.y += this.vy;
+
+      // bounce off edges
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+      // slight random drift to feel more organic
+      this.vx += (Math.random() - 0.5) * 0.04;
+      this.vy += (Math.random() - 0.5) * 0.04;
+
+      // cap speed
+      var speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+      if (speed > 1.2) {
+        this.vx = (this.vx / speed) * 1.2;
+        this.vy = (this.vy / speed) * 1.2;
+      }
+    };
+
+    Agent.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + this.brightness + ')';
+      ctx.fill();
+    };
+
+    // initialize agents
+    for (var i = 0; i < NUM_AGENTS; i++) {
+      agents.push(new Agent());
+    }
+
+    var CONNECTION_DIST = 120; // max distance to draw a line between agents
+
+    function drawConnections() {
+      for (var i = 0; i < agents.length; i++) {
+        for (var j = i + 1; j < agents.length; j++) {
+          var dx = agents[i].x - agents[j].x;
+          var dy = agents[i].y - agents[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < CONNECTION_DIST) {
+            // fade out as distance increases
+            var alpha = (1 - dist / CONNECTION_DIST) * 0.12;
+            ctx.beginPath();
+            ctx.moveTo(agents[i].x, agents[i].y);
+            ctx.lineTo(agents[j].x, agents[j].y);
+            ctx.strokeStyle = 'rgba(37, 99, 235, ' + alpha + ')';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      drawConnections();
+
+      for (var i = 0; i < agents.length; i++) {
+        agents[i].update();
+        agents[i].draw();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+
+    // ---- FADE IN ON SCROLL ----
+
+    var fadeItems = document.querySelectorAll('.fadein');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeItems.forEach(function(el) {
+      observer.observe(el);
+    });
+
+
+    // ---- PROGRESS BAR ANIMATION ----
+    // fires when the roadmap section comes into view
+
+    var progressFill = document.getElementById('progress-fill');
+    var progressTriggered = false;
+
+    var progressObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !progressTriggered) {
+          progressTriggered = true;
+          setTimeout(function() {
+            progressFill.style.width = '100%';
+          }, 300);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    progressObserver.observe(document.getElementById('roadmap'));
+
+
+    // ---- SMOOTH SCROLL ----
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 80,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+  </script>
+
+</body>
+</html>
