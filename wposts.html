@@ -1,0 +1,211 @@
+<div id="insights-widget"></div>
+
+<script>
+(function() {
+  const container = document.getElementById("insights-widget");
+
+  container.innerHTML = `
+    <style>
+      #insights-widget {
+        max-width: 700px;
+        margin: 60px auto;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      #insights-widget h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+
+      .iw-post {
+        border-bottom: 1px solid #eee;
+        padding: 18px 0;
+        transition: 0.2s;
+      }
+
+      .iw-post:hover {
+        transform: translateX(4px);
+      }
+
+      .iw-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 6px;
+      }
+
+      .iw-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+        color: #111;
+      }
+
+      .iw-desc {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 8px;
+      }
+
+      .iw-link {
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .iw-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <h2>Insights</h2>
+    <div id="iw-posts"></div>
+  `;
+
+  const SUBSTACK_URL = "https://alexandrospapaspyrou.substack.com/feed";
+  const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${SUBSTACK_URL}`;
+
+  fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+      const postsContainer = document.getElementById("iw-posts");
+
+      data.items.slice(0, 4).forEach(post => {
+        const cleanText = post.description.replace(/<[^>]*>/g, "");
+
+        const date = new Date(post.pubDate).toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric"
+        });
+
+        const el = document.createElement("div");
+        el.className = "iw-post";
+
+        el.innerHTML = `
+          <div class="iw-meta">
+            <span>Insight</span>
+            <span>${date}</span>
+          </div>
+          <div class="iw-title">${post.title}</div>
+          <div class="iw-desc">${cleanText.substring(0, 120)}...</div>
+          <a class="iw-link" href="${post.link}" target="_blank">
+            Read on Substack →
+          </a>
+        `;
+
+        postsContainer.appendChild(el);
+      });
+    })
+    .catch(err => {
+      console.error("Substack load error:", err);
+      container.innerHTML += "<p>Unable to load posts.</p>";
+    });
+})();
+</script>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+   <div id="insights-widget">
+
+  <style>
+    #insights-widget {
+      max-width: 700px;
+      margin: 60px auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    #insights-widget h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .iw-post {
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+      transition: 0.2s;
+    }
+
+    .iw-post:hover {
+      transform: translateX(4px);
+    }
+
+    .iw-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .iw-title {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #111;
+    }
+
+    .iw-desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .iw-link {
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .iw-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- ARTICLE 2 -->
+  <div class="iw-post">
+    <div class="iw-meta">
+      <span>Insight</span>
+      <span>Sep 2025</span>
+    </div>
+	<span>#IoT #Automation</span>
+    <div class="iw-title">
+      Εισαγωγή στο Διαδίκτυο των Πραγμάτων
+    </div>
+
+    <div class="iw-desc">
+    IoT: Η Επανάσταση των Έξυπνων Συσκευών
+    </div>
+
+    <a class="iw-link" href="#" target="_blank">
+      Read Article →
+    </a>
+  </div>
+  <!-- ARTICLE 3 -->
+  <div class="iw-post">
+    <div class="iw-meta">
+      <span>Insight</span>
+      <span>Jun 2025</span>
+    </div>
+	<span>#Cybersecurity</span>
+    <div class="iw-title">
+Your Biggest Cybersecurity Weakness Is Yourself
+    </div>
+
+    <div class="iw-desc">
+Discover why human mistakes remain the leading cause of cyber breaches and learn practical strategies to strengthen your personal cybersecurity defenses.
+    </div>
+
+    <a class="iw-link" href="#" target="_blank">
+      Read Article →
+    </a>
+  </div>
+
+</div>
+
