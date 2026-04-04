@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Alexandros Papaspyrou</title>
+  <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    p { line-height: 1.7; color: #6b6b6b; }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    ::selection { background: #0a0a0a; color: white; }
+
+    html { scroll-behavior: smooth; }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    @media (max-width: 700px) {
+      .wrap { padding: 0 20px; }
+    }
+
+
+    /* ---- NAV ---- */
+
+    #topnav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #topnav.stuck {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #e4e4e4;
+    }
+
+    #topnav.on-dark .nav-logo,
+    #topnav.on-dark .back-link { color: rgba(255,255,255,0.8); }
+
+    #topnav.on-dark.stuck {
+      background: rgba(6,6,8,0.88);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    .topnav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      transition: color 0.3s;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.875rem;
+      color: #6b6b6b;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: #0a0a0a; }
+    #topnav.on-dark .back-link:hover { color: white; }
+    .back-link svg { width: 14px; height: 14px; }
+
+
+    /* ---- HERO ---- */
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      background: #0d1b2a   ;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 70px 70px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding-top: 80px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 24px;
+    }
+
+    .blink-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2563eb;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    #hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: white;
+      margin-bottom: 16px;
+      max-width: 14ch;
+    }
+
+    #hero h1 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.28);
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, serif;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.42);
+      max-width: 52ch;
+      line-height: 1.65;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      border: none;
+    }
+
+    .btn-white { background: white; color: #0a0a0a; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    .btn-outline-dark {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .btn-outline-dark:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); color: white; transform: translateY(-2px); }
+
+    .btn-ink { background: #0a0a0a; color: white; }
+    .btn-ink:hover { background: #2a2a2a; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+    .btn-ghost { background: transparent; color: #0a0a0a; border: 1.5px solid #e4e4e4; }
+    .btn-ghost:hover { border-color: #0a0a0a; background: #f7f7f5; transform: translateY(-1px); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.2);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px; height: 36px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+      animation: spulse 2s ease-in-out infinite;
+    }
+
+    @keyframes spulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+
+    /* ---- SHARED SECTION STYLES ---- */
+
+    section { padding: 100px 0; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 18px; height: 1px;
+      background: #6b6b6b;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      color: #0a0a0a;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      max-width: 58ch;
+      margin-bottom: 56px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: #e4e4e4;
+      margin: 56px 0;
+    }
+
+
+    /* ---- PROCESS STEPS ---- */
+
+    #process { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+
+    @media (max-width: 900px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 500px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .step {
+      padding: 32px 20px 32px 0;
+      border-right: 1px solid #e4e4e4;
+    }
+
+    .step:last-child { border-right: none; padding-right: 0; }
+
+    .step-emoji { font-size: 1.4rem; margin-bottom: 14px; display: block; }
+
+    .step-name {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: #0a0a0a;
+      margin-bottom: 8px;
+    }
+
+    .step-desc { font-size: 0.82rem; line-height: 1.55; }
+
+    .step:not(:first-child) { padding-left: 20px; }
+
+    @media (max-width: 900px) {
+      .step { border-right: none; border-bottom: 1px solid #e4e4e4; padding: 24px 0; }
+      .step:last-child { border-bottom: none; }
+      .step:not(:first-child) { padding-left: 0; }
+    }
+
+
+    /* ---- FEATURED / THESIS CARD ---- */
+
+    .thesis-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #e4e4e4;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 60px;
+      background: #0a0a0a;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .thesis-card:hover { box-shadow: 0 24px 60px rgba(0,0,0,0.15); }
+
+    @media (max-width: 800px) { .thesis-card { grid-template-columns: 1fr; } }
+
+    .thesis-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .thesis-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: opacity 0.3s, transform 0.5s ease;
+    }
+
+    .thesis-card:hover .thesis-img img { opacity: 0.75; transform: scale(1.04); }
+
+    .thesis-badge {
+      position: absolute;
+      top: 20px; left: 20px;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: #2563eb;
+      color: white;
+    }
+
+    .thesis-info {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .thesis-category {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .thesis-title {
+      font-family: Georgia, serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .thesis-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .thesis-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-dark {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .tag-light {
+      background: #f7f7f5;
+      color: #3a3a3a;
+      border: 1px solid #e4e4e4;
+    }
+
+    .thesis-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+
+    /* ---- PROJECT GRID ---- */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 500px) { .projects-grid { grid-template-columns: 1fr; } }
+
+    .project-card {
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .project-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #f7f7f5;
+    }
+
+    .project-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .ph-blue { background: linear-gradient(135deg, #0a0a0a, #1a1a2e 50%, #0f3460); }
+    .ph-gray { background: linear-gradient(135deg, #1a1a1a, #2d2d2d); }
+    .ph-green { background: linear-gradient(135deg, #0a1a0a, #0d2d0d); }
+    .ph-purple { background: linear-gradient(135deg, #1a0a2e, #2d1a4a); }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-num {
+      font-size: 0.7rem;
+      color: #e4e4e4;
+      letter-spacing: 0.06em;
+    }
+
+    .project-year {
+      font-size: 0.7rem;
+      color: #e4e4e4;
+      letter-spacing: 0.04em;
+    }
+
+    .project-title {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-top: 14px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: #3a3a3a;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+
+    .proj-link:hover { color: #2563eb; }
+    .proj-link i { font-size: 0.72rem; }
+
+    /* archived state */
+    .project-card.archived { opacity: 0.65; }
+    .archived-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: #f0f0f0;
+      color: #6b6b6b;
+    }
+
+
+    /* ---- BOOK / HIGHLIGHT CARD ---- */
+
+    .highlight-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 40px;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      background: #f7f7f5;
+      margin-bottom: 24px;
+      transition: all 0.25s ease;
+    }
+
+    .highlight-card:hover {
+      border-color: #0a0a0a;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+    }
+
+    @media (max-width: 700px) { .highlight-card { grid-template-columns: 1fr; gap: 24px; } }
+
+    .highlight-book-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .highlight-book-img img {
+      width: 100%;
+      display: block;
+    }
+
+    .highlight-info { display: flex; flex-direction: column; gap: 12px; }
+
+    .highlight-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+    }
+
+    .highlight-title {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #0a0a0a;
+    }
+
+    .highlight-author {
+      font-size: 0.875rem;
+      color: #6b6b6b;
+    }
+
+    .highlight-desc { font-size: 0.9rem; line-height: 1.65; }
+
+    .highlight-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+
+    /* ---- TECH STACK ICONS ---- */
+
+    #techstack { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1.5px;
+      background: #e4e4e4;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tech-item {
+      display: block;
+      background: white;
+      padding: 24px 16px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .tech-item:hover { background: #0a0a0a; }
+    .tech-item:hover .tech-name { color: rgba(255,255,255,0.6); }
+    .tech-item:hover img { filter: invert(1) brightness(0.6); }
+
+    .tech-item img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      display: block;
+      margin-inline: auto;
+      transition: filter 0.2s;
+    }
+
+    .tech-name {
+      font-size: 0.75rem;
+      color: #6b6b6b;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+
+    /* ---- VIDEOS ---- */
+
+    #videos { }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) { .video-layout { grid-template-columns: 1fr; } }
+
+    .video-player-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16/9;
+    }
+
+    .video-player-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+      max-height: 360px;
+      scrollbar-width: thin;
+      scrollbar-color: #e4e4e4 transparent;
+    }
+
+    @media (max-width: 800px) {
+      .video-list { flex-direction: row; max-height: none; overflow-y: visible; overflow-x: auto; }
+    }
+
+    .video-thumb {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #e4e4e4;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .video-thumb:hover { border-color: #0a0a0a; background: #f7f7f5; }
+    .video-thumb.active { border-color: #0a0a0a; background: #0a0a0a; }
+    .video-thumb.active .video-thumb-title { color: white; }
+
+    .video-thumb img {
+      width: 72px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .video-thumb-title {
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: #3a3a3a;
+      transition: color 0.2s;
+    }
+
+    @media (max-width: 800px) {
+      .video-thumb { flex-direction: column; width: 120px; align-items: flex-start; }
+      .video-thumb img { width: 100%; height: 64px; }
+    }
+
+
+    /* ---- TESTIMONIALS ---- */
+
+    #testimonials { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      padding: 32px;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      background: white;
+      transition: all 0.25s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: #0a0a0a;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .testimonial-quote {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: #3a3a3a;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-size: 0.8rem;
+      color: #6b6b6b;
+      letter-spacing: 0.04em;
+    }
+
+    .testimonial-icon {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+
+    /* ---- CONNECT ---- */
+
+    #connect { background: #0a0a0a; padding: 80px 0; }
+
+    .connect-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 36px;
+    }
+
+    .connect-heading {
+      font-family: Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+
+    .connect-heading span { color: rgba(255,255,255,0.28); }
+
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 26px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      background: rgba(255,255,255,0.04);
+      transition: all 0.22s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .social-btn i { font-size: 0.875rem; opacity: 0.65; transition: opacity 0.2s; }
+    .social-btn:hover i { opacity: 1; }
+
+
+    /* ---- FOOTER ---- */
+
+    footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.28);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.2); }
+
+
+    /* ---- BACK TO TOP ---- */
+
+    #btt {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #0a0a0a;
+      color: white;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: none;
+      z-index: 200;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    #btt:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+
+    /* ---- FADE IN ---- */
+
+    .fadein {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fadein.d1 { transition-delay: 0.1s; }
+    .fadein.d2 { transition-delay: 0.2s; }
+    .fadein.d3 { transition-delay: 0.3s; }
+    .fadein.d4 { transition-delay: 0.4s; }
+
+    .fadein.visible { opacity: 1; transform: none; }
+
+  </style>
+</head>
+<body>
+
+  <!-- nav -->
+  <nav id="topnav" class="on-dark">
+    <div class="wrap topnav-inner">
+      <span class="nav-logo">Alexandros</span>
+      <a href="alexandros.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Back to site
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- hero -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">
+        <div class="blink-dot"></div>
+        Portfolio · Alexandros Papaspyrou
+      </div>
+      <h1>From idea<br><em>to automation</em><br>and beyond.</h1>
+      <p class="hero-subtitle">
+        Real systems, built with intention. Embedded, connected, intelligent — from robotics to IoT to software that actually runs in the world.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-white">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+        <a href="alexandros-cv.html" class="btn btn-outline-dark">
+          <i class="fas fa-id-card"></i> View CV
+        </a>
+        <a href="alexandros-thesis.html" class="btn btn-outline-dark">
+          <i class="fas fa-robot"></i> Thesis
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- process -->
+  <section id="process">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Methodology</p>
+        <h2 class="section-title">How I Build</h2>
+        <p class="section-intro" style="margin-bottom: 48px;">Every system starts with a clear process — from the first spark of an idea to a deployed, optimized product.</p>
+      </div>
+      <div class="steps-grid fadein">
+        <div class="step">
+          <span class="step-emoji">💡</span>
+          <h3 class="step-name">Ideate</h3>
+          <p class="step-desc">Concept generation, creative problem-solving, defining the why.</p>
+        </div>
+        <div class="step">
+          <span class="step-emoji">🔍</span>
+          <h3 class="step-name">Research</h3>
+          <p class="step-desc">Tech &amp; trend analysis, feasibility, literature review.</p>
+        </div>
+        <div class="step">
+          <span class="step-emoji">🎨</span>
+          <h3 class="step-name">Design</h3>
+          <p class="step-desc">System architecture, schematics, rapid prototyping.</p>
+        </div>
+        <div class="step">
+          <span class="step-emoji">💻</span>
+          <h3 class="step-name">Develop</h3>
+          <p class="step-desc">Code, firmware, platform integration, QA testing.</p>
+        </div>
+        <div class="step">
+          <span class="step-emoji">🚀</span>
+          <h3 class="step-name">Deploy</h3>
+          <p class="step-desc">Production launch, cloud connectivity, digital transformation.</p>
+        </div>
+        <div class="step">
+          <span class="step-emoji">⚙️</span>
+          <h3 class="step-name">Optimize</h3>
+          <p class="step-desc">Performance tuning, smart workflows, AI-driven insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- projects -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">A selection of real builds — hardware, software, and systems — each solving a concrete problem.</p>
+      </div>
+
+      <!-- THESIS — featured large -->
+      <div class="thesis-card fadein">
+        <div class="thesis-img">
+          <img src="https://64.media.tumblr.com/5b52902dfee84d251d60065a67b353c5/77abf54cc288f0e2-7d/s2048x3072/d4a3d88996c3c582a3ce4e34f09c260c5a350d17.pnj" alt="Swarm Robotics Thesis">
+          <span class="thesis-badge">Thesis · UNIWA 2026</span>
+        </div>
+        <div class="thesis-info">
+          <p class="thesis-category">Swarm Robotics · Collective Intelligence</p>
+          <h2 class="thesis-title">The Limits of Collective Intelligence</h2>
+          <p class="thesis-desc">A critical analysis of decentralized decision-making in swarm robotics systems. Examines how ACO and PSO algorithms fail at scale, why communication is the hard constraint, and why hybrid-hierarchical architectures are the real future.</p>
+          <div class="thesis-tags">
+            <span class="tag tag-dark">Collective Intelligence</span>
+            <span class="tag tag-dark">Decentralized Control</span>
+            <span class="tag tag-dark">ACO / PSO</span>
+            <span class="tag tag-dark">No Free Lunch Theorem</span>
+            <span class="tag tag-dark">Scalability Limits</span>
+          </div>
+          <div class="thesis-btns">
+            <a href="alexandros-thesis.html" class="btn btn-white" style="font-size:0.82rem; padding:10px 20px;">
+              <i class="fas fa-book-open"></i> Read Thesis
+            </a>
+            <a href="https://alexandroshub.wordpress.com/tag/swarmrobotics/" target="_blank" class="btn btn-outline-dark" style="font-size:0.82rem; padding:10px 20px;">
+              <i class="fas fa-external-link-alt"></i> Blog Post
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- project grid -->
+      <div class="projects-grid">
+
+        <!-- AGV -->
+        <div class="project-card fadein">
+          <img class="project-img" src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="AGV Robot">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <span class="project-year">2022</span>
+            </div>
+            <h3 class="project-title">Autonomous Guided Vehicle (AGV)</h3>
+            <p class="project-desc">Arduino-controlled mobile robot with autonomous navigation, line-following, and obstacle avoidance. Full mechatronics integration from sensor fusion to motor driver control — no off-the-shelf stack, everything custom.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Arduino</span>
+              <span class="tag tag-light">Sensor Fusion</span>
+              <span class="tag tag-light">Motor Control</span>
+              <span class="tag tag-light">Embedded C</span>
+              <span class="tag tag-light">Mechatronics</span>
+            </div>
+            <div class="project-links">
+              <a href="https://codebender.cc/sketch:208552" target="_blank" class="proj-link">
+                <i class="fas fa-code"></i> View Code
+              </a>
+              <a href="https://www.dropbox.com/scl/fi/dqw6t6itu536iqrqrtc1z/Michatron_Papaspyrou_Alexandros.pdf?rlkey=4s8xetswr3d6l5uqo17ec2n58&st=tetyxt4k&dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-file-pdf"></i> Read Report
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ThingSpeak IoT -->
+        <div class="project-card archived fadein d1">
+          <div class="project-img-placeholder ph-blue">
+            <span style="font-size:2rem;">📡</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <span class="archived-label">Archived</span>
+            </div>
+            <h3 class="project-title">ThingSpeak IoT Monitoring Platform</h3>
+            <p class="project-desc">Cloud-connected sensor network using Arduino, ESP8266 Wi-Fi module, and DHT11. Real-time temperature and humidity telemetry streamed to ThingSpeak for remote visualization. A complete end-to-end IoT pipeline built from scratch.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Arduino</span>
+              <span class="tag tag-light">ESP8266</span>
+              <span class="tag tag-light">ThingSpeak API</span>
+              <span class="tag tag-light">DHT11</span>
+              <span class="tag tag-light">IoT</span>
+              <span class="tag tag-light">MQTT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LightSwitch -->
+        <div class="project-card fadein d2">
+          <img class="project-img" src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.png" alt="LightSwitch Circuit">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-year">2021</span>
+            </div>
+            <h3 class="project-title">LightSwitch — Auto Light Control Circuit</h3>
+            <p class="project-desc">Automatic switching circuit using a photoresistor for ambient light detection. Analog signal conditioning, threshold adjustment via trim-pot, and relay-driven load switching. Designed schematic to PCB with full component calculation and simulation in Multisim.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Analog Electronics</span>
+              <span class="tag tag-light">Photoresistor (LDR)</span>
+              <span class="tag tag-light">Op-Amp</span>
+              <span class="tag tag-light">Relay Driver</span>
+              <span class="tag tag-light">PCB Design</span>
+              <span class="tag tag-light">Multisim</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.dropbox.com/scl/fo/1odwykj5iwvfdeyou5fqs/ANY31CVaDe7drmBYc9Y5jQg?rlkey=eft6vvabum38vdg7hpoxxo7tx&st=xa9hcaju&dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-folder-open"></i> Project Files
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kremala -->
+        <div class="project-card fadein">
+          <div class="project-img-placeholder ph-purple">
+            <span style="font-size:2rem;">🎮</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">04</span>
+              <span class="project-year">2018</span>
+            </div>
+            <h3 class="project-title">Kremala — Classic Hangman Game</h3>
+            <p class="project-desc">A clean standalone implementation of the Hangman word game built in Visual Basic. No installer required — portable .exe. Greek-language word bank with multiple difficulty levels. An early exploration of desktop application architecture and event-driven programming.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Visual Basic</span>
+              <span class="tag tag-light">VB.NET</span>
+              <span class="tag tag-light">Desktop App</span>
+              <span class="tag tag-light">Windows</span>
+              <span class="tag tag-light">Event-Driven</span>
+            </div>
+            <div class="project-links">
+              <a href="https://www.dropbox.com/s/o2lbp2oxh7it4cz/Kremala.BETA.rar?dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-download"></i> Beta
+              </a>
+              <a href="https://www.dropbox.com/s/rnfdz5moi5n1mx8/_krema%CE%BBa_%20.rar?dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-download"></i> v2
+              </a>
+              <a href="https://www.dropbox.com/sh/uv2qaxzz310wmmf/AACtuaf3OciKJpqucZzBbcc1a?dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-box"></i> Full Package
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pomodoro + AutoSortify -->
+        <div class="project-card fadein d1">
+          <div class="project-img-placeholder ph-green">
+            <span style="font-size:2rem;">🐍</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">05</span>
+              <span class="project-year">2023</span>
+            </div>
+            <h3 class="project-title">Python Utilities — Pomodoro &amp; AutoSortify</h3>
+            <p class="project-desc">Two small but sharp Python tools. Pomodoro is a terminal-based focus timer using the 25/5 work cycle. AutoSortify automatically organizes your Downloads folder by file type — scans, categorizes, and moves files into labeled subdirectories. Both are single-file, dependency-free scripts.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Python</span>
+              <span class="tag tag-light">CLI Tool</span>
+              <span class="tag tag-light">File Automation</span>
+              <span class="tag tag-light">Productivity</span>
+              <span class="tag tag-light">OS Module</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/alexandroshub/python/blob/master/promodoro.py" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> Pomodoro
+              </a>
+              <a href="https://github.com/alexandroshub/python/blob/ea3518d7169ca7499139805ed0542fd5ea6bd2d7/AutoSortify.py" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> AutoSortify
+              </a>
+              <a href="https://github.com/alexandroshub/python/blob/ea3518d7169ca7499139805ed0542fd5ea6bd2d7/AutoSortify_readme.txt" target="_blank" class="proj-link">
+                <i class="fas fa-file-alt"></i> Readme
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evolution of Computers -->
+        <div class="project-card fadein d2">
+          <img class="project-img" src="https://64.media.tumblr.com/f65ffc7b1a02307ba5d26e83ee7c9b53/387eabfc55705902-75/s1280x1920/4e8402319007c718f29df170dac36ae7eaf6d1e6.pnj" alt="Evolution of Computers">
+          <div class="project-body">
+            <div class="project-meta">
+              <span class="project-num">06</span>
+              <span class="project-year">2015</span>
+            </div>
+            <h3 class="project-title">The Evolution of Computers</h3>
+            <p class="project-desc">From Abacus to Tablet — an in-depth technical research paper and presentation tracing the full arc of computing hardware. Covers mechanical calculators, vacuum tubes, transistors, integrated circuits, microprocessors, and mobile SoCs. Published on SlideShare and recorded as a podcast on Spotify.</p>
+            <div class="project-tags">
+              <span class="tag tag-light">Technical Research</span>
+              <span class="tag tag-light">Computer History</span>
+              <span class="tag tag-light">Hardware Architecture</span>
+              <span class="tag tag-light">Publication</span>
+            </div>
+            <div class="project-links">
+              <a href="https://online.pubhtml5.com/gegj/kmyo/" target="_blank" class="proj-link">
+                <i class="fas fa-book-open"></i> Read Online
+              </a>
+              <a href="https://www.slideshare.net/slideshow/computer-evolution-48891311/48891311" target="_blank" class="proj-link">
+                <i class="fas fa-desktop"></i> SlideShare
+              </a>
+              <a href="https://open.spotify.com/episode/2ly4blPyXKOYyHhMcJjQth?si=n4lEaNnyRHaB8DhP2aR0EA" target="_blank" class="proj-link">
+                <i class="fab fa-spotify"></i> Podcast
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- tech stack -->
+  <section id="techstack">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Tools &amp; Technologies</p>
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">The tools I reach for when building real systems.</p>
+      </div>
+      <div class="tech-grid fadein">
+        <a href="https://alexandroshub.github.io/iot" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.163255001.9908/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" alt="IoT">
+          <p class="tech-name">IoT</p>
+        </a>
+        <a href="https://alexandroshub.github.io/python" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.200517086.1716/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Python">
+          <p class="tech-name">Python</p>
+        </a>
+        <a href="https://alexandroshub.github.io/htmlcoding.html" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.254727740.6916/st,small,507x507-pad,600x600,f8f8f8.u5.jpg" alt="HTML/CSS/JS">
+          <p class="tech-name">HTML / CSS / JS</p>
+        </a>
+        <a href="https://alexandroshub.github.io/git" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.275474759.3598/st,small,507x507-pad,600x600,f8f8f8.u1.jpg" alt="Git">
+          <p class="tech-name">Git</p>
+        </a>
+        <a href="https://alexandroshub.github.io/raspberrypi" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.1697233110.7837/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Raspberry Pi">
+          <p class="tech-name">Raspberry Pi</p>
+        </a>
+        <a href="https://alexandroshub.github.io/arduino" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.199243438.6576/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Arduino">
+          <p class="tech-name">Arduino</p>
+        </a>
+        <a href="https://alexandroshub.github.io/nodejs" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.4054758481.4818/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Node.js">
+          <p class="tech-name">Node.js</p>
+        </a>
+        <a href="https://alexandroshub.github.io/cpp" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.2043478002.5653/st,small,507x507-pad,600x600,f8f8f8.u3.jpg" alt="C++">
+          <p class="tech-name">C++</p>
+        </a>
+        <a href="https://alexandroshub.github.io/electronics" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.5850596414.1808/st,small,507x507-pad,600x600,f8f8f8.u1.jpg" alt="Electronics">
+          <p class="tech-name">Electronics</p>
+        </a>
+        <a href="https://alexandroshub.github.io/ai" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.5851084658.2522/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="AI">
+          <p class="tech-name">AI</p>
+        </a>
+        <a href="https://alexandroshub.github.io/steam" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.5849081181.3854/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="STEAM">
+          <p class="tech-name">STEAM</p>
+        </a>
+        <a href="https://alexandroshub.github.io/auto" target="_blank" class="tech-item">
+          <img src="https://ih1.redbubble.net/image.5281751284.6301/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Automation">
+          <p class="tech-name">Automation</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- videos -->
+  <section id="videos">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">In Action</p>
+        <h2 class="section-title">Project Videos</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">Demos, walkthroughs, and related content from lab to production.</p>
+      </div>
+      <div class="video-layout fadein">
+        <div class="video-player-wrap">
+          <iframe id="videoPlayer" src="https://www.youtube.com/embed/uVIjsjr_GVE" allowfullscreen></iframe>
+        </div>
+        <div class="video-list">
+          <div class="video-thumb active" data-vid="uVIjsjr_GVE">
+            <img src="https://img.youtube.com/vi/uVIjsjr_GVE/0.jpg" alt="Michatron">
+            <span class="video-thumb-title">Michatron AGV Demo</span>
+          </div>
+          <div class="video-thumb" data-vid="fkQYsenF0og">
+            <img src="https://img.youtube.com/vi/fkQYsenF0og/0.jpg" alt="LDR Switch">
+            <span class="video-thumb-title">LDR Auto Light Switch</span>
+          </div>
+          <div class="video-thumb" data-vid="8h8Oq1GO-1o">
+            <img src="https://img.youtube.com/vi/8h8Oq1GO-1o/0.jpg" alt="LabVIEW">
+            <span class="video-thumb-title">LabVIEW Logger IV Project</span>
+          </div>
+          <div class="video-thumb" data-vid="dwVID5os1g0">
+            <img src="https://img.youtube.com/vi/dwVID5os1g0/0.jpg" alt="ATMEGA">
+            <span class="video-thumb-title">ATMEGA 328 Programming</span>
+          </div>
+          <div class="video-thumb" data-vid="takpmt5s5Ho">
+            <img src="https://img.youtube.com/vi/takpmt5s5Ho/0.jpg" alt="PLC">
+            <span class="video-thumb-title">PLC — Conveyor Belt System</span>
+          </div>
+          <div class="video-thumb" data-vid="d9QDz8yYwQY">
+            <img src="https://img.youtube.com/vi/d9QDz8yYwQY/0.jpg" alt="Computer Evolution">
+            <span class="video-thumb-title">Evolution of Computers</span>
+          </div>
+          <div class="video-thumb" data-vid="KKg15xo4_SA">
+            <img src="https://img.youtube.com/vi/KKg15xo4_SA/0.jpg" alt="W3 University">
+            <span class="video-thumb-title">W3 University Lecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- testimonials -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Feedback</p>
+        <h2 class="section-title">Testimonials</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">From colleagues and professors who have worked with me directly.</p>
+      </div>
+      <div class="testimonials-grid fadein">
+        <div class="testimonial-card">
+          <span class="testimonial-icon">🎓</span>
+          <p class="testimonial-quote">"Ο Alexandros έχει εξαιρετική ικανότητα να συνδυάζει τεχνική ακρίβεια με δημιουργική παρουσίαση. Η δουλειά του στα embedded systems ξεχωρίζει."</p>
+          <p class="testimonial-author">Καθηγητής, UNIWA</p>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-icon">🤝</span>
+          <p class="testimonial-quote">"Η συνεργασία μαζί του ήταν άψογη. Πάντα βρίσκει λύσεις και βελτιώνει τις διαδικασίες — ακόμα και υπό πίεση χρόνου."</p>
+          <p class="testimonial-author">Συνάδελφος σε Engineering Project</p>
+        </div>
+        <div class="testimonial-card">
+          <span class="testimonial-icon">⚙️</span>
+          <p class="testimonial-quote">"Η κατανόησή του για τα βιομηχανικά συστήματα αυτοματισμού και η ικανότητά του να προσαρμόζεται σε νέα περιβάλλοντα είναι αξιόλογη."</p>
+          <p class="testimonial-author">Senior Engineer, Simworx</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- connect -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Let's build <span>something real.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://alexandroshub.wordpress.com" target="_blank" class="social-btn">
+          <i class="fab fa-wordpress"></i> Blog
+        </a>
+        <a href="https://open.spotify.com/episode/2ly4blPyXKOYyHhMcJjQth" target="_blank" class="social-btn">
+          <i class="fab fa-spotify"></i> Podcast
+        </a>
+        <a href="alexandros-cv.html" class="social-btn">
+          <i class="fas fa-id-card"></i> CV
+        </a>
+        <a href="mailto:a-papaspyrou@outlook.com.gr" class="social-btn">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://alexandroshub.github.io/LV3#contact" target="_blank" class="social-btn">
+          <i class="fas fa-paper-plane"></i> Contact Form
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="https://alexandroshub.github.io/about" target="_blank">Terms</a>
+        <a href="https://alexandroshub.github.io/ap.contact.html" target="_blank">Contact</a>
+        <a href="alexandros-hub.html">Hub</a>
+      </div>
+      <p class="footer-copy">Handcrafted With ❤ by Alexandros Papaspyrou · © 2026</p>
+    </div>
+  </footer>
+
+  <button id="btt" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+
+  <script>
+
+    // ---- NAV ----
+
+    var topnav = document.getElementById('topnav');
+    var hero = document.getElementById('hero');
+
+    window.addEventListener('scroll', function() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 60) {
+        topnav.classList.remove('on-dark');
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.add('on-dark');
+        topnav.classList.toggle('stuck', window.scrollY > 30);
+      }
+      document.getElementById('btt').style.display = window.scrollY > 400 ? 'block' : 'none';
+    });
+
+    document.getElementById('btt').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
+    // ---- PARTICLE SWARM CANVAS ----
+
+    var canvas = document.getElementById('hero-canvas');
+    var ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var agents = [];
+    var N = 70;
+
+    function Agent() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.7;
+      this.vy = (Math.random() - 0.5) * 0.7;
+      this.size = Math.random() * 1.4 + 0.6;
+      this.alpha = Math.random() * 0.35 + 0.1;
+    }
+
+    Agent.prototype.update = function() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      this.vx += (Math.random() - 0.5) * 0.035;
+      this.vy += (Math.random() - 0.5) * 0.035;
+      var spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+      if (spd > 1.1) { this.vx = this.vx / spd * 1.1; this.vy = this.vy / spd * 1.1; }
+    };
+
+    Agent.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + this.alpha + ')';
+      ctx.fill();
+    };
+
+    for (var i = 0; i < N; i++) agents.push(new Agent());
+
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < agents.length; i++) {
+        for (var j = i + 1; j < agents.length; j++) {
+          var dx = agents[i].x - agents[j].x;
+          var dy = agents[i].y - agents[j].y;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 110) {
+            var a = (1 - d / 110) * 0.1;
+            ctx.beginPath();
+            ctx.moveTo(agents[i].x, agents[i].y);
+            ctx.lineTo(agents[j].x, agents[j].y);
+            ctx.strokeStyle = 'rgba(37,99,235,' + a + ')';
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+      for (var i = 0; i < agents.length; i++) {
+        agents[i].update();
+        agents[i].draw();
+      }
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+
+    // ---- VIDEO PLAYER ----
+
+    var thumbs = document.querySelectorAll('.video-thumb');
+    var player = document.getElementById('videoPlayer');
+
+    thumbs.forEach(function(t) {
+      t.addEventListener('click', function() {
+        player.src = 'https://www.youtube.com/embed/' + t.getAttribute('data-vid');
+        thumbs.forEach(function(x) { x.classList.remove('active'); });
+        t.classList.add('active');
+      });
+    });
+
+
+    // ---- FADE IN ----
+
+    var fades = document.querySelectorAll('.fadein');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+
+    fades.forEach(function(el) { obs.observe(el); });
+
+
+    // ---- SMOOTH SCROLL ----
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+
+  </script>
+</body>
+</html>
