@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Alexandros Papaspyrou</title>
+  <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    p { line-height: 1.7; color: #6b6b6b; }
+    h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; }
+    ::selection { background: #0a0a0a; color: white; }
+    html { scroll-behavior: smooth; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+    @media (max-width: 700px) { .wrap { padding: 0 20px; } }
+
+
+    /* ---- NAV ---- */
+
+    #topnav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; padding: 20px 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #topnav.stuck {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #e4e4e4;
+    }
+
+    #topnav.on-dark .nav-logo,
+    #topnav.on-dark .back-link { color: rgba(255,255,255,0.8); }
+
+    #topnav.on-dark.stuck {
+      background: rgba(6,6,8,0.88);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    .topnav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo { font-family: Georgia, serif; font-size: 1.1rem; letter-spacing: -0.01em; transition: color 0.3s; }
+
+    .back-link {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.875rem; color: #6b6b6b; transition: color 0.2s;
+    }
+    .back-link:hover { color: #0a0a0a; }
+    #topnav.on-dark .back-link:hover { color: white; }
+    .back-link svg { width: 14px; height: 14px; }
+
+
+    /* ---- HERO ---- */
+
+    #hero {
+      position: relative;
+      min-height: 58vh;
+      background: #0d1b2a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* radial glow */
+    #hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 700px 400px at 80% 50%, rgba(37,99,235,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 350px at 15% 60%, rgba(255,255,255,0.03) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .hero-fade {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 160px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      z-index: 2; pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 3; padding-top: 100px; }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.32); margin-bottom: 24px;
+    }
+
+    .blink-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #2563eb;
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    #hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 5rem);
+      letter-spacing: -0.03em; line-height: 1.0;
+      color: white; margin-bottom: 16px; max-width: 16ch;
+    }
+
+    .hero-sub {
+      font-family: Georgia, serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      color: rgba(255,255,255,0.38); max-width: 46ch;
+      line-height: 1.65; font-style: italic;
+    }
+
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.18); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 32px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.22), transparent);
+      animation: spulse 2s ease-in-out infinite;
+    }
+    @keyframes spulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+
+    /* ---- SHARED ---- */
+
+    .eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #6b6b6b; margin-bottom: 18px;
+    }
+    .eyebrow::before { content:''; display:block; width:18px; height:1px; background:#6b6b6b; }
+
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #0a0a0a; margin-bottom: 10px; }
+    .section-intro { font-size: 1rem; max-width: 54ch; margin-bottom: 48px; }
+
+    .divider { width: 100%; height: 1px; background: #e4e4e4; margin: 48px 0; }
+
+
+    /* ---- QUOTE BAND ---- */
+
+    #quote-band {
+      padding: 56px 0;
+      border-top: 1px solid #e4e4e4;
+      border-bottom: 1px solid #e4e4e4;
+      background: #f7f7f5;
+    }
+
+    .quote-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+
+    .quote-text {
+      font-family: Georgia, serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      line-height: 1.7;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b6b6b;
+    }
+
+
+    /* ---- CONTACT SECTION ---- */
+
+    #contact { padding: 80px 0 100px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+
+    /* left: info */
+    .contact-info-col { display: flex; flex-direction: column; gap: 32px; }
+
+    .info-block {}
+
+    .info-block-label {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #6b6b6b; margin-bottom: 12px;
+    }
+
+    .info-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .info-row:last-child { margin-bottom: 0; }
+
+    .info-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: #f7f7f5; border: 1px solid #e4e4e4;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem; color: #3a3a3a;
+    }
+
+    .info-row-content {}
+
+    .info-row-label {
+      font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #9b9b9b; margin-bottom: 2px;
+    }
+
+    .info-row-value {
+      font-size: 0.9rem; color: #3a3a3a;
+      transition: color 0.2s;
+    }
+
+    .info-row-value a { color: #3a3a3a; transition: color 0.2s; }
+    .info-row-value a:hover { color: #0a0a0a; }
+
+    /* availability tag */
+    .availability-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; color: #3a3a3a;
+      padding: 6px 14px; border: 1px solid #e4e4e4;
+      border-radius: 100px; background: white;
+    }
+
+    .avail-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #22c55e;
+      animation: blink 2.5s ease-in-out infinite;
+    }
+
+    /* social quick links */
+    .social-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .social-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 100px;
+      border: 1px solid #e4e4e4; background: white;
+      font-size: 0.78rem; color: #3a3a3a;
+      transition: all 0.2s ease;
+    }
+
+    .social-pill:hover {
+      border-color: #0a0a0a; background: #0a0a0a; color: white;
+      transform: translateY(-1px);
+    }
+
+    .social-pill i { font-size: 0.78rem; }
+
+    /* whatsapp btn */
+    .whatsapp-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 100px;
+      background: #25D366; color: white;
+      font-size: 0.875rem; font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1fba58; transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37,211,102,0.25);
+    }
+
+    /* share button */
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 100px;
+      background: transparent; color: #3a3a3a;
+      border: 1.5px solid #e4e4e4;
+      font-size: 0.875rem; font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .share-btn:hover {
+      border-color: #0a0a0a; background: #f7f7f5;
+      transform: translateY(-1px);
+    }
+
+    /* share popup */
+    .share-toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      background: #0a0a0a; color: white;
+      padding: 12px 24px; border-radius: 100px;
+      font-size: 0.82rem; letter-spacing: 0.02em;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+      white-space: nowrap;
+    }
+
+    .share-toast.show { opacity: 1; }
+
+
+    /* ---- FORM ---- */
+
+    .form-card {
+      padding: 40px;
+      border: 1px solid #e4e4e4;
+      border-radius: 16px;
+      background: white;
+    }
+
+    .form-title {
+      font-family: Georgia, serif;
+      font-size: 1.4rem; font-weight: 400;
+      color: #0a0a0a; margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #6b6b6b; margin-bottom: 7px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e4e4e4;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #0a0a0a;
+      background: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: #0a0a0a;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+    }
+
+    .form-control::placeholder { color: #b0b0b0; }
+
+    textarea.form-control { min-height: 130px; resize: vertical; }
+
+    /* file upload */
+    .file-wrap {
+      position: relative;
+      border: 1.5px dashed #e4e4e4;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      background: #fafafa;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .file-wrap:hover { border-color: #0a0a0a; background: #f7f7f5; }
+
+    .file-wrap.has-file { border-color: #22c55e; background: #f0fdf4; border-style: solid; }
+
+    .file-wrap input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+
+    .file-icon { font-size: 1.3rem; color: #6b6b6b; margin-bottom: 6px; }
+    .file-label { font-size: 0.82rem; color: #6b6b6b; }
+    .file-label strong { color: #3a3a3a; }
+    .file-name { font-size: 0.78rem; color: #22c55e; margin-top: 4px; display: none; }
+
+    /* subject select */
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b6b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* submit */
+    .form-footer { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+
+    .submit-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 100px;
+      background: #0a0a0a; color: white;
+      font-size: 0.875rem; font-weight: 500;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      border: none; cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .submit-btn:hover {
+      background: #2a2a2a; transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .form-note { font-size: 0.78rem; color: #9b9b9b; }
+
+    /* success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    .form-success i { font-size: 2rem; color: #22c55e; margin-bottom: 12px; display: block; }
+
+    .form-success h3 {
+      font-family: Georgia, serif; font-size: 1.3rem;
+      color: #0a0a0a; margin-bottom: 8px;
+    }
+
+    .form-success p { font-size: 0.9rem; }
+
+
+    /* ---- CONNECT / SOCIAL ---- */
+
+    #connect { background: #0a0a0a; padding: 80px 0; }
+
+    .connect-inner {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 36px;
+    }
+
+    .connect-heading {
+      font-family: Georgia, serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400; letter-spacing: -0.02em; color: white;
+    }
+
+    .connect-heading span { color: rgba(255,255,255,0.28); }
+
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    .social-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem; background: rgba(255,255,255,0.04);
+      transition: all 0.22s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);
+      color: white; transform: translateY(-2px);
+    }
+
+    .social-btn i { opacity: 0.65; transition: opacity 0.2s; }
+    .social-btn:hover i { opacity: 1; }
+
+
+    /* ---- FOOTER ---- */
+
+    footer { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.28); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.2); }
+
+
+    /* ---- FADE IN ---- */
+
+    .fadein { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fadein.d1 { transition-delay: 0.1s; }
+    .fadein.d2 { transition-delay: 0.2s; }
+    .fadein.visible { opacity: 1; transform: none; }
+
+  </style>
+</head>
+<body>
+
+  <!-- nav -->
+  <nav id="topnav" class="on-dark">
+    <div class="wrap topnav-inner">
+      <span class="nav-logo">Alexandros</span>
+      <a href="alexandros.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Back to site
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- hero -->
+  <section id="hero">
+    <div class="hero-fade"></div>
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">
+        <div class="blink-dot"></div>
+        Contact · Athens, Greece
+      </div>
+      <h1>Let's build something together.</h1>
+      <p class="hero-sub">Whether you have a project, a question, or just want to connect — I read everything and reply to everyone.</p>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+
+  <!-- quote -->
+  <section id="quote-band">
+    <div class="wrap">
+      <div class="quote-inner fadein">
+        <p class="quote-text">"The most important thing in communication is hearing what isn't said."</p>
+        <p class="quote-author">— Peter Drucker</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- main contact section -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Get in Touch</p>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-intro">Drop me a message, share a file, or just say hello. I'm usually available on weekdays from 18:00 to 21:00 (EET).</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LEFT: info col -->
+        <div class="contact-info-col fadein d1">
+
+          <div class="info-block">
+            <p class="info-block-label">Status</p>
+            <div class="availability-tag">
+              <div class="avail-dot"></div>
+              Open to opportunities
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Direct Contact</p>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div class="info-row-content">
+                <p class="info-row-label">Email</p>
+                <p class="info-row-value"><a href="mailto:a-papaspyrou@outlook.com.gr">a-papaspyrou@outlook.com.gr</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div class="info-row-content">
+                <p class="info-row-label">Phone</p>
+                <p class="info-row-value"><a href="tel:+306940548867">+30 694 054 8867</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="info-row-content">
+                <p class="info-row-label">Location</p>
+                <p class="info-row-value">Athens, Greece</p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div class="info-row-content">
+                <p class="info-row-label">Availability</p>
+                <p class="info-row-value">Mon – Fri, 18:00 – 21:00 (EET)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Quick Contact</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="https://wa.me/306940548867?text=Hello%20Alexandros%2C%20I%20saw%20your%20website!" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <button class="share-btn" onclick="sharePage()">
+                <i class="fas fa-share-nodes"></i> Share Page
+              </button>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Follow</p>
+            <div class="social-row">
+              <a href="https://x.com/A_Papaspyrou" target="_blank" class="social-pill">
+                <i class="fab fa-twitter"></i> Twitter
+              </a>
+              <a href="https://www.instagram.com/alexandroshub/" target="_blank" class="social-pill">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/alexandrospapaspyrou/" target="_blank" class="social-pill">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+              </a>
+              <a href="https://github.com/alexandroshub" target="_blank" class="social-pill">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://bio.link/alphapi" target="_blank" class="social-pill">
+                <i class="fas fa-link"></i> Bio.link
+              </a>
+            </div>
+          </div>
+
+          <!-- response time card -->
+          <div style="padding: 20px 24px; border: 1px solid #e4e4e4; border-radius: 12px; background: #f7f7f5;">
+            <p style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b6b; margin-bottom: 6px;">Typical Response Time</p>
+            <p style="font-family: Georgia, serif; font-size: 1.3rem; color: #0a0a0a; margin-bottom: 4px;">Under 24 hours</p>
+            <p style="font-size: 0.82rem; color: #6b6b6b;">I read every message personally and reply as soon as possible.</p>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: form -->
+        <div class="form-card fadein d2">
+
+          <div id="form-fields">
+            <h3 class="form-title">Send a Message</h3>
+
+            <form action="https://formspree.io/f/movpvaon" method="POST" id="contactForm" enctype="multipart/form-data">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Alexandros Papaspyrou" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" class="form-control">
+                  <option value="">Select a topic...</option>
+                  <option value="project">Project Collaboration</option>
+                  <option value="job">Job / Work Opportunity</option>
+                  <option value="thesis">Thesis / Research</option>
+                  <option value="iot">IoT / Automation Systems</option>
+                  <option value="general">General Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project, question, or idea..." required></textarea>
+              </div>
+
+              <!-- File Upload -->
+              <div class="form-group">
+                <label>Attach a File <span style="color:#9b9b9b; font-weight:400;">(optional)</span></label>
+                <div class="file-wrap" id="fileWrap">
+                  <input type="file" id="fileInput" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt,.zip">
+                  <div class="file-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                  <p class="file-label"><strong>Click to upload</strong> or drag &amp; drop</p>
+                  <p class="file-label" style="font-size:0.72rem; margin-top:4px;">PDF, DOC, JPG, PNG, TXT, ZIP — max 10 MB</p>
+                  <p class="file-name" id="fileName"></p>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  <i class="fas fa-paper-plane"></i>
+                  Send Message
+                </button>
+                <p class="form-note">Your data is sent securely via Formspree. No spam, ever.</p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- success state -->
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i>
+            <h3>Message sent.</h3>
+            <p>Thank you — I'll get back to you within 24 hours.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- social / connect -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Find me <span>across the web.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://substack.com" target="_blank" class="social-btn">
+          <i class="fas fa-newspaper"></i> Substack
+        </a>
+        <a href="https://anchor.fm/alexandroshub" target="_blank" class="social-btn">
+          <i class="fas fa-podcast"></i> Podcast
+        </a>
+        <a href="alexandros.html" class="social-btn">
+          <i class="fas fa-th"></i> Portfolio
+        </a>
+        <a href="alexandros-cv.html" class="social-btn">
+          <i class="fas fa-id-card"></i> CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="https://alexandroshub.github.io/about" target="_blank">Terms of Service</a>
+        <a href="https://alexandroshub.github.io" target="_blank">AlphaPi Home</a>
+        <a href="alexandros-hub.html">Hub</a>
+      </div>
+      <p class="footer-copy">Handcrafted With ❤ by Alexandros Papaspyrou · © 2026</p>
+    </div>
+  </footer>
+
+  <!-- share toast -->
+  <div class="share-toast" id="shareToast">Link copied to clipboard ✓</div>
+
+
+  <script>
+
+    // ---- NAV ----
+
+    var topnav = document.getElementById('topnav');
+    var hero = document.getElementById('hero');
+
+    window.addEventListener('scroll', function() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 60) {
+        topnav.classList.remove('on-dark');
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.add('on-dark');
+        topnav.classList.toggle('stuck', window.scrollY > 30);
+      }
+    }, { passive: true });
+
+
+    // ---- FADE IN ----
+
+    var fades = document.querySelectorAll('.fadein');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    fades.forEach(function(el) { obs.observe(el); });
+
+
+    // ---- FILE UPLOAD ----
+
+    var fileInput = document.getElementById('fileInput');
+    var fileWrap = document.getElementById('fileWrap');
+    var fileName = document.getElementById('fileName');
+
+    fileInput.addEventListener('change', function() {
+      if (fileInput.files.length > 0) {
+        var f = fileInput.files[0];
+        fileName.textContent = f.name + ' (' + (f.size / 1024 / 1024).toFixed(2) + ' MB)';
+        fileName.style.display = 'block';
+        fileWrap.classList.add('has-file');
+        fileWrap.querySelector('.file-icon i').className = 'fas fa-circle-check';
+      } else {
+        fileName.style.display = 'none';
+        fileWrap.classList.remove('has-file');
+        fileWrap.querySelector('.file-icon i').className = 'fas fa-cloud-arrow-up';
+      }
+    });
+
+    // drag and drop visual
+    fileWrap.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      fileWrap.style.borderColor = '#0a0a0a';
+      fileWrap.style.background = '#f0f0ef';
+    });
+
+    fileWrap.addEventListener('dragleave', function() {
+      fileWrap.style.borderColor = '';
+      fileWrap.style.background = '';
+    });
+
+    fileWrap.addEventListener('drop', function(e) {
+      fileWrap.style.borderColor = '';
+      fileWrap.style.background = '';
+    });
+
+
+    // ---- FORM SUBMIT ----
+
+    var form = document.getElementById('contactForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var formFields = document.getElementById('form-fields');
+    var formSuccess = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      var data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          formFields.style.display = 'none';
+          formSuccess.style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          alert('Something went wrong. Please try again or email me directly.');
+        }
+      })
+      .catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        alert('Network error. Please try again or email me directly.');
+      });
+    });
+
+
+    // ---- SHARE PAGE ----
+
+    function sharePage() {
+      var url = window.location.href;
+      var toast = document.getElementById('shareToast');
+
+      if (navigator.share) {
+        navigator.share({
+          title: 'Contact — Alexandros Papaspyrou',
+          text: 'Get in touch with Alexandros — Automation Engineer & Systems Builder.',
+          url: url
+        });
+      } else {
+        navigator.clipboard.writeText(url).then(function() {
+          toast.classList.add('show');
+          setTimeout(function() { toast.classList.remove('show'); }, 2800);
+        });
+      }
+    }
+
+
+    // ---- SMOOTH SCROLL ----
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+
+  </script>
+
+</body>
+</html>
