@@ -1,3 +1,4 @@
+
 <div id="insights-widget"></div>
 
 <script>
@@ -209,3 +210,215 @@ Discover why human mistakes remain the leading cause of cyber breaches and learn
 
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="medium-widget" class="medium-container">
+    <h2 style="text-align:center; font-family: sans-serif;">Latest from Medium</h2>
+    <div id="medium-posts" class="posts-grid">
+        <p style="text-align:center;">Φόρτωση άρθρων...</p>
+    </div>
+</div>
+
+<style>
+    .medium-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .post-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #333;
+    }
+    .post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .post-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background-color: #f0f0f0;
+    }
+    .post-content {
+        padding: 15px;
+    }
+    .post-title {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+    .post-date {
+        font-size: 0.8rem;
+        color: #666;
+    }
+</style>
+
+<script>
+    const mediumUsername = 'papaspyrou.alexandros';
+    const rssUrl = `https://medium.com/feed/@${mediumUsername}`;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const postsContainer = document.getElementById('medium-posts');
+            postsContainer.innerHTML = ''; // Καθαρισμός του "Loading..."
+
+            if (data.status === 'ok') {
+                data.items.slice(0, 3).forEach(item => { // Παίρνουμε τα 3 τελευταία
+                    // Προσπάθεια να βρούμε εικόνα αν δεν υπάρχει στο thumbnail
+                    const thumbnail = item.thumbnail || 'https://via.placeholder.com/400x200?text=Medium+Article';
+                    const date = new Date(item.pubDate).toLocaleDateString('el-GR');
+
+                    const postHtml = `
+                        <a href="${item.link}" target="_blank" class="post-card">
+                            <img src="${thumbnail}" class="post-image" alt="${item.title}">
+                            <div class="post-content">
+                                <h3 class="post-title">${item.title}</h3>
+                                <p class="post-date">${date}</p>
+                            </div>
+                        </a>
+                    `;
+                    postsContainer.innerHTML += postHtml;
+                });
+            } else {
+                postsContainer.innerHTML = '<p>Δεν ήταν δυνατή η φόρτωση των άρθρων.</p>';
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('medium-posts').innerHTML = '<p>Σφάλμα κατά τη σύνδεση.</p>';
+        });
+</script>
+
+
+
+
+<div id="wp-blog-container" class="wp-container">
+    <h2 class="wp-header">Latest from Alexandros Hub</h2>
+    <div id="wp-posts-grid" class="wp-grid">
+        <p>Φόρτωση άρθρων...</p>
+    </div>
+</div>
+
+<style>
+    .wp-container {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .wp-header {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+    .wp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    .wp-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .wp-card:hover {
+        transform: translateY(-8px);
+    }
+    .wp-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #eee;
+    }
+    .wp-body {
+        padding: 20px;
+    }
+    .wp-title {
+        font-size: 1.25rem;
+        margin: 0 0 10px 0;
+        color: #111;
+        line-height: 1.4;
+    }
+    .wp-date {
+        font-size: 0.85rem;
+        color: #7f8c8d;
+    }
+</style>
+
+<script>
+    (function() {
+        // Η διεύθυνση του feed σου
+        const wpFeedUrl = 'https://alexandroshub.wordpress.com/feed/';
+        // Χρησιμοποιούμε το rss2json για μετατροπή σε JSON
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(wpFeedUrl)}`;
+
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                const grid = document.getElementById('wp-posts-grid');
+                grid.innerHTML = ''; // Καθαρίζουμε το "Loading"
+
+                if (data.status === 'ok') {
+                    data.items.slice(0, 3).forEach(post => {
+                        // Προσπάθεια εύρεσης εικόνας (αν υπάρχει)
+                        const image = post.thumbnail || 'https://via.placeholder.com/600x400?text=WordPress+Post';
+                        const date = new Date(post.pubDate).toLocaleDateString('el-GR');
+
+                        const cardHtml = `
+                            <a href="${post.link}" target="_blank" class="wp-card">
+                                <img src="${image}" class="wp-img" alt="${post.title}">
+                                <div class="wp-body">
+                                    <h3 class="wp-title">${post.title}</h3>
+                                    <span class="wp-date">${date}</span>
+                                </div>
+                            </a>
+                        `;
+                        grid.innerHTML += cardHtml;
+                    });
+                } else {
+                    grid.innerHTML = '<p>Δεν βρέθηκαν άρθρα.</p>';
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('wp-posts-grid').innerHTML = '<p>Σφάλμα σύνδεσης.</p>';
+            });
+    })();
+</script>
