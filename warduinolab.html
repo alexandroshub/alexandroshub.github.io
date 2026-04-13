@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduino Lab — Alexandros Papaspyrou</title>
+  <link rel="icon" href="https://64.media.tumblr.com/9afce4a8d742ee60acbad9323d33dc5d/44cd2a580847b444-aa/s540x810/e1584500e44e11d32058f0df0cf743b29b3468f3.pnj" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #0a0a0a;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    p { line-height: 1.7; color: #6b6b6b; }
+    h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; }
+    ::selection { background: #0a0a0a; color: white; }
+    html { scroll-behavior: smooth; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+    @media (max-width: 700px) { .wrap { padding: 0 20px; } }
+
+
+    /* ---- NAV ---- */
+
+    #topnav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100; padding: 20px 0;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #topnav.stuck {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 #e4e4e4;
+    }
+
+    #topnav.on-dark .nav-logo,
+    #topnav.on-dark .back-link { color: rgba(255,255,255,0.8); }
+
+    #topnav.on-dark.stuck {
+      background: rgba(10,18,28,0.92);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    .topnav-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .nav-logo { font-family: Georgia, serif; font-size: 1.1rem; letter-spacing: -0.01em; transition: color 0.3s; }
+
+    .back-link {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.875rem; color: #6b6b6b; transition: color 0.2s;
+    }
+    .back-link:hover { color: #0a0a0a; }
+    #topnav.on-dark .back-link:hover { color: white; }
+    .back-link svg { width: 14px; height: 14px; }
+
+
+    /* ---- HERO ---- */
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      background: #0d1b2a;
+      display: flex; flex-direction: column; justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none; z-index: 1;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent, #ffffff);
+      z-index: 2; pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 3; padding-top: 80px; }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.32); margin-bottom: 24px;
+    }
+
+    .blink-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #00e5a0;
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 12px; border: 1px solid rgba(0,229,160,0.35);
+      border-radius: 100px; color: #00e5a0; margin-bottom: 24px;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.8rem, 6.5vw, 6rem);
+      letter-spacing: -0.04em; line-height: 1.0;
+      color: white; margin-bottom: 16px; max-width: 14ch;
+    }
+
+    #hero h1 em { font-style: italic; color: rgba(255,255,255,0.25); }
+
+    .hero-sub {
+      font-family: Georgia, serif;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.4); max-width: 50ch;
+      line-height: 1.65; margin-bottom: 48px; font-style: italic;
+    }
+
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 100px;
+      font-size: 0.875rem; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500; cursor: pointer; transition: all 0.22s ease; border: none;
+    }
+
+    .btn-white { background: white; color: #0a0a0a; }
+    .btn-white:hover { background: #f0f0f0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    .btn-green {
+      background: rgba(0,229,160,0.12); color: #00e5a0;
+      border: 1px solid rgba(0,229,160,0.3);
+    }
+    .btn-green:hover { background: rgba(0,229,160,0.2); border-color: rgba(0,229,160,0.6); transform: translateY(-2px); }
+
+    .btn-ghost-dark {
+      background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .btn-ghost-dark:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); color: white; transform: translateY(-2px); }
+
+    .btn-ink { background: #0a0a0a; color: white; }
+    .btn-ink:hover { background: #2a2a2a; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+    .btn-ghost-light { background: transparent; color: #0a0a0a; border: 1.5px solid #e4e4e4; }
+    .btn-ghost-light:hover { border-color: #0a0a0a; background: #f7f7f5; transform: translateY(-1px); }
+
+    .scroll-hint {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.18); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px; height: 36px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.22), transparent);
+      animation: spulse 2s ease-in-out infinite;
+    }
+    @keyframes spulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+
+    /* ---- SHARED ---- */
+
+    section { padding: 100px 0; }
+
+    .eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #6b6b6b; margin-bottom: 18px;
+    }
+    .eyebrow::before { content:''; display:block; width:18px; height:1px; background:#6b6b6b; }
+
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #0a0a0a; margin-bottom: 12px; }
+    .section-intro { font-size: 1rem; max-width: 58ch; margin-bottom: 52px; }
+
+    .divider { width: 100%; height: 1px; background: #e4e4e4; margin: 52px 0; }
+
+
+    /* ---- WHAT IS ARDUINO ---- */
+
+    #what { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    @media (max-width: 820px) { .what-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .what-body p { font-size: 1rem; line-height: 1.8; color: #3a3a3a; margin-bottom: 16px; }
+    .what-body p:last-child { margin-bottom: 0; }
+    .what-body strong { color: #0a0a0a; font-weight: 500; }
+
+    .what-aside { display: flex; flex-direction: column; gap: 16px; }
+
+    .fact-card {
+      padding: 24px;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      background: white;
+      transition: all 0.22s ease;
+    }
+    .fact-card:hover { border-color: #0a0a0a; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+
+    .fact-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b6b; margin-bottom: 6px; }
+
+    .fact-value { font-family: Georgia, serif; font-size: 1.05rem; color: #0a0a0a; }
+
+
+    /* ---- STEP BY STEP ---- */
+
+    #steps { }
+
+    .steps-timeline { display: flex; flex-direction: column; gap: 0; }
+
+    .step-row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 28px;
+      padding: 32px 0;
+      border-bottom: 1px solid #e4e4e4;
+      align-items: start;
+    }
+    .step-row:last-child { border-bottom: none; }
+
+    .step-num-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-top: 4px;
+    }
+
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #0a0a0a; color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      width: 1px; height: 100%; background: #e4e4e4;
+      min-height: 32px; flex: 1;
+    }
+
+    .step-row:last-child .step-line { display: none; }
+
+    .step-content { padding-bottom: 8px; }
+
+    .step-title {
+      font-family: Georgia, serif; font-size: 1.2rem; color: #0a0a0a;
+      margin-bottom: 8px;
+    }
+
+    .step-desc { font-size: 0.9375rem; line-height: 1.7; margin-bottom: 12px; }
+
+    .step-code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.8rem;
+      background: #0a0a0a;
+      color: #00e5a0;
+      padding: 14px 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+      line-height: 1.7;
+      white-space: pre;
+    }
+
+    .step-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+    .tag {
+      font-size: 0.72rem; padding: 4px 12px; border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+    .tag-light { background: #f7f7f5; color: #3a3a3a; border: 1px solid #e4e4e4; }
+    .tag-green { background: rgba(0,229,160,0.1); color: #007a56; border: 1px solid rgba(0,229,160,0.25); }
+    .tag-dark { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+
+    /* ---- PROJECTS ---- */
+
+    #projects { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      border: 1px solid #e4e4e4; border-radius: 14px;
+      overflow: hidden; background: white;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .project-card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
+
+    .project-card:hover .project-card-img img { transform: scale(1.04); }
+
+    .project-card-img {
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #0d1b2a;
+    }
+    .project-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+
+    .project-card-img-placeholder {
+      width: 100%; aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+    }
+    .ph-navy { background: linear-gradient(135deg, #0d1b2a, #1a3a5c); }
+    .ph-teal { background: linear-gradient(135deg, #0a1a14, #0d3326); }
+    .ph-slate { background: linear-gradient(135deg, #1a1a2e, #2a2a4a); }
+
+    .project-card-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+    .project-card-meta { display: flex; justify-content: space-between; align-items: center; }
+
+    .project-card-num { font-size: 0.7rem; color: #e4e4e4; letter-spacing: 0.06em; }
+
+    .project-status {
+      font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px;
+    }
+    .status-live { background: rgba(0,229,160,0.1); color: #007a56; border: 1px solid rgba(0,229,160,0.25); }
+    .status-next { background: #f7f7f5; color: #6b6b6b; border: 1px solid #e4e4e4; }
+
+    .project-card-title {
+      font-family: Georgia, serif; font-size: 1.1rem; font-weight: 400;
+      color: #0a0a0a; line-height: 1.3;
+    }
+
+    .project-card-desc { font-size: 0.875rem; line-height: 1.65; flex: 1; }
+
+    .project-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .project-card-links {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding-top: 14px; border-top: 1px solid #f0f0f0; margin-top: 4px;
+    }
+
+    .proj-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; color: #3a3a3a; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .proj-link:hover { color: #007a56; }
+    .proj-link i { font-size: 0.72rem; }
+
+    /* next projects — dashed */
+    .project-card.next-up {
+      border-style: dashed;
+      background: #fafafa;
+    }
+    .project-card.next-up:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.05); transform: translateY(-2px); }
+
+    .next-up-icon { font-size: 2rem; margin-bottom: 8px; }
+
+
+    /* ---- COMPONENTS GALLERY ---- */
+
+    #components { }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1.5px;
+      background: #e4e4e4;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .component-item {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; padding: 28px 16px;
+      background: white; text-align: center;
+      transition: background 0.2s;
+      cursor: default;
+    }
+    .component-item:hover { background: #0a0a0a; }
+    .component-item:hover .comp-name { color: rgba(255,255,255,0.55); }
+    .component-item:hover img { filter: invert(1) brightness(0.55); }
+
+    .component-item img { width: 56px; height: 56px; object-fit: contain; transition: filter 0.2s; }
+    .comp-name { font-size: 0.75rem; color: #6b6b6b; transition: color 0.2s; letter-spacing: 0.02em; }
+
+
+    /* ---- VIDEOS ---- */
+
+    #videos { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 24px;
+    }
+    @media (max-width: 800px) { .video-layout { grid-template-columns: 1fr; } }
+
+    .video-player-wrap { border-radius: 12px; overflow: hidden; background: #000; aspect-ratio: 16/9; }
+    .video-player-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    .video-list {
+      display: flex; flex-direction: column; gap: 8px;
+      overflow-y: auto; max-height: 320px;
+      scrollbar-width: thin; scrollbar-color: #e4e4e4 transparent;
+    }
+    @media (max-width: 800px) {
+      .video-list { flex-direction: row; max-height: none; overflow-y: visible; overflow-x: auto; }
+    }
+
+    .video-thumb {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px; border-radius: 8px;
+      border: 1px solid #e4e4e4; cursor: pointer;
+      transition: all 0.2s ease; flex-shrink: 0;
+    }
+    .video-thumb:hover { border-color: #0a0a0a; background: white; }
+    .video-thumb.active { border-color: #0a0a0a; background: #0a0a0a; }
+    .video-thumb.active .vt-title { color: white; }
+    .video-thumb img { width: 72px; height: 42px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+    .vt-title { font-size: 0.78rem; line-height: 1.4; color: #3a3a3a; transition: color 0.2s; }
+
+    @media (max-width: 800px) {
+      .video-thumb { flex-direction: column; width: 120px; align-items: flex-start; }
+      .video-thumb img { width: 100%; height: 64px; }
+    }
+
+
+    /* ---- QUOTES ---- */
+
+    #quotes { }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .quote-card {
+      padding: 32px;
+      border: 1px solid #e4e4e4;
+      border-radius: 12px;
+      background: #f7f7f5;
+      transition: all 0.22s ease;
+    }
+    .quote-card:hover { border-color: #0a0a0a; background: white; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+    .quote-mark { font-family: Georgia, serif; font-size: 3rem; color: #e4e4e4; line-height: 1; margin-bottom: 8px; }
+
+    .quote-text {
+      font-family: Georgia, serif;
+      font-size: 1rem; font-style: italic;
+      line-height: 1.7; color: #3a3a3a; margin-bottom: 16px;
+    }
+
+    .quote-author { font-size: 0.78rem; letter-spacing: 0.04em; color: #6b6b6b; }
+
+
+    /* ---- FAQ ---- */
+
+    #faq { background: #f7f7f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; max-width: 760px; }
+
+    .faq-item {
+      border-bottom: 1px solid #e4e4e4;
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid #e4e4e4; }
+
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; cursor: pointer;
+      font-family: Georgia, serif; font-size: 1rem;
+      color: #0a0a0a; gap: 16px;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: #3a3a3a; }
+
+    .faq-icon {
+      width: 24px; height: 24px; border-radius: 50%;
+      border: 1.5px solid #e4e4e4;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: #6b6b6b; flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+    .faq-item.open .faq-icon { background: #0a0a0a; border-color: #0a0a0a; color: white; transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+
+    .faq-answer p { font-size: 0.9375rem; line-height: 1.75; color: #3a3a3a; }
+
+
+    /* ---- CTA BAND ---- */
+
+    #cta-band {
+      background: #0d1b2a; padding: 100px 0;
+      position: relative; overflow: hidden;
+    }
+    #cta-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .cta-inner {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 32px;
+    }
+    .cta-inner h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); color: white; max-width: 18ch; }
+    .cta-inner p { color: rgba(255,255,255,0.38); max-width: 46ch; }
+    .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+
+    /* ---- CONNECT ---- */
+
+    #connect { background: #0a0a0a; padding: 80px 0; }
+
+    .connect-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 36px; }
+    .connect-heading { font-family: Georgia, serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 400; letter-spacing: -0.02em; color: white; }
+    .connect-heading span { color: rgba(255,255,255,0.28); }
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .social-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem; background: rgba(255,255,255,0.04);
+      transition: all 0.22s ease;
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: white; transform: translateY(-2px); }
+    .social-btn i { opacity: 0.65; transition: opacity 0.2s; }
+    .social-btn:hover i { opacity: 1; }
+
+
+    /* ---- FOOTER ---- */
+
+    footer { background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.28); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.2); }
+
+
+    /* ---- BACK TO TOP ---- */
+
+    #btt {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #0a0a0a; color: white; border: none;
+      font-size: 0.9rem; cursor: pointer; display: none;
+      z-index: 200; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    #btt:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+
+    /* ---- FADE IN ---- */
+
+    .fadein { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fadein.d1 { transition-delay: 0.1s; }
+    .fadein.d2 { transition-delay: 0.2s; }
+    .fadein.d3 { transition-delay: 0.3s; }
+    .fadein.visible { opacity: 1; transform: none; }
+
+  </style>
+</head>
+<body>
+
+  <nav id="topnav" class="on-dark">
+    <div class="wrap topnav-inner">
+      <span class="nav-logo">Alexandros</span>
+      <a href="alexandros-portfolio.html" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Back to Portfolio
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">
+        <div class="blink-dot"></div>
+        Arduino Lab · Embedded Systems
+      </div>
+      <div class="hero-tag">
+        <i class="fas fa-microchip" style="font-size:0.65rem;"></i>
+        Open Source Hardware
+      </div>
+      <h1>Code with purpose.<br><em>Automate with vision.</em></h1>
+      <p class="hero-sub">
+        A hands-on collection of Arduino projects, guides, and experiments — from blinking an LED to autonomous robotics.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-white">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+        <a href="https://projecthub.arduino.cc/Papaspyrou_A" target="_blank" class="btn btn-green">
+          <i class="fas fa-external-link-alt"></i> Arduino Hub
+        </a>
+        <a href="#steps" class="btn btn-ghost-dark">
+          <i class="fas fa-list-ol"></i> Getting Started
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+
+  <!-- WHAT IS ARDUINO -->
+  <section id="what">
+    <div class="wrap">
+      <div class="what-grid fadein">
+        <div class="what-body">
+          <p class="eyebrow">The Platform</p>
+          <h2 class="section-title" style="margin-bottom: 24px;">What is Arduino?</h2>
+          <p>Arduino is a <strong>low-cost, open-source microcontroller platform</strong> designed for building electronics, automation, and robotics projects. Created in 2005 at the Interaction Design Institute in Ivrea, Italy, it was named after Arduin — a military commander of Ivrea in the 11th century.</p>
+          <p>At its core, an Arduino board holds a microcontroller — a small computer on a chip that can read inputs (sensors, buttons, signals) and turn them into outputs (motors, LEDs, displays). You program it using <strong>Wiring C</strong>, a simplified version of C/C++ that runs inside the Arduino IDE.</p>
+          <p>What makes it powerful is the combination of low cost, a huge community, and the ability to go from a blinking LED to a <strong>fully autonomous vehicle</strong> using the same platform. That's exactly what I did with the Michatron AGV project.</p>
+          <p>The software IDE is based on the Processing environment — open source, cross-platform, and backed by a library ecosystem that covers everything from Wi-Fi modules to servo motors to machine learning at the edge.</p>
+        </div>
+        <div class="what-aside fadein d1">
+          <div class="fact-card">
+            <p class="fact-label">Created</p>
+            <p class="fact-value">2005 · Ivrea, Italy</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">Language</p>
+            <p class="fact-value">Wiring C (C/C++ simplified)</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">Core Concept</p>
+            <p class="fact-value">Read inputs → Process → Trigger outputs</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">Primary Use</p>
+            <p class="fact-value">Prototyping, automation, robotics, IoT</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">IDE</p>
+            <p class="fact-value">Arduino IDE (open source, based on Processing)</p>
+          </div>
+          <div class="fact-card">
+            <p class="fact-label">My Projects</p>
+            <p class="fact-value">
+              <a href="https://projecthub.arduino.cc/Papaspyrou_A" target="_blank" style="color:#007a56; font-weight:500;">projecthub.arduino.cc/Papaspyrou_A ↗</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GETTING STARTED -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Tutorial</p>
+        <h2 class="section-title">Getting Started with Arduino</h2>
+        <p class="section-intro">Five steps that take you from zero to running your first program on hardware. No prior experience required.</p>
+      </div>
+
+      <div class="steps-timeline fadein">
+
+        <div class="step-row">
+          <div class="step-num-wrap">
+            <div class="step-num">1</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Download and install the Arduino IDE</h3>
+            <p class="step-desc">Go to <a href="https://www.arduino.cc" target="_blank" style="color:#007a56;">arduino.cc</a> → Software → Downloads. Choose your OS (Windows, macOS, Linux). The IDE includes everything you need: editor, compiler, serial monitor, and board manager. First time installing drivers on Windows? The installer handles it automatically.</p>
+            <div class="step-tags">
+              <span class="tag tag-light">Arduino IDE 2.x</span>
+              <span class="tag tag-light">USB Driver</span>
+              <span class="tag tag-light">Board Manager</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num-wrap">
+            <div class="step-num">2</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Understand the two essential functions</h3>
+            <p class="step-desc">Every Arduino sketch has exactly two mandatory functions. <code style="background:#f7f7f5; padding:2px 6px; border-radius:4px; font-size:0.85rem;">setup()</code> runs once at power-on — use it to configure pins and initialize libraries. <code style="background:#f7f7f5; padding:2px 6px; border-radius:4px; font-size:0.85rem;">loop()</code> runs forever in a continuous cycle — this is where your logic lives.</p>
+            <div class="step-code">void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);   // configure pin 13 as output
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH); // LED on
+  delay(1000);                     // wait 1 second
+  digitalWrite(LED_BUILTIN, LOW);  // LED off
+  delay(1000);                     // wait 1 second
+}</div>
+            <div class="step-tags">
+              <span class="tag tag-light">setup()</span>
+              <span class="tag tag-light">loop()</span>
+              <span class="tag tag-light">pinMode()</span>
+              <span class="tag tag-light">digitalWrite()</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num-wrap">
+            <div class="step-num">3</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Read analog inputs — the LDR example</h3>
+            <p class="step-desc">Analog pins (A0–A5) read values from 0 to 1023. A photoresistor (LDR) changes resistance based on light — perfect for building an automatic light switch. Connect the LDR and a fixed resistor as a voltage divider to A0, then read it.</p>
+            <div class="step-code">int ldrPin = A0;
+int ledPin = 9;
+int threshold = 500;    // adjust for your lighting
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin);
+  Serial.println(ldrValue);         // monitor in IDE serial console
+
+  if (ldrValue < threshold) {
+    digitalWrite(ledPin, HIGH);     // dark = LED on
+  } else {
+    digitalWrite(ledPin, LOW);      // bright = LED off
+  }
+  delay(100);
+}</div>
+            <div class="step-tags">
+              <span class="tag tag-light">analogRead()</span>
+              <span class="tag tag-light">LDR</span>
+              <span class="tag tag-light">Voltage Divider</span>
+              <span class="tag tag-light">Serial Monitor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num-wrap">
+            <div class="step-num">4</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Control a servo with a potentiometer</h3>
+            <p class="step-desc">A potentiometer gives you an analog input from 0 to 1023. Use <code style="background:#f7f7f5; padding:2px 6px; border-radius:4px; font-size:0.85rem;">map()</code> to convert it to a servo angle (0–180°). This is the foundation for manual control systems, robotic joints, and camera gimbals.</p>
+            <div class="step-code">#include &lt;Servo.h&gt;
+
+Servo myServo;
+int potPin = A0;
+int servoPin = 9;
+
+void setup() {
+  myServo.attach(servoPin);
+}
+
+void loop() {
+  int potValue = analogRead(potPin);
+  int angle = map(potValue, 0, 1023, 0, 180);
+  myServo.write(angle);
+  delay(15);                        // give servo time to move
+}</div>
+            <div class="step-tags">
+              <span class="tag tag-light">Servo.h</span>
+              <span class="tag tag-light">map()</span>
+              <span class="tag tag-light">Potentiometer</span>
+              <span class="tag tag-light">PWM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num-wrap">
+            <div class="step-num">5</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Debug with the Serial Monitor</h3>
+            <p class="step-desc">The Serial Monitor is the Arduino equivalent of console.log. Open it from Tools → Serial Monitor (or Ctrl+Shift+M). Make sure the baud rate matches what you set in <code style="background:#f7f7f5; padding:2px 6px; border-radius:4px; font-size:0.85rem;">Serial.begin()</code>. Use it to print sensor values, debug logic, and understand what your hardware is actually doing in real time.</p>
+            <div class="step-tags">
+              <span class="tag tag-light">Serial.begin(9600)</span>
+              <span class="tag tag-light">Serial.println()</span>
+              <span class="tag tag-light">Debugging</span>
+              <span class="tag tag-light">Baud Rate</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Builds</p>
+        <h2 class="section-title">Lab Projects</h2>
+        <p class="section-intro">Real circuits, real code, real results. Click through for the full write-up and source on GitHub.</p>
+      </div>
+
+      <div class="projects-grid fadein">
+
+        <!-- LDR Switch -->
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="https://64.media.tumblr.com/af764238ef4ebf4bd93d19aa6829aad8/afc46cbefaec4590-a4/s1280x1920/948ca6936b1e6551068f88eb68702c3c1a581a31.png" alt="LDR Light Switch">
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-meta">
+              <span class="project-card-num">01</span>
+              <span class="project-status status-live">Live</span>
+            </div>
+            <h3 class="project-card-title">LightSwitch — Automatic Light Control Circuit</h3>
+            <p class="project-card-desc">Photoresistor-based ambient light detection with op-amp signal conditioning, adjustable threshold via trim-pot, and relay-driven load switching. Designed from schematic to PCB. Simulated in Multisim before building.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">LDR</span>
+              <span class="tag tag-light">Op-Amp</span>
+              <span class="tag tag-light">Relay</span>
+              <span class="tag tag-light">Multisim</span>
+              <span class="tag tag-light">PCB</span>
+            </div>
+            <div class="project-card-links">
+              <a href="https://github.com/alexandroshub" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://www.dropbox.com/scl/fo/1odwykj5iwvfdeyou5fqs/ANY31CVaDe7drmBYc9Y5jQg?rlkey=eft6vvabum38vdg7hpoxxo7tx&st=xa9hcaju&dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-folder-open"></i> Project Files
+              </a>
+                   <a href="https://github.com/alexandroshub/arduinoUNOprojects/blob/e8102ddb9b68239b08e8f0705be7a379d2f6b040/SmartNightLight_README.md" target="_blank" class="proj-link">
+                <i class="fas fa-file-code"></i> .md Readme
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Potentiometer Servo -->
+        <div class="project-card">
+          <div class="project-card-img-placeholder ph-teal">
+            <span>⚙️</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-meta">
+              <span class="project-card-num">02</span>
+              <span class="project-status status-live">Live</span>
+            </div>
+            <h3 class="project-card-title">Potentiometer Servo Control via analogRead</h3>
+            <p class="project-card-desc">Manual servo position control using a 10kΩ potentiometer mapped to 0–180°. Uses the Servo library and analogRead to translate rotary input into precise angular output. Foundation of the steering system in the AGV project.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">Servo.h</span>
+              <span class="tag tag-light">analogRead</span>
+              <span class="tag tag-light">map()</span>
+              <span class="tag tag-light">PWM</span>
+              <span class="tag tag-light">10kΩ Pot</span>
+            </div>
+            <div class="project-card-links">
+              <a href="https://github.com/alexandroshub" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://github.com/alexandroshub/arduinoUNOprojects/blob/e8102ddb9b68239b08e8f0705be7a379d2f6b040/servo.md" target="_blank" class="proj-link">
+                <i class="fas fa-file-code"></i> .md Readme
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AGV -->
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="AGV Michatron">
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-meta">
+              <span class="project-card-num">03</span>
+              <span class="project-status status-live">Live</span>
+            </div>
+            <h3 class="project-card-title">Michatron — Autonomous Guided Vehicle (AGV)</h3>
+            <p class="project-card-desc">Arduino-controlled mobile robot with IR line-following, ultrasonic obstacle avoidance, and L298N motor driver control. Full mechatronics integration — from sensor fusion to autonomous decision logic.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">IR Sensors</span>
+              <span class="tag tag-light">HC-SR04</span>
+              <span class="tag tag-light">L298N</span>
+              <span class="tag tag-light">Motor Control</span>
+              <span class="tag tag-light">Autonomous</span>
+            </div>
+            <div class="project-card-links">
+              <a href="https://codebender.cc/sketch:208552" target="_blank" class="proj-link">
+                <i class="fas fa-code"></i> View Code
+              </a>
+              <a href="https://www.dropbox.com/scl/fi/dqw6t6itu536iqrqrtc1z/Michatron_Papaspyrou_Alexandros.pdf?rlkey=4s8xetswr3d6l5uqo17ec2n58&st=tetyxt4k&dl=0" target="_blank" class="proj-link">
+                <i class="fas fa-file-pdf"></i> Report
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ThingSpeak IoT -->
+        <div class="project-card">
+          <div class="project-card-img-placeholder ph-navy">
+            <span>📡</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-meta">
+              <span class="project-card-num">04</span>
+              <span class="project-status status-live">Archived</span>
+            </div>
+            <h3 class="project-card-title">ThingSpeak IoT Monitoring — ESP8266 + DHT11</h3>
+            <p class="project-card-desc">Cloud-connected sensor node using Arduino Uno, ESP8266 Wi-Fi module, and DHT11 for real-time temperature and humidity telemetry. Data streamed to ThingSpeak for remote visualization. A complete end-to-end IoT pipeline.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">ESP8266</span>
+              <span class="tag tag-light">DHT11</span>
+              <span class="tag tag-light">ThingSpeak</span>
+              <span class="tag tag-light">AT Commands</span>
+              <span class="tag tag-light">IoT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEXT: PIR Motion Alarm -->
+        <div class="project-card next-up">
+          <div class="project-card-body" style="padding-top: 32px;">
+            <div class="next-up-icon">🔮</div>
+            <div class="project-card-meta">
+              <span class="project-card-num">05</span>
+              <span class="project-status status-next">Coming Next</span>
+            </div>
+            <h3 class="project-card-title">PIR Motion Alarm with SMS Alert</h3>
+            <p class="project-card-desc">Passive infrared sensor for motion detection, combined with a SIM800L GSM module to send a real SMS when movement is detected. Low-power sleep mode between checks. Designed for unattended deployment.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">PIR Sensor</span>
+              <span class="tag tag-light">SIM800L</span>
+              <span class="tag tag-light">GSM</span>
+              <span class="tag tag-light">Low Power</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEXT: OLED Weather Station -->
+        <div class="project-card next-up">
+          <div class="project-card-body" style="padding-top: 32px;">
+            <div class="next-up-icon">🌡️</div>
+            <div class="project-card-meta">
+              <span class="project-card-num">06</span>
+              <span class="project-status status-next">Coming Next</span>
+            </div>
+            <h3 class="project-card-title">OLED Mini Weather Station</h3>
+            <p class="project-card-desc">BME280 sensor for temperature, humidity, and barometric pressure — displayed on a 128x64 OLED screen with a custom UI. Stores trend data in EEPROM and shows min/max over 24 hours. Battery-powered with deep sleep.</p>
+            <div class="project-card-tags">
+              <span class="tag tag-light">BME280</span>
+              <span class="tag tag-light">OLED 128x64</span>
+              <span class="tag tag-light">I2C</span>
+              <span class="tag tag-light">EEPROM</span>
+              <span class="tag tag-light">Deep Sleep</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- COMPONENTS -->
+  <section id="components">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Hardware</p>
+        <h2 class="section-title">Components I Work With</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">The building blocks — sensors, actuators, and modules that go into real systems.</p>
+      </div>
+      <div class="components-grid fadein">
+        <div class="component-item">
+          <img src="https://cdn-icons-png.freepik.com/512/10481/10481059.png" alt="LED">
+          <span class="comp-name">LED</span>
+        </div>
+        <div class="component-item">
+          <img src="https://cdn-icons-png.freepik.com/512/10480/10480985.png" alt="LDR">
+          <span class="comp-name">LDR</span>
+        </div>
+        <div class="component-item">
+          <img src="https://cdn-icons-png.freepik.com/512/10481/10481028.png" alt="Potentiometer">
+          <span class="comp-name">Potentiometer</span>
+        </div>
+        <div class="component-item">
+          <img src="https://cdn-icons-png.freepik.com/512/10480/10480980.png" alt="Motor">
+          <span class="comp-name">DC Motor</span>
+        </div>
+        <div class="component-item">
+          <img src="https://ih1.redbubble.net/image.199243438.6576/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Arduino">
+          <span class="comp-name">Arduino Uno</span>
+        </div>
+        <div class="component-item">
+          <img src="https://ih1.redbubble.net/image.1697233110.7837/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Raspberry Pi">
+          <span class="comp-name">Raspberry Pi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">In Action</p>
+        <h2 class="section-title">Project Videos</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">From lab bench to moving parts — demos and walkthroughs.</p>
+      </div>
+      <div class="video-layout fadein">
+        <div class="video-player-wrap">
+          <iframe id="videoPlayer" src="https://www.youtube.com/embed/uVIjsjr_GVE" allowfullscreen></iframe>
+        </div>
+        <div class="video-list">
+          <div class="video-thumb active" data-vid="uVIjsjr_GVE">
+            <img src="https://img.youtube.com/vi/uVIjsjr_GVE/0.jpg" alt="Michatron">
+            <span class="vt-title">Michatron AGV Demo</span>
+          </div>
+          <div class="video-thumb" data-vid="fkQYsenF0og">
+            <img src="https://img.youtube.com/vi/fkQYsenF0og/0.jpg" alt="LDR Switch">
+            <span class="vt-title">LDR Auto Light Switch</span>
+          </div>
+          <div class="video-thumb" data-vid="uF9oOfRyjJw">
+            <img src="https://img.youtube.com/vi/uF9oOfRyjJw/0.jpg" alt="Arduino Intro">
+            <span class="vt-title">Arduino Introduction</span>
+          </div>
+          <div class="video-thumb" data-vid="zJ-LqeX_fLU">
+            <img src="https://img.youtube.com/vi/zJ-LqeX_fLU/0.jpg" alt="Arduino 2">
+            <span class="vt-title">Arduino Deep Dive</span>
+          </div>
+          <div class="video-thumb" data-vid="dwVID5os1g0">
+            <img src="https://img.youtube.com/vi/dwVID5os1g0/0.jpg" alt="ATMEGA">
+            <span class="vt-title">ATMEGA 328 Programming</span>
+          </div>
+          <div class="video-thumb" data-vid="8h8Oq1GO-1o">
+            <img src="https://img.youtube.com/vi/8h8Oq1GO-1o/0.jpg" alt="LabVIEW">
+            <span class="vt-title">LabVIEW Logger IV</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- QUOTES -->
+  <section id="quotes">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Inspiration</p>
+        <h2 class="section-title">On Building Things</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">Words that keep the soldering iron warm.</p>
+      </div>
+      <div class="quotes-grid fadein">
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">The best way to learn electronics is to build something that you actually want to use.</p>
+          <p class="quote-author">— Massimo Banzi, Arduino Co-founder</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Prototyping is the shortcut to learning. You don't learn by reading about circuits — you learn by burning a few of them.</p>
+          <p class="quote-author">— Maker Community Wisdom</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Hardware is hard, but it's honest. A bug in firmware doesn't hide — it either works or the motor doesn't spin.</p>
+          <p class="quote-author">— Alexandros Papaspyrou</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">The most dangerous phrase in engineering is "we've always done it this way."</p>
+          <p class="quote-author">— Grace Hopper</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">Any sufficiently advanced technology is indistinguishable from magic. Build the magic anyway.</p>
+          <p class="quote-author">— Arthur C. Clarke (adapted)</p>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">It's not about the board — it's about what you make it do. The microcontroller is just a tool for turning ideas into behavior.</p>
+          <p class="quote-author">— Embedded Systems Philosophy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Common Questions</p>
+        <h2 class="section-title">Arduino FAQ</h2>
+        <p class="section-intro" style="margin-bottom: 40px;">The questions I get most often — answered directly.</p>
+      </div>
+
+      <div class="faq-list fadein">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Which Arduino board should I start with?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>The <strong>Arduino Uno</strong> is the right starting point for almost everyone. It has a forgiving 5V logic level, 14 digital I/O pins, 6 analog inputs, and more tutorials than any other board. Once you understand the Uno, moving to a Nano (smaller form factor) or a Mega (more pins) is straightforward. Avoid the ESP32 or Raspberry Pi Pico as a first board — they're more powerful but introduce Wi-Fi, dual-core, and 3.3V logic complexity you don't need yet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What's the difference between digital and analog pins?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Digital pins read or write only two states: HIGH (5V) or LOW (0V). Think on/off, true/false. Analog pins (A0–A5 on the Uno) use a built-in ADC to read a continuous voltage range and convert it to a number between 0 and 1023. This is how you read sensors like LDRs, potentiometers, temperature sensors, and microphones. Some digital pins also support PWM (marked with ~) — they can simulate analog output by switching on and off very fast, which is how you control servo speed and LED brightness.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Why does my sensor give unstable or noisy readings?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Noise is one of the first real problems you hit in hardware. The most common causes: insufficient grounding (always connect your sensor's GND to Arduino's GND), long floating wires acting as antennas, or the sensor is sensitive to supply voltage fluctuations. Solutions: add a 100nF decoupling capacitor between VCC and GND close to the sensor, use <code style="background:#f7f7f5; padding:2px 5px; border-radius:4px; font-size:0.85rem;">analogRead()</code> multiple times and average the result, or apply a simple moving average in software. For switches, always use a pull-up or pull-down resistor (or use <code style="background:#f7f7f5; padding:2px 5px; border-radius:4px; font-size:0.85rem;">INPUT_PULLUP</code> in pinMode).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Can Arduino run multiple things at the same time?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Arduino has a single-core processor and no operating system, so it can't truly multitask. However, you can simulate concurrent behavior using non-blocking code with <code style="background:#f7f7f5; padding:2px 5px; border-radius:4px; font-size:0.85rem;">millis()</code> instead of <code style="background:#f7f7f5; padding:2px 5px; border-radius:4px; font-size:0.85rem;">delay()</code>. The trick: track the last time each action ran and only execute it when enough time has passed. This is a fundamental Arduino skill that unlocks real embedded systems thinking. The BlinkWithoutDelay example in the IDE is the best starting point.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What's the maximum current I can draw from a digital pin?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Each digital pin can safely source or sink <strong>40mA maximum</strong>, with a recommended operating current of 20mA. The total current across all I/O pins combined shouldn't exceed 200mA. This means you can power a single LED directly (with a series resistor), but you should never connect a motor, relay, or solenoid directly to a pin. For those loads, use a transistor (NPN BJT like 2N2222 or MOSFET like IRLZ44N) or a dedicated motor driver IC like the L298N.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How do I connect to the internet from Arduino?
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>The standard Uno has no built-in networking, so you add a module. The <strong>ESP8266 (ESP-01 or NodeMCU)</strong> is the most common choice — it communicates with the Uno over serial using AT commands, or you can program it directly as a standalone board. For a cleaner solution, use the <strong>Arduino Uno WiFi Rev2</strong> or move to an ESP32-based board entirely. In my ThingSpeak IoT project, I used an ESP8266 module to push DHT11 sensor data to the cloud using the ThingSpeak API over HTTP GET requests.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BAND -->
+  <section id="cta-band">
+    <div class="wrap cta-inner fadein">
+      <h2>Ready to start building?</h2>
+      <p>All project files, schematics, and source code are on GitHub. Fork, modify, and make them yours.</p>
+      <div class="cta-btns">
+        <a href="https://github.com/alexandroshub" target="_blank" class="btn btn-white">
+          <i class="fab fa-github"></i> View GitHub
+        </a>
+        <a href="https://projecthub.arduino.cc/Papaspyrou_A" target="_blank" class="btn btn-green">
+          <i class="fas fa-microchip"></i> Arduino Hub
+        </a>
+        <a href="alexandros-contact.html" class="btn btn-ghost-dark">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Find me <span>across the web.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://discord.gg/CBTHyP" target="_blank" class="social-btn">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="alexandros-portfolio.html" class="social-btn">
+          <i class="fas fa-th"></i> Portfolio
+        </a>
+        <a href="alexandros-cv.html" class="social-btn">
+          <i class="fas fa-id-card"></i> CV
+        </a>
+        <a href="alexandros-contact.html" class="social-btn">
+          <i class="fas fa-paper-plane"></i> Contact
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="https://alexandroshub.github.io/apTOU" target="_blank">Terms of Service</a>
+        <a href="https://alexandroshub.github.io" target="_blank">AlphaPi Home</a>
+        <a href="alexandros-hub.html">Hub</a>
+      </div>
+      <p class="footer-copy">Handcrafted With ❤ by Alexandros Papaspyrou · © 2026</p>
+    </div>
+  </footer>
+
+  <button id="btt" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+
+  <script>
+
+    // ---- NAV ----
+
+    var topnav = document.getElementById('topnav');
+    var hero = document.getElementById('hero');
+
+    window.addEventListener('scroll', function() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 60) {
+        topnav.classList.remove('on-dark');
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.add('on-dark');
+        topnav.classList.toggle('stuck', window.scrollY > 30);
+      }
+      document.getElementById('btt').style.display = window.scrollY > 400 ? 'block' : 'none';
+    }, { passive: true });
+
+    document.getElementById('btt').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
+    // ---- PARTICLE CANVAS ----
+
+    var canvas = document.getElementById('hero-canvas');
+    var ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var agents = [];
+    var N = 65;
+
+    function Agent() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.65;
+      this.vy = (Math.random() - 0.5) * 0.65;
+      this.size = Math.random() * 1.4 + 0.5;
+      this.alpha = Math.random() * 0.3 + 0.1;
+    }
+
+    Agent.prototype.update = function() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      this.vx += (Math.random() - 0.5) * 0.03;
+      this.vy += (Math.random() - 0.5) * 0.03;
+      var spd = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+      if (spd > 1.0) { this.vx = this.vx / spd; this.vy = this.vy / spd; }
+    };
+
+    Agent.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + this.alpha + ')';
+      ctx.fill();
+    };
+
+    for (var i = 0; i < N; i++) agents.push(new Agent());
+
+    function loop() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < agents.length; i++) {
+        for (var j = i + 1; j < agents.length; j++) {
+          var dx = agents[i].x - agents[j].x;
+          var dy = agents[i].y - agents[j].y;
+          var d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 100) {
+            var a = (1 - d / 100) * 0.09;
+            ctx.beginPath();
+            ctx.moveTo(agents[i].x, agents[i].y);
+            ctx.lineTo(agents[j].x, agents[j].y);
+            // green tinted connections for Arduino feel
+            ctx.strokeStyle = 'rgba(0,229,160,' + a + ')';
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+      for (var i = 0; i < agents.length; i++) {
+        agents[i].update();
+        agents[i].draw();
+      }
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+
+    // ---- VIDEO PLAYER ----
+
+    var thumbs = document.querySelectorAll('.video-thumb');
+    var player = document.getElementById('videoPlayer');
+
+    thumbs.forEach(function(t) {
+      t.addEventListener('click', function() {
+        player.src = 'https://www.youtube.com/embed/' + t.getAttribute('data-vid');
+        thumbs.forEach(function(x) { x.classList.remove('active'); });
+        t.classList.add('active');
+      });
+    });
+
+
+    // ---- FAQ ACCORDION ----
+
+    function toggleFaq(questionEl) {
+      var item = questionEl.parentElement;
+      var isOpen = item.classList.contains('open');
+
+      // close all
+      document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('open');
+      });
+
+      // open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+
+
+    // ---- FADE IN ----
+
+    var fades = document.querySelectorAll('.fadein');
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    fades.forEach(function(el) { obs.observe(el); });
+
+
+    // ---- SMOOTH SCROLL ----
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+
+  </script>
+</body>
+</html>
