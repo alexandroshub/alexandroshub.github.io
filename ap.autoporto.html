@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Automation Engineer Portfolio | Industrial IoT & Cyber-Physical Systems</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fc;
+      color: #1a2a3f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER / HERO */
+    .hero {
+      background: linear-gradient(135deg, #0b2b3b 0%, #123e52 100%);
+      color: white;
+      padding: 60px 0 50px;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero-tagline {
+      font-size: 1.35rem;
+      font-weight: 500;
+      border-left: 4px solid #3bc9db;
+      padding-left: 20px;
+      margin: 20px 0;
+      opacity: 0.95;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      max-width: 750px;
+      color: #e6f7ff;
+      margin-top: 12px;
+    }
+
+    /* Quick summary card */
+    .summary-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 28px 32px;
+      margin-top: -30px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .summary-card p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #0b2b3b;
+    }
+
+    /* SECTION STYLES */
+    .section {
+      margin: 60px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      border-bottom: 3px solid #dceaf2;
+      padding-bottom: 12px;
+    }
+
+    .section-header i {
+      font-size: 2rem;
+      color: #1e6f5c;
+      background: #e0f2f1;
+      padding: 10px;
+      border-radius: 20px;
+    }
+
+    .section-header h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #0f3b4c;
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 28px;
+    }
+
+    .proj-card {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 22px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      border: 1px solid #e2edf2;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+      border-color: #c0dfe8;
+    }
+
+    .proj-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #145c6e;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .proj-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .tech-tag {
+      background: #eef2fa;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1f5e6e;
+    }
+
+    .proj-desc {
+      color: #2c475c;
+      margin: 14px 0;
+      font-size: 0.95rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 12px;
+    }
+
+    .feature-list li {
+      font-size: 0.85rem;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-list i {
+      color: #289b87;
+      width: 18px;
+    }
+
+    hr {
+      margin: 20px 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #cbdde6, transparent);
+    }
+
+    .tools-table {
+      background: white;
+      border-radius: 1.2rem;
+      overflow-x: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 16px 18px;
+      border-bottom: 1px solid #e0edf2;
+    }
+
+    th {
+      background: #eef3f7;
+      font-weight: 700;
+      color: #155f6b;
+    }
+
+    .footer {
+      background: #0e2d38;
+      color: #cdedf5;
+      padding: 40px 0;
+      margin-top: 60px;
+      border-radius: 2rem 2rem 0 0;
+      text-align: center;
+    }
+
+    /* breadcrumb buttons */
+    .btn-icon {
+      background: #eef3fa;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* responsive */
+    @media (max-width: 750px) {
+      .hero h1 { font-size: 2rem; }
+      .section-header h2 { font-size: 1.5rem; }
+      .container { padding: 0 20px; }
+      .proj-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge"><i class="fas fa-microchip"></i> Automation & Control Engineer</div>
+      <h1>Industrial IoT Embedded Systems<br> & Cyber-Physical Automations</h1>
+      <div class="hero-tagline">
+        <i class="fas fa-cogs"></i> From sensors → PLC logic → SCADA → Cloud
+      </div>
+      <div class="hero-desc">
+        Automation Engineer with hands-on expertise in PLC programming (Ladder/ST), SCADA visualization, 
+        industrial fieldbuses (Modbus, MQTT, OPC UA), motion control, PID loops, and safety-oriented design.
+        Building reliable, maintainable, and future-proof automation solutions.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- quick summary card -->
+  <div class="summary-card">
+    <p><i class="fas fa-bolt" style="color:#1e6f5c; margin-right: 12px;"></i> 
+    <strong>⚙️ Core competencies:</strong> IEC 61131-3 (LD / ST / FBD) | HMI/SCADA (Ignition, Node-RED) | Modbus RTU/TCP, MQTT, OPC UA | Motion & VFD | PID & instrumentation | Electrical safety basics | Documentation & diagnostics.
+    </p>
+  </div>
+
+  <!-- ================= SECTION 1 : PLC PROGRAMMING ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-plc"></i>
+      <h2>1. PLC Programming · Ladder / ST / FBD</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-fill-drip"></i> Automatic Bottle Filling Station</div>
+        <div class="proj-tech"><span class="tech-tag">Siemens LOGO! 8.4</span><span class="tech-tag">Ladder</span><span class="tech-tag">State Machine</span></div>
+        <div class="proj-desc">Full sequence: conveyor start, level sensing, filling valve, cap counting. Emergency stop latching, overflow protection, alarm handling.</div>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> Timer/interlock logic</li>
+          <li><i class="fas fa-check-circle"></i> Fault diagnostics & recovery</li>
+          <li><i class="fas fa-check-circle"></i> Manual/Auto selector</li>
+        </ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-traffic-light"></i> Traffic Control + Pedestrian Crossing</div>
+        <div class="proj-tech"><span class="tech-tag">Arduino Opta</span><span class="tech-tag">Structured Text</span><span class="tech-tag">OpenPLC</span></div>
+        <div class="proj-desc">Advanced intersection logic with pedestrian request, green extension, and flashing walk phase. IEC 61131-3 ST implementation.</div>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> Sequential function chart approach</li>
+          <li><i class="fas fa-check-circle"></i> Real-time watchdog</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 2 : HMI & SCADA ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-tv"></i>
+      <h2>2. HMI & SCADA Visualization</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-chart-line"></i> Remote Bottling Line Dashboard</div>
+        <div class="proj-tech"><span class="tech-tag">Ignition Maker</span><span class="tech-tag">OPC UA</span><span class="tech-tag">Node-RED</span></div>
+        <div class="proj-desc">Real-time trends, alarm banner, production counters, recipe selection. OPC UA connection to PLC simulator.</div>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> User access levels (Operator/Engineer)</li>
+          <li><i class="fas fa-check-circle"></i> Alarm history & ack logic</li>
+          <li><i class="fas fa-check-circle"></i> Data logging to InfluxDB</li>
+        </ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-charging-station"></i> Smart Pumping SCADA</div>
+        <div class="proj-tech"><span class="tech-tag">Grafana</span><span class="tech-tag">MQTT</span><span class="tech-tag">Raspberry Pi</span></div>
+        <div class="proj-desc">Interactive mimic with tank levels, pump status, and VFD speed command. Mobile responsive layout for remote supervision.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 3 : INDUSTRIAL COMMUNICATIONS ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-network-wired"></i>
+      <h2>3. Industrial Communication · Modbus · MQTT · OPC UA</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-exchange-alt"></i> Modbus RTU Master-Slave Network</div>
+        <div class="proj-tech"><span class="tech-tag">Arduino Uno</span><span class="tech-tag">Raspberry Pi</span><span class="tech-tag">RS485</span></div>
+        <div class="proj-desc">Arduino as Modbus slave (temperature/humidity sensor). Raspberry Pi as master polling via libmodbus. Real-time data logging.</div>
+        <ul class="feature-list"><li><i class="fas fa-check-circle"></i> Error checking & timeout handling</li><li><i class="fas fa-check-circle"></i> Python dashboard with pyModbus</li></ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-cloud-upload-alt"></i> Modbus → MQTT Gateway (Edge)</div>
+        <div class="proj-tech"><span class="tech-tag">Mosquitto</span><span class="tech-tag">Node-RED</span><span class="tech-tag">AWS IoT Core</span></div>
+        <div class="proj-desc">Bridge industrial Modbus TCP data to MQTT broker. Publish to cloud dashboard & store in Time Series DB. Perfect for Industry 4.0.</div>
+        <ul class="feature-list"><li><i class="fas fa-check-circle"></i> TLS secure connection</li><li><i class="fas fa-check-circle"></i> Retain & last will messages</li></ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-robot"></i> OPC UA Aggregator Server</div>
+        <div class="proj-tech"><span class="tech-tag">open62541</span><span class="tech-tag">Python OPC UA</span><span class="tech-tag">UaExpert</span></div>
+        <div class="proj-desc">OPC UA server on Raspberry Pi aggregating field sensors. Client connection from Ignition SCADA demonstrated.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 4 : MOTION CONTROL & DRIVES ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-microchip"></i>
+      <h2>4. Motion Control & Drives</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-tachometer-alt"></i> VFD Speed Control via Modbus</div>
+        <div class="proj-tech"><span class="tech-tag">Delta VFD</span><span class="tech-tag">Modbus RTU</span><span class="tech-tag">Raspberry Pi</span></div>
+        <div class="proj-desc">Control conveyor speed, direction, acceleration profiles. Feedback from encoder proximity switch for positioning.</div>
+        <ul class="feature-list"><li><i class="fas fa-check-circle"></i> Ramp configuration & fault polling</li><li><i class="fas fa-check-circle"></i> Emergency stop integration</li></ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-cog"></i> Stepper Positioning System</div>
+        <div class="proj-tech"><span class="tech-tag">Arduino Uno</span><span class="tech-tag">TB6600 Driver</span><span class="tech-tag">AccelStepper</span></div>
+        <div class="proj-desc">Homing routine, absolute position move, limit switches, and jog mode. Demonstrates open-loop motion control logic.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 5 : SENSORS & PROCESS CONTROL (PID) ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-thermometer-half"></i>
+      <h2>5. Sensors & Process Control · PID</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-fire"></i> PID Temperature Oven Controller</div>
+        <div class="proj-tech"><span class="tech-tag">PT100/MAX6675</span><span class="tech-tag">SSR</span><span class="tech-tag">Arduino PID</span></div>
+        <div class="proj-desc">Auto-tune PID loop to maintain setpoint within ±0.5°C. Real-time trend on LCD + serial plotter, anti-windup.</div>
+        <ul class="feature-list"><li><i class="fas fa-check-circle"></i> 4-20mA scaling demonstration</li><li><i class="fas fa-check-circle"></i> Manual override & heating/cooling logic</li></ul>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-water"></i> Ultrasonic Tank Level Control</div>
+        <div class="proj-tech"><span class="tech-tag">HC-SR04</span><span class="tech-tag">PID (PLC)</span><span class="tech-tag">Siemens LOGO!</span></div>
+        <div class="proj-desc">Analog scaling (0-10V) of level sensor, PI loop drives pump VFD. Maintain desired water level under disturbance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 6 : ELECTRICAL & SAFETY BASICS ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-bolt"></i>
+      <h2>6. Electrical & Safety Basics</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-draw-polygon"></i> Wiring & E-Stop Architecture</div>
+        <div class="proj-tech"><span class="tech-tag">Eplan (concept)</span><span class="tech-tag">Safety relay</span></div>
+        <div class="proj-desc">Schematic: 24VDC power distribution, hardwired emergency stop series connection, contactor interlocking. IO list and cable schedule.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-shield-alt"></i> Functional Safety Concepts</div>
+        <div class="proj-tech"><span class="tech-tag">ISO 13849</span><span class="tech-tag">Category B / 1</span></div>
+        <div class="proj-desc">Risk assessment for small automation cell, e-stop categories, and validation plan documentation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION 7 : DOCUMENTATION & TROUBLESHOOTING ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-file-alt"></i>
+      <h2>7. Documentation & Troubleshooting</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-clipboard-list"></i> Industrial Documentation Package</div>
+        <div class="proj-tech"><span class="tech-tag">IO List</span><span class="tech-tag">Alarm Table</span><span class="tech-tag">Flowcharts</span></div>
+        <div class="proj-desc">Full technical manual for filling station: system description, IO map, alarm cause/remedy, startup/shutdown procedure, troubleshooting decision tree.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-bug"></i> Diagnostics & Logging Strategy</div>
+        <div class="proj-tech"><span class="tech-tag">PLC diagnostics</span><span class="tech-tag">Wireshark</span></div>
+        <div class="proj-desc">Event-based fault logging, watchdog timers, and communication error recovery. Example: Modbus exception handling + retry logic.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BONUS : MEASUREMENT, SIMULATION & AI ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-chart-bar"></i>
+      <h2>8. Bonus · DAQ · Matlab · Multisim · AI</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-waveform"></i> Vibration Analysis with LabVIEW</div>
+        <div class="proj-tech"><span class="tech-tag">DAQmx</span><span class="tech-tag">FFT</span></div>
+        <div class="proj-desc">Data acquisition from accelerometer, frequency analysis for predictive maintenance.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-brain"></i> Edge AI Anomaly Detection</div>
+        <div class="proj-tech"><span class="tech-tag">TensorFlow Lite</span><span class="tech-tag">ESP32</span></div>
+        <div class="proj-desc">Motor current signature classification → detects bearing faults, sends MQTT alert.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-title"><i class="fas fa-microchip"></i> Multisim Circuit Simulation</div>
+        <div class="proj-tech"><span class="tech-tag">Comparator</span><span class="tech-tag">Op-amp</span></div>
+        <div class="proj-desc">Signal conditioning circuit for PT100, hysteresis for sensor threshold.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOOLS & SOFTWARE TABLE ================= -->
+  <div class="section">
+    <div class="section-header">
+      <i class="fas fa-toolbox"></i>
+      <h2>9. Tools & Software Proficiency</h2>
+    </div>
+    <div class="tools-table">
+      <table>
+        <thead>
+          <tr><th>Category</th><th>Environment / Tools</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PLC Environments</strong></td><td>TIA Portal, LOGO! Soft Comfort, OpenPLC, Arduino IDE, CODESYS</td></tr>
+          <tr><td><strong>SCADA / HMI</strong></td><td>Ignition Maker, Node-RED, Grafana, FactoryTalk View (basics)</td></tr>
+          <tr><td><strong>Communication</strong></td><td>Modbus Poll/Slave, MQTT Explorer, Wireshark, UaExpert, Mosquitto</td></tr>
+          <tr><td><strong>Simulation & Math</strong></td><td>Factory I/O, MATLAB/Simulink, Multisim, Python (Pandas/NumPy)</td></tr>
+          <tr><td><strong>Version Control & Docs</strong></td><td>Git/GitHub, Markdown, LaTeX, Draw.io</td></tr>
+          <tr><td><strong>Edge & Embedded</strong></td><td>Raspberry Pi OS, ESP-IDF, Arduino, Yocto (basic)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr>
+  <div style="text-align: center; margin: 40px 0 20px;">
+    <i class="fas fa-microchip"></i> <strong>Portfolio approach</strong> — Every project includes documented I/O lists, wiring concepts, alarm handling, and real-time dashboards.
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <p><i class="fas fa-cogs"></i> Industrial IoT Embedded Systems & Cyber-Physical Automations</p>
+    <p style="margin-top: 12px; font-size: 0.85rem;">Ready for Industry 4.0 | PLC · SCADA · IIoT · Edge Computing | Open to automation engineering roles</p>
+    <p style="margin-top: 16px;"><i class="fas fa-envelope"></i> automation.engineer@portfolio.com | <i class="fab fa-github"></i> github.com/automation-eng</p>
+  </div>
+</div>
+
+<!-- simple interactive / hover effects (purely cosmetic) -->
+<script>
+  // dynamic year or optional console greeting
+  console.log("Automation Engineer Portfolio — structured for Industry 4.0");
+</script>
+</body>
+</html>
