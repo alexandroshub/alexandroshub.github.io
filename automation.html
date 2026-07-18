@@ -1,4 +1,5 @@
 
+
 <!-- SpecialPage Automation V.10/8/25
 
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
@@ -172,9 +173,6 @@ body {
             <li><a href="https://alexandroshub.github.io/ardu22.html"><i class="fa fa-microchip"></i>&nbsp; Arduino</a></li>
             <li><a href="https://alexandroshub.github.io/raspberrypi"><i class="fa  fa-microchip"></i>&nbsp; Raspberry Pi</a></li>
             <li><a href="https://alexandroshub.github.io/stem"><i class="fa fa-flask"></i>&nbsp; STEAM</a></li>
-            <li class="divider"></li>
-            <li class="dropdown-header">Creative Side</li>
-            <li><a href="https://alexandroshub.github.io/art.html"><i class="fa fa-paint-brush"></i>&nbsp; Art Gallery</a></li>
           </ul>
         </li>
       </ul>
@@ -211,7 +209,7 @@ body {
 <style>
   .automation-header {
     position: relative;
-    height: 40vh;
+    height: 20vh;
     background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
     display: flex;
     align-items: center;
@@ -316,8 +314,217 @@ body {
 </p></div>  
 
 </div>
-</div></div>
+</div>
 
+
+<!-- Q&A Component Container -->
+<div class="qa-component-wrapper">
+  Frequently asked questions
+  <!-- Item 1 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">What is Automation and Controls?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        The field of engineering pertaining to improvements to a process by increasing throughput and manufacturing speed, increasing safety and system reliability, or both. This is most commonly achieved by writing code for dedicated industrial computers known as Programmable Logic Controllers (PLCs) that control input and output devices (IO) and often interface with engineers and operators through a Human Machine Interface (HMI).
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">What is a Programmable Logic Controller (PLC)?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        A PLC is a ruggedized industrial computer designed to continuously monitor inputs from sensors and make logic-based decisions to control output devices like motors, valves, and lights in harsh environments.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">What is the role of an HMI?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        A Human-Machine Interface (HMI) is a user interface or dashboard that connects a person to a machine, system, or device. It visually translates complex data into actionable information, allowing operators to monitor and interact with the industrial process.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 4 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">What is SCADA?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        SCADA stands for Supervisory Control and Data Acquisition. It is a high-level software system used to monitor and control entire industrial sites or large networks of geographic infrastructure by collecting real-time operational data.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 5 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">What is the difference between IO devices?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        Input devices (like sensors, switches, and meters) send real-world status data to the controller. Output devices (like actuators, relays, and pumps) receive commands from the controller to perform physical actions in the process.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 6 -->
+  <div class="qa-item">
+    <button class="qa-trigger" aria-expanded="false">
+      <span class="qa-question">Why is safety system reliability critical?</span>
+      <span class="qa-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="qa-content">
+      <p class="qa-answer">
+        Reliable safety systems prevent catastrophic industrial accidents, protect personnel from hazardous machine environments, prevent expensive equipment damage, and ensure strict compliance with international manufacturing safety regulations.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Component Styles -->
+<style>
+  .qa-component-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spaces out the individual tabs */
+  }
+
+  .qa-item {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .qa-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+  }
+
+  .qa-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+  }
+
+  .qa-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .qa-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #64748b;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+  }
+
+  .qa-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 24px;
+    background-color: #f8fafc;
+  }
+
+  .qa-answer {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  /* Active/Expanded State styling via JS */
+  .qa-item.is-active .qa-icon {
+    transform: rotate(45deg);
+    color: #2563eb; /* Active accent color */
+  }
+
+  .qa-item.is-active .qa-trigger {
+    border-bottom: 1px solid #f1f5f9;
+  }
+</style>
+
+<!-- Component Behavior -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.qa-component-wrapper');
+
+    wrapper.addEventListener('click', (event) => {
+      // Find closest trigger button if user clicks inner elements (like text or icon)
+      const trigger = event.target.closest('.qa-trigger');
+      if (!trigger) return;
+
+      const currentItem = trigger.closest('.qa-item');
+      const currentContent = currentItem.querySelector('.qa-content');
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      
+      // Close all other open tabs first
+      const allItems = wrapper.querySelectorAll('.qa-item');
+      allItems.forEach(item => {
+        if (item !== currentItem) {
+          item.classList.remove('is-active');
+          item.querySelector('.qa-trigger').setAttribute('aria-expanded', 'false');
+          item.querySelector('.qa-content').style.maxHeight = '0';
+        }
+      });
+
+      // Toggle current tab state
+      trigger.setAttribute('aria-expanded', !isExpanded);
+      currentItem.classList.toggle('is-active');
+
+      if (!isExpanded) {
+        currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+      } else {
+        currentContent.style.maxHeight = "0";
+      }
+    });
+  });
+</script>
+
+
+
+
+</div>
 <br>
  <!--  ---------------------------------- -->   
     
@@ -332,7 +539,8 @@ body {
       <a href="https://alexandroshub.github.io/projects.html">Projects</a>
       <a href="https://alexandroshub.github.io/connect.html">Contact</a>
     </div>
-  <p class="footer-note">© 2025 AlexandrosHub. Designed with precision in Athens.</p>
+  <p class="footer-note">© 2027 AlexandrosHub. Designed Made in the EU, Greece , Athens.</p>
+
     <!-- Signature -->
         <img src="https://78.media.tumblr.com/e3d4fac4931e6e1df6b3b85d53dae92b/tumblr_p0sxo3UYRB1si59zfo1_1280.png" style="width: 340px;" alt="Papaspyrou Alexandros" align="bottom" />
   </div>
