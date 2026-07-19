@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -1150,6 +1151,168 @@
           </a>         
         </div>
         
+        
+        <!-- AOS Library and Initialization -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init();
+  });
+</script>
+
+<!-- CSS Styling -->
+<style>
+  .insights-container {
+    max-width: 700px;
+    margin: 60px auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .insights-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .iw-post {
+    border-bottom: 1px solid #eee;
+    padding: 18px 0;
+    transition: transform 0.2s ease;
+  }
+  .iw-post:hover {
+    transform: translateX(4px);
+  }
+  .iw-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .iw-tags {
+    font-size: 0.8rem;
+    color: #0066cc;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .iw-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #111;
+    font-weight: 600;
+  }
+  .iw-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .iw-link {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+  .iw-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- Main Blog Section -->
+<section>
+  <div class="section-header" style="margin-top: var(--spacing-xl);" data-aos="fade-up">
+    <h3 class="section-title">Recent Articles</h3>
+  </div>
+
+  <div class="blog-posts insights-container">
+    <!-- Substack Feed Header -->
+    <h2 data-aos="fade-up">Insights</h2>
+    
+    <!-- Dynamic Substack Posts Container -->
+    <div id="dynamic-posts-widget"></div>
+
+    <!-- Static / Fallback Posts Container -->
+    <div id="static-posts" data-aos="fade-up">
+      <!-- ARTICLE 2 -->
+      <div class="iw-post" data-aos="fade-up">
+        <div class="iw-meta">
+          <span>Insight</span>
+          <span>Sep 2025</span>
+        </div>
+        <span class="iw-tags">#IoT #Automation</span>
+        <div class="iw-title">Εισαγωγή στο Διαδίκτυο των Πραγμάτων</div>
+        <div class="iw-desc">IoT: Η Επανάσταση των Έξυπνων Συσκευών</div>
+        <a class="iw-link" href="#" target="_blank">Read Article →</a>
+      </div>
+
+      <!-- ARTICLE 3 -->
+      <div class="iw-post" data-aos="fade-up">
+        <div class="iw-meta">
+          <span>Insight</span>
+          <span>Jun 2025</span>
+        </div>
+        <span class="iw-tags">#Cybersecurity</span>
+        <div class="iw-title">Your Biggest Cybersecurity Weakness Is Yourself</div>
+        <div class="iw-desc">Discover why human mistakes remain the leading cause of cyber breaches and learn practical strategies to strengthen your personal cybersecurity defenses.</div>
+        <a class="iw-link" href="#" target="_blank">Read Article →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Button -->
+  <div class="section-footer" style="text-align: center; margin-top: var(--spacing-lg);" data-aos="fade-up">
+    <a href="https://alexandroshub.github.io/plus.ap.html" class="btn btn-primary">
+      <i class="fas fa-newspaper"></i> View All Articles
+    </a>
+  </div>
+</section>
+
+<!-- Substack Feed Fetch Script -->
+<script>
+  (function() {
+    const SUBSTACK_URL = "https://alexandrospapaspyrou.substack.com/feed";
+    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(SUBSTACK_URL)}`;
+    const postsContainer = document.getElementById("dynamic-posts-widget");
+
+    if (!postsContainer) return;
+
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        if (data.status !== 'ok' || !data.items) throw new Error('Invalid feed data');
+        
+        data.items.slice(0, 4).forEach(post => {
+          const cleanText = post.description.replace(/<[^>]*>/g, "");
+          const date = new Date(post.pubDate).toLocaleDateString("en-US", { 
+            month: "short", 
+            year: "numeric" 
+          });
+          
+          const el = document.createElement("div");
+          el.className = "iw-post";
+          el.setAttribute("data-aos", "fade-up");
+          el.innerHTML = `
+            <div class="iw-meta">
+              <span>Insight</span>
+              <span>${date}</span>
+            </div>
+            <div class="iw-title">${post.title}</div>
+            <div class="iw-desc">${cleanText.substring(0, 120)}...</div>
+            <a class="iw-link" href="${post.link}" target="_blank">
+              Read on Substack →
+            </a>
+          `;
+          postsContainer.appendChild(el);
+        });
+        
+        // Refresh AOS after inserting dynamic elements
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+      })
+      .catch(err => {
+        console.error("Substack load error:", err);
+        postsContainer.innerHTML = "<p style='color:#888;'>Unable to load live Substack posts.</p>";
+      });
+  })();
+</script>
+
         
       </section>
 
