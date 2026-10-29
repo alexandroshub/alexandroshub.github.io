@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGV — Autonomous Guided Vehicle | AlphaPi</title>
+
+  <!-- Dark mode BEFORE CSS -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://alexandroshub.github.io/agv.html">
+
+  <meta name="description" content="AGV — Autonomous Guided Vehicle. Arduino-based robot with line-following, obstacle avoidance, and sensor fusion. Full case study: architecture, code, failures, lessons.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://alexandroshub.github.io/agv.html">
+  <meta property="og:title" content="AGV — Autonomous Guided Vehicle">
+  <meta property="og:description" content="Arduino-based robot with autonomous navigation, line-following, and obstacle avoidance.">
+  <meta property="og:image" content="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AGV — Autonomous Guided Vehicle",
+    "description": "Arduino-based robot with autonomous navigation, line-following, and obstacle avoidance.",
+    "image": "https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp",
+    "author": { "@type": "Person", "name": "Alexandros Papaspyrou" },
+    "datePublished": "2022-06-01",
+    "publisher": { "@type": "Organization", "name": "AlphaPi" }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0a0a0a;
+      --ink-2: #1a1a1a;
+      --ink-3: #3a3a3a;
+      --muted: #6b6b6b;
+      --muted-2: #9a9a9a;
+      --border: #e4e4e4;
+      --surface: #f7f7f5;
+      --white: #ffffff;
+      --hero-bg: #0d1b2a;
+      --accent: #2563eb;
+      --accent-2: #4a8eff;
+      --accent-3: #00d4aa;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --always-dark: #0a0a0a;
+      --always-light: #ffffff;
+      --font-display: "Instrument Serif", "Georgia", serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --max-w: 820px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="dark"] {
+      --ink: #f5f5f5;
+      --ink-2: #e0e0e0;
+      --ink-3: #b8b8b8;
+      --muted: #8a8a8a;
+      --muted-2: #6b6b6b;
+      --border: #2a2a2e;
+      --surface: #141416;
+      --white: #0a0a0c;
+      --accent: #4a8eff;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; font-size: 16px; }
+    html.theme-transition, html.theme-transition * {
+      transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease !important;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: -0.03em; line-height: 1.02; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.4rem); letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.15; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.85rem; margin-top: 1.5rem; }
+    p { font-size: 1.0625rem; line-height: 1.75; color: var(--ink-3); margin-bottom: 1.25rem; }
+    p strong { color: var(--ink); font-weight: 600; }
+    img { max-width: 100%; display: block; }
+    code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surface); padding: 0.15em 0.45em; border-radius: 4px; color: var(--ink); border: 1px solid var(--border); }
+    pre { background: var(--always-dark); color: #e6e6e6; padding: 1.5rem; border-radius: 12px; overflow-x: auto; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.65; }
+    pre code { background: none; padding: 0; border: none; color: inherit; font-size: inherit; }
+    pre .comment { color: #6b7280; }
+    pre .keyword { color: #c084fc; }
+    pre .string { color: #86efac; }
+    pre .number { color: #fbbf24; }
+    pre .fn { color: #60a5fa; }
+
+    ::selection { background: var(--ink); color: var(--white); }
+
+    .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 2rem); }
+
+    /* ============ LOADING ============ */
+    #loader {
+      position: fixed; inset: 0;
+      background: var(--always-dark);
+      z-index: 10000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.25rem;
+      transition: opacity 0.6s var(--ease), visibility 0.6s;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-logo { position: relative; width: 88px; height: 88px; display: flex; align-items: center; justify-content: center; }
+    .loader-ring-outer {
+      position: absolute; inset: -14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: loaderSpin 8s linear infinite;
+    }
+    .loader-ring-outer::before {
+      content: '';
+      position: absolute;
+      top: -3px; left: 50%;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px var(--accent-3);
+    }
+    .loader-ring-inner {
+      position: absolute; inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: loaderSpinReverse 5s linear infinite;
+    }
+    @keyframes loaderSpin { to { transform: rotate(360deg); } }
+    @keyframes loaderSpinReverse { to { transform: rotate(-360deg); } }
+    .loader-circle {
+      position: relative;
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1a1a2e, var(--always-dark) 70%);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 40px rgba(37,99,235,0.2), inset 0 0 30px rgba(37,99,235,0.1);
+      animation: loaderPulse 2s ease-in-out infinite;
+    }
+    @keyframes loaderPulse {
+      0%,100% { box-shadow: 0 0 40px rgba(37,99,235,0.2), inset 0 0 30px rgba(37,99,235,0.1); }
+      50% { box-shadow: 0 0 60px rgba(37,99,235,0.35), inset 0 0 40px rgba(37,99,235,0.15); }
+    }
+    .loader-alpha {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 42px;
+      color: white;
+      line-height: 1;
+      margin-top: 4px;
+      letter-spacing: -2px;
+    }
+    .loader-dot {
+      position: absolute;
+      top: 4px; right: 4px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 16px var(--accent-3);
+      animation: loaderDotPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes loaderDotPulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+    .loader-text {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ============ CURSOR ============ */
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot, .cursor-ring {
+        position: fixed; top: 0; left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        will-change: transform;
+        transition: opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .cursor-dot {
+        width: 6px; height: 6px;
+        background: var(--ink);
+        mix-blend-mode: difference;
+      }
+      [data-theme="dark"] .cursor-dot { background: var(--white); }
+      .cursor-ring {
+        width: 34px; height: 34px;
+        border: 1.5px solid var(--ink);
+        opacity: 0.4;
+        transition: opacity 0.3s ease, width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s ease, background-color 0.3s ease;
+      }
+      [data-theme="dark"] .cursor-ring { border-color: var(--white); }
+      .cursor-ring.hover {
+        width: 58px; height: 58px;
+        opacity: 0.5;
+        background: rgba(37,99,235,0.08);
+        border-color: var(--accent);
+      }
+      .cursor-ring.click { width: 22px; height: 22px; opacity: 0.8; }
+    }
+    @media (hover: none) or (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor-dot, .cursor-ring { display: none !important; }
+    }
+
+    /* ============ PROGRESS ============ */
+    #progress {
+      position: fixed; top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s;
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0.85rem 0;
+      transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), padding 0.3s var(--ease);
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.65rem 0;
+    }
+    [data-theme="dark"] nav.scrolled { background: rgba(10,10,12,0.85); }
+
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1160px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.875rem; color: var(--ink-3);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .nav-actions a { font-size: 0.83rem; padding: 0.55rem 1.1rem; border-radius: 100px; transition: all 0.22s var(--ease); }
+    .nav-actions a:not(.btn-nav-primary) { color: var(--ink-3); }
+    .nav-actions a:not(.btn-nav-primary):hover { color: var(--ink); }
+    .btn-nav-primary { background: var(--ink); color: var(--white); font-weight: 500; }
+    .btn-nav-primary:hover { background: var(--ink-3); transform: translateY(-1px); }
+
+    .theme-toggle {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: all 0.22s var(--ease);
+      padding: 0;
+      position: relative;
+    }
+    .theme-toggle:hover { border-color: var(--ink-3); background: var(--surface); transform: translateY(-1px); }
+    .theme-toggle svg { width: 15px; height: 15px; position: absolute; transition: opacity 0.3s, transform 0.3s; }
+    [data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    [data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+    [data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+    [data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+
+    /* ============ HERO ============ */
+    .hero { padding: 140px 0 60px; position: relative; overflow: hidden; background: radial-gradient(ellipse 900px 600px at 70% 0%, rgba(37,99,235,0.06), transparent 60%), linear-gradient(180deg, var(--white), #fdfdfc); }
+    [data-theme="dark"] .hero { background: radial-gradient(ellipse 900px 600px at 70% 0%, rgba(74,142,255,0.08), transparent 60%), linear-gradient(180deg, var(--white), #0d0d10); }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(37,99,235,0.07);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    [data-theme="dark"] .hero-eyebrow { background: rgba(74,142,255,0.1); border-color: rgba(74,142,255,0.25); }
+
+    .hero h1 { margin-bottom: 1.5rem; max-width: 18ch; }
+
+    .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 56ch; line-height: 1.6; margin-bottom: 2.5rem; }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+    .meta-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono); }
+    .meta-value { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); }
+
+    /* Hero image */
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16/10;
+      border-radius: 16px;
+      margin-top: 3rem;
+      overflow: hidden;
+      background: var(--always-dark);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .hero-image:hover img { transform: scale(1.03); }
+
+    /* ============ CONTENT ============ */
+    .content { padding: 80px 0; }
+    .content section { margin-bottom: 5rem; scroll-margin-top: 100px; }
+    .content section:last-child { margin-bottom: 0; }
+
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      display: block;
+      text-transform: uppercase;
+    }
+    .content h2 + p { font-size: 1.1rem; }
+
+    /* Callouts */
+    .callout {
+      padding: 1.5rem 1.75rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border-left: 3px solid var(--ink);
+      background: var(--surface);
+    }
+    .callout strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .callout p { margin-bottom: 0; font-size: 0.95rem; }
+    .callout.warn { border-left-color: var(--danger); background: rgba(239, 68, 68, 0.05); }
+    [data-theme="dark"] .callout.warn { background: rgba(239, 68, 68, 0.1); }
+    .callout.warn strong { color: var(--danger); }
+    .callout.success { border-left-color: var(--success); background: rgba(34, 197, 94, 0.05); }
+    [data-theme="dark"] .callout.success { background: rgba(34, 197, 94, 0.1); }
+    .callout.success strong { color: #15803d; }
+    [data-theme="dark"] .callout.success strong { color: #22c55e; }
+    .callout.info { border-left-color: var(--accent); background: rgba(37, 99, 235, 0.05); }
+    [data-theme="dark"] .callout.info { background: rgba(74, 142, 255, 0.1); }
+    .callout.info strong { color: var(--accent); }
+
+    /* Lists */
+    .content ul, .content ol { margin: 1.25rem 0 1.75rem 0; padding-left: 1.5rem; }
+    .content li { font-size: 1.0625rem; line-height: 1.75; color: var(--ink-3); margin-bottom: 0.6rem; }
+    .content li strong { color: var(--ink); }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { padding: 0.9rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-family: var(--font-mono); font-weight: 500; background: var(--surface); }
+    tr:last-child td { border-bottom: none; }
+    td code { font-size: 0.85em; }
+
+    /* Figure */
+    figure { margin: 2rem 0; }
+    figure img { width: 100%; border-radius: 12px; display: block; border: 1px solid var(--border); }
+    figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; text-align: center; font-style: italic; }
+
+    /* Video */
+    .video-embed {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 2rem 0;
+      background: #000;
+      border: 1px solid var(--border);
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Architecture diagram */
+    .arch-diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .arch-row { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .arch-box {
+      padding: 0.75rem 1.1rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ink);
+      text-align: center;
+      min-width: 110px;
+      transition: all 0.2s;
+    }
+    [data-theme="dark"] .arch-box { background: var(--surface); }
+    .arch-box:hover { border-color: var(--accent); box-shadow: 0 4px 12px rgba(37,99,235,0.1); }
+    .arch-box.core { background: var(--ink); color: var(--white); border-color: var(--ink); font-weight: 500; }
+    [data-theme="dark"] .arch-box.core { background: var(--ink); color: var(--always-dark); }
+    .arch-box.sensor { border-color: var(--success); background: rgba(34,197,94,0.08); color: #15803d; }
+    [data-theme="dark"] .arch-box.sensor { background: rgba(34,197,94,0.15); color: #22c55e; }
+    .arch-box.actuator { border-color: #f59e0b; background: rgba(245,158,11,0.08); color: #92400e; }
+    [data-theme="dark"] .arch-box.actuator { background: rgba(245,158,11,0.15); color: #fbbf24; }
+    .arch-arrow { color: var(--muted); font-size: 1.2rem; }
+    .arch-label { text-align: center; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; }
+
+    /* CTA box */
+    .cta-box {
+      background: var(--always-dark);
+      color: white;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      border-radius: 16px;
+      margin: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.2), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-box h2 { color: white; margin-bottom: 0.75rem; position: relative; }
+    .cta-box p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; position: relative; }
+    .cta-box a {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.95rem 1.85rem;
+      background: white; color: var(--always-dark);
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.22s var(--ease);
+      position: relative;
+    }
+    .cta-box a:hover { background: var(--accent); color: white; transform: translateY(-2px); }
+
+    /* Project nav */
+    .project-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .project-nav a {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.25s var(--ease);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .project-nav a:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .project-nav .nav-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono); }
+    .project-nav .nav-title { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); }
+    .project-nav a.next { text-align: right; }
+
+    /* Download links */
+    .download-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .download-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink-3);
+      transition: all 0.22s var(--ease);
+      background: var(--white);
+    }
+    [data-theme="dark"] .download-links a { background: var(--surface); }
+    .download-links a:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    .download-links a.primary {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+    }
+    .download-links a.primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--always-dark);
+      color: rgba(255,255,255,0.4);
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    footer a:hover { color: white; }
+
+    /* Sticky download */
+    .sticky-download {
+      position: fixed;
+      bottom: 1.25rem; right: 1.25rem;
+      z-index: 900;
+      display: flex; gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.4s var(--ease);
+    }
+    .sticky-download.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .sticky-download a {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.35rem;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: all 0.22s var(--ease);
+    }
+    .sticky-download a:hover { background: var(--accent); transform: translateY(-2px); }
+
+    @media (max-width: 640px) {
+      .hero { padding: 110px 0 40px; }
+      .hero-sub { font-size: 1.05rem; }
+      .project-nav { grid-template-columns: 1fr; }
+      .project-nav a.next { text-align: left; }
+      pre { font-size: 0.72rem; padding: 1rem; }
+      .arch-box { min-width: 90px; font-size: 0.72rem; padding: 0.6rem 0.8rem; }
+      .sticky-download { bottom: 0.9rem; right: 0.9rem; left: 0.9rem; justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div id="loader">
+    <div class="loader-logo">
+      <div class="loader-ring-outer"></div>
+      <div class="loader-ring-inner"></div>
+      <div class="loader-circle">
+        <span class="loader-alpha">απ</span>
+        <span class="loader-dot"></span>
+      </div>
+    </div>
+    <p class="loader-text">Loading case study</p>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Progress -->
+  <div id="progress"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="https://alexandroshub.github.io/" class="nav-back"><i class="fas fa-arrow-left"></i> Home</a>
+      <div class="nav-actions">
+        <a href="https://alexandroshub.github.io/wportfolio">Portfolio</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="https://alexandroshub.github.io/emailform.html" class="btn-nav-primary">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Case Study · Robotics</span>
+      <h1>Autonomous Guided Vehicle</h1>
+      <p class="hero-sub">Ένα Arduino-based mobile robot με autonomous navigation, line-following και obstacle avoidance. Full mechatronics integration, από sensor fusion μέχρι motor driver control. Χωρίς off-the-shelf stack, όλα custom.</p>
+
+      <div class="hero-meta">
+        <div class="meta-item"><span class="meta-label">Year</span><span class="meta-value">2022</span></div>
+        <div class="meta-item"><span class="meta-label">Stack</span><span class="meta-value">Arduino · C++</span></div>
+        <div class="meta-item"><span class="meta-label">Domain</span><span class="meta-value">Mechatronics</span></div>
+        <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">Solo</span></div>
+      </div>
+
+      <figure class="hero-image">
+        <img src="https://64.media.tumblr.com/58bf085290403efe1e7d3994fc4be849/afc46cbefaec4590-53/s1280x1920/562d9caa86d174421ac354456e15827b2cb958d8.webp" alt="Michatron AGV — Autonomous Guided Vehicle">
+      </figure>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="container">
+
+      <!-- ============ 01 PROBLEM ============ -->
+      <section id="problem">
+        <span class="section-num">01 — The Problem</span>
+        <h2>Τι έφτιαξα και γιατί;</h2>
+        <p>Το AGV (Autonomous Guided Vehicle) ήταν το <strong>πρώτο μου ολοκληρωμένο mechatronics project</strong>. Στόχος: ένα robot που μπορεί να κινείται αυτόνομα σε έναν χώρο, να ακολουθεί γραμμή, να αποφεύγει εμπόδια, και να σταματάει με ασφάλεια — χωρίς τηλεχειρισμό, χωρίς GPS, χωρίς cloud.</p>
+        <p>Το πρόβλημα ήταν απλό αλλά βαθύ: <strong>πώς παίρνεις raw sensor data και το μετατρέπεις σε απόφαση κίνησης</strong> σε πραγματικό χρόνο, πάνω σε constrained hardware (Arduino Uno, 16MHz, 2KB RAM).</p>
+
+        <div class="callout">
+          <strong>Ο στόχος σε μία πρόταση</strong>
+          <p>Ένα αυτόνομο robot που ακολουθεί γραμμή και αποφεύγει εμπόδια, χρησιμοποιώντας μόνο Arduino και απλούς sensors — χωρίς εξωτερικό υπολογιστή.</p>
+        </div>
+      </section>
+
+      <!-- ============ 02 CONSTRAINTS ============ -->
+      <section id="constraints">
+        <span class="section-num">02 — Constraints</span>
+        <h2>Με τι περιορισμούς δούλεψα;</h2>
+        <p>Το project ήταν μέρος του μαθήματος Μηχατρονικής. Αυτό σήμαινε:</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Constraint</th><th>Value</th><th>Impact</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Hardware</td><td>Arduino Uno (16MHz, 2KB RAM)</td><td>Έπρεπε να γράψω efficient C++ — no dynamic allocation</td></tr>
+              <tr><td>Budget</td><td>~€80</td><td>Χρήση απλών sensors (IR, ultrasonic) αντί για LiDAR</td></tr>
+              <tr><td>Timeline</td><td>8 εβδομάδες</td><td>MVP πρώτα, polishing μετά</td></tr>
+              <tr><td>Power</td><td>6x AA batteries</td><td>Έπρεπε να κρατήσω το current draw χαμηλό</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ 03 APPROACH ============ -->
+      <section id="approach">
+        <span class="section-num">03 — Approach</span>
+        <h2>Πώς το έφτιαξα;</h2>
+        <p>Η αρχιτεκτονική είναι <strong>reactive</strong>: sensors → microcontroller → actuators. Δεν υπάρχει planning — μόνο άμεση αντίδραση σε input. Αυτό είναι το κατάλληλο για ένα AGV με περιορισμένους πόρους.</p>
+
+        <h3>Architecture</h3>
+        <div class="arch-diagram">
+          <div class="arch-label">Sensors</div>
+          <div class="arch-row">
+            <div class="arch-box sensor">IR Array<br><small>line detection</small></div>
+            <div class="arch-box sensor">HC-SR04<br><small>ultrasonic</small></div>
+            <div class="arch-box sensor">Encoder<br><small>wheel speed</small></div>
+          </div>
+          <div class="arch-row"><span class="arch-arrow">↓</span></div>
+          <div class="arch-label">Controller</div>
+          <div class="arch-row">
+            <div class="arch-box core">Arduino Uno<br><small>ATmega328P</small></div>
+          </div>
+          <div class="arch-row"><span class="arch-arrow">↓ PWM ↓</span></div>
+          <div class="arch-label">Actuators</div>
+          <div class="arch-row">
+            <div class="arch-box actuator">L298N<br><small>H-bridge</small></div>
+            <div class="arch-box actuator">DC Motors<br><small>2x gearbox</small></div>
+            <div class="arch-box actuator">Buzzer<br><small>status</small></div>
+          </div>
+        </div>
+
+        <h3>Key decisions</h3>
+        <ul>
+          <li><strong>Reactive control αντί για state machine</strong> — λιγότερο code, πιο γρήγορη απόκριση. Για line-following, το state machine δεν προσφέρει τίποτα.</li>
+          <li><strong>IR array αντί για camera</strong> — η camera θα απαιτούσε Raspberry Pi. Τα IR sensors κάνουν τη δουλειά με 1/100 του κόστους.</li>
+          <li><strong>Sensor fusion: IR + Ultrasonic</strong> — τα IR για γραμμή, τα ultrasonic για εμπόδια. Κάθε sensor κάνει ένα πράγμα καλά.</li>
+          <li><strong>PWM motor control</strong> — αντί για on/off, χρησιμοποιώ PWM για smooth acceleration και turning.</li>
+        </ul>
+
+        <h3>Code highlight</h3>
+        <p>Το πιο ενδιαφέρον κομμάτι είναι το <strong>line-following logic</strong>. Χρησιμοποιεί 3 IR sensors (left, center, right) και αποφασίζει κατεύθυνση:</p>
+
+<pre><code><span class="comment">// Line following — 3 IR sensors</span>
+<span class="keyword">#define</span> IR_L <span class="number">2</span>
+<span class="keyword">#define</span> IR_C <span class="number">3</span>
+<span class="keyword">#define</span> IR_R <span class="number">4</span>
+
+<span class="keyword">void</span> <span class="fn">followLine</span>() {
+  <span class="keyword">bool</span> L = digitalRead(IR_L);
+  <span class="keyword">bool</span> C = digitalRead(IR_C);
+  <span class="keyword">bool</span> R = digitalRead(IR_R);
+
+  <span class="keyword">if</span> (C &amp;&amp; !L &amp;&amp; !R) {
+    <span class="comment">// Κέντρο: ευθεία</span>
+    motorForward(<span class="number">180</span>, <span class="number">180</span>);
+  }
+  <span class="keyword">else if</span> (L) {
+    <span class="comment">// Αριστερά: στρίψε αριστερά</span>
+    motorForward(<span class="number">80</span>, <span class="number">180</span>);
+  }
+  <span class="keyword">else if</span> (R) {
+    <span class="comment">// Δεξιά: στρίψε δεξιά</span>
+    motorForward(<span class="number">180</span>, <span class="number">80</span>);
+  }
+  <span class="keyword">else</span> {
+    <span class="comment">// Χάθηκε η γραμμή: σταμάτα</span>
+    motorStop();
+  }
+}</code></pre>
+
+        <div class="callout info">
+          <strong>Γιατί 3 IR sensors</strong>
+          <p>Ένας sensor θα ήταν αρκετός για ευθεία, αλλά όχι για στροφές. Τρεις δίνουν direction awareness χωρίς πολυπλοκότητα.</p>
+        </div>
+      </section>
+
+      <!-- ============ 04 VIDEO ============ -->
+      <section id="video">
+        <span class="section-num">04 — In Action</span>
+        <h2>Δες το να δουλεύει;</h2>
+        <p>Το παρακάτω video δείχνει το AGV να ακολουθεί γραμμή και να αποφεύγει εμπόδια:</p>
+
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/uVIjsjr_GVE"
+            title="Michatron AGV Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <figcaption>Demo: line-following και obstacle avoidance σε πραγματικό χρόνο.</figcaption>
+      </section>
+
+      <!-- ============ 05 WHAT FAILED ============ -->
+      <section id="failures">
+        <span class="section-num">05 — What Failed</span>
+        <h2>Τι δεν δούλεψε;</h2>
+        <p>Εδώ κερδίζεις credibility. Όλοι έχουν αποτυχίες — λίγοι τις παραδέχονται.</p>
+
+        <div class="callout warn">
+          <strong>❌ Failure #1: IR sensors και ambient light</strong>
+          <p>Τα IR sensors ήταν ευαίσθητα στο φως του δωματίου. Σε φωτεινό περιβάλλον, το line-following ήταν ασταθές. <strong>Λύση:</strong> Πρόσθεσα calibration routine στο startup — το robot διαβάζει το "μαύρο" και το "άσπρο" και προσαρμόζει τα thresholds. <strong>Μάθημα:</strong> Πάντα calibrate τους sensors στο περιβάλλον που θα τρέξουν.</p>
+        </div>
+
+        <div class="callout warn">
+          <strong>❌ Failure #2: Motor driver υπερθέρμανση</strong>
+          <p>Το L298N ζεσταινόταν πολύ όταν οι μοτέρ δούλευαν συνεχώς. Σε 10 λεπτά λειτουργίας, η απόδοση έπεφτε. <strong>Λύση:</strong> Πρόσθεσα ψύκτρα και μείωσα το duty cycle (max 180/255 αντί για 255/255). <strong>Μάθημα:</strong> Τα motor drivers δεν είναι ιδανικά — πάντα υπολόγισε thermal budget.</p>
+        </div>
+
+        <div class="callout warn">
+          <strong>❌ Failure #3: Battery voltage drop</strong>
+          <p>Όταν οι μπαταρίες έπεφταν κάτω από 6V, το Arduino έκανε reset στη μέση της κίνησης. <strong>Λύση:</strong> Πρόσθεσα voltage divider + read στο loop, και το robot σταματάει ομαλά όταν η τάση πέσει κάτω από 6.2V. <strong>Μάθημα:</strong> Πάντα παρακολούθησε την τροφοδοσία — ειδικά σε battery-powered projects.</p>
+        </div>
+      </section>
+
+      <!-- ============ 06 RESULT ============ -->
+      <section id="result">
+        <span class="section-num">06 — Result</span>
+        <h2>Τι κατάφερα;</h2>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Metric</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Line-following accuracy</td><td>~95% σε ευθείες</td></tr>
+              <tr><td>Obstacle detection range</td><td>2cm – 200cm</td></tr>
+              <tr><td>Max speed</td><td>~0.4 m/s</td></tr>
+              <tr><td>Battery life</td><td>~2 ώρες continuous</td></tr>
+              <tr><td>Code size</td><td>~4KB (από 32KB available)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success">
+          <strong>✅ End result</strong>
+          <p>Ένα πλήρως λειτουργικό AGV που ακολουθεί γραμμή, αποφεύγει εμπόδια, και σταματάει με ασφάλεια. Παρουσιάστηκε στην τελική εξέταση του μαθήματος Μηχατρονικής και πήρε άριστα.</p>
+        </div>
+
+        <h3>Bill of Materials</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Component</th><th>Qty</th><th>Purpose</th><th>Cost</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Arduino Uno</td><td>1</td><td>Controller</td><td>€22</td></tr>
+              <tr><td>L298N Motor Driver</td><td>1</td><td>H-bridge</td><td>€6</td></tr>
+              <tr><td>DC Motors + gearbox</td><td>2</td><td>Drive</td><td>€18</td></tr>
+              <tr><td>IR Sensors</td><td>3</td><td>Line detection</td><td>€6</td></tr>
+              <tr><td>HC-SR04 Ultrasonic</td><td>1</td><td>Obstacle detection</td><td>€3</td></tr>
+              <tr><td>Chassis + wheels</td><td>1</td><td>Frame</td><td>€15</td></tr>
+              <tr><td>Battery holder (6x AA)</td><td>1</td><td>Power</td><td>€4</td></tr>
+              <tr><td>Misc (wires, screws)</td><td>—</td><td>—</td><td>€6</td></tr>
+              <tr style="background: var(--surface); font-weight: 600;"><td colspan="3">Total</td><td>~€80</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ 07 LESSONS ============ -->
+      <section id="lessons">
+        <span class="section-num">07 — Lessons</span>
+        <h2>Τι έμαθα;</h2>
+        <ol>
+          <li><strong>Οι sensors είναι πιο σημαντικοί από τον κώδικα.</strong> Ένας καλός sensor με μέτριο code δουλεύει. Ένας κακός sensor με τέλειο code δεν δουλεύει.</li>
+          <li><strong>Πάντα calibrate.</strong> Τα IR sensors, τα motors, τα thresholds — όλα αλλάζουν ανάλογα με το περιβάλλον. Ένα calibration routine στην αρχή σώζει ώρες debugging.</li>
+          <li><strong>Το hardware έχει όρια.</strong> Το L298N ζεσταίνεται, οι μπαταρίες πέφτουν, το Arduino κάνει reset. Πάντα σχεδίασε για αυτά τα όρια, όχι γύρω από αυτά.</li>
+        </ol>
+      </section>
+
+      <!-- ============ 08 LINKS ============ -->
+      <section id="links">
+        <span class="section-num">08 — Links</span>
+        <h2>Πού μπορείς να το δεις;</h2>
+
+        <div class="download-links">
+          <a href="https://codebender.cc/project?id=208552" target="_blank" rel="noopener" class="primary">
+            <i class="fas fa-code"></i> View Code
+          </a>
+          <a href="https://www.dropbox.com/scl/fi/dqw6t6itu536iqrqrtc1z/Michatron_Papaspyrou_Alexandros.pdf?rlkey=4s8xetswr3d6l5uqo17ec2n58&st=tetyxt4k&e=1&dl=0" target="_blank" rel="noopener">
+            <i class="fas fa-file-pdf"></i> Documentation (PDF)
+          </a>
+          <a href="https://www.youtube.com/watch?v=uVIjsjr_GVE" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i> Watch on YouTube
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <h2>Χτίζεις κάτι παρόμοιο;</h2>
+        <p>Θα χαρώ να ακούσω για το project σου — ειδικά αν παλεύεις με motor drivers ή sensor fusion.</p>
+        <a href="https://alexandroshub.github.io/emailform.html">Get in touch <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- NEXT / PREV -->
+      <div class="project-nav">
+        <a href="https://alexandroshub.github.io/wportfolio">
+          <span class="nav-label">← Back</span>
+          <span class="nav-title">All Projects</span>
+        </a>
+        <a href="#" class="next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">ThingSpeak IoT</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      Handcrafted with <span style="color:#ef4444">♥</span> by <a href="https://alexandroshub.github.io/">Alexandros Papaspyrou</a> · <span id="year"></span>
+    </div>
+  </footer>
+
+  <!-- Sticky download -->
+  <div class="sticky-download" id="stickyDownload">
+    <a href="https://www.dropbox.com/scl/fi/dqw6t6itu536iqrqrtc1z/Michatron_Papaspyrou_Alexandros.pdf?rlkey=4s8xetswr3d6l5uqo17ec2n58&st=tetyxt4k&e=1&dl=0" target="_blank" rel="noopener">
+      <i class="fas fa-file-pdf"></i> Download PDF
+    </a>
+  </div>
+
+  <script>
+    // ===== Theme =====
+    const root = document.documentElement;
+    function setTheme(theme) {
+      root.classList.add('theme-transition');
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      setTimeout(() => root.classList.remove('theme-transition'), 400);
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+    });
+
+    // ===== Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Loading =====
+    (function() {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+      const minDisplay = 500;
+      const start = performance.now();
+      function hide() {
+        const delay = Math.max(0, minDisplay - (performance.now() - start));
+        setTimeout(() => {
+          loader.classList.add('hidden');
+          setTimeout(() => loader.remove(), 700);
+        }, delay);
+      }
+      if (document.readyState === 'complete') hide();
+      else window.addEventListener('load', hide);
+      setTimeout(() => {
+        if (!loader.classList.contains('hidden')) {
+          loader.classList.add('hidden');
+          setTimeout(() => loader.remove(), 700);
+        }
+      }, 3000);
+    })();
+
+    // ===== Cursor =====
+    (function() {
+      if (window.matchMedia('(hover: none), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      if (!dot || !ring) return;
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let dotX = mouseX, dotY = mouseY, ringX = mouseX, ringY = mouseY;
+      const DOT_SPEED = 0.35, RING_SPEED = 0.18;
+      window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+      const selector = 'a, button, .arch-box, .callout, .download-links a, .video-embed';
+      document.querySelectorAll(selector).forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+      });
+      document.addEventListener('mousedown', () => ring.classList.add('click'));
+      document.addEventListener('mouseup', () => ring.classList.remove('click'));
+      document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '0.4'; });
+      function animate() {
+        dotX += (mouseX - dotX) * DOT_SPEED;
+        dotY += (mouseY - dotY) * DOT_SPEED;
+        dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+        ringX += (mouseX - ringX) * RING_SPEED;
+        ringY += (mouseY - ringY) * RING_SPEED;
+        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // ===== Progress =====
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progress.style.width = pct + '%';
+    }, { passive: true });
+
+    // ===== Nav + sticky =====
+    const nav = document.getElementById('nav');
+    const sticky = document.getElementById('stickyDownload');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+      sticky.classList.toggle('visible', window.scrollY > 700);
+    }, { passive: true });
+
+    // ===== Smooth scroll =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
