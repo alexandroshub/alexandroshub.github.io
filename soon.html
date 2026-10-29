@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<!--
+<!-- 
+
+    ┌────────────────────────────────┐
+    │                                │
+    │    ▄▀█ █░░ █▀█ █░█ ▄▀█ █▀█ █   │
+    │    █▀█ █▄▄ █▀▀ █▀█ █▀█ █▀▀ █   │
+    │                                │
+    │ IoT · Embedded · Robotics · AI │
+    │                                │
+    └────────────────────────────────┘
 
 ░█▀▀█ ░░ ▒█▀▀█ █▀▀█ █▀▀█ █▀▀█ █▀▀ █▀▀█ █░░█ █▀▀█ █▀▀█ █░░█ 
 ▒█▄▄█ ▀▀ ▒█▄▄█ █▄▄█ █░░█ █▄▄█ ▀▀█ █░░█ █▄▄█ █▄▄▀ █░░█ █░░█ 
@@ -9,41 +17,574 @@ Welcome in my personal website 100% HTML Hosted by Github
 Handcrafted With ❤ By: Alexandros Papaspyrou
 Last Update: 11/11/2017  |  Pre-alpha Stage -->
 
-<html>
-<title>omg...error...</title>
-<link rel="icon" href="https://68.media.tumblr.com/244dfa6be45405237a64e5a056d7bd59/tumblr_ooi2q2AWTT1si59zfo2_1280.png" type="image/png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-    background-image: url('https://78.media.tumblr.com/4b620392bb4bef6e318f179af05948f0/tumblr_oz7c9bifSb1si59zfo9_1280.jpg');
-    min-height: 100%;
-    background-position: center;
-    background-size: cover;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon — AlphaPi</title>
+  <meta name="description" content="Something new is being built. AlphaPi — Alexandros Papaspyrou.">
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #f5f5f5;
+      --muted: #8a8a8a;
+      --accent: #4a8eff;
+      --accent-3: #00d4aa;
+      --font-display: "Instrument Serif", "Georgia", serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: #0a0a0a;
+      color: var(--ink);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem;
+    }
+
+    /* Grid background */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 30%, transparent 80%);
+      pointer-events: none;
+    }
+
+    /* Glow orbs */
+    .glow-1 {
+      position: absolute;
+      top: 20%; left: 15%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(37,99,235,0.18), transparent 60%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      animation: float1 12s ease-in-out infinite;
+    }
+    .glow-2 {
+      position: absolute;
+      bottom: 15%; right: 10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,212,170,0.1), transparent 60%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      animation: float2 15s ease-in-out infinite;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(40px, -30px); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-30px, 40px); }
+    }
+
+    /* Container */
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+    }
+
+    /* Logo — το "απ" σε κύκλο, animated */
+    .logo-wrap {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Outer rotating ring */
+    .logo-ring-outer {
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      animation: spin 20s linear infinite;
+    }
+    .logo-ring-outer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      transform: translateX(-50%);
+      box-shadow: 0 0 16px var(--accent-3);
+    }
+
+    /* Inner rotating ring (opposite direction) */
+    .logo-ring-inner {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: spinReverse 15s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinReverse {
+      to { transform: rotate(-360deg); }
+    }
+
+    /* Main circle */
+    .logo-circle {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1a1a2e, #0a0a0a 70%);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 60px rgba(37,99,235,0.15),
+        inset 0 0 40px rgba(37,99,235,0.1);
+      animation: pulseLogo 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% {
+        box-shadow:
+          0 0 60px rgba(37,99,235,0.15),
+          inset 0 0 40px rgba(37,99,235,0.1);
+      }
+      50% {
+        box-shadow:
+          0 0 80px rgba(37,99,235,0.25),
+          inset 0 0 50px rgba(37,99,235,0.15);
+      }
+    }
+
+    /* Alpha glyph */
+    .logo-circle .alpha {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 76px;
+      color: white;
+      line-height: 1;
+      margin-top: 8px;
+      letter-spacing: -3px;
+    }
+
+    /* Accent dot (top right) */
+    .logo-circle .dot {
+      position: absolute;
+      top: 8px; right: 8px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 24px var(--accent-3);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.4rem 0.9rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .eyebrow .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    /* Heading */
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    h1 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+    }
+    h1 span {
+      color: var(--accent);
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      max-width: 48ch;
+      margin: 0 auto 3rem;
+    }
+
+    /* Progress bar (για "under construction") */
+    .progress-wrap {
+      max-width: 360px;
+      margin: 0 auto 2.5rem;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .progress-bar {
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      border-radius: 100px;
+      animation: progressFill 3s var(--ease) 1s forwards;
+    }
+    @keyframes progressFill {
+      to { width: 78%; }
+    }
+
+    /* Countdown (optional) */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: white;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      min-width: 2ch;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* Email form */
+    .email-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 420px;
+      margin: 0 auto 2rem;
+    }
+    .email-form input {
+      flex: 1;
+      padding: 0.9rem 1.25rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.22s var(--ease);
+    }
+    .email-form input::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+    .email-form input:focus {
+      border-color: var(--accent);
+      background: rgba(74,142,255,0.05);
+    }
+    .email-form button {
+      padding: 0.9rem 1.5rem;
+      background: white;
+      color: #0a0a0a;
+      border: none;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s var(--ease);
+      white-space: nowrap;
+    }
+    .email-form button:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* CTA row */
+    .cta-row {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.22s var(--ease);
+    }
+    .cta-primary {
+      background: white;
+      color: #0a0a0a;
+    }
+    .cta-primary:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .cta-ghost {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .cta-ghost:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+      z-index: 2;
+      font-family: var(--font-mono);
+      letter-spacing: 0.03em;
+    }
+    .footer a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer a:hover {
+      color: white;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .logo-wrap { width: 110px; height: 110px; margin-bottom: 2rem; }
+      .logo-circle { width: 110px; height: 110px; }
+      .logo-circle .alpha { font-size: 58px; }
+      .logo-circle .dot { width: 12px; height: 12px; top: 6px; right: 6px; }
+      .logo-ring-outer { inset: -14px; }
+      .logo-ring-inner { inset: -6px; }
+      .countdown { gap: 1rem; }
+      .countdown-num { font-size: 1.8rem; }
+      .email-form { flex-direction: column; }
+      .email-form button { width: 100%; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .progress-fill { width: 78%; }
+    }
+  </style>
+</head>
 <body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-oups...  </div>
-  <div class="w3-display-middle">
-    <center><h1 class="w3-jumbo w3-animate-top">COMING SOON</h1></center>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">
-    <button class="w3-button w3-black" onclick="goBack()" >GO BACK</button> 
-    <a href="https://alexandroshub.github.io/index"><button class="w3-button w3-black">GO HOME</button></a>
-  </p></div>
-  
-</div>
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
+  <!-- Glow backgrounds -->
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="container">
+
+    <!-- Logo (animated) -->
+    <div class="logo-wrap">
+      <div class="logo-ring-outer"></div>
+      <div class="logo-ring-inner"></div>
+      <div class="logo-circle">
+        <span class="alpha">απ</span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      Something new is building
+    </div>
+
+    <!-- Heading -->
+    <h1>Coming<br><em>soon</em><span>.</span></h1>
+
+    <!-- Subtitle -->
+    <p class="subtitle">
+      A new chapter for AlphaPi — fresh projects, case studies, and systems built with intention. Under construction now.
+    </p>
+
+    <!-- Progress (optional — σβήσε αν δεν θες) -->
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Under construction</span>
+        <span>78%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Countdown (optional — σβήσε αν δεν θες) -->
+    <!-- Άλλαξε το data-target με την ημερομηνία launch -->
+    <div class="countdown" id="countdown" data-target="2026-06-01T00:00:00">
+      <div class="countdown-item">
+        <span class="countdown-num" id="days">--</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="minutes">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-num" id="seconds">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Email capture (προαιρετικό — σβήσε αν δεν θες) -->
+    <form class="email-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent = '✓ Subscribed';">
+      <input type="email" placeholder="your@email.com" required aria-label="Email address">
+      <button type="submit">Notify me</button>
+    </form>
+
+    <!-- CTA row -->
+    <div class="cta-row">
+      <a href="https://alexandroshub.github.io/" class="cta cta-primary">
+        <i class="fas fa-arrow-left"></i> Back to home
+      </a>
+      <a href="https://alexandroshub.github.io/wportfolio" class="cta cta-ghost">
+        <i class="fas fa-th"></i> See portfolio
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://alexandroshub.github.io/">AlphaPi</a> · Handcrafted with <span style="color:#ef4444">♥</span> · <span id="year"></span>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Countdown
+    (function() {
+      const el = document.getElementById('countdown');
+      if (!el) return;
+      const target = new Date(el.dataset.target).getTime();
+      if (isNaN(target)) return;
+
+      function update() {
+        const now = Date.now();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      update();
+      setInterval(update, 1000);
+    })();
+  </script>
 </body>
 </html>
