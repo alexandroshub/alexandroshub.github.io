@@ -1,0 +1,1242 @@
+<!-- 
+    ┌────────────────────────────────┐
+    │                                │
+    │    ▄▀█ █░░ █▀█ █░█ ▄▀█ █▀█ █   │
+    │    █▀█ █▄▄ █▀▀ █▀█ █▀█ █▀▀ █   │
+    │                                │
+    │ IoT · Embedded · Robotics · AI │
+    │                                │
+    │          A L P H A P I         │
+    │        ────────────────        │
+    │    by: Alexandros Papaspyrou   │
+    │    alexandroshub.github.io     │
+    └────────────────────────────────┘
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Alexandros Papaspyrou | AlphaPi</title>
+
+  <!-- Dark mode BEFORE CSS (no flash) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://alexandroshub.github.io/emailform.html">
+
+  <meta name="description" content="Get in touch with Alexandros Papaspyrou — Automation Engineer & Systems Builder. Projects, questions, or just say hello.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexandroshub.github.io/emailform.html">
+  <meta property="og:title" content="Contact — Alexandros Papaspyrou">
+  <meta property="og:description" content="Get in touch — projects, questions, or just say hello.">
+  <meta property="og:image" content="https://alexandroshub.github.io/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0a0a0a;
+      --ink-2: #1a1a1a;
+      --ink-3: #3a3a3a;
+      --muted: #6b6b6b;
+      --muted-2: #9a9a9a;
+      --border: #e4e4e4;
+      --surface: #f7f7f5;
+      --white: #ffffff;
+      --hero-bg: #0d1b2a;
+      --accent: #2563eb;
+      --accent-2: #4a8eff;
+      --accent-3: #00d4aa;
+      --success: #22c55e;
+      /* Always-dark tokens (δεν αλλάζουν με το theme) */
+      --always-dark: #0a0a0a;
+      --always-light: #ffffff;
+      --font-display: "Instrument Serif", "Georgia", serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --max-w: 1120px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    [data-theme="dark"] {
+      --ink: #f5f5f5;
+      --ink-2: #e0e0e0;
+      --ink-3: #b8b8b8;
+      --muted: #8a8a8a;
+      --muted-2: #6b6b6b;
+      --border: #2a2a2e;
+      --surface: #141416;
+      --white: #0a0a0c;
+      --accent: #4a8eff;
+      /* --always-dark & --always-light ΔΕΝ αλλάζουν */
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; font-size: 16px; }
+    html.theme-transition, html.theme-transition * {
+      transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease !important;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    p { line-height: 1.7; color: var(--muted); }
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; }
+    img { max-width: 100%; display: block; }
+    ::selection { background: var(--ink); color: var(--white); }
+
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+
+    /* ============ LOADING ============ */
+    #loader {
+      position: fixed; inset: 0;
+      background: var(--always-dark);
+      z-index: 10000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.25rem;
+      transition: opacity 0.6s var(--ease), visibility 0.6s;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-logo { position: relative; width: 88px; height: 88px; display: flex; align-items: center; justify-content: center; }
+    .loader-ring-outer {
+      position: absolute; inset: -14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: loaderSpin 8s linear infinite;
+    }
+    .loader-ring-outer::before {
+      content: '';
+      position: absolute;
+      top: -3px; left: 50%;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px var(--accent-3);
+    }
+    .loader-ring-inner {
+      position: absolute; inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: loaderSpinReverse 5s linear infinite;
+    }
+    @keyframes loaderSpin { to { transform: rotate(360deg); } }
+    @keyframes loaderSpinReverse { to { transform: rotate(-360deg); } }
+    .loader-circle {
+      position: relative;
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1a1a2e, var(--always-dark) 70%);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 40px rgba(37,99,235,0.2), inset 0 0 30px rgba(37,99,235,0.1);
+      animation: loaderPulse 2s ease-in-out infinite;
+    }
+    @keyframes loaderPulse {
+      0%,100% { box-shadow: 0 0 40px rgba(37,99,235,0.2), inset 0 0 30px rgba(37,99,235,0.1); }
+      50% { box-shadow: 0 0 60px rgba(37,99,235,0.35), inset 0 0 40px rgba(37,99,235,0.15); }
+    }
+    .loader-alpha {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 42px;
+      color: white;
+      line-height: 1;
+      margin-top: 4px;
+      letter-spacing: -2px;
+    }
+    .loader-dot {
+      position: absolute;
+      top: 4px; right: 4px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 16px var(--accent-3);
+      animation: loaderDotPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes loaderDotPulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+    .loader-text {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ============ CURSOR ============ */
+    @media (hover: hover) and (pointer: fine) {
+      .cursor-dot, .cursor-ring {
+        position: fixed; top: 0; left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        will-change: transform;
+        transition: opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+      }
+      .cursor-dot {
+        width: 6px; height: 6px;
+        background: var(--ink);
+        mix-blend-mode: difference;
+      }
+      [data-theme="dark"] .cursor-dot { background: var(--white); }
+      .cursor-ring {
+        width: 34px; height: 34px;
+        border: 1.5px solid var(--ink);
+        opacity: 0.4;
+        transition: opacity 0.3s ease, width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s ease, background-color 0.3s ease;
+      }
+      [data-theme="dark"] .cursor-ring { border-color: var(--white); }
+      .cursor-ring.hover {
+        width: 58px; height: 58px;
+        opacity: 0.5;
+        background: rgba(37,99,235,0.08);
+        border-color: var(--accent);
+      }
+      .cursor-ring.click { width: 22px; height: 22px; opacity: 0.8; }
+    }
+    @media (hover: none) or (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor-dot, .cursor-ring { display: none !important; }
+    }
+
+    /* ============ PROGRESS ============ */
+    #progress {
+      position: fixed; top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s;
+    }
+
+    /* ============ NAV ============ */
+    #topnav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), padding 0.3s var(--ease);
+    }
+    #topnav.stuck {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.7rem 0;
+    }
+    [data-theme="dark"] #topnav.stuck { background: rgba(10,10,12,0.88); }
+    #topnav.on-dark .site-logo, #topnav.on-dark .back-link { color: rgba(255,255,255,0.85); }
+    #topnav.on-dark.stuck { background: rgba(6,6,8,0.88); box-shadow: 0 1px 0 rgba(255,255,255,0.07); }
+
+    .topnav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+    .site-logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+    .site-logo svg { transition: transform 0.5s var(--ease); }
+    .site-logo:hover svg { transform: rotate(360deg); }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
+    .nav-actions a { font-size: 0.83rem; padding: 0.55rem 1.1rem; border-radius: 100px; transition: all 0.22s var(--ease); }
+    .nav-actions a:not(.nav-cta) { color: var(--ink-3); }
+    #topnav.on-dark .nav-actions a:not(.nav-cta) { color: rgba(255,255,255,0.65); }
+    .nav-cta { background: var(--ink); color: var(--white); font-weight: 500; }
+    .nav-cta:hover { background: var(--ink-3); transform: translateY(-1px); }
+
+    .theme-toggle {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: all 0.22s var(--ease);
+      padding: 0;
+      position: relative;
+    }
+    #topnav.on-dark .theme-toggle { border-color: rgba(255,255,255,0.2); color: white; }
+    .theme-toggle:hover { transform: translateY(-1px); }
+    #topnav.on-dark .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+    .theme-toggle svg { width: 15px; height: 15px; position: absolute; transition: opacity 0.3s, transform 0.3s; }
+    [data-theme="light"] .theme-toggle .icon-sun { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    [data-theme="light"] .theme-toggle .icon-moon { opacity: 1; transform: rotate(0) scale(1); }
+    [data-theme="dark"] .theme-toggle .icon-sun { opacity: 1; transform: rotate(0) scale(1); }
+    [data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.5); }
+
+    /* ============ HERO ============ */
+    #hero {
+      position: relative;
+      min-height: 62vh;
+      background: radial-gradient(ellipse 900px 600px at 70% 30%, rgba(37,99,235,0.15), transparent 60%), var(--hero-bg);
+      display: flex; flex-direction: column; justify-content: center;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 80%);
+      pointer-events: none; z-index: 1;
+    }
+    #hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+      background: linear-gradient(to bottom, transparent, var(--white));
+      z-index: 2; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 3; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 0.4rem 0.9rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      font-size: 0.72rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      font-family: var(--font-mono);
+      opacity: 0;
+      animation: fadeUp 0.7s var(--ease) 0.15s forwards;
+    }
+    .blink-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      animation: blink 2.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    #hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: white;
+      margin-bottom: 20px;
+      max-width: 18ch;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease) 0.3s forwards;
+    }
+    #hero h1 em { font-style: italic; color: var(--accent-2); }
+    .hero-sub {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: rgba(255,255,255,0.55);
+      max-width: 52ch;
+      line-height: 1.65;
+      font-style: italic;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease) 0.5s forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      opacity: 0;
+      animation: fadeUp 1s var(--ease) 1s forwards;
+    }
+    .scroll-line {
+      width: 1px; height: 32px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: spulse 2s ease-in-out infinite;
+    }
+    @keyframes spulse { 0%,100%{opacity:1;transform:scaleY(1)} 50%{opacity:0.3;transform:scaleY(0.7)} }
+
+    /* ============ SHARED ============ */
+    section { padding: 80px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 18px;
+      font-family: var(--font-mono);
+    }
+    .eyebrow::before { content:''; display:block; width:18px; height:1px; background: var(--muted); }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.7rem); color: var(--ink); margin-bottom: 14px; letter-spacing: -0.025em; }
+    .section-intro { font-size: 1.02rem; max-width: 56ch; margin-bottom: 48px; }
+
+    /* ============ CONTACT SECTION ============ */
+    #contact { padding: 80px 0 100px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    /* LEFT */
+    .contact-info-col { display: flex; flex-direction: column; gap: 32px; }
+    .info-block-label {
+      font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 12px;
+      font-family: var(--font-mono);
+    }
+    .info-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem; color: var(--ink-3);
+    }
+    .info-row-label {
+      font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--muted-2); margin-bottom: 2px;
+    }
+    .info-row-value { font-size: 0.9rem; color: var(--ink-3); transition: color 0.2s; }
+    .info-row-value a { color: var(--ink-3); transition: color 0.2s; }
+    .info-row-value a:hover { color: var(--ink); }
+
+    .availability-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; color: var(--ink-3);
+      padding: 6px 14px; border: 1px solid var(--border);
+      border-radius: 100px; background: var(--white);
+    }
+    [data-theme="dark"] .availability-tag { background: var(--surface); }
+    .avail-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--success);
+      animation: blink 2.5s ease-in-out infinite;
+    }
+
+    /* Buttons */
+    .quick-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 100px;
+      background: #25D366; color: white;
+      font-size: 0.875rem; font-weight: 500;
+      transition: all 0.22s var(--ease);
+    }
+    .btn-whatsapp:hover {
+      background: #1fba58; transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37,211,102,0.25);
+    }
+    .btn-share {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; border-radius: 100px;
+      background: transparent; color: var(--ink-3);
+      border: 1.5px solid var(--border);
+      font-size: 0.875rem; font-weight: 500;
+      cursor: pointer;
+      transition: all 0.22s var(--ease);
+      font-family: var(--font-body);
+    }
+    .btn-share:hover {
+      border-color: var(--ink); background: var(--surface);
+      transform: translateY(-1px);
+    }
+    .btn-copy {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 100px;
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: all 0.2s var(--ease);
+      font-family: var(--font-mono);
+      margin-left: 8px;
+    }
+    .btn-copy:hover { border-color: var(--ink); color: var(--ink); }
+    .btn-copy.copied { border-color: var(--success); color: var(--success); }
+
+    /* social row */
+    .social-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .social-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: 100px;
+      border: 1px solid var(--border); background: var(--white);
+      font-size: 0.78rem; color: var(--ink-3);
+      transition: all 0.2s var(--ease);
+    }
+    [data-theme="dark"] .social-pill { background: var(--surface); }
+    .social-pill:hover {
+      border-color: var(--ink); background: var(--ink); color: white;
+      transform: translateY(-1px);
+    }
+    .social-pill i { font-size: 0.78rem; }
+
+    /* ============ FORM ============ */
+    .form-card {
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      position: relative;
+    }
+    [data-theme="dark"] .form-card { background: var(--surface); }
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 7px;
+      font-family: var(--font-mono);
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+    }
+    [data-theme="dark"] .form-control { background: var(--white); }
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    }
+    .form-control::placeholder { color: var(--muted-2); }
+    .form-control.error { border-color: #ef4444; }
+    .form-control.error:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
+    .error-msg {
+      display: none;
+      font-size: 0.75rem;
+      color: #ef4444;
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+    .error-msg.show { display: block; }
+    textarea.form-control { min-height: 130px; resize: vertical; }
+
+    /* File upload */
+    .file-wrap {
+      position: relative;
+      border: 1.5px dashed var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      background: var(--surface);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .file-wrap:hover { border-color: var(--ink); }
+    .file-wrap.has-file { border-color: var(--success); background: rgba(34,197,94,0.05); border-style: solid; }
+    .file-wrap input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .file-icon { font-size: 1.3rem; color: var(--muted); margin-bottom: 6px; }
+    .file-label { font-size: 0.82rem; color: var(--muted); }
+    .file-label strong { color: var(--ink-3); }
+    .file-name { font-size: 0.78rem; color: var(--success); margin-top: 4px; display: none; }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b6b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    [data-theme="dark"] select.form-control {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a8a8a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    }
+
+    .form-footer { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    .submit-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 100px;
+      background: var(--ink); color: var(--white);
+      font-size: 0.875rem; font-weight: 500;
+      font-family: var(--font-body);
+      border: none; cursor: pointer;
+      transition: all 0.22s var(--ease);
+    }
+    .submit-btn:hover {
+      background: var(--ink-3); transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .form-note { font-size: 0.75rem; color: var(--muted-2); font-family: var(--font-mono); }
+
+    /* Success state */
+    .form-success { display: none; text-align: center; padding: 32px 0; }
+    .form-success.show { display: block; animation: fadeUp 0.5s var(--ease); }
+    .form-success i { font-size: 2.5rem; color: var(--success); margin-bottom: 16px; display: block; }
+    .form-success h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: 8px; }
+    .form-success p { font-size: 0.9rem; margin-bottom: 20px; }
+    .form-success a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 20px; border-radius: 100px;
+      background: var(--ink); color: var(--white);
+      font-size: 0.85rem; font-weight: 500;
+      transition: all 0.22s var(--ease);
+    }
+    .form-success a:hover { background: var(--accent); transform: translateY(-1px); }
+
+    /* ============ CONNECT (always dark) ============ */
+    #connect {
+      background: var(--always-dark);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #connect::before {
+      content: ''; position: absolute;
+      top: -50%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .connect-inner {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      gap: 36px;
+      position: relative;
+    }
+    .connect-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+    .connect-heading span { color: rgba(255,255,255,0.3); }
+    .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .social-btn {
+      display: flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.875rem;
+      background: rgba(255,255,255,0.04);
+      transition: all 0.22s var(--ease);
+    }
+    .social-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .social-btn i { opacity: 0.65; transition: opacity 0.2s; }
+    .social-btn:hover i { opacity: 1; }
+
+    /* ============ FOOTER (always dark) ============ */
+    footer {
+      background: var(--always-dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 0;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.3); transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* ============ TOAST (always dark) ============ */
+    .share-toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+      background: var(--always-dark);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .share-toast.show { opacity: 1; }
+
+    /* ============ FADE IN ============ */
+    .fadein {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .fadein.d1 { transition-delay: 0.1s; }
+    .fadein.d2 { transition-delay: 0.2s; }
+    .fadein.visible { opacity: 1; transform: none; }
+
+    /* ============ MOBILE ============ */
+    @media (max-width: 700px) {
+      #hero { padding: 110px 0 60px; min-height: 50vh; }
+      .hero-scroll { display: none; }
+      .nav-actions a:not(.nav-cta):not(.theme-toggle) { display: none; }
+      .quick-actions { flex-direction: column; }
+      .btn-whatsapp, .btn-share { width: 100%; justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .fadein { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div id="loader">
+    <div class="loader-logo">
+      <div class="loader-ring-outer"></div>
+      <div class="loader-ring-inner"></div>
+      <div class="loader-circle">
+        <span class="loader-alpha">απ</span>
+        <span class="loader-dot"></span>
+      </div>
+    </div>
+    <p class="loader-text">Loading</p>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Progress -->
+  <div id="progress"></div>
+
+  <!-- NAV -->
+  <nav id="topnav" class="on-dark">
+    <div class="wrap topnav-inner">
+      <a href="https://alexandroshub.github.io/" class="site-logo" aria-label="AlphaPi — Home">
+        <svg viewBox="0 0 100 100" width="26" height="26" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="3" fill="none" opacity="0.3"/>
+          <text x="50" y="70" font-family="Instrument Serif, Georgia, serif" font-size="64"
+                font-style="italic" fill="currentColor" text-anchor="middle" letter-spacing="-2">απ</text>
+          <circle cx="82" cy="18" r="6" fill="#00d4aa"/>
+        </svg>
+        <span>AlphaPi</span>
+      </a>
+      <div class="nav-actions">
+        <a href="https://alexandroshub.github.io/">Back to site</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap hero-content">
+      <div class="hero-eyebrow">
+        <div class="blink-dot"></div>
+        Contact · Athens, Greece
+      </div>
+      <h1>Let's build<br>something <em>together.</em></h1>
+      <p class="hero-sub">Whether you have a project, a question, or just want to connect — I read everything and reply to everyone.</p>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="fadein">
+        <p class="eyebrow">Get in Touch</p>
+        <h2 class="section-title">Contact me</h2>
+        <p class="section-intro">Drop me a message, share a file, or just say hello. I'm usually available on weekdays from 18:00 to 21:00 (EET).</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact-info-col fadein d1">
+
+          <div class="info-block">
+            <p class="info-block-label">Status</p>
+            <div class="availability-tag">
+              <div class="avail-dot"></div>
+              Open to opportunities
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Direct Contact</p>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <p class="info-row-label">Email</p>
+                <p class="info-row-value">
+                  <a href="mailto:a-papaspyrou@outlook.com.gr">a-papaspyrou@outlook.com.gr</a>
+                  <button class="btn-copy" id="copyEmail" aria-label="Copy email">
+                    <i class="fas fa-copy"></i> Copy
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <p class="info-row-label">Phone</p>
+                <p class="info-row-value"><a href="tel:+306940548867">+30 694 054 8867</a></p>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <p class="info-row-label">Location</p>
+                <p class="info-row-value">Athens, Greece</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Quick Contact</p>
+            <div class="quick-actions">
+              <a href="https://wa.me/306940548867?text=Hello%20Alexandros%2C%20I%20saw%20your%20website!" target="_blank" rel="noopener" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <button class="btn-share" onclick="sharePage()">
+                <i class="fas fa-share-nodes"></i> Share Page
+              </button>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <p class="info-block-label">Follow</p>
+            <div class="social-row">
+              <a href="https://x.com/A_Papaspyrou" target="_blank" rel="noopener" class="social-pill">
+                <i class="fab fa-x-twitter"></i> X
+              </a>
+              <a href="https://www.instagram.com/alexandroshub/" target="_blank" rel="noopener" class="social-pill">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/alexandrospapaspyrou/" target="_blank" rel="noopener" class="social-pill">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+              </a>
+              <a href="https://github.com/alexandroshub" target="_blank" rel="noopener" class="social-pill">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://bio.link/alphapi" target="_blank" rel="noopener" class="social-pill">
+                <i class="fas fa-link"></i> Bio.link
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="form-card fadein d2">
+
+          <div id="form-fields">
+            <h3 class="form-title">Send a message</h3>
+
+            <form action="https://formspree.io/f/movpvaon" method="POST" id="contactForm" enctype="multipart/form-data" novalidate>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                  <p class="error-msg" data-error-for="name">Please enter your name</p>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required>
+                  <p class="error-msg" data-error-for="email">Please enter a valid email</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" class="form-control">
+                  <option value="">Select a topic...</option>
+                  <option value="project">Project Collaboration</option>
+                  <option value="job">Job / Work Opportunity</option>
+                  <option value="iot">IoT / Automation Systems</option>
+                  <option value="general">General Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project, question, or idea..." required></textarea>
+                <p class="error-msg" data-error-for="message">Please write a message</p>
+              </div>
+
+              <div class="form-group">
+                <label>Attach a file <span style="color:var(--muted-2); font-weight:400;">(optional)</span></label>
+                <div class="file-wrap" id="fileWrap">
+                  <input type="file" id="fileInput" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.txt,.zip">
+                  <div class="file-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                  <p class="file-label"><strong>Click to upload</strong> or drag &amp; drop</p>
+                  <p class="file-label" style="font-size:0.72rem; margin-top:4px;">PDF, DOC, JPG, PNG, TXT, ZIP — <strong>max 1 MB</strong></p>
+                  <p class="file-name" id="fileName"></p>
+                </div>
+              </div>
+
+              <div class="form-footer">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  <i class="fas fa-paper-plane"></i>
+                  Send Message
+                </button>
+                <p class="form-note">Sent securely via Formspree. No spam, ever.</p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Success -->
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i>
+            <h3>Message sent.</h3>
+            <p>Thank you — I'll get back to you within 24 hours.</p>
+            <a href="https://alexandroshub.github.io/">
+              <i class="fas fa-arrow-left"></i> Back to home
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT (always dark) -->
+  <section id="connect">
+    <div class="wrap connect-inner fadein">
+      <h2 class="connect-heading">Find me <span>across the web.</span></h2>
+      <div class="social-links">
+        <a href="https://github.com/alexandroshub" target="_blank" rel="noopener" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/alexandrospapaspyrou" target="_blank" rel="noopener" class="social-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://alexandrospapaspyrou.substack.com" target="_blank" rel="noopener" class="social-btn">
+          <i class="fas fa-newspaper"></i> Substack
+        </a>
+        <a href="https://alexandroshub.github.io/wportfolio" class="social-btn">
+          <i class="fas fa-th"></i> Portfolio
+        </a>
+        <a href="https://alexandroshub.github.io/wcv" class="social-btn">
+          <i class="fas fa-id-card"></i> CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (always dark) -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-links">
+        <a href="https://alexandroshub.github.io" target="_blank">AlphaPi Home</a>
+        <a href="https://alexandroshub.github.io/about" target="_blank">Terms</a>
+        <a href="https://alexandroshub.github.io/privacy">Privacy</a>
+        <a href="https://alexandroshub.github.io/whub">Hub</a>
+      </div>
+      <p>Handcrafted with <span style="color:#ef4444">♥</span> by Alexandros Papaspyrou · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <!-- Toast (always dark) -->
+  <div class="share-toast" id="shareToast">Link copied to clipboard ✓</div>
+
+  <script>
+    // ===== Theme =====
+    const root = document.documentElement;
+    function setTheme(theme) {
+      root.classList.add('theme-transition');
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      setTimeout(() => root.classList.remove('theme-transition'), 400);
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+    });
+
+    // ===== Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Loading =====
+    (function() {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+      const minDisplay = 500;
+      const start = performance.now();
+      function hide() {
+        const delay = Math.max(0, minDisplay - (performance.now() - start));
+        setTimeout(() => {
+          loader.classList.add('hidden');
+          setTimeout(() => loader.remove(), 700);
+        }, delay);
+      }
+      if (document.readyState === 'complete') hide();
+      else window.addEventListener('load', hide);
+      setTimeout(() => {
+        if (!loader.classList.contains('hidden')) {
+          loader.classList.add('hidden');
+          setTimeout(() => loader.remove(), 700);
+        }
+      }, 2500);
+    })();
+
+    // ===== Cursor =====
+    (function() {
+      if (window.matchMedia('(hover: none), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      if (!dot || !ring) return;
+      let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+      let dotX = mouseX, dotY = mouseY, ringX = mouseX, ringY = mouseY;
+      const DOT_SPEED = 0.35, RING_SPEED = 0.18;
+      window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+      const selector = 'a, button, .tag, .social-pill, .social-btn, .info-row, .form-control, .btn-whatsapp, .btn-share, .submit-btn, .availability-tag';
+      document.querySelectorAll(selector).forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+      });
+      document.addEventListener('mousedown', () => ring.classList.add('click'));
+      document.addEventListener('mouseup', () => ring.classList.remove('click'));
+      document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '0.4'; });
+      function animate() {
+        dotX += (mouseX - dotX) * DOT_SPEED;
+        dotY += (mouseY - dotY) * DOT_SPEED;
+        dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
+        ringX += (mouseX - ringX) * RING_SPEED;
+        ringY += (mouseY - ringY) * RING_SPEED;
+        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+
+    // ===== Progress =====
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      progress.style.width = pct + '%';
+    }, { passive: true });
+
+    // ===== Nav =====
+    const topnav = document.getElementById('topnav');
+    const hero = document.getElementById('hero');
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 60) {
+        topnav.classList.remove('on-dark');
+        topnav.classList.add('stuck');
+      } else {
+        topnav.classList.add('on-dark');
+        topnav.classList.toggle('stuck', window.scrollY > 30);
+      }
+    }, { passive: true });
+
+    // ===== Fade in =====
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fadein').forEach(el => obs.observe(el));
+
+    // ===== Copy email =====
+    document.getElementById('copyEmail').addEventListener('click', function() {
+      const email = 'a-papaspyrou@outlook.com.gr';
+      navigator.clipboard.writeText(email).then(() => {
+        const original = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        this.classList.add('copied');
+        setTimeout(() => {
+          this.innerHTML = original;
+          this.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
+    // ===== File upload =====
+    const fileInput = document.getElementById('fileInput');
+    const fileWrap = document.getElementById('fileWrap');
+    const fileName = document.getElementById('fileName');
+
+    fileInput.addEventListener('change', function() {
+      if (fileInput.files.length > 0) {
+        const f = fileInput.files[0];
+        fileName.textContent = f.name + ' (' + (f.size / 1024 / 1024).toFixed(2) + ' MB)';
+        fileName.style.display = 'block';
+        fileWrap.classList.add('has-file');
+        fileWrap.querySelector('.file-icon i').className = 'fas fa-circle-check';
+      } else {
+        fileName.style.display = 'none';
+        fileWrap.classList.remove('has-file');
+        fileWrap.querySelector('.file-icon i').className = 'fas fa-cloud-arrow-up';
+      }
+    });
+
+    fileWrap.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileWrap.style.borderColor = 'var(--accent)';
+    });
+    fileWrap.addEventListener('dragleave', () => {
+      fileWrap.style.borderColor = '';
+    });
+    fileWrap.addEventListener('drop', () => {
+      fileWrap.style.borderColor = '';
+    });
+
+    // ===== Form submit =====
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formFields = document.getElementById('form-fields');
+    const formSuccess = document.getElementById('formSuccess');
+
+    function showError(fieldName, show) {
+      const field = document.getElementById(fieldName);
+      const error = document.querySelector(`[data-error-for="${fieldName}"]`);
+      if (show) {
+        field.classList.add('error');
+        if (error) error.classList.add('show');
+      } else {
+        field.classList.remove('error');
+        if (error) error.classList.remove('show');
+      }
+    }
+
+    ['name', 'email', 'message'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function() {
+        if (this.value.trim()) showError(id, false);
+      });
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let valid = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+
+      if (!name.value.trim()) { showError('name', true); valid = false; }
+      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { showError('email', true); valid = false; }
+      if (!message.value.trim()) { showError('message', true); valid = false; }
+
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(res => {
+        if (res.ok) {
+          formFields.style.display = 'none';
+          formSuccess.classList.add('show');
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        alert('Something went wrong. Please try again or email me directly.');
+      });
+    });
+
+    // ===== Share =====
+    function sharePage() {
+      const url = window.location.href;
+      const toast = document.getElementById('shareToast');
+
+      if (navigator.share) {
+        navigator.share({
+          title: 'Contact — Alexandros Papaspyrou',
+          text: 'Get in touch with Alexandros — Automation Engineer & Systems Builder.',
+          url: url
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(url).then(() => {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 2800);
+        });
+      }
+    }
+
+    // ===== Smooth scroll =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
