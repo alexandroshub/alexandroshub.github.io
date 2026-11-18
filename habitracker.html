@@ -16,7 +16,6 @@
       --border-color: #30363d;
       --accent-primary: #58a6ff;
       --accent-success: #2ea043;
-      --accent-glow: rgba(88, 166, 255, 0.15);
       --danger-color: #f85149;
       --text-main: #c9d1d9;
       --text-bright: #f0f6fc;
@@ -24,11 +23,7 @@
       --today-highlight: rgba(88, 166, 255, 0.12);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg-color);
@@ -36,14 +31,60 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       padding: 24px;
       line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .dashboard {
       max-width: 1500px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 20px;
+    }
+
+    .brand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: 0.5px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .top-grid {
@@ -225,19 +266,26 @@
       padding: 14px 18px;
       background: var(--header-bg);
       border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .date-controls, .action-controls {
+    .date-controls {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .action-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
     }
 
     select, input[type="text"] {
-      padding: 7px 12px;
+      padding: 8px 12px;
       border: 1px solid var(--border-color);
       border-radius: 6px;
       font-size: 13px;
@@ -245,15 +293,20 @@
       color: var(--text-bright);
       font-family: inherit;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     select:focus, input[type="text"]:focus {
       border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
     }
 
-    button {
-      padding: 7px 14px;
+    input[type="text"] {
+      width: 180px;
+    }
+
+    button, .btn-link {
+      padding: 8px 14px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: 600;
@@ -262,17 +315,24 @@
       background: #21262d;
       color: var(--text-bright);
       transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    button:hover {
+    button:hover, .btn-link:hover {
       background: #30363d;
       border-color: #8b949e;
+      transform: translateY(-1px);
     }
 
     button.primary {
       background: var(--accent-success);
       color: #ffffff;
-      border-color: rgba(240, 246, 252, 0.1);
+      border-color: rgba(240, 246, 252, 0.15);
     }
 
     button.primary:hover {
@@ -288,6 +348,12 @@
     button.danger:hover {
       background: rgba(248, 81, 73, 0.15);
       border-color: var(--danger-color);
+    }
+
+    .desktop-view {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
     }
 
     table {
@@ -307,7 +373,7 @@
     }
 
     .habit-col {
-      min-width: 220px;
+      min-width: 240px;
       text-align: left;
       padding-left: 14px;
       font-weight: 500;
@@ -320,6 +386,21 @@
       justify-content: space-between;
       align-items: center;
       border-right: 2px solid var(--border-color);
+    }
+
+    .habit-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .habit-streak {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #d29922;
+      background: rgba(210, 153, 34, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     .delete-habit {
@@ -452,18 +533,123 @@
       border-radius: 3px;
     }
 
+    .mobile-view {
+      display: none;
+      padding: 16px;
+    }
+
+    .mobile-day-selector {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--header-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+
+    .mobile-day-selector select {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .mobile-habit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mobile-habit-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-habit-item input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+    }
+    .mobile-habit-item input[type="checkbox"]:checked::after {
+      content: '✓';
+      font-size: 16px;
+    }
+
+    .mobile-wellness-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mobile-wellness-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-wellness-row input {
+      width: 60px;
+      padding: 6px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 12px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: var(--accent-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 1024px) {
       .top-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       body {
-        padding: 12px;
+        padding: 10px;
       }
       .top-grid {
         grid-template-columns: 1fr;
+      }
+      .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .date-controls, .action-controls {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .action-controls input[type="text"] {
+        flex: 1;
+      }
+      .desktop-view {
+        display: none;
+      }
+      .mobile-view {
+        display: block;
       }
     }
   </style>
@@ -471,11 +657,21 @@
 <body>
 
 <div class="dashboard">
+  <header class="brand-header">
+    <a href="https://alexandroshub.github.io/@2027" class="brand-logo-area">
+      <img src="https://64.media.tumblr.com/6c40c53a352ba821f0882ef3ad899ffc/6e00a22c2376195f-a3/s1280x1920/494269a8c89e6be7768a1e8bc799f7d73c113c98.png" alt="Logo" class="brand-logo-img">
+      <span class="brand-title">AlexandrosHub Habit Tracker</span>
+    </a>
+    <div class="header-right">
+      <span id="currentDateBadge" style="color: var(--accent-primary); font-family: 'JetBrains Mono', monospace; font-size: 13px;"></span>
+      <a href="https://alexandroshub.github.io/habitrackerviewer.html" class="btn-link" title="Προβολή Backup & Αναφορών">📊 Viewer</a>
+    </div>
+  </header>
+
   <div class="top-grid">
     <div class="card">
       <div class="card-header">
         <span>Daily Progress</span>
-        <span id="currentDateBadge" style="color: var(--accent-primary); font-family: 'JetBrains Mono', monospace;"></span>
       </div>
       <div class="daily-chart-container" id="dailyChart"></div>
     </div>
@@ -522,19 +718,28 @@
         <input type="text" id="newHabitInput" placeholder="Νέα συνήθεια..." onkeypress="handleEnter(event)">
         <button class="primary" onclick="addHabit()">+ Προσθήκη</button>
         <button onclick="exportData()" title="Λήψη αντιγράφου ασφαλείας">Backup</button>
-        <button class="danger" onclick="resetCurrentMonth()">Καθαρισμός Μήνα</button>
+        <button class="danger" onclick="resetCurrentMonth()">Καθαρισμός</button>
       </div>
     </div>
-    <table id="habitTable"></table>
+
+    <div class="desktop-view">
+      <table id="habitTable"></table>
+    </div>
+
+    <div class="mobile-view" id="mobileViewContainer"></div>
   </div>
 </div>
+
+<footer>
+  <p>© 2026 Alexandros Papaspyrou • <a href="https://alexandroshub.github.io/@2027" target="_blank">AlexandrosHub</a></p>
+</footer>
 
 <script>
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
-  const dayNames = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   const defaultHabits = [
     { id: 'h1', name: 'Wake up at 05:00' },
@@ -551,8 +756,9 @@
   const now = new Date();
   let selectedYear = now.getFullYear();
   let selectedMonth = now.getMonth();
+  let selectedMobileDay = now.getDate();
 
-  let state = JSON.parse(localStorage.getItem('alexandrosHabitState_v2')) || {
+  let state = JSON.parse(localStorage.getItem('alexandrosHabitState_v4')) || {
     habits: defaultHabits,
     checks: {},
     mood: {},
@@ -586,12 +792,15 @@
       monthSelect.appendChild(opt);
     });
 
+    const maxDays = getDaysInMonth(selectedYear, selectedMonth);
+    if (selectedMobileDay > maxDays) selectedMobileDay = maxDays;
+
     document.getElementById('currentDateBadge').textContent =
       `${now.getDate()} ${monthNames[now.getMonth()].slice(0, 3)} ${now.getFullYear()}`;
   }
 
   function saveState() {
-    localStorage.setItem('alexandrosHabitState_v2', JSON.stringify(state));
+    localStorage.setItem('alexandrosHabitState_v4', JSON.stringify(state));
   }
 
   function changeDate() {
@@ -605,6 +814,7 @@
     const current = new Date();
     selectedYear = current.getFullYear();
     selectedMonth = current.getMonth();
+    selectedMobileDay = current.getDate();
     initSelectors();
     renderAll();
   }
@@ -631,7 +841,7 @@
   function removeHabit(habitId) {
     const habit = state.habits.find(h => h.id === habitId);
     if (!habit) return;
-    if (!confirm(`Να διαγραφεί η συνήθεια "${habit.name}"; Το ιστορικό των υπολοίπων θα παραμείνει άθικτο.`)) return;
+    if (!confirm(`Να διαγραφεί η συνήθεια "${habit.name}";`)) return;
 
     state.habits = state.habits.filter(h => h.id !== habitId);
     saveState();
@@ -657,7 +867,7 @@
   }
 
   function resetCurrentMonth() {
-    if (!confirm(`Θέλεις σίγουρα να μηδενίσεις τα δεδομένα για ${monthNames[selectedMonth]} ${selectedYear};`)) return;
+    if (!confirm(`Μηδενισμός δεδομένων για ${monthNames[selectedMonth]} ${selectedYear};`)) return;
     const prefix = `${selectedYear}_${selectedMonth}_`;
 
     Object.keys(state.checks).forEach(k => { if (k.startsWith(prefix)) delete state.checks[k]; });
@@ -672,10 +882,28 @@
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
     const downloadAnchor = document.createElement('a');
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `habit-tracker-backup-${selectedYear}-${selectedMonth + 1}.json`);
+    downloadAnchor.setAttribute("download", `habit-tracker-${selectedYear}-${selectedMonth + 1}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
+  }
+
+  function calculateStreak(habitId) {
+    const days = getDaysInMonth(selectedYear, selectedMonth);
+    let streak = 0;
+    const limit = (selectedYear === now.getFullYear() && selectedMonth === now.getMonth()) ? now.getDate() : days;
+    
+    for (let d = limit; d >= 1; d--) {
+      const key = `${selectedYear}_${selectedMonth}_${habitId}_${d}`;
+      if (state.checks[key]) {
+        streak++;
+      } else {
+        if (!(selectedYear === now.getFullYear() && selectedMonth === now.getMonth() && d === now.getDate())) {
+          break;
+        }
+      }
+    }
+    return streak;
   }
 
   function renderTable() {
@@ -698,7 +926,7 @@
 
     for (let d = 1; d <= days; d++) {
       const dateObj = new Date(selectedYear, selectedMonth, d);
-      const dayName = dayNames[dateObj.getDay()];
+      const dayName = dayNames[dateObj.getDay()].slice(0, 2);
       const todayClass = (isCurrentMonthYear && d === todayDate) ? 'today-col' : '';
       html += `<th class="day-name ${todayClass}">${dayName}</th>`;
     }
@@ -716,9 +944,14 @@
     html += `</tr></thead><tbody>`;
 
     state.habits.forEach((habit) => {
+      const streak = calculateStreak(habit.id);
+      const streakText = streak > 0 ? `🔥 ${streak}` : '';
       html += `<tr>
         <td class="habit-col">
-          <span>${habit.name}</span>
+          <div class="habit-info">
+            <span>${habit.name}</span>
+            ${streakText ? `<span class="habit-streak">${streakText}</span>` : ''}
+          </div>
           <span class="delete-habit" title="Διαγραφή" onclick="removeHabit('${habit.id}')">×</span>
         </td>`;
 
@@ -736,9 +969,9 @@
       </tr>`;
     });
 
-    html += `<tr><td colspan="${days + 6}" class="wellness-header">Daily Metrics (1-10)</td></tr>`;
+    html += `<tr><td colspan="${days + 6}" class="wellness-header">Daily Metrics</td></tr>`;
 
-    html += `<tr><td class="habit-col" style="color: var(--accent-primary);">Mood Score</td>`;
+    html += `<tr><td class="habit-col" style="color: var(--accent-primary);">Mood Score (1-10)</td>`;
     for (let d = 1; d <= days; d++) {
       const val = state.mood[`${selectedYear}_${selectedMonth}_${d}`] ?? '';
       const todayClass = (isCurrentMonthYear && d === todayDate) ? 'today-col' : '';
@@ -755,6 +988,67 @@
     html += `<td colspan="5" style="background: var(--header-bg);"></td></tr></tbody>`;
 
     table.innerHTML = html;
+  }
+
+  function renderMobileView() {
+    const container = document.getElementById('mobileViewContainer');
+    const days = getDaysInMonth(selectedYear, selectedMonth);
+    const isCurrentMonthYear = (selectedYear === now.getFullYear() && selectedMonth === now.getMonth());
+    const todayDate = now.getDate();
+
+    let html = `
+      <div class="mobile-day-selector">
+        <span style="font-size: 12px; color: var(--text-muted);">Ημέρα:</span>
+        <select id="mobileDaySelect" onchange="changeMobileDay(this.value)">`;
+    
+    for (let d = 1; d <= days; d++) {
+      const dateObj = new Date(selectedYear, selectedMonth, d);
+      const dName = dayNames[dateObj.getDay()];
+      const isSelected = (d === selectedMobileDay) ? 'selected' : '';
+      const isTodayTag = (isCurrentMonthYear && d === todayDate) ? ' (Σήμερα)' : '';
+      html += `<option value="${d}" ${isSelected}>${d} ${monthNames[selectedMonth].slice(0,3)} (${dName})${isTodayTag}</option>`;
+    }
+    html += `</select></div>`;
+
+    html += `<div class="mobile-habit-list">`;
+    state.habits.forEach(habit => {
+      const isChecked = state.checks[`${selectedYear}_${selectedMonth}_${habit.id}_${selectedMobileDay}`] ? 'checked' : '';
+      const streak = calculateStreak(habit.id);
+      const streakText = streak > 0 ? `🔥 ${streak}` : '';
+      html += `
+        <div class="mobile-habit-item">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-weight: 500; font-size: 14px; color: var(--text-bright);">${habit.name}</span>
+            ${streakText ? `<span class="habit-streak">${streakText}</span>` : ''}
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span class="delete-habit" style="font-size: 18px;" onclick="removeHabit('${habit.id}')">×</span>
+            <input type="checkbox" ${isChecked} onchange="toggleCheck('${habit.id}', ${selectedMobileDay})">
+          </div>
+        </div>`;
+    });
+    html += `</div>`;
+
+    const moodVal = state.mood[`${selectedYear}_${selectedMonth}_${selectedMobileDay}`] ?? '';
+    const sleepVal = state.sleep[`${selectedYear}_${selectedMonth}_${selectedMobileDay}`] ?? '';
+
+    html += `
+      <div class="mobile-wellness-card">
+        <div class="mobile-wellness-row">
+          <span style="font-size: 13px; font-weight: 600; color: var(--accent-primary);">Mood Score (1-10):</span>
+          <input type="number" min="1" max="10" class="wellness-input" style="background:#0d1117; border:1px solid var(--border-color); border-radius:6px; font-size:14px; color:var(--text-bright);" value="${moodVal}" onchange="updateWellness('mood', ${selectedMobileDay}, this.value)">
+        </div>
+        <div class="mobile-wellness-row">
+          <span style="font-size: 13px; font-weight: 600; color: #3fb950;">Sleep Hours:</span>
+          <input type="number" min="0" max="24" step="0.5" class="wellness-input" style="background:#0d1117; border:1px solid var(--border-color); border-radius:6px; font-size:14px; color:var(--text-bright);" value="${sleepVal}" onchange="updateWellness('sleep', ${selectedMobileDay}, this.value)">
+        </div>
+      </div>`;
+
+    container.innerHTML = html;
+  }
+
+  function changeMobileDay(val) {
+    selectedMobileDay = parseInt(val);
   }
 
   function updateStats() {
@@ -785,10 +1079,15 @@
       const left = days - habitActual;
       const pct = days > 0 ? Math.round((habitActual / days) * 100) : 0;
 
-      document.getElementById(`actual_${habit.id}`).innerText = habitActual;
-      document.getElementById(`left_${habit.id}`).innerText = left;
-      document.getElementById(`pbar_${habit.id}`).style.width = `${pct}%`;
-      document.getElementById(`pct_${habit.id}`).innerText = `${pct}%`;
+      const actEl = document.getElementById(`actual_${habit.id}`);
+      const leftEl = document.getElementById(`left_${habit.id}`);
+      const pbarEl = document.getElementById(`pbar_${habit.id}`);
+      const pctEl = document.getElementById(`pct_${habit.id}`);
+
+      if (actEl) actEl.innerText = habitActual;
+      if (leftEl) leftEl.innerText = left;
+      if (pbarEl) pbarEl.style.width = `${pct}%`;
+      if (pctEl) pctEl.innerText = `${pct}%`;
     });
 
     document.getElementById('totalGoal').innerText = totalGoal;
@@ -827,6 +1126,7 @@
 
   function renderAll() {
     renderTable();
+    renderMobileView();
     updateStats();
   }
 
