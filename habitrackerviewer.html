@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker Viewer | Alexandroshub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080b10;
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --card-solid: #11161f;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --accent-primary: #58a6ff;
+            --accent-secondary: #a371f7;
+            --accent-success: #2ea043;
+            --accent-glow: rgba(88, 166, 255, 0.15);
+            --text-main: #c9d1d9;
+            --text-bright: #ffffff;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(88, 166, 255, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(163, 113, 247, 0.1) 0%, transparent 40%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding: 40px 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.25);
+            color: var(--accent-primary);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #a5d6ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .month-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            background: rgba(163, 113, 247, 0.15);
+            color: #d2a8ff;
+            border: 1px solid rgba(163, 113, 247, 0.3);
+            padding: 4px 12px;
+            border-radius: 8px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .upload-box {
+            border: 2px dashed rgba(88, 166, 255, 0.3);
+            background: rgba(13, 17, 23, 0.5);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .upload-box:hover, .upload-box.dragover {
+            border-color: var(--accent-primary);
+            background: rgba(88, 166, 255, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(88, 166, 255, 0.12);
+        }
+
+        .upload-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.4));
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .demo-link {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .demo-link button {
+            background: none;
+            border: none;
+            color: var(--accent-primary);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .demo-link button:hover {
+            color: #79c0ff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .stat-card {
+            background: var(--card-solid);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .stat-card.success::before {
+            background: linear-gradient(90deg, #2ea043, #56d364);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-top: 8px;
+        }
+
+        .habit-summary-list {
+            list-style: none;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .habit-summary-item {
+            background: var(--card-solid);
+            border: 1px solid var(--border-color);
+            padding: 18px 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            animation: slideUp 0.4s ease forwards;
+            opacity: 0;
+        }
+
+        .habit-summary-item:hover {
+            border-color: rgba(88, 166, 255, 0.35);
+            transform: translateX(4px);
+        }
+
+        .habit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .habit-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-bright);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .streak-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            background: rgba(255, 166, 87, 0.12);
+            color: #ffa657;
+            border: 1px solid rgba(255, 166, 87, 0.25);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .habit-stat {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: #56d364;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 99px;
+            background: linear-gradient(90deg, var(--accent-primary), #56d364);
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        #resultsSection {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 14px; }
+            .card { padding: 22px 18px; }
+            h1 { font-size: 22px; }
+            .stat-value { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="brand-badge">⚡ Alexandroshub Analytics</div>
+            <h1>Habit Tracker Report Viewer</h1>
+            <p>Ανέβασε το αρχείο JSON (backup) από τον tracker σου για να δεις οπτικοποιημένη την πρόοδο, τα σερί και τα στατιστικά σου.</p>
+            
+            <label class="upload-box" id="dropZone">
+                <div class="upload-icon">📊</div>
+                <span style="font-size: 16px; font-weight: 600; color: var(--text-bright);">Κάνε κλικ για επιλογή αρχείου JSON</span>
+                
+                
+                 <span style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">ή σύρε και άφησε το αρχείο εδώ</span>
+                <input type="file" id="fileInput" accept=".json">
+            </label>
+
+            <div class="demo-link">
+                Δεν έχεις πρόχειρο αρχείο; <button type="button" id="loadDemoBtn">Φόρτωση δοκιμαστικών δεδομένων</button>
+            </div>
+        </div>
+
+        <div class="card" id="resultsSection">
+            <h2>
+                <span>Συνοπτική Αναφορά Προόδου</span>
+                <span class="month-pill" id="reportPeriod">Μήνας / Έτος</span>
+            </h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Συνολικές Συνήθειες</div>
+                    <div class="stat-value" id="resTotalHabits">0</div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-label">Ολοκληρωμένα Checks</div>
+                    <div class="stat-value" id="resTotalCompleted" style="color: #56d364;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Συνολικό Ποσοστό</div>
+                    <div class="stat-value" id="resOverallPct" style="color: var(--accent-primary);">0%</div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 36px;">Ανάλυση ανά Συνήθεια</h2>
+            <ul class="habit-summary-list" id="habitSummaryList"></ul>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const resultsSection = document.getElementById('resultsSection');
+        const loadDemoBtn = document.getElementById('loadDemoBtn');
+
+        const greekMonths = [
+            "Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος",
+            "Ιούλιος", "Αύγουστος", "Σεπτέμβριος", "Οκτώβριος", "Νοέμβριος", "Δεκέμβριος"
+        ];
+
+        fileInput.addEventListener('change', (e) => {
+            handleFile(e.target.files[0]);
+        });
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    processAndDisplayData(data);
+                } catch (err) {
+                    alert('Το αρχείο δεν είναι έγκυρο JSON αρχείο.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        loadDemoBtn.addEventListener('click', () => {
+            const demoData = {
+                habits: [
+                    { id: "h1", name: "💧 2 Λίτρα Νερό" },
+                    { id: "h2", name: "🏋️ Προπόνηση / Γυμναστική" },
+                    { id: "h3", name: "📚 Διάβασμα 20 σελίδες" },
+                    { id: "h4", name: "💻 Coding Project" }
+                ],
+                checks: {}
+            };
+            const y = 2026, m = 10;
+            for (let d = 1; d <= 30; d++) {
+                if (d % 5 !== 0) demoData.checks[`${y}_${m}_h1_${d}`] = true;
+                if (d % 2 === 0) demoData.checks[`${y}_${m}_h2_${d}`] = true;
+                if (d <= 18 && d !== 7) demoData.checks[`${y}_${m}_h3_${d}`] = true;
+                if (d % 3 !== 0) demoData.checks[`${y}_${m}_h4_${d}`] = true;
+            }
+            processAndDisplayData(demoData);
+        });
+
+        function processAndDisplayData(data) {
+            if (!data.habits || !data.checks) {
+                alert('Το αρχείο δεν περιέχει τα αναμενόμενα δεδομένα του Habit Tracker.');
+                return;
+            }
+
+            const habits = data.habits;
+            const checks = data.checks;
+
+            let year = new Date().getFullYear();
+            let month = new Date().getMonth();
+
+            for (let key in checks) {
+                const parts = key.split('_');
+                if (parts.length >= 2) {
+                    year = parseInt(parts[0]);
+                    month = parseInt(parts[1]);
+                    break;
+                }
+            }
+
+            const monthName = greekMonths[month] || `Μήνας ${month + 1}`;
+            document.getElementById('reportPeriod').innerText = `${monthName} ${year}`;
+
+            const getDaysInMonth = (y, m) => new Date(y, m + 1, 0).getDate();
+            const days = getDaysInMonth(year, month);
+            const totalPossible = habits.length * days;
+
+            let totalCompleted = 0;
+            let summaryHtml = '';
+
+            habits.forEach((habit, index) => {
+                let habitCompleted = 0;
+                let currentStreak = 0;
+                let maxStreak = 0;
+
+                for (let d = 1; d <= days; d++) {
+                    const key = `${year}_${month}_${habit.id}_${d}`;
+                    if (checks[key]) {
+                        habitCompleted++;
+                        totalCompleted++;
+                        currentStreak++;
+                        if (currentStreak > maxStreak) maxStreak = currentStreak;
+                    } else {
+                        currentStreak = 0;
+                    }
+                }
+
+                const pct = days > 0 ? Math.round((habitCompleted / days) * 100) : 0;
+                const delay = index * 0.08;
+
+                summaryHtml += `
+                    <li class="habit-summary-item" style="animation-delay: ${delay}s;">
+                        <div class="habit-header">
+                            <div class="habit-name">
+                                <span>${habit.name}</span>
+                                ${maxStreak > 1 ? `<span class="streak-badge">🔥 Max σερί: ${maxStreak} ημ.</span>` : ''}
+                            </div>
+                            <span class="habit-stat">${habitCompleted} / ${days} ημ. (${pct}%)</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-width="${pct}%"></div>
+                        </div>
+                    </li>`;
+            });
+
+            const overallPct = totalPossible > 0 ? Math.round((totalCompleted / totalPossible) * 100) : 0;
+
+            document.getElementById('resTotalHabits').innerText = habits.length;
+            document.getElementById('resTotalCompleted').innerText = totalCompleted;
+            document.getElementById('resOverallPct').innerText = overallPct + '%';
+            document.getElementById('habitSummaryList').innerHTML = summaryHtml;
+
+            resultsSection.style.display = 'block';
+
+            setTimeout(() => {
+                document.querySelectorAll('.progress-fill').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }, 80);
+
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
+               
+                
+                
